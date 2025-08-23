@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs><style>.s{fill:currentColor;}</style></defs>
+  <!-- Rounded card -->
+  <rect x="128" y="128" width="768" height="768" rx="160" ry="160" class="s"/>
+  <!-- Cut-out page fold effect -->
+  <path d="M704 256l160 160V288c0-17.7-14.3-32-32-32H704z" fill="#00000000"/>
+  <!-- Left arrow (negative space is not supported across UAs; keep solid for shape) -->
+  <path class="s" d="M576 672c0 17.7-14.3 32-32 32s-32-14.3-32-32V544h-96l64-64 96-96c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L544 480v64h32c17.7 0 32 14.3 32 32v96z"/>
+</svg>

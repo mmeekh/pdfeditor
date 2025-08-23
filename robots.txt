@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Disallow API endpoints for security
+Disallow: /api/
+Disallow: /health
+Disallow: /metrics
+
+# Allow important pages
+Allow: /about
+Allow: /contact
+Allow: /static/
+
+# Sitemap location
+Sitemap: https://pdfislemleri.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

@@ -1,0 +1,42 @@
+# Production docker-compose.yml
+version: '3.8'
+
+services:
+  pdf-tools-api:
+    build: .
+    ports:
+      - "80:80"
+      - "2000:2000"
+    volumes:
+      - ./logs:/var/log
+      - ./static:/app/static:ro
+    environment:
+      - ENVIRONMENT=production
+      - PYTHONPATH=/app
+      - APP_MAX_UPLOAD_MB=50
+      - APP_RATE_LIMIT_PER_MINUTE=60
+      - APP_RATE_LIMIT_PER_HOUR=500
+      - APP_ALLOWED_ORIGINS=*
+      - APP_SUBPROCESS_TIMEOUT=900
+      - APP_MAX_CONCURRENCY=8
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:2000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+          cpus: '1.0'
+    networks:
+      - pdf-tools-network
+
+networks:
+  pdf-tools-network:
+    driver: bridge

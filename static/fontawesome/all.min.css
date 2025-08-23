@@ -1,0 +1,142 @@
+/*!
+ * Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2025 Fonticons, Inc.
+ */
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+.fa,
+.fas {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.far {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+}
+
+.fal {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 300;
+}
+
+.fab {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+.fa-file-pdf:before {
+  content: "📄";
+}
+
+.fa-random:before {
+  content: "🔀";
+}
+
+.fa-cut:before {
+  content: "✂️";
+}
+
+.fa-compress-arrows-alt:before {
+  content: "🗜️";
+}
+
+.fa-exchange-alt:before {
+  content: "🔄";
+}
+
+.fa-search:before {
+  content: "🔍";
+}
+
+.fa-lock:before {
+  content: "🔒";
+}
+
+.fa-chevron-down:before {
+  content: "⌄";
+}
+
+.fa-moon:before {
+  content: "🌙";
+}
+
+.fa-sun:before {
+  content: "☀️";
+}
+
+.fa-upload:before {
+  content: "📤";
+}
+
+.fa-times:before {
+  content: "✕";
+}
+
+.fa-shield-alt:before {
+  content: "🛡️";
+}
+
+.fa-bolt:before {
+  content: "⚡";
+}
+
+.fa-user-secret:before {
+  content: "🕵️";
+}
+
+.fa-instagram:before {
+  content: "📷";
+}
+
+.fa-linkedin:before {
+  content: "💼";
+}
+
+/* Font face definitions - using system fonts as fallback */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Arial"), local("Helvetica"), local("sans-serif");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Arial"), local("Helvetica"), local("sans-serif");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Arial"), local("Helvetica"), local("sans-serif");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Arial"), local("Helvetica"), local("sans-serif");
+}
