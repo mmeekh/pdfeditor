@@ -63,17 +63,16 @@ ENV LANG=tr_TR.UTF-8 \
     LANGUAGE=tr_TR:tr \
     LC_ALL=tr_TR.UTF-8
 
-# Create necessary directories with proper ownership for nginx
-RUN mkdir -p /app /var/log /var/cache/nginx /var/run/nginx /var/lib/nginx \
+# Create necessary directories
+RUN mkdir -p /app /var/log /var/cache/nginx /var/run/nginx /var/lib/nginx /var/log/supervisor \
     && mkdir -p /var/log/pdf-tools-api /var/log/nginx \
     && mkdir -p /var/lib/nginx/body /var/lib/nginx/proxy /var/lib/nginx/fastcgi /var/lib/nginx/scgi /var/lib/nginx/uwsgi \
-    && chown -R root:root /var/log /var/cache/nginx /var/run/nginx /var/lib/nginx \
+    && chown -R root:root /var/log/nginx /var/lib/nginx /var/run/nginx /var/cache/nginx /var/log/supervisor \
     && chown -R appuser:appuser /app /var/log/pdf-tools-api \
-    && chmod 755 /var/log/pdf-tools-api \
-    && chmod 755 /var/log/nginx \
-    && chmod 755 /var/lib/nginx \
-    && chmod 755 /var/run/nginx \
-    && chmod 755 /var/cache/nginx
+    && chmod 755 /var/log/pdf-tools-api /var/log/nginx /var/lib/nginx /var/run/nginx /var/cache/nginx \
+    && touch /var/log/pdf-tools-api.log \
+    && chown appuser:appuser /var/log/pdf-tools-api.log \
+    && chmod 644 /var/log/pdf-tools-api.log
 
 # Copy virtual environment from builder
 COPY --from=builder /opt/venv /opt/venv
