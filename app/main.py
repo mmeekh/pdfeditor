@@ -8,7 +8,7 @@ import asyncio
 import logging
 import time
 from pathlib import Path
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Union
 from datetime import datetime
 
 from fastapi import FastAPI, File, Form, UploadFile, Request, HTTPException
@@ -120,7 +120,7 @@ class HealthResponse(BaseModel):
     timestamp: datetime = Field(default_factory=datetime.utcnow)
     version: str = Field(..., description="API version")
     uptime: float = Field(..., description="Service uptime in seconds")
-    memory_usage: Dict[str, str] = Field(..., description="Memory usage information")
+    memory_usage: Dict[str, Union[str, int, float]] = Field(..., description="Memory usage information")
     environment: str = Field(..., description="Current environment")
 
 

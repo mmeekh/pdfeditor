@@ -1,42 +1,16 @@
-# Production docker-compose.yml
-version: '3.8'
-
 services:
   pdf-tools-api:
-    build: .
+    build:
+      context: .
+    container_name: pdfeditor-pdf-tools-api-1
     ports:
       - "80:80"
-      - "2000:2000"
-    volumes:
-      - ./logs:/var/log
-      - ./static:/app/static:ro
-    environment:
-      - ENVIRONMENT=production
-      - PYTHONPATH=/app
-      - APP_MAX_UPLOAD_MB=50
-      - APP_RATE_LIMIT_PER_MINUTE=60
-      - APP_RATE_LIMIT_PER_HOUR=500
-      - APP_ALLOWED_ORIGINS=*
-      - APP_SUBPROCESS_TIMEOUT=900
-      - APP_MAX_CONCURRENCY=8
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:2000/health"]
+      test: ["CMD", "curl", "-f", "http://localhost/"]
       interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-    deploy:
-      resources:
-        limits:
-          memory: 1G
-          cpus: '1.0'
-        reservations:
-          memory: 512M
-          cpus: '0.5'
-    networks:
-      - pdf-tools-network
-
-networks:
-  pdf-tools-network:
-    driver: bridge
+      timeout: 5s
+      retries: 5
+    # Eğer .env kullanıyorsanız:
+    # env_file:
+    #   - .env

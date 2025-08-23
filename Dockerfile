@@ -1,106 +1,41 @@
-# Multi-stage build for production
-FROM python:3.11-slim AS builder
-
-# Install build dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# Create virtual environment
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
-# Copy and install requirements
-COPY requirements.txt .
-RUN pip install --upgrade pip && pip install -r requirements.txt
-
-# Production image
 FROM python:3.11-slim
 
-# Create non-root user for security
-RUN groupadd -r appuser && useradd -r -g appuser appuser
+# Sistem paketleri
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    nginx supervisor curl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1 \
-    ENVIRONMENT=production \
-    APP_MAX_UPLOAD_MB=50 \
-    APP_SUBPROCESS_TIMEOUT=900 \
-    APP_MAX_CONCURRENCY=8 \
-    APP_RATE_LIMIT_PER_MINUTE=60 \
-    APP_RATE_LIMIT_PER_HOUR=500 \
-    APP_ALLOWED_ORIGINS=* \
-    PYTHONHASHSEED=random \
-    PYTHONOPTIMIZE=1 \
-    PYTHONPATH=/app \
-    DEBIAN_FRONTEND=noninteractive
-
-# Install system dependencies
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        ghostscript \
-        poppler-utils \
-        tesseract-ocr \
-        tesseract-ocr-tur \
-        libreoffice \
-        fonts-dejavu \
-        locales \
-        ca-certificates \
-        procps \
-        curl \
-        nginx \
-        gosu \
-        supervisor \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean \
-    && apt-get autoremove -y
-
-# Locale setup
-RUN sed -i 's/# tr_TR.UTF-8 UTF-8/tr_TR.UTF-8 UTF-8/' /etc/locale.gen \
-    && locale-gen
-ENV LANG=tr_TR.UTF-8 \
-    LANGUAGE=tr_TR:tr \
-    LC_ALL=tr_TR.UTF-8
-
-# Create necessary directories
-RUN mkdir -p /app /var/log /var/cache/nginx /var/run/nginx /var/lib/nginx /var/log/supervisor \
-    && mkdir -p /var/log/pdf-tools-api /var/log/nginx \
-    && mkdir -p /var/lib/nginx/body /var/lib/nginx/proxy /var/lib/nginx/fastcgi /var/lib/nginx/scgi /var/lib/nginx/uwsgi \
-    && chown -R root:root /var/log/nginx /var/lib/nginx /var/run/nginx /var/cache/nginx /var/log/supervisor \
-    && chown -R appuser:appuser /app /var/log/pdf-tools-api \
-    && chmod 755 /var/log/pdf-tools-api /var/log/nginx /var/lib/nginx /var/run/nginx /var/cache/nginx \
-    && touch /var/log/pdf-tools-api.log \
-    && chown appuser:appuser /var/log/pdf-tools-api.log \
-    && chmod 644 /var/log/pdf-tools-api.log
-
-# Copy virtual environment from builder
-COPY --from=builder /opt/venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
+# Çalışma dizini
 WORKDIR /app
 
-# Copy source code
-COPY . .
+# Python bağımlılıkları
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt \
+    && pip install --no-cache-dir gunicorn uvicorn
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+# Uygulama dosyaları
+COPY app /app/app
+# Statik dosyalar
+COPY static /app/static
+# (Varsa) templates
+# COPY templates /app/templates
 
-# Copy supervisor configuration
-COPY supervisord.conf /etc/supervisor/conf.d/pdf-tools.conf
+# Nginx & Supervisor konfigleri
+COPY docker/nginx/pdf-tools.conf /etc/nginx/conf.d/pdf-tools.conf
+COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Set proper permissions for start script
-RUN chmod +x /app/start.sh
+# Nginx default site'ı kapat
+RUN rm -f /etc/nginx/sites-enabled/default || true
 
-# Keep root user for nginx to work properly
-# USER appuser
+# Log klasörleri
+RUN mkdir -p /var/log/nginx /var/log/supervisor
 
-# Expose ports
-EXPOSE 2000 80
+EXPOSE 80
+# Opsiyonel: API portunu debug/health için açabilirsiniz
+EXPOSE 2000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:2000/health || exit 1
+# Healthcheck (Nginx üstünden)
+HEALTHCHECK --interval=30s --timeout=5s --retries=5 CMD curl -f http://localhost/ || exit 1
 
-# Start script
-CMD ["/app/start.sh"]
+# Supervisor PID 1'de çalışsın
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
