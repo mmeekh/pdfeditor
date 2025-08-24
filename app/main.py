@@ -173,25 +173,26 @@ async def security_headers(request: Request, call_next):
         response.headers.setdefault("X-Frame-Options", "DENY")
         response.headers.setdefault("X-XSS-Protection", "1; mode=block")
         
-        # Enhanced CSP for production
+        # Enhanced CSP for production - Local resources only
         if IS_PRODUCTION:
             response.headers.setdefault("Content-Security-Policy", 
                 "default-src 'self'; "
-                "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; "
-                "style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; "
+                "script-src 'self' 'unsafe-inline'; "
+                "style-src 'self' 'unsafe-inline'; "
                 "img-src 'self' data:; "
-                "font-src 'self' https://fonts.gstatic.com; "
+                "font-src 'self' data:; "
                 "connect-src 'self'; "
                 "frame-ancestors 'none';"
             )
         else:
-            # Development CSP
+            # Development CSP - Local resources only
             response.headers.setdefault("Content-Security-Policy", 
-                "default-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; "
+                "default-src 'self'; "
+                "script-src 'self' 'unsafe-inline'; "
+                "style-src 'self' 'unsafe-inline'; "
                 "img-src 'self' data:; "
-                "style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; "
-                "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; "
-                "font-src 'self' data: https://fonts.gstatic.com;"
+                "font-src 'self' data:; "
+                "connect-src 'self';"
             )
         
         return response

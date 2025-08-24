@@ -87,14 +87,9 @@
     <meta name="apple-mobile-web-app-title" content="PDF İşlemleri">
 
     
-    <!-- Preconnect to external domains for performance -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    
+    <!-- Local resources - No external CDN dependencies -->
     <!-- JSZip library for zip operations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/static/js/jszip.min.js"></script>
 
     <!-- Enhanced Structured Data -->
     <script type="application/ld+json">
@@ -215,22 +210,10 @@
       ]
     }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                        dark: '#1F2937',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Local Tailwind CSS -->
+    <link rel="stylesheet" href="/static/css/tailwind.css">
+    <!-- Local Font Awesome -->
+    <link rel="stylesheet" href="/static/fontawesome/all.min.css">
     <style>
         /* Modern PDF Loader Styles */
         .pdf-page{animation:pageFlip 2s ease-in-out infinite;transform-origin:center bottom}
