@@ -1,0 +1,38 @@
+[Unit]
+Description=PDF Editor Backend Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=exec
+User=pdfuser
+Group=pdfuser
+WorkingDirectory=/home/pdfuser/pdfeditor
+Environment=PATH=/home/pdfuser/pdfeditor/venv/bin
+Environment=ENVIRONMENT=production
+Environment=APP_RATE_LIMIT_PER_MINUTE=60
+Environment=APP_RATE_LIMIT_PER_HOUR=500
+Environment=APP_MAX_UPLOAD_MB=50
+Environment=APP_SUBPROCESS_TIMEOUT=900
+Environment=APP_MAX_CONCURRENCY=8
+ExecStart=/home/pdfuser/pdfeditor/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 2 --log-level info
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pdf-editor
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/home/pdfuser/pdfeditor/temp
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

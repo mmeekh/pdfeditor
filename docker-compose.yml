@@ -1,19 +1,36 @@
+version: '3.8'
+
 services:
   pdf-tools-api:
     build:
       context: .
+      dockerfile: Dockerfile
     container_name: pdfeditor-pdf-tools-api-1
     ports:
       - "80:80"
       - "443:443"
+      - "2000:2000"
     volumes:
-      - ./ssl-certs:/etc/letsencrypt:ro
+      - ./logs:/var/log
+      - ./ssl-certs:/etc/ssl/certs:ro
+      - ./ssl-keys:/etc/ssl/private:ro
     restart: unless-stopped
+    environment:
+      - ENVIRONMENT=production
+      - APP_RATE_LIMIT_PER_MINUTE=60
+      - APP_RATE_LIMIT_PER_HOUR=500
+      - APP_MAX_UPLOAD_MB=50
+      - APP_SUBPROCESS_TIMEOUT=900
+      - APP_MAX_CONCURRENCY=8
     healthcheck:
-      test: ["CMD", "curl", "-f", "https://localhost/"]
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
       interval: 30s
-      timeout: 5s
-      retries: 5
-    # Eğer .env kullanıyorsanız:
-    # env_file:
-    #   - .env
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - pdf-network
+
+networks:
+  pdf-network:
+    driver: bridge
