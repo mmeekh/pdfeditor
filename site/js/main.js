@@ -101,12 +101,14 @@ class PerformanceMonitor {
     init() {
         if ('performance' in window) {
             window.addEventListener('load', () => {
-                const perfData = window.performance.timing;
-                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-                if (pageLoadTime < 0) {
-                    window.disableAutoScroll = true;
-                }
-                this.trackEvent('page_load', { load_time: pageLoadTime });
+                setTimeout(() => {
+                    const navEntry = performance.getEntriesByType('navigation')[0];
+                    const pageLoadTime = navEntry ? navEntry.loadEventEnd : 0;
+                    if (pageLoadTime < 0) {
+                        window.disableAutoScroll = true;
+                    }
+                    this.trackEvent('page_load', { load_time: pageLoadTime });
+                }, 0);
             });
         }
     }
