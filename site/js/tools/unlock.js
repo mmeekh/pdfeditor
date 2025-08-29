@@ -68,7 +68,7 @@ class UnlockTool {
                 </div>
             </div>
             <div class="flex justify-center">
-                <button onclick="this.downloadFile('${pdfApi.getUnlockDownloadUrl(result.session_id, result.output_file)}')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg mr-3 transition">
+                <button onclick="downloadFile('${pdfApi.getUnlockDownloadUrl(result.session_id, result.output_file)}')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg mr-3 transition">
                     <i class="fas fa-download mr-2"></i>Tekrar İndir
                 </button>
                 <button id="resetToolButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg transition">
@@ -80,7 +80,7 @@ class UnlockTool {
             </div>
         `;
         resultArea.classList.remove('hidden');
-        
+
         // Download function ekle
         window.downloadFile = (url) => {
             const link = document.createElement('a');
@@ -90,6 +90,9 @@ class UnlockTool {
             link.click();
             document.body.removeChild(link);
         };
+
+        // Otomatik indirmeyi başlat
+        window.downloadFile(`${pdfApi.getUnlockDownloadUrl(result.session_id, result.output_file)}`);
     }
 
     getOptions(){
