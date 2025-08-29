@@ -1,0 +1,78 @@
+"""
+Word'den PDF'e dönüştürme modülü.
+"""
+
+from __future__ import annotations
+
+import os
+from dataclasses import dataclass
+from typing import Optional
+from pathlib import Path
+from datetime import datetime
+import logging
+
+import shutil
+import subprocess
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class ConvertResult:
+    output_path: str
+
+
+class WordToPDFError(Exception):
+    pass
+
+
+class WordToPDFConverter:
+    def __init__(self, temp_dir: str):
+        self.temp_dir = temp_dir
+        os.makedirs(self.temp_dir, exist_ok=True)
+
+    def _out_name(self, src: str) -> str:
+        base = Path(src).stem
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        return f"{base}_converted_{ts}.pdf"
+
+    def convert(self, src_doc: str, out_path: Optional[str] = None) -> ConvertResult:
+        if not os.path.exists(src_doc):
+            raise WordToPDFError("Kaynak Word dosyası bulunamadı")
+        if out_path is None:
+            out_path = os.path.join(self.temp_dir, self._out_name(src_doc))
+
+        try:
+            soffice = shutil.which('soffice')
+            if not soffice:
+                raise WordToPDFError("LibreOffice (soffice) bulunamadı")
+            out_dir = os.path.dirname(out_path)
+            # LibreOffice converts into out_dir with same basename.pdf
+            cmd = [
+                soffice,
+                "--headless",
+                "--nologo",
+                "--nofirststartwizard",
+                "--convert-to", "pdf",
+                "--outdir", out_dir,
+                src_doc,
+            ]
+            subprocess.run(cmd, check=True)
+            # computed target path (LibreOffice may choose base.pdf)
+            base_pdf = os.path.join(out_dir, f"{Path(src_doc).stem}.pdf")
+            if base_pdf != out_path and os.path.exists(base_pdf):
+                try:
+                    os.replace(base_pdf, out_path)
+                except Exception:
+                    out_path = base_pdf
+        except Exception as e:
+            logger.error(f"Word→PDF dönüşüm hatası: {e}")
+            raise WordToPDFError("Dönüştürme sırasında hata oluştu")
+
+        if not os.path.exists(out_path):
+            raise WordToPDFError("Çıktı oluşturulamadı")
+
+        return ConvertResult(output_path=out_path)
+
+

@@ -1,0 +1,18 @@
+fastapi==0.112.0
+uvicorn[standard]==0.30.0
+gunicorn==22.0.0
+python-multipart==0.0.9
+
+# PDF İşleme Kütüphaneleri
+PyPDF2==3.0.1
+Pillow==10.4.0
+reportlab==4.1.0
+pdf2docx==0.5.7
+PyMuPDF==1.26.4
+opencv-python-headless==4.9.0.80
+docx2pdf==0.1.8
+python-pptx==0.6.21
+
+# Diğer yardımcı kütüphaneler
+aiofiles==23.2.1
+pydantic-settings==2.3.4

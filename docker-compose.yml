@@ -1,36 +1,50 @@
-version: '3.8'
+# Docker Compose v2 syntax - version field is optional
 
 services:
-  pdf-tools-api:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: pdfeditor-pdf-tools-api-1
+  caddy:
+    image: caddy:2.8
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
-      - "2000:2000"
-    volumes:
-      - ./logs:/var/log
-      - ./ssl-certs:/etc/ssl/certs:ro
-      - ./ssl-keys:/etc/ssl/private:ro
-    restart: unless-stopped
     environment:
-      - ENVIRONMENT=production
-      - APP_RATE_LIMIT_PER_MINUTE=60
-      - APP_RATE_LIMIT_PER_HOUR=500
-      - APP_MAX_UPLOAD_MB=50
-      - APP_SUBPROCESS_TIMEOUT=900
-      - APP_MAX_CONCURRENCY=8
+      - EMAIL=${EMAIL}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site:/srv:ro
+      - caddy_data:/data
+      - caddy_config:/config
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:80 || exit 1"]
       interval: 30s
-      timeout: 10s
+      timeout: 5s
       retries: 3
-      start_period: 40s
     networks:
-      - pdf-network
+      - pdfislemleri_network
+
+  api:
+    build: ./app
+    restart: unless-stopped
+    expose:
+      - "2000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TEMP_DIR=/app/temp
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:2000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - pdfislemleri_network
+    volumes:
+      - api_temp:/app/temp
+
+volumes:
+  caddy_data:
+  caddy_config:
+  api_temp:
 
 networks:
-  pdf-network:
+  pdfislemleri_network:
     driver: bridge

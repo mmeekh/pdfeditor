@@ -1,223 +1,208 @@
-# PDF Tools - Professional PDF Processing API
+# PDFişlemleri.com - DevOps + Frontend Projesi
 
-Modern, hızlı ve güvenli PDF işleme araçları. PDF birleştirme, bölme, sıkıştırma, dönüştürme, OCR ve şifreleme işlemleri.
+PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya alınmış.
 
 ## 🚀 Özellikler
 
-- **PDF İşlemleri**: Birleştir, böl, sıkıştır
-- **Dönüştürme**: PDF ↔ Word, PDF ↔ Images, Images → PDF
-- **OCR**: Türkçe ve İngilizce dil desteği
-- **Güvenlik**: PDF şifreleme ve şifre çözme
-- **Modern UI**: Tailwind CSS ile responsive tasarım
-- **Local Resources**: CDN bağımlılığı yok, tamamen local
-
-## 🛠️ Teknoloji Stack
-
-- **Backend**: FastAPI (Python)
-- **Frontend**: HTML + Tailwind CSS + JavaScript
-- **PDF Processing**: PyPDF, pikepdf, pdf2image
-- **Image Processing**: Pillow, img2pdf
-- **Build Tools**: Node.js + Tailwind CSS
-
-## 📋 Gereksinimler
-
-### Sistem Gereksinimleri
-- Python 3.8+
-- Node.js 16+
-- npm veya yarn
-- Ghostscript (PDF sıkıştırma için)
-- LibreOffice (DOCX dönüştürme için)
-- Tesseract (OCR için)
-- Poppler-utils (PDF işlemleri için)
-
-### Python Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### Node.js Dependencies
-```bash
-npm install
-```
-
-## 🚀 Kurulum
-
-### 1. Repository'yi klonlayın
-```bash
-git clone <repository-url>
-cd pdfeditor
-```
-
-### 2. Python dependencies'leri kurun
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Node.js dependencies'leri kurun ve build edin
-```bash
-npm install
-npm run build:css:prod
-```
-
-### 4. Uygulamayı çalıştırın
-```bash
-python -m uvicorn app.main:app --reload
-```
-
-## 🔧 Build Script
-
-PowerShell kullanarak otomatik build:
-```powershell
-.\build.ps1
-```
+- **Frontend**: Modern, responsive HTML/CSS/JS (Tailwind CSS)
+- **Web Sunucusu**: Caddy v2.8 (otomatik HTTPS)
+- **API**: FastAPI (Python 3.11)
+- **Container**: Docker + Docker Compose
+- **Güvenlik**: CSP, HSTS, güvenlik başlıkları
+- **SEO**: PWA, manifest, sitemap, robots.txt
+- **Performans**: zstd/gzip sıkıştırma, cache politikaları
 
 ## 📁 Proje Yapısı
 
 ```
-pdfeditor/
-├── app/
-│   └── main.py              # FastAPI ana uygulama
-├── static/
-│   ├── css/
-│   │   └── tailwind.css     # Local Tailwind CSS
-│   ├── js/
-│   │   └── jszip.min.js     # Local JSZip
-│   ├── fontawesome/
-│   │   └── all.min.css      # Local Font Awesome CSS
-│   ├── webfonts/            # Font Awesome webfonts
-│   └── icons/               # Favicon ve app icons
-├── src/
-│   └── input.css            # Tailwind CSS input
-├── *.html                    # HTML sayfaları
-├── package.json              # Node.js dependencies
-├── tailwind.config.js        # Tailwind konfigürasyonu
-├── postcss.config.js         # PostCSS konfigürasyonu
-├── requirements.txt          # Python dependencies
-└── build.ps1                 # PowerShell build script
+repo-root/
+├── site/                    # Frontend dosyaları
+│   ├── index.html          # Ana sayfa
+│   ├── style.css           # Stil dosyası
+│   ├── js/                 # Modüler JavaScript
+│   │   ├── main.js         # Ana uygulama
+│   │   ├── modules/        # Core modüller
+│   │   │   ├── api.js      # API işlemleri
+│   │   │   ├── fileHandler.js  # Dosya yönetimi
+│   │   │   ├── toolManager.js  # Araç yönetimi
+│   │   │   ├── notifications.js # Bildirimler
+│   │   │   └── loader.js   # Loading komponenti
+│   │   └── tools/          # PDF araçları
+│   │       └── merge.js    # PDF birleştirme
+│   ├── icons/              # PWA ikonları
+│   ├── images/             # Görseller
+│   ├── robots.txt          # SEO
+│   ├── sitemap.xml         # SEO
+│   └── security.txt        # Güvenlik
+├── app/                     # FastAPI backend
+│   ├── main.py             # API ana dosyası
+│   ├── requirements.txt    # Python paketleri
+│   └── Dockerfile          # Container
+├── Caddyfile               # Caddy konfigürasyonu
+├── docker-compose.yml      # Container orchestration
+├── deploy.sh               # Tek komut kurulum
+├── env.example             # Environment örneği
+└── README.md               # Bu dosya
 ```
 
-## 🌐 API Endpoints
+## 🛠️ Kurulum
 
-### PDF İşlemleri
-- `POST /api/merge` - PDF birleştirme
-- `POST /api/split` - PDF bölme
-- `POST /api/compress` - PDF sıkıştırma
-- `POST /api/compress-bulk` - Toplu PDF sıkıştırma
+### Ön Gereksinimler
 
-### Dönüştürme
-- `POST /api/convert/auto` - Otomatik format dönüştürme
-- `POST /api/convert/pdf-to-images` - PDF → Images
-- `POST /api/convert/images-to-pdf` - Images → PDF
-- `POST /api/convert/pdf-to-docx` - PDF → Word
-- `POST /api/convert/docx-to-pdf` - Word → PDF
+- Ubuntu 22.04+ VPS
+- Root erişimi
+- Domain (pdfislemleri.com) DNS ayarları
 
-### OCR
-- `POST /api/ocr` - Tek dosya OCR
-- `POST /api/ocr-bulk` - Toplu OCR
 
-### Güvenlik
-- `POST /api/encrypt` - PDF şifreleme
-- `POST /api/decrypt` - PDF şifre çözme
-- `POST /api/decrypt-bulk` - Toplu şifre çözme
+### Hızlı Kurulum
 
-### Monitoring
-- `GET /health` - Sağlık kontrolü
-- `GET /metrics` - Metrikler
-- `GET /health/ready` - Hazırlık kontrolü
-- `GET /health/live` - Canlılık kontrolü
+1. **Projeyi klonlayın:**
+```bash
+git clone <repo-url>
+cd web
+```
+
+2. **Environment dosyasını hazırlayın:**
+```bash
+cp env.example .env
+nano .env  # EMAIL adresini düzenleyin
+```
+
+3. **Kurulumu başlatın:**
+```bash
+chmod +x deploy.sh
+sudo ./deploy.sh
+```
+
+4. **Kontrol edin:**
+```bash
+docker compose ps
+docker compose logs -f caddy
+```
+
+## 🔧 Yönetim Komutları
+
+```bash
+# Servisleri durdur
+docker compose down
+
+# Logları görüntüle
+docker compose logs -f
+
+# Güncelleme
+git pull
+docker compose up -d --build
+
+# Sadece belirli servisi yeniden başlat
+docker compose restart caddy
+docker compose restart api
+
+# Disk kullanımı
+docker system df
+docker volume ls
+```
+
+## 🌐 Erişim
+
+- **Ana Site**: https://pdfislemleri.com
+- **API**: https://pdfislemleri.com/api
+- **Caddy Admin**: http://localhost:2019 (sadece local)
 
 ## 🔒 Güvenlik
 
-- **CSP Policy**: Content Security Policy ile güvenlik
-- **Rate Limiting**: API rate limiting
-- **File Validation**: Dosya türü ve boyut kontrolü
-- **Input Sanitization**: Güvenli input işleme
+- **HTTPS**: Otomatik Let's Encrypt SSL
+- **CSP**: Content Security Policy
+- **HSTS**: HTTP Strict Transport Security
+- **Headers**: Güvenlik başlıkları
+- **Firewall**: UFW port açma
 
-## 📱 Responsive Tasarım
+## 📊 Monitoring
 
-- Mobile-first yaklaşım
-- Tailwind CSS ile modern UI
-- Dark/Light mode desteği
-- Touch-friendly interface
-
-## 🚀 Production Deployment
-
-### Docker
 ```bash
-docker-compose up -d
+# Caddy metrics
+curl http://localhost:2019/metrics
+
+# Container health
+docker compose ps
+
+# Log analizi
+docker compose logs --tail=100 caddy | grep ERROR
 ```
 
-### Ubuntu Server
+## 🚨 Sorun Giderme
+
+### SSL Sertifika Sorunu
 ```bash
-chmod +x deploy-ubuntu.sh
-./deploy-ubuntu.sh
+# Caddy sertifika verilerini temizle
+docker compose down
+docker volume rm web_caddy_data
+docker compose up -d
 ```
 
-### Environment Variables
+### Port Çakışması
 ```bash
-ENVIRONMENT=production
-APP_MAX_UPLOAD_MB=50
-APP_RATE_LIMIT_PER_MINUTE=60
-APP_RATE_LIMIT_PER_HOUR=500
+# Port kullanımını kontrol et
+netstat -tulpn | grep :80
+netstat -tulpn | grep :443
+
+# Servisleri durdur
+sudo systemctl stop apache2 nginx
 ```
 
-## 🧪 Test
-
-### API Test
+### Disk Alanı
 ```bash
-.\test-api.ps1
+# Docker temizliği
+docker system prune -a
+docker volume prune
 ```
 
-### Manual Test
-1. Uygulamayı başlatın
-2. Browser'da `http://localhost:8000` açın
-3. PDF dosyası yükleyin ve işlemleri test edin
+## 🔄 Güncelleme
 
-## 📊 Performance
+```bash
+# Kod güncellemesi
+git pull origin main
 
-- **File Size Limit**: 50MB (production)
-- **Concurrent Processing**: 8 (production)
-- **Timeout**: 900s (production)
-- **Memory Optimization**: Large PDF handling
+# Container yeniden build
+docker compose down
+docker compose up -d --build
 
-## 🔧 Troubleshooting
+# Sadece frontend güncellemesi
+docker compose restart caddy
+```
 
-### Font Awesome Icons Görünmüyor
-1. `static/webfonts/` klasörünü kontrol edin
-2. CSS dosyasında font path'leri doğru mu?
-3. Browser console'da hata var mı?
+## 📝 Environment Değişkenleri
 
-### Tailwind CSS Yüklenmiyor
-1. `npm run build:css:prod` çalıştırın
-2. `static/css/tailwind.css` dosyası var mı?
-3. HTML'de local path kullanılıyor mu?
+| Değişken | Açıklama | Örnek |
+|----------|----------|-------|
+| `DOMAIN` | Ana domain | `pdfislemleri.com` |
+| `EMAIL` | SSL sertifika e-postası | `info@pdfislemleri.com` |
 
-### JSZip Hata Veriyor
-1. `static/js/jszip.min.js` dosyası var mı?
-2. HTML'de local path kullanılıyor mu?
-3. Browser console'da hata var mı?
+## 🎯 Performans Optimizasyonları
 
-## 📝 License
-
-MIT License - Detaylar için LICENSE dosyasına bakın.
+- **Sıkıştırma**: zstd + gzip
+- **Cache**: Statik dosyalar için 1 hafta
+- **CDN**: Tailwind CSS, Font Awesome
+- **Lazy Loading**: Resimler için
+- **Minification**: CSS/JS optimizasyonu
 
 ## 🤝 Katkıda Bulunma
 
-1. Fork edin
+1. Fork yapın
 2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit edin (`git commit -m 'Add amazing feature'`)
-4. Push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
+3. Commit yapın (`git commit -m 'Add amazing feature'`)
+4. Push yapın (`git push origin feature/amazing-feature`)
+5. Pull Request açın
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## 📞 İletişim
 
-- Website: [pdfislemleri.com](https://pdfislemleri.com)
-- Email: info@pdfislemleri.com
-- GitHub: [Repository Link]
+- **Website**: https://pdfislemleri.com
+- **E-posta**: info@pdfislemleri.com
+- **Güvenlik**: security@pdfislemleri.com
 
-## 🙏 Teşekkürler
+---
 
-- [Font Awesome](https://fontawesome.com/) - Icons
-- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
-- [FastAPI](https://fastapi.tiangolo.com/) - Web Framework
-- [PyPDF](https://pypdf.readthedocs.io/) - PDF Processing
+**Not**: Bu proje eğitim ve geliştirme amaçlıdır. Production kullanımı için ek güvenlik önlemleri alınmalıdır.

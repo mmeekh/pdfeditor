@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFişlemleri.com - Ücretsiz PDF Araçları | Birleştir, Ayır, Sıkıştır, Dönüştür</title>
+    <meta name="description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın, dönüştürün. Hızlı, güvenli ve kullanımı kolay PDF araçları. Online PDF işlemleri için en iyi platform.">
+    <meta name="keywords" content="pdf birleştir, pdf ayır, pdf sıkıştır, pdf dönüştürme, ücretsiz pdf araçları, pdf word çevirme, pdf jpg çevirme, pdf koru, pdf döndür, pdf filigran">
+    <meta name="author" content="PDFişlemleri.com">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pdfislemleri.com">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBF2E5K150"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XBF2E5K150');
+    </script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pdfislemleri.com">
+    <meta property="og:title" content="PDFişlemleri.com - Ücretsiz PDF Araçları">
+    <meta property="og:description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın. Hızlı, güvenli ve kullanımı kolay PDF araçları.">
+    <meta property="og:image" content="https://pdfislemleri.com/images/og-image.jpg">
+    <meta property="og:site_name" content="PDFişlemleri.com">
+    <meta property="og:locale" content="tr_TR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pdfislemleri.com">
+    <meta property="twitter:title" content="PDFişlemleri.com - Ücretsiz PDF Araçları">
+    <meta property="twitter:description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın. Hızlı, güvenli ve kullanımı kolay PDF araçları.">
+    <meta property="twitter:image" content="https://pdfislemleri.com/images/og-image.jpg">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/icons/site.webmanifest">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#0ea5e9">
+    <meta name="theme-color" content="#0ea5e9">
+    
+    <!-- Windows Tile -->
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Production uyarısını gizle
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PDFişlemleri.com",
+        "alternateName": "PDF İşlemleri",
+        "description": "Ücretsiz PDF araçları sunan online platform",
+        "url": "https://pdfislemleri.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://pdfislemleri.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "url": "https://pdfislemleri.com",
+            "logo": "https://pdfislemleri.com/images/logo.png"
+        },
+        "sameAs": [
+            "https://facebook.com/pdfislemleri",
+            "https://twitter.com/pdfislemleri",
+            "https://instagram.com/pdfislemleri"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "PDF Birleştirme",
+        "description": "Birden fazla PDF dosyasını tek bir belgede birleştirme hizmeti",
+        "provider": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com"
+        },
+        "serviceType": "PDF Processing",
+        "areaServed": "TR",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                        <i class="fas fa-file-pdf text-red-500 text-3xl"></i>
+                        <h1 class="text-2xl font-bold text-gray-800">PDFişlemleri.com</h1>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/blog" class="text-gray-600 hover:text-blue-600 transition">Blog</a>
+                    <a href="/about" class="text-gray-600 hover:text-blue-600 transition">Hakkımızda</a>
+                    <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button id="night-mode-btn" class="text-gray-600 hover:text-blue-600 transition p-2 rounded-lg hover:bg-gray-100" title="Gece Modu" tabindex="0" role="button" aria-label="Gece modunu aç/kapat">
+                        <span class="text-lg">🌙</span>
+                    </button>
+                    <button id="comfort-mode-btn" class="text-gray-600 hover:text-green-600 transition p-2 rounded-lg hover:bg-gray-100" title="Konfor Modu" tabindex="0" role="button" aria-label="Konfor modunu aç/kapat">
+                        <span class="text-lg">👀</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="site-content container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-12 fade-in">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">PDF'lerinizin Kurtarıcısı Burada!</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">Ücretsiz online araçlarla PDF'lerinizi birleştirin, sıkıştırın, dönüştürün, döndürün, kilidini açın, filigran ekleyin ve düzenleyin. Hayatınızın PDF stresini sona erdirin!</p>
+            <div class="flex justify-center">
+                <div class="relative max-w-xl w-full">
+                    <input type="text" placeholder="PDF aracını arayın..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="PDF aracı arama">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-4 py-1.5 rounded-lg hover:bg-blue-700 transition">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mt-4 text-sm text-gray-500 italic">
+                <i class="fas fa-lightbulb text-yellow-500"></i> İpucu: PDF'lerinizle konuşmaya çalışmayın, onlar size cevap veremez. Ama biz veririz!
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section class="mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Merge PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="merge">
+                    <div class="humor-badge">1</div>
+                    <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-object-group text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Birleştir</h3>
+                    <p class="text-gray-600 text-sm">Birden fazla PDF'i tek dosyada birleştirin. Ayrılıklar acıtır, birleşmeler mutluluk!</p>
+                </div>
+
+                <!-- Split PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="split">
+                    <div class="humor-badge">2</div>
+                    <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cut text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Ayır</h3>
+                    <p class="text-gray-600 text-sm">PDF sayfalarını ayırın veya belirli sayfaları çıkarın. Bazen ayrılmak en iyisidir!</p>
+                </div>
+
+                <!-- Compress PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="compress">
+                    <div class="humor-badge">3</div>
+                    <div class="bg-yellow-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-compress text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Sıkıştır</h3>
+                    <p class="text-gray-600 text-sm">Kaliteden ödün vermeden PDF boyutunu küçültün. PDF'leriniz diyet yapacak!</p>
+                </div>
+
+                <!-- PDF to Word Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-to-word">
+                    <div class="humor-badge">4</div>
+                    <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-file-word text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den Word'e</h3>
+                    <p class="text-gray-600 text-sm">PDF'leri düzenlenebilir Word belgelerine dönüştürün. Sihirbazlık gibi!</p>
+                </div>
+
+                <!-- Word to PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="word-to-pdf">
+                    <div class="humor-badge">5</div>
+                    <div class="bg-indigo-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-file-alt text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Word'den PDF'e</h3>
+                    <p class="text-gray-600 text-sm">Word belgelerini PDF'e dönüştürün. Metinleriniz resmiyet kazansın!</p>
+                </div>
+
+                <!-- PDF to PowerPoint Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-to-ppt">
+                    <div class="humor-badge">6</div>
+                    <div class="bg-pink-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-file-powerpoint text-pink-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den PPT'ye</h3>
+                    <p class="text-gray-600 text-sm">PDF'leri PowerPoint sunumlarına dönüştürün. Sunumunuz patlasın!</p>
+                </div>
+
+                <!-- Unlock PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="unlock">
+                    <div class="humor-badge">7</div>
+                    <div class="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-unlock text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Şifre Kaldır</h3>
+                    <p class="text-gray-600 text-sm">PDF'lerden şifre korumasını kaldırın. Hapishaneden kurtulun!</p>
+                </div>
+
+                <!-- Protect PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="protect">
+                    <div class="humor-badge">8</div>
+                    <div class="bg-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-lock text-teal-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Şifrele</h3>
+                    <p class="text-gray-600 text-sm">PDF'lerinize şifre koruması ekleyin. Gizlilik kalkanı aktif!</p>
+                </div>
+
+                <!-- Rotate PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="rotate">
+                    <div class="humor-badge">9</div>
+                    <div class="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-sync-alt text-orange-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Döndür</h3>
+                    <p class="text-gray-600 text-sm">PDF sayfalarını kalıcı olarak döndürün. Başaşağı dünyaya hoş geldiniz!</p>
+                </div>
+
+                <!-- Watermark PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="watermark">
+                    <div class="humor-badge">10</div>
+                    <div class="bg-cyan-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-stamp text-cyan-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Filigranla</h3>
+                    <p class="text-gray-600 text-sm">PDF'lere metin veya resim filigranı ekleyin. Benim malım benim!</p>
+                </div>
+
+                <!-- PDF to JPG Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-to-jpg">
+                    <div class="humor-badge">11</div>
+                    <div class="bg-amber-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-file-image text-amber-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den JPG'ye</h3>
+                    <p class="text-gray-600 text-sm">PDF sayfalarını JPG resimlerine dönüştürün. Bir resim bin kelime eder!</p>
+                </div>
+
+                <!-- Organize PDF Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="organize">
+                    <div class="humor-badge">12</div>
+                    <div class="bg-lime-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-sort text-lime-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Düzenle</h3>
+                    <p class="text-gray-600 text-sm">PDF sayfalarını yeniden sıralayın, ekleyin veya silin. Karmaşa bitsin!</p>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-gray-500 italic">
+                <i class="fas fa-laugh-beam text-yellow-500"></i> Bu araçlar o kadar harika ki, PDF'leriniz size teşekkür edecek!
+            </div>
+        </section>
+
+        <!-- Tool Interface (Initially Hidden) -->
+        <section id="toolInterface" class="hidden mb-12 fade-in">
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="toolTitle" class="text-2xl font-bold text-gray-800">Araç Başlığı</h3>
+                    <button id="closeToolButton" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Tool Description -->
+                <p id="toolDescription" class="text-gray-600 mb-6">Araç açıklaması buraya gelecek.</p>
+
+                <!-- Funny Quote -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <p class="text-yellow-700 italic">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        <span id="funnyQuote">PDF'lerinizle aranız iyi olsun diye buradayız!</span>
+                        <i class="fas fa-quote-right ml-2"></i>
+                    </p>
+                </div>
+
+                <!-- File Upload Area -->
+                <div id="fileUploadArea" class="file-drop-area border-2 border-dashed border-gray-300 rounded-lg p-8 text-center mb-6">
+                    <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                    <p class="text-gray-600 mb-2">PDF dosyalarınızı buraya sürükleyip bırakın</p>
+                    <p class="text-gray-500 text-sm mb-4">veya</p>
+                    <label class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg cursor-pointer transition">
+                        Dosyaları Seç
+                        <input type="file" id="fileInput" class="hidden" multiple accept=".pdf">
+                    </label>
+                    <div class="text-gray-500 text-sm mt-3 space-y-1">
+                        <p><i class="fas fa-info-circle"></i> Dosyalarınız bizimle güvende, işlem sonrası otomatik siliniyorlar. Söz!</p>
+                        <p><i class="fas fa-shield-alt"></i> Maksimum 10 dosya, toplam 50MB</p>
+                        <p><i class="fas fa-plus-circle"></i> Yeni dosyalar mevcut dosyalara eklenir</p>
+                    </div>
+                </div>
+
+                <!-- Selected Files List -->
+                <div id="selectedFiles" class="hidden mb-6">
+                    <h4 class="font-semibold text-gray-800 mb-3">Seçilen Dosyalar:</h4>
+                    <div id="filesList" class="space-y-2 mb-4"></div>
+                </div>
+
+                <!-- Tool Options (Will be populated based on selected tool) -->
+                <div id="toolOptions" class="mb-6"></div>
+
+                <!-- Process Button -->
+                <div class="flex justify-center">
+                    <button id="processButton" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>
+                        Dosyaları İşle
+                    </button>
+                </div>
+
+                <!-- Progress Bar (Legacy - Hidden by default) -->
+                <div id="progressContainer" class="hidden mt-6">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-700">İşleniyor...</span>
+                        <span id="progressPercent" class="text-gray-700">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div id="progressBar" class="progress-bar bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-2 text-center">
+                        <i class="fas fa-coffee"></i> Bu arada bir kahve molası verebilirsiniz...
+                    </p>
+                </div>
+
+                <!-- Result Area -->
+                <div id="resultArea" class="hidden mt-6">
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                            <p class="text-green-700 font-medium">İşlem başarıyla tamamlandı! Dosyanız otomatik olarak indirildi!</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg mr-3 transition">
+                            <i class="fas fa-download mr-2"></i>İndir
+                        </button>
+                        <button id="resetToolButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg transition">
+                            <i class="fas fa-redo mr-2"></i>Yeniden Başla
+                        </button>
+                    </div>
+                    <div class="mt-4 text-center text-gray-500 italic">
+                        <i class="fas fa-download text-blue-500"></i> Dosyanız İndirilenler klasörünüze kaydedildi. Başka bir işlem yapmak ister misiniz?
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="bg-white rounded-xl shadow-md p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Neden PDFişlemleri.com'u Sevmelisiniz?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-holding-heart text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Tamamen Ücretsiz</h3>
+                    <p class="text-gray-600">Tüm araçlarımızı ücretsiz kullanın. İyilik sever olarak, hiçbir ücret talep etmiyoruz!</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Hızlı & Verimli</h3>
+                    <p class="text-gray-600">Optimize edilmiş algoritmalarımızla PDF'lerinizi anında işleyin. Hızımızdan siz bile şaşıracaksınız!</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Çoklu Platform</h3>
+                    <p class="text-gray-600">Masaüstü, tablet ve mobil dahil tüm cihazlarda çalışır. PDF'leriniz neredeyseniz orada!</p>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-gray-500 italic">
+                <i class="fas fa-heart text-red-500"></i> Sadece PDF'lerinizi değil, kalbinizi de fethediyoruz!
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Kullanıcılarımız Ne Diyor?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/user1/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Ayşe Yılmaz</h4>
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"PDFişlemleri.com iş yerinde saatlerimi kurtardı. Birleştirme aracı bir can kurtaran! Artık PDF'lerle ilgili kabuslar görmüyorum."</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/user2/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Mehmet Kaya</h4>
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Sıkıştırma aracı PDF dosya boyutumu %80 azalttı ve kaliteden ödün vermedi. Şaşırdım kaldım! Bu sihir mi? Ayrıca ücretsiz olması harika!"</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/user3/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Zeynep Demir</h4>
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Çalışmalarım için her gün PDFişlemleri.com'u kullanıyorum. Dönüştürme araçları kusursuz çalışıyor. Ücretsiz olması da cabası! Teşekkür ederim."</p>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-gray-500 italic">
+                <i class="fas fa-award text-yellow-500"></i> Bu yorumlar %100 gerçek ve %100 abartısız... Belki biraz abartılı.
+            </div>
+        </section>
+
+        <!-- Fun Facts Section -->
+        <section class="bg-blue-50 rounded-xl shadow-md p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">PDF Hakkında Komik Gerçekler</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2"><i class="fas fa-laugh text-yellow-500 mr-2"></i>PDF'nin Anlamı</h3>
+                    <p class="text-gray-600">PDF aslında "Portatif Doküman Formatı" anlamına gelir, ama biz buna "Patatesli Döner Fasülye" diyoruz. Daha lezzetli, değil mi?</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2"><i class="fas fa-laugh text-yellow-500 mr-2"></i>PDF'lerin Sırrı</h3>
+                    <p class="text-gray-600">PDF'ler aslında gece uyumazlar. Siz uyurken onlar birbirleriyle sohbet eder ve "Neden bizi hep dönüştürüyorlar?" diye şikayet ederler.</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2"><i class="fas fa-laugh text-yellow-500 mr-2"></i>PDF Depresyonu</h3>
+                    <p class="text-gray-600">Araştırmalar gösteriyor ki, her 10 kişiden 7'si PDF dosyalarını açamadığında hafif bir depresyon yaşar. PDFişlemleri.com olarak bu depresyonu tedavi ediyoruz!</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2"><i class="fas fa-laugh text-yellow-500 mr-2"></i>PDF'lerin Hobisi</h3>
+                    <p class="text-gray-600">Boş zamanlarında PDF'ler birbirlerini sıkıştırmayı ve birleştirmeyi severler. Biz sadece onların hobilerine yardımcı oluyoruz!</p>
+                </div>
+            </div>
+        </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer bg-gray-900 text-white mt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">PDFişlemleri.com</h3>
+                        <p class="text-gray-400 text-sm">
+                            PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-semibold mb-4">Şirket</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="/about" class="hover:text-white transition">Hakkımızda</a></li>
+                            <li><a href="/blog" class="hover:text-white transition">Blog</a></li>
+                            <li><a href="/contact" class="hover:text-white transition">İletişim</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-semibold mb-4">Yasal</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="/terms" class="hover:text-white transition">Hizmet Şartları</a></li>
+                            <li><a href="/privacy" class="hover:text-white transition">Gizlilik Politikası</a></li>
+                            <li><a href="/cookies" class="hover:text-white transition">Çerez Politikası</a></li>
+                            <li><a href="/kvkk" class="hover:text-white transition">KVKK</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-semibold mb-4">Sosyal Medya</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/emin-kılıç-250b14210/" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://instagram.com/heremmkh" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                    <p>&copy; 2024 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- Modern PDF Loader -->
+    <div id="modern-pdf-loader" aria-live="assertive" aria-busy="false"
+         class="fixed inset-0 flex items-center justify-center z-[9999] transition-all duration-300 opacity-0 pointer-events-none"
+         style="background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(236,72,153,.08))">
+      <div class="relative bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full mx-4 overflow-hidden border border-gray-100">
+        <div id="wind-effect" class="wind-effect"></div>
+
+        <!-- PDF icon -->
+        <div class="relative mb-6 flex justify-center">
+          <svg width="160" height="180" viewBox="0 0 160 180" aria-hidden="true" class="drop-shadow-lg">
+            <g class="pdf-page">
+              <!-- A4 sayfa: 1.2x büyütülmüş ve ortalanmış -->
+              <rect x="22.5" y="15.5" rx="8" ry="8" width="115" height="149" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+
+              <!-- İç detayları da aynı merkeze taşımak için -9.5, -12.5 translate -->
+              <g transform="translate(-9.5,-12.5)">
+                <!-- Başlık satırı -->
+                <rect x="42" y="46" width="76" height="8" rx="2" fill="#f3f4f6"/>
+                <!-- İçerik satırları (toplam 5 kısa + 1 uzun varyasyon) -->
+                <rect x="42" y="62" width="52" height="6" rx="2" fill="#e5e7eb"/>
+                <rect x="42" y="74" width="68" height="6" rx="2" fill="#e5e7eb"/>
+                <rect x="42" y="86" width="45" height="6" rx="2" fill="#e5e7eb"/>
+                <!-- Yeni eklenen 2 satır -->
+                <rect x="42" y="98" width="60" height="6" rx="2" fill="#e5e7eb"/>
+                <rect x="42" y="110" width="72" height="6" rx="2" fill="#e5e7eb"/>
+
+                <!-- Rozet kutusu ve metin aşağı alındı (çakışmayı önlemek için) -->
+                <rect id="file-type-box" x="42" y="125" width="50" height="30" rx="4" fill="#3b82f6"/>
+                <text id="file-type-text" x="67" y="145" text-anchor="middle" font-size="14" font-weight="bold" fill="white">WORD</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- texts -->
+        <div class="text-center mb-6">
+          <p id="loader-message" class="text-gray-700 font-medium text-lg">Dosyalar işleniyor...</p>
+          <p id="loader-submessage" class="text-gray-700 text-sm mt-1 opacity-80">Bu işlem birkaç saniye sürebilir</p>
+        </div>
+
+        <!-- progress -->
+        <div class="bg-gray-100 rounded-full h-2 overflow-hidden">
+          <div id="progress-fill" class="progress-fill h-full rounded-full w-0 transition-all duration-300"></div>
+        </div>
+        <div class="flex justify-between items-center mt-4 text-xs text-gray-500">
+          <span id="current-status">Başlatılıyor...</span>
+          <span id="progress-percentage">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Notification -->
+    <div id="cookie-notification" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg transform translate-y-full transition-transform duration-500 ease-in-out z-50">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-cookie-bite text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">🍪 Çerezler Hakkında</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed max-w-2xl">
+                            Bu web sitesi deneyiminizi geliştirmek için çerezler kullanır. Sitemizi kullanmaya devam ederek, 
+                            <a href="/cookies" class="text-blue-600 hover:text-blue-800 underline">çerez politikamızı</a> kabul etmiş olursunuz. 
+                            Çerezler, size kişiselleştirilmiş içerik sunmamıza ve site performansını analiz etmemize yardımcı olur.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                    <button id="acceptCookiesButton" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-md">
+                        <i class="fas fa-check mr-2"></i>Tümünü Kabul Et
+                    </button>
+                    <button id="rejectCookiesButton" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-medium transition-all duration-200 border border-gray-300">
+                        <i class="fas fa-times mr-2"></i>Reddet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Management (Global) -->
+    <script src="scroll-manager.js"></script>
+    
+    <!-- JavaScript - Modular System Only -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

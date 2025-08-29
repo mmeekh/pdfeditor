@@ -1,5 +1,0 @@
-[33mf6c3bf6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update PDF editor with Tailwind CSS, Node.js dependencies, and SSL setup scripts
-[33m4ca5778[m Fix Docker + Nginx + Supervisor + Gunicorn/FastAPI stack
-[33mbdc7da1[m Production deployment fixes: Dockerfile permissions, nginx config, supervisor config, resource limits
-[33mcea5feb[m Clean up unnecessary files and update .gitignore
-[33m41f6b04[m Initial commit: PDF Tools API production ready

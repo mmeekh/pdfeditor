@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - PDFişlemleri.com | PDF İpuçları, Rehberler ve Çözümler</title>
+    <meta name="description" content="PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler, pratik ipuçları ve PDF işlemleri hakkında detaylı bilgiler.">
+    <meta name="keywords" content="pdf blog, pdf ipuçları, pdf rehber, pdf nasıl yapılır, pdf çözümleri, pdf eğitimi">
+    <meta name="author" content="PDFişlemleri.com">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pdfislemleri.com/blog">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pdfislemleri.com/blog">
+    <meta property="og:title" content="Blog - PDFişlemleri.com | PDF İpuçları ve Rehberler">
+    <meta property="og:description" content="PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler ve pratik ipuçları.">
+    <meta property="og:image" content="https://pdfislemleri.com/images/blog-og.jpg">
+    <meta property="og:site_name" content="PDFişlemleri.com">
+    <meta property="og:locale" content="tr_TR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pdfislemleri.com/blog">
+    <meta property="twitter:title" content="Blog - PDFişlemleri.com | PDF İpuçları ve Rehberler">
+    <meta property="twitter:description" content="PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler ve pratik ipuçları.">
+    <meta property="twitter:image" content="https://pdfislemleri.com/images/blog-og.jpg">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/icons/site.webmanifest">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#0ea5e9">
+    <meta name="theme-color" content="#0ea5e9">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "PDFişlemleri.com Blog",
+        "description": "PDF dosyalarıyla ilgili ipuçları, rehberler ve çözümler",
+        "url": "https://pdfislemleri.com/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfislemleri.com/images/logo.png"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer" title="Ana Sayfaya Git">
+                        <i class="fas fa-file-pdf text-red-500 text-3xl"></i>
+                        <h1 class="text-2xl font-bold text-gray-800">PDFişlemleri.com</h1>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition">Ana Sayfa</a>
+                    <a href="/blog" class="text-blue-600 font-medium">Blog</a>
+                    <a href="/about" class="text-gray-600 hover:text-blue-600 transition">Hakkımızda</a>
+                    <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button id="night-mode-btn" class="text-gray-600 hover:text-blue-600 transition p-2 rounded-lg hover:bg-gray-100" title="Gece Modu" tabindex="0" role="button" aria-label="Gece modunu aç/kapat">
+                        <span class="text-lg">🌙</span>
+                    </button>
+                    <button id="comfort-mode-btn" class="text-gray-600 hover:text-green-600 transition p-2 rounded-lg hover:bg-gray-100" title="Konfor Modu" tabindex="0" role="button" aria-label="Konfor modunu aç/kapat">
+                        <span class="text-lg">👀</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="site-content container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-12 fade-in">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Blog & Rehberler</h1>
+            <p class="text-gray-600 max-w-3xl mx-auto text-lg mb-8">PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler, pratik ipuçları ve uzman tavsiyeleri.</p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="blogSearch" placeholder="Blog yazılarında ara..." class="w-full px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Posts -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Öne Çıkan Yazılar</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Featured Post 1 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=400&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">ÖNE ÇIKAN</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>15 Aralık 2024</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>5 dk okuma</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
+                            <a href="/blog/word-pdf-donusturme" class="hover:text-blue-600 transition">Programsız Word'den PDF'e Dönüştürme: 3 Basit Adımda Zamandan Kazanın!</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">Program kurma derdi olmadan, PDFişlemleri.com ile Word belgelerini saniyeler içinde nasıl PDF'e dönüştürebileceklerini öğrenin.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <img src="https://images.unsplash.com/seed/author1/32/32" alt="Yazar" class="w-8 h-8 rounded-full">
+                                <span class="text-sm text-gray-600">Ahmet Yılmaz</span>
+                            </div>
+                            <a href="/blog/word-pdf-donusturme" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Featured Post 2 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">YENİ</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>12 Aralık 2024</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>7 dk okuma</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
+                            <a href="/blog/telefondan-pdf-duzenleme" class="hover:text-blue-600 transition">Telefondan PDF Düzenleme: Hareket Halindeyken Belgelerinizi Kontrol Altına Alın!</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">Artık PDF düzenlemek için bilgisayara bağlı kalmak zorunda değilsiniz. Mobil cihazlarınızdan PDF'lerinizi düzenleyin.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <img src="https://images.unsplash.com/seed/author2/32/32" alt="Yazar" class="w-8 h-8 rounded-full">
+                                <span class="text-sm text-gray-600">Zeynep Kaya</span>
+                            </div>
+                            <a href="/blog/telefondan-pdf-duzenleme" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Kategoriler</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="/blog/kategori/pdf-donusturme" class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl text-center hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105">
+                    <i class="fas fa-exchange-alt text-3xl mb-3"></i>
+                    <h3 class="font-bold">PDF Dönüştürme</h3>
+                    <p class="text-sm opacity-90">12 yazı</p>
+                </a>
+                
+                <a href="/blog/kategori/pdf-duzenleme" class="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-xl text-center hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105">
+                    <i class="fas fa-edit text-3xl mb-3"></i>
+                    <h3 class="font-bold">PDF Düzenleme</h3>
+                    <p class="text-sm opacity-90">8 yazı</p>
+                </a>
+                
+                <a href="/blog/kategori/pdf-ipuclari" class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-xl text-center hover:from-purple-600 hover:to-purple-700 transition-all transform hover:scale-105">
+                    <i class="fas fa-lightbulb text-3xl mb-3"></i>
+                    <h3 class="font-bold">PDF İpuçları</h3>
+                    <p class="text-sm opacity-90">15 yazı</p>
+                </a>
+                
+                <a href="/blog/kategori/pdf-cozumleri" class="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-xl text-center hover:from-orange-600 hover:to-orange-700 transition-all transform hover:scale-105">
+                    <i class="fas fa-tools text-3xl mb-3"></i>
+                    <h3 class="font-bold">PDF Çözümleri</h3>
+                    <p class="text-sm opacity-90">20 yazı</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Latest Posts -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Son Yazılar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Post 1 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="PDF Boyut Küçültme" class="w-full h-40 object-cover">
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>10 Aralık 2024</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">
+                            <a href="/blog/pdf-boyut-kucultme" class="hover:text-blue-600 transition">PDF Boyut Küçültme Rehberi: Kaliteyi Bozmadan Dosyalarınızı E-postalayın!</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-3">"Bu dosya e-posta için çok büyük" uyarısının ne kadar can sıkıcı olduğunu anlatan ve bu soruna kesin çözüm sunan rehber.</p>
+                        <a href="/blog/pdf-boyut-kucultme" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                            Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=200&fit=crop" alt="PDF İmzalama" class="w-full h-40 object-cover">
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>8 Aralık 2024</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">
+                            <a href="/blog/pdf-imzalama" class="hover:text-blue-600 transition">İmzasız Belge Kalmasın: Adım Adım Online PDF İmzalama</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-3">Belgeleri yazdırma, imzalama ve tekrar tarama zahmetine son veren dijital imzanın kolaylığını öğrenin.</p>
+                        <a href="/blog/pdf-imzalama" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                            Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="PDF Güvenlik" class="w-full h-40 object-cover">
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>5 Aralık 2024</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">
+                            <a href="/blog/pdf-guvenlik" class="hover:text-blue-600 transition">PDF Güvenlik: Belgelerinizi Nasıl Koruyabilirsiniz?</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-3">PDF dosyalarınızı şifreleme, kısıtlama ve güvenli hale getirme yöntemlerini keşfedin.</p>
+                        <a href="/blog/pdf-guvenlik" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                            Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop" alt="PDF Birleştirme" class="w-full h-40 object-cover">
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>3 Aralık 2024</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">
+                            <a href="/blog/pdf-birlestirme" class="hover:text-blue-600 transition">PDF Birleştirme: Birden Fazla Dosyayı Tek PDF'te Nasıl Toplarsınız?</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-3">Çoklu PDF dosyalarını tek bir belgede birleştirme işlemini adım adım öğrenin.</p>
+                        <a href="/blog/pdf-birlestirme" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                            Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=200&fit=crop" alt="PDF OCR" class="w-full h-40 object-cover">
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>1 Aralık 2024</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">
+                            <a href="/blog/pdf-ocr" class="hover:text-blue-600 transition">OCR Teknolojisi: Taranmış PDF'leri Düzenlenebilir Metne Çevirin</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-3">Optik Karakter Tanıma teknolojisi ile taranmış belgeleri düzenlenebilir hale getirin.</p>
+                        <a href="/blog/pdf-ocr" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                            Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="w-full h-40 bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-white text-6xl"></i>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>28 Kasım 2024</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">
+                            <a href="/blog/pdf-formlari" class="hover:text-blue-600 transition">PDF Formları: Dijital Belge Doldurma Sanatı</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-3">PDF formlarını nasıl dolduracağınızı ve düzenleyeceğinizi öğrenin.</p>
+                        <a href="/blog/pdf-formlari" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                            Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+    </main>
+
+        <!-- Footer -->
+        <footer class="site-footer bg-gray-900 text-white mt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">PDFişlemleri.com</h3>
+                        <p class="text-gray-400 text-sm">
+                            PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-semibold mb-4">Şirket</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="/about" class="hover:text-white transition">Hakkımızda</a></li>
+                            <li><a href="/blog" class="hover:text-white transition">Blog</a></li>
+                            <li><a href="/contact" class="hover:text-white transition">İletişim</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-semibold mb-4">Yasal</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="/terms" class="hover:text-white transition">Hizmet Şartları</a></li>
+                            <li><a href="/privacy" class="hover:text-white transition">Gizlilik Politikası</a></li>
+                            <li><a href="/cookies" class="hover:text-white transition">Çerez Politikası</a></li>
+                            <li><a href="/kvkk" class="hover:text-white transition">KVKK</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-semibold mb-4">Sosyal Medya</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/emin-kılıç-250b14210/" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://instagram.com/heremmkh" target="_blank" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                    <p>&copy; 2024 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="scroll-manager.js" defer></script>
+    <script type="module" src="js/theme-manager.js"></script>
+</body>
+</html>
