@@ -103,7 +103,9 @@ class PerformanceMonitor {
             window.addEventListener('load', () => {
                 const perfData = window.performance.timing;
                 const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-                
+                if (pageLoadTime < 0) {
+                    window.disableAutoScroll = true;
+                }
                 this.trackEvent('page_load', { load_time: pageLoadTime });
             });
         }

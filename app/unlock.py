@@ -47,44 +47,39 @@ class PDFUnlocker:
         if out_path is None:
             out_path = os.path.join(self.temp_dir, self._out_name(src_pdf))
 
+        doc = None
         try:
             # PDF'i PyMuPDF ile aç
             doc = fitz.open(src_pdf)
-            
+
             # PDF şifreli mi kontrol et
             was_encrypted = doc.needs_pass
-            
+
             if was_encrypted:
-                # Şifreyi dene
-                try:
-                    doc.authenticate(password)
-                except Exception as e:
-                    doc.close()
-                    raise PDFUnlockError(f"Şifre yanlış: {str(e)}")
-                
-                # Şifreli PDF'i şifresiz olarak kaydet
+                if not doc.authenticate(password):
+                    raise PDFUnlockError("Şifre yanlış")
                 doc.save(out_path, encryption=fitz.PDF_ENCRYPT_NONE)
             else:
-                # Şifresiz PDF'i kopyala
                 doc.save(out_path)
-            
-            doc.close()
-
-            # Dosyanın gerçekten oluşturulduğunu kontrol et
-            if not os.path.exists(out_path):
-                raise PDFUnlockError("Şifresi kaldırılmış PDF oluşturulamadı")
-
-            return UnlockResult(
-                output_path=out_path, 
-                unlocked=True, 
-                was_encrypted=was_encrypted
-            )
 
         except PDFUnlockError:
             raise
         except Exception as e:
             logger.error(f"PDF şifre kaldırma hatası: {e}")
             raise PDFUnlockError(f"PDF şifre kaldırma sırasında hata oluştu: {str(e)}")
+        finally:
+            if doc:
+                doc.close()
+
+        # Dosyanın gerçekten oluşturulduğunu kontrol et
+        if not os.path.exists(out_path):
+            raise PDFUnlockError("Şifresi kaldırılmış PDF oluşturulamadı")
+
+        return UnlockResult(
+            output_path=out_path,
+            unlocked=True,
+            was_encrypted=was_encrypted
+        )
 
     def check_encryption(self, pdf_path: str) -> bool:
         """PDF'in şifreli olup olmadığını kontrol et"""

@@ -11,12 +11,12 @@ if (isReload) {
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
-    // Sadece bu yüklemede en üste al
-    window.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => window.scrollTo(0, 0), 0);
-    }, { once: true });
     window.addEventListener('load', () => {
-        window.scrollTo(0, 0);
+        setTimeout(() => {
+            if (!window.disableAutoScroll) {
+                window.scrollTo(0, 0);
+            }
+        }, 0);
     }, { once: true });
 }
 
