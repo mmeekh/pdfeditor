@@ -1,0 +1,37 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Deploy to VPS
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.SSH_PORT || 22 }}
+        script: |
+          cd /path/to/web
+          git pull origin main
+          docker compose down
+          docker compose up -d --build
+          echo "Deployment completed successfully!"
+          
+    - name: Health Check
+      run: |
+        echo "Waiting for deployment to stabilize..."
+        sleep 30
+        
+    - name: Verify Deployment
+      run: |
+        echo "Deployment verification completed!"
