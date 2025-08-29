@@ -11,6 +11,9 @@ import wordToPdfTool from '../tools/word-to-pdf.js';
 import pdfToPptTool from '../tools/pdf-to-ppt.js';
 import protectTool from '../tools/protect.js';
 import unlockTool from '../tools/unlock.js';
+import rotateTool from '../tools/rotate.js';
+import watermarkTool from '../tools/watermark.js';
+import pdfToJpgTool from '../tools/pdf-to-jpg.js';
 import notifications from './notifications.js';
 import fileHandler from './fileHandler.js';
 import pdfLoader from './loader.js';
@@ -26,7 +29,10 @@ class ToolManager {
             'word-to-pdf': wordToPdfTool,
             'pdf-to-ppt': pdfToPptTool,
             'protect': protectTool,
-            'unlock': unlockTool
+            'unlock': unlockTool,
+            'rotate': rotateTool,
+            'watermark': watermarkTool,
+            'pdf-to-jpg': pdfToJpgTool
         };
         
         this.initializeEventListeners();

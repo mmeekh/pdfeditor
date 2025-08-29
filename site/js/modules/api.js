@@ -313,6 +313,86 @@ class PDFApi {
     getUnlockDownloadUrl(sessionId, filename) {
         return `${this.baseUrl}/tools/unlock/download/${sessionId}/${filename}`;
     }
+
+    // ===== Rotate APIs =====
+    async uploadFileForRotate(file) {
+        const formData = new FormData();
+        formData.append('file', file);
+        const res = await fetch(`${this.baseUrl}/tools/rotate/upload`, { method: 'POST', body: formData });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF Döndürme yükleme hatası');
+        }
+        return res.json();
+    }
+
+    async processRotate(sessionId, degrees) {
+        const res = await fetch(`${this.baseUrl}/tools/rotate/process/${sessionId}?degrees=${encodeURIComponent(degrees)}`, { method: 'POST' });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF Döndürme işlem hatası');
+        }
+        return res.json();
+    }
+
+    getRotateDownloadUrl(sessionId, filename) {
+        return `${this.baseUrl}/tools/rotate/download/${sessionId}/${filename}`;
+    }
+
+    // ===== Watermark APIs =====
+    async uploadFileForWatermark(file) {
+        const formData = new FormData();
+        formData.append('file', file);
+        const res = await fetch(`${this.baseUrl}/tools/watermark/upload`, { method: 'POST', body: formData });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'Filigran yükleme hatası');
+        }
+        return res.json();
+    }
+
+    async processWatermark(sessionId, opts) {
+        const params = new URLSearchParams();
+        if (opts.text) params.set('text', opts.text);
+        if (opts.position) params.set('position', opts.position);
+        if (opts.fontSize) params.set('font_size', opts.fontSize);
+        if (opts.color) params.set('color', opts.color);
+        const res = await fetch(`${this.baseUrl}/tools/watermark/process/${sessionId}?${params.toString()}`, { method: 'POST' });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'Filigran işlem hatası');
+        }
+        return res.json();
+    }
+
+    getWatermarkDownloadUrl(sessionId, filename) {
+        return `${this.baseUrl}/tools/watermark/download/${sessionId}/${filename}`;
+    }
+
+    // ===== PDF → JPG APIs =====
+    async uploadFileForPdfToJpg(file) {
+        const formData = new FormData();
+        formData.append('file', file);
+        const res = await fetch(`${this.baseUrl}/tools/pdf-to-jpg/upload`, { method: 'POST', body: formData });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF→JPG yükleme hatası');
+        }
+        return res.json();
+    }
+
+    async processPdfToJpg(sessionId) {
+        const res = await fetch(`${this.baseUrl}/tools/pdf-to-jpg/process/${sessionId}`, { method: 'POST' });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF→JPG işlem hatası');
+        }
+        return res.json();
+    }
+
+    getPdfToJpgDownloadUrl(sessionId, filename) {
+        return `${this.baseUrl}/tools/pdf-to-jpg/download/${sessionId}/${filename}`;
+    }
 }
 
 // Singleton instance

@@ -12,6 +12,9 @@ from routers.word_to_pdf import router as word_to_pdf_router
 from routers.pdf_to_ppt import router as pdf_to_ppt_router
 from routers.protect import router as protect_router
 from routers.unlock import router as unlock_router
+from routers.rotate import router as rotate_router
+from routers.watermark import router as watermark_router
+from routers.pdf_to_jpg import router as pdf_to_jpg_router
 
 
 logging.basicConfig(level=logging.INFO)
@@ -80,4 +83,7 @@ app.include_router(word_to_pdf_router)
 app.include_router(pdf_to_ppt_router)
 app.include_router(protect_router)
 app.include_router(unlock_router)
+app.include_router(rotate_router)
+app.include_router(watermark_router)
+app.include_router(pdf_to_jpg_router)
 
