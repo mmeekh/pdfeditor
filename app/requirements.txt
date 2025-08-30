@@ -16,3 +16,4 @@ python-pptx==0.6.21
 # Diğer yardımcı kütüphaneler
 aiofiles==23.2.1
 pydantic-settings==2.3.4
+requests==2.31.0

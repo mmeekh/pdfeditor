@@ -1,6 +1,6 @@
 {
   email {env.EMAIL}
-  auto_https off
+  auto_https
 }
 
 :80 {
