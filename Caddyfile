@@ -1,9 +1,8 @@
 {
   email {env.EMAIL}
-  auto_https
 }
 
-:80 {
+pdfislemleri.com {
   encode zstd gzip
   
   # Ana site root
