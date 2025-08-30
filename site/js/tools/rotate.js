@@ -11,15 +11,13 @@ class RotateTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1){
-            notifications.error('Lütfen tek bir PDF yükleyin');
-            return;
-        }
+        if (files.length < 1){ notifications.error('En az 1 PDF yükleyin'); return; }
+        if (files.length > 10){ notifications.error('Maksimum 10 dosya'); return; }
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
         try {
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: 'Dosya yükleniyor' });
-            const up = await pdfApi.uploadFileForRotate(files[0]);
+            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `${files.length} dosya yükleniyor` });
+            const up = await pdfApi.uploadFilesForRotate(files);
             const sessionId = up.session_id;
             const deg = parseInt(document.getElementById('rotateDirection')?.value || '90', 10);
             pdfLoader.updateProgress(50, 'PDF döndürülüyor...');
@@ -37,7 +35,7 @@ class RotateTool {
     showResult(result){
         const resultArea = document.getElementById('resultArea');
         if (!resultArea) return;
-        const url = pdfApi.getRotateDownloadUrl(result.session_id, result.output_file);
+        const url = window.location.origin + result.download_url;
         fileHandler.triggerFileDownload(url);
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn){
@@ -61,7 +59,7 @@ class RotateTool {
     }
 
     getFunnyQuote(){ return 'Dünya ters dönerse, PDF de döner!'; }
-    getDescription(){ return 'PDF sayfalarını 90°/180°/270° açılarıyla döndürün.'; }
+    getDescription(){ return 'PDF sayfalarını 90°/180°/270° açılarıyla döndürün. Birden fazlaysa ZIP olarak indirin.'; }
 }
 
 const rotateTool = new RotateTool();

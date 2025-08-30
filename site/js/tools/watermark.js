@@ -11,7 +11,8 @@ class WatermarkTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1){ notifications.error('Lütfen tek bir PDF yükleyin'); return; }
+        if (files.length < 1){ notifications.error('En az 1 PDF yükleyin'); return; }
+        if (files.length > 10){ notifications.error('Maksimum 10 dosya'); return; }
         const text = document.getElementById('watermarkText')?.value || '';
         if (!text){ notifications.error('Filigran metni girin'); return; }
         const position = document.getElementById('watermarkPosition')?.value || 'center';
@@ -20,8 +21,8 @@ class WatermarkTool {
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
         try {
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: 'Dosya yükleniyor' });
-            const up = await pdfApi.uploadFileForWatermark(files[0]);
+            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `${files.length} dosya yükleniyor` });
+            const up = await pdfApi.uploadFilesForWatermark(files);
             const sessionId = up.session_id;
             pdfLoader.updateProgress(50, 'Filigran uygulanıyor...');
             const result = await pdfApi.processWatermark(sessionId, { text, position, fontSize, color });
@@ -38,7 +39,7 @@ class WatermarkTool {
     showResult(result){
         const resultArea = document.getElementById('resultArea');
         if (!resultArea) return;
-        const url = pdfApi.getWatermarkDownloadUrl(result.session_id, result.output_file);
+        const url = window.location.origin + result.download_url;
         fileHandler.triggerFileDownload(url);
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn){
@@ -75,7 +76,7 @@ class WatermarkTool {
     }
 
     getFunnyQuote(){ return 'İmzanız her sayfada!'; }
-    getDescription(){ return 'Metin filigranı ekleyin, konum ve stilini seçin.'; }
+    getDescription(){ return 'Metin filigranı ekleyin, konum ve stilini seçin. Birden fazlaysa ZIP olarak indirin.'; }
 }
 
 const watermarkTool = new WatermarkTool();

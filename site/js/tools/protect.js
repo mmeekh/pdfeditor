@@ -11,10 +11,8 @@ class ProtectTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1) { 
-            notifications.error('Lütfen tek bir PDF yükleyin'); 
-            return; 
-        }
+        if (files.length < 1){ notifications.error('En az 1 PDF yükleyin'); return; }
+        if (files.length > 10){ notifications.error('Maksimum 10 dosya'); return; }
 
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
@@ -27,8 +25,8 @@ class ProtectTool {
                 return;
             }
 
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosya yükleniyor` });
-            const up = await pdfApi.uploadFileForProtect(files[0]);
+            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `${files.length} dosya yükleniyor` });
+            const up = await pdfApi.uploadFilesForProtect(files);
             const sessionId = up.session_id;
 
             pdfLoader.updateProgress(50, 'PDF şifreleniyor...');
@@ -70,8 +68,8 @@ class ProtectTool {
     showResult(result){
         const resultArea = document.getElementById('resultArea');
         if (!resultArea) return;
-        
-        const url = pdfApi.getProtectDownloadUrl(result.session_id, result.output_file);
+
+        const url = window.location.origin + result.download_url;
         fileHandler.triggerFileDownload(url);
 
         const downloadBtn = resultArea.querySelector('button');
@@ -150,8 +148,8 @@ class ProtectTool {
         return 'PDF artık güvenli! 🔐 Şifreler sizin, gizlilik bizim!'; 
     }
     
-    getDescription(){ 
-        return "PDF dosyalarınıza güçlü şifre koruması ekleyin; kullanıcı izinlerini özelleştirin."; 
+    getDescription(){
+        return "PDF dosyalarınıza güçlü şifre koruması ekleyin; birden fazlaysa ZIP olarak indirin.";
     }
 }
 
