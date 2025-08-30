@@ -207,7 +207,7 @@ class FileHandler {
             <span>${totalSizeMB}MB / 50MB</span>
         `;
         filesList.appendChild(limitInfo);
-        
+
         const selectedFilesElement = document.getElementById('selectedFiles');
         if (selectedFilesElement) {
             selectedFilesElement.classList.remove('hidden');
@@ -234,6 +234,9 @@ class FileHandler {
                 }
             }, 100);
         }
+
+        // Custom event: notify listeners that files list updated
+        document.dispatchEvent(new CustomEvent('filesUpdated', { detail: { files: this.selectedFiles } }));
     }
 
     /**
