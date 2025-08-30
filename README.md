@@ -65,7 +65,7 @@ cd web
 2. **Environment dosyasını hazırlayın:**
 ```bash
 cp env.example .env
-nano .env  # EMAIL adresini düzenleyin
+nano .env  # EMAIL, SECRET_KEY ve diğer değişkenleri düzenleyin
 ```
 
 3. **Kurulumu başlatın:**
