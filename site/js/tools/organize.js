@@ -23,6 +23,10 @@ class OrganizeTool {
         if (!pdfjsLib) {
             try {
                 pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs');
+                                // PDF.js requires a separate worker file; specify its location when loaded dynamically
+                if (pdfjsLib?.GlobalWorkerOptions) {
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.mjs';
+                }
             } catch (err) {
                 notifications.error('PDF önizleme için gerekli kütüphane yüklenemedi');
                 throw err;
