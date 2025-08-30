@@ -18,16 +18,29 @@ router = APIRouter(prefix="/api/tools/pdf-to-ppt", tags=["pdf-to-ppt"])
 
 
 @router.post("/upload")
-async def upload_pdf_for_ppt(file: UploadFile = File(...)):
-    validate_pdf_file(file)
+async def upload_pdfs_for_ppt(files: list[UploadFile] = File(...)):
+    if len(files) == 0:
+        raise HTTPException(status_code=400, detail="En az 1 PDF dosyası gereklidir")
+    if len(files) > settings.MAX_FILES:
+        raise HTTPException(status_code=400, detail=f"Maksimum {settings.MAX_FILES} dosya yüklenebilir")
+
     session_id = datetime.now().strftime("%Y%m%d_%H%M%S_") + os.urandom(4).hex()
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     os.makedirs(session_dir, exist_ok=True)
 
+    total_size = 0
+    uploaded: list[dict] = []
     try:
-        file_path = Path(session_dir) / file.filename
-        await save_upload_file(file, file_path)
-        return {"session_id": session_id, "file": {"original_name": file.filename, "path": str(file_path), "size": getattr(file, "size", 0)}}
+        for idx, file in enumerate(files):
+            validate_pdf_file(file)
+            if getattr(file, "size", None) is not None:
+                total_size += file.size
+                if total_size > settings.MAX_FILE_SIZE:
+                    raise HTTPException(status_code=400, detail=f"Toplam boyut {settings.MAX_FILE_SIZE/(1024*1024)}MB sınırını aşıyor")
+            path = Path(session_dir) / f"{idx}_{file.filename}"
+            await save_upload_file(file, path)
+            uploaded.append({"original_name": file.filename, "path": str(path), "size": getattr(file, "size", 0)})
+        return {"session_id": session_id, "files": uploaded}
     except Exception as e:
         if os.path.exists(session_dir):
             import shutil
@@ -42,27 +55,54 @@ async def process_pdf_to_ppt(session_id: str):
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
 
-    pdfs = list(Path(session_dir).glob("*.pdf"))
-    if not pdfs:
+    files = [str(p) for p in Path(session_dir).glob("*.pdf")]
+    if not files:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
-    input_pdf = str(pdfs[0])
+
+    def _upload_index_key(p: str) -> int:
+        name = Path(p).name
+        parts = name.split('_', 1)
+        if len(parts) == 2 and parts[0].isdigit():
+            return int(parts[0])
+        return 0
+
+    pdf_files = sorted(files, key=_upload_index_key)
 
     converter = PDFToPPTConverter(temp_dir=session_dir)
-    try:
-        result = converter.convert(input_pdf)
-        output_name = os.path.basename(result.output_path)
-        return {
-            "success": True,
-            "session_id": session_id,
-            "output_file": output_name,
-            "page_count": result.page_count,
-            "download_url": f"/api/tools/pdf-to-ppt/download/{session_id}/{output_name}",
-        }
-    except PDFToPPTError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        logger.error(f"PDF→PPT process error: {e}")
+    outputs: list[str] = []
+    page_counts: list[int] = []
+    for src in pdf_files:
+        try:
+            result = converter.convert(src)
+            outputs.append(os.path.basename(result.output_path))
+            page_counts.append(result.page_count)
+        except PDFToPPTError as e:
+            logger.error(f"PDF→PPT failed for {src}: {e}")
+            continue
+        except Exception as e:
+            logger.error(f"PDF→PPT process error for {src}: {e}")
+            continue
+
+    if not outputs:
         raise HTTPException(status_code=500, detail="Dönüştürme sırasında hata oluştu")
+
+    zip_name = None
+    if len(outputs) > 1:
+        import zipfile
+        zip_name = f"converted_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+        zip_path = os.path.join(session_dir, zip_name)
+        with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+            for o in outputs:
+                zf.write(os.path.join(session_dir, o), arcname=o)
+
+    return {
+        "success": True,
+        "session_id": session_id,
+        "results": outputs,
+        "page_counts": page_counts,
+        "zip_file": zip_name,
+        "download_url": f"/api/tools/pdf-to-ppt/download/{session_id}/{zip_name}" if zip_name else f"/api/tools/pdf-to-ppt/download/{session_id}/{outputs[0]}",
+    }
 
 
 @router.get("/download/{session_id}/{filename}")
