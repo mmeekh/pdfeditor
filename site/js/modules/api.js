@@ -249,9 +249,9 @@ class PDFApi {
     }
 
     // ===== PDF Şifreleme APIs =====
-    async uploadFileForProtect(file) {
+    async uploadFilesForProtect(files) {
         const formData = new FormData();
-        formData.append('file', file);
+        files.forEach(f => formData.append('files', f));
         const response = await fetch(`${this.baseUrl}/tools/protect/upload`, { method: 'POST', body: formData });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
@@ -315,9 +315,9 @@ class PDFApi {
     }
 
     // ===== Rotate APIs =====
-    async uploadFileForRotate(file) {
+    async uploadFilesForRotate(files) {
         const formData = new FormData();
-        formData.append('file', file);
+        files.forEach(f => formData.append('files', f));
         const res = await fetch(`${this.baseUrl}/tools/rotate/upload`, { method: 'POST', body: formData });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
@@ -340,9 +340,9 @@ class PDFApi {
     }
 
     // ===== Watermark APIs =====
-    async uploadFileForWatermark(file) {
+    async uploadFilesForWatermark(files) {
         const formData = new FormData();
-        formData.append('file', file);
+        files.forEach(f => formData.append('files', f));
         const res = await fetch(`${this.baseUrl}/tools/watermark/upload`, { method: 'POST', body: formData });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
