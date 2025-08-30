@@ -968,6 +968,52 @@ textarea:focus {
     color: #ef4444;
 }
 
+/* Organize tool page previews */
+.organize-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-thumb {
+    position: relative;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background: #fff;
+    width: 120px;
+}
+
+.page-thumb canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.page-thumb.dragging {
+    opacity: 0.6;
+}
+
+.delete-page {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-page:hover {
+    background: rgba(239,68,68,0.8);
+}
+
 /* Modal styles */
 .modal {
     position: fixed;
