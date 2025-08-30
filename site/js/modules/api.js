@@ -120,6 +120,35 @@ class PDFApi {
         return `${this.baseUrl}/tools/merge/download/${sessionId}/${filename}`;
     }
 
+    // ===== Organize APIs =====
+    async uploadFilesForOrganize(files) {
+        const formData = new FormData();
+        files.forEach(f => formData.append('files', f));
+        const res = await fetch(`${this.baseUrl}/tools/organize/upload`, { method: 'POST', body: formData });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'Dosya yükleme hatası');
+        }
+        return res.json();
+    }
+
+    async processOrganize(sessionId, pageOrder) {
+        const res = await fetch(`${this.baseUrl}/tools/organize/process/${sessionId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pages: pageOrder })
+        });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'Organize işlem hatası');
+        }
+        return res.json();
+    }
+
+    getOrganizeDownloadUrl(sessionId, filename) {
+        return `${this.baseUrl}/tools/organize/download/${sessionId}/${filename}`;
+    }
+
     // ===== Split APIs =====
     async uploadFileForSplit(file) {
         const formData = new FormData();

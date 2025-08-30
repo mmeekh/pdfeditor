@@ -14,6 +14,7 @@ import unlockTool from '../tools/unlock.js';
 import rotateTool from '../tools/rotate.js';
 import watermarkTool from '../tools/watermark.js';
 import pdfToJpgTool from '../tools/pdf-to-jpg.js';
+import organizeTool from '../tools/organize.js';
 import notifications from './notifications.js';
 import fileHandler from './fileHandler.js';
 import pdfLoader from './loader.js';
@@ -32,7 +33,8 @@ class ToolManager {
             'unlock': unlockTool,
             'rotate': rotateTool,
             'watermark': watermarkTool,
-            'pdf-to-jpg': pdfToJpgTool
+            'pdf-to-jpg': pdfToJpgTool,
+            'organize': organizeTool
         };
         
         this.initializeEventListeners();

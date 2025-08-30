@@ -15,6 +15,7 @@ from routers.unlock import router as unlock_router
 from routers.rotate import router as rotate_router
 from routers.watermark import router as watermark_router
 from routers.pdf_to_jpg import router as pdf_to_jpg_router
+from routers.organize import router as organize_router
 
 
 logging.basicConfig(level=logging.INFO)
@@ -86,4 +87,5 @@ app.include_router(unlock_router)
 app.include_router(rotate_router)
 app.include_router(watermark_router)
 app.include_router(pdf_to_jpg_router)
+app.include_router(organize_router)
 

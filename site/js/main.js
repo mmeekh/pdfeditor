@@ -9,6 +9,7 @@ import pdfLoader from './modules/loader.js';
 import fileHandler from './modules/fileHandler.js';
 import toolManager from './modules/toolManager.js';
 import mergeTool from './tools/merge.js';
+import organizeTool from './tools/organize.js';
 import { ThemeManager } from './theme-manager.js';
 
 // Global API instance'larını window'a ekle
@@ -18,6 +19,7 @@ window.pdfLoader = pdfLoader;
 window.fileHandler = fileHandler;
 window.toolManager = toolManager;
 window.mergeTool = mergeTool;
+window.organizeTool = organizeTool;
 
 // Tema yönetimi import edildi
 
