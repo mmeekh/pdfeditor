@@ -15,8 +15,8 @@ class SplitTool {
 
     async process() {
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1) {
-            notifications.error('Lütfen sadece 1 PDF yükleyin');
+        if (files.length === 0) {
+            notifications.error('Lütfen PDF dosyaları yükleyin');
             return;
         }
 
@@ -24,10 +24,10 @@ class SplitTool {
         if (processButton) processButton.disabled = true;
 
         try {
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosya yükleniyor` });
+            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosyalar yükleniyor` });
 
             // Upload
-            const upload = await pdfApi.uploadFileForSplit(files[0]);
+            const upload = await pdfApi.uploadFilesForSplit(files);
             const sessionId = upload.session_id;
 
             // Options
