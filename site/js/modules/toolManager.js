@@ -300,7 +300,7 @@ class ToolManager {
             // Button'u güncelle
             const downloadBtn = resultArea.querySelector('button');
             if (downloadBtn) {
-                downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir (Demo)';
+                downloadBtn.innerHTML = '<i class="fa-solid fa-download mr-2"></i>Tekrar İndir (Demo)';
                 downloadBtn.onclick = () => {
                     fileHandler.startDemoDownload(config.title);
                 };

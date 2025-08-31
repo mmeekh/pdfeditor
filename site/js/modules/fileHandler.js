@@ -160,12 +160,12 @@ class FileHandler {
             fileItem.dataset.index = String(index);
             fileItem.innerHTML = `
                 <div class="file-info">
-                    <i class="fas fa-file-pdf file-icon"></i>
+                    <i class="fa-solid fa-file-pdf file-icon"></i>
                     <span class="file-name">${file.name}</span>
                     <span class="file-size">(${this.formatFileSize(file.size)})</span>
                 </div>
                 <button onclick="fileHandler.removeFile(${index})" class="remove-file" title="Dosyayı kaldır">
-                    <i class="fas fa-times"></i>
+                    <i class="fa-solid fa-times"></i>
                 </button>
             `;
             // Drag & drop reorder events
