@@ -7,7 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, sanitize_error_message, log_operation_safely
 from pdf_to_ppt import PDFToPPTConverter, PDFToPPTError
 
 
@@ -32,7 +32,7 @@ async def upload_pdf_for_ppt(file: UploadFile = File(...)):
         if os.path.exists(session_dir):
             import shutil
             shutil.rmtree(session_dir)
-        logger.error(f"PDF→PPT upload failed: {e}")
+        logger.error(f"PDF→PPT upload failed: {sanitize_error_message(e, 'PDF→PPT')}")
         raise HTTPException(status_code=500, detail="Dosya yükleme sırasında hata oluştu")
 
 
@@ -61,7 +61,7 @@ async def process_pdf_to_ppt(session_id: str):
     except PDFToPPTError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"PDF→PPT process error: {e}")
+        logger.error(f"PDF→PPT process error: {sanitize_error_message(e, 'PDF→PPT')}")
         raise HTTPException(status_code=500, detail="Dönüştürme sırasında hata oluştu")
 
 

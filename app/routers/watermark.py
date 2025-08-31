@@ -7,7 +7,7 @@ from fastapi import APIRouter, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, sanitize_error_message, log_operation_safely
 from watermark import PDFWatermarker
 
 logger = logging.getLogger(__name__)
@@ -42,7 +42,7 @@ async def upload_pdfs_for_watermark(files: list[UploadFile] = File(...)):
         if os.path.exists(session_dir):
             import shutil
             shutil.rmtree(session_dir)
-        logger.error(f"Watermark upload failed: {e}")
+        logger.error(f"Watermark upload failed: {sanitize_error_message(e, 'Filigran')}")
         raise
 
 @router.post("/process/{session_id}")

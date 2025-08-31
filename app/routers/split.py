@@ -8,7 +8,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, sanitize_error_message, log_operation_safely
 from split import PDFSplitter, PDFSplitError
 
 
@@ -35,7 +35,7 @@ async def upload_pdf_for_split(file: UploadFile = File(...)):
     except Exception as e:
         if os.path.exists(session_dir):
             shutil.rmtree(session_dir)
-        logger.error(f"Split upload failed: {e}")
+        logger.error(f"Split upload failed: {sanitize_error_message(e, 'PDF Ayırma')}")
         raise HTTPException(status_code=500, detail="Dosya yükleme sırasında hata oluştu")
 
 
@@ -81,7 +81,7 @@ async def process_split(
     except PDFSplitError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"Split process error: {e}")
+        logger.error(f"Split process error: {sanitize_error_message(e, 'PDF Ayırma')}")
         raise HTTPException(status_code=500, detail="PDF ayırma sırasında hata oluştu")
 
 

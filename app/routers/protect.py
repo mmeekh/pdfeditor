@@ -7,7 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException, Form
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, sanitize_error_message, log_operation_safely
 from protect import PDFProtector, PDFProtectError, ProtectionOptions
 
 
@@ -45,7 +45,7 @@ async def upload_pdfs_for_protect(files: list[UploadFile] = File(...)):
         if os.path.exists(session_dir):
             import shutil
             shutil.rmtree(session_dir)
-        logger.error(f"PDF→Protect upload failed: {e}")
+        logger.error(f"PDF→Protect upload failed: {sanitize_error_message(e, 'PDF Koruması')}")
         raise
 
 
@@ -105,7 +105,7 @@ async def process_pdf_protect(
     except PDFProtectError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"PDF→Protect process error: {e}")
+        logger.error(f"PDF→Protect process error: {sanitize_error_message(e, 'PDF Koruması')}")
         raise HTTPException(status_code=500, detail="Şifreleme sırasında hata oluştu")
 
     zip_name = None
