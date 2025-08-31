@@ -138,7 +138,6 @@ async def process_organize(
         logger.error(f"İşlem hatası: {str(e)}")
         raise HTTPException(status_code=500, detail="PDF düzenleme sırasında hata oluştu")
 
-
 @router.api_route("/download/{session_id}/{filename}", methods=["GET", "HEAD"])
 async def download_organized_pdf(session_id: str, filename: str, request: Request):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
@@ -182,7 +181,8 @@ async def download_organized_pdf(session_id: str, filename: str, request: Reques
             },
         )
 
-            log_operation_safely("file_download", session_id, 1)
+    # GET isteği için kayıt + dosya yanıtı
+    log_operation_safely("file_download", session_id, 1)
     return FileResponse(
         path=file_path,
         media_type="application/pdf",
