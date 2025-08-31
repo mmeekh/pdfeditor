@@ -10,11 +10,15 @@ www.pdfislemleri.com {
 pdfislemleri.com {
   encode zstd gzip
   root * /srv
-
   try_files {path} {path}.html /index.html
   file_server
 
   handle_path /api/* {
     reverse_proxy api:2000
+  }
+
+  # HSTS
+  header {
+    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   }
 }
