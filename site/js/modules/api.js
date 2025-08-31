@@ -150,9 +150,9 @@ class PDFApi {
     }
 
     // ===== Split APIs =====
-    async uploadFilesForSplit(files) {
+    async uploadFileForSplit(file) {
         const formData = new FormData();
-        files.forEach(f => formData.append('files', f));
+        formData.append('file', file);
         const response = await fetch(`${this.baseUrl}/tools/split/upload`, { method: 'POST', body: formData });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
@@ -204,9 +204,9 @@ class PDFApi {
     }
 
     // ===== PDF → Word APIs =====
-    async uploadFilesForPdfToWord(files) {
+    async uploadFileForPdfToWord(file) {
         const formData = new FormData();
-        files.forEach(f => formData.append('files', f));
+        formData.append('file', file);
         const response = await fetch(`${this.baseUrl}/tools/pdf-to-word/upload`, { method: 'POST', body: formData });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
@@ -228,9 +228,9 @@ class PDFApi {
         return `${this.baseUrl}/tools/pdf-to-word/download/${sessionId}/${filename}`;
     }
     // ===== Word → PDF APIs =====
-    async uploadFilesForWordToPdf(files) {
+    async uploadFileForWordToPdf(file) {
         const formData = new FormData();
-        files.forEach(f => formData.append('files', f));
+        formData.append('file', file);
         const response = await fetch(`${this.baseUrl}/tools/word-to-pdf/upload`, { method: 'POST', body: formData });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
@@ -253,9 +253,9 @@ class PDFApi {
     }
 
     // ===== PDF → PPT APIs =====
-    async uploadFilesForPdfToPpt(files) {
+    async uploadFileForPdfToPpt(file) {
         const formData = new FormData();
-        files.forEach(f => formData.append('files', f));
+        formData.append('file', file);
         const response = await fetch(`${this.baseUrl}/tools/pdf-to-ppt/upload`, { method: 'POST', body: formData });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
@@ -399,9 +399,9 @@ class PDFApi {
     }
 
     // ===== PDF → JPG APIs =====
-    async uploadFilesForPdfToJpg(files) {
+    async uploadFileForPdfToJpg(file) {
         const formData = new FormData();
-        files.forEach(f => formData.append('files', f));
+        formData.append('file', file);
         const res = await fetch(`${this.baseUrl}/tools/pdf-to-jpg/upload`, { method: 'POST', body: formData });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));

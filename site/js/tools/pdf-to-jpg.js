@@ -11,12 +11,12 @@ class PdfToJpgTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length === 0){ notifications.error('Lütfen PDF dosyaları yükleyin'); return; }
+        if (files.length !== 1){ notifications.error('Lütfen tek bir PDF yükleyin'); return; }
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
         try {
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: 'Dosyalar yükleniyor' });
-            const up = await pdfApi.uploadFilesForPdfToJpg(files);
+            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: 'Dosya yükleniyor' });
+            const up = await pdfApi.uploadFileForPdfToJpg(files[0]);
             const sessionId = up.session_id;
             pdfLoader.updateProgress(50, 'Sayfalar dönüştürülüyor...');
             const result = await pdfApi.processPdfToJpg(sessionId);

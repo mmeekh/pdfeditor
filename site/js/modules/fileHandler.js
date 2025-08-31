@@ -31,8 +31,7 @@ class FileHandler {
         const fileInput = document.getElementById('fileInput');
         if (fileInput) {
             fileInput.addEventListener('change', (e) => {
-                const tool = window.toolManager?.getCurrentTool();
-                this.handleFiles(e.target.files, tool);
+                this.handleFiles(e.target.files);
             });
         }
 
@@ -51,8 +50,7 @@ class FileHandler {
             fileDropArea.addEventListener('drop', (e) => {
                 e.preventDefault();
                 fileDropArea.classList.remove('dragover');
-                const tool = window.toolManager?.getCurrentTool();
-                this.handleFiles(e.dataTransfer.files, tool);
+                this.handleFiles(e.dataTransfer.files);
             });
         }
     }

@@ -11,14 +11,14 @@ class PdfToPptTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length === 0) { notifications.error('Lütfen PDF dosyaları yükleyin'); return; }
+        if (files.length !== 1) { notifications.error('Lütfen tek bir PDF yükleyin'); return; }
 
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
 
         try{
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosyalar yükleniyor` });
-            const up = await pdfApi.uploadFilesForPdfToPpt(files);
+            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosya yükleniyor` });
+            const up = await pdfApi.uploadFileForPdfToPpt(files[0]);
             const sessionId = up.session_id;
 
             pdfLoader.updateProgress(50, 'Slaytlar hazırlanıyor...');
@@ -47,7 +47,7 @@ class PdfToPptTool {
         }
 
         resultArea.classList.remove('hidden');
-        notifications.success('PPT hazır! İndirme başlatıldı. 📽️');
+        notifications.success(`PPT hazır! Toplam ${result.page_count} slayt oluşturuldu. 📽️`);
     }
 
     getOptions(){ return ''; }
