@@ -20,4 +20,30 @@ if (isReload) {
     }, { once: true });
 }
 
-console.log('Scroll Manager loaded - top only on reload');
+console.debug('Scroll Manager loaded - top only on reload');
+
+// ---- User engagement tracking ----
+let __engagementStart = Date.now();
+let __engagementTotal = 0;
+
+function __sendEngagement() {
+    if (typeof gtag === 'function') {
+        gtag('event', 'engagement_time', {
+            value: __engagementTotal
+        });
+    }
+}
+
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+        __engagementTotal += Date.now() - __engagementStart;
+        __sendEngagement();
+    } else {
+        __engagementStart = Date.now();
+    }
+});
+
+window.addEventListener('beforeunload', () => {
+    __engagementTotal += Date.now() - __engagementStart;
+    __sendEngagement();
+});

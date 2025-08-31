@@ -23,6 +23,55 @@ window.organizeTool = organizeTool;
 
 // Tema yönetimi import edildi
 
+// Font Awesome durum kontrolü ve fallback
+class FontAwesomeManager {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        // Font Awesome CSS'in yüklenip yüklenmediğini kontrol et
+        setTimeout(() => {
+            this.checkFontAwesomeStatus();
+        }, 1000);
+    }
+    
+    checkFontAwesomeStatus() {
+        const styleSheets = [...document.styleSheets];
+        const fontAwesomeCSS = styleSheets.find(sheet => 
+            sheet.href && (sheet.href.includes('fontawesome') || sheet.href.includes('cdnjs.cloudflare.com'))
+        );
+        
+        if (!fontAwesomeCSS) {
+            console.warn('Font Awesome CSS bulunamadı, CDN\'e fallback yapılıyor...');
+            this.loadFontAwesomeFromCDN();
+        } else {
+            console.debug('Font Awesome CSS başarıyla yüklendi:', fontAwesomeCSS.href);
+        }
+    }
+    
+    loadFontAwesomeFromCDN() {
+        // Eğer yerel Font Awesome yüklenemezse CDN'den yükle
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+        link.crossOrigin = 'anonymous';
+        link.referrerPolicy = 'no-referrer';
+        
+        link.onload = () => {
+            console.log('Font Awesome CDN\'den başarıyla yüklendi');
+            notifications.info('Font Awesome CDN\'den yüklendi');
+        };
+        
+        link.onerror = () => {
+            console.error('Font Awesome CDN\'den de yüklenemedi');
+            notifications.error('Font Awesome yüklenemedi');
+        };
+        
+        document.head.appendChild(link);
+    }
+}
+
 // Cookie yönetimi
 class CookieManager {
     constructor() {
@@ -87,7 +136,7 @@ class CookieManager {
     }
     
     trackEvent(eventName, eventData) {
-        console.log('Event tracked:', eventName, eventData);
+        console.debug('Event tracked:', eventName, eventData);
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, eventData);
         }
@@ -116,7 +165,7 @@ class PerformanceMonitor {
     }
     
     trackEvent(eventName, eventData) {
-        console.log('Performance tracked:', eventName, eventData);
+        console.debug('Performance tracked:', eventName, eventData);
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, eventData);
         }
@@ -191,6 +240,7 @@ class App {
             window.cookieManager = new CookieManager();
             window.performanceMonitor = new PerformanceMonitor();
             window.lazyLoader = new LazyLoader();
+            window.fontAwesomeManager = new FontAwesomeManager(); // FontAwesomeManager'ı başlat
             
             // Scroll jump guard for programmatic downloads
             document.addEventListener('click', (e) => {
@@ -207,15 +257,14 @@ class App {
             initializeButtonEventListeners();
             
             // API health check
-            try {
-                const health = await pdfApi.checkHealth();
-                console.log('API Status:', health);
-            } catch (error) {
-                console.warn('API not available:', error);
-                notifications.info('Bazı özellikler çevrimdışı olabilir');
+            const health = await pdfApi.checkHealth();
+            if (health) {
+                console.debug('API Status:', health);
+            } else {
+                console.debug('API not available');
             }
-            
-            console.log('PDFişlemleri.com loaded! 🎉');
+
+            console.debug('PDFişlemleri.com loaded! 🎉');
             
         } catch (error) {
             console.error('App initialization failed:', error);

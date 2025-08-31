@@ -43,7 +43,7 @@ class PdfToWordTool {
 
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn){
-            downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            downloadBtn.innerHTML = '<i class="fa-solid fa-download mr-2"></i>Tekrar İndir';
             downloadBtn.onclick = ()=> fileHandler.triggerFileDownload(url);
         }
 
