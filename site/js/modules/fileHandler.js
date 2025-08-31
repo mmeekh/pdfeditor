@@ -63,7 +63,7 @@ class FileHandler {
         
         // Yeni dosyalar eklendiğinde eski session'ı temizle
         if (this.activeSession && window.pdfApi) {
-            console.log('Yeni dosyalar ekleniyor, eski session temizleniyor:', this.activeSession.sessionId);
+            console.debug('Yeni dosyalar ekleniyor, eski session temizleniyor:', this.activeSession.sessionId);
             window.pdfApi.cleanupSession(this.activeSession.sessionId);
             this.activeSession = null;
             
@@ -409,7 +409,7 @@ class FileHandler {
         
         // Active session'ı temizle (sadece manuel reset'te)
         if (this.activeSession && window.pdfApi) {
-            console.log('Manuel reset, session temizleniyor:', this.activeSession.sessionId);
+            console.debug('Manuel reset, session temizleniyor:', this.activeSession.sessionId);
             window.pdfApi.cleanupSession(this.activeSession.sessionId);
             this.activeSession = null;
         }
@@ -493,7 +493,7 @@ class FileHandler {
         }
         
         if (this.activeSession) {
-            console.log('Session expired:', this.activeSession.sessionId);
+            console.debug('Session expired:', this.activeSession.sessionId);
             
             // Backend'den temizle
             if (window.pdfApi) {

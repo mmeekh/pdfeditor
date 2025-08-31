@@ -131,7 +131,7 @@ class MergeTool {
         // Gerçek session durumunu backend'den kontrol et
         pdfApi.checkSession(activeSession.sessionId)
             .then(sessionStatus => {
-                console.log('Session status:', sessionStatus);
+                console.debug('Session status:', sessionStatus);
                 
                 // Session aktif, indirmeyi başlat
                 const downloadLink = document.createElement('a');
@@ -171,7 +171,7 @@ class MergeTool {
      * Demo session için indirme simülasyonu
      */
     handleDemoDownload(activeSession) {
-        console.log('🎭 Demo download başlatılıyor:', activeSession.sessionId);
+        console.debug('🎭 Demo download başlatılıyor:', activeSession.sessionId);
         
         notifications.info('Demo indirme başlatılıyor...', 1000);
         
