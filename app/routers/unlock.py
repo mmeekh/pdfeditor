@@ -7,7 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException, Form
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, sanitize_error_message, log_operation_safely
 from unlock import PDFUnlocker, PDFUnlockError, UnlockResult
 
 
@@ -32,7 +32,7 @@ async def upload_pdf_for_unlock(file: UploadFile = File(...)):
         if os.path.exists(session_dir):
             import shutil
             shutil.rmtree(session_dir)
-        logger.error(f"PDF→Unlock upload failed: {e}")
+        logger.error(f"PDF→Unlock upload failed: {sanitize_error_message(e, 'PDF Şifre Kaldırma')}")
         raise HTTPException(status_code=500, detail="Dosya yükleme sırasında hata oluştu")
 
 
@@ -65,7 +65,7 @@ async def process_pdf_unlock(
     except PDFUnlockError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"PDF→Unlock process error: {e}")
+        logger.error(f"PDF→Unlock process error: {sanitize_error_message(e, 'PDF Şifre Kaldırma')}")
         raise HTTPException(status_code=500, detail="Şifre kaldırma sırasında hata oluştu")
 
 

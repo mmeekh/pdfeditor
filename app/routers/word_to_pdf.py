@@ -7,7 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_word_file, save_upload_file
+from core.utils import validate_word_file, save_upload_file, sanitize_error_message, log_operation_safely
 from word_to_pdf import WordToPDFConverter, WordToPDFError
 
 
@@ -32,7 +32,7 @@ async def upload_word_for_convert(file: UploadFile = File(...)):
         if os.path.exists(session_dir):
             import shutil
             shutil.rmtree(session_dir)
-        logger.error(f"Word→PDF upload failed: {e}")
+        logger.error(f"Word→PDF upload failed: {sanitize_error_message(e, 'Word→PDF')}")
         raise HTTPException(status_code=500, detail="Dosya yükleme sırasında hata oluştu")
 
 
@@ -60,7 +60,7 @@ async def process_word_to_pdf(session_id: str):
     except WordToPDFError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"Word→PDF process error: {e}")
+        logger.error(f"Word→PDF process error: {sanitize_error_message(e, 'Word→PDF')}")
         raise HTTPException(status_code=500, detail="Dönüştürme sırasında hata oluştu")
 
 

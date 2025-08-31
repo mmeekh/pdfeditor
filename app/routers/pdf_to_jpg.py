@@ -8,7 +8,7 @@ from fastapi import APIRouter, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, sanitize_error_message, log_operation_safely
 from pdf_to_jpg import PDFToJPGConverter
 
 logger = logging.getLogger(__name__)
@@ -29,7 +29,7 @@ async def upload_pdf_for_jpg(file: UploadFile = File(...)):
         if os.path.exists(session_dir):
             import shutil
             shutil.rmtree(session_dir)
-        logger.error(f"PDF→JPG upload failed: {e}")
+        logger.error(f"PDF→JPG upload failed: {sanitize_error_message(e, 'PDF→JPG')}")
         raise HTTPException(status_code=500, detail="Dosya yükleme sırasında hata oluştu")
 
 @router.post("/process/{session_id}")

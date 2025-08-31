@@ -7,7 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, sanitize_error_message, log_operation_safely
 from compress import PDFCompressor
 
 
@@ -45,7 +45,7 @@ async def upload_pdfs_for_compress(files: list[UploadFile] = File(...)):
         if os.path.exists(session_dir):
             import shutil
             shutil.rmtree(session_dir)
-        logger.error(f"Compress upload failed: {e}")
+        logger.error(f"Compress upload failed: {sanitize_error_message(e, 'Sıkıştırma')}")
         raise
 
 
@@ -84,7 +84,7 @@ async def process_compress(session_id: str, level: str = "medium"):
             total_in += metrics.input_size_bytes
             total_out += metrics.output_size_bytes
         except Exception as e:
-            logger.error(f"Compress failed for {src}: {e}")
+            logger.error(f"Compress failed: {sanitize_error_message(e, 'Sıkıştırma')}")
             continue
 
     zip_name = None

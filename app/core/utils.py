@@ -65,8 +65,42 @@ def ensure_safe_path(file_path: str, base_dir: str) -> str:
     """Guard against path traversal by ensuring file_path resides under base_dir."""
     safe_path = os.path.normpath(file_path)
     if not safe_path.startswith(os.path.normpath(base_dir)):
-        logger.error(f"Path traversal attempt: {file_path}")
+        logger.error(f"Path traversal attempt detected")
         raise HTTPException(status_code=403, detail="Geçersiz dosya yolu")
     return safe_path
+
+
+def sanitize_error_message(error: Exception, context: str = "İşlem") -> str:
+    """Güvenli hata mesajları oluştur - dosya bilgisi sızdırmaz."""
+    error_type = type(error).__name__
+    
+    # Genel hata mesajları
+    if "permission" in str(error).lower():
+        return f"{context} için yetki hatası oluştu"
+    elif "not found" in str(error).lower() or "file not found" in str(error).lower():
+        return f"{context} için dosya bulunamadı"
+    elif "size" in str(error).lower():
+        return f"{context} için dosya boyutu uygun değil"
+    elif "format" in str(error).lower() or "type" in str(error).lower():
+        return f"{context} için dosya formatı uygun değil"
+    else:
+        return f"{context} sırasında beklenmeyen hata oluştu"
+
+
+def log_operation_safely(operation: str, session_id: str = None, file_count: int = None, **kwargs):
+    """Güvenli log kaydı - dosya isimleri ve yolları loglanmaz."""
+    log_data = {
+        "operation": operation,
+        "timestamp": datetime.now().isoformat(),
+        "session_id": session_id,
+        "file_count": file_count
+    }
+    
+    # Güvenli ek bilgiler ekle
+    for key, value in kwargs.items():
+        if key not in ["filename", "file_path", "file_paths", "original_name"]:
+            log_data[key] = value
+    
+    logger.info(f"Operation: {operation}, Session: {session_id}, Files: {file_count}")
 
 

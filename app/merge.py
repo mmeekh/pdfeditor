@@ -48,7 +48,7 @@ class PDFMerger:
                 PdfReader(file)
             return True
         except Exception as e:
-            logger.error(f"PDF doğrulama hatası: {file_path} - {str(e)}")
+            logger.error(f"PDF doğrulama hatası: {str(e)}")
             return False
     
     def merge_pdfs(self, 

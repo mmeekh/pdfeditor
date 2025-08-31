@@ -9,7 +9,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException, BackgroundTasks,
 from fastapi.responses import FileResponse, Response
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file, cleanup_old_files, ensure_safe_path
+from core.utils import validate_pdf_file, save_upload_file, cleanup_old_files, ensure_safe_path, sanitize_error_message, log_operation_safely
 from merge import PDFMerger, PDFMergeError
 
 
@@ -55,7 +55,7 @@ async def upload_pdfs_for_merge(
                 "path": str(file_path),
                 "size": getattr(file, "size", None) or 0,
             })
-            logger.info(f"Dosya yüklendi: {file.filename}")
+            log_operation_safely("file_uploaded", session_id, 1, file_index=idx, file_size=file.size)
 
         background_tasks.add_task(cleanup_old_files)
 
@@ -159,7 +159,7 @@ async def download_merged_pdf(session_id: str, filename: str, request: Request):
         logger.error(f"Session time check failed: {e}")
 
     if request.method == "HEAD":
-        logger.info(f"HEAD request: {filename} (Session: {session_id})")
+        log_operation_safely("head_request", session_id, 1)
         return Response(
             status_code=200,
             headers={
@@ -172,7 +172,7 @@ async def download_merged_pdf(session_id: str, filename: str, request: Request):
             },
         )
 
-    logger.info(f"Dosya indiriliyor: {filename} (Session: {session_id})")
+            log_operation_safely("file_download", session_id, 1)
     return FileResponse(
         path=file_path,
         media_type="application/pdf",
