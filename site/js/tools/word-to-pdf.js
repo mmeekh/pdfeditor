@@ -11,16 +11,19 @@ class WordToPdfTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1) { notifications.error('Lütfen tek bir Word dosyası (DOC/DOCX) yükleyin'); return; }
-        const name = files[0].name.toLowerCase();
-        if (!(name.endsWith('.doc') || name.endsWith('.docx'))) { notifications.error('Geçerli Word dosyası seçin (DOC/DOCX)'); return; }
+        if (files.length === 0) { notifications.error('Lütfen Word dosyaları yükleyin'); return; }
+        const invalid = files.some(f => {
+            const n = f.name.toLowerCase();
+            return !(n.endsWith('.doc') || n.endsWith('.docx'));
+        });
+        if (invalid) { notifications.error('Geçerli Word dosyaları seçin (DOC/DOCX)'); return; }
 
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
 
         try{
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosya yükleniyor` });
-            const up = await pdfApi.uploadFileForWordToPdf(files[0]);
+            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosyalar yükleniyor` });
+            const up = await pdfApi.uploadFilesForWordToPdf(files);
             const sessionId = up.session_id;
 
             pdfLoader.updateProgress(50, 'PDF dönüştürme başlatılıyor...');
