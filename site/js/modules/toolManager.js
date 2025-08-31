@@ -102,9 +102,17 @@ class ToolManager {
      * Araç aç
      */
     openTool(toolName) {
+        if (this.currentTool && this.currentTool !== toolName) {
+            fileHandler.reset();
+        }
         this.currentTool = toolName;
-        
-        // Tool interface'i göster
+
+        // accept attribute update
+        const fileInput = document.getElementById('fileInput');
+        if (fileInput) {
+            fileInput.accept = toolName === 'word-to-pdf' ? '.doc,.docx' : '.pdf';
+        }
+
         const toolInterface = document.getElementById('toolInterface');
         if (toolInterface) {
             this.populateToolInterface(toolName);
@@ -112,7 +120,6 @@ class ToolManager {
             toolInterface.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Analytics
         this.trackEvent('tool_opened', { tool_name: toolName });
     }
 
@@ -120,16 +127,22 @@ class ToolManager {
      * Dosyalarla birlikte araç aç
      */
     openToolWithFiles(toolName, files) {
+        if (this.currentTool && this.currentTool !== toolName) {
+            fileHandler.reset();
+        }
         this.currentTool = toolName;
-        
-        // Tool interface'i göster
+
+        const fileInput = document.getElementById('fileInput');
+        if (fileInput) {
+            fileInput.accept = toolName === 'word-to-pdf' ? '.doc,.docx' : '.pdf';
+        }
+
         const toolInterface = document.getElementById('toolInterface');
         if (toolInterface) {
             this.populateToolInterface(toolName);
             toolInterface.classList.remove('hidden');
         }
-        
-        // Önce dosyaları yükle
+
         fileHandler.handleFiles(files, toolName);
         
         // Dosya yükleme tamamlandıktan sonra scroll yap
