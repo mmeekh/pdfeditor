@@ -87,7 +87,7 @@ class CookieManager {
     }
     
     trackEvent(eventName, eventData) {
-        console.log('Event tracked:', eventName, eventData);
+        console.debug('Event tracked:', eventName, eventData);
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, eventData);
         }
@@ -116,7 +116,7 @@ class PerformanceMonitor {
     }
     
     trackEvent(eventName, eventData) {
-        console.log('Performance tracked:', eventName, eventData);
+        console.debug('Performance tracked:', eventName, eventData);
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, eventData);
         }
@@ -207,15 +207,14 @@ class App {
             initializeButtonEventListeners();
             
             // API health check
-            try {
-                const health = await pdfApi.checkHealth();
-                console.log('API Status:', health);
-            } catch (error) {
-                console.warn('API not available:', error);
-                notifications.info('Bazı özellikler çevrimdışı olabilir');
+            const health = await pdfApi.checkHealth();
+            if (health) {
+                console.debug('API Status:', health);
+            } else {
+                console.debug('API not available');
             }
-            
-            console.log('PDFişlemleri.com loaded! 🎉');
+
+            console.debug('PDFişlemleri.com loaded! 🎉');
             
         } catch (error) {
             console.error('App initialization failed:', error);

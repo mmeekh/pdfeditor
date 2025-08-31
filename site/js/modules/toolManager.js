@@ -469,7 +469,7 @@ class ToolManager {
      * Analytics tracking
      */
     trackEvent(eventName, eventData) {
-        console.log('Event tracked:', eventName, eventData);
+        console.debug('Event tracked:', eventName, eventData);
         
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, eventData);

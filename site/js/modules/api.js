@@ -22,11 +22,20 @@ class PDFApi {
      */
     async checkHealth() {
         try {
-            const response = await fetch(`${this.baseUrl}/status`);
+            const response = await fetch(`${this.baseUrl}/status`, {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            const contentType = response.headers.get('content-type') || '';
+            if (!response.ok || !contentType.includes('application/json')) {
+                console.debug('Unexpected API health response:', response.status, contentType);
+                return null;
+            }
             return await response.json();
         } catch (error) {
-            console.error('API health check failed:', error);
-            throw error;
+            console.debug('API health check failed:', error);
+            return null;
         }
     }
 

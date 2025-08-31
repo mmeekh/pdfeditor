@@ -20,7 +20,7 @@ if (isReload) {
     }, { once: true });
 }
 
-console.log('Scroll Manager loaded - top only on reload');
+console.debug('Scroll Manager loaded - top only on reload');
 
 // ---- User engagement tracking ----
 let __engagementStart = Date.now();
