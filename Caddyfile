@@ -1,42 +1,42 @@
 {
-  email reymisteryo3393@gmail.com
-}
-
-# www → köke yönlendir
-www.pdfislemleri.com {
-  redir https://pdfislemleri.com{uri} permanent
+  email {env.EMAIL}
 }
 
 pdfislemleri.com {
   encode zstd gzip
+  
+  # Ana site root
   root * /srv
-  try_files {path} {path}.html /index.html
-  file_server
-
-  # MIME type tanımlamaları
-  @css {
-    path *.css
-  }
-  @js {
-    path *.js
-  }
-  @woff2 {
-    path *.woff2
+  
+  # Matcher tanımlamaları
+  @static {
+    path_regexp static ^/(?:images|icons|favicon\.ico|robots\.txt|sitemap\.xml|.*\.(?:css|js|png|jpg|jpeg|svg|webp|ico))$
   }
   
-  header @css Content-Type "text/css; charset=utf-8"
-  header @js Content-Type "application/javascript; charset=utf-8"
-  header @woff2 Content-Type "font/woff2"
-  
-  # CORS headers
-  header {
-    Access-Control-Allow-Origin "*"
-    Access-Control-Allow-Methods "GET, POST, OPTIONS"
-    Access-Control-Allow-Headers "Origin, Content-Type, Accept"
-    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  @html {
+    path *.html
   }
-
-  handle_path /api/* {
+  
+  # API yönlendirmesi - ÖNCELİKLİ
+  handle /api/* {
     reverse_proxy api:2000
   }
+  
+  # Güvenlik başlıkları
+  header {
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "strict-origin-when-cross-origin"
+  }
+  
+  # Statik dosyalar ve SPA routing
+  handle {
+    file_server
+    try_files {path} {path}.html /index.html
+  }
+  
+  # Cache politikaları
+  header @static Cache-Control "public, max-age=604800, immutable"
+  header @html Cache-Control "no-cache, no-store, must-revalidate"
+  header / Cache-Control "no-store"
 }

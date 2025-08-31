@@ -1,3 +1,5 @@
+# Docker Compose v2 syntax - version field is optional
+
 services:
   caddy:
     image: caddy:2.8
@@ -13,11 +15,10 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:2000/health"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:80 || exit 1"]
       interval: 30s
-      timeout: 10s
+      timeout: 5s
       retries: 3
-      start_period: 40s
     networks:
       - pdfislemleri_network
 
@@ -29,11 +30,6 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - TEMP_DIR=/app/temp
-      - ENVIRONMENT=${ENVIRONMENT}
-      - DEBUG=${DEBUG}
-      - SECRET_KEY=${SECRET_KEY}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-      - CORS_ORIGINS=${CORS_ORIGINS}
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:2000/health"]
       interval: 30s
@@ -43,14 +39,6 @@ services:
       - pdfislemleri_network
     volumes:
       - api_temp:/app/temp
-    deploy:
-      resources:
-        limits:
-          memory: 3G
-          cpus: '0.8'
-        reservations:
-          memory: 1G
-          cpus: '0.2'
 
 volumes:
   caddy_data:
@@ -60,4 +48,3 @@ volumes:
 networks:
   pdfislemleri_network:
     driver: bridge
-

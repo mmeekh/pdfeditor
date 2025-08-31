@@ -63,7 +63,7 @@ class FileHandler {
         
         // Yeni dosyalar eklendiğinde eski session'ı temizle
         if (this.activeSession && window.pdfApi) {
-            console.debug('Yeni dosyalar ekleniyor, eski session temizleniyor:', this.activeSession.sessionId);
+            console.log('Yeni dosyalar ekleniyor, eski session temizleniyor:', this.activeSession.sessionId);
             window.pdfApi.cleanupSession(this.activeSession.sessionId);
             this.activeSession = null;
             
@@ -160,12 +160,12 @@ class FileHandler {
             fileItem.dataset.index = String(index);
             fileItem.innerHTML = `
                 <div class="file-info">
-                    <i class="fa-solid fa-file-pdf file-icon"></i>
+                    <i class="fas fa-file-pdf file-icon"></i>
                     <span class="file-name">${file.name}</span>
                     <span class="file-size">(${this.formatFileSize(file.size)})</span>
                 </div>
                 <button onclick="fileHandler.removeFile(${index})" class="remove-file" title="Dosyayı kaldır">
-                    <i class="fa-solid fa-times"></i>
+                    <i class="fas fa-times"></i>
                 </button>
             `;
             // Drag & drop reorder events
@@ -335,11 +335,6 @@ class FileHandler {
     triggerFileDownload(url) {
         const x = window.scrollX;
         const y = window.scrollY;
-        if (typeof gtag === 'function') {
-            const match = url.match(/tools\/([a-z-]+)/);
-            const tool = match ? match[1] : 'unknown';
-            gtag('event', 'download', { event_category: 'funnel', event_label: tool });
-        }
         let iframe = document.getElementById('hidden-download-iframe');
         if (!iframe) {
             iframe = document.createElement('iframe');
@@ -409,7 +404,7 @@ class FileHandler {
         
         // Active session'ı temizle (sadece manuel reset'te)
         if (this.activeSession && window.pdfApi) {
-            console.debug('Manuel reset, session temizleniyor:', this.activeSession.sessionId);
+            console.log('Manuel reset, session temizleniyor:', this.activeSession.sessionId);
             window.pdfApi.cleanupSession(this.activeSession.sessionId);
             this.activeSession = null;
         }
@@ -493,7 +488,7 @@ class FileHandler {
         }
         
         if (this.activeSession) {
-            console.debug('Session expired:', this.activeSession.sessionId);
+            console.log('Session expired:', this.activeSession.sessionId);
             
             // Backend'den temizle
             if (window.pdfApi) {

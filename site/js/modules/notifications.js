@@ -22,9 +22,9 @@ class NotificationManager {
         notification.className = `notification ${type}`;
         
         // İkon belirle
-        let icon = 'fa-solid fa-check-circle';
-        if (type === 'error') icon = 'fa-solid fa-exclamation-circle';
-        if (type === 'info') icon = 'fa-solid fa-info-circle';
+        let icon = 'fas fa-check-circle';
+        if (type === 'error') icon = 'fas fa-exclamation-circle';
+        if (type === 'info') icon = 'fas fa-info-circle';
         
         notification.innerHTML = `
             <i class="${icon} notification-icon"></i>

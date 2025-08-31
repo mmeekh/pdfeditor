@@ -74,7 +74,7 @@ class CompressTool {
     // Button
     const downloadBtn = resultArea.querySelector('button');
     if (downloadBtn && result.download_url){
-      downloadBtn.innerHTML = '<i class="fa-solid fa-download mr-2"></i>Tekrar İndir';
+      downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
       const url = window.location.origin + result.download_url;
       downloadBtn.onclick = ()=> fileHandler.triggerFileDownload(url);
     }

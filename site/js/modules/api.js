@@ -8,34 +8,16 @@ class PDFApi {
         this.baseUrl = window.location.origin + '/api';
     }
 
-    trackEvent(action, tool) {
-        if (typeof gtag === 'function') {
-            gtag('event', action, {
-                event_category: 'funnel',
-                event_label: tool
-            });
-        }
-    }
-
     /**
      * API health check
      */
     async checkHealth() {
         try {
-            const response = await fetch(`${this.baseUrl}/status`, {
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            const contentType = response.headers.get('content-type') || '';
-            if (!response.ok || !contentType.includes('application/json')) {
-                console.debug('Unexpected API health response:', response.status, contentType);
-                return null;
-            }
+            const response = await fetch(`${this.baseUrl}/status`);
             return await response.json();
         } catch (error) {
-            console.debug('API health check failed:', error);
-            return null;
+            console.error('API health check failed:', error);
+            throw error;
         }
     }
 
@@ -73,9 +55,7 @@ class PDFApi {
                 throw new Error(error.detail || 'Dosya yükleme hatası');
             }
 
-            const data = await response.json();
-            this.trackEvent('upload', 'merge');
-            return data;
+            return await response.json();
         } catch (error) {
             console.error('File upload failed:', error);
             throw error;
@@ -97,9 +77,7 @@ class PDFApi {
                 throw new Error(error.detail || 'Birleştirme hatası');
             }
 
-            const data = await response.json();
-            this.trackEvent('process', 'merge');
-            return data;
+            return await response.json();
         } catch (error) {
             console.error('Merge process failed:', error);
             throw error;
@@ -151,9 +129,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Dosya yükleme hatası');
         }
-        const data = await res.json();
-        this.trackEvent('upload', 'organize');
-        return data;
+        return res.json();
     }
 
     async processOrganize(sessionId, pageOrder) {
@@ -166,9 +142,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Organize işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'organize');
-        return data;
+        return res.json();
     }
 
     getOrganizeDownloadUrl(sessionId, filename) {
@@ -184,9 +158,7 @@ class PDFApi {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'Split yükleme hatası');
         }
-        const data = await response.json();
-        this.trackEvent('upload', 'split');
-        return data;
+        return response.json();
     }
 
     async processSplit(sessionId, mode, options = {}) {
@@ -199,9 +171,7 @@ class PDFApi {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'Split işlem hatası');
         }
-        const data = await response.json();
-        this.trackEvent('process', 'split');
-        return data;
+        return response.json();
     }
 
     getSplitZipUrl(sessionId, zipFile) {
@@ -217,9 +187,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Sıkıştırma yükleme hatası');
         }
-        const data = await res.json();
-        this.trackEvent('upload', 'compress');
-        return data;
+        return res.json();
     }
 
     async processCompress(sessionId, level = 'medium') {
@@ -228,9 +196,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Sıkıştırma işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'compress');
-        return data;
+        return res.json();
     }
 
     getCompressDownloadUrl(sessionId, filename) {
@@ -246,9 +212,7 @@ class PDFApi {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF→Word yükleme hatası');
         }
-        const data = await response.json();
-        this.trackEvent('upload', 'pdf-to-word');
-        return data;
+        return response.json();
     }
 
     async processPdfToWord(sessionId) {
@@ -257,9 +221,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF→Word işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'pdf-to-word');
-        return data;
+        return res.json();
     }
 
     getPdfToWordDownloadUrl(sessionId, filename) {
@@ -274,9 +236,7 @@ class PDFApi {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'Word→PDF yükleme hatası');
         }
-        const data = await response.json();
-        this.trackEvent('upload', 'word-to-pdf');
-        return data;
+        return response.json();
     }
 
     async processWordToPdf(sessionId) {
@@ -285,9 +245,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Word→PDF işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'word-to-pdf');
-        return data;
+        return res.json();
     }
 
     getWordToPdfDownloadUrl(sessionId, filename) {
@@ -303,9 +261,7 @@ class PDFApi {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF→PPT yükleme hatası');
         }
-        const data = await response.json();
-        this.trackEvent('upload', 'pdf-to-ppt');
-        return data;
+        return response.json();
     }
 
     async processPdfToPpt(sessionId) {
@@ -314,9 +270,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF→PPT işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'pdf-to-ppt');
-        return data;
+        return res.json();
     }
 
     getPdfToPptDownloadUrl(sessionId, filename) {
@@ -332,9 +286,7 @@ class PDFApi {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF Şifreleme yükleme hatası');
         }
-        const data = await response.json();
-        this.trackEvent('upload', 'protect');
-        return data;
+        return response.json();
     }
 
     async processProtect(sessionId, protectionOptions) {
@@ -357,9 +309,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF Şifreleme işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'protect');
-        return data;
+        return res.json();
     }
 
     getProtectDownloadUrl(sessionId, filename) {
@@ -375,9 +325,7 @@ class PDFApi {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF Şifre Kaldırma yükleme hatası');
         }
-        const data = await response.json();
-        this.trackEvent('upload', 'unlock');
-        return data;
+        return response.json();
     }
 
     async processUnlock(sessionId, password) {
@@ -388,9 +336,7 @@ class PDFApi {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF Şifre Kaldırma işlemi hatası');
         }
-        const data = await response.json();
-        this.trackEvent('process', 'unlock');
-        return data;
+        return response.json();
     }
 
     getUnlockDownloadUrl(sessionId, filename) {
@@ -406,9 +352,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF Döndürme yükleme hatası');
         }
-        const data = await res.json();
-        this.trackEvent('upload', 'rotate');
-        return data;
+        return res.json();
     }
 
     async processRotate(sessionId, degrees) {
@@ -417,9 +361,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF Döndürme işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'rotate');
-        return data;
+        return res.json();
     }
 
     getRotateDownloadUrl(sessionId, filename) {
@@ -435,9 +377,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Filigran yükleme hatası');
         }
-        const data = await res.json();
-        this.trackEvent('upload', 'watermark');
-        return data;
+        return res.json();
     }
 
     async processWatermark(sessionId, opts) {
@@ -451,9 +391,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Filigran işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'watermark');
-        return data;
+        return res.json();
     }
 
     getWatermarkDownloadUrl(sessionId, filename) {
@@ -469,9 +407,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF→JPG yükleme hatası');
         }
-        const data = await res.json();
-        this.trackEvent('upload', 'pdf-to-jpg');
-        return data;
+        return res.json();
     }
 
     async processPdfToJpg(sessionId) {
@@ -480,9 +416,7 @@ class PDFApi {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF→JPG işlem hatası');
         }
-        const data = await res.json();
-        this.trackEvent('process', 'pdf-to-jpg');
-        return data;
+        return res.json();
     }
 
     getPdfToJpgDownloadUrl(sessionId, filename) {

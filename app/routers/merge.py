@@ -9,18 +9,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException, BackgroundTasks,
 from fastapi.responses import FileResponse, Response
 
 from core.config import settings
-<<<<<<< HEAD
 from core.utils import validate_pdf_file, save_upload_file, cleanup_old_files, ensure_safe_path, sanitize_error_message, log_operation_safely
-=======
-from core.utils import (
-    validate_pdf_file,
-    save_upload_file,
-    cleanup_old_files,
-    ensure_safe_path,
-    sanitize_error_message,
-    log_operation_safely,
-)
->>>>>>> b5f0046fd197e96ae4490a35ce5ce924010925ad
 from merge import PDFMerger, PDFMergeError
 
 
@@ -82,9 +71,8 @@ async def upload_pdfs_for_merge(
             shutil.rmtree(session_dir)
         if isinstance(e, HTTPException):
             raise e
-        msg = sanitize_error_message(e, "Yükleme")
-        logger.error(f"Dosya yükleme hatası: {msg}")
-        raise HTTPException(status_code=500, detail=msg)
+        logger.error(f"Dosya yükleme hatası: {str(e)}")
+        raise HTTPException(status_code=500, detail="Dosya yükleme sırasında hata oluştu")
 
 
 @router.post("/process/{session_id}")
@@ -134,13 +122,11 @@ async def process_merge(
             "download_url": f"/api/tools/merge/download/{session_id}/{output_filename}",
         }
     except PDFMergeError as e:
-        msg = sanitize_error_message(e, "Birleştirme")
-        logger.error(f"PDF birleştirme hatası: {msg}")
-        raise HTTPException(status_code=400, detail=msg)
+        logger.error(f"PDF birleştirme hatası: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        msg = sanitize_error_message(e, "Birleştirme")
-        logger.error(f"İşlem hatası: {msg}")
-        raise HTTPException(status_code=500, detail=msg)
+        logger.error(f"İşlem hatası: {str(e)}")
+        raise HTTPException(status_code=500, detail="PDF birleştirme sırasında hata oluştu")
 
 
 @router.api_route("/download/{session_id}/{filename}", methods=["GET", "HEAD"])
@@ -156,7 +142,7 @@ async def download_merged_pdf(session_id: str, filename: str, request: Request):
         )
 
     if not os.path.exists(file_path) or not filename.endswith('.pdf'):
-        logger.warning(f"Dosya bulunamadı. Session: {session_id}")
+        logger.warning(f"Dosya bulunamadı: {file_path}")
         raise HTTPException(status_code=404, detail="Dosya bulunamadı veya silinmiş")
 
     ensure_safe_path(file_path, settings.TEMP_DIR)
@@ -170,7 +156,7 @@ async def download_merged_pdf(session_id: str, filename: str, request: Request):
                 detail=f"İndirme linki süresi dolmuş ({settings.SESSION_LIFETIME_MINUTES} dakika). Lütfen dosyaları tekrar işleyin ve daha hızlı indirin.",
             )
     except Exception as e:
-        logger.error(f"Session time check failed: {sanitize_error_message(e, 'Session kontrol')}")
+        logger.error(f"Session time check failed: {e}")
 
     if request.method == "HEAD":
         log_operation_safely("head_request", session_id, 1)
@@ -186,11 +172,7 @@ async def download_merged_pdf(session_id: str, filename: str, request: Request):
             },
         )
 
-<<<<<<< HEAD
             log_operation_safely("file_download", session_id, 1)
-=======
-    log_operation_safely("file_download", session_id, 1)
->>>>>>> b5f0046fd197e96ae4490a35ce5ce924010925ad
     return FileResponse(
         path=file_path,
         media_type="application/pdf",

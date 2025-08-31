@@ -11,8 +11,6 @@ import logging
 from PyPDF2 import PdfMerger, PdfReader
 from datetime import datetime
 
-from core.utils import sanitize_error_message
-
 # Logger ayarla
 logger = logging.getLogger(__name__)
 
@@ -50,11 +48,7 @@ class PDFMerger:
                 PdfReader(file)
             return True
         except Exception as e:
-<<<<<<< HEAD
             logger.error(f"PDF doğrulama hatası: {str(e)}")
-=======
-            logger.error(f"PDF doğrulama hatası: {sanitize_error_message(e, 'Doğrulama')}")
->>>>>>> b5f0046fd197e96ae4490a35ce5ce924010925ad
             return False
     
     def merge_pdfs(self, 
@@ -92,15 +86,22 @@ class PDFMerger:
             pdf_files = sorted(pdf_files, key=_alpha_key)
         
         # Tüm dosyaları doğrula
+        invalid_files = []
         for pdf_file in pdf_files:
-            if not os.path.exists(pdf_file) or not self.validate_pdf(pdf_file):
-                raise PDFMergeError("Geçersiz PDF dosyası")
+            if not os.path.exists(pdf_file):
+                invalid_files.append(f"{pdf_file} (dosya bulunamadı)")
+            elif not self.validate_pdf(pdf_file):
+                invalid_files.append(f"{pdf_file} (geçersiz PDF)")
+        
+        if invalid_files:
+            raise PDFMergeError(f"Geçersiz dosyalar: {', '.join(invalid_files)}")
         
         # Birleştirme işlemi
         try:
             self.merger = PdfMerger()
             
             for pdf_file in pdf_files:
+                logger.info(f"Ekleniyor: {pdf_file}")
                 self.merger.append(pdf_file)
             
             # Çıktı dizinini oluştur
@@ -112,12 +113,12 @@ class PDFMerger:
             with open(output_path, 'wb') as output_file:
                 self.merger.write(output_file)
             
-            logger.info("PDF birleştirme başarılı")
+            logger.info(f"PDF birleştirme başarılı: {output_path}")
             return output_path
-
+            
         except Exception as e:
-            logger.error(f"PDF birleştirme hatası: {sanitize_error_message(e, 'Birleştirme')}")
-            raise PDFMergeError("Birleştirme işlemi başarısız")
+            logger.error(f"PDF birleştirme hatası: {str(e)}")
+            raise PDFMergeError(f"Birleştirme işlemi başarısız: {str(e)}")
         finally:
             if self.merger:
                 self.merger.close()
@@ -147,7 +148,7 @@ class PDFMerger:
                 pages = config.get('pages', None)
                 
                 if not pdf_path or not os.path.exists(pdf_path):
-                    raise PDFMergeError("Geçersiz dosya yolu")
+                    raise PDFMergeError(f"Geçersiz dosya yolu: {pdf_path}")
                 
                 if pages:
                     # Sayfa aralıklarını parse et
@@ -165,8 +166,8 @@ class PDFMerger:
             return output_path
             
         except Exception as e:
-            logger.error(f"Sayfa aralıklı birleştirme hatası: {sanitize_error_message(e, 'Birleştirme')}")
-            raise PDFMergeError("İşlem başarısız")
+            logger.error(f"Sayfa aralıklı birleştirme hatası: {str(e)}")
+            raise PDFMergeError(f"İşlem başarısız: {str(e)}")
         finally:
             if self.merger:
                 self.merger.close()
@@ -205,12 +206,13 @@ class PDFMerger:
             with open(pdf_path, 'rb') as file:
                 reader = PdfReader(file)
                 page_count = len(reader.pages)
-
+                
                 # Metadata bilgileri
                 metadata = reader.metadata if reader.metadata else {}
-
+                
                 return {
                     'file_name': os.path.basename(pdf_path),
+                    'file_path': pdf_path,
                     'page_count': page_count,
                     'file_size_mb': round(file_size, 2),
                     'title': metadata.get('/Title', ''),
@@ -218,9 +220,9 @@ class PDFMerger:
                     'creation_date': metadata.get('/CreationDate', ''),
                     'is_encrypted': reader.is_encrypted
                 }
-
+                
         except Exception as e:
-            logger.error(f"PDF bilgi alma hatası: {sanitize_error_message(e, 'Bilgi alma')}")
+            logger.error(f"PDF bilgi alma hatası: {str(e)}")
             return None
     
     def create_temp_file(self, prefix: str = "merged_", suffix: str = ".pdf") -> str:

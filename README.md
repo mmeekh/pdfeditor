@@ -12,118 +12,37 @@ PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya
 - **SEO**: PWA, manifest, sitemap, robots.txt
 - **Performans**: zstd/gzip sıkıştırma, cache politikaları
 
-## �� Proje Yapısı
+## 📁 Proje Yapısı
 
 ```
-pdfeditor/
-├── app/                     # FastAPI Backend
-│   ├── main.py             # Ana uygulama dosyası
-│   ├── requirements.txt    # Python bağımlılıkları
-│   ├── Dockerfile          # Docker container
-│   ├── compress.py         # PDF sıkıştırma modülü
-│   ├── merge.py            # PDF birleştirme modülü
-│   ├── organize.py         # PDF düzenleme modülü
-│   ├── pdf_to_jpg.py       # PDF'den JPG dönüştürme
-│   ├── pdf_to_ppt.py       # PDF'den PPT dönüştürme
-│   ├── pdf_to_word.py      # PDF'den Word dönüştürme
-│   ├── protect.py          # PDF koruma modülü
-│   ├── rotate.py           # PDF döndürme modülü
-│   ├── split.py            # PDF bölme modülü
-│   ├── unlock.py           # PDF kilidini açma
-│   ├── watermark.py        # PDF filigran ekleme
-│   ├── word_to_pdf.py      # Word'den PDF dönüştürme
-│   ├── core/               # Core modüller
-│   │   ├── __init__.py
-│   │   ├── config.py       # Konfigürasyon
-│   │   ├── lifespan.py     # Uygulama yaşam döngüsü
-│   │   ├── middleware.py   # Middleware'ler
-│   │   └── utils.py        # Yardımcı fonksiyonlar
-│   └── routers/            # API route'ları
-│       ├── __init__.py
-│       ├── compress.py      # Sıkıştırma endpoint'i
-│       ├── merge.py         # Birleştirme endpoint'i
-│       ├── organize.py      # Düzenleme endpoint'i
-│       ├── pdf_to_jpg.py    # PDF-JPG dönüştürme endpoint'i
-│       ├── pdf_to_ppt.py    # PDF-PPT dönüştürme endpoint'i
-│       ├── pdf_to_word.py   # PDF-Word dönüştürme endpoint'i
-│       ├── protect.py       # Koruma endpoint'i
-│       ├── rotate.py        # Döndürme endpoint'i
-│       ├── split.py         # Bölme endpoint'i
-│       ├── session.py       # Oturum yönetimi
-│       ├── unlock.py        # Kilidini açma endpoint'i
-│       ├── watermark.py     # Filigran endpoint'i
-│       └── word_to_pdf.py   # Word-PDF dönüştürme endpoint'i
-├── site/                    # Frontend Dosyaları
-│   ├── index.html           # Ana sayfa
-│   ├── about.html           # Hakkımızda sayfası
-│   ├── contact.html         # İletişim sayfası
-│   ├── blog.html            # Blog ana sayfası
-│   ├── cookies.html         # Çerez politikası
-│   ├── kvkk.html            # KVKK sayfası
-│   ├── privacy.html         # Gizlilik politikası
-│   ├── terms.html           # Kullanım şartları
-│   ├── style.css            # Ana stil dosyası
-│   ├── tailwind.js          # Tailwind konfigürasyonu
-│   ├── scroll-manager.js    # Scroll yönetimi
-│   ├── theme-manager.js     # Tema yönetimi
-│   ├── js/                  # JavaScript modülleri
-│   │   ├── main.js          # Ana JavaScript dosyası
-│   │   ├── modules/         # Core modüller
-│   │   │   ├── api.js       # API işlemleri
-│   │   │   ├── fileHandler.js # Dosya yönetimi
-│   │   │   ├── loader.js    # Loading komponenti
+repo-root/
+├── site/                    # Frontend dosyaları
+│   ├── index.html          # Ana sayfa
+│   ├── style.css           # Stil dosyası
+│   ├── js/                 # Modüler JavaScript
+│   │   ├── main.js         # Ana uygulama
+│   │   ├── modules/        # Core modüller
+│   │   │   ├── api.js      # API işlemleri
+│   │   │   ├── fileHandler.js  # Dosya yönetimi
+│   │   │   ├── toolManager.js  # Araç yönetimi
 │   │   │   ├── notifications.js # Bildirimler
-│   │   │   └── toolManager.js # Araç yönetimi
-│   │   └── tools/           # PDF araçları JavaScript'leri
-│   │       ├── compress.js  # Sıkıştırma aracı
-│   │       ├── merge.js     # Birleştirme aracı
-│   │       ├── organize.js  # Düzenleme aracı
-│   │       ├── pdf-to-jpg.js # PDF-JPG dönüştürme
-│   │       ├── pdf-to-ppt.js # PDF-PPT dönüştürme
-│   │       ├── pdf-to-word.js # PDF-Word dönüştürme
-│   │       ├── protect.js   # Koruma aracı
-│   │       ├── rotate.js    # Döndürme aracı
-│   │       ├── split.js     # Bölme aracı
-│   │       ├── unlock.js    # Kilidini açma aracı
-│   │       ├── watermark.js # Filigran aracı
-│   │       └── word-to-pdf.js # Word-PDF dönüştürme
-│   ├── blog/                # Blog yazıları
-│   │   ├── pdf-birlestirme.html
-│   │   ├── pdf-boyut-kucultme.html
-│   │   ├── pdf-formlari.html
-│   │   ├── pdf-guvenlik.html
-│   │   ├── pdf-imzalama.html
-│   │   ├── pdf-ocr.html
-│   │   ├── telefondan-pdf-duzenleme.html
-│   │   └── word-pdf-donusturme.html
-│   ├── fontawesome/         # FontAwesome ikonları
-│   │   ├── css/
-│   │   │   └── all.min.css # FontAwesome CSS
-│   │   └── webfonts/       # Font dosyaları
-│   │       ├── fa-brands-400.woff2
-│   │       ├── fa-regular-400.woff2
-│   │       ├── fa-solid-900.woff2
-│   │       └── fa-v4compatibility.woff2
-│   ├── icons/               # PWA ve site ikonları
-│   │   ├── logo.png         # Ana logo
-│   │   ├── favicon.ico      # Favicon
-│   │   ├── android-chrome-512x512.png
-│   │   ├── apple-touch-icon.png
-│   │   ├── site.webmanifest # PWA manifest
-│   │   └── ...              # Diğer ikonlar
-│   ├── images/              # Site görselleri
-│   │   ├── pdfandoc.png
-│   │   └── pdfandoc.webp
-│   ├── robots.txt           # SEO robots
-│   ├── sitemap.xml          # SEO sitemap
-│   └── security.txt         # Güvenlik bilgileri
-├── Caddyfile                # Caddy web sunucusu konfigürasyonu
-├── docker-compose.yml       # Docker container orchestration
-├── deploy.sh                # Otomatik kurulum script'i
-├── check_ssl.sh             # SSL sertifika kontrol script'i
-├── env.example              # Environment değişkenleri örneği
-├── fix.patch                # Düzeltme patch'i
-└── README.md                # Bu dosya
+│   │   │   └── loader.js   # Loading komponenti
+│   │   └── tools/          # PDF araçları
+│   │       └── merge.js    # PDF birleştirme
+│   ├── icons/              # PWA ikonları
+│   ├── images/             # Görseller
+│   ├── robots.txt          # SEO
+│   ├── sitemap.xml         # SEO
+│   └── security.txt        # Güvenlik
+├── app/                     # FastAPI backend
+│   ├── main.py             # API ana dosyası
+│   ├── requirements.txt    # Python paketleri
+│   └── Dockerfile          # Container
+├── Caddyfile               # Caddy konfigürasyonu
+├── docker-compose.yml      # Container orchestration
+├── deploy.sh               # Tek komut kurulum
+├── env.example             # Environment örneği
+└── README.md               # Bu dosya
 ```
 
 ## 🛠️ Kurulum

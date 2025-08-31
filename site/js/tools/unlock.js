@@ -58,7 +58,7 @@ class UnlockTool {
             <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
                 <div class="flex">
                     <div class="flex-shrink-0">
-                        <i class="fa-solid fa-check-circle text-green-400"></i>
+                        <i class="fas fa-check-circle text-green-400"></i>
                     </div>
                     <div class="ml-3">
                         <p class="text-sm text-green-700">
@@ -69,14 +69,14 @@ class UnlockTool {
             </div>
             <div class="flex justify-center">
                 <button onclick="downloadFile('${pdfApi.getUnlockDownloadUrl(result.session_id, result.output_file)}')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg mr-3 transition">
-                    <i class="fa-solid fa-download mr-2"></i>Tekrar İndir
+                    <i class="fas fa-download mr-2"></i>Tekrar İndir
                 </button>
                 <button id="resetToolButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg transition">
-                    <i class="fa-solid fa-redo mr-2"></i>Yeniden Başla
+                    <i class="fas fa-redo mr-2"></i>Yeniden Başla
                 </button>
             </div>
             <div class="mt-4 text-center text-gray-500 italic">
-                <i class="fa-solid fa-download text-blue-500"></i> Dosyanız İndirilenler klasörünüze kaydedildi. Başka bir işlem yapmak ister misiniz?
+                <i class="fas fa-download text-blue-500"></i> Dosyanız İndirilenler klasörünüze kaydedildi. Başka bir işlem yapmak ister misiniz?
             </div>
         `;
         resultArea.classList.remove('hidden');
@@ -116,7 +116,7 @@ class UnlockTool {
                 <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
                     <div class="flex">
                         <div class="flex-shrink-0">
-                            <i class="fa-solid fa-exclamation-triangle text-yellow-400"></i>
+                            <i class="fas fa-exclamation-triangle text-yellow-400"></i>
                         </div>
                         <div class="ml-3">
                             <p class="text-sm text-yellow-700">

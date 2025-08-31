@@ -79,7 +79,7 @@ class SplitTool {
 
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn && result.zip_file) {
-            downloadBtn.innerHTML = '<i class="fa-solid fa-download mr-2"></i>Tekrar İndir';
+            downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
             downloadBtn.onclick = () => {
                 const url = pdfApi.getSplitZipUrl(result.session_id, result.zip_file);
                 fileHandler.triggerFileDownload(url);
