@@ -207,12 +207,11 @@ class App {
             initializeButtonEventListeners();
             
             // API health check
-            try {
-                const health = await pdfApi.checkHealth();
+            const health = await pdfApi.checkHealth();
+            if (health) {
                 console.log('API Status:', health);
-            } catch (error) {
-                console.warn('API not available:', error);
-                notifications.info('Bazı özellikler çevrimdışı olabilir');
+            } else {
+                console.warn('API not available');
             }
             
             console.log('PDFişlemleri.com loaded! 🎉');
