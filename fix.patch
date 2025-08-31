@@ -1,0 +1,1498 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/site/blog.html b/site/blog.html
+index 0cac41f9b4e925b60a35f401057c97966cff796e..ec206bb07f5c59282690dae5bbc50eed5b6c55af 100644
+--- a/site/blog.html
++++ b/site/blog.html
+@@ -88,194 +88,194 @@
+                     </button>
+                     <button id="comfort-mode-btn" class="text-gray-600 hover:text-green-600 transition p-2 rounded-lg hover:bg-gray-100" title="Konfor Modu" tabindex="0" role="button" aria-label="Konfor modunu aç/kapat">
+                         <span class="text-lg">👀</span>
+                     </button>
+                 </div>
+             </div>
+         </header>
+ 
+         <!-- Main Content -->
+         <main class="site-content container mx-auto px-4 py-8">
+         <!-- Hero Section -->
+         <section class="text-center mb-12 fade-in">
+             <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Blog & Rehberler</h1>
+             <p class="text-gray-600 max-w-3xl mx-auto text-lg mb-8">PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler, pratik ipuçları ve uzman tavsiyeleri.</p>
+             
+ 
+         </section>
+ 
+         <!-- Featured Posts -->
+         <section class="mb-16">
+             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Öne Çıkan Yazılar</h2>
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                 <!-- Featured Post 1 -->
+                 <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                     <div class="relative">
+-                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=400&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full h-48 object-cover">
++                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=400&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                         <div class="absolute top-4 left-4">
+                             <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">ÖNE ÇIKAN</span>
+                         </div>
+                     </div>
+                     <div class="p-6">
+                         <div class="flex items-center text-sm text-gray-500 mb-3">
+                             <i class="fas fa-calendar mr-2"></i>
+                             <span>15 Aralık 2024</span>
+                             <span class="mx-2">•</span>
+                             <i class="fas fa-clock mr-2"></i>
+                             <span>5 dk okuma</span>
+                         </div>
+                         <h3 class="text-xl font-bold text-gray-800 mb-3">
+                             <a href="/blog/word-pdf-donusturme" class="hover:text-blue-600 transition">Programsız Word'den PDF'e Dönüştürme: 3 Basit Adımda Zamandan Kazanın!</a>
+                         </h3>
+                         <p class="text-gray-600 mb-4">Program kurma derdi olmadan, PDFişlemleri.com ile Word belgelerini saniyeler içinde nasıl PDF'e dönüştürebileceklerini öğrenin.</p>
+                         <div class="flex items-center justify-between">
+                             <div class="flex items-center space-x-2">
+-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Ahmet Yılmaz" class="w-8 h-8 rounded-full object-cover">
++                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Ahmet Yılmaz" class="w-8 h-8 rounded-full object-cover" loading="lazy" decoding="async">
+                                 <span class="text-sm text-gray-600">Ahmet Yılmaz</span>
+                             </div>
+                             <a href="/blog/word-pdf-donusturme" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                 Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                             </a>
+                         </div>
+                     </div>
+                 </article>
+ 
+                 <!-- Featured Post 2 -->
+                 <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                     <div class="relative">
+-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full h-48 object-cover">
++                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                         <div class="absolute top-4 left-4">
+                             <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">YENİ</span>
+                         </div>
+                     </div>
+                     <div class="p-6">
+                         <div class="flex items-center text-sm text-gray-500 mb-3">
+                             <i class="fas fa-calendar mr-2"></i>
+                             <span>12 Aralık 2024</span>
+                             <span class="mx-2">•</span>
+                             <i class="fas fa-clock mr-2"></i>
+                             <span>7 dk okuma</span>
+                         </div>
+                         <h3 class="text-xl font-bold text-gray-800 mb-3">
+                             <a href="/blog/telefondan-pdf-duzenleme" class="hover:text-blue-600 transition">Telefondan PDF Düzenleme: Hareket Halindeyken Belgelerinizi Kontrol Altına Alın!</a>
+                         </h3>
+                         <p class="text-gray-600 mb-4">Artık PDF düzenlemek için bilgisayara bağlı kalmak zorunda değilsiniz. Mobil cihazlarınızdan PDF'lerinizi düzenleyin.</p>
+                         <div class="flex items-center justify-between">
+                             <div class="flex items-center space-x-2">
+-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" alt="Zeynep Kaya" class="w-8 h-8 rounded-full object-cover">
++                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" alt="Zeynep Kaya" class="w-8 h-8 rounded-full object-cover" loading="lazy" decoding="async">
+                                 <span class="text-sm text-gray-600">Zeynep Kaya</span>
+                             </div>
+                             <a href="/blog/telefondan-pdf-duzenleme" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                 Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                             </a>
+                         </div>
+                     </div>
+                 </article>
+             </div>
+         </section>
+ 
+ 
+ 
+         <!-- Latest Posts -->
+         <section class="mb-16">
+             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Son Yazılar</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <!-- Post 1 -->
+                 <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="PDF Boyut Küçültme" class="w-full h-40 object-cover">
++                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="PDF Boyut Küçültme" class="w-full h-40 object-cover" loading="lazy" decoding="async">
+                     <div class="p-5">
+                         <div class="flex items-center text-sm text-gray-500 mb-2">
+                             <i class="fas fa-calendar mr-2"></i>
+                             <span>10 Aralık 2024</span>
+                         </div>
+                         <h3 class="font-bold text-gray-800 mb-2">
+                             <a href="/blog/pdf-boyut-kucultme" class="hover:text-blue-600 transition">PDF Boyut Küçültme Rehberi: Kaliteyi Bozmadan Dosyalarınızı E-postalayın!</a>
+                         </h3>
+                         <p class="text-gray-600 text-sm mb-3">"Bu dosya e-posta için çok büyük" uyarısının ne kadar can sıkıcı olduğunu anlatan ve bu soruna kesin çözüm sunan rehber.</p>
+                         <a href="/blog/pdf-boyut-kucultme" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                             Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                         </a>
+                     </div>
+                 </article>
+ 
+                 <!-- Post 2 -->
+                 <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=200&fit=crop" alt="PDF İmzalama" class="w-full h-40 object-cover">
++                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=200&fit=crop" alt="PDF İmzalama" class="w-full h-40 object-cover" loading="lazy" decoding="async">
+                     <div class="p-5">
+                         <div class="flex items-center text-sm text-gray-500 mb-2">
+                             <i class="fas fa-calendar mr-2"></i>
+                             <span>8 Aralık 2024</span>
+                         </div>
+                         <h3 class="font-bold text-gray-800 mb-2">
+                             <a href="/blog/pdf-imzalama" class="hover:text-blue-600 transition">İmzasız Belge Kalmasın: Adım Adım Online PDF İmzalama</a>
+                         </h3>
+                         <p class="text-gray-600 text-sm mb-3">Belgeleri yazdırma, imzalama ve tekrar tarama zahmetine son veren dijital imzanın kolaylığını öğrenin.</p>
+                         <a href="/blog/pdf-imzalama" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                             Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                         </a>
+                     </div>
+                 </article>
+ 
+                 <!-- Post 3 -->
+                 <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="PDF Güvenlik" class="w-full h-40 object-cover">
++                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="PDF Güvenlik" class="w-full h-40 object-cover" loading="lazy" decoding="async">
+                     <div class="p-5">
+                         <div class="flex items-center text-sm text-gray-500 mb-2">
+                             <i class="fas fa-calendar mr-2"></i>
+                             <span>5 Aralık 2024</span>
+                         </div>
+                         <h3 class="font-bold text-gray-800 mb-2">
+                             <a href="/blog/pdf-guvenlik" class="hover:text-blue-600 transition">PDF Güvenlik: Belgelerinizi Nasıl Koruyabilirsiniz?</a>
+                         </h3>
+                         <p class="text-gray-600 text-sm mb-3">PDF dosyalarınızı şifreleme, kısıtlama ve güvenli hale getirme yöntemlerini keşfedin.</p>
+                         <a href="/blog/pdf-guvenlik" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                             Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                         </a>
+                     </div>
+                 </article>
+ 
+                 <!-- Post 4 -->
+                 <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop" alt="PDF Birleştirme" class="w-full h-40 object-cover">
++                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop" alt="PDF Birleştirme" class="w-full h-40 object-cover" loading="lazy" decoding="async">
+                     <div class="p-5">
+                         <div class="flex items-center text-sm text-gray-500 mb-2">
+                             <i class="fas fa-calendar mr-2"></i>
+                             <span>3 Aralık 2024</span>
+                         </div>
+                         <h3 class="font-bold text-gray-800 mb-2">
+                             <a href="/blog/pdf-birlestirme" class="hover:text-blue-600 transition">PDF Birleştirme: Birden Fazla Dosyayı Tek PDF'te Nasıl Toplarsınız?</a>
+                         </h3>
+                         <p class="text-gray-600 text-sm mb-3">Çoklu PDF dosyalarını tek bir belgede birleştirme işlemini adım adım öğrenin.</p>
+                         <a href="/blog/pdf-birlestirme" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                             Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                         </a>
+                     </div>
+                 </article>
+ 
+                 <!-- Post 5 -->
+                 <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=200&fit=crop" alt="PDF OCR" class="w-full h-40 object-cover">
++                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=200&fit=crop" alt="PDF OCR" class="w-full h-40 object-cover" loading="lazy" decoding="async">
+                     <div class="p-5">
+                         <div class="flex items-center text-sm text-gray-500 mb-2">
+                             <i class="fas fa-calendar mr-2"></i>
+                             <span>1 Aralık 2024</span>
+                         </div>
+                         <h3 class="font-bold text-gray-800 mb-2">
+                             <a href="/blog/pdf-ocr" class="hover:text-blue-600 transition">OCR Teknolojisi: Taranmış PDF'leri Düzenlenebilir Metne Çevirin</a>
+                         </h3>
+                         <p class="text-gray-600 text-sm mb-3">Optik Karakter Tanıma teknolojisi ile taranmış belgeleri düzenlenebilir hale getirin.</p>
+                         <a href="/blog/pdf-ocr" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                             Devamını Oku <i class="fas fa-arrow-right ml-1"></i>
+                         </a>
+                     </div>
+                 </article>
+ 
+                 <!-- Post 6 -->
+                 <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                     <div class="w-full h-40 bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                         <i class="fas fa-file-pdf text-white text-6xl"></i>
+                     </div>
+                     <div class="p-5">
+                         <div class="flex items-center text-sm text-gray-500 mb-2">
+                             <i class="fas fa-calendar mr-2"></i>
+                             <span>28 Kasım 2024</span>
+                         </div>
+diff --git a/site/blog/pdf-boyut-kucultme.html b/site/blog/pdf-boyut-kucultme.html
+index c499a0912a22c230c089340a1d0ed72443b06e02..c485c901e752c023b512a205745e6742f5c65419 100644
+--- a/site/blog/pdf-boyut-kucultme.html
++++ b/site/blog/pdf-boyut-kucultme.html
+@@ -101,63 +101,63 @@
+             </div>
+         </div>
+     </header>
+ 
+     <!-- Main Content -->
+     <main class="container mx-auto px-4 py-8">
+         <!-- Breadcrumb -->
+         <nav class="text-sm text-gray-500 mb-8">
+             <a href="/" class="hover:text-blue-600">Ana Sayfa</a>
+             <span class="mx-2">/</span>
+             <a href="/blog" class="hover:text-blue-600">Blog</a>
+             <span class="mx-2">/</span>
+             <span>PDF Boyut Küçültme</span>
+         </nav>
+ 
+         <!-- Article Header -->
+         <article class="max-w-4xl mx-auto">
+             <header class="mb-8">
+                 <div class="mb-4">
+                     <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">PDF Sıkıştırma</span>
+                     <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium ml-2">Ücretsiz Araç</span>
+                 </div>
+                 <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Boyut Küçültme Rehberi: Kaliteyi Bozmadan Dosyalarınızı E-postalayın!</h1>
+                 <div class="flex items-center text-gray-600 mb-6">
+                     <div class="flex items-center mr-6">
+-                        <img src="https://images.unsplash.com/seed/author3/40/40" alt="Mehmet Demir" class="w-10 h-10 rounded-full mr-3">
++                        <img src="https://images.unsplash.com/seed/author3/40/40" alt="Mehmet Demir" class="w-10 h-10 rounded-full mr-3" loading="lazy" decoding="async">
+                         <div>
+                             <div class="font-medium">Mehmet Demir</div>
+                             <div class="text-sm">PDF Optimizasyon Uzmanı</div>
+                         </div>
+                     </div>
+                     <div class="flex items-center space-x-4 text-sm">
+                         <span><i class="fas fa-calendar mr-2"></i>10 Aralık 2024</span>
+                         <span><i class="fas fa-clock mr-2"></i>6 dk okuma</span>
+                         <span><i class="fas fa-eye mr-2"></i>3.1K görüntüleme</span>
+                     </div>
+                 </div>
+-                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop" alt="PDF Boyut Küçültme" class="w-full rounded-lg">
++                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop" alt="PDF Boyut Küçültme" class="w-full rounded-lg" loading="lazy" decoding="async">
+             </header>
+ 
+             <!-- Article Content -->
+             <div class="prose prose-lg max-w-none">
+                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                     "Bu dosya e-posta için çok büyük" uyarısı ile karşılaştığınızda ne kadar sinir bozucu olduğunu hepimiz biliyoruz! PDF dosyalarınızın boyutunu küçültmek artık çok kolay. Bu rehberde, kaliteyi bozmadan PDF boyutunu nasıl küçültebileceğinizi öğreneceksiniz.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">PDF Boyutu Neden Büyür?</h2>
+                 <p class="text-gray-700 mb-4">
+                     PDF dosyalarının boyutu birkaç nedenden dolayı büyük olabilir. Yüksek çözünürlüklü görseller, gömülü fontlar, şeffaflık efektleri ve katmanlar, dosya boyutunu önemli ölçüde artırabilir. Ayrıca, taranmış belgeler de genellikle büyük boyutlarda olur.
+                 </p>
+                 <p class="text-gray-700 mb-6">
+                     Özellikle iş belgelerinde, sunumlarda ve raporlarda kullanılan görseller, dosya boyutunu beklenmedik şekilde artırabilir. Bu durumda, PDF sıkıştırma işlemi hayat kurtarıcı olabilir.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">PDFişlemleri.com ile 3 Adımda PDF Sıkıştırma</h2>
+                 <p class="text-gray-700 mb-4">
+                     PDFişlemleri.com, PDF boyut küçültme işlemini çok basit hale getirir. Sadece üç adımda, büyük PDF dosyalarınızı e-posta ile gönderebileceğiniz boyutlara küçültebilirsiniz. İşlem tamamen ücretsiz ve herhangi bir kayıt gerektirmez.
+                 </p>
+                 <p class="text-gray-700 mb-6">
+                     İlk olarak, sıkıştırmak istediğiniz PDF dosyasını siteye yükleyin. Sistem otomatik olarak dosyayı analiz eder ve en uygun sıkıştırma seçeneklerini sunar. Ardından, istediğiniz sıkıştırma seviyesini seçin ve işlemi başlatın.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Farklı Sıkıştırma Seviyeleri ve Aralarındaki Farklar</h2>
+@@ -198,58 +198,58 @@
+                 </p>
+ 
+                 <div class="bg-orange-50 border-l-4 border-orange-400 p-6 my-8">
+                     <h3 class="text-lg font-bold text-orange-800 mb-2">💡 Hızlı İpucu</h3>
+                     <p class="text-orange-700">
+                         PDF sıkıştırma işleminden önce, dosyanızın bir yedeğini almayı unutmayın. Bu sayede, herhangi bir sorun yaşadığınızda orijinal dosyaya geri dönebilirsiniz.
+                     </p>
+                 </div>
+             </div>
+ 
+             <!-- Call to Action -->
+             <div class="bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-8 text-center text-white mt-12">
+                 <h3 class="text-2xl font-bold mb-4">PDF Boyutunu Küçültün!</h3>
+                 <p class="text-lg mb-6">Büyük dosyalarınızı e-posta ile gönderilebilir boyutlara getirin</p>
+                 <a href="/" class="bg-white text-orange-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                     PDF Sıkıştırıcıyı Aç
+                 </a>
+             </div>
+         </article>
+ 
+         <!-- Related Posts -->
+         <section class="max-w-4xl mx-auto mt-16">
+             <h2 class="text-2xl font-bold text-gray-800 mb-8">İlgili Yazılar</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 <a href="/blog/word-pdf-donusturme" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=200&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full h-32 object-cover rounded-t-lg">
++                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=200&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full h-32 object-cover rounded-t-lg" loading="lazy" decoding="async">
+                     <div class="p-4">
+                         <h3 class="font-bold text-gray-800 mb-2">Programsız Word'den PDF'e Dönüştürme: 3 Basit Adımda Zamandan Kazanın!</h3>
+                         <p class="text-gray-600 text-sm">Word belgelerinizi saniyeler içinde PDF'e dönüştürün.</p>
+                     </div>
+                 </a>
+                 <a href="/blog/telefondan-pdf-duzenleme" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=200&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full h-32 object-cover rounded-t-lg">
++                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=200&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full h-32 object-cover rounded-t-lg" loading="lazy" decoding="async">
+                     <div class="p-4">
+                         <h3 class="font-bold text-gray-800 mb-2">Telefondan PDF Düzenleme: Hareket Halindeyken Belgelerinizi Kontrol Altına Alın!</h3>
+                         <p class="text-gray-600 text-sm">Mobil cihazlarınızdan PDF'lerinizi düzenleyin.</p>
+                     </div>
+                 </a>
+             </div>
+         </section>
+     </main>
+ 
+     <!-- Footer -->
+     <footer class="bg-gray-800 text-white py-12 mt-16">
+         <div class="container mx-auto px-4">
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                 <div>
+                     <div class="flex items-center space-x-2 mb-4">
+                         <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                         <h3 class="text-xl font-bold">PDFişlemleri.com</h3>
+                     </div>
+                     <p class="text-gray-400">Tüm belge ihtiyaçlarınız için nihai PDF çözümü. Mizah garantili!</p>
+                 </div>
+                 <div>
+                     <h4 class="font-semibold text-lg mb-4">Araçlar</h4>
+                     <ul class="space-y-2">
+                         <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Birleştir</a></li>
+                         <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Ayır</a></li>
+diff --git a/site/blog/telefondan-pdf-duzenleme.html b/site/blog/telefondan-pdf-duzenleme.html
+index b55fe4ebb5a2f8fa25f8b8e15c28cb4f9d6e2e0c..a94ee257e0903570f1282a1a7330b0c4f5db6b9f 100644
+--- a/site/blog/telefondan-pdf-duzenleme.html
++++ b/site/blog/telefondan-pdf-duzenleme.html
+@@ -101,63 +101,63 @@
+             </div>
+         </div>
+     </header>
+ 
+     <!-- Main Content -->
+     <main class="container mx-auto px-4 py-8">
+         <!-- Breadcrumb -->
+         <nav class="text-sm text-gray-500 mb-8">
+             <a href="/" class="hover:text-blue-600">Ana Sayfa</a>
+             <span class="mx-2">/</span>
+             <a href="/blog" class="hover:text-blue-600">Blog</a>
+             <span class="mx-2">/</span>
+             <span>Telefondan PDF Düzenleme</span>
+         </nav>
+ 
+         <!-- Article Header -->
+         <article class="max-w-4xl mx-auto">
+             <header class="mb-8">
+                 <div class="mb-4">
+                     <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">PDF Düzenleme</span>
+                     <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium ml-2">Mobil Uyumlu</span>
+                 </div>
+                 <h1 class="text-4xl font-bold text-gray-800 mb-4">Telefondan PDF Düzenleme: Hareket Halindeyken Belgelerinizi Kontrol Altına Alın!</h1>
+                 <div class="flex items-center text-gray-600 mb-6">
+                     <div class="flex items-center mr-6">
+-                        <img src="https://images.unsplash.com/seed/author2/40/40" alt="Zeynep Kaya" class="w-10 h-10 rounded-full mr-3">
++                        <img src="https://images.unsplash.com/seed/author2/40/40" alt="Zeynep Kaya" class="w-10 h-10 rounded-full mr-3" loading="lazy" decoding="async">
+                         <div>
+                             <div class="font-medium">Zeynep Kaya</div>
+                             <div class="text-sm">Mobil PDF Uzmanı</div>
+                         </div>
+                     </div>
+                     <div class="flex items-center space-x-4 text-sm">
+                         <span><i class="fas fa-calendar mr-2"></i>12 Aralık 2024</span>
+                         <span><i class="fas fa-clock mr-2"></i>7 dk okuma</span>
+                         <span><i class="fas fa-eye mr-2"></i>1.8K görüntüleme</span>
+                     </div>
+                 </div>
+-                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full rounded-lg">
++                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full rounded-lg" loading="lazy" decoding="async">
+             </header>
+ 
+             <!-- Article Content -->
+             <div class="prose prose-lg max-w-none">
+                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                     Günümüzde mobil teknolojinin gelişmesiyle birlikte, artık PDF düzenlemek için bilgisayara bağlı kalmak zorunda değilsiniz! Telefonunuzdan PDF'lerinizi düzenleyebilir, metin ekleyebilir, imza atabilir ve hatta resim ekleyebilirsiniz. Bu rehber, mobil cihazlardan PDF düzenleme konusunda size kapsamlı bilgi verecektir.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Mobil PDF Düzenleme Neden Önemli?</h2>
+                 <p class="text-gray-700 mb-4">
+                     Modern iş dünyasında sürekli hareket halinde olmak gerekiyor. Toplantılar arasında, seyahat sırasında veya ofis dışında çalışırken, belgelerinizi düzenleme ihtiyacı doğabilir. Bu durumda mobil PDF düzenleme araçları hayat kurtarıcı olabilir.
+                 </p>
+                 <p class="text-gray-700 mb-6">
+                     Ayrıca, mobil cihazlar artık çok güçlü ve kullanıcı dostu. Dokunmatik ekranlar, kalem desteği ve gelişmiş yazılımlar sayesinde, masaüstü bilgisayarlarda yapılan işlemlerin çoğunu mobil cihazlardan da gerçekleştirebilirsiniz.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">En Sık Karşılaşılan Mobil PDF Sorunları</h2>
+                 <p class="text-gray-700 mb-4">
+                     Mobil kullanıcılar genellikle şu PDF düzenleme ihtiyaçlarıyla karşılaşır: metin ekleme, mevcut metni düzenleme, resim ekleme, form doldurma, imza atma, belge üzerinde işaretleme yapma ve not alma. Bu işlemlerin hepsi artık mobil cihazlardan kolayca yapılabilir.
+                 </p>
+                 <p class="text-gray-700 mb-6">
+                     Özellikle iş seyahatlerinde veya acil durumlarda, belgeleri hızlıca düzenleyip göndermek çok önemlidir. Mobil PDF düzenleme araçları, bu ihtiyaçları karşılamak için tasarlanmıştır.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">PDFişlemleri.com ile Adım Adım Mobil PDF Düzenleme</h2>
+@@ -198,58 +198,58 @@
+                 </p>
+ 
+                 <div class="bg-green-50 border-l-4 border-green-400 p-6 my-8">
+                     <h3 class="text-lg font-bold text-green-800 mb-2">📱 Mobil İpucu</h3>
+                     <p class="text-green-700">
+                         Mobil cihazlarda PDF düzenleme yaparken, yatay modu kullanarak daha geniş bir çalışma alanı elde edebilirsiniz. Bu, özellikle karmaşık düzenlemeler için çok faydalıdır.
+                     </p>
+                 </div>
+             </div>
+ 
+             <!-- Call to Action -->
+             <div class="bg-gradient-to-r from-green-600 to-blue-600 rounded-xl p-8 text-center text-white mt-12">
+                 <h3 class="text-2xl font-bold mb-4">Mobil PDF Düzenlemeyi Deneyin!</h3>
+                 <p class="text-lg mb-6">Telefonunuzdan PDF'lerinizi düzenleyin</p>
+                 <a href="/" class="bg-white text-green-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                     PDF Düzenleyiciyi Aç
+                 </a>
+             </div>
+         </article>
+ 
+         <!-- Related Posts -->
+         <section class="max-w-4xl mx-auto mt-16">
+             <h2 class="text-2xl font-bold text-gray-800 mb-8">İlgili Yazılar</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 <a href="/blog/word-pdf-donusturme" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=200&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full h-32 object-cover rounded-t-lg">
++                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=200&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full h-32 object-cover rounded-t-lg" loading="lazy" decoding="async">
+                     <div class="p-4">
+                         <h3 class="font-bold text-gray-800 mb-2">Programsız Word'den PDF'e Dönüştürme: 3 Basit Adımda Zamandan Kazanın!</h3>
+                         <p class="text-gray-600 text-sm">Word belgelerinizi saniyeler içinde PDF'e dönüştürün.</p>
+                     </div>
+                 </a>
+                 <a href="/blog/pdf-boyut-kucultme" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="PDF Boyut Küçültme" class="w-full h-32 object-cover rounded-t-lg">
++                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="PDF Boyut Küçültme" class="w-full h-32 object-cover rounded-t-lg" loading="lazy" decoding="async">
+                     <div class="p-4">
+                         <h3 class="font-bold text-gray-800 mb-2">PDF Boyut Küçültme Rehberi: Kaliteyi Bozmadan Dosyalarınızı E-postalayın!</h3>
+                         <p class="text-gray-600 text-sm">Büyük PDF dosyalarını küçültün ve e-posta ile gönderin.</p>
+                     </div>
+                 </a>
+             </div>
+         </section>
+     </main>
+ 
+     <!-- Footer -->
+     <footer class="bg-gray-800 text-white py-12 mt-16">
+         <div class="container mx-auto px-4">
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                 <div>
+                     <div class="flex items-center space-x-2 mb-4">
+                         <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                         <h3 class="text-xl font-bold">PDFişlemleri.com</h3>
+                     </div>
+                     <p class="text-gray-400">Tüm belge ihtiyaçlarınız için nihai PDF çözümü. Mizah garantili!</p>
+                 </div>
+                 <div>
+                     <h4 class="font-semibold text-lg mb-4">Araçlar</h4>
+                     <ul class="space-y-2">
+                         <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Birleştir</a></li>
+                         <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Ayır</a></li>
+diff --git a/site/blog/word-pdf-donusturme.html b/site/blog/word-pdf-donusturme.html
+index bca7e7cde524db8ab5230537cde9fbd3acebfc71..22174ec0a2ae248cf8370a96cae69d366a125d46 100644
+--- a/site/blog/word-pdf-donusturme.html
++++ b/site/blog/word-pdf-donusturme.html
+@@ -101,63 +101,63 @@
+             </div>
+         </div>
+     </header>
+ 
+     <!-- Main Content -->
+     <main class="container mx-auto px-4 py-8">
+         <!-- Breadcrumb -->
+         <nav class="text-sm text-gray-500 mb-8">
+             <a href="/" class="hover:text-blue-600">Ana Sayfa</a>
+             <span class="mx-2">/</span>
+             <a href="/blog" class="hover:text-blue-600">Blog</a>
+             <span class="mx-2">/</span>
+             <span>Word'den PDF'e Dönüştürme</span>
+         </nav>
+ 
+         <!-- Article Header -->
+         <article class="max-w-4xl mx-auto">
+             <header class="mb-8">
+                 <div class="mb-4">
+                     <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">PDF Dönüştürme</span>
+                     <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium ml-2">Ücretsiz Araç</span>
+                 </div>
+                 <h1 class="text-4xl font-bold text-gray-800 mb-4">Programsız Word'den PDF'e Dönüştürme: 3 Basit Adımda Zamandan Kazanın!</h1>
+                 <div class="flex items-center text-gray-600 mb-6">
+                     <div class="flex items-center mr-6">
+-                        <img src="https://images.unsplash.com/seed/author1/40/40" alt="Ahmet Yılmaz" class="w-10 h-10 rounded-full mr-3">
++                        <img src="https://images.unsplash.com/seed/author1/40/40" alt="Ahmet Yılmaz" class="w-10 h-10 rounded-full mr-3" loading="lazy" decoding="async">
+                         <div>
+                             <div class="font-medium">Ahmet Yılmaz</div>
+                             <div class="text-sm">PDF Uzmanı</div>
+                         </div>
+                     </div>
+                     <div class="flex items-center space-x-4 text-sm">
+                         <span><i class="fas fa-calendar mr-2"></i>15 Aralık 2024</span>
+                         <span><i class="fas fa-clock mr-2"></i>5 dk okuma</span>
+                         <span><i class="fas fa-eye mr-2"></i>2.4K görüntüleme</span>
+                     </div>
+                 </div>
+-                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=400&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full rounded-lg">
++                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=400&fit=crop" alt="Word'den PDF'e Dönüştürme" class="w-full rounded-lg" loading="lazy" decoding="async">
+             </header>
+ 
+             <!-- Article Content -->
+             <div class="prose prose-lg max-w-none">
+                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                     Günümüzde Word belgelerini PDF formatına dönüştürmek artık çok kolay! Artık program kurma derdi yaşamadan, PDFişlemleri.com ile Word belgelerinizi saniyeler içinde nasıl PDF'e dönüştürebileceğinizi öğreneceksiniz. Bu rehber, ofis çalışanları, öğrenciler ve acil belge göndermesi gereken herkes için hazırlanmıştır.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Neden Word'den PDF'e Dönüştürme İhtiyacı Doğar?</h2>
+                 <p class="text-gray-700 mb-4">
+                     PDF formatı, belgelerinizin tüm cihazlarda aynı görünmesini sağlar. Word belgeleri farklı bilgisayarlarda farklı görünebilir, ancak PDF dosyaları her yerde aynı kalır. Ayrıca PDF formatı, belgelerinizin düzenlenmesini engelleyerek güvenliği artırır ve profesyonel görünüm sağlar.
+                 </p>
+                 <p class="text-gray-700 mb-6">
+                     Özellikle iş başvurularında, akademik çalışmalarda ve resmi belgelerde PDF formatı tercih edilir. Çünkü PDF dosyaları, orijinal formatını korur ve herhangi bir cihazda açıldığında aynı görünür.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Adım 1: Dosyanızı Yükleyin</h2>
+                 <p class="text-gray-700 mb-4">
+                     İlk adım olarak, dönüştürmek istediğiniz Word belgesini PDFişlemleri.com'a yüklemeniz gerekiyor. Bu işlem oldukça basit ve hızlıdır. Sitenin ana sayfasında "PDF Dönüştür" aracını bulun ve "Dosya Seç" butonuna tıklayın.
+                 </p>
+                 <p class="text-gray-700 mb-6">
+                     Desteklenen Word formatları arasında .doc ve .docx dosyaları bulunur. Dosya boyutu sınırı 50MB'dır, bu da çoğu Word belgesi için yeterlidir. Dosyanızı seçtikten sonra, sistem otomatik olarak dosyayı yüklemeye başlayacaktır.
+                 </p>
+ 
+                 <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Adım 2: Dönüştürme İşlemi</h2>
+@@ -198,58 +198,58 @@
+                 </p>
+ 
+                 <div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
+                     <h3 class="text-lg font-bold text-blue-800 mb-2">💡 Hızlı İpucu</h3>
+                     <p class="text-blue-700">
+                         Birden fazla Word belgesini aynı anda PDF'e dönüştürmek istiyorsanız, PDFişlemleri.com'un toplu dönüştürme özelliğini kullanabilirsiniz. Bu özellik, zaman kazanmanıza yardımcı olur.
+                     </p>
+                 </div>
+             </div>
+ 
+             <!-- Call to Action -->
+             <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-center text-white mt-12">
+                 <h3 class="text-2xl font-bold mb-4">Hemen Deneyin!</h3>
+                 <p class="text-lg mb-6">Word belgelerinizi saniyeler içinde PDF'e dönüştürün</p>
+                 <a href="/" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                     PDF Dönüştürücüyü Aç
+                 </a>
+             </div>
+         </article>
+ 
+         <!-- Related Posts -->
+         <section class="max-w-4xl mx-auto mt-16">
+             <h2 class="text-2xl font-bold text-gray-800 mb-8">İlgili Yazılar</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 <a href="/blog/telefondan-pdf-duzenleme" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=200&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full h-32 object-cover rounded-t-lg">
++                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=200&fit=crop" alt="Telefondan PDF Düzenleme" class="w-full h-32 object-cover rounded-t-lg" loading="lazy" decoding="async">
+                     <div class="p-4">
+                         <h3 class="font-bold text-gray-800 mb-2">Telefondan PDF Düzenleme: Hareket Halindeyken Belgelerinizi Kontrol Altına Alın!</h3>
+                         <p class="text-gray-600 text-sm">Mobil cihazlarınızdan PDF'lerinizi düzenleyin.</p>
+                     </div>
+                 </a>
+                 <a href="/blog/pdf-boyut-kucultme" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="PDF Boyut Küçültme" class="w-full h-32 object-cover rounded-t-lg">
++                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="PDF Boyut Küçültme" class="w-full h-32 object-cover rounded-t-lg" loading="lazy" decoding="async">
+                     <div class="p-4">
+                         <h3 class="font-bold text-gray-800 mb-2">PDF Boyut Küçültme Rehberi: Kaliteyi Bozmadan Dosyalarınızı E-postalayın!</h3>
+                         <p class="text-gray-600 text-sm">Büyük PDF dosyalarını küçültün ve e-posta ile gönderin.</p>
+                     </div>
+                 </a>
+             </div>
+         </section>
+     </main>
+ 
+     <!-- Footer -->
+     <footer class="bg-gray-800 text-white py-12 mt-16">
+         <div class="container mx-auto px-4">
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                 <div>
+                     <div class="flex items-center space-x-2 mb-4">
+                         <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                         <h3 class="text-xl font-bold">PDFişlemleri.com</h3>
+                     </div>
+                     <p class="text-gray-400">Tüm belge ihtiyaçlarınız için nihai PDF çözümü. Mizah garantili!</p>
+                 </div>
+                 <div>
+                     <h4 class="font-semibold text-lg mb-4">Araçlar</h4>
+                     <ul class="space-y-2">
+                         <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Birleştir</a></li>
+                         <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Ayır</a></li>
+diff --git a/site/contact.html b/site/contact.html
+index 35331f75234b0f40ec54ffe5a2c1c5f194f4df06..0f8a9c907a92555581f3ffa5e7c98b2d7d00dc2e 100644
+--- a/site/contact.html
++++ b/site/contact.html
+@@ -79,51 +79,51 @@
+                                     <button id="night-mode-btn" class="text-gray-600 hover:text-blue-600 transition p-2 rounded-lg hover:bg-gray-100" title="Gece Modu" tabindex="0" role="button" aria-label="Gece modunu aç/kapat">
+                     <span class="text-lg">🌙</span>
+                 </button>
+                 <button id="comfort-mode-btn" class="text-gray-600 hover:text-green-600 transition p-2 rounded-lg hover:bg-gray-100" title="Konfor Modu" tabindex="0" role="button" aria-label="Konfor modunu aç/kapat">
+                     <span class="text-lg">👀</span>
+                 </button>
+                 </div>
+             </div>
+         </div>
+     </header>
+ 
+         <!-- Main Content -->
+         <main class="site-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+         <!-- Hero Section -->
+         <div class="text-center mb-12">
+             <h1 class="text-4xl font-bold text-gray-900 mb-4">Bizimle İletişime Geçin</h1>
+             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                 Sorularınız, önerileriniz veya geri bildirimleriniz için aşağıdaki iletişim kanallarını kullanabilirsiniz.
+             </p>
+         </div>
+ 
+         <div class="max-w-2xl mx-auto">
+             <!-- Contact Information -->
+             <div class="contact-info-card bg-white rounded-xl shadow-lg p-8 relative overflow-hidden">
+                 <!-- Background Image with Overlay -->
+-                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url('/images/pdfandoc.png');"></div>
++                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url('/images/pdfandoc.webp');"></div>
+                 <!-- Dark Overlay -->
+                 <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                 <!-- Content with relative positioning -->
+                 <div class="relative z-10">
+                     <h2 class="text-2xl font-semibold text-gray-800 mb-6">İletişim Bilgileri</h2>
+                 
+                 <div class="space-y-6">
+                     <div class="flex items-center space-x-4">
+                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                             <i class="fas fa-map-marker-alt text-red-600 text-xl"></i>
+                         </div>
+                         <div>
+                             <h3 class="font-medium text-gray-900">Adres</h3>
+                             <p class="text-gray-600">İstanbul, Türkiye</p>
+                         </div>
+                     </div>
+                     
+                     <div class="flex items-center space-x-4">
+                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                             <i class="fas fa-clock text-red-600 text-xl"></i>
+                         </div>
+                         <div>
+                             <h3 class="font-medium text-gray-900">Yanıt Süresi</h3>
+                             <p class="text-gray-600">24 saat içinde</p>
+                         </div>
+                         
+diff --git a/site/index.html b/site/index.html
+index 8b0beb0ecf7812187e07e3726b1d684f342a9fae..9650bfc4220cac7c90b77448dde9bd1905ce52bb 100644
+--- a/site/index.html
++++ b/site/index.html
+@@ -41,52 +41,55 @@
+     
+     <!-- Favicon -->
+     <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#0ea5e9">
+     <meta name="theme-color" content="#0ea5e9">
+     
+     <!-- Windows Tile -->
+     <meta name="msapplication-config" content="/icons/browserconfig.xml">
+     
+     <!-- Preconnect for performance -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     
+     <!-- Tailwind CSS -->
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script>
+         // Production uyarısını gizle
+         tailwind.config = {
+             corePlugins: {
+                 preflight: false,
+             }
+         }
+     </script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+-    
++
+     <!-- Custom CSS -->
++    <style>
++*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;color:#333;background-color:#f9fafb}a{text-decoration:none;color:inherit}a:visited{color:inherit}a:hover{text-decoration:none}:root{--bg-primary:#f9fafb;--bg-secondary:#ffffff;--bg-tertiary:#f3f4f6;--text-primary:#111827;--text-secondary:#374151;--text-muted:#6b7280;--border-color:#d1d5db;--shadow-color:rgba(0,0,0,0.1);--accent-color:#3b82f6;--accent-hover:#2563eb}
++    </style>
+     <link rel="stylesheet" href="style.css">
+     
+     <!-- Structured Data -->
+     <script type="application/ld+json">
+     {
+         "@context": "https://schema.org",
+         "@type": "WebSite",
+         "name": "PDFişlemleri.com",
+         "alternateName": "PDF İşlemleri",
+         "description": "Ücretsiz PDF araçları sunan online platform",
+         "url": "https://pdfislemleri.com",
+         "potentialAction": {
+             "@type": "SearchAction",
+             "target": "https://pdfislemleri.com/search?q={search_term_string}",
+             "query-input": "required name=search_term_string"
+         },
+         "author": {
+             "@type": "Organization",
+             "name": "PDFişlemleri.com",
+             "url": "https://pdfislemleri.com",
+             "logo": "https://pdfislemleri.com/icons/logo.png"
+         },
+         "sameAs": [
+             "https://facebook.com/pdfislemleri",
+             "https://twitter.com/pdfislemleri",
+@@ -388,83 +391,83 @@
+                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                         <i class="fas fa-bolt text-green-600 text-2xl"></i>
+                     </div>
+                     <h3 class="font-semibold text-lg text-gray-800 mb-2">Hızlı & Verimli</h3>
+                     <p class="text-gray-600">Optimize edilmiş algoritmalarımızla PDF'lerinizi anında işleyin. Hızımızdan siz bile şaşıracaksınız!</p>
+                 </div>
+                 <div class="text-center">
+                     <div class="bg-purple-100 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4">
+                         <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                     </div>
+                     <h3 class="font-semibold text-lg text-gray-800 mb-2">Çoklu Platform</h3>
+                     <p class="text-gray-600">Masaüstü, tablet ve mobil dahil tüm cihazlarda çalışır. PDF'leriniz neredeyseniz orada!</p>
+                 </div>
+             </div>
+             <div class="mt-6 text-center text-gray-500 italic">
+                 <i class="fas fa-heart text-red-500"></i> Sadece PDF'lerinizi değil, kalbinizi de fethediyoruz!
+             </div>
+         </section>
+ 
+         <!-- Testimonials Section -->
+         <section class="mb-12">
+             <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Kullanıcılarımız Ne Diyor?</h2>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                 <div class="bg-white rounded-xl shadow-md p-6">
+                     <div class="flex items-center mb-4">
+-                        <img src="https://picsum.photos/seed/user1/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3">
++                        <img src="https://picsum.photos/seed/user1/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3" loading="lazy" decoding="async">
+                         <div>
+                             <h4 class="font-semibold text-gray-800">Ayşe Yılmaz</h4>
+                             <div class="text-yellow-400">
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                             </div>
+                         </div>
+                     </div>
+                     <p class="text-gray-600">"PDFişlemleri.com iş yerinde saatlerimi kurtardı. Birleştirme aracı bir can kurtaran! Artık PDF'lerle ilgili kabuslar görmüyorum."</p>
+                 </div>
+                 <div class="bg-white rounded-xl shadow-md p-6">
+                     <div class="flex items-center mb-4">
+-                        <img src="https://picsum.photos/seed/user2/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3">
++                        <img src="https://picsum.photos/seed/user2/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3" loading="lazy" decoding="async">
+                         <div>
+                             <h4 class="font-semibold text-gray-800">Mehmet Kaya</h4>
+                             <div class="text-yellow-400">
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                             </div>
+                         </div>
+                     </div>
+                     <p class="text-gray-600">"Sıkıştırma aracı PDF dosya boyutumu %80 azalttı ve kaliteden ödün vermedi. Şaşırdım kaldım! Bu sihir mi? Ayrıca ücretsiz olması harika!"</p>
+                 </div>
+                 <div class="bg-white rounded-xl shadow-md p-6">
+                     <div class="flex items-center mb-4">
+-                        <img src="https://picsum.photos/seed/user3/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3">
++                        <img src="https://picsum.photos/seed/user3/50/50.jpg" alt="User" class="w-12 h-12 rounded-full mr-3" loading="lazy" decoding="async">
+                         <div>
+                             <h4 class="font-semibold text-gray-800">Zeynep Demir</h4>
+                             <div class="text-yellow-400">
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                                 <i class="fas fa-star"></i>
+                             </div>
+                         </div>
+                     </div>
+                     <p class="text-gray-600">"Çalışmalarım için her gün PDFişlemleri.com'u kullanıyorum. Dönüştürme araçları kusursuz çalışıyor. Ücretsiz olması da cabası! Teşekkür ederim."</p>
+                 </div>
+             </div>
+             <div class="mt-6 text-center text-gray-500 italic">
+                 <i class="fas fa-award text-yellow-500"></i> Bu yorumlar %100 gerçek ve %100 abartısız... Belki biraz abartılı.
+             </div>
+         </section>
+ 
+         <!-- Fun Facts Section -->
+         <section class="bg-blue-50 rounded-xl shadow-md p-8 mb-12">
+             <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">PDF Hakkında Komik Gerçekler</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 <div class="bg-white rounded-lg p-4 shadow-sm">
+                     <h3 class="font-semibold text-lg text-gray-800 mb-2"><i class="fas fa-laugh text-yellow-500 mr-2"></i>PDF'nin Anlamı</h3>
+diff --git a/site/js/modules/api.js b/site/js/modules/api.js
+index d4e23b9f193ef3fc307e42f19bd207ca3d4f06da..1875e1f55c670ee339b9af4239c2776fb7816dd4 100644
+--- a/site/js/modules/api.js
++++ b/site/js/modules/api.js
+@@ -1,105 +1,118 @@
+ /**
+  * API çağrıları ve backend entegrasyonu
+  * PDFişlemleri.com
+  */
+ 
+ class PDFApi {
+     constructor() {
+         this.baseUrl = window.location.origin + '/api';
+     }
+ 
++    trackEvent(action, tool) {
++        if (typeof gtag === 'function') {
++            gtag('event', action, {
++                event_category: 'funnel',
++                event_label: tool
++            });
++        }
++    }
++
+     /**
+      * API health check
+      */
+     async checkHealth() {
+         try {
+             const response = await fetch(`${this.baseUrl}/status`);
+             return await response.json();
+         } catch (error) {
+             console.error('API health check failed:', error);
+             throw error;
+         }
+     }
+ 
+     /**
+      * PDF araçlarının listesini al
+      */
+     async getTools() {
+         try {
+             const response = await fetch(`${this.baseUrl}/tools`);
+             if (!response.ok) throw new Error('Tools fetch failed');
+             return await response.json();
+         } catch (error) {
+             console.error('Failed to fetch tools:', error);
+             throw error;
+         }
+     }
+ 
+     /**
+      * PDF dosyalarını yükle (merge için)
+      */
+     async uploadFilesForMerge(files) {
+         try {
+             const formData = new FormData();
+             files.forEach(file => {
+                 formData.append('files', file);
+             });
+ 
+             const response = await fetch(`${this.baseUrl}/tools/merge/upload`, {
+                 method: 'POST',
+                 body: formData
+             });
+ 
+             if (!response.ok) {
+                 const error = await response.json();
+                 throw new Error(error.detail || 'Dosya yükleme hatası');
+             }
+ 
+-            return await response.json();
++            const data = await response.json();
++            this.trackEvent('upload', 'merge');
++            return data;
+         } catch (error) {
+             console.error('File upload failed:', error);
+             throw error;
+         }
+     }
+ 
+     /**
+      * PDF birleştirme işlemini başlat
+      */
+     async processMerge(sessionId, sortByName = false) {
+         try {
+             const response = await fetch(
+                 `${this.baseUrl}/tools/merge/process/${sessionId}?sort_by_name=${sortByName}`,
+                 { method: 'POST' }
+             );
+ 
+             if (!response.ok) {
+                 const error = await response.json();
+                 throw new Error(error.detail || 'Birleştirme hatası');
+             }
+ 
+-            return await response.json();
++            const data = await response.json();
++            this.trackEvent('process', 'merge');
++            return data;
+         } catch (error) {
+             console.error('Merge process failed:', error);
+             throw error;
+         }
+     }
+ 
+     /**
+      * Session durumunu kontrol et
+      */
+     async checkSession(sessionId) {
+         try {
+             const response = await fetch(`${this.baseUrl}/tools/merge/session/${sessionId}/check`);
+             if (!response.ok) {
+                 throw new Error(`Session check failed: ${response.status}`);
+             }
+             return await response.json();
+         } catch (error) {
+             console.error('Session check failed:', error);
+             throw error;
+         }
+     }
+ 
+     /**
+      * Session temizle
+      */
+@@ -107,324 +120,368 @@ class PDFApi {
+         try {
+             await fetch(`${this.baseUrl}/tools/merge/session/${sessionId}`, {
+                 method: 'DELETE'
+             });
+         } catch (error) {
+             console.warn('Session cleanup failed:', error);
+         }
+     }
+ 
+     /**
+      * Dosya indirme URL'si oluştur
+      */
+     getDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/merge/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== Organize APIs =====
+     async uploadFilesForOrganize(files) {
+         const formData = new FormData();
+         files.forEach(f => formData.append('files', f));
+         const res = await fetch(`${this.baseUrl}/tools/organize/upload`, { method: 'POST', body: formData });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'Dosya yükleme hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('upload', 'organize');
++        return data;
+     }
+ 
+     async processOrganize(sessionId, pageOrder) {
+         const res = await fetch(`${this.baseUrl}/tools/organize/process/${sessionId}`, {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ pages: pageOrder })
+         });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'Organize işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'organize');
++        return data;
+     }
+ 
+     getOrganizeDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/organize/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== Split APIs =====
+     async uploadFileForSplit(file) {
+         const formData = new FormData();
+         formData.append('file', file);
+         const response = await fetch(`${this.baseUrl}/tools/split/upload`, { method: 'POST', body: formData });
+         if (!response.ok) {
+             const err = await response.json().catch(() => ({}));
+             throw new Error(err.detail || 'Split yükleme hatası');
+         }
+-        return response.json();
++        const data = await response.json();
++        this.trackEvent('upload', 'split');
++        return data;
+     }
+ 
+     async processSplit(sessionId, mode, options = {}) {
+         const params = new URLSearchParams();
+         params.set('mode', mode);
+         if (options.pages) params.set('pages', options.pages);
+         if (options.every_n) params.set('every_n', options.every_n);
+         const response = await fetch(`${this.baseUrl}/tools/split/process/${sessionId}?${params.toString()}`, { method: 'POST' });
+         if (!response.ok) {
+             const err = await response.json().catch(() => ({}));
+             throw new Error(err.detail || 'Split işlem hatası');
+         }
+-        return response.json();
++        const data = await response.json();
++        this.trackEvent('process', 'split');
++        return data;
+     }
+ 
+     getSplitZipUrl(sessionId, zipFile) {
+         return `${this.baseUrl}/tools/split/download/${sessionId}/${zipFile}`;
+     }
+ 
+     // ===== Compress APIs =====
+     async uploadFilesForCompress(files) {
+         const formData = new FormData();
+         files.forEach(f => formData.append('files', f));
+         const res = await fetch(`${this.baseUrl}/tools/compress/upload`, { method: 'POST', body: formData });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'Sıkıştırma yükleme hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('upload', 'compress');
++        return data;
+     }
+ 
+     async processCompress(sessionId, level = 'medium') {
+         const res = await fetch(`${this.baseUrl}/tools/compress/process/${sessionId}?level=${encodeURIComponent(level)}`, { method: 'POST' });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'Sıkıştırma işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'compress');
++        return data;
+     }
+ 
+     getCompressDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/compress/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== PDF → Word APIs =====
+     async uploadFileForPdfToWord(file) {
+         const formData = new FormData();
+         formData.append('file', file);
+         const response = await fetch(`${this.baseUrl}/tools/pdf-to-word/upload`, { method: 'POST', body: formData });
+         if (!response.ok) {
+             const err = await response.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF→Word yükleme hatası');
+         }
+-        return response.json();
++        const data = await response.json();
++        this.trackEvent('upload', 'pdf-to-word');
++        return data;
+     }
+ 
+     async processPdfToWord(sessionId) {
+         const res = await fetch(`${this.baseUrl}/tools/pdf-to-word/process/${sessionId}`, { method: 'POST' });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF→Word işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'pdf-to-word');
++        return data;
+     }
+ 
+     getPdfToWordDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/pdf-to-word/download/${sessionId}/${filename}`;
+     }
+     // ===== Word → PDF APIs =====
+     async uploadFileForWordToPdf(file) {
+         const formData = new FormData();
+         formData.append('file', file);
+         const response = await fetch(`${this.baseUrl}/tools/word-to-pdf/upload`, { method: 'POST', body: formData });
+         if (!response.ok) {
+             const err = await response.json().catch(() => ({}));
+             throw new Error(err.detail || 'Word→PDF yükleme hatası');
+         }
+-        return response.json();
++        const data = await response.json();
++        this.trackEvent('upload', 'word-to-pdf');
++        return data;
+     }
+ 
+     async processWordToPdf(sessionId) {
+         const res = await fetch(`${this.baseUrl}/tools/word-to-pdf/process/${sessionId}`, { method: 'POST' });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'Word→PDF işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'word-to-pdf');
++        return data;
+     }
+ 
+     getWordToPdfDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/word-to-pdf/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== PDF → PPT APIs =====
+     async uploadFileForPdfToPpt(file) {
+         const formData = new FormData();
+         formData.append('file', file);
+         const response = await fetch(`${this.baseUrl}/tools/pdf-to-ppt/upload`, { method: 'POST', body: formData });
+         if (!response.ok) {
+             const err = await response.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF→PPT yükleme hatası');
+         }
+-        return response.json();
++        const data = await response.json();
++        this.trackEvent('upload', 'pdf-to-ppt');
++        return data;
+     }
+ 
+     async processPdfToPpt(sessionId) {
+         const res = await fetch(`${this.baseUrl}/tools/pdf-to-ppt/process/${sessionId}`, { method: 'POST' });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF→PPT işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'pdf-to-ppt');
++        return data;
+     }
+ 
+     getPdfToPptDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/pdf-to-ppt/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== PDF Şifreleme APIs =====
+     async uploadFilesForProtect(files) {
+         const formData = new FormData();
+         files.forEach(f => formData.append('files', f));
+         const response = await fetch(`${this.baseUrl}/tools/protect/upload`, { method: 'POST', body: formData });
+         if (!response.ok) {
+             const err = await response.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF Şifreleme yükleme hatası');
+         }
+-        return response.json();
++        const data = await response.json();
++        this.trackEvent('upload', 'protect');
++        return data;
+     }
+ 
+     async processProtect(sessionId, protectionOptions) {
+         const formData = new FormData();
+         formData.append('user_password', protectionOptions.userPassword);
+         if (protectionOptions.ownerPassword) {
+             formData.append('owner_password', protectionOptions.ownerPassword);
+         }
+         formData.append('can_print', protectionOptions.canPrint);
+         formData.append('can_modify', protectionOptions.canModify);
+         formData.append('can_copy', protectionOptions.canCopy);
+         formData.append('can_annotate', protectionOptions.canAnnotate);
+         formData.append('can_fill_forms', protectionOptions.canFillForms);
+         formData.append('can_accessibility', protectionOptions.canAccessibility);
+         formData.append('can_assemble', protectionOptions.canAssemble);
+         formData.append('can_modify_contents', protectionOptions.canModifyContents);
+ 
+         const res = await fetch(`${this.baseUrl}/tools/protect/process/${sessionId}`, { method: 'POST', body: formData });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF Şifreleme işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'protect');
++        return data;
+     }
+ 
+     getProtectDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/protect/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== PDF Şifre Kaldırma APIs =====
+     async uploadFileForUnlock(file) {
+         const formData = new FormData();
+         formData.append('file', file);
+         const response = await fetch(`${this.baseUrl}/tools/unlock/upload`, { method: 'POST', body: formData });
+         if (!response.ok) {
+             const err = await response.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF Şifre Kaldırma yükleme hatası');
+         }
+-        return response.json();
++        const data = await response.json();
++        this.trackEvent('upload', 'unlock');
++        return data;
+     }
+ 
+     async processUnlock(sessionId, password) {
+         const formData = new FormData();
+         formData.append('password', password);
+         const response = await fetch(`${this.baseUrl}/tools/unlock/process/${sessionId}`, { method: 'POST', body: formData });
+         if (!response.ok) {
+             const err = await response.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF Şifre Kaldırma işlemi hatası');
+         }
+-        return response.json();
++        const data = await response.json();
++        this.trackEvent('process', 'unlock');
++        return data;
+     }
+ 
+     getUnlockDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/unlock/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== Rotate APIs =====
+     async uploadFilesForRotate(files) {
+         const formData = new FormData();
+         files.forEach(f => formData.append('files', f));
+         const res = await fetch(`${this.baseUrl}/tools/rotate/upload`, { method: 'POST', body: formData });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF Döndürme yükleme hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('upload', 'rotate');
++        return data;
+     }
+ 
+     async processRotate(sessionId, degrees) {
+         const res = await fetch(`${this.baseUrl}/tools/rotate/process/${sessionId}?degrees=${encodeURIComponent(degrees)}`, { method: 'POST' });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF Döndürme işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'rotate');
++        return data;
+     }
+ 
+     getRotateDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/rotate/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== Watermark APIs =====
+     async uploadFilesForWatermark(files) {
+         const formData = new FormData();
+         files.forEach(f => formData.append('files', f));
+         const res = await fetch(`${this.baseUrl}/tools/watermark/upload`, { method: 'POST', body: formData });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'Filigran yükleme hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('upload', 'watermark');
++        return data;
+     }
+ 
+     async processWatermark(sessionId, opts) {
+         const params = new URLSearchParams();
+         if (opts.text) params.set('text', opts.text);
+         if (opts.position) params.set('position', opts.position);
+         if (opts.fontSize) params.set('font_size', opts.fontSize);
+         if (opts.color) params.set('color', opts.color);
+         const res = await fetch(`${this.baseUrl}/tools/watermark/process/${sessionId}?${params.toString()}`, { method: 'POST' });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'Filigran işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'watermark');
++        return data;
+     }
+ 
+     getWatermarkDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/watermark/download/${sessionId}/${filename}`;
+     }
+ 
+     // ===== PDF → JPG APIs =====
+     async uploadFileForPdfToJpg(file) {
+         const formData = new FormData();
+         formData.append('file', file);
+         const res = await fetch(`${this.baseUrl}/tools/pdf-to-jpg/upload`, { method: 'POST', body: formData });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF→JPG yükleme hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('upload', 'pdf-to-jpg');
++        return data;
+     }
+ 
+     async processPdfToJpg(sessionId) {
+         const res = await fetch(`${this.baseUrl}/tools/pdf-to-jpg/process/${sessionId}`, { method: 'POST' });
+         if (!res.ok) {
+             const err = await res.json().catch(() => ({}));
+             throw new Error(err.detail || 'PDF→JPG işlem hatası');
+         }
+-        return res.json();
++        const data = await res.json();
++        this.trackEvent('process', 'pdf-to-jpg');
++        return data;
+     }
+ 
+     getPdfToJpgDownloadUrl(sessionId, filename) {
+         return `${this.baseUrl}/tools/pdf-to-jpg/download/${sessionId}/${filename}`;
+     }
+ }
+ 
+ // Singleton instance
+ const pdfApi = new PDFApi();
+ 
+ export default pdfApi;
+diff --git a/site/js/modules/fileHandler.js b/site/js/modules/fileHandler.js
+index ce4fbe443a008059a0dda2e22f95d81d365b136e..57008d2a2132773fa3dca67ddbf61b26ce10f477 100644
+--- a/site/js/modules/fileHandler.js
++++ b/site/js/modules/fileHandler.js
+@@ -313,50 +313,55 @@ class FileHandler {
+                     sessionId: sessionId,
+                     downloadUrl: downloadUrl,
+                     fileName: fileName,
+                     fileInfo: fileInfo,
+                     createdAt: new Date(),
+                     expiresAt: new Date(Date.now() + this.SESSION_LIFETIME_MINUTES * 60 * 1000)
+                 };
+                 
+                 // Session timer'ı başlat
+                 this.startSessionTimer();
+             }
+             
+             setTimeout(() => {
+                 notifications.success('Dosya başarıyla indirildi! 📁', 3000);
+             }, 1000);
+             
+         }, 1500);
+     }
+ 
+     /**
+      * Gizli iframe ile indirme tetikle (scroll jump engellenir)
+      */
+     triggerFileDownload(url) {
+         const x = window.scrollX;
+         const y = window.scrollY;
++        if (typeof gtag === 'function') {
++            const match = url.match(/tools\/([a-z-]+)/);
++            const tool = match ? match[1] : 'unknown';
++            gtag('event', 'download', { event_category: 'funnel', event_label: tool });
++        }
+         let iframe = document.getElementById('hidden-download-iframe');
+         if (!iframe) {
+             iframe = document.createElement('iframe');
+             iframe.id = 'hidden-download-iframe';
+             iframe.style.display = 'none';
+             document.body.appendChild(iframe);
+         }
+         // Aynı URL tekrar indirilecekse yeniden yüklemeyi zorlamak için timestamp ekleyelim
+         const sep = url.includes('?') ? '&' : '?';
+         iframe.src = `${url}${sep}_=${Date.now()}`;
+         // Bir sonraki frame'de scroll'u geri al
+         setTimeout(() => window.scrollTo(x, y), 0);
+     }
+ 
+     /**
+      * Demo indirme (simülasyon için)
+      */
+     startDemoDownload(toolName) {
+         notifications.info('Demo indirme başlatılıyor...', 1000);
+         
+         setTimeout(() => {
+             const content = `PDFişlemleri.com Demo - ${toolName}\nTarih: ${new Date().toLocaleString('tr-TR')}\nDosya Sayısı: ${this.selectedFiles.length}\n\nBu bir demo dosyadır.`;
+             const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+             const url = URL.createObjectURL(blob);
+             
+diff --git a/site/scroll-manager.js b/site/scroll-manager.js
+index fdf67abe73239fe02d4691ac19440cf2d9dd2c98..610608556ac25af2cf8dd0eb31a1501d8123cdd6 100644
+--- a/site/scroll-manager.js
++++ b/site/scroll-manager.js
+@@ -1,23 +1,49 @@
+ /**
+  * Global Scroll Management
+  * Sadece F5 (reload) durumunda en üste çık; diğer etkileşimlerde asla dokunma
+  */
+ 
+ // Reload tespiti (modern ve legacy API desteği)
+ const navEntry = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
+ const isReload = navEntry ? (navEntry.type === 'reload') : (performance.navigation && performance.navigation.type === 1);
+ 
+ if (isReload) {
+     if ('scrollRestoration' in history) {
+         history.scrollRestoration = 'manual';
+     }
+     window.addEventListener('load', () => {
+         setTimeout(() => {
+             if (!window.disableAutoScroll) {
+                 window.scrollTo(0, 0);
+             }
+         }, 0);
+     }, { once: true });
+ }
+ 
+ console.log('Scroll Manager loaded - top only on reload');
++
++// ---- User engagement tracking ----
++let __engagementStart = Date.now();
++let __engagementTotal = 0;
++
++function __sendEngagement() {
++    if (typeof gtag === 'function') {
++        gtag('event', 'engagement_time', {
++            value: __engagementTotal
++        });
++    }
++}
++
++document.addEventListener('visibilitychange', () => {
++    if (document.visibilityState === 'hidden') {
++        __engagementTotal += Date.now() - __engagementStart;
++        __sendEngagement();
++    } else {
++        __engagementStart = Date.now();
++    }
++});
++
++window.addEventListener('beforeunload', () => {
++    __engagementTotal += Date.now() - __engagementStart;
++    __sendEngagement();
++});
+diff --git a/site/style.css b/site/style.css
+index 8f4bce2a3d57661baf8b27fca237be7775ae6002..9c8f998ef385d0c1838207545bcbd129543e6735 100644
+--- a/site/style.css
++++ b/site/style.css
+@@ -1523,51 +1523,51 @@ footer .mt-4 {
+ @keyframes bounce {
+     0%, 20%, 50%, 80%, 100% {
+         transform: translateY(0);
+     }
+     40% {
+         transform: translateY(-5px);
+     }
+     60% {
+         transform: translateY(-3px);
+     }
+ }
+ 
+ /* Contact Info Card with Background Image */
+ .contact-info-card {
+     position: relative;
+     background: transparent !important;
+ }
+ 
+ .contact-info-card::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+-    background-image: url('/images/pdfandoc.png');
++    background-image: url('/images/pdfandoc.webp');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     opacity: 0.15;
+     z-index: 1;
+ }
+ 
+ .contact-info-card::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(0, 0, 0, 0.5);
+     z-index: 2;
+ }
+ 
+ .contact-info-card .relative.z-10 {
+     position: relative;
+     z-index: 3;
+ }
+ 
+ /* Hover effect for contact info card */
+ .contact-info-card:hover::before {
+ 
+EOF
+)
