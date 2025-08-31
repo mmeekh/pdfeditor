@@ -5,7 +5,7 @@
 
 class PDFApi {
     constructor() {
-        this.baseUrl = window.location.origin + '/api';
+        this.baseUrl = (window.API_BASE_URL || window.location.origin) + '/api';
     }
 
     /**
@@ -14,7 +14,11 @@ class PDFApi {
     async checkHealth() {
         try {
             const response = await fetch(`${this.baseUrl}/status`);
-            return await response.json();
+            if (!response.ok) {
+                const text = await response.text().catch(() => '');
+                throw new Error(`Status check failed: ${response.status} ${text}`);
+            }
+            return await response.json().catch(() => null);
         } catch (error) {
             console.error('API health check failed:', error);
             throw error;
@@ -27,8 +31,10 @@ class PDFApi {
     async getTools() {
         try {
             const response = await fetch(`${this.baseUrl}/tools`);
-            if (!response.ok) throw new Error('Tools fetch failed');
-            return await response.json();
+            if (!response.ok) {
+                throw new Error(`Tools fetch failed (HTTP ${response.status})`);
+            }
+            return await response.json().catch(() => ({}));
         } catch (error) {
             console.error('Failed to fetch tools:', error);
             throw error;
@@ -51,8 +57,8 @@ class PDFApi {
             });
 
             if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.detail || 'Dosya yükleme hatası');
+                const error = await response.json().catch(() => ({}));
+                throw new Error(error.detail || `Dosya yükleme hatası (HTTP ${response.status})`);
             }
 
             return await response.json();
@@ -73,8 +79,8 @@ class PDFApi {
             );
 
             if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.detail || 'Birleştirme hatası');
+                const error = await response.json().catch(() => ({}));
+                throw new Error(error.detail || `Birleştirme hatası (HTTP ${response.status})`);
             }
 
             return await response.json();
@@ -156,7 +162,7 @@ class PDFApi {
         const response = await fetch(`${this.baseUrl}/tools/split/upload`, { method: 'POST', body: formData });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
-            throw new Error(err.detail || 'Split yükleme hatası');
+            throw new Error(err.detail || `Split yükleme hatası (HTTP ${response.status})`);
         }
         return response.json();
     }
@@ -169,7 +175,7 @@ class PDFApi {
         const response = await fetch(`${this.baseUrl}/tools/split/process/${sessionId}?${params.toString()}`, { method: 'POST' });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
-            throw new Error(err.detail || 'Split işlem hatası');
+            throw new Error(err.detail || `Split işlem hatası (HTTP ${response.status})`);
         }
         return response.json();
     }
