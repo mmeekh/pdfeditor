@@ -82,7 +82,7 @@ class MergeTool {
         // Download button'u güncelle - session-aware download
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn) {
-            downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            downloadBtn.innerHTML = '<i class="fa-solid fa-download mr-2"></i>Tekrar İndir';
             downloadBtn.onclick = () => {
                 this.handleRepeatDownload();
             };
