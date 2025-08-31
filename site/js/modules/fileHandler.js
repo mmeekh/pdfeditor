@@ -335,6 +335,11 @@ class FileHandler {
     triggerFileDownload(url) {
         const x = window.scrollX;
         const y = window.scrollY;
+        if (typeof gtag === 'function') {
+            const match = url.match(/tools\/([a-z-]+)/);
+            const tool = match ? match[1] : 'unknown';
+            gtag('event', 'download', { event_category: 'funnel', event_label: tool });
+        }
         let iframe = document.getElementById('hidden-download-iframe');
         if (!iframe) {
             iframe = document.createElement('iframe');
