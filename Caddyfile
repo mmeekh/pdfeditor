@@ -13,12 +13,30 @@ pdfislemleri.com {
   try_files {path} {path}.html /index.html
   file_server
 
-  handle_path /api/* {
-    reverse_proxy api:2000
+  # MIME type tanımlamaları
+  @css {
+    path *.css
+  }
+  @js {
+    path *.js
+  }
+  @woff2 {
+    path *.woff2
+  }
+  
+  header @css Content-Type "text/css; charset=utf-8"
+  header @js Content-Type "application/javascript; charset=utf-8"
+  header @woff2 Content-Type "font/woff2"
+  
+  # CORS headers
+  header {
+    Access-Control-Allow-Origin "*"
+    Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers "Origin, Content-Type, Accept"
+    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   }
 
-  # HSTS
-  header {
-    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  handle_path /api/* {
+    reverse_proxy api:2000
   }
 }
