@@ -11,15 +11,20 @@ class PdfToWordTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1) { notifications.error('Lütfen tek bir PDF yükleyin'); return; }
+        if (files.length === 0) { notifications.error('Lütfen en az bir PDF dosyası seçin'); return; }
 
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
 
         try{
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosya yükleniyor` });
+            const fileCount = files.length;
+            const message = fileCount > 1 ? 
+                `${fileCount} PDF dosyası Word'e dönüştürülüyor...` : 
+                `${this.toolName} işleniyor...`;
+            
+            pdfLoader.show({ message: message, subMessage: `Dosyalar yükleniyor` });
 
-            const up = await pdfApi.uploadFileForPdfToWord(files[0]);
+            const up = await pdfApi.uploadFilesForPdfToWord(files);
             const sessionId = up.session_id;
 
             pdfLoader.updateProgress(50, 'Word dönüştürme başlatılıyor...');
@@ -43,12 +48,19 @@ class PdfToWordTool {
 
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn){
-            downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            const buttonText = result.is_zip ? 
+                '<i class="fas fa-download mr-2"></i>ZIP İndir' : 
+                '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            downloadBtn.innerHTML = buttonText;
             downloadBtn.onclick = ()=> fileHandler.triggerFileDownload(url);
         }
 
         resultArea.classList.remove('hidden');
-        notifications.success("PDF Word'e dönüştürüldü! İndirme başlatıldı.");
+        
+        const successMessage = result.is_zip ? 
+            `${result.file_count} PDF dosyası Word'e dönüştürüldü! ZIP dosyası indiriliyor.` :
+            "PDF Word'e dönüştürüldü! İndirme başlatıldı.";
+        notifications.success(successMessage);
     }
 
     getOptions(){

@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from datetime import datetime
 import logging
+import zipfile
 
 from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
@@ -18,16 +19,31 @@ router = APIRouter(prefix="/api/tools/word-to-pdf", tags=["word-to-pdf"])
 
 
 @router.post("/upload")
-async def upload_word_for_convert(file: UploadFile = File(...)):
-    validate_word_file(file)
+async def upload_word_for_convert(files: list[UploadFile] = File(...)):
+    # Her dosyayı validate et
+    for file in files:
+        validate_word_file(file)
+    
     session_id = datetime.now().strftime("%Y%m%d_%H%M%S_") + os.urandom(4).hex()
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     os.makedirs(session_dir, exist_ok=True)
 
     try:
-        file_path = Path(session_dir) / file.filename
-        await save_upload_file(file, file_path)
-        return {"session_id": session_id, "file": {"original_name": file.filename, "path": str(file_path), "size": getattr(file, "size", 0)}}
+        uploaded_files = []
+        for file in files:
+            file_path = Path(session_dir) / file.filename
+            await save_upload_file(file, file_path)
+            uploaded_files.append({
+                "original_name": file.filename,
+                "path": str(file_path),
+                "size": getattr(file, "size", 0)
+            })
+        
+        return {
+            "session_id": session_id, 
+            "files": uploaded_files,
+            "file_count": len(uploaded_files)
+        }
     except Exception as e:
         if os.path.exists(session_dir):
             import shutil
@@ -45,18 +61,49 @@ async def process_word_to_pdf(session_id: str):
     docs = [str(p) for p in Path(session_dir).glob("*.doc*")]
     if not docs:
         raise HTTPException(status_code=400, detail="Word dosyası bulunamadı")
-    input_doc = docs[0]
 
     converter = WordToPDFConverter(temp_dir=session_dir)
+    converted_files = []
+    
     try:
-        result = converter.convert(input_doc)
-        output_name = os.path.basename(result.output_path)
-        return {
-            "success": True,
-            "session_id": session_id,
-            "output_file": output_name,
-            "download_url": f"/api/tools/word-to-pdf/download/{session_id}/{output_name}",
-        }
+        # Her Word dosyasını PDF'e dönüştür
+        for doc_file in docs:
+            result = converter.convert(doc_file)
+            converted_files.append({
+                "original_doc": os.path.basename(doc_file),
+                "pdf_file": os.path.basename(result.output_path),
+                "output_path": result.output_path
+            })
+        
+        # Eğer birden fazla dosya varsa ZIP oluştur
+        if len(converted_files) > 1:
+            zip_filename = f"word_to_pdf_converted_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+            zip_path = os.path.join(session_dir, zip_filename)
+            
+            with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                for converted in converted_files:
+                    zipf.write(converted["output_path"], converted["pdf_file"])
+            
+            return {
+                "success": True,
+                "session_id": session_id,
+                "output_file": zip_filename,
+                "download_url": f"/api/tools/word-to-pdf/download/{session_id}/{zip_filename}",
+                "file_count": len(converted_files),
+                "is_zip": True
+            }
+        else:
+            # Tek dosya ise direkt döndür
+            output_name = converted_files[0]["pdf_file"]
+            return {
+                "success": True,
+                "session_id": session_id,
+                "output_file": output_name,
+                "download_url": f"/api/tools/word-to-pdf/download/{session_id}/{output_name}",
+                "file_count": 1,
+                "is_zip": False
+            }
+            
     except WordToPDFError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
@@ -70,6 +117,13 @@ async def download_converted(session_id: str, filename: str):
     file_path = os.path.join(session_dir, filename)
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Dosya bulunamadı")
-    return FileResponse(path=file_path, media_type="application/pdf", filename=filename)
+    
+    # ZIP dosyası ise application/zip, değilse PDF mime type
+    if filename.endswith('.zip'):
+        media = "application/zip"
+    else:
+        media = "application/pdf"
+    
+    return FileResponse(path=file_path, media_type=media, filename=filename)
 
 

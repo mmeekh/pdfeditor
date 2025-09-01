@@ -20,4 +20,9 @@ if (isReload) {
     }, { once: true });
 }
 
-console.log('Scroll Manager loaded - top only on reload');
+// Scroll pozisyonunu koru
+const scrollX = window.scrollX;
+const scrollY = window.scrollY;
+setTimeout(() => {
+    window.scrollTo(scrollX, scrollY);
+}, 0);

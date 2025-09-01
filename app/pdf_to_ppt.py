@@ -95,4 +95,66 @@ class PDFToPPTConverter:
         prs.save(out_path)
         return ConvertResult(output_path=out_path, page_count=len(images))
 
+    def convert_combined(self, pdf_files: List[str], out_path: Optional[str] = None) -> ConvertResult:
+        """Birden fazla PDF'i tek bir PowerPoint'e dönüştür"""
+        if not pdf_files:
+            raise PDFToPPTError("PDF dosyası listesi boş")
+        
+        if out_path is None:
+            base_name = f"combined_presentation_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            out_path = os.path.join(self.temp_dir, f"{base_name}.pptx")
+
+        # İlk PDF'in boyutlarını referans al
+        first_images = self._render_pages_with_gs(pdf_files[0])
+        if not first_images:
+            raise PDFToPPTError("İlk PDF render edilemedi")
+        
+        from PIL import Image
+        with Image.open(first_images[0]) as im:
+            width_px, height_px = im.size
+        width_in = width_px / float(self.dpi)
+        height_in = height_px / float(self.dpi)
+
+        prs = Presentation()
+        prs.slide_width = Inches(width_in)
+        prs.slide_height = Inches(height_in)
+        blank_layout = prs.slide_layouts[6]
+
+        total_pages = 0
+        
+        # Her PDF için geçici klasör oluştur
+        for i, pdf_file in enumerate(pdf_files):
+            temp_dir = os.path.join(self.temp_dir, f"temp_pdf_{i}")
+            os.makedirs(temp_dir, exist_ok=True)
+            
+            # PDF'i render et
+            pattern = os.path.join(temp_dir, "page_%03d.png")
+            gs = shutil.which('gs')
+            if not gs:
+                raise PDFToPPTError("Ghostscript bulunamadı")
+            
+            cmd = [
+                gs,
+                '-dNOPAUSE', '-dBATCH', '-dSAFER',
+                '-sDEVICE=png16m',
+                f'-r{self.dpi}',
+                f'-sOutputFile={pattern}',
+                pdf_file,
+            ]
+            try:
+                subprocess.run(cmd, check=True)
+            except subprocess.CalledProcessError as e:
+                logger.error(f"Ghostscript render hatası: {e}")
+                raise PDFToPPTError(f"PDF {os.path.basename(pdf_file)} render edilemedi")
+
+            # Render edilen sayfaları PowerPoint'e ekle
+            images = sorted([str(p) for p in Path(temp_dir).glob('page_*.png')])
+            for img in images:
+                slide = prs.slides.add_slide(blank_layout)
+                slide.shapes.add_picture(img, 0, 0, width=prs.slide_width, height=prs.slide_height)
+                total_pages += 1
+
+        prs.save(out_path)
+        return ConvertResult(output_path=out_path, page_count=total_pages)
+
 

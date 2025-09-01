@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Response
 import logging
 
 from core.middleware import setup_cors
@@ -40,8 +40,10 @@ def root():
     return {"status": "API OK", "message": "PDFişlemleri.com API çalışıyor!"}
 
 
-@app.get("/health")
-def health():
+@app.api_route("/health", methods=["GET", "HEAD"])
+def health(request: Request):
+    if request.method == "HEAD":
+        return Response(status_code=200)
     return {"status": "ok", "service": "pdfislemleri-api"}
 
 

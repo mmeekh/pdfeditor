@@ -11,18 +11,27 @@ class PdfToPptTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1) { notifications.error('Lütfen tek bir PDF yükleyin'); return; }
+        if (files.length === 0) { notifications.error('Lütfen en az bir PDF dosyası seçin'); return; }
 
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
 
         try{
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosya yükleniyor` });
-            const up = await pdfApi.uploadFileForPdfToPpt(files[0]);
+            const fileCount = files.length;
+            const message = fileCount > 1 ? 
+                `${fileCount} PDF dosyası PPT'ye dönüştürülüyor...` : 
+                `${this.toolName} işleniyor...`;
+            
+            pdfLoader.show({ message: message, subMessage: `Dosyalar yükleniyor` });
+            
+            const up = await pdfApi.uploadFilesForPdfToPpt(files);
             const sessionId = up.session_id;
 
+            // Kullanıcının seçimini al
+            const selectedMode = document.querySelector('input[name="pptMode"]:checked').value;
+            
             pdfLoader.updateProgress(50, 'Slaytlar hazırlanıyor...');
-            const result = await pdfApi.processPdfToPpt(sessionId);
+            const result = await pdfApi.processPdfToPpt(sessionId, selectedMode);
 
             pdfLoader.updateProgress(100, 'Tamamlandı!');
             setTimeout(()=>{ pdfLoader.hide(); this.showResult(result); }, 150);
@@ -42,15 +51,45 @@ class PdfToPptTool {
 
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn){
-            downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            const buttonText = result.is_zip ? 
+                '<i class="fas fa-download mr-2"></i>ZIP İndir' : 
+                '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            downloadBtn.innerHTML = buttonText;
             downloadBtn.onclick = ()=> fileHandler.triggerFileDownload(url);
         }
 
         resultArea.classList.remove('hidden');
-        notifications.success(`PPT hazır! Toplam ${result.page_count} slayt oluşturuldu. 📽️`);
+        
+        let successMessage;
+        if (result.mode === "combined") {
+            successMessage = `${result.file_count} PDF dosyası tek PowerPoint'te birleştirildi! Toplam ${result.page_count} slayt oluşturuldu. 📽️`;
+        } else if (result.is_zip) {
+            successMessage = `${result.file_count} PDF dosyasından ${result.total_pages} slayt oluşturuldu! ZIP dosyası indiriliyor. 📽️`;
+        } else {
+            successMessage = `PPT hazır! Toplam ${result.page_count} slayt oluşturuldu. 📽️`;
+        }
+        notifications.success(successMessage);
     }
 
-    getOptions(){ return ''; }
+    getOptions(){ 
+        return `
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+                Dönüştürme Seçeneği
+            </label>
+            <div class="space-y-2">
+                <label class="flex items-center">
+                    <input type="radio" name="pptMode" value="separate" checked class="mr-2">
+                    <span class="text-sm">Her PDF'den ayrı PowerPoint oluştur</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="radio" name="pptMode" value="combined" class="mr-2">
+                    <span class="text-sm">Tüm PDF'leri tek PowerPoint'te birleştir</span>
+                </label>
+            </div>
+        </div>
+        `; 
+    }
     getFunnyQuote(){ return 'PDF sahneye çıktı, PPT alkışlandı!'; }
     getDescription(){ return "PDF sayfalarını slaytlara dönüştürün; sunumunuz saniyeler içinde hazır."; }
 }

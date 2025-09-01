@@ -11,16 +11,29 @@ class WordToPdfTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1) { notifications.error('Lütfen tek bir Word dosyası (DOC/DOCX) yükleyin'); return; }
-        const name = files[0].name.toLowerCase();
-        if (!(name.endsWith('.doc') || name.endsWith('.docx'))) { notifications.error('Geçerli Word dosyası seçin (DOC/DOCX)'); return; }
+        if (files.length === 0) { notifications.error('Lütfen en az bir Word dosyası (DOC/DOCX) seçin'); return; }
+        
+        // Tüm dosyaların Word formatında olduğunu kontrol et
+        for (let file of files) {
+            const name = file.name.toLowerCase();
+            if (!(name.endsWith('.doc') || name.endsWith('.docx'))) {
+                notifications.error('Geçerli Word dosyaları seçin (DOC/DOCX)');
+                return;
+            }
+        }
 
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
 
         try{
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosya yükleniyor` });
-            const up = await pdfApi.uploadFileForWordToPdf(files[0]);
+            const fileCount = files.length;
+            const message = fileCount > 1 ? 
+                `${fileCount} Word dosyası PDF'e dönüştürülüyor...` : 
+                `${this.toolName} işleniyor...`;
+            
+            pdfLoader.show({ message: message, subMessage: `Dosyalar yükleniyor` });
+            
+            const up = await pdfApi.uploadFilesForWordToPdf(files);
             const sessionId = up.session_id;
 
             pdfLoader.updateProgress(50, 'PDF dönüştürme başlatılıyor...');
@@ -44,12 +57,19 @@ class WordToPdfTool {
 
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn){
-            downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            const buttonText = result.is_zip ? 
+                '<i class="fas fa-download mr-2"></i>ZIP İndir' : 
+                '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            downloadBtn.innerHTML = buttonText;
             downloadBtn.onclick = ()=> fileHandler.triggerFileDownload(url);
         }
 
         resultArea.classList.remove('hidden');
-        notifications.success("Word PDF'e dönüştürüldü! İndirme başlatıldı.");
+        
+        const successMessage = result.is_zip ? 
+            `${result.file_count} Word dosyası PDF'e dönüştürüldü! ZIP dosyası indiriliyor.` :
+            "Word PDF'e dönüştürüldü! İndirme başlatıldı.";
+        notifications.success(successMessage);
     }
 
     getOptions(){ return ''; }

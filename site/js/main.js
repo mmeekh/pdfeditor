@@ -87,7 +87,18 @@ class CookieManager {
     }
     
     trackEvent(eventName, eventData) {
-        console.log('Event tracked:', eventName, eventData);
+        // Console'a yazdırmadan önce scroll pozisyonunu koru
+        const scrollX = window.scrollX;
+        const scrollY = window.scrollY;
+        
+        // Sadece basit string log yap, büyük objeleri yazdırma
+        console.log(`Event tracked: ${eventName}`, typeof eventData === 'object' ? '[Object]' : eventData);
+        
+        // Scroll pozisyonunu geri yükle
+        setTimeout(() => {
+            window.scrollTo(scrollX, scrollY);
+        }, 0);
+        
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, eventData);
         }
@@ -116,7 +127,15 @@ class PerformanceMonitor {
     }
     
     trackEvent(eventName, eventData) {
-        console.log('Performance tracked:', eventName, eventData);
+        // Scroll pozisyonunu koru
+        const scrollX = window.scrollX;
+        const scrollY = window.scrollY;
+        
+        // Scroll pozisyonunu geri yükle
+        setTimeout(() => {
+            window.scrollTo(scrollX, scrollY);
+        }, 0);
+        
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, eventData);
         }
@@ -209,16 +228,38 @@ class App {
             // API health check
             try {
                 const health = await pdfApi.checkHealth();
-                console.log('API Status:', health);
+                // Scroll pozisyonunu koru
+                const scrollX = window.scrollX;
+                const scrollY = window.scrollY;
+                setTimeout(() => {
+                    window.scrollTo(scrollX, scrollY);
+                }, 0);
             } catch (error) {
-                console.warn('API not available:', error);
+                // Scroll pozisyonunu koruyarak console log
+                const scrollX = window.scrollX;
+                const scrollY = window.scrollY;
+                console.warn('API not available:', error.message || error);
+                setTimeout(() => {
+                    window.scrollTo(scrollX, scrollY);
+                }, 0);
                 notifications.info('Bazı özellikler çevrimdışı olabilir');
             }
             
-            console.log('PDFişlemleri.com loaded! 🎉');
+            // Scroll pozisyonunu koru
+            const scrollX = window.scrollX;
+            const scrollY = window.scrollY;
+            setTimeout(() => {
+                window.scrollTo(scrollX, scrollY);
+            }, 0);
             
         } catch (error) {
-            console.error('App initialization failed:', error);
+            // Scroll pozisyonunu koruyarak console log
+            const scrollX = window.scrollX;
+            const scrollY = window.scrollY;
+            console.error('App initialization failed:', error.message || error);
+            setTimeout(() => {
+                window.scrollTo(scrollX, scrollY);
+            }, 0);
             notifications.error('Uygulama başlatılırken hata oluştu');
         }
     }

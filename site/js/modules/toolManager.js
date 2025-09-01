@@ -109,7 +109,29 @@ class ToolManager {
         if (toolInterface) {
             this.populateToolInterface(toolName);
             toolInterface.classList.remove('hidden');
-            toolInterface.scrollIntoView({ behavior: 'smooth' });
+            
+            // Tool interface açıldıktan sonra dosya yükleme alanına scroll yap
+            setTimeout(() => {
+                const fileUploadArea = document.getElementById('fileUploadArea');
+                if (fileUploadArea) {
+                    try {
+                        fileUploadArea.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center',
+                            inline: 'nearest'
+                        });
+                    } catch (error) {
+                        console.warn('Scroll işlemi başarısız:', error);
+                        // Fallback: manuel scroll
+                        const rect = fileUploadArea.getBoundingClientRect();
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        window.scrollTo({
+                            top: scrollTop + rect.top - 200, // 200px offset for better visibility
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }, 100); // Kısa bir gecikme ile DOM'un güncellenmesini bekle
         }
 
         // Analytics
@@ -469,7 +491,17 @@ class ToolManager {
      * Analytics tracking
      */
     trackEvent(eventName, eventData) {
-        console.log('Event tracked:', eventName, eventData);
+        // Console'a yazdırmadan önce scroll pozisyonunu koru
+        const scrollX = window.scrollX;
+        const scrollY = window.scrollY;
+        
+        // Sadece basit string log yap, büyük objeleri yazdırma
+        console.log(`Event tracked: ${eventName}`, typeof eventData === 'object' ? '[Object]' : eventData);
+        
+        // Scroll pozisyonunu geri yükle
+        setTimeout(() => {
+            window.scrollTo(scrollX, scrollY);
+        }, 0);
         
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, eventData);

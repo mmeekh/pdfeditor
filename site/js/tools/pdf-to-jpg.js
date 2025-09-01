@@ -11,15 +11,25 @@ class PdfToJpgTool {
 
     async process(){
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1){ notifications.error('Lütfen tek bir PDF yükleyin'); return; }
+        if (files.length === 0) { notifications.error('Lütfen en az bir PDF dosyası seçin'); return; }
+        
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
+        
         try {
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: 'Dosya yükleniyor' });
-            const up = await pdfApi.uploadFileForPdfToJpg(files[0]);
+            const fileCount = files.length;
+            const message = fileCount > 1 ? 
+                `${fileCount} PDF dosyası JPG'ye dönüştürülüyor...` : 
+                `${this.toolName} işleniyor...`;
+            
+            pdfLoader.show({ message: message, subMessage: 'Dosyalar yükleniyor' });
+            
+            const up = await pdfApi.uploadFilesForPdfToJpg(files);
             const sessionId = up.session_id;
+            
             pdfLoader.updateProgress(50, 'Sayfalar dönüştürülüyor...');
             const result = await pdfApi.processPdfToJpg(sessionId);
+            
             pdfLoader.updateProgress(100, 'Tamamlandı!');
             setTimeout(()=>{ pdfLoader.hide(); this.showResult(result); },150);
         } catch(e){
@@ -35,13 +45,22 @@ class PdfToJpgTool {
         if (!resultArea) return;
         const url = pdfApi.getPdfToJpgDownloadUrl(result.session_id, result.output_file);
         fileHandler.triggerFileDownload(url);
+
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn){
-            downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            const buttonText = result.is_zip ? 
+                '<i class="fas fa-download mr-2"></i>ZIP İndir' : 
+                '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            downloadBtn.innerHTML = buttonText;
             downloadBtn.onclick = () => fileHandler.triggerFileDownload(url);
         }
+
         resultArea.classList.remove('hidden');
-        notifications.success('PDF görüntülere dönüştürüldü!');
+        
+        const successMessage = result.is_zip ? 
+            `${result.file_count} PDF dosyasından ${result.image_count} görüntü oluşturuldu! ZIP dosyası indiriliyor.` :
+            "PDF görüntülere dönüştürüldü! İndirme başlatıldı.";
+        notifications.success(successMessage);
     }
 
     getOptions(){ return ''; }

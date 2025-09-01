@@ -16,15 +16,31 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/tools/pdf-to-jpg", tags=["pdf-to-jpg"])
 
 @router.post("/upload")
-async def upload_pdf_for_jpg(file: UploadFile = File(...)):
-    validate_pdf_file(file)
+async def upload_pdf_for_jpg(files: list[UploadFile] = File(...)):
+    # Her dosyayı validate et
+    for file in files:
+        validate_pdf_file(file)
+    
     session_id = datetime.now().strftime("%Y%m%d_%H%M%S_") + os.urandom(4).hex()
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     os.makedirs(session_dir, exist_ok=True)
+    
     try:
-        file_path = Path(session_dir) / file.filename
-        await save_upload_file(file, file_path)
-        return {"session_id": session_id, "file": {"original_name": file.filename, "path": str(file_path), "size": getattr(file, "size", 0)}}
+        uploaded_files = []
+        for file in files:
+            file_path = Path(session_dir) / file.filename
+            await save_upload_file(file, file_path)
+            uploaded_files.append({
+                "original_name": file.filename,
+                "path": str(file_path),
+                "size": getattr(file, "size", 0)
+            })
+        
+        return {
+            "session_id": session_id, 
+            "files": uploaded_files,
+            "file_count": len(uploaded_files)
+        }
     except Exception as e:
         if os.path.exists(session_dir):
             import shutil
@@ -37,27 +53,54 @@ async def process_pdf_to_jpg(session_id: str, dpi: int = 200):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
+    
     pdf_files = list(Path(session_dir).glob("*.pdf"))
     if not pdf_files:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
-    input_pdf = str(pdf_files[0])
+
     converter = PDFToJPGConverter(temp_dir=session_dir)
-    images = converter.convert(input_pdf, session_dir, dpi)
-    if len(images) > 1:
-        zip_name = f"images_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
-        zip_path = os.path.join(session_dir, zip_name)
-        with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
-            for img in images:
-                zf.write(img, arcname=os.path.basename(img))
-        output_file = zip_name
-    else:
-        output_file = os.path.basename(images[0])
-    return {
-        "success": True,
-        "session_id": session_id,
-        "output_file": output_file,
-        "download_url": f"/api/tools/pdf-to-jpg/download/{session_id}/{output_file}",
-    }
+    all_images = []
+    
+    try:
+        # Her PDF'i JPG'ye dönüştür
+        for pdf_file in pdf_files:
+            images = converter.convert(str(pdf_file), session_dir, dpi)
+            all_images.extend(images)
+        
+        # Eğer birden fazla PDF varsa veya çok sayfa varsa ZIP oluştur
+        if len(pdf_files) > 1 or len(all_images) > 1:
+            zip_name = f"pdf_to_jpg_images_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+            zip_path = os.path.join(session_dir, zip_name)
+            
+            with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+                for img in all_images:
+                    zf.write(img, arcname=os.path.basename(img))
+            
+            return {
+                "success": True,
+                "session_id": session_id,
+                "output_file": zip_name,
+                "download_url": f"/api/tools/pdf-to-jpg/download/{session_id}/{zip_name}",
+                "file_count": len(pdf_files),
+                "image_count": len(all_images),
+                "is_zip": True
+            }
+        else:
+            # Tek dosya ise direkt döndür
+            output_file = os.path.basename(all_images[0])
+            return {
+                "success": True,
+                "session_id": session_id,
+                "output_file": output_file,
+                "download_url": f"/api/tools/pdf-to-jpg/download/{session_id}/{output_file}",
+                "file_count": 1,
+                "image_count": 1,
+                "is_zip": False
+            }
+            
+    except Exception as e:
+        logger.error(f"PDF→JPG process error: {e}")
+        raise HTTPException(status_code=500, detail="Dönüştürme sırasında hata oluştu")
 
 @router.get("/download/{session_id}/{filename}")
 async def download_converted_images(session_id: str, filename: str):

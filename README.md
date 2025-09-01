@@ -16,34 +16,135 @@ PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya
 
 ```
 repo-root/
-├── site/                    # Frontend dosyaları
-│   ├── index.html          # Ana sayfa
-│   ├── style.css           # Stil dosyası
-│   ├── js/                 # Modüler JavaScript
-│   │   ├── main.js         # Ana uygulama
-│   │   ├── modules/        # Core modüller
-│   │   │   ├── api.js      # API işlemleri
-│   │   │   ├── fileHandler.js  # Dosya yönetimi
-│   │   │   ├── toolManager.js  # Araç yönetimi
-│   │   │   ├── notifications.js # Bildirimler
-│   │   │   └── loader.js   # Loading komponenti
-│   │   └── tools/          # PDF araçları
-│   │       └── merge.js    # PDF birleştirme
-│   ├── icons/              # PWA ikonları
-│   ├── images/             # Görseller
-│   ├── robots.txt          # SEO
-│   ├── sitemap.xml         # SEO
-│   └── security.txt        # Güvenlik
-├── app/                     # FastAPI backend
-│   ├── main.py             # API ana dosyası
-│   ├── requirements.txt    # Python paketleri
-│   └── Dockerfile          # Container
-├── Caddyfile               # Caddy konfigürasyonu
-├── docker-compose.yml      # Container orchestration
-├── deploy.sh               # Tek komut kurulum
-├── env.example             # Environment örneği
-└── README.md               # Bu dosya
-```
+│   .gitignore
+│   Caddyfile
+│   deploy.sh
+│   docker-compose.yml
+│   env.example
+│   exit
+│   git.patch
+│   README.md
+│
+├───.github
+│   └───workflows
+│           deploy.yml
+│
+├───app
+│   │   compress.py
+│   │   Dockerfile
+│   │   main.py
+│   │   merge.py
+│   │   organize.py
+│   │   pdf_to_jpg.py
+│   │   pdf_to_ppt.py
+│   │   pdf_to_word.py
+│   │   protect.py
+│   │   requirements.txt
+│   │   rotate.py
+│   │   split.py
+│   │   unlock.py
+│   │   watermark.py
+│   │   word_to_pdf.py
+│   │
+│   ├───core
+│   │       config.py
+│   │       lifespan.py
+│   │       middleware.py
+│   │       utils.py
+│   │       __init__.py
+│   │
+│   └───routers
+│           compress.py
+│           merge.py
+│           organize.py
+│           pdf_to_jpg.py
+│           pdf_to_ppt.py
+│           pdf_to_word.py
+│           protect.py
+│           rotate.py
+│           session.py
+│           split.py
+│           unlock.py
+│           watermark.py
+│           word_to_pdf.py
+│           __init__.py
+│
+└───site
+    │   about.html
+    │   blog.html
+    │   contact.html
+    │   cookies.html
+    │   index.html
+    │   kvkk.html
+    │   privacy.html
+    │   robots.txt
+    │   scroll-manager.js
+    │   security.txt
+    │   sitemap.xml
+    │   style.css
+    │   terms.html
+    │
+    ├───blog
+    │       pdf-birlestirme.html
+    │       pdf-boyut-kucultme.html
+    │       pdf-formlari.html
+    │       pdf-guvenlik.html
+    │       pdf-imzalama.html
+    │       pdf-ocr.html
+    │       telefondan-pdf-duzenleme.html
+    │       word-pdf-donusturme.html
+    │
+    ├───icons
+    │       about-og.png
+    │       android-chrome-512x512.png
+    │       apple-touch-icon.png
+    │       blog-og.png
+    │       browserconfig.xml
+    │       favicon.ico
+    │       home-og.png
+    │       icon-512x512.png
+    │       logo.png
+    │       mobile-pdf-edit.png
+    │       mstile-150x150.png
+    │       pdf-compress.png
+    │       pdf-forms.png
+    │       pdf-merge.png
+    │       pdf-ocr.png
+    │       pdf-security.png
+    │       pdf-signature.png
+    │       safari-pinned-tab.svg
+    │       site.webmanifest
+    │       terms-og.png
+    │       word-to-pdf.png
+    │
+    ├───images
+    │       pdfandoc.png
+    │
+    └───js
+        │   main.js
+        │   theme-manager.js
+        │
+        ├───modules
+        │       api.js
+        │       fileHandler.js
+        │       loader.js
+        │       notifications.js
+        │       toolManager.js
+        │       toolManager.js.rej
+        │
+        └───tools
+                compress.js
+                merge.js
+                organize.js
+                pdf-to-jpg.js
+                pdf-to-ppt.js
+                pdf-to-word.js
+                protect.js
+                rotate.js
+                split.js
+                unlock.js
+                watermark.js
+                word-to-pdf.js
 
 ## 🛠️ Kurulum
 
@@ -54,59 +155,6 @@ repo-root/
 - Domain (pdfislemleri.com) DNS ayarları
 
 
-### Hızlı Kurulum
-
-1. **Projeyi klonlayın:**
-```bash
-git clone <repo-url>
-cd web
-```
-
-2. **Environment dosyasını hazırlayın:**
-```bash
-cp env.example .env
-nano .env  # EMAIL, SECRET_KEY ve diğer değişkenleri düzenleyin
-```
-
-3. **Kurulumu başlatın:**
-```bash
-chmod +x deploy.sh
-sudo ./deploy.sh
-```
-
-4. **Kontrol edin:**
-```bash
-docker compose ps
-docker compose logs -f caddy
-```
-
-## 🔧 Yönetim Komutları
-
-```bash
-# Servisleri durdur
-docker compose down
-
-# Logları görüntüle
-docker compose logs -f
-
-# Güncelleme
-git pull
-docker compose up -d --build
-
-# Sadece belirli servisi yeniden başlat
-docker compose restart caddy
-docker compose restart api
-
-# Disk kullanımı
-docker system df
-docker volume ls
-```
-
-## 🌐 Erişim
-
-- **Ana Site**: https://pdfislemleri.com
-- **API**: https://pdfislemleri.com/api
-- **Caddy Admin**: http://localhost:2019 (sadece local)
 
 ## 🔒 Güvenlik
 
@@ -116,93 +164,4 @@ docker volume ls
 - **Headers**: Güvenlik başlıkları
 - **Firewall**: UFW port açma
 
-## 📊 Monitoring
 
-```bash
-# Caddy metrics
-curl http://localhost:2019/metrics
-
-# Container health
-docker compose ps
-
-# Log analizi
-docker compose logs --tail=100 caddy | grep ERROR
-```
-
-## 🚨 Sorun Giderme
-
-### SSL Sertifika Sorunu
-```bash
-# Caddy sertifika verilerini temizle
-docker compose down
-docker volume rm web_caddy_data
-docker compose up -d
-```
-
-### Port Çakışması
-```bash
-# Port kullanımını kontrol et
-netstat -tulpn | grep :80
-netstat -tulpn | grep :443
-
-# Servisleri durdur
-sudo systemctl stop apache2 nginx
-```
-
-### Disk Alanı
-```bash
-# Docker temizliği
-docker system prune -a
-docker volume prune
-```
-
-## 🔄 Güncelleme
-
-```bash
-# Kod güncellemesi
-git pull origin main
-
-# Container yeniden build
-docker compose down
-docker compose up -d --build
-
-# Sadece frontend güncellemesi
-docker compose restart caddy
-```
-
-## 📝 Environment Değişkenleri
-
-| Değişken | Açıklama | Örnek |
-|----------|----------|-------|
-| `DOMAIN` | Ana domain | `pdfislemleri.com` |
-| `EMAIL` | SSL sertifika e-postası | `info@pdfislemleri.com` |
-
-## 🎯 Performans Optimizasyonları
-
-- **Sıkıştırma**: zstd + gzip
-- **Cache**: Statik dosyalar için 1 hafta
-- **CDN**: Tailwind CSS, Font Awesome
-- **Lazy Loading**: Resimler için
-- **Minification**: CSS/JS optimizasyonu
-
-## 🤝 Katkıda Bulunma
-
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit yapın (`git commit -m 'Add amazing feature'`)
-4. Push yapın (`git push origin feature/amazing-feature`)
-5. Pull Request açın
-
-## 📄 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
-
-## 📞 İletişim
-
-- **Website**: https://pdfislemleri.com
-- **E-posta**: info@pdfislemleri.com
-- **Güvenlik**: security@pdfislemleri.com
-
----
-
-**Not**: Bu proje eğitim ve geliştirme amaçlıdır. Production kullanımı için ek güvenlik önlemleri alınmalıdır.

@@ -15,8 +15,8 @@ class SplitTool {
 
     async process() {
         const files = fileHandler.getSelectedFiles();
-        if (files.length !== 1) {
-            notifications.error('Lütfen sadece 1 PDF yükleyin');
+        if (files.length === 0) {
+            notifications.error('Lütfen en az bir PDF dosyası seçin');
             return;
         }
 
@@ -24,10 +24,15 @@ class SplitTool {
         if (processButton) processButton.disabled = true;
 
         try {
-            pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `Dosya yükleniyor` });
+            const fileCount = files.length;
+            const message = fileCount > 1 ? 
+                `${fileCount} PDF dosyası ayırılıyor...` : 
+                `${this.toolName} işleniyor...`;
+            
+            pdfLoader.show({ message: message, subMessage: `Dosyalar yükleniyor` });
 
             // Upload
-            const upload = await pdfApi.uploadFileForSplit(files[0]);
+            const upload = await pdfApi.uploadFilesForSplit(files);
             const sessionId = upload.session_id;
 
             // Options
@@ -79,7 +84,10 @@ class SplitTool {
 
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn && result.zip_file) {
-            downloadBtn.innerHTML = '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            const buttonText = result.is_zip ? 
+                '<i class="fas fa-download mr-2"></i>ZIP İndir' : 
+                '<i class="fas fa-download mr-2"></i>Tekrar İndir';
+            downloadBtn.innerHTML = buttonText;
             downloadBtn.onclick = () => {
                 const url = pdfApi.getSplitZipUrl(result.session_id, result.zip_file);
                 fileHandler.triggerFileDownload(url);
@@ -87,7 +95,16 @@ class SplitTool {
         }
 
         resultArea.classList.remove('hidden');
-        notifications.success('PDF ayırma tamamlandı! İndirme başlatıldı.');
+        
+        let successMessage;
+        if (result.mode === "combined_ranges") {
+            successMessage = `${result.file_count} PDF dosyası birleştirildi! Toplam ${result.total_pages} sayfadan ${result.total_outputs} parça oluşturuldu. ZIP dosyası indiriliyor.`;
+        } else if (result.is_zip) {
+            successMessage = `${result.file_count} PDF dosyası ayırıldı! Toplam ${result.total_outputs} parça oluşturuldu. ZIP dosyası indiriliyor.`;
+        } else {
+            successMessage = 'PDF ayırma tamamlandı! İndirme başlatıldı.';
+        }
+        notifications.success(successMessage);
     }
 
     getOptions() {
@@ -109,6 +126,10 @@ class SplitTool {
             <div class="tool-option-group" id="rangesGroup">
                 <label class="tool-option-label" for="pagesInput">Sayfalar</label>
                 <input id="pagesInput" class="form-input" placeholder="Örn: 1-3,5,8-10">
+                <div class="text-sm text-gray-600 mt-1">
+                    <strong>💡 Çoklu PDF İpucu:</strong> Birden fazla PDF seçerseniz, tüm PDF'ler birleştirilir ve toplam sayfa numaralarına göre işlenir. 
+                    Örn: 2 PDF (5+5 sayfa) → "3-8" yazarsanız 3. sayfadan 8. sayfaya kadar alınır.
+                </div>
             </div>
 
             <div class="tool-option-group hidden" id="everyNGroup">

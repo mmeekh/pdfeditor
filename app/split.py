@@ -118,4 +118,68 @@ class PDFSplitter:
                 zf.write(f, arcname=Path(f).name)
         return zip_path
 
+    def split_combined_by_ranges(self, pdf_files: List[str], ranges_str: str) -> SplitResult:
+        """Birden fazla PDF'i birleştirip toplam sayfa numaralarına göre ayırır"""
+        if not pdf_files:
+            raise PDFSplitError('PDF dosyası listesi boş')
+        
+        # Tüm PDF'leri birleştir
+        combined_reader = PdfReader()
+        total_pages = 0
+        pdf_page_counts = []  # Her PDF'in sayfa sayısını takip et
+        
+        for pdf_path in pdf_files:
+            if not os.path.exists(pdf_path):
+                raise PDFSplitError(f'PDF bulunamadı: {pdf_path}')
+            
+            reader = PdfReader(pdf_path)
+            pdf_page_counts.append(len(reader.pages))
+            total_pages += len(reader.pages)
+            
+            # Tüm sayfaları combined_reader'a ekle
+            for page in reader.pages:
+                combined_reader.add_page(page)
+        
+        # Sayfa aralıklarını parse et
+        page_ranges = self._parse_page_ranges(ranges_str)
+        if not page_ranges:
+            raise PDFSplitError('Geçerli sayfa aralığı belirtilmedi')
+        
+        outputs: List[str] = []
+        for idx, (start, end) in enumerate(page_ranges, start=1):
+            # Sayfa numaralarını kontrol et
+            start_i = max(1, start) - 1  # 0-based index
+            end_i = min(total_pages, end)
+            
+            if start_i >= total_pages:
+                raise PDFSplitError(f'Sayfa {start} toplam sayfa sayısından ({total_pages}) büyük')
+            
+            writer = PdfWriter()
+            for p in range(start_i, end_i):
+                writer.add_page(combined_reader.pages[p])
+            
+            # Çıktı dosyası adını oluştur
+            base_name = f"combined_pdf_{len(pdf_files)}_files"
+            out_name = self._generate_filename(base_name, idx)
+            out_path = os.path.join(self.temp_dir, out_name)
+            
+            with open(out_path, 'wb') as f:
+                writer.write(f)
+            outputs.append(out_path)
+        
+        # ZIP oluştur
+        zip_path = self._zip_combined_outputs(outputs, len(pdf_files))
+        return SplitResult(output_files=outputs, zip_path=zip_path)
+    
+    def _zip_combined_outputs(self, files: List[str], pdf_count: int) -> str:
+        """Birleştirilmiş PDF'ler için ZIP oluşturur"""
+        import zipfile
+        ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+        zip_name = f"combined_split_{pdf_count}_pdfs_{ts}.zip"
+        zip_path = os.path.join(self.temp_dir, zip_name)
+        with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+            for f in files:
+                zf.write(f, arcname=Path(f).name)
+        return zip_path
+
 

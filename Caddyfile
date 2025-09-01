@@ -2,6 +2,11 @@
   email {env.EMAIL}
 }
 
+# www subdomain'ini ana domain'e yönlendir
+www.pdfislemleri.com {
+  redir https://pdfislemleri.com{uri} permanent
+}
+
 pdfislemleri.com {
   encode zstd gzip
   
