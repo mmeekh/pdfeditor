@@ -56,10 +56,23 @@ class ThemeManager {
     }
     
     setTheme(theme) {
+        const previousTheme = this.currentTheme;
         this.currentTheme = theme;
         localStorage.setItem('theme', theme);
         this.applyTheme();
         this.updateButtonStates();
+        
+        // Theme change tracking
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                'event': 'theme_change',
+                'event_category': 'User Preferences',
+                'event_label': theme,
+                'previous_theme': previousTheme || 'light',
+                'new_theme': theme,
+                'timestamp': new Date().toISOString()
+            });
+        }
     }
     
     applyTheme() {

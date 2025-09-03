@@ -488,12 +488,34 @@ class ToolManager {
     }
 
     /**
-     * Analytics tracking
+     * Analytics tracking - Enhanced with GTM support
      */
     trackEvent(eventName, eventData) {
         // Console'a yazdırmadan önce scroll pozisyonunu koru
         const scrollX = window.scrollX;
         const scrollY = window.scrollY;
+        
+        // GTM DataLayer event (öncelikli)
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                'event': eventName,
+                'event_category': 'PDF Tools',
+                'event_label': eventData.tool || 'unknown',
+                'value': eventData.file_count || 1,
+                'custom_parameters': eventData,
+                'timestamp': new Date().toISOString()
+            });
+        }
+        
+        // GA4 fallback (mevcut tracking korunuyor)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, {
+                event_category: 'PDF Tools',
+                event_label: eventData.tool || 'unknown',
+                value: eventData.file_count || 1,
+                ...eventData
+            });
+        }
         
         // Sadece basit string log yap, büyük objeleri yazdırma
         console.log(`Event tracked: ${eventName}`, typeof eventData === 'object' ? '[Object]' : eventData);
@@ -502,10 +524,6 @@ class ToolManager {
         setTimeout(() => {
             window.scrollTo(scrollX, scrollY);
         }, 0);
-        
-        if (typeof gtag !== 'undefined') {
-            gtag('event', eventName, eventData);
-        }
     }
 
     /**

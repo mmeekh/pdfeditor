@@ -59,6 +59,17 @@ class CookieManager {
         this.enableAnalytics();
         this.hide();
         
+        // Enhanced consent tracking
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                'event': 'cookie_consent',
+                'event_category': 'Privacy',
+                'event_label': 'accepted',
+                'consent_type': 'all',
+                'timestamp': new Date().toISOString()
+            });
+        }
+        
         notifications.success('Çerez tercihleriniz kaydedildi! 🍪');
         this.trackEvent('cookies_accepted', { timestamp: new Date().toISOString() });
     }
@@ -69,6 +80,17 @@ class CookieManager {
         
         this.disableAnalytics();
         this.hide();
+        
+        // Enhanced consent tracking
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                'event': 'cookie_consent',
+                'event_category': 'Privacy',
+                'event_label': 'rejected',
+                'consent_type': 'none',
+                'timestamp': new Date().toISOString()
+            });
+        }
         
         notifications.info('Çerezler reddedildi. Bazı özellikler çalışmayabilir.');
         this.trackEvent('cookies_rejected', { timestamp: new Date().toISOString() });

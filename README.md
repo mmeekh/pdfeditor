@@ -11,6 +11,7 @@ PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya
 - **Güvenlik**: CSP, HSTS, güvenlik başlıkları
 - **SEO**: PWA, manifest, sitemap, robots.txt
 - **Performans**: zstd/gzip sıkıştırma, cache politikaları
+- **CSS Yapısı**: Modülerleştirilmiş stil dosyaları (`base.css`, `components.css`, `theme.css`) ile daha düzenli ve ölçeklenebilir frontend geliştirme
 
 ## 📁 Proje Yapısı
 
@@ -163,5 +164,5 @@ repo-root/
 - **HSTS**: HTTP Strict Transport Security
 - **Headers**: Güvenlik başlıkları
 - **Firewall**: UFW port açma
-
+- **Rate Limiting & Fail2ban**: Brute force ve DDoS girişimlerine karşı ek güvenlik katmanı
 

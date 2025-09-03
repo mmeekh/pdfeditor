@@ -1,0 +1,462 @@
+/* ===== GRADIENT ANIMATIONS FOR TOOL CARDS ===== */
+
+/* PDF Merge Icon Container - Turquoise Gradient Animation */
+.merge-icon-container {
+    background: linear-gradient(45deg, #4de9e1, #009688, #4de9e1);
+    background-size: 200% 200%;
+    animation: turquoise-gradient-flow 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.merge-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #4de9e1, #009688, #4de9e1, #4de9e1);
+    background-size: 300% 300%;
+    animation: turquoise-gradient-flow 4s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.merge-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Split Icon Container - Purple Gradient Animation */
+.split-icon-container {
+    background: linear-gradient(45deg, #B388FF, #673AB7, #B388FF);
+    background-size: 200% 200%;
+    animation: purple-gradient-flow 3.2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.split-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #B388FF, #673AB7, #B388FF, #B388FF);
+    background-size: 300% 300%;
+    animation: purple-gradient-flow 4.2s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.split-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Compress Icon Container - Orange Gradient Animation */
+.compress-icon-container {
+    background: linear-gradient(45deg, #FFE082, #FB8C00, #FFE082);
+    background-size: 200% 200%;
+    animation: orange-gradient-flow 3.4s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.compress-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #FFE082, #FB8C00, #FFE082, #FFE082);
+    background-size: 300% 300%;
+    animation: orange-gradient-flow 4.4s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.compress-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Rotate Icon Container - Green Gradient Animation */
+.rotate-icon-container {
+    background: linear-gradient(45deg, #81C784, #388E3C, #81C784);
+    background-size: 200% 200%;
+    animation: green-gradient-flow 3.6s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.rotate-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #81C784, #388E3C, #81C784, #81C784);
+    background-size: 300% 300%;
+    animation: green-gradient-flow 4.6s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.rotate-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF to Word Icon Container - Blue Gradient Animation */
+.pdf-to-word-icon-container {
+    background: linear-gradient(45deg, #64B5F6, #1E88E5, #64B5F6);
+    background-size: 200% 200%;
+    animation: blue-gradient-flow 3.8s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-to-word-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #64B5F6, #1E88E5, #64B5F6, #64B5F6);
+    background-size: 300% 300%;
+    animation: blue-gradient-flow 4.8s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.pdf-to-word-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* Word to PDF Icon Container - Blue Gradient Animation */
+.word-to-pdf-icon-container {
+    background: linear-gradient(45deg, #42A5F5, #1565C0, #42A5F5);
+    background-size: 200% 200%;
+    animation: blue2-gradient-flow 4.0s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.word-to-pdf-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #42A5F5, #1565C0, #42A5F5, #42A5F5);
+    background-size: 300% 300%;
+    animation: blue2-gradient-flow 5.0s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.word-to-pdf-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF to PPT Icon Container - Blue Gradient Animation */
+.pdf-to-ppt-icon-container {
+    background: linear-gradient(45deg, #90CAF9, #1976D2, #90CAF9);
+    background-size: 200% 200%;
+    animation: blue3-gradient-flow 4.2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-to-ppt-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #90CAF9, #1976D2, #90CAF9, #90CAF9);
+    background-size: 300% 300%;
+    animation: blue3-gradient-flow 5.2s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.pdf-to-ppt-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF to JPG Icon Container - Blue Gradient Animation */
+.pdf-to-jpg-icon-container {
+    background: linear-gradient(45deg, #29B6F6, #0277BD, #29B6F6);
+    background-size: 200% 200%;
+    animation: blue4-gradient-flow 4.4s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-to-jpg-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #29B6F6, #0277BD, #29B6F6, #29B6F6);
+    background-size: 300% 300%;
+    animation: blue4-gradient-flow 5.4s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.pdf-to-jpg-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Unlock Icon Container - Pink Gradient Animation */
+.unlock-icon-container {
+    background: linear-gradient(45deg, #F48FB1, #E91E63, #F48FB1);
+    background-size: 200% 200%;
+    animation: pink-gradient-flow 4.6s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.unlock-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #F48FB1, #E91E63, #F48FB1, #F48FB1);
+    background-size: 300% 300%;
+    animation: pink-gradient-flow 5.6s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.unlock-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Protect Icon Container - Indigo Gradient Animation */
+.protect-icon-container {
+    background: linear-gradient(45deg, #7986CB, #3F51B5, #7986CB);
+    background-size: 200% 200%;
+    animation: indigo-gradient-flow 4.8s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.protect-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #7986CB, #3F51B5, #7986CB, #7986CB);
+    background-size: 300% 300%;
+    animation: indigo-gradient-flow 5.8s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.protect-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Watermark Icon Container - Cyan Gradient Animation */
+.watermark-icon-container {
+    background: linear-gradient(45deg, #80DEEA, #00BCD4, #80DEEA);
+    background-size: 200% 200%;
+    animation: cyan-gradient-flow 5.0s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.watermark-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #80DEEA, #00BCD4, #80DEEA, #80DEEA);
+    background-size: 300% 300%;
+    animation: cyan-gradient-flow 6.0s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.watermark-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Organize Icon Container - Light Green Gradient Animation */
+.organize-icon-container {
+    background: linear-gradient(45deg, #C5E1A5, #8BC34A, #C5E1A5);
+    background-size: 200% 200%;
+    animation: light-green-gradient-flow 5.2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.organize-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #C5E1A5, #8BC34A, #C5E1A5, #C5E1A5);
+    background-size: 300% 300%;
+    animation: light-green-gradient-flow 6.2s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.organize-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+@keyframes turquoise-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes purple-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes orange-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes green-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes blue-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes blue2-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes blue3-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes blue4-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pink-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes indigo-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes cyan-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes light-green-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== HOVER AND ACTIVE STATES ===== */
+.tool-card[data-tool="merge"]:hover .merge-icon-container i,
+.tool-card[data-tool="merge"]:active .merge-icon-container i,
+.tool-card[data-tool="merge"]:focus .merge-icon-container i,
+.tool-card[data-tool="split"]:hover .split-icon-container i,
+.tool-card[data-tool="split"]:active .split-icon-container i,
+.tool-card[data-tool="split"]:focus .split-icon-container i,
+.tool-card[data-tool="compress"]:hover .compress-icon-container i,
+.tool-card[data-tool="compress"]:active .compress-icon-container i,
+.tool-card[data-tool="compress"]:focus .compress-icon-container i,
+.tool-card[data-tool="rotate"]:hover .rotate-icon-container i,
+.tool-card[data-tool="rotate"]:active .rotate-icon-container i,
+.tool-card[data-tool="rotate"]:focus .rotate-icon-container i,
+.tool-card[data-tool="pdf-to-word"]:hover .pdf-to-word-icon-container i,
+.tool-card[data-tool="pdf-to-word"]:active .pdf-to-word-icon-container i,
+.tool-card[data-tool="pdf-to-word"]:focus .pdf-to-word-icon-container i,
+.tool-card[data-tool="word-to-pdf"]:hover .word-to-pdf-icon-container i,
+.tool-card[data-tool="word-to-pdf"]:active .word-to-pdf-icon-container i,
+.tool-card[data-tool="word-to-pdf"]:focus .word-to-pdf-icon-container i,
+.tool-card[data-tool="pdf-to-ppt"]:hover .pdf-to-ppt-icon-container i,
+.tool-card[data-tool="pdf-to-ppt"]:active .pdf-to-ppt-icon-container i,
+.tool-card[data-tool="pdf-to-ppt"]:focus .pdf-to-ppt-icon-container i,
+.tool-card[data-tool="pdf-to-jpg"]:hover .pdf-to-jpg-icon-container i,
+.tool-card[data-tool="pdf-to-jpg"]:active .pdf-to-jpg-icon-container i,
+.tool-card[data-tool="pdf-to-jpg"]:focus .pdf-to-jpg-icon-container i,
+.tool-card[data-tool="unlock"]:hover .unlock-icon-container i,
+.tool-card[data-tool="unlock"]:active .unlock-icon-container i,
+.tool-card[data-tool="unlock"]:focus .unlock-icon-container i,
+.tool-card[data-tool="protect"]:hover .protect-icon-container i,
+.tool-card[data-tool="protect"]:active .protect-icon-container i,
+.tool-card[data-tool="protect"]:focus .protect-icon-container i,
+.tool-card[data-tool="watermark"]:hover .watermark-icon-container i,
+.tool-card[data-tool="watermark"]:active .watermark-icon-container i,
+.tool-card[data-tool="watermark"]:focus .watermark-icon-container i,
+.tool-card[data-tool="organize"]:hover .organize-icon-container i,
+.tool-card[data-tool="organize"]:active .organize-icon-container i,
+.tool-card[data-tool="organize"]:focus .organize-icon-container i {
+    color: #FFFFFF !important;
+}

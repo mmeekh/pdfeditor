@@ -1,0 +1,48 @@
+/* ===== THEME VARIABLES ===== */
+:root {
+    --bg-primary: #f9fafb;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+    --border-color: #d1d5db;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --tooltip-opacity: 1;                 /* sadece burayı değiştirerek opaklığı kontrol et */
+    --tooltip-start-rgb: 59,130,246;         /* #3b82f6 */
+    --tooltip-end-rgb: 249,115,22;           /* #f97316 */
+}
+
+/* ===== THEME DARK ===== */
+.theme-dark {
+    --bg-primary: #1f2937;
+    --bg-secondary: #374151;
+    --bg-tertiary: #4b5563;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --border-color: #4b5563;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --tooltip-start-rgb: 59,130,246;         /* #3b82f6 */
+    --tooltip-end-rgb: 16,185,129;           /* #10b981 */
+}
+
+/* ===== THEME COMFORT ===== */
+.theme-comfort {
+    --bg-primary: #fef7f0;
+    --bg-secondary: #fff8f0;
+    --bg-tertiary: #fef3e2;
+    --text-primary: #1e0f00;
+    --text-secondary: #3d1a00;
+    --text-muted: #5a2500;
+    --border-color: #f59e0b;
+    --shadow-color: rgba(245, 158, 11, 0.2);
+    --accent-color: #f59e0b;
+    --accent-hover: #d97706;
+    --tooltip-start-rgb: 220,38,38;          /* #dc2626 */
+    --tooltip-end-rgb: 245,158,11;           /* #f59e0b */
+}

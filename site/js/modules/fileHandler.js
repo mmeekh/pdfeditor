@@ -86,6 +86,9 @@ class FileHandler {
         this.displaySelectedFiles();
         this.updateProcessButton();
         
+        // Enhanced file upload tracking
+        this.trackFileUpload(validFiles, toolType);
+        
         // Bildirim göster
         if (validFiles.length > 1) {
             notifications.success(`${validFiles.length} dosya başarıyla eklendi! Toplam ${this.selectedFiles.length} dosya.`);
@@ -538,6 +541,41 @@ class FileHandler {
 
     getTotalSize() {
         return this.selectedFiles.reduce((sum, file) => sum + file.size, 0);
+    }
+
+    /**
+     * Enhanced file upload tracking for GTM
+     */
+    trackFileUpload(files, toolType) {
+        const totalSize = Array.from(files).reduce((sum, file) => sum + file.size, 0);
+        const fileTypes = [...new Set(Array.from(files).map(f => f.type))];
+        const currentTool = window.toolManager?.getCurrentTool() || toolType || 'unknown';
+        
+        // GTM DataLayer event
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                'event': 'file_upload',
+                'event_category': 'PDF Tools',
+                'event_label': currentTool,
+                'file_count': files.length,
+                'total_file_size': totalSize,
+                'file_types': fileTypes,
+                'tool_used': currentTool,
+                'user_agent': navigator.userAgent,
+                'timestamp': new Date().toISOString()
+            });
+        }
+        
+        // GA4 fallback
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'file_upload', {
+                event_category: 'PDF Tools',
+                event_label: currentTool,
+                file_count: files.length,
+                total_file_size: totalSize,
+                file_types: fileTypes.join(',')
+            });
+        }
     }
 }
 
