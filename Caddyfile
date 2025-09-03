@@ -1,53 +1,48 @@
 {
-  email {env.EMAIL}
+  email info@pdfislemleri.com
 }
 
-# www subdomain'ini ana domain'e yönlendir
+# www subdomain → ana domain
 www.pdfislemleri.com {
   redir https://pdfislemleri.com{uri} permanent
 }
 
 pdfislemleri.com {
   encode zstd gzip
-  
-  # Ana site root
+
+  # Site root
   root * /srv
-  
-  # Matcher tanımlamaları
+
+  # Matcher'lar
   @static {
-    path_regexp static ^/(?:images|icons|favicon\.ico|robots\.txt|sitemap\.xml|.*\.(?:css|js|png|jpg|jpeg|svg|webp|ico))$
+      path_regexp static ^/(?:images|icons|cardbgs|css|js)/.*|.*\.(?:css|js|png|jpg|jpeg|webp|svg|ico|xml|txt|woff2?)$
   }
-  
+
   @html {
-    path *.html
+      path *.html
   }
-  
-  # API yönlendirmesi - ÖNCELİKLİ
+
+  # API yönlendirmesi – ÖNCELİKLİ
   handle /api/* {
-    # Dosya boyutu sınırı (50MB)
-    request_body {
-      max_size 50MB
-    }
-    reverse_proxy api:2000
+      reverse_proxy api:2000
   }
-  
+
   # Güvenlik başlıkları
   header {
-    X-Content-Type-Options "nosniff"
-    X-Frame-Options "DENY"
-    Referrer-Policy "strict-origin-when-cross-origin"
-    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://www.googletagmanager.com https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' blob: data: https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' blob: data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' blob: data: https:; connect-src 'self' https://www.google-analytics.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; worker-src 'self' blob:; child-src 'self' blob:; media-src 'self' blob: data:"
+      X-Content-Type-Options "nosniff"
+      X-Frame-Options "SAMEORIGIN"
+      Referrer-Policy "strict-origin-when-cross-origin"
+      Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+      Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://www.googletagmanager.com https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' blob: data: https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' blob: data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' blob: data: https:; connect-src 'self' https://www.google-analytics.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; worker-src 'self' blob:; child-src 'self' blob:; media-src 'self' blob: data:"
   }
-  
-  # Statik dosyalar ve SPA routing
+
+  # Statik dosyalar & SPA routing
   handle {
-    file_server
-    try_files {path} {path}.html /index.html
+      file_server
+      try_files {path} {path}.html /index.html
   }
-  
+
   # Cache politikaları
-  header @static Cache-Control "public, max-age=604800, immutable"
-  header @html Cache-Control "no-cache, no-store, must-revalidate"
-  header / Cache-Control "no-store"
+  header @static Cache-Control "public, max-age=31536000, immutable"
+  header @html   Cache-Control "no-store"
 }

@@ -1,5 +1,4 @@
-# Docker Compose v2 syntax - version field is optional
-
+# Docker Compose v2 (version alanı opsiyonel)
 services:
   caddy:
     image: caddy:2.8
@@ -10,8 +9,11 @@ services:
     environment:
       - EMAIL=${EMAIL}
     volumes:
+      # Host'taki formatlı Caddyfile'ı OKUMA MODUNDA bağla
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      # Statik siteyi /srv altında read-only sun
       - ./site:/srv:ro
+      # Caddy'nin sertifika ve runtime verileri kalıcı
       - caddy_data:/data
       - caddy_config:/config
     healthcheck:
@@ -21,15 +23,23 @@ services:
       retries: 3
     networks:
       - pdfislemleri_network
+    # API sağlıklıyken başlat (proxy hatalarını azaltır)
+    depends_on:
+      api:
+        condition: service_healthy
 
   api:
-    build: ./app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
     restart: unless-stopped
     expose:
       - "2000"
     environment:
       - PYTHONUNBUFFERED=1
       - TEMP_DIR=/app/temp
+    volumes:
+      - api_temp:/app/temp
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:2000/health"]
       interval: 30s
@@ -37,8 +47,6 @@ services:
       retries: 3
     networks:
       - pdfislemleri_network
-    volumes:
-      - api_temp:/app/temp
 
 volumes:
   caddy_data:
