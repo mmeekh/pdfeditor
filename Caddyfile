@@ -24,6 +24,10 @@ pdfislemleri.com {
   
   # API yönlendirmesi - ÖNCELİKLİ
   handle /api/* {
+    # Dosya boyutu sınırı (50MB)
+    request_body {
+      max_size 50MB
+    }
     reverse_proxy api:2000
   }
   

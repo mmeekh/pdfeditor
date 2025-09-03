@@ -17,6 +17,11 @@ router = APIRouter(prefix="/api/tools/pdf-to-jpg", tags=["pdf-to-jpg"])
 
 @router.post("/upload")
 async def upload_pdf_for_jpg(files: list[UploadFile] = File(...)):
+    if len(files) == 0:
+        raise HTTPException(status_code=400, detail="En az 1 PDF dosyası gereklidir")
+    if len(files) > settings.MAX_FILES:
+        raise HTTPException(status_code=400, detail=f"Maksimum {settings.MAX_FILES} dosya yüklenebilir")
+
     # Her dosyayı validate et
     for file in files:
         validate_pdf_file(file)
@@ -25,9 +30,15 @@ async def upload_pdf_for_jpg(files: list[UploadFile] = File(...)):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     os.makedirs(session_dir, exist_ok=True)
     
+    total_size = 0
     try:
         uploaded_files = []
         for file in files:
+            if getattr(file, "size", None) is not None:
+                total_size += file.size
+                if total_size > settings.MAX_FILE_SIZE:
+                    raise HTTPException(status_code=400, detail=f"Toplam boyut {settings.MAX_FILE_SIZE/(1024*1024)}MB sınırını aşıyor")
+            
             file_path = Path(session_dir) / file.filename
             await save_upload_file(file, file_path)
             uploaded_files.append({

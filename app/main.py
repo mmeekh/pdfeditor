@@ -27,6 +27,8 @@ app = FastAPI(
     description="PDF işlemleri için REST API",
     version="1.0.0",
     lifespan=lifespan,
+    # Global file size limit
+    max_request_size=50 * 1024 * 1024,  # 50MB
 )
 
 
