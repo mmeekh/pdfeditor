@@ -29,8 +29,8 @@ class PageOrder(BaseModel):
 
 @router.post("/upload")
 async def upload_pdfs_for_organize(
+    background_tasks: BackgroundTasks,
     files: List[UploadFile] = File(...),
-    background_tasks: BackgroundTasks = BackgroundTasks(),
 ):
     if len(files) == 0:
         raise HTTPException(status_code=400, detail="En az 1 PDF dosyası gereklidir")
@@ -67,7 +67,8 @@ async def upload_pdfs_for_organize(
             )
             logger.info(f"Dosya yüklendi: {file.filename}")
 
-        background_tasks.add_task(cleanup_old_files)
+        if background_tasks:
+            background_tasks.add_task(cleanup_old_files)
 
         return {
             "session_id": session_id,
@@ -88,7 +89,7 @@ async def upload_pdfs_for_organize(
 async def process_organize(
     session_id: str,
     page_order: PageOrder,
-    background_tasks: BackgroundTasks = BackgroundTasks(),
+    background_tasks: BackgroundTasks,
 ):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
