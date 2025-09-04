@@ -1,48 +1,89 @@
 {
-  email info@pdfislemleri.com
+	# ACME e-posta (ENV'den gelsin; .env içinde EMAIL tanımlı)
+	email {env.EMAIL}
+	# Daha sade loglar istersen:
+	# logging {
+	#   logs { default { level INFO } }
+	# }
 }
 
-# www subdomain → ana domain
+# www → apex yönlendirme
 www.pdfislemleri.com {
-  redir https://pdfislemleri.com{uri} permanent
+	redir https://pdfislemleri.com{uri} permanent
 }
 
 pdfislemleri.com {
-  encode zstd gzip
+	# HTTP sıkıştırma
+	encode zstd gzip
 
-  # Site root
-  root * /srv
+	# Statik kök (frontend)
+	root * /srv
 
-  # Matcher'lar
-  @static {
-      path_regexp static ^/(?:images|icons|cardbgs|css|js)/.*|.*\.(?:css|js|png|jpg|jpeg|webp|svg|ico|xml|txt|woff2?)$
-  }
+	# ---- ÖNCELİKLİ PROXY BLOKLARI ----
+	# API
+	handle /api/* {
+		# Büyük PDF yüklemeleri için limit
+		request_body {
+			max_size 100MB
+		}
+		reverse_proxy api:2000 {
+		}
+	}
 
-  @html {
-      path *.html
-  }
+	# İndirme linkleri (backend'in /download/* uçları)
+	handle /download/* {
+		reverse_proxy api:2000
+	}
 
-  # API yönlendirmesi – ÖNCELİKLİ
-  handle /api/* {
-      reverse_proxy api:2000
-  }
+	# Sağlık kontrolü (opsiyonel)
+	handle /health {
+		reverse_proxy api:2000
+	}
 
-  # Güvenlik başlıkları
-  header {
-      X-Content-Type-Options "nosniff"
-      X-Frame-Options "DENY"
-      Referrer-Policy "strict-origin-when-cross-origin"
-      Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-      Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://www.googletagmanager.com https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' blob: data: https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' blob: data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' blob: data: https:; connect-src 'self' https://www.google-analytics.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; worker-src 'self' blob:; child-src 'self' blob:; media-src 'self' blob: data:"
-  }
+	# ---- GÜVENLİK BAŞLIKLARI ----
+	header {
+		# Temel güvenlik
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
-  # Statik dosyalar & SPA routing
-  handle {
-      file_server
-      try_files {path} {path}.html /index.html
-  }
+		# İçerik Güvenliği Politikası (CSP)
+		# Not: tailwindcdn ve cdnjs kullanıyorsan bırak; kullanmıyorsan çıkar.
+		Content-Security-Policy "
+			default-src 'self';
+			script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://www.googletagmanager.com https://cdn.tailwindcss.com https://cdnjs.cloudflare.com;
+			style-src  'self' 'unsafe-inline' blob: data: https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+			font-src   'self' blob: data: https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+			img-src    'self' blob: data: https:;
+			connect-src 'self' https://www.google-analytics.com;
+			frame-src  'none';
+			object-src 'none';
+			base-uri   'self';
+			form-action 'self';
+			upgrade-insecure-requests;
+			worker-src 'self' blob:;
+			child-src  'self' blob:;
+			media-src  'self' blob: data:
+		"
+	}
 
-  # Cache politikaları
-  header @static Cache-Control "public, max-age=31536000, immutable"
-  header @html   Cache-Control "no-store"
+	# ---- STATİK SERVİS + SPA ROUTING ----
+	# Uzun süre cache'lenecek statikler
+	@static {
+		path_regexp static ^/(?:images|icons|cardbgs|css|js)/.*|.*\.(?:css|js|png|jpg|jpeg|webp|svg|ico|xml|txt|woff2?)$
+	}
+	header @static Cache-Control "public, max-age=31536000, immutable"
+
+	# HTML dosyaları cache'lenmesin
+	@html {
+		path *.html
+	}
+	header @html Cache-Control "no-store"
+
+	# Dosyalar + SPA fallback
+	handle {
+		file_server
+		try_files {path} {path}.html /index.html
+	}
 }
