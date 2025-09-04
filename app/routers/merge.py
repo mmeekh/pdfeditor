@@ -21,8 +21,8 @@ router = APIRouter(prefix="/api/tools/merge", tags=["merge"])
 
 @router.post("/upload")
 async def upload_pdfs_for_merge(
+    background_tasks: BackgroundTasks,
     files: List[UploadFile] = File(...),
-    background_tasks: BackgroundTasks = BackgroundTasks(),
 ):
     if len(files) < 2:
         raise HTTPException(status_code=400, detail="En az 2 PDF dosyası gereklidir")
@@ -57,7 +57,8 @@ async def upload_pdfs_for_merge(
             })
             logger.info(f"Dosya yüklendi: {file.filename}")
 
-        background_tasks.add_task(cleanup_old_files)
+        if background_tasks:
+            background_tasks.add_task(cleanup_old_files)
 
         return {
             "session_id": session_id,
@@ -78,8 +79,8 @@ async def upload_pdfs_for_merge(
 @router.post("/process/{session_id}")
 async def process_merge(
     session_id: str,
+    background_tasks: BackgroundTasks,
     sort_by_name: bool = False,
-    background_tasks: BackgroundTasks = BackgroundTasks(),
 ):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
