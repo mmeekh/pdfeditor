@@ -877,6 +877,188 @@
     backdrop-filter: blur(5px);
 }
 
+/* PDF Watermark Tool - Color Picker and Opacity */
+.color-picker-input {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Font Preview */
+.font-preview-container {
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.font-preview {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 500;
+    color: #374151;
+    line-height: 1;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.color-picker-input:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.color-picker-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+}
+
+.color-picker-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.color-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.opacity-slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #e5e7eb, #374151);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.opacity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.opacity-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.opacity-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.opacity-slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.opacity-label {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+/* Dark mode styles for watermark controls */
+.theme-dark .color-picker-input {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .color-picker-input:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.theme-dark .color-preview {
+    border-color: #374151;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .opacity-slider {
+    background: linear-gradient(to right, #374151, #6b7280);
+}
+
+.theme-dark .opacity-label {
+    color: #9ca3af;
+}
+
+.theme-dark .font-preview-container {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+.theme-dark .font-preview {
+    color: #e5e7eb;
+}
+
+/* Comfort mode styles for watermark controls */
+.theme-comfort .color-picker-input {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-comfort .color-picker-input:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.theme-comfort .color-preview {
+    border-color: #f3f4f6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-comfort .opacity-slider {
+    background: linear-gradient(to right, #f3f4f6, #6b7280);
+}
+
+.theme-comfort .opacity-label {
+    color: #6b7280;
+}
+
+.theme-comfort .font-preview-container {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.theme-comfort .font-preview {
+    color: #4b5563;
+}
+
 /* PDF Organization Tool */
 .organize-preview {
     display: flex;

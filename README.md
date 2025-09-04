@@ -15,15 +15,13 @@ PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya
 
 ## 📁 Proje Yapısı
 
-```
-repo-root/
+C:.
+│   .env
 │   .gitignore
 │   Caddyfile
 │   deploy.sh
 │   docker-compose.yml
 │   env.example
-│   exit
-│   git.patch
 │   README.md
 │
 ├───.github
@@ -33,6 +31,7 @@ repo-root/
 ├───app
 │   │   compress.py
 │   │   Dockerfile
+│   │   Dockerfile.dev
 │   │   main.py
 │   │   merge.py
 │   │   organize.py
@@ -54,22 +53,23 @@ repo-root/
 │   │       utils.py
 │   │       __init__.py
 │   │
-│   └───routers
-│           compress.py
-│           merge.py
-│           organize.py
-│           pdf_to_jpg.py
-│           pdf_to_ppt.py
-│           pdf_to_word.py
-│           protect.py
-│           rotate.py
-│           session.py
-│           split.py
-│           unlock.py
-│           watermark.py
-│           word_to_pdf.py
-│           __init__.py
-│
+│   ├───routers
+│   │       compress.py
+│   │       merge.py
+│   │       organize.py
+│   │       pdf_to_jpg.py
+│   │       pdf_to_ppt.py
+│   │       pdf_to_word.py
+│   │       protect.py
+│   │       rotate.py
+│   │       session.py
+│   │       split.py
+│   │       unlock.py
+│   │       watermark.py
+│   │       word_to_pdf.py
+│   │       __init__.py
+│   │
+│   └───temp
 └───site
     │   about.html
     │   blog.html
@@ -95,31 +95,52 @@ repo-root/
     │       telefondan-pdf-duzenleme.html
     │       word-pdf-donusturme.html
     │
+    ├───cardbgs
+    │       Compression.webp
+    │       merge.webp
+    │       pdflock.webp
+    │       pdforganize.webp
+    │       pdfrotate.webp
+    │       pdftoimage.webp
+    │       pdftoppt.webp
+    │       pdftoword_no_bg.webp
+    │       pdfwatermark.webp
+    │       split.webp
+    │       unlock_no_bg.webp
+    │       wordtopdf.webp
+    │
+    ├───css
+    │       base.css
+    │       components.css
+    │       gradients.css
+    │       theme.css
+    │
     ├───icons
-    │       about-og.png
-    │       android-chrome-512x512.png
-    │       apple-touch-icon.png
-    │       blog-og.png
+    │       apple-touch-icon.webp
     │       browserconfig.xml
     │       favicon.ico
-    │       home-og.png
-    │       icon-512x512.png
-    │       logo.png
-    │       mobile-pdf-edit.png
-    │       mstile-150x150.png
-    │       pdf-compress.png
-    │       pdf-forms.png
-    │       pdf-merge.png
-    │       pdf-ocr.png
-    │       pdf-security.png
-    │       pdf-signature.png
+    │       icon-512x512.webp
+    │       logo.webp
+    │       mstile-150x150.webp
     │       safari-pinned-tab.svg
     │       site.webmanifest
-    │       terms-og.png
-    │       word-to-pdf.png
     │
     ├───images
-    │       pdfandoc.png
+    │       about-og.jpeg
+    │       blog-og.jpeg
+    │       catpdf.webp
+    │       home-og.jpeg
+    │       mobile-pdf-edit.webp
+    │       pdcsec.webp
+    │       pdf-compress.webp
+    │       pdf-forms.webp
+    │       pdf-merge.webp
+    │       pdf-ocr.webp
+    │       pdf-security.webp
+    │       pdf-signature.webp
+    │       pdfandoc.webp
+    │       terms-og.webp
+    │       word-to-pdf.webp
     │
     └───js
         │   main.js
@@ -131,7 +152,6 @@ repo-root/
         │       loader.js
         │       notifications.js
         │       toolManager.js
-        │       toolManager.js.rej
         │
         └───tools
                 compress.js
@@ -146,6 +166,7 @@ repo-root/
                 unlock.js
                 watermark.js
                 word-to-pdf.js
+
 
 ## 🛠️ Kurulum
 

@@ -44,6 +44,26 @@ class SplitTool {
                 everyN = 1; // minimum 1
             }
 
+            // Sayfa aralığı validasyonu
+            if (mode === 'ranges' && pages) {
+                // Geçersiz karakterleri kontrol et
+                if (pages.includes(':') || /[^0-9,\-\s]/.test(pages)) {
+                    notifications.error('Geçersiz sayfa formatı. Örnek: 1-3,5,8-10');
+                    if (processButton) processButton.disabled = false;
+                    pdfLoader.hide();
+                    return;
+                }
+                
+                // Sayfa aralığı formatını kontrol et
+                const pagePattern = /^(\d+(-\d+)?)(,\d+(-\d+)?)*$/;
+                if (!pagePattern.test(pages.replace(/\s/g, ''))) {
+                    notifications.error('Geçersiz sayfa formatı. Örnek: 1-3,5,8-10');
+                    if (processButton) processButton.disabled = false;
+                    pdfLoader.hide();
+                    return;
+                }
+            }
+
             pdfLoader.updateProgress(50, 'PDF ayırma işlemi başlatılıyor...');
 
             if (mode === 'every_n') {

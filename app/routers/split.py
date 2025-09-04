@@ -37,18 +37,25 @@ async def upload_pdf_for_split(files: list[UploadFile] = File(...)):
     total_size = 0
     try:
         uploaded_files = []
-        for file in files:
+        for i, file in enumerate(files):
             if getattr(file, "size", None) is not None:
                 total_size += file.size
                 if total_size > settings.MAX_FILE_SIZE:
                     raise HTTPException(status_code=400, detail=f"Toplam boyut {settings.MAX_FILE_SIZE/(1024*1024)}MB sınırını aşıyor")
             
-            file_path = Path(session_dir) / file.filename
+            # Upload sırasını korumak için dosya adına sıra numarası ekle
+            file_extension = Path(file.filename).suffix
+            file_name_without_ext = Path(file.filename).stem
+            ordered_filename = f"{i:03d}_{file_name_without_ext}{file_extension}"
+            file_path = Path(session_dir) / ordered_filename
+            
             await save_upload_file(file, file_path)
             uploaded_files.append({
                 "original_name": file.filename,
+                "ordered_name": ordered_filename,
                 "path": str(file_path),
-                "size": getattr(file, "size", 0)
+                "size": getattr(file, "size", 0),
+                "order": i
             })
         
         return {
@@ -77,18 +84,36 @@ async def process_split(
     pdf_files = list(Path(session_dir).glob("*.pdf"))
     if not pdf_files:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
+    
+    # Dosya sırasını korumak için upload sırasına göre sırala
+    # Upload sırası dosya adındaki sıra numarasına göre belirlenir (000_, 001_, 002_)
+    pdf_files.sort(key=lambda x: x.name)
+
+    # Parametre validasyonu
+    if mode not in ["ranges", "every_n"]:
+        raise HTTPException(status_code=400, detail="Geçersiz mod. 'ranges' veya 'every_n' olmalı")
+    
+    if mode == "ranges" and not pages:
+        raise HTTPException(status_code=400, detail="Sayfa aralıkları boş olamaz")
+    
+    if mode == "every_n" and (not every_n or every_n < 1):
+        raise HTTPException(status_code=400, detail="Aralık değeri 1 veya daha büyük olmalı")
 
     splitter = PDFSplitter(temp_dir=session_dir)
     all_results = []
     total_outputs = 0
     
     try:
+        logger.info(f"Split process started: session_id={session_id}, mode={mode}, pages={pages}, every_n={every_n}")
+        logger.info(f"PDF files found: {[str(pdf) for pdf in pdf_files]}")
+        
         if mode == "ranges" and len(pdf_files) > 1:
             # Çoklu PDF'ler için birleştirilmiş işlem
             if not pages:
                 raise HTTPException(status_code=400, detail="Sayfa aralıkları boş olamaz")
             
             pdf_paths = [str(pdf) for pdf in pdf_files]
+            logger.info(f"Processing combined ranges: {pdf_paths} with pages: {pages}")
             result = splitter.split_combined_by_ranges(pdf_paths, pages)
             
             # Toplam sayfa sayısını hesapla
@@ -174,9 +199,10 @@ async def process_split(
             }
             
     except PDFSplitError as e:
+        logger.error(f"PDF Split Error: {e}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"Split process error: {e}")
+        logger.error(f"Split process error: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail="PDF ayırma sırasında hata oluştu")
 
 

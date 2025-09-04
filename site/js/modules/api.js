@@ -166,11 +166,22 @@ class PDFApi {
     async processSplit(sessionId, mode, options = {}) {
         const params = new URLSearchParams();
         params.set('mode', mode);
-        if (options.pages) params.set('pages', options.pages);
-        if (options.every_n) params.set('every_n', options.every_n);
-        const response = await fetch(`${this.baseUrl}/tools/split/process/${sessionId}?${params.toString()}`, { method: 'POST' });
+        if (options.pages) {
+            // Sayfa parametresini temizle
+            const cleanPages = options.pages.replace(/[^\d,\-\s]/g, '');
+            params.set('pages', cleanPages);
+        }
+        if (options.every_n) {
+            params.set('every_n', options.every_n);
+        }
+        
+        const url = `${this.baseUrl}/tools/split/process/${sessionId}?${params.toString()}`;
+        console.log('Split API URL:', url); // Debug için
+        
+        const response = await fetch(url, { method: 'POST' });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
+            console.error('Split API Error:', err); // Debug için
             throw new Error(err.detail || 'Split işlem hatası');
         }
         return response.json();
@@ -394,6 +405,7 @@ class PDFApi {
         if (opts.position) params.set('position', opts.position);
         if (opts.fontSize) params.set('font_size', opts.fontSize);
         if (opts.color) params.set('color', opts.color);
+        if (opts.opacity !== undefined) params.set('opacity', opts.opacity);
         const res = await fetch(`${this.baseUrl}/tools/watermark/process/${sessionId}?${params.toString()}`, { method: 'POST' });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));

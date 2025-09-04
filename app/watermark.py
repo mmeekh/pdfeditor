@@ -21,6 +21,7 @@ class PDFWatermarker:
         position: str = "center",
         font_size: int = 36,
         color: str = "#000000",
+        opacity: float = 0.5,
     ) -> str:
         reader = PdfReader(input_pdf)
         writer = PdfWriter()
@@ -32,6 +33,7 @@ class PDFWatermarker:
             c = canvas.Canvas(packet, pagesize=(width, height))
             c.setFont("Helvetica", font_size)
             c.setFillColor(HexColor(color))
+            c.setFillAlpha(opacity)
 
             if position == "topleft":
                 x = 40

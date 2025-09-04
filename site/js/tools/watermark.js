@@ -18,6 +18,7 @@ class WatermarkTool {
         const position = document.getElementById('watermarkPosition')?.value || 'center';
         const fontSize = parseInt(document.getElementById('watermarkFontSize')?.value || '36', 10);
         const color = document.getElementById('watermarkColor')?.value || '#000000';
+        const opacity = parseFloat(document.getElementById('watermarkOpacity')?.value || '0.5');
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;
         try {
@@ -25,7 +26,7 @@ class WatermarkTool {
             const up = await pdfApi.uploadFilesForWatermark(files);
             const sessionId = up.session_id;
             pdfLoader.updateProgress(50, 'Filigran uygulanıyor...');
-            const result = await pdfApi.processWatermark(sessionId, { text, position, fontSize, color });
+            const result = await pdfApi.processWatermark(sessionId, { text, position, fontSize, color, opacity });
             pdfLoader.updateProgress(100, 'Tamamlandı!');
             setTimeout(()=>{ pdfLoader.hide(); this.showResult(result); },150);
         } catch(e){
@@ -67,12 +68,84 @@ class WatermarkTool {
         </div>
         <div class="tool-option-group">
             <label class="tool-option-label" for="watermarkFontSize">Yazı Boyutu</label>
-            <input id="watermarkFontSize" type="number" class="form-input" value="36" min="8" max="150">
+            <div class="flex items-center gap-3">
+                <div class="flex-1">
+                    <input id="watermarkFontSize" type="number" class="form-input" value="36" min="8" max="150">
+                </div>
+                <div class="font-preview-container">
+                    <div class="font-preview" id="fontPreview">Aa</div>
+                </div>
+            </div>
         </div>
         <div class="tool-option-group">
-            <label class="tool-option-label" for="watermarkColor">Renk</label>
-            <input id="watermarkColor" type="color" class="form-input" value="#000000">
+            <label class="tool-option-label">Renk ve Şeffaflık</label>
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <input id="watermarkColor" type="color" class="color-picker-input" value="#000000">
+                    <div class="color-preview" id="colorPreview" style="background-color: #000000;"></div>
+                </div>
+                <div class="flex-1">
+                    <input id="watermarkOpacity" type="range" class="opacity-slider" min="0.1" max="1" step="0.1" value="0.5">
+                    <div class="opacity-label">
+                        <span id="opacityValue">50%</span>
+                    </div>
+                </div>
+            </div>
         </div>`;
+    }
+
+    initializeColorPicker() {
+        const colorInput = document.getElementById('watermarkColor');
+        const colorPreview = document.getElementById('colorPreview');
+        const opacitySlider = document.getElementById('watermarkOpacity');
+        const opacityValue = document.getElementById('opacityValue');
+        const fontSizeInput = document.getElementById('watermarkFontSize');
+        const fontPreview = document.getElementById('fontPreview');
+
+        if (colorInput && colorPreview) {
+            colorInput.addEventListener('input', (e) => {
+                const color = e.target.value;
+                colorPreview.style.backgroundColor = color;
+            });
+        }
+
+        if (opacitySlider && opacityValue) {
+            opacitySlider.addEventListener('input', (e) => {
+                const opacity = parseFloat(e.target.value);
+                opacityValue.textContent = Math.round(opacity * 100) + '%';
+                
+                // Update color preview with opacity
+                if (colorPreview && colorInput) {
+                    const color = colorInput.value;
+                    const rgba = this.hexToRgba(color, opacity);
+                    colorPreview.style.backgroundColor = rgba;
+                }
+            });
+        }
+
+        if (fontSizeInput && fontPreview) {
+            fontSizeInput.addEventListener('input', (e) => {
+                const fontSize = parseInt(e.target.value) || 36;
+                fontPreview.style.fontSize = fontSize + 'px';
+            });
+            
+            // Initialize with default value
+            fontPreview.style.fontSize = '36px';
+        }
+    }
+
+    hexToRgba(hex, alpha) {
+        const r = parseInt(hex.slice(1, 3), 16);
+        const g = parseInt(hex.slice(3, 5), 16);
+        const b = parseInt(hex.slice(5, 7), 16);
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    mount() {
+        // Initialize color picker and opacity slider after DOM is ready
+        setTimeout(() => {
+            this.initializeColorPicker();
+        }, 100);
     }
 
     getFunnyQuote(){ return 'İmzanız her sayfada!'; }

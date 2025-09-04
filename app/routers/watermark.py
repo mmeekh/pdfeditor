@@ -52,6 +52,7 @@ async def process_watermark(
     position: str = "center",
     font_size: int = 36,
     color: str = "#000000",
+    opacity: float = 0.5,
 ):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
@@ -72,7 +73,7 @@ async def process_watermark(
     for src in pdf_files:
         out_name = f"watermarked_{Path(src).name}"
         out_path = os.path.join(session_dir, out_name)
-        watermarker.add_text_watermark(src, out_path, text, position, font_size, color)
+        watermarker.add_text_watermark(src, out_path, text, position, font_size, color, opacity)
         outputs.append({"input": os.path.basename(src), "output": out_name})
 
     zip_name = None
