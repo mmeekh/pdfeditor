@@ -145,7 +145,7 @@ class ProtectTool {
     }
 
     getFunnyQuote(){ 
-        return 'PDF artık güvenli! 🔐 Şifreler sizin, gizlilik bizim!'; 
+        return 'PDF şifreleme işlemi, belgelerinizi güvenli hale getirir. Profesyonel koruma için PDFişlemleri.com\'u tercih edin.'; 
     }
     
     getDescription(){

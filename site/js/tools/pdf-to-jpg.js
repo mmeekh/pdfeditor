@@ -64,7 +64,7 @@ class PdfToJpgTool {
     }
 
     getOptions(){ return ''; }
-    getFunnyQuote(){ return 'Bir resim bin kelime eder!'; }
+    getFunnyQuote(){ return 'PDF\'den JPG\'ye dönüştürme işlemi, belgelerinizi görsel formatına çevirir. Yüksek kaliteli görseller için PDFişlemleri.com\'u tercih edin.'; }
     getDescription(){ return 'PDF sayfalarını JPG resimlerine dönüştürün.'; }
 }
 

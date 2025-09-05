@@ -154,7 +154,7 @@ class OrganizeTool {
         return '<div id="organizePreview" class="organize-preview"></div>';
     }
 
-    getFunnyQuote() { return 'Sayfalarınızı tokat gibi hizaya getirin!'; }
+    getFunnyQuote() { return 'PDF düzenleme işlemi, sayfalarınızı istediğiniz sırada organize eder. Düzenli belgeler için PDFişlemleri.com\'u tercih edin.'; }
 
     getDescription() { return 'PDF sayfalarını sürükle-bırak ile yeniden sıralayın veya silin.'; }
 }

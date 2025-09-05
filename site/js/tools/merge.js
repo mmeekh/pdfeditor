@@ -248,14 +248,14 @@ Kalan süre: ${Math.floor(fileHandler.getSessionTimeRemaining() / 60)} dakika ${
      * Komik alıntı
      */
     getFunnyQuote() {
-        return "İki PDF bir araya gelince, ne olur? Mutlu bir aile! Biz sadece evlilik danışmanlığı yapıyoruz.";
+        return "PDF birleştirme işlemi, birden fazla belgeyi tek bir profesyonel dosyada toplar. Hızlı, güvenli ve kaliteli sonuçlar için PDFişlemleri.com'u tercih edin.";
     }
 
     /**
      * Araç açıklaması
      */
     getDescription() {
-        return "Birden fazla PDF dosyasını tek bir belgede birleştirin. Dosyalarınızı aşağıya yükleyin, onları göründükleri sırada birleştirelim. Ayrılıklar acıtır, birleşmeler mutluluk!";
+        return "Birden fazla PDF dosyasını tek bir belgede birleştirin. Dosyalarınızı aşağıya yükleyin, onları göründükleri sırada birleştirelim. Hızlı, güvenli ve profesyonel sonuçlar için PDFişlemleri.com'u tercih edin.";
     }
 }
 

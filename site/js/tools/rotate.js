@@ -58,7 +58,7 @@ class RotateTool {
         </div>`;
     }
 
-    getFunnyQuote(){ return 'Dünya ters dönerse, PDF de döner!'; }
+    getFunnyQuote(){ return 'PDF döndürme işlemi, sayfalarınızı doğru yönde görüntülemenizi sağlar. Düzenli belgeler için PDFişlemleri.com\'u tercih edin.'; }
     getDescription(){ return 'PDF sayfalarını 90°/180°/270° açılarıyla döndürün. Birden fazlaysa ZIP olarak indirin.'; }
 }
 

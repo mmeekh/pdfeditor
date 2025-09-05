@@ -148,7 +148,7 @@ class WatermarkTool {
         }, 100);
     }
 
-    getFunnyQuote(){ return 'İmzanız her sayfada!'; }
+    getFunnyQuote(){ return 'PDF filigran ekleme işlemi, belgelerinizi markalı hale getirir. Profesyonel görünüm için PDFişlemleri.com\'u tercih edin.'; }
     getDescription(){ return 'Metin filigranı ekleyin, konum ve stilini seçin. Birden fazlaysa ZIP olarak indirin.'; }
 }
 

@@ -212,7 +212,7 @@ class ToolManager {
         }
         if (funnyQuote) {
             const quoteText = (typeof (this.tools[toolName]?.getFunnyQuote) === 'function') ? this.tools[toolName].getFunnyQuote() : config.funnyQuote;
-            funnyQuote.innerHTML = `${quoteText || ''} <span class="ml-1">😄</span>`;
+            funnyQuote.innerHTML = `${quoteText || ''}`;
         }
 
         // Tool-specific options
@@ -394,63 +394,63 @@ class ToolManager {
         const configs = {
             merge: {
                 title: "PDF Birleştir",
-                description: "Birden fazla PDF dosyasını tek bir belgede birleştirin. Dosyalarınızı aşağıya yükleyin, onları göründükleri sırada birleştirelim. Ayrılıklar acıtır, birleşmeler mutluluk!",
-                funnyQuote: "İki PDF bir araya gelince, ne olur? Mutlu bir aile! Biz sadece evlilik danışmanlığı yapıyoruz."
+                description: "Birden fazla PDF dosyasını tek bir belgede birleştirin. Dosyalarınızı aşağıya yükleyin, onları göründükleri sırada birleştirelim. Hızlı, güvenli ve profesyonel sonuçlar için PDFişlemleri.com'u tercih edin.",
+                funnyQuote: "PDF birleştirme işlemi, birden fazla belgeyi tek bir profesyonel dosyada toplar. Hızlı, güvenli ve kaliteli sonuçlar için PDFişlemleri.com'u tercih edin."
             },
             split: {
                 title: "PDF Ayır",
-                description: "PDF'inizden sayfaları çıkarın veya birden fazla dosyaya ayırın. PDF'inizi yükleyin ve nasıl ayırmak istediğinizi seçin. Bazen ayrılmak en iyisidir, özellikle 100 sayfalık PDF'ler söz konusuysa!",
-                funnyQuote: "Bazen en iyi ilişkiler, ayrılarak devam eder. PDF'leriniz için geçerli!"
+                description: "PDF'inizden sayfaları çıkarın veya birden fazla dosyaya ayırın. PDF'inizi yükleyin ve nasıl ayırmak istediğinizi seçin. Büyük PDF dosyalarını daha yönetilebilir parçalara bölün.",
+                funnyQuote: "PDF ayırma işlemi, büyük dosyaları daha yönetilebilir parçalara böler. Organize edilmiş belgeler için PDFişlemleri.com'u tercih edin."
             },
             compress: {
                 title: "PDF Sıkıştır",
-                description: "PDF dosya boyutunu kaliteden ödün vermeden küçültün. PDF'inizi yükleyin ve sıkıştırma seviyesini seçin. PDF'leriniz diyet yapacak, siz ise depolama alanından tasarruf edeceksiniz!",
-                funnyQuote: "PDF'iniz fazla kilolu mu? Getirin diyet yapalım, ama kalitesinden hiçbir şey kaybetmesin!"
+                description: "PDF dosya boyutunu kaliteden ödün vermeden küçültün. PDF'inizi yükleyin ve sıkıştırma seviyesini seçin. Dosya boyutunu küçültürken kaliteyi koruyun.",
+                funnyQuote: "PDF sıkıştırma işlemi, dosya boyutunu küçültürken kaliteyi korur. Optimize edilmiş belgeler için PDFişlemleri.com'u tercih edin."
             },
             'pdf-to-word': {
                 title: "PDF'den Word'e",
                 description: "PDF'leri düzenlenebilir Word (.docx) belgelerine dönüştürün. Tablo ve metinleri mümkün olduğunca korur.",
-                funnyQuote: "PDF konuşur, Word yazar!"
+                funnyQuote: "PDF'den Word'e dönüştürme işlemi, belgelerinizi düzenlenebilir hale getirir. Profesyonel dönüştürme için PDFişlemleri.com'u tercih edin."
             },
             'word-to-pdf': {
                 title: "Word'den PDF'e",
                 description: "Word (DOC/DOCX) belgelerinizi güvenle PDF'e dönüştürün. Biçim koruma ve hızlı sonuç.",
-                funnyQuote: "Word uyudu, PDF uyandı!"
+                funnyQuote: "Word'den PDF'e dönüştürme işlemi, belgelerinizi evrensel formatta sunar. Güvenilir dönüştürme için PDFişlemleri.com'u tercih edin."
             },
             'pdf-to-ppt': {
                 title: "PDF'den PPT'ye",
                 description: "PDF belgelerinizi PowerPoint (PPTX) sunumlarına dönüştürün.",
-                funnyQuote: "Slaytlar konuşsun, siz anlatın!"
+                funnyQuote: "PDF'den PowerPoint'e dönüştürme işlemi, belgelerinizi sunum formatına çevirir. Etkili sunumlar için PDFişlemleri.com'u tercih edin."
             },
             'unlock': {
                 title: "PDF Şifre Kaldır",
-                description: "PDF dosyalarınızdaki şifre korumasını tamamen kaldırın. Şifreli PDF'lerinizi özgür bırakın!",
-                funnyQuote: "🔓 Hapishaneden kurtulun! PDF artık özgür!"
+                description: "PDF dosyalarınızdaki şifre korumasını tamamen kaldırın. Şifreli PDF'lerinizi düzenlenebilir hale getirin.",
+                funnyQuote: "PDF şifre kaldırma işlemi, korumalı belgelerinizi düzenlenebilir hale getirir. Güvenli işlem için PDFişlemleri.com'u tercih edin."
             },
             'protect': {
                 title: "PDF Şifrele",
                 description: "PDF dosyalarınıza güçlü şifre koruması ve detaylı izin kısıtlamaları ekleyin. Kullanıcı ve sahip şifreleri ile tam kontrol sağlayın!",
-                funnyQuote: "PDF artık güvenli! 🔐 Şifreler sizin, gizlilik bizim!"
+                funnyQuote: "PDF şifreleme işlemi, belgelerinizi güvenli hale getirir. Profesyonel koruma için PDFişlemleri.com'u tercih edin."
             },
             'rotate': {
                 title: "PDF Döndür",
                 description: "PDF sayfalarını 90° / 180° / 270° açılarıyla döndürün.",
-                funnyQuote: "Dünya tersine dönerse… PDF de döner!"
+                funnyQuote: "PDF döndürme işlemi, sayfalarınızı doğru yönde görüntülemenizi sağlar. Düzenli belgeler için PDFişlemleri.com'u tercih edin."
             },
             'watermark': {
                 title: "PDF Filigranla",
                 description: "Metin veya resim filigranı ekleyin; marka ve gizliliğinizi koruyun.",
-                funnyQuote: "İmzanız her sayfada!"
+                funnyQuote: "PDF filigran ekleme işlemi, belgelerinizi markalı hale getirir. Profesyonel görünüm için PDFişlemleri.com'u tercih edin."
             },
             'pdf-to-jpg': {
                 title: "PDF'den JPG'ye",
                 description: "PDF sayfalarını yüksek kaliteli JPG görsellere dönüştürün.",
-                funnyQuote: "Bir resim bin kelime eder!"
+                funnyQuote: "PDF'den JPG'ye dönüştürme işlemi, belgelerinizi görsel formatına çevirir. Yüksek kaliteli görseller için PDFişlemleri.com'u tercih edin."
             },
             'organize': {
                 title: "PDF Düzenle",
                 description: "Sayfaları yeniden sıralayın, silin veya başka PDF'lerden ekleyin.",
-                funnyQuote: "Düzen candır, kaos yorar!"
+                funnyQuote: "PDF düzenleme işlemi, sayfalarınızı istediğiniz sırada organize eder. Düzenli belgeler için PDFişlemleri.com'u tercih edin."
             }
         };
 

@@ -131,11 +131,11 @@ class UnlockTool {
     }
 
     getFunnyQuote(){ 
-        return '🔓 Hapishaneden kurtulun! PDF artık özgür!'; 
+        return 'PDF şifre kaldırma işlemi, korumalı belgelerinizi düzenlenebilir hale getirir. Güvenli işlem için PDFişlemleri.com\'u tercih edin.'; 
     }
     
     getDescription(){ 
-        return "PDF dosyalarınızdaki şifre korumasını tamamen kaldırın. Şifreli PDF'lerinizi özgür bırakın!"; 
+        return "PDF dosyalarınızdaki şifre korumasını tamamen kaldırın. Şifreli PDF'lerinizi düzenlenebilir hale getirin."; 
     }
 }
 

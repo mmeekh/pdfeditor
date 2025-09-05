@@ -73,7 +73,7 @@ class WordToPdfTool {
     }
 
     getOptions(){ return ''; }
-    getFunnyQuote(){ return 'Word uyudu, PDF uyandı!'; }
+    getFunnyQuote(){ return 'Word\'den PDF\'e dönüştürme işlemi, belgelerinizi evrensel formatta sunar. Güvenilir dönüştürme için PDFişlemleri.com\'u tercih edin.'; }
     getDescription(){ return "Word (DOC/DOCX) dosyasını PDF'e dönüştürün."; }
 }
 
