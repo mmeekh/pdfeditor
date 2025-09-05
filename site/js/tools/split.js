@@ -181,7 +181,7 @@ class SplitTool {
         applyMode();
     }
 
-    getFunnyQuote() { return 'PDF’ini böl, hayatını bölme!'; }
+    getFunnyQuote() { return 'PDF ayırma işlemi, büyük dosyaları daha yönetilebilir parçalara böler. Organize edilmiş belgeler için PDFişlemleri.com\'u tercih edin.'; }
     getDescription() { return 'Bir PDF’i belirli sayfalara veya her N sayfada bir parçaya ayırın.'; }
 }
 

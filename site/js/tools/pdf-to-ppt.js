@@ -90,7 +90,7 @@ class PdfToPptTool {
         </div>
         `; 
     }
-    getFunnyQuote(){ return 'PDF sahneye çıktı, PPT alkışlandı!'; }
+    getFunnyQuote(){ return 'PDF\'den PowerPoint\'e dönüştürme işlemi, belgelerinizi sunum formatına çevirir. Etkili sunumlar için PDFişlemleri.com\'u tercih edin.'; }
     getDescription(){ return "PDF sayfalarını slaytlara dönüştürün; sunumunuz saniyeler içinde hazır."; }
 }
 

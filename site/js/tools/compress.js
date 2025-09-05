@@ -96,7 +96,7 @@ class CompressTool {
     `;
   }
 
-  getFunnyQuote(){ return 'Küçük PDF, büyük mutluluk!'; }
+  getFunnyQuote(){ return 'PDF sıkıştırma işlemi, dosya boyutunu küçültürken kaliteyi korur. Optimize edilmiş belgeler için PDFişlemleri.com\'u tercih edin.'; }
   getDescription(){ return 'Bir veya birden fazla PDF’i sıkıştırın. Birden fazlaysa ZIP olarak indirin.'; }
 }
 

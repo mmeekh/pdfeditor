@@ -108,6 +108,48 @@
         ]
     }
     </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "PDF dosyalarım güvende mi?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Evet, tüm dosyalarınız işlem sonrası otomatik olarak silinir. Verileriniz asla saklanmaz veya üçüncü taraflarla paylaşılmaz."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hangi dosya formatları destekleniyor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PDF, Word, PowerPoint, JPG ve diğer popüler formatları destekliyoruz. Tam liste için araç sayfalarını inceleyebilirsiniz."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Maksimum dosya boyutu nedir?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tek dosya için 100MB, toplam işlem için 500MB'a kadar dosya yükleyebilirsiniz."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ücretli bir hizmet var mı?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hayır, tüm araçlarımız tamamen ücretsizdir. Hiçbir gizli ücret veya abonelik yoktur."
+                }
+            }
+        ]
+    }
+    </script>
     
     <script type="application/ld+json">
     {
@@ -163,6 +205,15 @@
 
         <!-- Main Content -->
         <main class="site-content container mx-auto px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav class="bg-gray-50 py-3 px-4 rounded-lg mb-6">
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li><a href="/" class="hover:text-blue-600">Ana Sayfa</a></li>
+                <li><i class="fas fa-chevron-right text-xs"></i></li>
+                <li class="text-gray-800 font-medium">PDF Araçları</li>
+            </ol>
+        </nav>
+
         <!-- Hero Section -->
         <section class="text-center mb-12 fade-in">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Birleştir, Ayır, Sıkıştır - Ücretsiz Online PDF Araçları</h1>
@@ -375,6 +426,31 @@
                     </div>
                     <div class="mt-4 text-center text-gray-500 italic">
                         <i class="fas fa-download text-blue-500"></i> Dosyanız İndirilenler klasörünüze kaydedildi. Başka PDF işlemi yapmak ister misiniz?
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-xl shadow-md p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Sık Sorulan Sorular</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <div class="border-b border-gray-200 pb-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">PDF dosyalarım güvende mi?</h3>
+                        <p class="text-gray-600">Evet, tüm dosyalarınız işlem sonrası otomatik olarak silinir. Verileriniz asla saklanmaz veya üçüncü taraflarla paylaşılmaz.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Hangi dosya formatları destekleniyor?</h3>
+                        <p class="text-gray-600">PDF, Word, PowerPoint, JPG ve diğer popüler formatları destekliyoruz. Tam liste için araç sayfalarını inceleyebilirsiniz.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Maksimum dosya boyutu nedir?</h3>
+                        <p class="text-gray-600">Tek dosya için 100MB, toplam işlem için 500MB'a kadar dosya yükleyebilirsiniz.</p>
+                    </div>
+                    <div class="pb-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Ücretli bir hizmet var mı?</h3>
+                        <p class="text-gray-600">Hayır, tüm araçlarımız tamamen ücretsizdir. Hiçbir gizli ücret veya abonelik yoktur.</p>
                     </div>
                 </div>
             </div>

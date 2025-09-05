@@ -67,7 +67,7 @@ class PdfToWordTool {
         return '';
     }
 
-    getFunnyQuote(){ return 'PDF konuştu, Word yazdı!'; }
+    getFunnyQuote(){ return 'PDF\'den Word\'e dönüştürme işlemi, belgelerinizi düzenlenebilir hale getirir. Profesyonel dönüştürme için PDFişlemleri.com\'u tercih edin.'; }
     getDescription(){ return "PDF'leri düzenlenebilir Word belgesine dönüştürün."; }
 }
 
