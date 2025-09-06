@@ -16,6 +16,7 @@ from routers.rotate import router as rotate_router
 from routers.watermark import router as watermark_router
 from routers.pdf_to_jpg import router as pdf_to_jpg_router
 from routers.organize import router as organize_router
+from routers.sign import router as sign_router
 
 
 logging.basicConfig(level=logging.INFO)
@@ -64,6 +65,7 @@ def get_tools():
         {"id": "watermark", "name": "PDF Filigranla", "description": "PDF'e metin/resim filigranı ekle"},
         {"id": "pdf-to-jpg", "name": "PDF'den JPG'ye", "description": "PDF sayfalarını resme dönüştür"},
         {"id": "organize", "name": "PDF Düzenle", "description": "PDF sayfalarını yeniden düzenle"},
+        {"id": "sign", "name": "PDF İmzala", "description": "PDF dosyalarını dijital olarak imzalayın"},
     ]
     return {"tools": tools, "count": len(tools)}
 
@@ -92,4 +94,5 @@ app.include_router(rotate_router)
 app.include_router(watermark_router)
 app.include_router(pdf_to_jpg_router)
 app.include_router(organize_router)
+app.include_router(sign_router)
 

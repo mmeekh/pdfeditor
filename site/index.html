@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDFişlemleri.com - Ücretsiz PDF Araçları</title>
-    <meta name="description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın, dönüştürün. Hızlı, güvenli ve kullanımı kolay PDF araçları. Online PDF işlemleri için en iyi platform.">
-    <meta name="keywords" content="pdf birleştir, pdf ayır, pdf sıkıştır, pdf dönüştürme, ücretsiz pdf araçları, pdf word çevirme, pdf jpg çevirme, pdf koru, pdf döndür, pdf filigran">
+    <meta name="description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın, dönüştürün, imzalayın. Hızlı, güvenli ve kullanımı kolay PDF araçları. Online PDF işlemleri için en iyi platform.">
+    <meta name="keywords" content="pdf birleştir, pdf ayır, pdf sıkıştır, pdf dönüştürme, pdf imzala, ücretsiz pdf araçları, pdf word çevirme, pdf jpg çevirme, pdf koru, pdf döndür, pdf filigran, dijital imza">
     <meta name="author" content="PDFişlemleri.com">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://pdfislemleri.com">
@@ -32,7 +32,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pdfislemleri.com">
     <meta property="og:title" content="PDFişlemleri.com - Ücretsiz PDF Araçları">
-    <meta property="og:description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın. Hızlı, güvenli ve kullanımı kolay PDF araçları.">
+    <meta property="og:description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın, imzalayın. Hızlı, güvenli ve kullanımı kolay PDF araçları.">
     <meta property="og:image" content="https://pdfislemleri.com/images/home-og.jpeg?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -44,7 +44,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://pdfislemleri.com">
     <meta property="twitter:title" content="PDFişlemleri.com - Ücretsiz PDF Araçları">
-    <meta property="twitter:description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın. Hızlı, güvenli ve kullanımı kolay PDF araçları.">
+    <meta property="twitter:description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın, imzalayın. Hızlı, güvenli ve kullanımı kolay PDF araçları.">
     <meta property="twitter:image" content="https://pdfislemleri.com/images/home-og.jpeg?v=2">
     
     <!-- PWA Manifest -->
@@ -99,7 +99,12 @@
             "@type": "Organization",
             "name": "PDFişlemleri.com",
             "url": "https://pdfislemleri.com",
-            "logo": "https://pdfislemleri.com/icons/logo.webp"
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfislemleri.com/icons/logo.webp",
+                "width": 512,
+                "height": 512
+            }
         },
         "sameAs": [
             "https://facebook.com/pdfislemleri",
@@ -151,6 +156,29 @@
     }
     </script>
     
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PDFişlemleri.com",
+        "alternateName": "PDF İşlemleri",
+        "url": "https://pdfislemleri.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://pdfislemleri.com/icons/logo.webp",
+            "width": 512,
+            "height": 512
+        },
+        "description": "Ücretsiz PDF araçları sunan online platform",
+        "sameAs": [
+            "https://facebook.com/pdfislemleri",
+            "https://twitter.com/pdfislemleri",
+            "https://instagram.com/pdfislemleri"
+        ]
+    }
+    </script>
+    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -168,6 +196,27 @@
             "price": "0",
             "priceCurrency": "TRY"
         }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "PDF İmzalama",
+        "description": "PDF dosyalarını dijital olarak imzalama hizmeti. Elle çizilen veya yüklenen imzalar ile PDF belgelerinizi güvenli şekilde imzalayın.",
+        "provider": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com"
+        },
+        "serviceType": "PDF Digital Signature",
+        "areaServed": "TR",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+        },
+        "keywords": "pdf imzala, dijital imza, pdf imzalama, elektronik imza, pdf belge imzalama"
     }
     </script>
 </head>
@@ -333,6 +382,15 @@
                     </div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Düzenle</h3>
                     <p class="text-gray-600 text-sm">PDF sayfalarını yeniden sıralayın, ekleyin veya silin. Ücretsiz PDF düzenleme aracı.</p>
+                </div>
+
+                <!-- PDF Sign Tool -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="sign">
+                    <div class="sign-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-signature text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF İmzala</h3>
+                    <p class="text-gray-600 text-sm">PDF dosyalarınızı dijital olarak imzalayın. Elle çizim veya yüklenen imza ile profesyonel sonuçlar.</p>
                 </div>
             </div>
             <div class="mt-6 text-center text-gray-500 italic">

@@ -444,6 +444,42 @@ class PDFApi {
     getPdfToJpgDownloadUrl(sessionId, filename) {
         return `${this.baseUrl}/tools/pdf-to-jpg/download/${sessionId}/${filename}`;
     }
+
+    // ===== PDF İmzalama APIs =====
+    async uploadFilesForSign(files) {
+        const formData = new FormData();
+        files.forEach(file => {
+            formData.append('files', file);
+        });
+        const res = await fetch(`${this.baseUrl}/tools/sign/upload`, { method: 'POST', body: formData });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF İmzalama yükleme hatası');
+        }
+        return res.json();
+    }
+
+    async processSign(sessionId, name, surname, signatureData, signatureType, opacity, selectedFiles, signaturePositions) {
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('surname', surname);
+        formData.append('signature_data', signatureData);
+        formData.append('signature_type', signatureType);
+        formData.append('opacity', opacity);
+        formData.append('selected_files', selectedFiles);
+        formData.append('signature_positions', signaturePositions);
+
+        const res = await fetch(`${this.baseUrl}/tools/sign/process/${sessionId}`, { method: 'POST', body: formData });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF İmzalama işlem hatası');
+        }
+        return res.json();
+    }
+
+    getSignDownloadUrl(sessionId, filename) {
+        return `${this.baseUrl}/tools/sign/download/${sessionId}/${filename}`;
+    }
 }
 
 // Singleton instance

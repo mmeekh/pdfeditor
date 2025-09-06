@@ -15,6 +15,7 @@ import rotateTool from '../tools/rotate.js';
 import watermarkTool from '../tools/watermark.js';
 import pdfToJpgTool from '../tools/pdf-to-jpg.js';
 import organizeTool from '../tools/organize.js';
+import signTool from '../tools/sign.js';
 import notifications from './notifications.js';
 import fileHandler from './fileHandler.js';
 import pdfLoader from './loader.js';
@@ -34,7 +35,8 @@ class ToolManager {
             'rotate': rotateTool,
             'watermark': watermarkTool,
             'pdf-to-jpg': pdfToJpgTool,
-            'organize': organizeTool
+            'organize': organizeTool,
+            'sign': signTool
         };
         
         this.initializeEventListeners();
@@ -451,6 +453,11 @@ class ToolManager {
                 title: "PDF Düzenle",
                 description: "Sayfaları yeniden sıralayın, silin veya başka PDF'lerden ekleyin.",
                 funnyQuote: "PDF düzenleme işlemi, sayfalarınızı istediğiniz sırada organize eder. Düzenli belgeler için PDFişlemleri.com'u tercih edin."
+            },
+            'sign': {
+                title: "PDF İmzala",
+                description: "PDF dosyalarınızı dijital olarak imzalayın. Elle çizim veya yüklenen imza ile profesyonel sonuçlar.",
+                funnyQuote: "PDF imzalama işlemi, belgelerinizi güvenli ve profesyonel hale getirir. Dijital imza için PDFişlemleri.com'u tercih edin."
             }
         };
 

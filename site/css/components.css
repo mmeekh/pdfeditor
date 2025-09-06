@@ -40,10 +40,14 @@
 /* Specific tool card backgrounds */
 .tool-card[data-tool="merge"]::before {
     background-image: url('/cardbgs/merge.webp');
+    width: 67.5%;
+    height: 67.5%;
 }
 
 .tool-card[data-tool="split"]::before {
     background-image: url('/cardbgs/split.webp');
+    width: 67.5%;
+    height: 67.5%;
 }
 
 .tool-card[data-tool="compress"]::before {
@@ -72,6 +76,8 @@
 
 .tool-card[data-tool="rotate"]::before {
     background-image: url('/cardbgs/pdfrotate.webp');
+    width: 67.5%;
+    height: 67.5%;
 }
 
 .tool-card[data-tool="watermark"]::before {
@@ -84,6 +90,14 @@
 
 .tool-card[data-tool="organize"]::before {
     background-image: url('/cardbgs/pdforganize.webp');
+    width: 67.5%;
+    height: 67.5%;
+}
+
+.tool-card[data-tool="sign"]::before {
+    background-image: url('/cardbgs/signature.webp');
+    width: 67.5%;
+    height: 67.5%;
 }
 
 /* Tıkla veya Sürükle Bırak rozeti */
@@ -1282,4 +1296,143 @@ footer .mt-4 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+/* PDF İmzalama Tool Icon */
+.sign-icon-container {
+    background: linear-gradient(135deg, #F59E0B, #FBBF24);
+}
+
+/* PDF Sayfa Önizleme Stilleri */
+.pdf-page-preview {
+    transition: all 0.3s ease;
+    cursor: crosshair;
+    min-height: 200px;
+    max-width: 300px;
+    position: relative;
+}
+
+.pdf-page-preview:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pdf-page-preview.drag-over {
+    border-color: #3b82f6;
+    background-color: #dbeafe;
+    transform: scale(1.05);
+}
+
+.pdf-page-preview canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.signature-position {
+    transition: all 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.signature-position:hover {
+    opacity: 1 !important;
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+.signature-position:active {
+    transform: scale(0.95);
+}
+
+.pdf-page-preview:hover .signature-position {
+    opacity: 1;
+    background-color: #1d4ed8;
+}
+
+
+#pdfPreviewContainer {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#pdfPreviewContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+#pdfPreviewContainer::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+#pdfPreviewContainer::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+#pdfPreviewContainer::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* PDF İmzalama Tool Styles */
+#fileSelectionList {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background-color: #f9fafb;
+}
+
+#fileSelectionList .file-checkbox {
+    margin-right: 0.5rem;
+}
+
+#fileSelectionList .file-item {
+    transition: background-color 0.2s ease;
+}
+
+#fileSelectionList .file-item:hover {
+    background-color: #f3f4f6;
+}
+
+.signature-container {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #fafafa;
+}
+
+#signatureCanvas {
+    border: 2px dashed #d1d5db;
+    border-radius: 0.375rem;
+    background-color: white;
+}
+
+#signatureCanvas:hover {
+    border-color: #9ca3af;
+}
+
+.signature-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.btn-secondary {
+    background-color: #6b7280;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #4b5563;
 }
