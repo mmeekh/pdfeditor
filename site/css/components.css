@@ -16,8 +16,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 75%;
-    height: 75%;
+    width: 67.5%;
+    height: 67.5%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,14 +40,14 @@
 /* Specific tool card backgrounds */
 .tool-card[data-tool="merge"]::before {
     background-image: url('/cardbgs/merge.webp');
-    width: 67.5%;
-    height: 67.5%;
+    width: 60.75%;
+    height: 60.75%;
 }
 
 .tool-card[data-tool="split"]::before {
     background-image: url('/cardbgs/split.webp');
-    width: 67.5%;
-    height: 67.5%;
+    width: 60.75%;
+    height: 60.75%;
 }
 
 .tool-card[data-tool="compress"]::before {
@@ -76,8 +76,8 @@
 
 .tool-card[data-tool="rotate"]::before {
     background-image: url('/cardbgs/pdfrotate.webp');
-    width: 67.5%;
-    height: 67.5%;
+    width: 60.75%;
+    height: 60.75%;
 }
 
 .tool-card[data-tool="watermark"]::before {
@@ -90,14 +90,14 @@
 
 .tool-card[data-tool="organize"]::before {
     background-image: url('/cardbgs/pdforganize.webp');
-    width: 67.5%;
-    height: 67.5%;
+    width: 60.75%;
+    height: 60.75%;
 }
 
 .tool-card[data-tool="sign"]::before {
     background-image: url('/cardbgs/signature.webp');
-    width: 67.5%;
-    height: 67.5%;
+    width: 60.75%;
+    height: 60.75%;
 }
 
 /* Tıkla veya Sürükle Bırak rozeti */
@@ -1301,6 +1301,19 @@ footer .mt-4 {
 /* PDF İmzalama Tool Icon */
 .sign-icon-container {
     background: linear-gradient(135deg, #F59E0B, #FBBF24);
+}
+
+/* PDF İmzalama CTA Button Fix */
+.bg-gradient-to-r.from-blue-500.to-blue-600 a {
+    color: #2563eb !important;
+}
+
+.theme-dark .bg-gradient-to-r.from-blue-500.to-blue-600 a {
+    color: #2563eb !important;
+}
+
+.theme-comfort .bg-gradient-to-r.from-blue-500.to-blue-600 a {
+    color: #2563eb !important;
 }
 
 /* PDF Sayfa Önizleme Stilleri */
