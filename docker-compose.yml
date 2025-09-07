@@ -1,4 +1,3 @@
-# Docker Compose v2
 services:
   caddy:
     image: caddy:2.8
@@ -10,34 +9,24 @@ services:
     environment:
       - EMAIL=${EMAIL}
     volumes:
-      # Ana Caddyfile (site tanımların bu dosyada olmalı)
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      # Statik site kökü (pdfislemleri için)
       - ./site:/srv:ro
-      # Caddy verileri
       - caddy_data:/data
       - caddy_config:/config
-
-    # WGET/CURL YOK → sadece binary check
     healthcheck:
       test: ["CMD-SHELL", "caddy version >/dev/null 2>&1 || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 3
       start_period: 10s
-
-    # Stabilite için limitler (proc/file)
     pids_limit: 512
     ulimits:
       nproc: 8192
       nofile:
         soft: 262144
         hard: 262144
-
     networks:
       - pdfislemleri_network
-
-    # API hazır olmadan Caddy'i başlatma
     depends_on:
       api:
         condition: service_healthy
@@ -55,19 +44,15 @@ services:
       - TEMP_DIR=/app/temp
     volumes:
       - api_temp:/app/temp
-
-    # CURL/WGET YOK → inline Python ile healthcheck
-  healthcheck:
-    test:
-      [
-        "CMD-SHELL",
-        "python - <<'PY'\nimport urllib.request,sys,socket\nsocket.setdefaulttimeout(2)\ntry:\n    urllib.request.urlopen('http://localhost:2000/health', timeout=2)\n    sys.exit(0)\nexcept Exception:\n    sys.exit(1)\nPY"
-      ]
-    interval: 30s
-    timeout: 5s
-    retries: 3
-    start_period: 10s
-
+    healthcheck:
+      test: ["CMD-SHELL", "python -c 'import urllib.request,sys; \
+try: urllib.request.urlopen(\"http://localhost:2000/health\", timeout=2); \
+sys.exit(0) \
+except: sys.exit(1)'"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     networks:
       - pdfislemleri_network
 
@@ -79,4 +64,3 @@ volumes:
 networks:
   pdfislemleri_network:
     driver: bridge
-
