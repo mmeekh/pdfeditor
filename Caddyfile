@@ -1,10 +1,6 @@
 {
 	# ACME e-posta (ENV'den gelsin; .env içinde EMAIL tanımlı)
 	email {env.EMAIL}
-	# Daha sade loglar istersen:
-	# logging {
-	#   logs { default { level INFO } }
-	# }
 }
 
 # www → apex yönlendirme
