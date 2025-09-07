@@ -1,4 +1,28 @@
+version: "3.9"
+
 services:
+  api:
+    build:
+      context: ./app
+    container_name: pdfeditor-api-1
+    restart: unless-stopped
+    expose:
+      - "2000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TEMP_DIR=/app/temp
+    volumes:
+      - api_temp:/app/temp
+    # Hafif ve güvenilir healthcheck (yalnızca Python kullanır)
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0) if urllib.request.urlopen('http://localhost:2000/health', timeout=2).status==200 else sys.exit(1)\""]
+      interval: 20s
+      timeout: 3s
+      retries: 10
+      start_period: 40s
+    networks:
+      - pdfislemleri_network
+
   caddy:
     image: caddy:2.8
     container_name: pdfeditor-caddy-1
@@ -13,12 +37,14 @@ services:
       - ./site:/srv:ro
       - caddy_data:/data
       - caddy_config:/config
+    # Ağ isteği yapmayan healthcheck (fork sorunlarını önler)
     healthcheck:
       test: ["CMD-SHELL", "caddy version >/dev/null 2>&1 || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 3
       start_period: 10s
+    # Stabilite için sınırlar
     pids_limit: 512
     ulimits:
       nproc: 8192
@@ -27,34 +53,10 @@ services:
         hard: 262144
     networks:
       - pdfislemleri_network
+    # API açılır açılmaz başlasın; health'e kilitleme (startup zincirini yumuşatır)
     depends_on:
       api:
-        condition: service_healthy
-
-  api:
-    build:
-      context: ./app
-      dockerfile: Dockerfile
-    container_name: pdfeditor-api-1
-    restart: unless-stopped
-    expose:
-      - "2000"
-    environment:
-      - PYTHONUNBUFFERED=1
-      - TEMP_DIR=/app/temp
-    volumes:
-      - api_temp:/app/temp
-    healthcheck:
-      test: ["CMD-SHELL", "python -c 'import urllib.request,sys; \
-try: urllib.request.urlopen(\"http://localhost:2000/health\", timeout=2); \
-sys.exit(0) \
-except: sys.exit(1)'"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-      start_period: 10s
-    networks:
-      - pdfislemleri_network
+        condition: service_started
 
 volumes:
   caddy_data:
