@@ -1,7 +1,8 @@
-# Docker Compose v2 (version alanı opsiyonel)
+# Docker Compose v2
 services:
   caddy:
     image: caddy:2.8
+    container_name: pdfeditor-caddy-1
     restart: unless-stopped
     ports:
       - "80:80"
@@ -9,21 +10,34 @@ services:
     environment:
       - EMAIL=${EMAIL}
     volumes:
-      # Host'taki formatlı Caddyfile'ı OKUMA MODUNDA bağla
+      # Ana Caddyfile (site tanımların bu dosyada olmalı)
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      # Statik siteyi /srv altında read-only sun
+      # Statik site kökü (pdfislemleri için)
       - ./site:/srv:ro
-      # Caddy'nin sertifika ve runtime verileri kalıcı
+      # Caddy verileri
       - caddy_data:/data
       - caddy_config:/config
+
+    # WGET/CURL YOK → sadece binary check
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:80 || exit 1"]
+      test: ["CMD-SHELL", "caddy version >/dev/null 2>&1 || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 3
+      start_period: 10s
+
+    # Stabilite için limitler (proc/file)
+    pids_limit: 512
+    ulimits:
+      nproc: 8192
+      nofile:
+        soft: 262144
+        hard: 262144
+
     networks:
       - pdfislemleri_network
-    # API sağlıklıyken başlat (proxy hatalarını azaltır)
+
+    # API hazır olmadan Caddy'i başlatma
     depends_on:
       api:
         condition: service_healthy
@@ -32,6 +46,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
+    container_name: pdfeditor-api-1
     restart: unless-stopped
     expose:
       - "2000"
@@ -40,11 +55,19 @@ services:
       - TEMP_DIR=/app/temp
     volumes:
       - api_temp:/app/temp
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://localhost:2000/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
+
+    # CURL/WGET YOK → inline Python ile healthcheck
+  healthcheck:
+    test:
+      [
+        "CMD-SHELL",
+        "python - <<'PY'\nimport urllib.request,sys,socket\nsocket.setdefaulttimeout(2)\ntry:\n    urllib.request.urlopen('http://localhost:2000/health', timeout=2)\n    sys.exit(0)\nexcept Exception:\n    sys.exit(1)\nPY"
+      ]
+    interval: 30s
+    timeout: 5s
+    retries: 3
+    start_period: 10s
+
     networks:
       - pdfislemleri_network
 
@@ -56,3 +79,4 @@ volumes:
 networks:
   pdfislemleri_network:
     driver: bridge
+
