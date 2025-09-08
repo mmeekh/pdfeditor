@@ -1,11 +1,8 @@
 {
 	# ACME e-posta (ENV: EMAIL)
 	email {env.EMAIL}
-<<<<<<< HEAD
 	# İstersen admin portunu kapatabilir/özelleştirebilirsin:
 	# admin off
-=======
->>>>>>> 5234d9f0b2e461df19b9358d434ef7e9c922d5c5
 }
 
 # www → apex (kalıcı yönlendirme)
