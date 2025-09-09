@@ -1,0 +1,46 @@
+pdfislemleri.com {
+  encode zstd gzip
+
+  @health path /health
+  handle @health {
+    respond 200
+  }
+
+  @api path /api/* /download/* /health /version /docs* /openapi.json /redoc*
+  handle @api {
+    request_body {
+      max_size 100MB
+    }
+    reverse_proxy pdfislemlericom-api:2000
+    header {
+      Cache-Control "no-store"
+    }
+  }
+
+  root * /srv/pdfislemleri
+
+  @static {
+    path_regexp static ^/(?:images|icons|cardbgs|css|js)/.*|.*\.(?:css|js|png|jpg|jpeg|webp|svg|ico|xml|txt|woff2?)$
+  }
+  header @static Cache-Control "public, max-age=31536000, immutable"
+
+  @html path *.html
+  header @html Cache-Control "no-store"
+
+  handle {
+    try_files {path} {path}.html /index.html
+    file_server
+  }
+
+  header {
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  }
+
+  log {
+    output stdout
+    format console
+  }
+}

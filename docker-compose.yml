@@ -4,7 +4,7 @@ services:
   api:
     build:
       context: ./app
-    container_name: pdfeditor-api-1
+    container_name: pdfislemlericom-api
     restart: unless-stopped
     expose:
       - "2000"
@@ -13,7 +13,6 @@ services:
       - TEMP_DIR=/app/temp
     volumes:
       - api_temp:/app/temp
-    # Hafif ve güvenilir healthcheck (yalnızca Python kullanır)
     healthcheck:
       test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0) if urllib.request.urlopen('http://localhost:2000/health', timeout=2).status==200 else sys.exit(1)\""]
       interval: 20s
@@ -25,7 +24,7 @@ services:
 
   caddy:
     image: caddy:2.8
-    container_name: pdfeditor-caddy-1
+    container_name: pdfislemlericom-caddy
     restart: unless-stopped
     ports:
       - "80:80"
@@ -34,26 +33,18 @@ services:
       - EMAIL=${EMAIL}
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - ./site:/srv:ro
+      - ./caddy-sites:/etc/caddy/sites:ro
+      - ./site:/srv/pdfislemleri:ro
       - caddy_data:/data
       - caddy_config:/config
-    # Ağ isteği yapmayan healthcheck (fork sorunlarını önler)
     healthcheck:
       test: ["CMD-SHELL", "caddy version >/dev/null 2>&1 || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 3
       start_period: 10s
-    # Stabilite için sınırlar
-    pids_limit: 512
-    ulimits:
-      nproc: 8192
-      nofile:
-        soft: 262144
-        hard: 262144
     networks:
       - pdfislemleri_network
-    # API açılır açılmaz başlasın; health'e kilitleme (startup zincirini yumuşatır)
     depends_on:
       api:
         condition: service_started
