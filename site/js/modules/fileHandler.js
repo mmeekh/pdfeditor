@@ -15,7 +15,7 @@ class FileHandler {
         
         // Limitler
         this.MAX_FILES = 10;
-        this.MAX_TOTAL_SIZE = 50 * 1024 * 1024; // 50MB
+        this.MAX_TOTAL_SIZE = 100 * 1024 * 1024; // 100MB
         
         // Session süresi (1 dakika)
         this.SESSION_LIFETIME_MINUTES = 1;
@@ -207,7 +207,7 @@ class FileHandler {
         limitInfo.className = 'text-sm text-gray-500 mt-2 text-center';
         limitInfo.innerHTML = `
             <span>${this.selectedFiles.length}/${this.MAX_FILES} dosya</span> • 
-            <span>${totalSizeMB}MB / 50MB</span>
+            <span>${totalSizeMB}MB / 100MB</span>
         `;
         filesList.appendChild(limitInfo);
 

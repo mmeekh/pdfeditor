@@ -4,7 +4,7 @@
 .merge-icon-container {
     background: linear-gradient(45deg, #4de9e1, #009688, #4de9e1);
     background-size: 200% 200%;
-    animation: turquoise-gradient-flow 3s ease-in-out infinite;
+    animation: turquoise-gradient-flow 2.25s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -18,7 +18,7 @@
     bottom: 0;
     background: linear-gradient(45deg, #4de9e1, #009688, #4de9e1, #4de9e1);
     background-size: 300% 300%;
-    animation: turquoise-gradient-flow 4s ease-in-out infinite reverse;
+    animation: turquoise-gradient-flow 3s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -33,7 +33,7 @@
 .split-icon-container {
     background: linear-gradient(45deg, #B388FF, #673AB7, #B388FF);
     background-size: 200% 200%;
-    animation: purple-gradient-flow 3.2s ease-in-out infinite;
+    animation: purple-gradient-flow 2.4s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -47,7 +47,7 @@
     bottom: 0;
     background: linear-gradient(45deg, #B388FF, #673AB7, #B388FF, #B388FF);
     background-size: 300% 300%;
-    animation: purple-gradient-flow 4.2s ease-in-out infinite reverse;
+    animation: purple-gradient-flow 3.15s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -62,7 +62,7 @@
 .compress-icon-container {
     background: linear-gradient(45deg, #FFE082, #FB8C00, #FFE082);
     background-size: 200% 200%;
-    animation: orange-gradient-flow 3.4s ease-in-out infinite;
+    animation: orange-gradient-flow 2.55s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -76,7 +76,7 @@
     bottom: 0;
     background: linear-gradient(45deg, #FFE082, #FB8C00, #FFE082, #FFE082);
     background-size: 300% 300%;
-    animation: orange-gradient-flow 4.4s ease-in-out infinite reverse;
+    animation: orange-gradient-flow 3.3s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -91,7 +91,7 @@
 .rotate-icon-container {
     background: linear-gradient(45deg, #81C784, #388E3C, #81C784);
     background-size: 200% 200%;
-    animation: green-gradient-flow 3.6s ease-in-out infinite;
+    animation: green-gradient-flow 2.7s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -105,7 +105,7 @@
     bottom: 0;
     background: linear-gradient(45deg, #81C784, #388E3C, #81C784, #81C784);
     background-size: 300% 300%;
-    animation: green-gradient-flow 4.6s ease-in-out infinite reverse;
+    animation: green-gradient-flow 3.45s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -116,11 +116,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF to Word Icon Container - Blue Gradient Animation */
+/* PDF to Word Icon Container - Green Gradient Animation */
 .pdf-to-word-icon-container {
-    background: linear-gradient(45deg, #64B5F6, #1E88E5, #64B5F6);
+    background: linear-gradient(45deg, #66BB6A, #2E7D32, #66BB6A);
     background-size: 200% 200%;
-    animation: blue-gradient-flow 3.8s ease-in-out infinite;
+    animation: green2-gradient-flow 2.85s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -132,9 +132,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #64B5F6, #1E88E5, #64B5F6, #64B5F6);
+    background: linear-gradient(45deg, #66BB6A, #2E7D32, #66BB6A, #66BB6A);
     background-size: 300% 300%;
-    animation: blue-gradient-flow 4.8s ease-in-out infinite reverse;
+    animation: green2-gradient-flow 3.6s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -145,11 +145,11 @@
     color: #FFFFFF !important;
 }
 
-/* Word to PDF Icon Container - Blue Gradient Animation */
+/* Word to PDF Icon Container - Orange Gradient Animation */
 .word-to-pdf-icon-container {
-    background: linear-gradient(45deg, #42A5F5, #1565C0, #42A5F5);
+    background: linear-gradient(45deg, #FFB74D, #F57C00, #FFB74D);
     background-size: 200% 200%;
-    animation: blue2-gradient-flow 4.0s ease-in-out infinite;
+    animation: orange2-gradient-flow 3.0s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -161,9 +161,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #42A5F5, #1565C0, #42A5F5, #42A5F5);
+    background: linear-gradient(45deg, #FFB74D, #F57C00, #FFB74D, #FFB74D);
     background-size: 300% 300%;
-    animation: blue2-gradient-flow 5.0s ease-in-out infinite reverse;
+    animation: orange2-gradient-flow 3.75s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -174,11 +174,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF to PPT Icon Container - Blue Gradient Animation */
+/* PDF to PPT Icon Container - Purple Gradient Animation */
 .pdf-to-ppt-icon-container {
-    background: linear-gradient(45deg, #90CAF9, #1976D2, #90CAF9);
+    background: linear-gradient(45deg, #BA68C8, #7B1FA2, #BA68C8);
     background-size: 200% 200%;
-    animation: blue3-gradient-flow 4.2s ease-in-out infinite;
+    animation: purple2-gradient-flow 3.15s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -190,9 +190,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #90CAF9, #1976D2, #90CAF9, #90CAF9);
+    background: linear-gradient(45deg, #BA68C8, #7B1FA2, #BA68C8, #BA68C8);
     background-size: 300% 300%;
-    animation: blue3-gradient-flow 5.2s ease-in-out infinite reverse;
+    animation: purple2-gradient-flow 3.9s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -203,11 +203,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF to JPG Icon Container - Blue Gradient Animation */
+/* PDF to JPG Icon Container - Red Gradient Animation */
 .pdf-to-jpg-icon-container {
-    background: linear-gradient(45deg, #29B6F6, #0277BD, #29B6F6);
+    background: linear-gradient(45deg, #EF5350, #C62828, #EF5350);
     background-size: 200% 200%;
-    animation: blue4-gradient-flow 4.4s ease-in-out infinite;
+    animation: red-gradient-flow 3.3s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -219,9 +219,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #29B6F6, #0277BD, #29B6F6, #29B6F6);
+    background: linear-gradient(45deg, #EF5350, #C62828, #EF5350, #EF5350);
     background-size: 300% 300%;
-    animation: blue4-gradient-flow 5.4s ease-in-out infinite reverse;
+    animation: red-gradient-flow 4.05s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -236,7 +236,7 @@
 .unlock-icon-container {
     background: linear-gradient(45deg, #F48FB1, #E91E63, #F48FB1);
     background-size: 200% 200%;
-    animation: pink-gradient-flow 4.6s ease-in-out infinite;
+    animation: pink-gradient-flow 3.45s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -250,7 +250,7 @@
     bottom: 0;
     background: linear-gradient(45deg, #F48FB1, #E91E63, #F48FB1, #F48FB1);
     background-size: 300% 300%;
-    animation: pink-gradient-flow 5.6s ease-in-out infinite reverse;
+    animation: pink-gradient-flow 4.2s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -265,7 +265,7 @@
 .protect-icon-container {
     background: linear-gradient(45deg, #7986CB, #3F51B5, #7986CB);
     background-size: 200% 200%;
-    animation: indigo-gradient-flow 4.8s ease-in-out infinite;
+    animation: indigo-gradient-flow 3.6s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -279,7 +279,7 @@
     bottom: 0;
     background: linear-gradient(45deg, #7986CB, #3F51B5, #7986CB, #7986CB);
     background-size: 300% 300%;
-    animation: indigo-gradient-flow 5.8s ease-in-out infinite reverse;
+    animation: indigo-gradient-flow 4.35s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -294,7 +294,7 @@
 .watermark-icon-container {
     background: linear-gradient(45deg, #80DEEA, #00BCD4, #80DEEA);
     background-size: 200% 200%;
-    animation: cyan-gradient-flow 5.0s ease-in-out infinite;
+    animation: cyan-gradient-flow 3.75s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -308,7 +308,7 @@
     bottom: 0;
     background: linear-gradient(45deg, #80DEEA, #00BCD4, #80DEEA, #80DEEA);
     background-size: 300% 300%;
-    animation: cyan-gradient-flow 6.0s ease-in-out infinite reverse;
+    animation: cyan-gradient-flow 4.5s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -323,7 +323,7 @@
 .organize-icon-container {
     background: linear-gradient(45deg, #C5E1A5, #8BC34A, #C5E1A5);
     background-size: 200% 200%;
-    animation: light-green-gradient-flow 5.2s ease-in-out infinite;
+    animation: light-green-gradient-flow 3.9s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -337,7 +337,7 @@
     bottom: 0;
     background: linear-gradient(45deg, #C5E1A5, #8BC34A, #C5E1A5, #C5E1A5);
     background-size: 300% 300%;
-    animation: light-green-gradient-flow 6.2s ease-in-out infinite reverse;
+    animation: light-green-gradient-flow 4.65s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -392,6 +392,30 @@
 }
 
 @keyframes blue4-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes green2-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes orange2-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes purple2-gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes red-gradient-flow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -457,6 +481,9 @@
 .tool-card[data-tool="watermark"]:focus .watermark-icon-container i,
 .tool-card[data-tool="organize"]:hover .organize-icon-container i,
 .tool-card[data-tool="organize"]:active .organize-icon-container i,
-.tool-card[data-tool="organize"]:focus .organize-icon-container i {
+.tool-card[data-tool="organize"]:focus .organize-icon-container i,
+.tool-card[data-tool="pdf-to-excel"]:hover .pdf-to-excel-icon-container i,
+.tool-card[data-tool="pdf-to-excel"]:active .pdf-to-excel-icon-container i,
+.tool-card[data-tool="pdf-to-excel"]:focus .pdf-to-excel-icon-container i {
     color: #FFFFFF !important;
 }

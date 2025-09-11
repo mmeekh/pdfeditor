@@ -103,21 +103,33 @@
 
     <div class="site-wrapper">
         <!-- Header -->
-        <header class="bg-white shadow-sm sticky top-0 z-50">
-            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer" title="Ana Sayfaya Git">
-                    <i class="fas fa-file-pdf text-red-500 text-3xl"></i>
-                    <h2 class="text-2xl font-bold text-gray-800">PDFişlemleri.com</h2>
-                </a>
+        <header class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <!-- Logo ve Araçlar Butonu -->
+                <div class="flex items-center space-x-3">
+                    <!-- Logo -->
+                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                        <i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+                        <h1 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h1>
+                    </a>
+                    
+                    <!-- Araçlar Butonu (Mobil) -->
+                    <button id="mobile-tools-btn" class="md:hidden flex items-center space-x-1 px-2 py-1 text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="font-medium text-sm">Araçlar</span>
+                        <i class="fas fa-chevron-up text-xs transition-transform" id="tools-arrow"></i>
+                    </button>
                 </div>
+
+                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-6">
                     <a href="/" class="text-gray-600 hover:text-blue-600 transition">Ana Sayfa</a>
                     <a href="/blog" class="text-gray-600 hover:text-blue-600 transition">Blog</a>
                     <a href="/about" class="text-blue-600 font-medium">Hakkımızda</a>
                     <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
                 </nav>
-                <div class="flex items-center space-x-4">
+
+                <!-- Theme Toggle Buttons -->
+                <div class="flex items-center space-x-1">
                     <button id="night-mode-btn" class="text-gray-600 hover:text-blue-600 transition p-2 rounded-lg hover:bg-gray-100" title="Gece Modu" tabindex="0" role="button" aria-label="Gece modunu aç/kapat">
                         <span class="text-lg">🌙</span>
                     </button>

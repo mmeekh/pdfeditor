@@ -25,7 +25,13 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-XBF2E5K150');
+      gtag('config', 'G-XBF2E5K150', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        'attribution_reporting_enabled': false,
+        'conversion_measurement_enabled': false
+      });
     </script>
     
     <!-- PWA Manifest -->
@@ -61,8 +67,8 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer" title="Ana Sayfaya Git">
-                    <i class="fas fa-file-pdf text-red-500 text-3xl"></i>
-                    <h2 class="text-2xl font-bold text-gray-800">PDFişlemleri.com</h2>
+                    <i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+                    <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
                 </a>
             </div>
             <nav class="hidden md:flex space-x-6">

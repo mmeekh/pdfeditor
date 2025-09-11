@@ -1,30 +1,8 @@
-version: "3.9"
+# Docker Compose v2 syntax - version field is optional
 
 services:
-  api:
-    build:
-      context: ./app
-    container_name: pdfislemlericom-api
-    restart: unless-stopped
-    expose:
-      - "2000"
-    environment:
-      - PYTHONUNBUFFERED=1
-      - TEMP_DIR=/app/temp
-    volumes:
-      - api_temp:/app/temp
-    healthcheck:
-      test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0) if urllib.request.urlopen('http://localhost:2000/health', timeout=2).status==200 else sys.exit(1)\""]
-      interval: 20s
-      timeout: 3s
-      retries: 10
-      start_period: 40s
-    networks:
-      - pdfislemleri_network
-
   caddy:
     image: caddy:2.8
-    container_name: pdfislemlericom-caddy
     restart: unless-stopped
     ports:
       - "80:80"
@@ -33,21 +11,41 @@ services:
       - EMAIL=${EMAIL}
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - ./caddy-sites:/etc/caddy/sites:ro
-      - ./site:/srv/pdfislemleri:ro
+      - ./site:/srv:ro
       - caddy_data:/data
       - caddy_config:/config
     healthcheck:
-      test: ["CMD-SHELL", "caddy version >/dev/null 2>&1 || exit 1"]
-      interval: 30s
+      test: ["CMD-SHELL", "wget -qO- http://localhost:80 || exit 1"]
+      interval: 60s
       timeout: 5s
       retries: 3
-      start_period: 10s
     networks:
       - pdfislemleri_network
-    depends_on:
-      api:
-        condition: service_started
+
+  api:
+    build: 
+      context: ./app
+      dockerfile: Dockerfile.dev  # Development Dockerfile kullan
+    restart: unless-stopped
+    expose:
+      - "2000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TEMP_DIR=/app/temp
+      - ENVIRONMENT=development
+      - DEBUG=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:2000/health"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+    networks:
+      - pdfislemleri_network
+    volumes:
+      - ./app:/app  # Kod değişikliklerini izle
+      - api_temp:/app/temp
+    ports:
+      - "2000:2000"  # API'ye doğrudan erişim için
 
 volumes:
   caddy_data:

@@ -14,6 +14,14 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     libreoffice \
     wget \
+    tesseract-ocr \
+    tesseract-ocr-tur \
+    tesseract-ocr-eng \
+    tesseract-ocr-deu \
+    tesseract-ocr-fra \
+    tesseract-ocr-spa \
+    tesseract-ocr-ita \
+    default-jre \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies

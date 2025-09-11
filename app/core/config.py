@@ -11,7 +11,7 @@ class Settings(BaseSettings):
 
     # File system and resource limits
     TEMP_DIR: str = Field(default_factory=lambda: os.environ.get("TEMP_DIR", os.path.join(tempfile.gettempdir(), "pdfislemleri")))
-    MAX_FILE_SIZE: int = 50 * 1024 * 1024
+    MAX_FILE_SIZE: int = 100 * 1024 * 1024
     MAX_FILES: int = 10
 
     # Cleanup and session
@@ -23,13 +23,33 @@ class Settings(BaseSettings):
         "http://localhost",
         "http://localhost:80",
         "http://localhost:3000",
+        "http://localhost:8000",
         "https://pdfislemleri.com",
         "https://www.pdfislemleri.com",
+        "*"  # Development için geçici
     ])
     ALLOW_CREDENTIALS: bool = True
     ALLOW_METHODS: List[str] = Field(default_factory=lambda: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"])
-    ALLOW_HEADERS: List[str] = Field(default_factory=lambda: ["*"])
-    EXPOSE_HEADERS: List[str] = Field(default_factory=lambda: ["Content-Disposition"])
+    ALLOW_HEADERS: List[str] = Field(default_factory=lambda: [
+        "Accept",
+        "Accept-Language",
+        "Content-Language",
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With",
+        "Origin",
+        "Access-Control-Request-Method",
+        "Access-Control-Request-Headers",
+        "Cache-Control",
+        "Pragma"
+    ])
+    EXPOSE_HEADERS: List[str] = Field(default_factory=lambda: [
+        "Content-Disposition",
+        "Content-Type",
+        "Content-Length",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Credentials"
+    ])
 
 
 settings = Settings()

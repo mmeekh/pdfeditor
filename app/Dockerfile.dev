@@ -6,28 +6,53 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
+# Install system dependencies with faster mirrors and parallel downloads
+RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     ghostscript \
     libgl1 \
     libglib2.0-0 \
-    libreoffice \
     wget \
-    && rm -rf /var/lib/apt/lists/*
+    curl \
+    tesseract-ocr \
+    tesseract-ocr-tur \
+    tesseract-ocr-eng \
+    tesseract-ocr-deu \
+    tesseract-ocr-fra \
+    tesseract-ocr-spa \
+    tesseract-ocr-ita \
+    default-jre \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
 
 # Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install development dependencies
+RUN pip install --no-cache-dir \
+    watchdog \
+    python-multipart
+
 # Create non-root user and temp dir
 RUN useradd --create-home --shell /bin/bash app && \
     mkdir -p /app/temp && \
     chown -R app:app /app
+
+# Copy application code (will be overridden by volume mount in development)
+COPY . .
+
+# Change ownership to app user
+RUN chown -R app:app /app
+
 USER app
 
 # Expose port
 EXPOSE 2000
 
+# Health check for development
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:2000/health || exit 1
+
 # Development için uvicorn ile çalıştır (hot reload)
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "2000", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "2000", "--reload", "--log-level", "debug"]

@@ -480,6 +480,88 @@ class PDFApi {
     getSignDownloadUrl(sessionId, filename) {
         return `${this.baseUrl}/tools/sign/download/${sessionId}/${filename}`;
     }
+
+    // ===== PDF OCR APIs =====
+    async uploadFilesForPdfOcr(files) {
+        const formData = new FormData();
+        files.forEach(file => {
+            formData.append('files', file);
+        });
+        const response = await fetch(`${this.baseUrl}/tools/pdf-ocr/upload`, { method: 'POST', body: formData });
+        if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF OCR yükleme hatası');
+        }
+        return response.json();
+    }
+
+    async processPdfOcr(sessionId, language = 'tur+eng', dpi = 300, includeCoordinates = false) {
+        const formData = new FormData();
+        formData.append('language', language);
+        formData.append('dpi', dpi.toString());
+        formData.append('include_coordinates', includeCoordinates.toString());
+
+        const response = await fetch(`${this.baseUrl}/tools/pdf-ocr/process/${sessionId}`, { 
+            method: 'POST', 
+            body: formData 
+        });
+        if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF OCR işlem hatası');
+        }
+        return response.json();
+    }
+
+    getPdfOcrDownloadUrl(sessionId) {
+        return `${this.baseUrl}/tools/pdf-ocr/download/${sessionId}`;
+    }
+
+    async getSupportedOcrLanguages() {
+        try {
+            const response = await fetch(`${this.baseUrl}/tools/pdf-ocr/languages`);
+            if (!response.ok) throw new Error('Languages fetch failed');
+            return await response.json();
+        } catch (error) {
+            console.error('Failed to fetch OCR languages:', error);
+            throw error;
+        }
+    }
+
+    // ===== PDF → Excel APIs =====
+    async uploadFilesForPdfToExcel(files) {
+        const formData = new FormData();
+        files.forEach(file => {
+            formData.append('files', file);
+        });
+        const response = await fetch(`${this.baseUrl}/tools/pdf-to-excel/upload`, { method: 'POST', body: formData });
+        if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF→Excel yükleme hatası');
+        }
+        return response.json();
+    }
+
+    async processPdfToExcel(sessionId, pages = 'all', password = null, mergeParagraphs = true, minParagraphLines = 5, detectionMethod = 'auto') {
+        const params = new URLSearchParams();
+        params.set('pages', pages);
+        if (password) {
+            params.set('password', password);
+        }
+        params.set('merge_paragraphs', mergeParagraphs);
+        params.set('min_paragraph_lines', minParagraphLines);
+        params.set('detection_method', detectionMethod);
+        
+        const response = await fetch(`${this.baseUrl}/tools/pdf-to-excel/process/${sessionId}?${params.toString()}`, { method: 'POST' });
+        if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF→Excel işlem hatası');
+        }
+        return response.json();
+    }
+
+    getPdfToExcelDownloadUrl(sessionId, filename) {
+        return `${this.baseUrl}/tools/pdf-to-excel/download/${sessionId}/${filename}`;
+    }
 }
 
 // Singleton instance

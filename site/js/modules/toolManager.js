@@ -16,6 +16,8 @@ import watermarkTool from '../tools/watermark.js';
 import pdfToJpgTool from '../tools/pdf-to-jpg.js';
 import organizeTool from '../tools/organize.js';
 import signTool from '../tools/sign.js';
+import pdfOcrTool from '../tools/pdf-ocr.js';
+import pdfToExcelTool from '../tools/pdf-to-excel.js';
 import notifications from './notifications.js';
 import fileHandler from './fileHandler.js';
 import pdfLoader from './loader.js';
@@ -36,7 +38,9 @@ class ToolManager {
             'watermark': watermarkTool,
             'pdf-to-jpg': pdfToJpgTool,
             'organize': organizeTool,
-            'sign': signTool
+            'sign': signTool,
+            'pdf-ocr': pdfOcrTool,
+            'pdf-to-excel': pdfToExcelTool
         };
         
         this.initializeEventListeners();
@@ -458,6 +462,16 @@ class ToolManager {
                 title: "PDF İmzala",
                 description: "PDF dosyalarınızı dijital olarak imzalayın. Elle çizim veya yüklenen imza ile profesyonel sonuçlar.",
                 funnyQuote: "PDF imzalama işlemi, belgelerinizi güvenli ve profesyonel hale getirir. Dijital imza için PDFişlemleri.com'u tercih edin."
+            },
+            'pdf-ocr': {
+                title: "PDF OCR",
+                description: "PDF dosyalarınızdaki metinleri çıkarın ve düzenlenebilir hale getirin. OCR teknolojisi ile taranmış belgelerinizi arama yapılabilir hale getirin.",
+                funnyQuote: "PDF OCR işlemi, görüntülerdeki metinleri okuyup düzenlenebilir hale getirir. Dijital arşivinizi arama yapılabilir hale getirin!"
+            },
+            'pdf-to-excel': {
+                title: "PDF'den Excel'e",
+                description: "PDF dosyalarındaki tabloları Excel formatına dönüştürün. Verilerinizi düzenlenebilir hale getirin ve analiz yapın.",
+                funnyQuote: "PDF'den Excel'e dönüştürme işlemi, tablolarınızı düzenlenebilir hale getirir. Veri analizi için PDFişlemleri.com'u tercih edin!"
             }
         };
 

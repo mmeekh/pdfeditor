@@ -48,11 +48,33 @@ class ThemeManager {
     }
     
     toggleNightMode() {
+        // Mobil menü açıksa kapatma
+        const mobileMenu = document.getElementById('mobile-tools-menu');
+        const isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains('show');
+        
         this.setTheme(this.currentTheme === 'dark' ? 'light' : 'dark');
+        
+        // Mobil menü açıksa tekrar aç
+        if (isMobileMenuOpen && window.mobileNavigationManager) {
+            setTimeout(() => {
+                window.mobileNavigationManager.openMenu();
+            }, 100);
+        }
     }
     
     toggleComfortMode() {
+        // Mobil menü açıksa kapatma
+        const mobileMenu = document.getElementById('mobile-tools-menu');
+        const isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains('show');
+        
         this.setTheme(this.currentTheme === 'comfort' ? 'light' : 'comfort');
+        
+        // Mobil menü açıksa tekrar aç
+        if (isMobileMenuOpen && window.mobileNavigationManager) {
+            setTimeout(() => {
+                window.mobileNavigationManager.openMenu();
+            }, 100);
+        }
     }
     
     setTheme(theme) {

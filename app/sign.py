@@ -25,7 +25,7 @@ class PDFSigner:
             doc = fitz.open(pdf_path)
             
             # PDF boyut kontrolü
-            if os.path.getsize(pdf_path) > 50 * 1024 * 1024:  # 50MB
+            if os.path.getsize(pdf_path) > 100 * 1024 * 1024:  # 100MB
                 logger.warning(f"PDF çok büyük: {pdf_path}")
                 return False
             

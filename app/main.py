@@ -17,6 +17,8 @@ from routers.watermark import router as watermark_router
 from routers.pdf_to_jpg import router as pdf_to_jpg_router
 from routers.organize import router as organize_router
 from routers.sign import router as sign_router
+from routers.pdf_ocr import router as pdf_ocr_router
+from routers.pdf_to_excel import router as pdf_to_excel_router
 
 
 logging.basicConfig(level=logging.INFO)
@@ -29,7 +31,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
     # Global file size limit
-    max_request_size=50 * 1024 * 1024,  # 50MB
+    max_request_size=100 * 1024 * 1024,  # 100MB
 )
 
 
@@ -66,6 +68,8 @@ def get_tools():
         {"id": "pdf-to-jpg", "name": "PDF'den JPG'ye", "description": "PDF sayfalarını resme dönüştür"},
         {"id": "organize", "name": "PDF Düzenle", "description": "PDF sayfalarını yeniden düzenle"},
         {"id": "sign", "name": "PDF İmzala", "description": "PDF dosyalarını dijital olarak imzalayın"},
+        {"id": "pdf-ocr", "name": "PDF OCR", "description": "PDF'den metin çıkarın ve düzenlenebilir hale getirin"},
+        {"id": "pdf-to-excel", "name": "PDF'den Excel'e", "description": "PDF tablolarını Excel'e dönüştürün"},
     ]
     return {"tools": tools, "count": len(tools)}
 
@@ -95,4 +99,6 @@ app.include_router(watermark_router)
 app.include_router(pdf_to_jpg_router)
 app.include_router(organize_router)
 app.include_router(sign_router)
+app.include_router(pdf_ocr_router)
+app.include_router(pdf_to_excel_router)
 

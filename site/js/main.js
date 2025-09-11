@@ -98,13 +98,29 @@ class CookieManager {
     
     enableAnalytics() {
         if (typeof gtag !== 'undefined') {
-            gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            gtag('consent', 'update', { 
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'functionality_storage': 'granted',
+                'personalization_storage': 'granted',
+                'security_storage': 'granted'
+            });
         }
     }
     
     disableAnalytics() {
         if (typeof gtag !== 'undefined') {
-            gtag('consent', 'update', { 'analytics_storage': 'denied' });
+            gtag('consent', 'update', { 
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'functionality_storage': 'denied',
+                'personalization_storage': 'denied',
+                'security_storage': 'denied'
+            });
         }
     }
     
@@ -193,6 +209,186 @@ class LazyLoader {
 window.openTool = (toolName) => toolManager.openTool(toolName);
 window.processFiles = () => toolManager.processCurrentTool();
 
+// Mobile Navigation Manager
+class MobileNavigationManager {
+    constructor() {
+        this.isMenuOpen = false;
+        this.init();
+    }
+    
+    init() {
+        this.mobileToolsBtn = document.getElementById('mobile-tools-btn');
+        this.mobileToolsMenu = document.getElementById('mobile-tools-menu');
+        this.toolsArrow = document.getElementById('tools-arrow');
+        this.mobileToolItems = document.querySelectorAll('.mobile-tool-item');
+        
+        this.addEventListeners();
+    }
+    
+    addEventListeners() {
+        // Mobile tools button click
+        if (this.mobileToolsBtn) {
+            this.mobileToolsBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMenu();
+            });
+        }
+        
+        // Mobile tool items click
+        this.mobileToolItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const toolName = item.getAttribute('data-tool');
+                if (toolName) {
+                    this.selectTool(toolName);
+                }
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.isMenuOpen && 
+                !this.mobileToolsMenu.contains(e.target) && 
+                !this.mobileToolsBtn.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isMenuOpen) {
+                this.closeMenu();
+            }
+        });
+        
+        // Close menu on scroll
+        window.addEventListener('scroll', () => {
+            if (this.isMenuOpen) {
+                this.closeMenu();
+            }
+        });
+    }
+    
+    toggleMenu() {
+        if (this.isMenuOpen) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    }
+    
+    openMenu() {
+        if (!this.mobileToolsMenu) return;
+        
+        this.isMenuOpen = true;
+        this.mobileToolsMenu.classList.add('show');
+        
+        if (this.toolsArrow) {
+            this.toolsArrow.style.transform = 'rotate(180deg)';
+        }
+        
+        // Add backdrop
+        this.addBackdrop();
+        
+        // Analytics
+        this.trackEvent('mobile_menu_opened');
+    }
+    
+    closeMenu() {
+        if (!this.mobileToolsMenu) return;
+        
+        this.isMenuOpen = false;
+        this.mobileToolsMenu.classList.remove('show');
+        
+        if (this.toolsArrow) {
+            this.toolsArrow.style.transform = 'rotate(0deg)';
+        }
+        
+        // Remove backdrop
+        this.removeBackdrop();
+        
+        // Analytics
+        this.trackEvent('mobile_menu_closed');
+    }
+    
+    selectTool(toolName) {
+        // Close menu first
+        this.closeMenu();
+        
+        // Open tool after a short delay for smooth transition
+        setTimeout(() => {
+            if (window.toolManager) {
+                window.toolManager.openTool(toolName);
+            }
+        }, 150);
+        
+        // Analytics
+        this.trackEvent('mobile_tool_selected', { tool_name: toolName });
+    }
+    
+    addBackdrop() {
+        // Remove existing backdrop if any
+        this.removeBackdrop();
+        
+        const backdrop = document.createElement('div');
+        backdrop.className = 'mobile-menu-backdrop';
+        backdrop.id = 'mobile-menu-backdrop';
+        document.body.appendChild(backdrop);
+        
+        // Show backdrop with animation
+        setTimeout(() => {
+            backdrop.classList.add('show');
+        }, 10);
+    }
+    
+    removeBackdrop() {
+        const backdrop = document.getElementById('mobile-menu-backdrop');
+        if (backdrop) {
+            backdrop.classList.remove('show');
+            setTimeout(() => {
+                if (backdrop.parentNode) {
+                    backdrop.parentNode.removeChild(backdrop);
+                }
+            }, 300);
+        }
+    }
+    
+    trackEvent(eventName, eventData = {}) {
+        // Scroll pozisyonunu koru
+        const scrollX = window.scrollX;
+        const scrollY = window.scrollY;
+        
+        // GTM DataLayer event
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                'event': eventName,
+                'event_category': 'Mobile Navigation',
+                'event_label': eventData.tool_name || 'unknown',
+                'custom_parameters': eventData,
+                'timestamp': new Date().toISOString()
+            });
+        }
+        
+        // GA4 fallback
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, {
+                event_category: 'Mobile Navigation',
+                event_label: eventData.tool_name || 'unknown',
+                ...eventData
+            });
+        }
+        
+        // Console log
+        console.log(`Mobile Navigation Event: ${eventName}`, typeof eventData === 'object' ? '[Object]' : eventData);
+        
+        // Scroll pozisyonunu geri yükle
+        setTimeout(() => {
+            window.scrollTo(scrollX, scrollY);
+        }, 0);
+    }
+}
+
 // HTML Button Event Listeners (ID-based)
 function initializeButtonEventListeners() {
     // Close tool button
@@ -232,6 +428,7 @@ class App {
             window.cookieManager = new CookieManager();
             window.performanceMonitor = new PerformanceMonitor();
             window.lazyLoader = new LazyLoader();
+            window.mobileNavigationManager = new MobileNavigationManager();
             
             // Scroll jump guard for programmatic downloads
             document.addEventListener('click', (e) => {
@@ -290,6 +487,8 @@ class App {
 // DOM ready olduğunda uygulamayı başlat
 document.addEventListener('DOMContentLoaded', () => {
     window.app = new App();
+    // Mobil navigasyon yöneticisini global olarak erişilebilir yap
+    window.mobileNavigationManager = new MobileNavigationManager();
 });
 
 

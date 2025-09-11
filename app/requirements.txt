@@ -13,6 +13,14 @@ opencv-python-headless==4.9.0.80
 docx2pdf==0.1.8
 python-pptx==0.6.21
 
+# OCR Kütüphaneleri
+pytesseract==0.3.10
+
+# Excel İşleme Kütüphaneleri
+tabula-py==2.8.2
+pandas==2.1.4
+openpyxl==3.1.2
+
 # Diğer yardımcı kütüphaneler
 aiofiles==23.2.1
 pydantic-settings==2.3.4

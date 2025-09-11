@@ -6,11 +6,59 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "tr-TR",
+  "categories": ["productivity", "utilities", "business"],
+  "screenshots": [
+    {
+      "src": "/images/mobile-pdf-edit.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide"
+    }
+  ],
   "icons": [
     {
-              "src": "/icons/icon-512x512.webp",
+      "src": "/icons/icon-192x192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.webp",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/apple-touch-icon.webp",
+      "sizes": "180x180",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "PDF Birleştir",
+      "short_name": "Birleştir",
+      "description": "PDF dosyalarını birleştir",
+      "url": "/?tool=merge",
+      "icons": [{ "src": "/icons/icon-192x192.webp", "sizes": "192x192" }]
+    },
+    {
+      "name": "PDF Sıkıştır",
+      "short_name": "Sıkıştır",
+      "description": "PDF boyutunu küçült",
+      "url": "/?tool=compress",
+      "icons": [{ "src": "/icons/icon-192x192.webp", "sizes": "192x192" }]
+    },
+    {
+      "name": "PDF'den Word'e",
+      "short_name": "PDF→Word",
+      "description": "PDF'yi Word'e dönüştür",
+      "url": "/?tool=pdf-to-word",
+      "icons": [{ "src": "/icons/icon-192x192.webp", "sizes": "192x192" }]
     }
   ]
 }

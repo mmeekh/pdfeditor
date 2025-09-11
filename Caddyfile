@@ -1,5 +1,25 @@
-{
-  email {env.EMAIL}
+# Local test için Caddyfile
+localhost {
+  encode zstd gzip
+  
+  # Ana site root
+  root * /srv
+  
+  # API yönlendirmesi
+  handle /api/* {
+    reverse_proxy api:2000
+  }
+  
+  # Güvenlik başlıkları
+  header {
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "strict-origin-when-cross-origin"
+  }
+  
+  # Statik dosyalar ve SPA routing
+  handle {
+    file_server
+    try_files {path} {path}.html /index.html
+  }
 }
-
-import /etc/caddy/sites/*.Caddyfile

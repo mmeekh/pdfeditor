@@ -1,13 +1,61 @@
 /* ===== COMPONENT STYLES ===== */
 
+/* Breadcrumb Navigation */
+.breadcrumb-nav ol {
+    list-style: none;
+    counter-reset: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-nav li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.breadcrumb-nav li::before {
+    display: none !important;
+}
+
+.breadcrumb-nav li::marker {
+    display: none !important;
+}
+
 /* Tool Cards */
 .tool-card {
-    transition: all 0.3s ease;
-    position: relative;
     border: 2px solid transparent;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     overflow: hidden; /* Arkaplan görselinin taşmasını önler */
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+/* Mobile Tool Card Adjustments */
+@media (max-width: 768px) {
+    .tool-card {
+        padding: 1rem 0.75rem;
+    }
+    
+    .tool-card h3 {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+    
+    .tool-card p {
+        font-size: 0.875rem;
+        line-height: 1.4;
+    }
+    
+    .tool-card .w-12 {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .tool-card .text-2xl {
+        font-size: 1.25rem;
+    }
 }
 
 /* Tool Card Background Images */
@@ -21,14 +69,14 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.15; /* %5 daha görünür yapıldı (0.1'den 0.15'e) */
+    opacity: 0.25; /* %10 daha görünür yapıldı (0.15'den 0.25'e) */
     z-index: 1;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .tool-card:hover::before {
-    opacity: 0.2; /* Hover'da da %5 daha görünür (0.15'den 0.2'ye) */
+    opacity: 0.3; /* Hover'da da %10 daha görünür (0.2'den 0.3'e) */
 }
 
 /* Tool card content should be above background */
@@ -56,22 +104,32 @@
 
 .tool-card[data-tool="pdf-to-word"]::before {
     background-image: url('/cardbgs/pdftoword_no_bg.webp');
+    width: 66.825%;
+    height: 66.825%;
 }
 
 .tool-card[data-tool="word-to-pdf"]::before {
     background-image: url('/cardbgs/wordtopdf.webp');
+    width: 66.825%;
+    height: 66.825%;
 }
 
 .tool-card[data-tool="pdf-to-ppt"]::before {
     background-image: url('/cardbgs/pdftoppt.webp');
+    width: 66.825%;
+    height: 66.825%;
 }
 
 .tool-card[data-tool="unlock"]::before {
     background-image: url('/cardbgs/unlock_no_bg.webp');
+    width: 60.75%;
+    height: 60.75%;
 }
 
 .tool-card[data-tool="protect"]::before {
     background-image: url('/cardbgs/pdflock.webp');
+    width: 54.675%;
+    height: 54.675%;
 }
 
 .tool-card[data-tool="rotate"]::before {
@@ -100,6 +158,96 @@
     height: 60.75%;
 }
 
+.tool-card[data-tool="pdf-ocr"]::before {
+    background-image: url('/cardbgs/pdfocr.webp');
+    width: 66.015%;
+    height: 66.015%;
+}
+
+.tool-card[data-tool="pdf-to-excel"]::before {
+    background-image: url('/cardbgs/pdftoexcel.webp');
+    width: 66.825%;
+    height: 66.825%;
+}
+
+/* Mobile responsive webp backgrounds */
+@media (max-width: 768px) {
+    .tool-card[data-tool="merge"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="split"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="compress"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="pdf-to-word"]::before {
+        width: 55%;
+        height: 55%;
+    }
+    
+    .tool-card[data-tool="word-to-pdf"]::before {
+        width: 55%;
+        height: 55%;
+    }
+    
+    .tool-card[data-tool="pdf-to-ppt"]::before {
+        width: 55%;
+        height: 55%;
+    }
+    
+    .tool-card[data-tool="unlock"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="protect"]::before {
+        width: 45%;
+        height: 45%;
+    }
+    
+    .tool-card[data-tool="rotate"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="watermark"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="pdf-to-jpg"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="organize"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="sign"]::before {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .tool-card[data-tool="pdf-ocr"]::before {
+        width: 55%;
+        height: 55%;
+    }
+    
+    .tool-card[data-tool="pdf-to-excel"]::before {
+        width: 55%;
+        height: 55%;
+    }
+}
+
 /* Tıkla veya Sürükle Bırak rozeti */
 .tool-card::after {
     content: "Tıkla veya Sürükle Bırak";
@@ -120,7 +268,7 @@
     font-size: 9px;
     font-weight: 600;
     opacity: 0;                /* hover'da 1 oluyor */
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
     pointer-events: none;
     white-space: nowrap;
     max-width: 120px;
@@ -203,13 +351,13 @@
 /* File Drop Areas */
 .file-drop-area,
 .image-upload-area {
-    transition: all 0.3s ease;
+    background-color: white;
     border: 2px dashed #d1d5db;
     border-radius: 0.5rem;
+    cursor: pointer;
     padding: 1.5rem;
     text-align: center;
-    background-color: white;
-    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .file-drop-area.dragover,
@@ -241,12 +389,12 @@
 
 /* Buttons */
 .btn {
-    padding: 0.5rem 1rem;
-    border-radius: 0.375rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    cursor: pointer;
     border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
 }
 
 .btn-primary {
@@ -266,6 +414,8 @@
 .btn-secondary:hover {
     background-color: #4b5563;
 }
+
+/* Duplicate btn-secondary removed - already defined above */
 
 /* Theme Button Styles */
 .theme-dark .btn-primary {
@@ -313,7 +463,12 @@
 #comfort-mode-btn {
     transition: all 0.2s ease;
     border-radius: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.5rem; /* Increased padding for PC */
+    min-width: 2.5rem; /* Increased size for PC */
+    min-height: 2.5rem; /* Increased size for PC */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #night-mode-btn:hover,
@@ -343,18 +498,34 @@
 
 #night-mode-btn span,
 #comfort-mode-btn span {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+/* Mobile Theme Button Adjustments */
+@media (max-width: 768px) {
+    #night-mode-btn,
+    #comfort-mode-btn {
+        padding: 0.47rem; /* Reduced by 6% from 0.5rem */
+        min-width: 1.88rem; /* Reduced by 6% from 2rem */
+        min-height: 1.88rem; /* Reduced by 6% from 2rem */
+    }
+    
+    #night-mode-btn span,
+    #comfort-mode-btn span {
+        font-size: 0.94rem; /* Reduced by 6% from 1rem */
+        line-height: 1.41rem; /* Reduced by 6% from 1.5rem */
+    }
 }
 
 /* Form Elements */
 .form-input {
-    width: 100%;
-    padding: 0.5rem 0.75rem;
     border: 1px solid #d1d5db;
     border-radius: 0.375rem;
     font-size: 1rem;
+    padding: 0.5rem 0.75rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
 }
 
 .form-input:focus {
@@ -388,15 +559,15 @@
 
 /* File Items */
 .file-item {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: #f9fafb;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    margin-bottom: 0.5rem;
     border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
     transition: all 0.2s ease;
 }
 
@@ -466,7 +637,7 @@
     border-radius: 0.75rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 1px 2px 0 rgba(0, 0, 0, 0.21);
     padding: 1.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .feature-card:hover {
@@ -556,25 +727,25 @@
 
 /* Modal */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
+    height: 100%;
     justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 1000;
 }
 
 .modal-content {
     background-color: white;
     border-radius: 0.75rem;
-    max-width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    max-height: 90vh;
+    max-width: 90%;
+    overflow-y: auto;
 }
 
 .theme-dark .modal-content,
@@ -620,23 +791,23 @@
 }
 
 .notification {
+    align-items: center;
     background: #10b981;
-    color: white;
-    padding: 12px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin-bottom: 10px;
+    color: white;
+    display: flex;
     font-size: 14px;
     font-weight: 500;
-    max-width: 300px;
-    word-wrap: break-word;
-    transform: translateX(100%);
-    opacity: 0;
-    transition: all 0.3s ease;
-    pointer-events: auto;
-    display: flex;
-    align-items: center;
     gap: 8px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    opacity: 0;
+    padding: 12px 20px;
+    pointer-events: auto;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+    word-wrap: break-word;
 }
 
 .notification.show {
@@ -854,7 +1025,7 @@
 
 .contact-info-card:hover::before {
     opacity: 0.2;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .contact-info-card:hover::after {
@@ -1195,6 +1366,560 @@ footer .mt-4 {
     border: 1px solid var(--border-color);
 }
 
+/* ===== HEADER FIXED POSITION ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: none;
+    transform: translateZ(0); /* Hardware acceleration */
+    will-change: transform; /* Optimize for animations */
+}
+
+/* Header Theme Support */
+.theme-dark header {
+    background: var(--bg-secondary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.theme-comfort header {
+    background: var(--bg-secondary);
+    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+}
+
+/* Body padding to account for fixed header */
+body {
+    padding-top: 80px; /* Desktop header height */
+}
+
+/* Mobile header height adjustment */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Mobile header height */
+    }
+}
+
+/* ===== MOBILE NAVIGATION STYLES ===== */
+
+/* Mobile Tools Button */
+#mobile-tools-btn {
+    position: relative;
+    z-index: 10;
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+#mobile-tools-btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+#mobile-tools-btn:active {
+    transform: none;
+}
+
+/* Mobile Tools Button Theme Support */
+.theme-dark #mobile-tools-btn {
+    background: none;
+    color: var(--text-primary);
+    border: none;
+    box-shadow: none;
+}
+
+.theme-dark #mobile-tools-btn:hover {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #60a5fa;
+}
+
+.theme-dark #mobile-tools-btn i,
+.theme-dark #mobile-tools-btn span {
+    color: inherit;
+}
+
+.theme-comfort #mobile-tools-btn {
+    background: none;
+    color: var(--text-primary);
+    border: none;
+    box-shadow: none;
+}
+
+.theme-comfort #mobile-tools-btn:hover {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #f59e0b;
+}
+
+.theme-comfort #mobile-tools-btn i,
+.theme-comfort #mobile-tools-btn span {
+    color: inherit;
+}
+
+/* Mobile Tools Menu */
+#mobile-tools-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #e2e8f0;
+    border-top: none;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+#mobile-tools-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Tool Items */
+.mobile-tool-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Mobile Navigation Items */
+.mobile-nav-item {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background: transparent;
+    backdrop-filter: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.mobile-tool-item:hover {
+    background-color: #f8fafc;
+    border-color: #e2e8f0;
+    transform: translateX(4px);
+}
+
+.mobile-tool-item:active {
+    transform: translateX(2px);
+    background-color: #e2e8f0;
+}
+
+.mobile-nav-item:hover {
+    background-color: #f8fafc;
+    transform: translateX(4px);
+    text-decoration: none;
+    color: inherit;
+}
+
+.mobile-nav-item:active {
+    transform: translateX(2px);
+    background-color: #e2e8f0;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Mobile Tool Item Icons - Smaller versions */
+.mobile-tool-item .compress-icon-container,
+.mobile-tool-item .pdf-to-word-icon-container,
+.mobile-tool-item .word-to-pdf-icon-container,
+.mobile-tool-item .pdf-to-ppt-icon-container,
+.mobile-tool-item .pdf-to-jpg-icon-container,
+.mobile-tool-item .pdf-to-excel-icon-container,
+.mobile-tool-item .merge-icon-container,
+.mobile-tool-item .split-icon-container,
+.mobile-tool-item .organize-icon-container,
+.mobile-tool-item .rotate-icon-container,
+.mobile-tool-item .protect-icon-container,
+.mobile-tool-item .unlock-icon-container,
+.mobile-tool-item .watermark-icon-container,
+.mobile-tool-item .sign-icon-container,
+.mobile-tool-item .pdf-ocr-icon-container {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Mobile Tool Item Icon Animations */
+.mobile-tool-item:hover .compress-icon-container,
+.mobile-tool-item:hover .pdf-to-word-icon-container,
+.mobile-tool-item:hover .word-to-pdf-icon-container,
+.mobile-tool-item:hover .pdf-to-ppt-icon-container,
+.mobile-tool-item:hover .pdf-to-jpg-icon-container,
+.mobile-tool-item:hover .pdf-to-excel-icon-container,
+.mobile-tool-item:hover .merge-icon-container,
+.mobile-tool-item:hover .split-icon-container,
+.mobile-tool-item:hover .organize-icon-container,
+.mobile-tool-item:hover .rotate-icon-container,
+.mobile-tool-item:hover .protect-icon-container,
+.mobile-tool-item:hover .unlock-icon-container,
+.mobile-tool-item:hover .watermark-icon-container,
+.mobile-tool-item:hover .sign-icon-container,
+.mobile-tool-item:hover .pdf-ocr-icon-container {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Menu Categories */
+#mobile-tools-menu h3 {
+    position: relative;
+    padding-left: 12px;
+}
+
+#mobile-tools-menu h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 16px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 2px;
+}
+
+/* Mobile Menu Scrollbar */
+#mobile-tools-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+#mobile-tools-menu::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+#mobile-tools-menu::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+#mobile-tools-menu::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Mobile Menu Scrollbar Theme Support */
+.theme-dark #mobile-tools-menu::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.theme-dark #mobile-tools-menu::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+.theme-dark #mobile-tools-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+.theme-comfort #mobile-tools-menu::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.theme-comfort #mobile-tools-menu::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+.theme-comfort #mobile-tools-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Mobile Menu Theme Support */
+.theme-dark #mobile-tools-menu {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-color: var(--border-color);
+    border-top: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .mobile-tool-item {
+    color: var(--text-primary);
+    background: rgba(55, 65, 81, 0.5);
+    border-color: var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.theme-dark .mobile-tool-item:hover {
+    background: rgba(75, 85, 99, 0.7);
+    border-color: #60a5fa;
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(96, 165, 250, 0.2);
+}
+
+.theme-dark .mobile-tool-item {
+    color: var(--text-primary);
+    background: rgba(55, 65, 81, 0.5);
+    border-color: var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.theme-dark .mobile-tool-item:hover {
+    background: rgba(75, 85, 99, 0.7);
+    border-color: #60a5fa;
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(96, 165, 250, 0.2);
+}
+
+.theme-dark .mobile-tool-item:active {
+    background: rgba(31, 41, 55, 0.8);
+    color: var(--text-primary);
+    transform: translateX(2px);
+}
+
+.theme-dark .mobile-nav-item {
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+}
+
+.theme-dark .mobile-nav-item:hover {
+    background: rgba(75, 85, 99, 0.7);
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(96, 165, 250, 0.2);
+    text-decoration: none;
+}
+
+.theme-dark .mobile-nav-item:active {
+    background: rgba(31, 41, 55, 0.8);
+    color: var(--text-primary);
+    transform: translateX(2px);
+    text-decoration: none;
+}
+
+.theme-dark #mobile-tools-menu h3 {
+    color: var(--text-muted);
+}
+
+.theme-dark #mobile-tools-menu h3::before {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+}
+
+.theme-comfort #mobile-tools-menu {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-color: var(--border-color);
+    border-top: none;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.theme-comfort .mobile-tool-item {
+    color: var(--text-primary);
+    background: rgba(255, 248, 240, 0.7);
+    border-color: var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.theme-comfort .mobile-tool-item:hover {
+    background: rgba(254, 243, 226, 0.9);
+    border-color: #f59e0b;
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.theme-comfort .mobile-tool-item {
+    color: var(--text-primary);
+    background: rgba(255, 248, 240, 0.7);
+    border-color: var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.theme-comfort .mobile-tool-item:hover {
+    background: rgba(254, 243, 226, 0.9);
+    border-color: #f59e0b;
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.theme-comfort .mobile-tool-item:active {
+    background: rgba(254, 247, 240, 0.95);
+    color: var(--text-primary);
+    transform: translateX(2px);
+}
+
+.theme-comfort .mobile-nav-item {
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+}
+
+.theme-comfort .mobile-nav-item:hover {
+    background: rgba(254, 243, 226, 0.9);
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+    text-decoration: none;
+}
+
+.theme-comfort .mobile-nav-item:active {
+    background: rgba(254, 247, 240, 0.95);
+    color: var(--text-primary);
+    transform: translateX(2px);
+    text-decoration: none;
+}
+
+.theme-comfort #mobile-tools-menu h3 {
+    color: var(--text-muted);
+}
+
+/* Mobile Navigation Icons - Theme Support */
+.theme-dark .mobile-nav-item .bg-blue-100 {
+    background-color: #1e3a8a !important;
+}
+
+.theme-dark .mobile-nav-item .text-blue-600 {
+    color: #60a5fa !important;
+}
+
+.theme-dark .mobile-nav-item .bg-green-100 {
+    background-color: #064e3b !important;
+}
+
+.theme-dark .mobile-nav-item .text-green-600 {
+    color: #10b981 !important;
+}
+
+.theme-dark .mobile-nav-item .bg-red-100 {
+    background-color: #7f1d1d !important;
+}
+
+.theme-dark .mobile-nav-item .text-red-600 {
+    color: #f87171 !important;
+}
+
+.theme-comfort .mobile-nav-item .bg-blue-100 {
+    background-color: #dbeafe !important;
+}
+
+.theme-comfort .mobile-nav-item .text-blue-600 {
+    color: #1d4ed8 !important;
+}
+
+.theme-comfort .mobile-nav-item .bg-green-100 {
+    background-color: #dcfce7 !important;
+}
+
+.theme-comfort .mobile-nav-item .text-green-600 {
+    color: #166534 !important;
+}
+
+.theme-comfort .mobile-nav-item .bg-red-100 {
+    background-color: #fecaca !important;
+}
+
+.theme-comfort .mobile-nav-item .text-red-600 {
+    color: #dc2626 !important;
+}
+
+.theme-comfort #mobile-tools-menu h3::before {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Mobile Menu Animation States - Moved to Mobile Tools Menu section above */
+
+/* Tools Arrow Animation */
+#tools-arrow {
+    transition: transform 0.2s ease;
+}
+
+#mobile-tools-menu.show + #tools-arrow,
+#mobile-tools-menu.show ~ #tools-arrow {
+    transform: rotate(180deg);
+}
+
+/* Mobile Header Responsive Adjustments */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    #mobile-tools-btn {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    #mobile-tools-btn span {
+        font-size: 0.875rem;
+    }
+    
+    .mobile-tool-item {
+        padding: 0.75rem;
+    }
+    
+    .mobile-tool-item span {
+        font-size: 0.875rem;
+    }
+}
+
+/* Mobile Menu Backdrop */
+.mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 35;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Menu Backdrop Theme Support */
+.theme-dark .mobile-menu-backdrop {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.theme-comfort .mobile-menu-backdrop {
+    background: rgba(245, 158, 11, 0.1);
+}
+
+/* Development Badge */
+.dev-badge {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.theme-dark .dev-badge {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.theme-comfort .dev-badge {
+    background: linear-gradient(135deg, #ea580c, #f97316);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
 /* ===== SHARED THEME SECTIONS ===== */
 
 /* Generic Section Base Styles */
@@ -1301,6 +2026,16 @@ footer .mt-4 {
 /* PDF İmzalama Tool Icon */
 .sign-icon-container {
     background: linear-gradient(135deg, #F59E0B, #FBBF24);
+}
+
+/* PDF OCR Tool Icon */
+.pdf-ocr-icon-container {
+    background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+}
+
+/* PDF to Excel Tool Icon */
+.pdf-to-excel-icon-container {
+    background: linear-gradient(135deg, #059669, #10B981);
 }
 
 /* PDF İmzalama CTA Button Fix */
@@ -1435,17 +2170,4 @@ footer .mt-4 {
     align-items: center;
 }
 
-.btn-secondary {
-    background-color: #6b7280;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.375rem;
-    border: none;
-    cursor: pointer;
-    font-size: 0.875rem;
-    transition: background-color 0.2s ease;
-}
-
-.btn-secondary:hover {
-    background-color: #4b5563;
-}
+/* Duplicate btn-secondary removed - consolidated above */
