@@ -1,0 +1,23 @@
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 16rem;
+  background: #ffffff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 40;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+#mobile-menu.show {
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  #mobile-menu {
+    display: none;
+  }
+}
