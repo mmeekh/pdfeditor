@@ -19,8 +19,20 @@ pdfislemleri.com {
 
   root * /srv/pdfislemleri
 
+  handle_path /css/* {
+    root * /srv/pdfislemleri/dist/css
+    header Cache-Control "public, max-age=31536000, immutable"
+    file_server
+  }
+
+  handle_path /js/* {
+    root * /srv/pdfislemleri/dist/js
+    header Cache-Control "public, max-age=31536000, immutable"
+    file_server
+  }
+
   @static {
-    path_regexp static ^/(?:images|icons|cardbgs|css|js)/.*|.*\.(?:css|js|png|jpg|jpeg|webp|svg|ico|xml|txt|woff2?)$
+    path_regexp static ^/(?:images|icons|cardbgs)/.*|.*\.(?:css|js|png|jpg|jpeg|webp|svg|ico|xml|txt|woff2?)$
   }
   header @static Cache-Control "public, max-age=31536000, immutable"
 
