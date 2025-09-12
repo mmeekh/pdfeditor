@@ -2,12 +2,14 @@ import os
 import tempfile
 from typing import List
 
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
 
 
 class Settings(BaseSettings):
     """Application configuration loaded from environment with sensible defaults."""
+
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
     # File system and resource limits
     TEMP_DIR: str = Field(default_factory=lambda: os.environ.get("TEMP_DIR", os.path.join(tempfile.gettempdir(), "pdfislemleri")))
@@ -24,9 +26,6 @@ class Settings(BaseSettings):
         "http://localhost:80",
         "http://localhost:3000",
         "http://localhost:8000",
-        "https://pdfislemleri.com",
-        "https://www.pdfislemleri.com",
-        "*"  # Development için geçici
     ])
     ALLOW_CREDENTIALS: bool = True
     ALLOW_METHODS: List[str] = Field(default_factory=lambda: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"])
