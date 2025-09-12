@@ -61,6 +61,11 @@ class FileHandler {
     handleFiles(files, toolType = null) {
         if (files.length === 0) return;
         
+        // toolType null ise mevcut tool'u kullan
+        if (!toolType && window.toolManager) {
+            toolType = window.toolManager.getCurrentTool();
+        }
+        
         // Yeni dosyalar eklendiğinde eski session'ı temizle
         if (this.activeSession && window.pdfApi) {
             console.log('Yeni dosyalar ekleniyor, eski session temizleniyor:', this.activeSession.sessionId);
@@ -105,16 +110,25 @@ class FileHandler {
         
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
+            const fileName = file.name.toLowerCase();
             
-            if (toolType === 'word-to-pdf' && (file.name.endsWith('.doc') || file.name.endsWith('.docx'))) {
+            if (toolType === 'word-to-pdf' && (fileName.endsWith('.doc') || fileName.endsWith('.docx'))) {
                 validFiles.push(file);
-            } else if (toolType !== 'word-to-pdf' && file.name.toLowerCase().endsWith('.pdf')) {
+            } else if (toolType === 'pdf-to-txt' && (fileName.endsWith('.pdf') || fileName.endsWith('.doc') || fileName.endsWith('.docx'))) {
+                validFiles.push(file);
+            } else if (toolType !== 'word-to-pdf' && toolType !== 'pdf-to-txt' && fileName.endsWith('.pdf')) {
                 validFiles.push(file);
             }
         }
         
         if (validFiles.length === 0) {
-            notifications.error('Lütfen bu araç için geçerli dosyalar seçin.');
+            if (toolType === 'word-to-pdf') {
+                notifications.error('Lütfen Word dosyaları (.doc, .docx) seçin.');
+            } else if (toolType === 'pdf-to-txt') {
+                notifications.error('Lütfen PDF veya Word dosyaları (.pdf, .doc, .docx) seçin.');
+            } else {
+                notifications.error('Lütfen PDF dosyaları seçin.');
+            }
         }
         
         return validFiles;

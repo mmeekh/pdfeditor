@@ -18,6 +18,7 @@ import organizeTool from '../tools/organize.js';
 import signTool from '../tools/sign.js';
 import pdfOcrTool from '../tools/pdf-ocr.js';
 import pdfToExcelTool from '../tools/pdf-to-excel.js';
+import pdfToTxtTool from '../tools/pdf-to-txt.js';
 import notifications from './notifications.js';
 import fileHandler from './fileHandler.js';
 import pdfLoader from './loader.js';
@@ -27,19 +28,20 @@ class ToolManager {
         this.currentTool = null;
         this.tools = {
             merge: mergeTool,
-            split: splitTool,
             compress: compressTool,
             'pdf-to-word': pdfToWordTool,
             'word-to-pdf': wordToPdfTool,
-            'pdf-to-ppt': pdfToPptTool,
-            'protect': protectTool,
             'unlock': unlockTool,
+            split: splitTool,
+            'pdf-to-jpg': pdfToJpgTool,
+            'pdf-to-txt': pdfToTxtTool,
+            'protect': protectTool,
             'rotate': rotateTool,
             'watermark': watermarkTool,
-            'pdf-to-jpg': pdfToJpgTool,
             'organize': organizeTool,
             'sign': signTool,
             'pdf-ocr': pdfOcrTool,
+            'pdf-to-ppt': pdfToPptTool,
             'pdf-to-excel': pdfToExcelTool
         };
         
@@ -116,7 +118,13 @@ class ToolManager {
         // accept attribute update
         const fileInput = document.getElementById('fileInput');
         if (fileInput) {
-            fileInput.accept = toolName === 'word-to-pdf' ? '.doc,.docx' : '.pdf';
+            if (toolName === 'word-to-pdf') {
+                fileInput.accept = '.doc,.docx';
+            } else if (toolName === 'pdf-to-txt') {
+                fileInput.accept = '.pdf,.doc,.docx';
+            } else {
+                fileInput.accept = '.pdf';
+            }
         }
         const toolInterface = document.getElementById('toolInterface');
         if (toolInterface) {
@@ -161,7 +169,13 @@ class ToolManager {
 
         const fileInput = document.getElementById('fileInput');
         if (fileInput) {
-            fileInput.accept = toolName === 'word-to-pdf' ? '.doc,.docx' : '.pdf';
+            if (toolName === 'word-to-pdf') {
+                fileInput.accept = '.doc,.docx';
+            } else if (toolName === 'pdf-to-txt') {
+                fileInput.accept = '.pdf,.doc,.docx';
+            } else {
+                fileInput.accept = '.pdf';
+            }
         }
         const toolInterface = document.getElementById('toolInterface');
         if (toolInterface) {
@@ -472,6 +486,11 @@ class ToolManager {
                 title: "PDF'den Excel'e",
                 description: "PDF dosyalarındaki tabloları Excel formatına dönüştürün. Verilerinizi düzenlenebilir hale getirin ve analiz yapın.",
                 funnyQuote: "PDF'den Excel'e dönüştürme işlemi, tablolarınızı düzenlenebilir hale getirir. Veri analizi için PDFişlemleri.com'u tercih edin!"
+            },
+            'pdf-to-txt': {
+                title: "PDF/Word'den TXT'ye",
+                description: "PDF ve Word dosyalarınızı TXT formatına dönüştürün. Metin içeriğini kolayca kopyalayın ve düzenleyin. Hem PDF hem de Word dosyalarını destekler.",
+                funnyQuote: "PDF/Word'den TXT'ye dönüştürme işlemi, belgelerinizi en basit metin formatına çevirir. Metin işleme için PDFişlemleri.com'u tercih edin!"
             }
         };
 

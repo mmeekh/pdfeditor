@@ -562,6 +562,33 @@ class PDFApi {
     getPdfToExcelDownloadUrl(sessionId, filename) {
         return `${this.baseUrl}/tools/pdf-to-excel/download/${sessionId}/${filename}`;
     }
+
+    // ===== PDF/Word → TXT APIs =====
+    async uploadFilesForPdfToTxt(files) {
+        const formData = new FormData();
+        files.forEach(file => {
+            formData.append('files', file);
+        });
+        const response = await fetch(`${this.baseUrl}/tools/pdf-to-txt/upload`, { method: 'POST', body: formData });
+        if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF/Word→TXT yükleme hatası');
+        }
+        return response.json();
+    }
+
+    async processPdfToTxt(sessionId) {
+        const response = await fetch(`${this.baseUrl}/tools/pdf-to-txt/process/${sessionId}`, { method: 'POST' });
+        if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            throw new Error(err.detail || 'PDF/Word→TXT işlem hatası');
+        }
+        return response.json();
+    }
+
+    getPdfToTxtDownloadUrl(sessionId, filename) {
+        return `${this.baseUrl}/tools/pdf-to-txt/download/${sessionId}/${filename}`;
+    }
 }
 
 // Singleton instance

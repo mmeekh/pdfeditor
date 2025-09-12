@@ -1590,7 +1590,7 @@ body {
     transform: translateY(-50%);
     width: 3px;
     height: 16px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(135deg, #ef4444, #dc2626);
     border-radius: 2px;
 }
 
@@ -1705,7 +1705,7 @@ body {
 }
 
 .theme-dark #mobile-tools-menu h3::before {
-    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
 .theme-comfort #mobile-tools-menu {

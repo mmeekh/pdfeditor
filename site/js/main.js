@@ -10,6 +10,7 @@ import fileHandler from './modules/fileHandler.js';
 import toolManager from './modules/toolManager.js';
 import mergeTool from './tools/merge.js';
 import organizeTool from './tools/organize.js';
+import pdfToTxtTool from './tools/pdf-to-txt.js';
 import { App } from './modules/app.js';
 
 // Global API instance'larını window'a ekle
@@ -20,6 +21,7 @@ window.fileHandler = fileHandler;
 window.toolManager = toolManager;
 window.mergeTool = mergeTool;
 window.organizeTool = organizeTool;
+window.pdfToTxtTool = pdfToTxtTool;
 
 // Global access for debugging
 window.openTool = (toolName) => toolManager.openTool(toolName);

@@ -1,10 +1,10 @@
 /* ===== GRADIENT ANIMATIONS FOR TOOL CARDS ===== */
 
-/* PDF Merge Icon Container - Turquoise Gradient Animation */
+/* PDF Merge Icon Container - Purple Gradient Animation (Sırala Kategorisi) */
 .merge-icon-container {
-    background: linear-gradient(45deg, #4de9e1, #009688, #4de9e1);
+    background: linear-gradient(45deg, #8b5cf6, #7c3aed, #8b5cf6);
     background-size: 200% 200%;
-    animation: turquoise-gradient-flow 2.25s ease-in-out infinite;
+    animation: purple-gradient-flow 2.25s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -16,9 +16,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #4de9e1, #009688, #4de9e1, #4de9e1);
+    background: linear-gradient(45deg, #8b5cf6, #7c3aed, #8b5cf6, #8b5cf6);
     background-size: 300% 300%;
-    animation: turquoise-gradient-flow 3s ease-in-out infinite reverse;
+    animation: purple-gradient-flow 3s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -29,9 +29,9 @@
     color: #FFFFFF !important;
 }
 
-/* PDF Split Icon Container - Purple Gradient Animation */
+/* PDF Split Icon Container - Purple Gradient Animation (Sırala Kategorisi) */
 .split-icon-container {
-    background: linear-gradient(45deg, #B388FF, #673AB7, #B388FF);
+    background: linear-gradient(45deg, #a855f7, #9333ea, #a855f7);
     background-size: 200% 200%;
     animation: purple-gradient-flow 2.4s ease-in-out infinite;
     position: relative;
@@ -45,7 +45,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #B388FF, #673AB7, #B388FF, #B388FF);
+    background: linear-gradient(45deg, #a855f7, #9333ea, #a855f7, #a855f7);
     background-size: 300% 300%;
     animation: purple-gradient-flow 3.15s ease-in-out infinite reverse;
     opacity: 0.7;
@@ -58,11 +58,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF Compress Icon Container - Orange Gradient Animation */
+/* PDF Compress Icon Container - Green Gradient Animation (Sıkıştır Kategorisi) */
 .compress-icon-container {
-    background: linear-gradient(45deg, #FFE082, #FB8C00, #FFE082);
+    background: linear-gradient(45deg, #10b981, #059669, #10b981);
     background-size: 200% 200%;
-    animation: orange-gradient-flow 2.55s ease-in-out infinite;
+    animation: green-gradient-flow 2.55s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -74,9 +74,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #FFE082, #FB8C00, #FFE082, #FFE082);
+    background: linear-gradient(45deg, #10b981, #059669, #10b981, #10b981);
     background-size: 300% 300%;
-    animation: orange-gradient-flow 3.3s ease-in-out infinite reverse;
+    animation: green-gradient-flow 3.3s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -87,11 +87,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF Rotate Icon Container - Green Gradient Animation */
+/* PDF Rotate Icon Container - Purple Gradient Animation (Sırala Kategorisi) */
 .rotate-icon-container {
-    background: linear-gradient(45deg, #81C784, #388E3C, #81C784);
+    background: linear-gradient(45deg, #c084fc, #a855f7, #c084fc);
     background-size: 200% 200%;
-    animation: green-gradient-flow 2.7s ease-in-out infinite;
+    animation: purple-gradient-flow 2.7s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -103,9 +103,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #81C784, #388E3C, #81C784, #81C784);
+    background: linear-gradient(45deg, #c084fc, #a855f7, #c084fc, #c084fc);
     background-size: 300% 300%;
-    animation: green-gradient-flow 3.45s ease-in-out infinite reverse;
+    animation: purple-gradient-flow 3.45s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -116,11 +116,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF to Word Icon Container - Green Gradient Animation */
+/* PDF to Word Icon Container - Orange Gradient Animation (Dönüştür Kategorisi) */
 .pdf-to-word-icon-container {
-    background: linear-gradient(45deg, #66BB6A, #2E7D32, #66BB6A);
+    background: linear-gradient(45deg, #f97316, #ea580c, #f97316);
     background-size: 200% 200%;
-    animation: green2-gradient-flow 2.85s ease-in-out infinite;
+    animation: orange-gradient-flow 2.85s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -132,9 +132,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #66BB6A, #2E7D32, #66BB6A, #66BB6A);
+    background: linear-gradient(45deg, #f97316, #ea580c, #f97316, #f97316);
     background-size: 300% 300%;
-    animation: green2-gradient-flow 3.6s ease-in-out infinite reverse;
+    animation: orange-gradient-flow 3.6s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -145,11 +145,11 @@
     color: #FFFFFF !important;
 }
 
-/* Word to PDF Icon Container - Orange Gradient Animation */
+/* Word to PDF Icon Container - Orange Gradient Animation (Dönüştür Kategorisi) */
 .word-to-pdf-icon-container {
-    background: linear-gradient(45deg, #FFB74D, #F57C00, #FFB74D);
+    background: linear-gradient(45deg, #fb923c, #f97316, #fb923c);
     background-size: 200% 200%;
-    animation: orange2-gradient-flow 3.0s ease-in-out infinite;
+    animation: orange-gradient-flow 3.0s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -161,9 +161,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #FFB74D, #F57C00, #FFB74D, #FFB74D);
+    background: linear-gradient(45deg, #fb923c, #f97316, #fb923c, #fb923c);
     background-size: 300% 300%;
-    animation: orange2-gradient-flow 3.75s ease-in-out infinite reverse;
+    animation: orange-gradient-flow 3.75s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -174,11 +174,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF to PPT Icon Container - Purple Gradient Animation */
+/* PDF to PPT Icon Container - Orange Gradient Animation (Dönüştür Kategorisi) */
 .pdf-to-ppt-icon-container {
-    background: linear-gradient(45deg, #BA68C8, #7B1FA2, #BA68C8);
+    background: linear-gradient(45deg, #fdba74, #f97316, #fdba74);
     background-size: 200% 200%;
-    animation: purple2-gradient-flow 3.15s ease-in-out infinite;
+    animation: orange-gradient-flow 3.15s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -190,9 +190,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #BA68C8, #7B1FA2, #BA68C8, #BA68C8);
+    background: linear-gradient(45deg, #fdba74, #f97316, #fdba74, #fdba74);
     background-size: 300% 300%;
-    animation: purple2-gradient-flow 3.9s ease-in-out infinite reverse;
+    animation: orange-gradient-flow 3.9s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -203,11 +203,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF to JPG Icon Container - Red Gradient Animation */
+/* PDF to JPG Icon Container - Orange Gradient Animation (Dönüştür Kategorisi) */
 .pdf-to-jpg-icon-container {
-    background: linear-gradient(45deg, #EF5350, #C62828, #EF5350);
+    background: linear-gradient(45deg, #fed7aa, #f97316, #fed7aa);
     background-size: 200% 200%;
-    animation: red-gradient-flow 3.3s ease-in-out infinite;
+    animation: orange-gradient-flow 3.3s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -219,9 +219,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #EF5350, #C62828, #EF5350, #EF5350);
+    background: linear-gradient(45deg, #fed7aa, #f97316, #fed7aa, #fed7aa);
     background-size: 300% 300%;
-    animation: red-gradient-flow 4.05s ease-in-out infinite reverse;
+    animation: orange-gradient-flow 4.05s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -232,11 +232,69 @@
     color: #FFFFFF !important;
 }
 
-/* PDF Unlock Icon Container - Pink Gradient Animation */
-.unlock-icon-container {
-    background: linear-gradient(45deg, #F48FB1, #E91E63, #F48FB1);
+/* PDF to Excel Icon Container - Orange Gradient Animation (Dönüştür Kategorisi) */
+.pdf-to-excel-icon-container {
+    background: linear-gradient(45deg, #fbbf24, #f97316, #fbbf24);
     background-size: 200% 200%;
-    animation: pink-gradient-flow 3.45s ease-in-out infinite;
+    animation: orange-gradient-flow 3.45s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-to-excel-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #fbbf24, #f97316, #fbbf24, #fbbf24);
+    background-size: 300% 300%;
+    animation: orange-gradient-flow 4.2s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.pdf-to-excel-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF/Word to TXT Icon Container - Orange Gradient Animation (Dönüştür Kategorisi) */
+.pdf-to-txt-icon-container {
+    background: linear-gradient(45deg, #fb923c, #f97316, #fb923c);
+    background-size: 200% 200%;
+    animation: orange-gradient-flow 3.1s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-to-txt-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #fb923c, #f97316, #fb923c, #fb923c);
+    background-size: 300% 300%;
+    animation: orange-gradient-flow 4s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.pdf-to-txt-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Unlock Icon Container - Blue Gradient Animation (Güvenlik Kategorisi) */
+.unlock-icon-container {
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8, #3b82f6);
+    background-size: 200% 200%;
+    animation: blue-gradient-flow 3.45s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -248,9 +306,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #F48FB1, #E91E63, #F48FB1, #F48FB1);
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8, #3b82f6, #3b82f6);
     background-size: 300% 300%;
-    animation: pink-gradient-flow 4.2s ease-in-out infinite reverse;
+    animation: blue-gradient-flow 4.2s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -261,11 +319,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF Protect Icon Container - Indigo Gradient Animation */
+/* PDF Protect Icon Container - Blue Gradient Animation (Güvenlik Kategorisi) */
 .protect-icon-container {
-    background: linear-gradient(45deg, #7986CB, #3F51B5, #7986CB);
+    background: linear-gradient(45deg, #60a5fa, #3b82f6, #60a5fa);
     background-size: 200% 200%;
-    animation: indigo-gradient-flow 3.6s ease-in-out infinite;
+    animation: blue-gradient-flow 3.6s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -277,9 +335,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #7986CB, #3F51B5, #7986CB, #7986CB);
+    background: linear-gradient(45deg, #60a5fa, #3b82f6, #60a5fa, #60a5fa);
     background-size: 300% 300%;
-    animation: indigo-gradient-flow 4.35s ease-in-out infinite reverse;
+    animation: blue-gradient-flow 4.35s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -290,11 +348,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF Watermark Icon Container - Cyan Gradient Animation */
+/* PDF Watermark Icon Container - Blue Gradient Animation (Güvenlik Kategorisi) */
 .watermark-icon-container {
-    background: linear-gradient(45deg, #80DEEA, #00BCD4, #80DEEA);
+    background: linear-gradient(45deg, #93c5fd, #3b82f6, #93c5fd);
     background-size: 200% 200%;
-    animation: cyan-gradient-flow 3.75s ease-in-out infinite;
+    animation: blue-gradient-flow 3.75s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -306,9 +364,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #80DEEA, #00BCD4, #80DEEA, #80DEEA);
+    background: linear-gradient(45deg, #93c5fd, #3b82f6, #93c5fd, #93c5fd);
     background-size: 300% 300%;
-    animation: cyan-gradient-flow 4.5s ease-in-out infinite reverse;
+    animation: blue-gradient-flow 4.5s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
@@ -319,11 +377,11 @@
     color: #FFFFFF !important;
 }
 
-/* PDF Organize Icon Container - Light Green Gradient Animation */
+/* PDF Organize Icon Container - Purple Gradient Animation (Sırala Kategorisi) */
 .organize-icon-container {
-    background: linear-gradient(45deg, #C5E1A5, #8BC34A, #C5E1A5);
+    background: linear-gradient(45deg, #d8b4fe, #a855f7, #d8b4fe);
     background-size: 200% 200%;
-    animation: light-green-gradient-flow 3.9s ease-in-out infinite;
+    animation: purple-gradient-flow 3.9s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -335,14 +393,72 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #C5E1A5, #8BC34A, #C5E1A5, #C5E1A5);
+    background: linear-gradient(45deg, #d8b4fe, #a855f7, #d8b4fe, #d8b4fe);
     background-size: 300% 300%;
-    animation: light-green-gradient-flow 4.65s ease-in-out infinite reverse;
+    animation: purple-gradient-flow 4.65s ease-in-out infinite reverse;
     opacity: 0.7;
     z-index: 1;
 }
 
 .organize-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF Sign Icon Container - Blue Gradient Animation (Güvenlik Kategorisi) */
+.sign-icon-container {
+    background: linear-gradient(45deg, #1d4ed8, #3b82f6, #1d4ed8);
+    background-size: 200% 200%;
+    animation: blue-gradient-flow 4.05s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.sign-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #1d4ed8, #3b82f6, #1d4ed8, #1d4ed8);
+    background-size: 300% 300%;
+    animation: blue-gradient-flow 4.8s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.sign-icon-container i {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF !important;
+}
+
+/* PDF OCR Icon Container - Red Gradient Animation (Gelişmiş Kategorisi) */
+.pdf-ocr-icon-container {
+    background: linear-gradient(45deg, #ef4444, #dc2626, #ef4444);
+    background-size: 200% 200%;
+    animation: red-gradient-flow 4.2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-ocr-icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ef4444, #dc2626, #ef4444, #ef4444);
+    background-size: 300% 300%;
+    animation: red-gradient-flow 4.95s ease-in-out infinite reverse;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.pdf-ocr-icon-container i {
     position: relative;
     z-index: 2;
     color: #FFFFFF !important;
@@ -449,39 +565,48 @@
 .tool-card[data-tool="merge"]:hover .merge-icon-container i,
 .tool-card[data-tool="merge"]:active .merge-icon-container i,
 .tool-card[data-tool="merge"]:focus .merge-icon-container i,
-.tool-card[data-tool="split"]:hover .split-icon-container i,
-.tool-card[data-tool="split"]:active .split-icon-container i,
-.tool-card[data-tool="split"]:focus .split-icon-container i,
 .tool-card[data-tool="compress"]:hover .compress-icon-container i,
 .tool-card[data-tool="compress"]:active .compress-icon-container i,
 .tool-card[data-tool="compress"]:focus .compress-icon-container i,
-.tool-card[data-tool="rotate"]:hover .rotate-icon-container i,
-.tool-card[data-tool="rotate"]:active .rotate-icon-container i,
-.tool-card[data-tool="rotate"]:focus .rotate-icon-container i,
 .tool-card[data-tool="pdf-to-word"]:hover .pdf-to-word-icon-container i,
 .tool-card[data-tool="pdf-to-word"]:active .pdf-to-word-icon-container i,
 .tool-card[data-tool="pdf-to-word"]:focus .pdf-to-word-icon-container i,
 .tool-card[data-tool="word-to-pdf"]:hover .word-to-pdf-icon-container i,
 .tool-card[data-tool="word-to-pdf"]:active .word-to-pdf-icon-container i,
 .tool-card[data-tool="word-to-pdf"]:focus .word-to-pdf-icon-container i,
-.tool-card[data-tool="pdf-to-ppt"]:hover .pdf-to-ppt-icon-container i,
-.tool-card[data-tool="pdf-to-ppt"]:active .pdf-to-ppt-icon-container i,
-.tool-card[data-tool="pdf-to-ppt"]:focus .pdf-to-ppt-icon-container i,
-.tool-card[data-tool="pdf-to-jpg"]:hover .pdf-to-jpg-icon-container i,
-.tool-card[data-tool="pdf-to-jpg"]:active .pdf-to-jpg-icon-container i,
-.tool-card[data-tool="pdf-to-jpg"]:focus .pdf-to-jpg-icon-container i,
 .tool-card[data-tool="unlock"]:hover .unlock-icon-container i,
 .tool-card[data-tool="unlock"]:active .unlock-icon-container i,
 .tool-card[data-tool="unlock"]:focus .unlock-icon-container i,
+.tool-card[data-tool="split"]:hover .split-icon-container i,
+.tool-card[data-tool="split"]:active .split-icon-container i,
+.tool-card[data-tool="split"]:focus .split-icon-container i,
+.tool-card[data-tool="pdf-to-jpg"]:hover .pdf-to-jpg-icon-container i,
+.tool-card[data-tool="pdf-to-jpg"]:active .pdf-to-jpg-icon-container i,
+.tool-card[data-tool="pdf-to-jpg"]:focus .pdf-to-jpg-icon-container i,
+.tool-card[data-tool="pdf-to-txt"]:hover .pdf-to-txt-icon-container i,
+.tool-card[data-tool="pdf-to-txt"]:active .pdf-to-txt-icon-container i,
+.tool-card[data-tool="pdf-to-txt"]:focus .pdf-to-txt-icon-container i,
 .tool-card[data-tool="protect"]:hover .protect-icon-container i,
 .tool-card[data-tool="protect"]:active .protect-icon-container i,
 .tool-card[data-tool="protect"]:focus .protect-icon-container i,
+.tool-card[data-tool="rotate"]:hover .rotate-icon-container i,
+.tool-card[data-tool="rotate"]:active .rotate-icon-container i,
+.tool-card[data-tool="rotate"]:focus .rotate-icon-container i,
 .tool-card[data-tool="watermark"]:hover .watermark-icon-container i,
 .tool-card[data-tool="watermark"]:active .watermark-icon-container i,
 .tool-card[data-tool="watermark"]:focus .watermark-icon-container i,
 .tool-card[data-tool="organize"]:hover .organize-icon-container i,
 .tool-card[data-tool="organize"]:active .organize-icon-container i,
 .tool-card[data-tool="organize"]:focus .organize-icon-container i,
+.tool-card[data-tool="sign"]:hover .sign-icon-container i,
+.tool-card[data-tool="sign"]:active .sign-icon-container i,
+.tool-card[data-tool="sign"]:focus .sign-icon-container i,
+.tool-card[data-tool="pdf-ocr"]:hover .pdf-ocr-icon-container i,
+.tool-card[data-tool="pdf-ocr"]:active .pdf-ocr-icon-container i,
+.tool-card[data-tool="pdf-ocr"]:focus .pdf-ocr-icon-container i,
+.tool-card[data-tool="pdf-to-ppt"]:hover .pdf-to-ppt-icon-container i,
+.tool-card[data-tool="pdf-to-ppt"]:active .pdf-to-ppt-icon-container i,
+.tool-card[data-tool="pdf-to-ppt"]:focus .pdf-to-ppt-icon-container i,
 .tool-card[data-tool="pdf-to-excel"]:hover .pdf-to-excel-icon-container i,
 .tool-card[data-tool="pdf-to-excel"]:active .pdf-to-excel-icon-container i,
 .tool-card[data-tool="pdf-to-excel"]:focus .pdf-to-excel-icon-container i {

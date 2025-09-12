@@ -24,6 +24,7 @@ from routers.organize import router as organize_router
 from routers.sign import router as sign_router
 from routers.pdf_ocr import router as pdf_ocr_router
 from routers.pdf_to_excel import router as pdf_to_excel_router
+from routers.pdf_to_txt import router as pdf_to_txt_router
 
 
 logging.basicConfig(level=logging.INFO)
@@ -65,19 +66,20 @@ def health(request: Request):
 def get_tools():
     tools = [
         {"id": "merge", "name": "PDF Birleştir", "description": "Birden fazla PDF'i tek dosyada birleştir"},
-        {"id": "split", "name": "PDF Ayır", "description": "PDF sayfalarını ayır veya çıkar"},
         {"id": "compress", "name": "PDF Sıkıştır", "description": "PDF boyutunu küçült"},
         {"id": "pdf-to-word", "name": "PDF'den Word'e", "description": "PDF'i düzenlenebilir Word'e dönüştür"},
         {"id": "word-to-pdf", "name": "Word'den PDF'e", "description": "Word'ü PDF'e dönüştür"},
-        {"id": "pdf-to-ppt", "name": "PDF'den PPT'ye", "description": "PDF'i PowerPoint'e dönüştür"},
         {"id": "unlock", "name": "PDF Şifre Kaldır", "description": "PDF şifre korumasını kaldır"},
+        {"id": "split", "name": "PDF Ayır", "description": "PDF sayfalarını ayır veya çıkar"},
+        {"id": "pdf-to-jpg", "name": "PDF'den JPG'ye", "description": "PDF sayfalarını resme dönüştür"},
+        {"id": "pdf-to-txt", "name": "PDF/Word'den TXT'ye", "description": "PDF ve Word dosyalarını TXT'ye dönüştürün"},
         {"id": "protect", "name": "PDF Şifrele", "description": "PDF'e şifre koruması ekle"},
         {"id": "rotate", "name": "PDF Döndür", "description": "PDF sayfalarını döndür"},
         {"id": "watermark", "name": "PDF Filigranla", "description": "PDF'e metin/resim filigranı ekle"},
-        {"id": "pdf-to-jpg", "name": "PDF'den JPG'ye", "description": "PDF sayfalarını resme dönüştür"},
         {"id": "organize", "name": "PDF Düzenle", "description": "PDF sayfalarını yeniden düzenle"},
         {"id": "sign", "name": "PDF İmzala", "description": "PDF dosyalarını dijital olarak imzalayın"},
         {"id": "pdf-ocr", "name": "PDF OCR", "description": "PDF'den metin çıkarın ve düzenlenebilir hale getirin"},
+        {"id": "pdf-to-ppt", "name": "PDF'den PPT'ye", "description": "PDF'i PowerPoint'e dönüştür"},
         {"id": "pdf-to-excel", "name": "PDF'den Excel'e", "description": "PDF tablolarını Excel'e dönüştürün"},
     ]
     return {"tools": tools, "count": len(tools)}
@@ -110,4 +112,5 @@ app.include_router(organize_router)
 app.include_router(sign_router)
 app.include_router(pdf_ocr_router)
 app.include_router(pdf_to_excel_router)
+app.include_router(pdf_to_txt_router)
 
