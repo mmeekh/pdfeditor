@@ -17,8 +17,8 @@ class FileHandler {
         this.MAX_FILES = 10;
         this.MAX_TOTAL_SIZE = 100 * 1024 * 1024; // 100MB
         
-        // Session süresi (1 dakika)
-        this.SESSION_LIFETIME_MINUTES = 1;
+        // Session süresi (5 dakika)
+        this.SESSION_LIFETIME_MINUTES = 5;
         
         this.initializeEventListeners();
     }

@@ -18,7 +18,7 @@ class Settings(BaseSettings):
 
     # Cleanup and session
     FILE_CLEANUP_HOURS: int = 24
-    SESSION_LIFETIME_MINUTES: int = 1
+    SESSION_LIFETIME_MINUTES: int = 5
 
     # CORS
     ALLOW_ORIGINS: List[str] = Field(default_factory=lambda: [
