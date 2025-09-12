@@ -13,6 +13,10 @@ PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya
 - **Performans**: zstd/gzip sıkıştırma, cache politikaları
 - **CSS Yapısı**: Modülerleştirilmiş stil dosyaları (`base.css`, `components.css`, `theme.css`) ile daha düzenli ve ölçeklenebilir frontend geliştirme
 
+## ⚙️ Environment
+
+CORS için izin verilen alan adları `.env` dosyasındaki `ALLOW_ORIGINS` değeri ile yapılandırılır. Format olarak JSON dizisi kullanılmalıdır; örnek için `.env.example` dosyasına bakabilirsiniz.
+
 ## 📁 Proje Yapısı
 
 C:.
