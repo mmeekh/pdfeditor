@@ -3,6 +3,11 @@ import logging
 
 from core.middleware import setup_cors
 from core.lifespan import lifespan
+
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
+from slowapi.util import get_remote_address
 from routers.merge import router as merge_router
 from routers.split import router as split_router
 from routers.compress import router as compress_router
@@ -24,6 +29,7 @@ from routers.pdf_to_excel import router as pdf_to_excel_router
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
 
 app = FastAPI(
     title="PDFişlemleri.com API",
@@ -34,6 +40,9 @@ app = FastAPI(
     max_request_size=100 * 1024 * 1024,  # 100MB
 )
 
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+app.add_middleware(SlowAPIMiddleware)
 
 # Middleware
 setup_cors(app)
