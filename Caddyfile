@@ -4,6 +4,18 @@ localhost {
   
   # Ana site root
   root * /srv
+
+  handle_path /css/* {
+    root * /srv/dist/css
+    header Cache-Control "public, max-age=31536000, immutable"
+    file_server
+  }
+
+  handle_path /js/* {
+    root * /srv/dist/js
+    header Cache-Control "public, max-age=31536000, immutable"
+    file_server
+  }
   
   # API yönlendirmesi
   handle /api/* {

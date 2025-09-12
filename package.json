@@ -1,0 +1,14 @@
+{
+  "name": "pdfislemleri-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i ./site/css/base.css -o ./site/dist/css/base.css --minify && tailwindcss -c tailwind.config.js -i ./site/css/components.css -o ./site/dist/css/components.css --minify && tailwindcss -c tailwind.config.js -i ./site/css/gradients.css -o ./site/dist/css/gradients.css --minify && tailwindcss -c tailwind.config.js -i ./site/css/theme.css -o ./site/dist/css/theme.css --minify",
+    "build:js": "vite build",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.0.0"
+  }
+}
