@@ -1,13 +1,13 @@
 import os
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 
 from fastapi import APIRouter, File, UploadFile, HTTPException, Form
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
 from pdf_ocr import PDFOCR, PDFOCRError
 
 logger = logging.getLogger(__name__)
@@ -177,16 +177,30 @@ async def download_ocr_result(session_id: str):
     """OCR sonuçlarını indir"""
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
-        raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
+        logger.warning(f"Session bulunamadı: {session_id}")
+        raise HTTPException(
+            status_code=404,
+            detail=f"İndirme oturumu bulunamadı veya süresi dolmuş ({settings.SESSION_LIFETIME_MINUTES} dakika). Dosyaları tekrar yükleyip işleyin.",
+        )
 
-    # Tüm OCR sonuç dosyalarını bul
+    try:
+        session_time = datetime.fromtimestamp(os.path.getctime(session_dir))
+        if datetime.now() - session_time > timedelta(minutes=settings.SESSION_LIFETIME_MINUTES):
+            logger.info(f"Session süresi dolmuş: {session_id}")
+            raise HTTPException(
+                status_code=410,
+                detail=f"İndirme linki süresi dolmuş ({settings.SESSION_LIFETIME_MINUTES} dakika). Lütfen dosyaları tekrar işleyin ve daha hızlı indirin.",
+            )
+    except Exception as e:
+        logger.error(f"Session time check failed: {e}")
+
     txt_files = list(Path(session_dir).glob("*.txt"))
     if not txt_files:
         raise HTTPException(status_code=404, detail="OCR sonucu bulunamadı")
 
     if len(txt_files) == 1:
-        # Tek dosya varsa direkt indir
         file_path = txt_files[0]
+        ensure_safe_path(str(file_path), settings.TEMP_DIR)
         return FileResponse(
             path=str(file_path),
             media_type="text/plain; charset=utf-8",
@@ -197,15 +211,16 @@ async def download_ocr_result(session_id: str):
             }
         )
     else:
-        # Birden fazla dosya varsa ZIP oluştur
         import zipfile
         zip_name = f"ocr_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
         zip_path = os.path.join(session_dir, zip_name)
-        
+        ensure_safe_path(zip_path, settings.TEMP_DIR)
+
         with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
             for txt_file in txt_files:
+                ensure_safe_path(str(txt_file), settings.TEMP_DIR)
                 zf.write(txt_file, arcname=txt_file.name)
-        
+
         return FileResponse(
             path=zip_path,
             media_type="application/zip",
