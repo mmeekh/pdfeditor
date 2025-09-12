@@ -11,37 +11,12 @@
     <link rel="canonical" href="https://pdfislemleri.com">
     
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
+    <script src="js/gtm.js"></script>
     <!-- End Google Tag Manager -->
     
     <!-- Google tag (gtag.js) - Mevcut GA4 tracking korunuyor -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBF2E5K150"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      
-      // Consent mode başlatma
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'functionality_storage': 'denied',
-        'personalization_storage': 'denied',
-        'security_storage': 'denied'
-      });
-      
-      gtag('js', new Date());
-      gtag('config', 'G-XBF2E5K150', {
-        'anonymize_ip': true,
-        'allow_google_signals': false,
-        'allow_ad_personalization_signals': false
-      });
-    </script>
+    <script src="js/gtag-config.js"></script>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -86,14 +61,7 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Production uyarısını gizle
-        tailwind.config = {
-            corePlugins: {
-                preflight: false,
-            }
-        }
-    </script>
+    <script src="js/tailwind-config.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
@@ -103,186 +71,22 @@
     <link rel="stylesheet" href="css/gradients.css">
     
     <!-- Enhanced Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "PDFişlemleri.com - Ücretsiz PDF Araçları",
-        "alternateName": "PDF İşlemleri",
-        "description": "PDF dosyalarınızı ücretsiz birleştirin, sıkıştırın, dönüştürün ve imzalayın. Kalite kaybı olmadan PDF işlemleri yapın.",
-        "url": "https://pdfislemleri.com",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web Browser",
-        "browserRequirements": "Requires JavaScript. Requires HTML5.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "TRY",
-            "description": "Ücretsiz PDF araçları"
-        },
-        "featureList": [
-            "PDF Birleştirme",
-            "PDF Ayırma", 
-            "PDF Sıkıştırma",
-            "PDF'den Word'e Dönüştürme",
-            "Word'den PDF'e Dönüştürme",
-            "PDF'den PowerPoint'e Dönüştürme",
-            "PDF Şifreleme",
-            "PDF Şifre Kaldırma",
-            "PDF Döndürme",
-            "PDF Filigran",
-            "PDF'den JPG'ye Dönüştürme",
-            "PDF Düzenleme",
-            "PDF İmzalama",
-            "PDF OCR",
-            "PDF'den Excel'e Dönüştürme"
-        ],
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://pdfislemleri.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "PDFişlemleri.com",
-            "url": "https://pdfislemleri.com",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://pdfislemleri.com/icons/logo.webp",
-                "width": 512,
-                "height": 512
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "customer service",
-                "url": "https://pdfislemleri.com/contact"
-            }
-        },
-        "sameAs": [
-            "https://facebook.com/pdfislemleri",
-            "https://twitter.com/pdfislemleri",
-            "https://instagram.com/pdfislemleri"
-        ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "1250",
-            "bestRating": "5",
-            "worstRating": "1"
-        }
-    }
-    </script>
+    <script type="application/ld+json" src="js/structured-data/webapp.json"></script>
 
     <!-- FAQ Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "PDF dosyalarım güvende mi?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Evet, tüm dosyalarınız işlem sonrası otomatik olarak silinir. Verileriniz asla saklanmaz veya üçüncü taraflarla paylaşılmaz."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Hangi dosya formatları destekleniyor?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "PDF, Word (.doc, .docx), PowerPoint (.ppt, .pptx), JPG, PNG ve diğer popüler formatları destekliyoruz. Her araç için desteklenen formatlar farklılık gösterebilir."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Maksimum dosya boyutu nedir?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Tek seferde maksimum 10 dosya yükleyebilir, toplam boyut 100MB'ı aşamaz. Bu limitler güvenlik ve performans için belirlenmiştir."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Ücretli bir hizmet var mı?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Hayır, tüm araçlarımız tamamen ücretsizdir. Hiçbir gizli ücret veya abonelik yoktur."
-                }
-            }
-        ]
-    }
-    </script>
-    
+    <script type="application/ld+json" src="js/structured-data/faq.json"></script>
+
     <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "PDFişlemleri.com",
-        "alternateName": "PDF İşlemleri",
-        "url": "https://pdfislemleri.com",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://pdfislemleri.com/icons/logo.webp",
-            "width": 512,
-            "height": 512
-        },
-        "description": "Ücretsiz PDF araçları sunan online platform",
-        "sameAs": [
-            "https://facebook.com/pdfislemleri",
-            "https://twitter.com/pdfislemleri",
-            "https://instagram.com/pdfislemleri"
-        ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "PDF Birleştirme",
-        "description": "Birden fazla PDF dosyasını tek bir belgede birleştirme hizmeti",
-        "provider": {
-            "@type": "Organization",
-            "name": "PDFişlemleri.com"
-        },
-        "serviceType": "PDF Processing",
-        "areaServed": "TR",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "TRY"
-        }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "PDF İmzalama",
-        "description": "PDF dosyalarını dijital olarak imzalama hizmeti. Elle çizilen veya yüklenen imzalar ile PDF belgelerinizi güvenli şekilde imzalayın.",
-        "provider": {
-            "@type": "Organization",
-            "name": "PDFişlemleri.com"
-        },
-        "serviceType": "PDF Digital Signature",
-        "areaServed": "TR",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "TRY"
-        },
-        "keywords": "pdf imzala, dijital imza, pdf imzalama, elektronik imza, pdf belge imzalama"
-    }
-    </script>
+    <script type="application/ld+json" src="js/structured-data/organization.json"></script>
+
+    <script type="application/ld+json" src="js/structured-data/service-merge.json"></script>
+
+    <script type="application/ld+json" src="js/structured-data/service-sign.json"></script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" class="gtm-noscript"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="site-wrapper">
@@ -727,7 +531,7 @@
                         <span id="progressPercent" class="text-gray-700">0%</span>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div id="progressBar" class="progress-bar bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                        <div id="progressBar" class="progress-bar bg-blue-600 h-2.5 rounded-full w-0"></div>
                     </div>
                     <p class="text-gray-500 text-sm mt-2 text-center">
                         <i class="fas fa-coffee"></i> PDF işleminiz devam ediyor, lütfen bekleyin...
@@ -940,9 +744,8 @@
     <div id="notificationContainer" class="notification-container"></div>
 
     <!-- Modern PDF Loader -->
-    <div id="modern-pdf-loader" aria-live="assertive" aria-busy="false"
-         class="fixed inset-0 flex items-center justify-center z-[9999] transition-all duration-300 opacity-0 pointer-events-none"
-         style="background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(236,72,153,.08))">
+      <div id="modern-pdf-loader" aria-live="assertive" aria-busy="false"
+         class="fixed inset-0 flex items-center justify-center z-[9999] transition-all duration-300 opacity-0 pointer-events-none">
       <div class="relative bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full mx-4 overflow-hidden border border-gray-100">
         <div id="wind-effect" class="wind-effect"></div>
 

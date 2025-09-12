@@ -28,6 +28,16 @@ footer {
     padding: 1rem 0;
 }
 
+/* Utility classes */
+.gtm-noscript {
+    display: none;
+    visibility: hidden;
+}
+
+#modern-pdf-loader {
+    background: linear-gradient(135deg, rgba(99,102,241,.08), rgba(236,72,153,.08));
+}
+
 /* Link Reset */
 a {
     text-decoration: none;

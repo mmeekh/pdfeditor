@@ -1,0 +1,17 @@
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "PDF Birleştirme",
+        "description": "Birden fazla PDF dosyasını tek bir belgede birleştirme hizmeti",
+        "provider": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com"
+        },
+        "serviceType": "PDF Processing",
+        "areaServed": "TR",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+        }
+    }

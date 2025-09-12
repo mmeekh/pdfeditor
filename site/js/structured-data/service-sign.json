@@ -1,0 +1,18 @@
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "PDF İmzalama",
+        "description": "PDF dosyalarını dijital olarak imzalama hizmeti. Elle çizilen veya yüklenen imzalar ile PDF belgelerinizi güvenli şekilde imzalayın.",
+        "provider": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com"
+        },
+        "serviceType": "PDF Digital Signature",
+        "areaServed": "TR",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+        },
+        "keywords": "pdf imzala, dijital imza, pdf imzalama, elektronik imza, pdf belge imzalama"
+    }
