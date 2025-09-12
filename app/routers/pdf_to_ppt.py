@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 import zipfile
 
@@ -8,7 +8,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file
+from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
 from pdf_to_ppt import PDFToPPTConverter, PDFToPPTError
 
 
@@ -148,15 +148,35 @@ async def process_pdf_to_ppt(session_id: str, mode: str = "separate"):
 async def download_ppt(session_id: str, filename: str):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     file_path = os.path.join(session_dir, filename)
+
+    if not os.path.exists(session_dir):
+        logger.warning(f"Session bulunamadı: {session_id}")
+        raise HTTPException(
+            status_code=404,
+            detail=f"İndirme oturumu bulunamadı veya süresi dolmuş ({settings.SESSION_LIFETIME_MINUTES} dakika). Dosyaları tekrar yükleyip işleyin.",
+        )
+
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Dosya bulunamadı")
-    
-    # ZIP dosyası ise application/zip, değilse PPT mime type
+
+    ensure_safe_path(file_path, settings.TEMP_DIR)
+
+    try:
+        session_time = datetime.fromtimestamp(os.path.getctime(session_dir))
+        if datetime.now() - session_time > timedelta(minutes=settings.SESSION_LIFETIME_MINUTES):
+            logger.info(f"Session süresi dolmuş: {session_id}")
+            raise HTTPException(
+                status_code=410,
+                detail=f"İndirme linki süresi dolmuş ({settings.SESSION_LIFETIME_MINUTES} dakika). Lütfen dosyaları tekrar işleyin ve daha hızlı indirin.",
+            )
+    except Exception as e:
+        logger.error(f"Session time check failed: {e}")
+
     if filename.endswith('.zip'):
         media = "application/zip"
     else:
         media = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-    
+
     return FileResponse(path=file_path, media_type=media, filename=filename)
 
 
