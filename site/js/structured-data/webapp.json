@@ -1,0 +1,67 @@
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDFişlemleri.com - Ücretsiz PDF Araçları",
+        "alternateName": "PDF İşlemleri",
+        "description": "PDF dosyalarınızı ücretsiz birleştirin, sıkıştırın, dönüştürün ve imzalayın. Kalite kaybı olmadan PDF işlemleri yapın.",
+        "url": "https://pdfislemleri.com",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY",
+            "description": "Ücretsiz PDF araçları"
+        },
+        "featureList": [
+            "PDF Birleştirme",
+            "PDF Ayırma", 
+            "PDF Sıkıştırma",
+            "PDF'den Word'e Dönüştürme",
+            "Word'den PDF'e Dönüştürme",
+            "PDF'den PowerPoint'e Dönüştürme",
+            "PDF Şifreleme",
+            "PDF Şifre Kaldırma",
+            "PDF Döndürme",
+            "PDF Filigran",
+            "PDF'den JPG'ye Dönüştürme",
+            "PDF Düzenleme",
+            "PDF İmzalama",
+            "PDF OCR",
+            "PDF'den Excel'e Dönüştürme"
+        ],
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://pdfislemleri.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "url": "https://pdfislemleri.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfislemleri.com/icons/logo.webp",
+                "width": 512,
+                "height": 512
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "url": "https://pdfislemleri.com/contact"
+            }
+        },
+        "sameAs": [
+            "https://facebook.com/pdfislemleri",
+            "https://twitter.com/pdfislemleri",
+            "https://instagram.com/pdfislemleri"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1250",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
