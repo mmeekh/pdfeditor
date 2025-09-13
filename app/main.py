@@ -25,6 +25,7 @@ from routers.sign import router as sign_router
 from routers.pdf_ocr import router as pdf_ocr_router
 from routers.pdf_to_excel import router as pdf_to_excel_router
 from routers.pdf_to_txt import router as pdf_to_txt_router
+from core.config import settings
 
 
 logging.basicConfig(level=logging.INFO)
@@ -92,6 +93,17 @@ def get_status():
         "uptime": "99.9%",
         "version": "1.0.0",
         "environment": "production",
+    }
+
+
+@app.get("/api/config")
+def get_config():
+    """Get application configuration including file limits"""
+    return {
+        "max_files": settings.MAX_FILES,
+        "max_file_size_mb": settings.MAX_FILE_SIZE // (1024 * 1024),
+        "session_lifetime_minutes": settings.SESSION_LIFETIME_MINUTES,
+        "file_cleanup_hours": settings.FILE_CLEANUP_HOURS,
     }
 
 

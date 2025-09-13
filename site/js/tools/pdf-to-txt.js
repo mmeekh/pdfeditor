@@ -23,6 +23,10 @@ class PdfToTxtTool {
             notifications.error('Lütfen en az bir PDF veya Word dosyası seçin'); 
             return; 
         }
+        if (files.length > fileHandler.MAX_FILES) { 
+            notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`); 
+            return; 
+        }
 
         // Dosya tiplerini kontrol et
         const validFiles = files.filter(file => {

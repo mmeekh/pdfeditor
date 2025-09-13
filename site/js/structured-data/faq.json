@@ -23,7 +23,7 @@
                 "name": "Maksimum dosya boyutu nedir?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Tek seferde maksimum 10 dosya yükleyebilir, toplam boyut 100MB'ı aşamaz. Bu limitler güvenlik ve performans için belirlenmiştir."
+                    "text": "Tek seferde maksimum 20 dosya yükleyebilir, toplam boyut 100MB'ı aşamaz. Bu limitler güvenlik ve performans için belirlenmiştir."
                 }
             },
             {

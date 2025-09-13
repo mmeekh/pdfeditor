@@ -12,6 +12,7 @@ class PdfToWordTool {
     async process(){
         const files = fileHandler.getSelectedFiles();
         if (files.length === 0) { notifications.error('Lütfen en az bir PDF dosyası seçin'); return; }
+        if (files.length > fileHandler.MAX_FILES) { notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`); return; }
 
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;

@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     # File system and resource limits
     TEMP_DIR: str = Field(default_factory=lambda: os.environ.get("TEMP_DIR", os.path.join(tempfile.gettempdir(), "pdfislemleri")))
     MAX_FILE_SIZE: int = 100 * 1024 * 1024
-    MAX_FILES: int = 10
+    MAX_FILES: int = 20
 
     # Cleanup and session
     FILE_CLEANUP_HOURS: int = 24

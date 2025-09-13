@@ -19,6 +19,10 @@ class SplitTool {
             notifications.error('Lütfen en az bir PDF dosyası seçin');
             return;
         }
+        if (files.length > fileHandler.MAX_FILES) {
+            notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`);
+            return;
+        }
 
         const processButton = document.getElementById('processButton');
         if (processButton) processButton.disabled = true;

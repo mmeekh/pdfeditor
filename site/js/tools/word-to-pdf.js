@@ -12,6 +12,7 @@ class WordToPdfTool {
     async process(){
         const files = fileHandler.getSelectedFiles();
         if (files.length === 0) { notifications.error('Lütfen en az bir Word dosyası (DOC/DOCX) seçin'); return; }
+        if (files.length > fileHandler.MAX_FILES) { notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`); return; }
         
         // Tüm dosyaların Word formatında olduğunu kontrol et
         for (let file of files) {

@@ -22,6 +22,25 @@ class PDFApi {
     }
 
     /**
+     * Get application configuration
+     */
+    async getConfig() {
+        try {
+            const response = await fetch(`${this.baseUrl}/config`);
+            return await response.json();
+        } catch (error) {
+            console.error('Failed to get config:', error);
+            // Fallback to default values
+            return {
+                max_files: 20,
+                max_file_size_mb: 100,
+                session_lifetime_minutes: 5,
+                file_cleanup_hours: 24
+            };
+        }
+    }
+
+    /**
      * PDF araçlarının listesini al
      */
     async getTools() {

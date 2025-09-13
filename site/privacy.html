@@ -46,6 +46,7 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -109,21 +110,44 @@
                         PDFişlemleri.com olarak, kullanıcılarımızın gizliliğine saygı duyuyor ve kişisel verilerini korumaya büyük önem veriyoruz. Bu gizlilik politikası, platformumuzu kullanırken hangi bilgilerin toplandığını, nasıl kullanıldığını ve korunduğunu açıklar.
                     </p>
 
+                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-400 mb-8">
+                        <p class="text-green-800 font-semibold mb-2">
+                            <i class="fas fa-shield-alt mr-2"></i>
+                            <strong>HUKUKİ BEYAN - VERİ TOPLAMA POLİTİKAMIZ:</strong>
+                        </p>
+                        <p class="text-green-700 mb-2">
+                            PDFişlemleri.com olarak kullanıcılarımızdan <strong>hiçbir kişisel bilgi toplamıyoruz</strong>. Platformumuz tamamen anonim çalışır.
+                        </p>
+                        <ul class="list-disc pl-6 text-green-700 space-y-1">
+                            <li>E-posta, telefon, ad-soyad gibi kişisel bilgiler toplanmaz</li>
+                            <li>Kullanıcı kaydı veya hesap oluşturma zorunluluğu yoktur</li>
+                            <li>Yüklenen dosyalar sadece işlem için geçici saklanır</li>
+                            <li>İşlem sonrası tüm veriler otomatik silinir</li>
+                        </ul>
+                    </div>
+
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 mt-8">2. Toplanan Bilgiler</h2>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">2.1 Otomatik Olarak Toplanan Bilgiler</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">2.1 Teknik Log Verileri (Anonim)</h3>
+                    <p class="text-gray-600 mb-4">
+                        Sadece web sitesi işlevselliği için gerekli olan anonim teknik veriler toplanır:
+                    </p>
                     <ul class="list-disc pl-6 text-gray-600 mb-4 space-y-2">
-                        <li>IP adresi ve coğrafi konum</li>
-                        <li>Tarayıcı türü ve sürümü</li>
-                        <li>İşletim sistemi bilgileri</li>
-                        <li>Sayfa ziyaret süreleri ve tıklama verileri</li>
-                        <li>Referrer URL'leri</li>
+                        <li>Anonim IP adresi (kişisel tanımlama yapılamaz)</li>
+                        <li>Tarayıcı türü ve sürümü (genel istatistik)</li>
+                        <li>İşletim sistemi bilgileri (genel istatistik)</li>
+                        <li>Sayfa ziyaret süreleri (anonim analitik)</li>
+                        <li>Referrer URL'leri (hangi siteden geldiğiniz - anonim)</li>
                     </ul>
 
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">2.2 Kullanıcı Tarafından Sağlanan Bilgiler</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">2.2 Geçici Dosya İşleme</h3>
+                    <p class="text-gray-600 mb-4">
+                        PDF işlemleri için yüklenen dosyalar:
+                    </p>
                     <ul class="list-disc pl-6 text-gray-600 mb-4 space-y-2">
-                        <li>Yüklenen PDF dosyaları (geçici olarak)</li>
-                        <li>E-posta adresi (newsletter için)</li>
-                        <li>Geri bildirim ve destek mesajları</li>
+                        <li>Yüklenen PDF dosyaları (sadece işlem için geçici)</li>
+                        <li>İşlem tamamlandıktan sonra 24 saat içinde silinir</li>
+                        <li>Dosya içeriği hiçbir şekilde saklanmaz</li>
+                        <li>Kişisel bilgi içermeyen teknik metadata</li>
                     </ul>
 
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 mt-8">3. Bilgilerin Kullanım Amacı</h2>
@@ -229,46 +253,53 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
+    <footer class="site-footer mt-16 relative overflow-hidden">
+        <!-- Devasa PDFislemleri Yazısı (Sadece Desktop) -->
+        <div class="footer-big-text hidden lg:block">
+            PDFislemleri
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <!-- Copyright - Sağ Üst Köşe -->
+            <div class="text-right text-sm absolute top-4 right-4 z-20">
+                <p>&copy; 2024 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 -mt-40">
+                <div class="transform -translate-x-[30%]">
                     <h3 class="text-lg font-semibold mb-4">PDFişlemleri.com</h3>
-                    <p class="text-gray-400 text-sm">
+                    <p class="text-sm">
                         PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.
                     </p>
                 </div>
-                <div>
-                    <h4 class="text-md font-semibold mb-4">Şirket</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="/about" class="hover:text-white transition">Hakkımızda</a></li>
-                        <li><a href="/blog" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="/contact" class="hover:text-white transition">İletişim</a></li>
-                    </ul>
+                <div class="text-center">
+                    <h4 class="text-md font-semibold mb-4 border-b border-gray-600 pb-2">Biz</h4>
+                    <div class="grid grid-cols-2 gap-x-2 gap-y-2 text-sm" style="list-style: none;">
+                        <div style="list-style: none;"><a href="/about" class="transition">Hakkımızda</a></div>
+                        <div style="list-style: none;"><a href="/blog" class="transition">Blog</a></div>
+                        <div style="list-style: none;"><a href="/contact" class="transition">İletişim</a></div>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="text-md font-semibold mb-4">Yasal</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="/terms" class="hover:text-white transition">Hizmet Şartları</a></li>
-                        <li><a href="/privacy" class="hover:text-white transition">Gizlilik Politikası</a></li>
-                        <li><a href="/cookies" class="hover:text-white transition">Çerez Politikası</a></li>
-                        <li><a href="/kvkk" class="hover:text-white transition">KVKK</a></li>
-                    </ul>
+                <div class="text-center">
+                    <h4 class="text-md font-semibold mb-4 border-b border-gray-600 pb-2">Yasal</h4>
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                        <div><a href="/terms" class="transition">Hizmet Şartları</a></div>
+                        <div><a href="/privacy" class="transition">Gizlilik Politikası</a></div>
+                        <div><a href="/cookies" class="transition">Çerez Politikası</a></div>
+                        <div><a href="/kvkk" class="transition">KVKK</a></div>
+                    </div>
                 </div>
-                <div>
+                <div class="text-right">
                     <h4 class="text-md font-semibold mb-4">Sosyal Medya</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/emin-kılıç-250b14210/" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <div class="flex space-x-4 justify-end">
+                        <a href="https://www.linkedin.com/in/emin-kılıç-250b14210/" target="_blank" rel="noopener" class="transition">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
-                        <a href="https://instagram.com/heremmkh" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <a href="https://instagram.com/heremmkh" target="_blank" rel="noopener" class="transition">
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; 2025 PDFişlemleri.com. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>

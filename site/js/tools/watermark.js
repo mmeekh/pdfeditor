@@ -12,7 +12,7 @@ class WatermarkTool {
     async process(){
         const files = fileHandler.getSelectedFiles();
         if (files.length < 1){ notifications.error('En az 1 PDF yükleyin'); return; }
-        if (files.length > 10){ notifications.error('Maksimum 10 dosya'); return; }
+        if (files.length > fileHandler.MAX_FILES){ notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`); return; }
         const text = document.getElementById('watermarkText')?.value || '';
         if (!text){ notifications.error('Filigran metni girin'); return; }
         const position = document.getElementById('watermarkPosition')?.value || 'center';

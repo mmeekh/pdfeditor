@@ -70,7 +70,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/components.css">    
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/gradients.css">    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -178,7 +179,7 @@
                         <div class="grid grid-cols-2 gap-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress">
                                 <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-blue-100">
-                                    <i class="fas fa-compress text-blue-600 text-sm"></i>
+                                    <i class="fas fa-compress-arrows-alt text-blue-600 text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Sıkıştır</span>
                             </button>
@@ -324,34 +325,26 @@
         
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
-        <!-- Article Header -->
-        <header class="mb-8">
-            <nav class="text-sm text-gray-500 mb-4">
-                <a href="/" class="hover:text-blue-600">Ana Sayfa</a>
-                <span class="mx-2">/</span>
-                <a href="/blog" class="hover:text-blue-600">Blog</a>
-                <span class="mx-2">/</span>
-                <span>OCR Teknolojisi</span>
-            </nav>
-            
-            <div class="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-8 text-white text-center mb-6">
-                <i class="fas fa-eye text-6xl mb-4"></i>
-                <h1 class="text-4xl font-bold mb-4">OCR Teknolojisi: Taranmış PDF'leri Düzenlenebilir Metne Çevirin</h1>
-                <div class="flex items-center justify-center text-indigo-100">
-                    <i class="fas fa-calendar mr-2"></i>
-                    <span>1 Aralık 2024</span>
-                    <span class="mx-4">•</span>
-                    <i class="fas fa-user mr-2"></i>
-                    <span>Mehmet Demir</span>
-                    <span class="mx-4">•</span>
-                    <i class="fas fa-clock mr-2"></i>
-                    <span>9 dk okuma</span>
-                </div>
-            </div>
-        </header>
-
         <!-- Article Content -->
         <article class="prose prose-lg max-w-4xl mx-auto">
+            <!-- Blog Header Content -->
+            <div class="mb-8">
+                <div class="text-center mb-6">
+                    <i class="fas fa-eye text-6xl mb-4 text-indigo-600"></i>
+                    <h1 class="text-4xl font-bold mb-4 text-gray-800">OCR Teknolojisi: Taranmış PDF'leri Düzenlenebilir Metne Çevirin</h1>
+                    <div class="flex items-center justify-center text-gray-600">
+                        <i class="fas fa-calendar mr-2"></i>
+                        <span>1 Aralık 2024</span>
+                        <span class="mx-4">•</span>
+                        <i class="fas fa-user mr-2"></i>
+                        <span>Mehmet Demir</span>
+                        <span class="mx-4">•</span>
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>9 dk okuma</span>
+                    </div>
+                </div>
+            </div>
+
             <img src="/images/pdf-ocr.webp" alt="PDF OCR" class="w-full rounded-lg mb-8" width="512" height="279" loading="lazy">
             <p class="text-xl text-gray-600 leading-relaxed mb-6">
                 Günümüzde dijital dünyada, taranmış belgeler ve PDF dosyaları hala yaygın olarak 
@@ -503,5 +496,6 @@
     <!-- JavaScript -->
     <script src="../scroll-manager.js" defer></script>
     <script type="module" src="../js/theme-manager.js"></script>
+    <script type="module" src="../js/main.js"></script>
 </body>
 </html>

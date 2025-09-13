@@ -26,7 +26,7 @@
     border: 2px solid transparent;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    overflow: hidden; /* Arkaplan görselinin taşmasını önler */
+    overflow: visible; /* Arkaplan görselinin kesilmesini önler */
     position: relative;
     transition: all 0.3s ease;
     padding: 1rem;
@@ -36,6 +36,7 @@
 @media (max-width: 768px) {
     .tool-card {
         padding: 1rem 0.75rem;
+        min-height: 140px; /* Arkaplan fotoğraflarının kesilmesini önler */
     }
     
     .tool-card h3 {
@@ -58,14 +59,14 @@
     }
 }
 
-/* Tool Card Background Images */
+/* Tool Card Background Images - Desktop */
 .tool-card::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 9%;
     right: 0;
-    width: 67.5%;
-    height: 67.5%;
+    width: 50%;
+    height: 70%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,6 +74,7 @@
     z-index: 1;
     pointer-events: none;
     transition: opacity 0.2s ease;
+    transform: translateX(0);
 }
 
 .tool-card:hover::before {
@@ -88,163 +90,276 @@
 /* Specific tool card backgrounds */
 .tool-card[data-tool="merge"]::before {
     background-image: url('/cardbgs/merge.webp');
-    width: 60.75%;
-    height: 60.75%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="split"]::before {
     background-image: url('/cardbgs/split.webp');
-    width: 60.75%;
-    height: 60.75%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="compress"]::before {
     background-image: url('/cardbgs/Compression.webp');
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="pdf-to-word"]::before {
     background-image: url('/cardbgs/pdftoword_no_bg.webp');
-    width: 66.825%;
-    height: 66.825%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="word-to-pdf"]::before {
     background-image: url('/cardbgs/wordtopdf.webp');
-    width: 66.825%;
-    height: 66.825%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="pdf-to-ppt"]::before {
     background-image: url('/cardbgs/pdftoppt.webp');
-    width: 66.825%;
-    height: 66.825%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="unlock"]::before {
     background-image: url('/cardbgs/unlock_no_bg.webp');
-    width: 60.75%;
-    height: 60.75%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="protect"]::before {
     background-image: url('/cardbgs/pdflock.webp');
-    width: 54.675%;
-    height: 54.675%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="rotate"]::before {
     background-image: url('/cardbgs/pdfrotate.webp');
-    width: 60.75%;
-    height: 60.75%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="watermark"]::before {
     background-image: url('/cardbgs/pdfwatermark.webp');
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="pdf-to-jpg"]::before {
     background-image: url('/cardbgs/pdftoimage.webp');
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="organize"]::before {
     background-image: url('/cardbgs/pdforganize.webp');
-    width: 60.75%;
-    height: 60.75%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="sign"]::before {
     background-image: url('/cardbgs/signature.webp');
-    width: 60.75%;
-    height: 60.75%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="pdf-ocr"]::before {
     background-image: url('/cardbgs/pdfocr.webp');
-    width: 66.015%;
-    height: 66.015%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
 .tool-card[data-tool="pdf-to-excel"]::before {
     background-image: url('/cardbgs/pdftoexcel.webp');
-    width: 66.825%;
-    height: 66.825%;
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
 }
 
-/* Mobile responsive webp backgrounds */
+.tool-card[data-tool="pdf-to-txt"]::before {
+    background-image: url('/cardbgs/wordpdftotxt.webp');
+    width: 50%;
+    height: 70%;
+    top: 9%;
+    right: 0;
+    transform: translateX(0);
+}
+
+/* Mobile responsive webp backgrounds - %50 sağ, %70 üst alan */
 @media (max-width: 768px) {
     .tool-card[data-tool="merge"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="split"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="compress"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="pdf-to-word"]::before {
-        width: 55%;
-        height: 55%;
+        width: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="word-to-pdf"]::before {
-        width: 55%;
-        height: 55%;
+        width: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="pdf-to-ppt"]::before {
-        width: 55%;
-        height: 55%;
+        width: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="unlock"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="protect"]::before {
-        width: 45%;
-        height: 45%;
+        width: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="rotate"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="watermark"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="pdf-to-jpg"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="organize"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="sign"]::before {
         width: 50%;
-        height: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="pdf-ocr"]::before {
-        width: 55%;
-        height: 55%;
+        width: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
     
     .tool-card[data-tool="pdf-to-excel"]::before {
-        width: 55%;
-        height: 55%;
+        width: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
+    }
+    
+    .tool-card[data-tool="pdf-to-txt"]::before {
+        width: 50%;
+        height: 70%;
+        top: 9%;
+        right: 0;
+        transform: translateX(0);
     }
 }
 
@@ -620,13 +735,43 @@
 }
 
 .remove-file {
-    color: #6b7280;
+    background: none;
+    border: none;
+    color: #ef4444;
     cursor: pointer;
-    transition: color 0.2s ease;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 1.1em;
 }
 
 .remove-file:hover {
+    background-color: #fef2f2;
+    color: #dc2626;
+    transform: scale(1.1);
+}
+
+.theme-dark .remove-file {
+    color: #f87171;
+}
+
+.theme-dark .remove-file:hover {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+}
+
+.theme-comfort .remove-file {
     color: #ef4444;
+}
+
+.theme-comfort .remove-file:hover {
+    background-color: #fef2f2;
+    color: #dc2626;
 }
 
 /* Cards */
@@ -1090,7 +1235,7 @@
 }
 
 .font-preview {
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'SF Pro Display', 'SF Pro Text', 'SF Pro Icons', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 500;
     color: #374151;
     line-height: 1;
@@ -1316,30 +1461,30 @@
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Footer Spacing Optimization */
-footer .py-16,
-footer .py-8,
-footer .py-12 {
+/* Footer Spacing Optimization - Sadece içerik için */
+.site-footer .py-16,
+.site-footer .py-8,
+.site-footer .py-12 {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-footer .py-6 {
+.site-footer .py-6 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
 
-footer .py-4 {
+.site-footer .py-4 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
 }
 
-footer .mb-8,
-footer .mb-6,
-footer .mb-4,
-footer .mt-8,
-footer .mt-6,
-footer .mt-4 {
+.site-footer .mb-8,
+.site-footer .mb-6,
+.site-footer .mb-4,
+.site-footer .mt-8,
+.site-footer .mt-6,
+.site-footer .mt-4 {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
@@ -1401,6 +1546,171 @@ body {
     body {
         padding-top: 70px; /* Mobile header height */
     }
+}
+
+/* ===== FOOTER STYLES ===== */
+
+/* Footer Base Styles */
+.site-footer {
+    padding: 96px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mobile Footer Padding */
+@media (max-width: 1023px) {
+    .site-footer {
+        padding: 60px 0 80px 0; /* Üst padding azaltıldı, alt padding artırıldı */
+    }
+}
+
+/* Devasa Footer Yazısı (Desktop) */
+.footer-big-text {
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 10.8vw;
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    transition: color 0.3s ease;
+    color: rgba(0, 0, 0, 0.25); /* Varsayılan renk */
+}
+
+/* Büyük Footer Yazısı (Mobil) */
+.footer-big-text-mobile {
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 15vw;
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, 0);
+    z-index: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    transition: color 0.3s ease;
+    color: rgba(0, 0, 0, 0.15);
+    line-height: 0.8;
+}
+
+/* Footer Link Styles */
+.site-footer a {
+    transition: color 0.3s ease;
+}
+
+/* Footer Section Headers with Underlines */
+.site-footer .border-b-2.border-red-500 {
+    border-bottom: 2px solid #ef4444 !important;
+}
+
+.site-footer .border-b-2.border-blue-500 {
+    border-bottom: 2px solid #3b82f6 !important;
+}
+
+/* Theme-specific footer underlines */
+body.dark .site-footer .border-b-2.border-red-500 {
+    border-bottom: 2px solid #ef4444 !important;
+}
+
+body.dark .site-footer .border-b-2.border-blue-500 {
+    border-bottom: 2px solid #3b82f6 !important;
+}
+
+body.comfort .site-footer .border-b-2.border-red-500 {
+    border-bottom: 2px solid #dc2626 !important;
+}
+
+body.comfort .site-footer .border-b-2.border-blue-500 {
+    border-bottom: 2px solid #2563eb !important;
+}
+
+/* Normal Mod - Footer */
+.site-footer {
+    background: #FFFFFF;
+    color: #333333;
+}
+
+
+.site-footer a {
+    color: #666666;
+}
+
+.site-footer a:hover {
+    color: #000000;
+}
+
+.site-footer h3,
+.site-footer h4 {
+    color: #333333;
+}
+
+.site-footer p {
+    color: #666666;
+}
+
+/* Gece Modu - Footer */
+body.dark .site-footer {
+    background: #1a1a1a;
+    color: #e5e5e5;
+}
+
+body.dark .footer-big-text {
+    color: rgba(255, 99, 99, 0.25);
+}
+
+body.dark .footer-big-text-mobile {
+    color: rgba(255, 99, 99, 0.15);
+}
+
+body.dark .site-footer a {
+    color: #888888;
+}
+
+body.dark .site-footer a:hover {
+    color: #4CAF50;
+}
+
+body.dark .site-footer h3,
+body.dark .site-footer h4 {
+    color: #e5e5e5;
+}
+
+body.dark .site-footer p {
+    color: #888888;
+}
+
+/* Konfor Modu - Footer */
+body.comfort .site-footer {
+    background: #f8f9fa;
+    color: #2c3e50;
+}
+
+body.comfort .footer-big-text {
+    color: rgba(52, 152, 219, 0.25);
+}
+
+body.comfort .footer-big-text-mobile {
+    color: rgba(52, 152, 219, 0.15);
+}
+
+body.comfort .site-footer a {
+    color: #5d6d7e;
+}
+
+body.comfort .site-footer a:hover {
+    color: #3498db;
+}
+
+body.comfort .site-footer h3,
+body.comfort .site-footer h4 {
+    color: #2c3e50;
+}
+
+body.comfort .site-footer p {
+    color: #5d6d7e;
 }
 
 /* ===== MOBILE NAVIGATION STYLES ===== */
@@ -1542,6 +1852,7 @@ body {
 .mobile-tool-item .pdf-to-ppt-icon-container,
 .mobile-tool-item .pdf-to-jpg-icon-container,
 .mobile-tool-item .pdf-to-excel-icon-container,
+.mobile-tool-item .pdf-to-txt-icon-container,
 .mobile-tool-item .merge-icon-container,
 .mobile-tool-item .split-icon-container,
 .mobile-tool-item .organize-icon-container,
@@ -1563,6 +1874,7 @@ body {
 .mobile-tool-item:hover .pdf-to-ppt-icon-container,
 .mobile-tool-item:hover .pdf-to-jpg-icon-container,
 .mobile-tool-item:hover .pdf-to-excel-icon-container,
+.mobile-tool-item:hover .pdf-to-txt-icon-container,
 .mobile-tool-item:hover .merge-icon-container,
 .mobile-tool-item:hover .split-icon-container,
 .mobile-tool-item:hover .organize-icon-container,
@@ -1941,7 +2253,7 @@ body {
 
 /* Section Feature Icons */
 .theme-icon {
-    background-color: var(--accent-color);
+    background-color: #f59e0b;
     color: white;
 }
 
@@ -2050,6 +2362,7 @@ body {
 .theme-comfort .bg-gradient-to-r.from-blue-500.to-blue-600 a {
     color: #2563eb !important;
 }
+
 
 /* PDF Sayfa Önizleme Stilleri */
 .pdf-page-preview {

@@ -468,7 +468,7 @@ class ToolManager {
                 funnyQuote: "PDF'den JPG'ye dönüştürme işlemi, belgelerinizi görsel formatına çevirir. Yüksek kaliteli görseller için PDFişlemleri.com'u tercih edin."
             },
             'organize': {
-                title: "PDF Düzenle",
+                title: "PDF Sırala",
                 description: "Sayfaları yeniden sıralayın, silin veya başka PDF'lerden ekleyin.",
                 funnyQuote: "PDF düzenleme işlemi, sayfalarınızı istediğiniz sırada organize eder. Düzenli belgeler için PDFişlemleri.com'u tercih edin."
             },

@@ -9,7 +9,7 @@ let pdfjsLib = null;
 class OrganizeTool {
     constructor() {
         this.toolId = 'organize';
-        this.toolName = 'PDF Düzenle';
+        this.toolName = 'PDF Sırala';
         this.pageOrder = [];
     }
 
@@ -114,6 +114,7 @@ class OrganizeTool {
     async process() {
         const files = fileHandler.getSelectedFiles();
         if (files.length === 0) { notifications.error('Lütfen PDF dosyaları ekleyin'); return; }
+        if (files.length > fileHandler.MAX_FILES) { notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`); return; }
         if (!this.pageOrder.length) { notifications.error('Hiç sayfa seçilmedi'); return; }
 
         const processButton = document.getElementById('processButton');

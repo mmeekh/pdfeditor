@@ -15,6 +15,10 @@ class UnlockTool {
             notifications.error('Lütfen tek bir PDF yükleyin'); 
             return; 
         }
+        if (files.length > fileHandler.MAX_FILES) { 
+            notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`); 
+            return; 
+        }
 
         const btn = document.getElementById('processButton');
         if (btn) btn.disabled = true;

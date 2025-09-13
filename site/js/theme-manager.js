@@ -102,15 +102,58 @@ class ThemeManager {
         const html = document.documentElement;
         
         requestAnimationFrame(() => {
-            body.classList.remove('theme-dark', 'theme-comfort');
-            html.classList.remove('theme-dark', 'theme-comfort');
+            // Eski class'ları temizle
+            body.classList.remove('theme-dark', 'theme-comfort', 'dark', 'comfort');
+            html.classList.remove('theme-dark', 'theme-comfort', 'dark', 'comfort');
             
             if (this.currentTheme === 'dark') {
-                body.classList.add('theme-dark');
-                html.classList.add('theme-dark');
+                body.classList.add('theme-dark', 'dark');
+                html.classList.add('theme-dark', 'dark');
             } else if (this.currentTheme === 'comfort') {
-                body.classList.add('theme-comfort');
-                html.classList.add('theme-comfort');
+                body.classList.add('theme-comfort', 'comfort');
+                html.classList.add('theme-comfort', 'comfort');
+            }
+            
+            // Footer tema değişikliğini zorla uygula
+            this.forceFooterTheme();
+            
+            // Fix CTA button text visibility
+            this.fixCTAButtons();
+        });
+    }
+    
+    forceFooterTheme() {
+        const footer = document.querySelector('.site-footer');
+        if (footer) {
+            // CSS transition'ı geçici olarak devre dışı bırak
+            footer.style.transition = 'none';
+            
+            // Tema değişikliğini zorla uygula
+            if (this.currentTheme === 'dark') {
+                footer.style.backgroundColor = '#1a1a1a';
+                footer.style.color = '#e5e5e5';
+            } else if (this.currentTheme === 'comfort') {
+                footer.style.backgroundColor = '#f8f9fa';
+                footer.style.color = '#2c3e50';
+            } else {
+                footer.style.backgroundColor = '#FFFFFF';
+                footer.style.color = '#333333';
+            }
+            
+            // Transition'ı geri aç
+            setTimeout(() => {
+                footer.style.transition = '';
+            }, 100);
+        }
+    }
+    
+    fixCTAButtons() {
+        const buttons = document.querySelectorAll('a[style*="color: #1f2937"]');
+        buttons.forEach(button => {
+            if (this.currentTheme === 'dark' || this.currentTheme === 'comfort') {
+                button.style.color = 'var(--text-primary)';
+            } else {
+                button.style.color = '#1f2937';
             }
         });
     }

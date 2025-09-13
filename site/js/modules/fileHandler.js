@@ -13,14 +13,34 @@ class FileHandler {
         this.sessionTimer = null; // Session timer
         this._dragIndex = null; // Drag & drop reorder state
         
-        // Limitler
-        this.MAX_FILES = 10;
-        this.MAX_TOTAL_SIZE = 100 * 1024 * 1024; // 100MB
+        // Limitler - config'den yüklenecek
+        this.MAX_FILES = 20; // Default değer, config'den güncellenecek
+        this.MAX_TOTAL_SIZE = 100 * 1024 * 1024; // 100MB - Default değer, config'den güncellenecek
         
         // Session süresi (5 dakika)
         this.SESSION_LIFETIME_MINUTES = 5;
         
         this.initializeEventListeners();
+        this.loadConfig();
+    }
+
+    /**
+     * Config'i API'den yükle
+     */
+    async loadConfig() {
+        try {
+            const response = await fetch('/api/config');
+            const config = await response.json();
+            
+            this.MAX_FILES = config.max_files;
+            this.MAX_TOTAL_SIZE = config.max_file_size_mb * 1024 * 1024;
+            this.SESSION_LIFETIME_MINUTES = config.session_lifetime_minutes;
+            
+            console.log('Config loaded:', config);
+        } catch (error) {
+            console.warn('Failed to load config, using defaults:', error);
+            // Default değerler zaten constructor'da ayarlandı
+        }
     }
 
     /**

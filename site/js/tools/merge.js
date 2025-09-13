@@ -24,6 +24,10 @@ class MergeTool {
             notifications.error('En az 2 PDF dosyası gereklidir');
             return;
         }
+        if (files.length > fileHandler.MAX_FILES) {
+            notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`);
+            return;
+        }
 
         // Process butonunu devre dışı bırak
         const processButton = document.getElementById('processButton');

@@ -14,7 +14,7 @@ body {
     color: #333;
     display: flex;
     flex-direction: column;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'SF Pro Display', 'SF Pro Text', 'SF Pro Icons', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
 }
@@ -211,9 +211,15 @@ a:hover {
 .theme-dark .border-green-200 { border-color: #10b981; }
 .theme-dark .border-blue-200 { border-color: #3b82f6; }
 .theme-dark .border-gray-800 { border-color: #374151; }
+.theme-dark .border-gray-600 { border-color: #6b7280; }
+.theme-dark .border-red-500 { border-color: #ef4444; }
+.theme-dark .border-blue-500 { border-color: #3b82f6; }
 
 .theme-comfort .border-blue-200 { border-color: #3b82f6; }
 .theme-comfort .border-gray-800 { border-color: #fed7aa; }
+.theme-comfort .border-gray-600 { border-color: #9ca3af; }
+.theme-comfort .border-red-500 { border-color: #dc2626; }
+.theme-comfort .border-blue-500 { border-color: #2563eb; }
 
 /* Colored Text */
 .theme-dark .text-red-600 { color: #fca5a5; }
@@ -235,34 +241,16 @@ a:hover {
 .theme-comfort .hover\:text-blue-600:hover { color: #16a34a; }
 .theme-comfort .hover\:text-red-600:hover { color: #dc2626; }
 
-/* Header and Footer Links */
-.theme-dark header a,
-.theme-dark footer a {
+/* Header and Footer Links - Sadece header için */
+.theme-dark header a {
     color: var(--text-secondary);
 }
 
-.theme-dark header a:hover,
-.theme-dark footer a:hover {
+.theme-dark header a:hover {
     color: var(--text-primary);
 }
 
-/* Footer Styles */
-footer a {
-    color: #9ca3af;
-}
-
-footer a:hover {
-    color: #ffffff;
-}
-
-.theme-comfort footer,
-.theme-comfort footer a {
-    color: #92400e;
-}
-
-.theme-comfort footer a:hover {
-    color: #451a03;
-}
+/* Footer stilleri components.css'de tanımlı */
 
 /* Gradients */
 .theme-dark .bg-gradient-to-r.from-blue-50.to-purple-50,
@@ -489,7 +477,7 @@ textarea:focus {
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
         font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-        font-family: 'SF Compact', 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        font-family: 'SF Pro Display', 'SF Pro Text', 'SF Pro Icons', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     }
     
     .container {
@@ -653,7 +641,7 @@ textarea:focus {
     
     h1, h2, h3, h4, h5, h6 {
         -webkit-font-smoothing: antialiased;
-        font-family: 'SF Compact', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        font-family: 'SF Pro Display', 'SF Pro Text', 'SF Pro Icons', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
         font-weight: 600;
     }
     
@@ -662,7 +650,7 @@ textarea:focus {
     .testimonial-card h4,
     .fact-card h3 {
         -webkit-font-smoothing: antialiased;
-        font-family: 'SF Compact', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        font-family: 'SF Pro Display', 'SF Pro Text', 'SF Pro Icons', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
         font-weight: 600;
     }
 }

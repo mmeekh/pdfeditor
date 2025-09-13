@@ -29,6 +29,10 @@ class SignTool {
       notifications.error('En az 1 PDF yükleyin'); 
       return; 
     }
+    if (files.length > fileHandler.MAX_FILES) { 
+      notifications.error(`Maksimum ${fileHandler.MAX_FILES} dosya`); 
+      return; 
+    }
 
     // İmza verilerini kontrol et
     if (!this.signatureData) {
