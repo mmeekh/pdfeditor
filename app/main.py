@@ -62,6 +62,12 @@ def health(request: Request):
         return Response(status_code=200)
     return {"status": "ok", "service": "pdfislemleri-api"}
 
+@app.api_route("/api/health", methods=["GET", "HEAD"])
+def api_health(request: Request):
+    if request.method == "HEAD":
+        return Response(status_code=200)
+    return {"status": "ok", "service": "pdfislemleri-api"}
+
 
 @app.get("/api/tools")
 def get_tools():

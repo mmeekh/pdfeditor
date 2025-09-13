@@ -19,14 +19,28 @@ class Settings(BaseSettings):
     # Cleanup and session
     FILE_CLEANUP_HOURS: int = 24
     SESSION_LIFETIME_MINUTES: int = 5
+    
+    # Security
+    SECRET_KEY: str = Field(default="your-super-secret-key-change-this-in-production")
+    DEBUG: bool = False
 
     # CORS
     ALLOW_ORIGINS: List[str] = Field(default_factory=lambda: [
+        "https://pdfislemleri.com",
+        "https://www.pdfislemleri.com",
         "http://localhost",
         "http://localhost:80",
         "http://localhost:3000",
         "http://localhost:8000",
     ])
+    
+    # Additional security settings
+    SECURE_SSL_REDIRECT: bool = True
+    SECURE_HSTS_SECONDS: int = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS: bool = True
+    SECURE_HSTS_PRELOAD: bool = True
+    SECURE_CONTENT_TYPE_NOSNIFF: bool = True
+    SECURE_BROWSER_XSS_FILTER: bool = True
     ALLOW_CREDENTIALS: bool = True
     ALLOW_METHODS: List[str] = Field(default_factory=lambda: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"])
     ALLOW_HEADERS: List[str] = Field(default_factory=lambda: [

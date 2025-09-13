@@ -1,6 +1,6 @@
-# PDFişlemleri.com - DevOps + Frontend Projesi
+# PDFişlemleri.com - Multi-Project DevOps Setup
 
-PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya alınmış.
+Modern PDF işlemleri platformu, Caddy + Docker Compose ile multi-project yapıda canlıya alınmış.
 
 ## 🚀 Özellikler
 
@@ -28,14 +28,37 @@ PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya
 - **Web Sunucusu**: Caddy v2.8 (otomatik HTTPS)
 - **API**: FastAPI (Python 3.11)
 - **Container**: Docker + Docker Compose
-- **Güvenlik**: CSP, HSTS, güvenlik başlıkları
+- **Multi-Project**: Caddy ile birden fazla proje yönetimi
+- **Güvenlik**: SSL, CSP, HSTS, güvenlik başlıkları
 - **SEO**: PWA, manifest, sitemap, robots.txt
 - **Performans**: zstd/gzip sıkıştırma, cache politikaları
-- **CSS Yapısı**: Modülerleştirilmiş stil dosyaları (`base.css`, `components.css`, `theme.css`) ile daha düzenli ve ölçeklenebilir frontend geliştirme
+- **Dynamic Config**: Backend'den frontend'e dinamik konfigürasyon
+
+## 🏗️ Multi-Project Yapısı
+
+```
+root/
+├── caddy/
+│   ├── Caddyfile                    # Ana Caddy konfigürasyonu
+│   └── sites/
+│       ├── pdfislemleri.com.Caddyfile
+│       └── yakinimdakideprem.com.Caddyfile
+├── projects/
+│   ├── pdfislemleri.com/
+│   │   ├── .env
+│   │   ├── app/                     # FastAPI backend
+│   │   └── site/                    # Frontend files
+│   └── yakinimdakideprem.com/
+│       ├── .env
+│       ├── app/
+│       └── site/
+└── docker-compose.yml               # Root orchestration
+```
 
 ## 🔌 API Endpoints
 
 ### Genel Endpoints
+- `GET /api/config` - Dinamik konfigürasyon (dosya limitleri, boyut limitleri)
 - `GET /api/tools` - Mevcut tüm PDF araçlarını listeler
 - `GET /api/status` - API durumunu kontrol eder
 - `GET /health` - Sağlık kontrolü
@@ -59,246 +82,145 @@ PDF işlemleri için modern web uygulaması, Caddy + Docker Compose ile canlıya
 - `POST /api/pdf-to-excel` - PDF'den Excel'e dönüştürme
 - `POST /api/pdf-ocr` - PDF OCR işlemi
 
-## ⚙️ Environment
+## ⚙️ Konfigürasyon
 
-CORS için izin verilen alan adları `.env` dosyasındaki `ALLOW_ORIGINS` değeri ile yapılandırılır. Format olarak JSON dizisi kullanılmalıdır; örnek için `.env.example` dosyasına bakabilirsiniz.
+### Environment Variables
+Her proje kendi `.env` dosyasına sahiptir:
 
-## 📁 Proje Yapısı
+```env
+# projects/pdfislemleri.com/.env
+ALLOW_ORIGINS=["https://pdfislemleri.com", "https://www.pdfislemleri.com"]
+MAX_FILES=20
+MAX_FILE_SIZE=104857600
+SESSION_LIFETIME_MINUTES=5
+FILE_CLEANUP_HOURS=24
+```
 
-C:.
-│   .env
-│   .gitignore
-│   Caddyfile
-│   caddy-sites
-│   deploy.sh
-│   docker-compose.yml
-│   env.example
-│   package.json
-│   README.md
-│   tailwind.config.js
-│   vite.config.js
-│
-├───.github
-│   └───workflows
-│           deploy.yml
-│
-├───caddy-sites
-│       pdfislemleri.com.Caddyfile
-│
-├───app
-│   │   compress.py
-│   │   Dockerfile
-│   │   Dockerfile.dev
-│   │   main.py
-│   │   merge.py
-│   │   organize.py
-│   │   pdf_ocr.py
-│   │   pdf_to_jpg.py
-│   │   pdf_to_ppt.py
-│   │   pdf_to_word.py
-│   │   protect.py
-│   │   requirements.txt
-│   │   rotate.py
-│   │   sign.py
-│   │   split.py
-│   │   unlock.py
-│   │   watermark.py
-│   │   word_to_pdf.py
-│   │
-│   ├───core
-│   │       config.py
-│   │       lifespan.py
-│   │       middleware.py
-│   │       utils.py
-│   │       __init__.py
-│   │
-│   ├───routers
-│   │       compress.py
-│   │       merge.py
-│   │       organize.py
-│   │       pdf_ocr.py
-│   │       pdf_to_excel.py
-│   │       pdf_to_jpg.py
-│   │       pdf_to_ppt.py
-│   │       pdf_to_word.py
-│   │       protect.py
-│   │       rotate.py
-│   │       session.py
-│   │       sign.py
-│   │       split.py
-│   │       unlock.py
-│   │       watermark.py
-│   │       word_to_pdf.py
-│   │       __init__.py
-│   │
-│   └───temp
-└───site
-    │   about.html
-    │   blog.html
-    │   contact.html
-    │   cookies.html
-    │   index.html
-    │   kvkk.html
-    │   privacy.html
-    │   robots.txt
-    │   scroll-manager.js
-    │   security.txt
-    │   sitemap.xml
-    │   style.css
-    │   terms.html
-    │
-    ├───blog
-    │       pdf-birlestirme.html
-    │       pdf-boyut-kucultme.html
-    │       pdf-filigran.html
-    │       pdf-formlari.html
-    │       pdf-guvenlik.html
-    │       pdf-imzalama.html
-    │       pdf-ocr.html
-    │       pdf-sifre-kaldirma.html
-    │       telefondan-pdf-duzenleme.html
-    │       word-pdf-donusturme.html
-    │
-    ├───cardbgs
-    │       Compression.webp
-    │       merge.webp
-    │       pdflock.webp
-    │       pdfocr.webp
-    │       pdforganize.webp
-    │       pdfrotate.webp
-    │       pdftoexcel.webp
-    │       pdftoimage.webp
-    │       pdftoppt.webp
-    │       pdftoword_no_bg.webp
-    │       pdfwatermark.webp
-    │       signature.webp
-    │       split.webp
-    │       unlock_no_bg.webp
-    │       wordtopdf.webp
-    │
-    ├───css
-    │       base.css
-    │       components.css
-    │       gradients.css
-    │       theme.css
-    │
-    ├───icons
-    │       apple-touch-icon.webp
-    │       browserconfig.xml
-    │       favicon.ico
-    │       icon-192x192.webp
-    │       icon-512x512.webp
-    │       icon-96x96.webp
-    │       logo.webp
-    │       mstile-150x150.webp
-    │       safari-pinned-tab.svg
-    │       site.webmanifest
-    │
-    ├───images
-    │       about-og.jpeg
-    │       blog-og.jpeg
-    │       catpdf.webp
-    │       home-og.jpeg
-    │       mobile-pdf-edit.webp
-    │       pdcsec.webp
-    │       pdf-compress.webp
-    │       pdf-forms.webp
-    │       pdf-merge.webp
-    │       pdf-ocr.webp
-    │       pdf-security.webp
-    │       pdf-signature.webp
-    │       pdfandoc.webp
-    │       terms-og.webp
-    │       word-to-pdf.webp
-    │
-    └───js
-        │   main.js
-        │   theme-manager.js
-        │
-        ├───modules
-        │       api.js
-        │       app.js
-        │       buttonListeners.js
-        │       cookieManager.js
-        │       fileHandler.js
-        │       lazyLoader.js
-        │       loader.js
-        │       mobileNavigationManager.js
-        │       notifications.js
-        │       performanceMonitor.js
-        │       toolManager.js
-        │
-        ├───structured-data
-        │       faq.json
-        │       organization.json
-        │       service-merge.json
-        │       service-sign.json
-        │       webapp.json
-        │
-        └───tools
-                compress.js
-                merge.js
-                organize.js
-                pdf-ocr.js
-                pdf-to-excel.js
-                pdf-to-jpg.js
-                pdf-to-ppt.js
-                pdf-to-word.js
-                protect.js
-                rotate.js
-                sign.js
-                split.js
-                unlock.js
-                watermark.js
-                word-to-pdf.js
-
+### Dynamic Configuration
+Frontend, backend'den dinamik olarak konfigürasyon alır:
+- Dosya limitleri (`MAX_FILES`)
+- Boyut limitleri (`MAX_FILE_SIZE`)
+- Session süreleri (`SESSION_LIFETIME_MINUTES`)
 
 ## 🛠️ Kurulum
 
 ### Ön Gereksinimler
-
 - Ubuntu 22.04+ VPS
 - Root erişimi
-- Domain (pdfislemleri.com) DNS ayarları
+- Domain DNS ayarları
+- Docker & Docker Compose
 
-### Geliştirme Ortamı
+### 1. Proje Yapısını Oluştur
 
 ```bash
-# Projeyi klonlayın
-git clone <repository-url>
-cd pdfislemleri.com
+# Root dizininde
+mkdir -p caddy/sites
+mkdir -p projects/pdfislemleri.com
+mkdir -p projects/yakinimdakideprem.com
 
-# Docker Compose ile çalıştırın
+# Projeyi kopyala
+cp -r pdfislemleri.com/* projects/pdfislemleri.com/
+```
+
+### 2. Caddy Konfigürasyonu
+
+```bash
+# Ana Caddyfile
+cat > caddy/Caddyfile << 'EOF'
+{
+  email your-email@example.com
+}
+
+import sites/*.Caddyfile
+EOF
+
+# PDFişlemleri.com Caddyfile
+cat > caddy/sites/pdfislemleri.com.Caddyfile << 'EOF'
+pdfislemleri.com {
+    reverse_proxy /api/* pdfislemleri-api:2000
+    reverse_proxy /* pdfislemleri-frontend:80
+}
+
+www.pdfislemleri.com {
+    reverse_proxy /api/* pdfislemleri-api:2000
+    reverse_proxy /* pdfislemleri-frontend:80
+}
+EOF
+```
+
+### 3. Docker Compose
+
+```bash
+# Root docker-compose.yml
+cat > docker-compose.yml << 'EOF'
+version: "3.9"
+
+services:
+  caddy:
+    image: caddy:2.8
+    container_name: root-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - EMAIL=your-email@example.com
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy/sites:/etc/caddy/sites:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - caddy_network
+      - pdfislemleri_network
+
+  pdfislemleri-api:
+    build:
+      context: ./projects/pdfislemleri.com/app
+    container_name: pdfislemleri-api
+    restart: unless-stopped
+    expose:
+      - "2000"
+    env_file:
+      - ./projects/pdfislemleri.com/.env
+    volumes:
+      - api_temp:/app/temp
+    networks:
+      - caddy_network
+      - pdfislemleri_network
+
+  pdfislemleri-frontend:
+    image: nginx:alpine
+    container_name: pdfislemleri-frontend
+    restart: unless-stopped
+    volumes:
+      - ./projects/pdfislemleri.com/site:/usr/share/nginx/html:ro
+    networks:
+      - caddy_network
+      - pdfislemleri_network
+
+volumes:
+  caddy_data:
+  caddy_config:
+  api_temp:
+
+networks:
+  caddy_network:
+    driver: bridge
+  pdfislemleri_network:
+    driver: bridge
+EOF
+```
+
+### 4. Servisleri Başlat
+
+```bash
+# Servisleri başlat
 docker-compose up -d
 
-# Geliştirme modunda çalıştırın
-docker-compose -f docker-compose.dev.yml up -d
+# Logları kontrol et
+docker-compose logs -f caddy
 ```
-
-### Üretim Ortamı
-
-```bash
-# Üretim ortamında çalıştırın
-docker-compose up -d
-
-# Logları kontrol edin
-docker-compose logs -f
-```
-
-### Frontend Geliştirme
-
-```bash
-# Bağımlılıkları yükleyin
-npm install
-
-# Tailwind CSS'i derleyin
-npx tailwindcss -i ./site/css/base.css -o ./site/style.css --watch
-
-# Vite ile geliştirme sunucusunu başlatın
-npm run dev
-```
-
-
 
 ## 🔒 Güvenlik
 
@@ -306,6 +228,119 @@ npm run dev
 - **CSP**: Content Security Policy
 - **HSTS**: HTTP Strict Transport Security
 - **Headers**: Güvenlik başlıkları
-- **Firewall**: UFW port açma
-- **Rate Limiting & Fail2ban**: Brute force ve DDoS girişimlerine karşı ek güvenlik katmanı
+- **Rate Limiting**: API rate limiting
+- **File Cleanup**: Otomatik dosya temizleme
+- **Session Management**: Güvenli session yönetimi
 
+## 📊 Monitoring
+
+```bash
+# Container durumları
+docker-compose ps
+
+# Logları izle
+docker-compose logs -f
+
+# API sağlık kontrolü
+curl https://pdfislemleri.com/api/health
+
+# Konfigürasyon kontrolü
+curl https://pdfislemleri.com/api/config
+```
+
+## 🚀 Deployment
+
+### Yeni Proje Ekleme
+
+1. **Proje klasörünü oluştur**:
+   ```bash
+   mkdir -p projects/yeni-proje.com
+   ```
+
+2. **Caddyfile oluştur**:
+   ```bash
+   cat > caddy/sites/yeni-proje.com.Caddyfile << 'EOF'
+   yeni-proje.com {
+       reverse_proxy /api/* yeni-proje-api:2000
+       reverse_proxy /* yeni-proje-frontend:80
+   }
+   EOF
+   ```
+
+3. **Docker Compose'a servis ekle**:
+   ```yaml
+   yeni-proje-api:
+     build:
+       context: ./projects/yeni-proje.com/app
+     container_name: yeni-proje-api
+     restart: unless-stopped
+     expose:
+       - "2000"
+     env_file:
+       - ./projects/yeni-proje.com/.env
+     networks:
+       - caddy_network
+       - yeni_proje_network
+   ```
+
+4. **Caddy'yi yeniden başlat**:
+   ```bash
+   docker-compose restart caddy
+   ```
+
+## 🔧 Geliştirme
+
+### Frontend Geliştirme
+```bash
+# Tailwind CSS derleme
+npx tailwindcss -i ./site/css/base.css -o ./site/style.css --watch
+
+# Vite geliştirme sunucusu
+npm run dev
+```
+
+### Backend Geliştirme
+```bash
+# Geliştirme modunda çalıştır
+docker-compose -f docker-compose.dev.yml up -d
+
+# API logları
+docker-compose logs -f pdfislemleri-api
+```
+
+## 📝 Notlar
+
+- Her proje kendi `.env` dosyasına sahiptir
+- Caddy otomatik SSL sertifikası alır
+- Dosyalar işlem sonrası otomatik silinir
+- Multi-project yapı sayesinde kolayca yeni projeler eklenebilir
+- Dynamic configuration ile frontend-backend senkronizasyonu
+
+## 🆘 Troubleshooting
+
+### Port Çakışması
+```bash
+# Port kullanımını kontrol et
+netstat -tlnp | grep :80
+
+# Eski container'ları durdur
+docker-compose down
+```
+
+### SSL Sorunları
+```bash
+# Caddy logları
+docker-compose logs caddy
+
+# SSL sertifikalarını yenile
+docker-compose restart caddy
+```
+
+### API Bağlantı Sorunları
+```bash
+# API sağlık kontrolü
+curl http://localhost/api/health
+
+# Container durumları
+docker-compose ps
+```
