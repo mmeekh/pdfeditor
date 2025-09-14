@@ -319,6 +319,17 @@
             <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Birleştir, Ayır, Sıkıştır - Ücretsiz Online PDF Araçları</h1>
             <p class="text-gray-600 max-w-2xl mx-auto mb-8">PDF birleştirme, ayırma, sıkıştırma, dönüştürme işlemlerini ücretsiz yapın! Word'den PDF'e, PDF'den Word'e, PDF şifre kaldırma, PDF imzalama. Hızlı, güvenli ve programsız PDF araçları.</p>
 
+            <!-- Search Box -->
+            <div class="max-w-md mx-auto mb-6">
+                <div class="relative">
+                    <input type="text" id="main-search-input" placeholder="PDF araçları, rehberler, yardım..." 
+                           class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm">
+                    <button id="main-search-btn" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-600 transition">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
             <div class="mt-4 text-sm text-gray-500 italic">
                 <i class="fas fa-lightbulb text-yellow-500"></i> İpucu: Tüm PDF işlemlerinizi tek platformda, ücretsiz ve güvenli şekilde gerçekleştirin!
             </div>
@@ -899,5 +910,6 @@
     
     <!-- JavaScript - Modular System Only -->
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/modules/searchManager.js"></script>
 </body>
 </html>
