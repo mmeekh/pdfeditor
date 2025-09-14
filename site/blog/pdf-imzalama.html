@@ -120,7 +120,7 @@
                     </a>
                     
                     <!-- Araçlar Butonu (Mobil) -->
-                    <button id="mobile-tools-btn" class="md:hidden flex items-center space-x-1 px-2 py-1 text-gray-600 hover:text-blue-600 transition-colors">
+                    <button id="mobile-tools-btn" class="md:hidden flex items-center space-x-1 px-2 py-1 text-white hover:text-white transition-colors">
                         <span class="font-medium text-sm">Araçlar</span>
                         <i class="fas fa-chevron-up text-xs transition-transform" id="tools-arrow"></i>
                     </button>
@@ -128,18 +128,18 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-6">
-                    <a href="/" class="text-gray-600 hover:text-blue-600 transition">Ana Sayfa</a>
-                    <a href="/blog" class="text-blue-600 font-medium">Blog</a>
-                    <a href="/about" class="text-gray-600 hover:text-blue-600 transition">Hakkımızda</a>
-                    <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
+                    <a href="/" class="text-white hover:text-white transition">Ana Sayfa</a>
+                    <a href="/blog" class="text-white font-medium">Blog</a>
+                    <a href="/about" class="text-white hover:text-white transition">Hakkımızda</a>
+                    <a href="/contact" class="text-white hover:text-white transition">İletişim</a>
                 </nav>
 
                 <!-- Theme Toggle Buttons -->
                 <div class="flex items-center space-x-1">
-                    <button id="night-mode-btn" class="text-gray-600 hover:text-blue-600 transition p-2 rounded-lg hover:bg-gray-100" title="Gece Modu" tabindex="0" role="button" aria-label="Gece modunu aç/kapat">
+                    <button id="night-mode-btn" class="text-white hover:text-white transition p-2 rounded-lg hover:bg-gray-100" title="Gece Modu" tabindex="0" role="button" aria-label="Gece modunu aç/kapat">
                         <span class="text-lg">🌙</span>
                     </button>
-                    <button id="comfort-mode-btn" class="text-gray-600 hover:text-green-600 transition p-2 rounded-lg hover:bg-gray-100" title="Konfor Modu" tabindex="0" role="button" aria-label="Konfor modunu aç/kapat">
+                    <button id="comfort-mode-btn" class="text-white hover:text-white transition p-2 rounded-lg hover:bg-gray-100" title="Konfor Modu" tabindex="0" role="button" aria-label="Konfor modunu aç/kapat">
                         <span class="text-lg">👀</span>
                     </button>
                 </div>
@@ -152,21 +152,27 @@
                     <div class="mb-5">
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sayfalar</h3>
                         <div class="flex space-x-1 justify-start">
+                            <a href="/" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+                                    <i class="fas fa-home text-white text-lg"></i>
+                                </div>
+                                <span class="text-gray-800 font-medium text-xs text-center">Ana Sayfa</span>
+                            </a>
                             <a href="/blog" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
-                                    <i class="fas fa-newspaper text-red-600 text-lg"></i>
+                                    <i class="fas fa-newspaper text-white text-lg"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-xs text-center">Blog</span>
                             </a>
                             <a href="/about" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
-                                    <i class="fas fa-users text-red-600 text-lg"></i>
+                                    <i class="fas fa-users text-white text-lg"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-xs text-center">Hakkımızda</span>
                             </a>
                             <a href="/contact" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
-                                    <i class="fas fa-phone-alt text-red-600 text-lg"></i>
+                                    <i class="fas fa-phone-alt text-white text-lg"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-xs text-center">İletişim</span>
                             </a>
@@ -178,8 +184,8 @@
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sıkıştır</h3>
                         <div class="grid grid-cols-2 gap-2">
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-blue-100">
-                                    <i class="fas fa-compress-arrows-alt text-blue-600 text-sm"></i>
+                                <div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-compress-arrows-alt text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Sıkıştır</span>
                             </a>
@@ -191,8 +197,8 @@
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Birleştir</h3>
                         <div class="grid grid-cols-2 gap-2">
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-green-100">
-                                    <i class="fas fa-layer-group text-green-600 text-sm"></i>
+                                <div class="pdf-to-excel-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-layer-group text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Birleştir</span>
                             </a>
@@ -204,26 +210,26 @@
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Dönüştür</h3>
                         <div class="grid grid-cols-2 gap-2">
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-word">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-purple-100">
-                                    <i class="fas fa-file-word text-purple-600 text-sm"></i>
+                                <div class="pdf-to-word-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-file-word text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Word'e</span>
                             </a>
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-jpg">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-yellow-100">
-                                    <i class="fas fa-image text-yellow-600 text-sm"></i>
+                                <div class="pdf-to-jpg-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-image text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">JPG'ye</span>
                             </a>
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-ppt">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-orange-100">
-                                    <i class="fas fa-file-powerpoint text-orange-600 text-sm"></i>
+                                <div class="pdf-to-ppt-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-file-powerpoint text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">PPT'ye</span>
                             </a>
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-excel">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-green-100">
-                                    <i class="fas fa-file-excel text-green-600 text-sm"></i>
+                                <div class="pdf-to-excel-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-file-excel text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Excel'e</span>
                             </a>
@@ -235,14 +241,14 @@
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Güvenlik</h3>
                         <div class="grid grid-cols-2 gap-2">
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="protect">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-red-100">
-                                    <i class="fas fa-lock text-red-600 text-sm"></i>
+                                <div class="protect-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-lock text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Koruma</span>
                             </a>
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="unlock">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-green-100">
-                                    <i class="fas fa-unlock text-green-600 text-sm"></i>
+                                <div class="pdf-to-excel-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-unlock text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Kilidi Aç</span>
                             </a>
@@ -254,26 +260,26 @@
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Düzenle</h3>
                         <div class="grid grid-cols-2 gap-2">
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="split">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-indigo-100">
-                                    <i class="fas fa-cut text-indigo-600 text-sm"></i>
+                                <div class="split-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-cut text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Böl</span>
                             </a>
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="rotate">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-blue-100">
-                                    <i class="fas fa-redo text-blue-600 text-sm"></i>
+                                <div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-redo text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Döndür</span>
                             </a>
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="watermark">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-gray-100">
-                                    <i class="fas fa-stamp text-gray-600 text-sm"></i>
+                                <div class="watermark-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-stamp text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Filigran</span>
                             </a>
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="organize">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-purple-100">
-                                    <i class="fas fa-sort text-purple-600 text-sm"></i>
+                                <div class="pdf-to-word-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-sort text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Düzenle</span>
                             </a>
@@ -285,8 +291,8 @@
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">İmza</h3>
                         <div class="grid grid-cols-2 gap-2">
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="sign">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-blue-100">
-                                    <i class="fas fa-signature text-blue-600 text-sm"></i>
+                                <div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-signature text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">İmzala</span>
                             </a>
@@ -298,8 +304,8 @@
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">OCR</h3>
                         <div class="grid grid-cols-2 gap-2">
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-ocr">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-indigo-100">
-                                    <i class="fas fa-eye text-indigo-600 text-sm"></i>
+                                <div class="split-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-eye text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">OCR</span>
                             </a>
@@ -311,8 +317,8 @@
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Word'den PDF</h3>
                         <div class="grid grid-cols-2 gap-2">
                             <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="word-to-pdf">
-                                <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-blue-100">
-                                    <i class="fas fa-file-pdf text-blue-600 text-sm"></i>
+                                <div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-file-pdf text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-sm">Word'den PDF</span>
                             </a>
@@ -334,7 +340,7 @@
                     <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium ml-2">Ücretsiz Araç</span>
                 </div>
                 <h1 class="text-4xl font-bold text-gray-800 mb-4">İmzasız Belge Kalmasın: Adım Adım Online PDF İmzalama</h1>
-                <div class="flex items-center text-gray-600 mb-6">
+                <div class="flex items-center text-white mb-6">
                     <div class="flex items-center mr-6">
                         <div>
                             <p class="font-medium text-gray-800">Mehmet Demir</p>
@@ -355,7 +361,7 @@
             </div>
 
             <img src="/images/pdf-signature.webp" alt="PDF İmzalama" class="w-full rounded-lg mb-8" width="1536" height="1024" loading="lazy">
-            <p class="text-xl text-gray-600 leading-relaxed mb-6">
+            <p class="text-xl text-white leading-relaxed mb-6">
                 PDF dosyalarınızı ücretsiz olarak dijital imza ile imzalayın! PDFişlemleri.com'un 
                 gelişmiş PDF imzalama aracı ile belgelerinizi yazdırmadan, elle çizilen veya yüklenen 
                 imzalar ile güvenli şekilde imzalayabilirsiniz. Modern dijital imza teknolojileri 
@@ -431,7 +437,7 @@
                     güvenli şekilde imzalayın. Elle çizilen veya yüklenen imzalar ile 
                     profesyonel sonuçlar elde edin.
                 </p>
-                <a href="/sign" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors">
+                <a href="/sign" class="inline-block bg-white text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors">
                     <i class="fas fa-arrow-right mr-2"></i>PDF İmzala
                 </a>
             </div>
@@ -444,19 +450,19 @@
                 <a href="/blog/pdf-formlari" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="p-6">
                         <h3 class="font-semibold text-gray-800 mb-2">PDF Formları</h3>
-                        <p class="text-gray-600 text-sm">Dijital belge doldurma sanatı</p>
+                        <p class="text-white text-sm">Dijital belge doldurma sanatı</p>
                     </div>
                 </a>
                 <a href="/blog/pdf-guvenlik" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="p-6">
                         <h3 class="font-semibold text-gray-800 mb-2">PDF Güvenlik</h3>
-                        <p class="text-gray-600 text-sm">PDF dosyalarınızı nasıl koruyabilirsiniz?</p>
+                        <p class="text-white text-sm">PDF dosyalarınızı nasıl koruyabilirsiniz?</p>
                     </div>
                 </a>
                 <a href="/blog/pdf-birlestirme" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="p-6">
                         <h3 class="font-semibold text-gray-800 mb-2">PDF Birleştirme</h3>
-                        <p class="text-gray-600 text-sm">Birden fazla dosyayı tek PDF'te toplayın</p>
+                        <p class="text-white text-sm">Birden fazla dosyayı tek PDF'te toplayın</p>
                     </div>
                 </a>
             </div>
