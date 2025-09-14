@@ -31,11 +31,6 @@
             "PDF OCR",
             "PDF'den Excel'e Dönüştürme"
         ],
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://pdfislemleri.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        },
         "author": {
             "@type": "Organization",
             "name": "PDFişlemleri.com",
