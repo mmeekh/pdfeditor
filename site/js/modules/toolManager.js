@@ -104,6 +104,18 @@ class ToolManager {
                 this.resetTool();
             }
         });
+
+        // Mobil tool butonları için event listener
+        document.addEventListener('click', (e) => {
+            const mobileToolItem = e.target.closest('.mobile-tool-item');
+            if (mobileToolItem) {
+                e.preventDefault();
+                const toolName = mobileToolItem.getAttribute('data-tool');
+                if (toolName) {
+                    this.openTool(toolName);
+                }
+            }
+        });
     }
 
     /**
