@@ -11,7 +11,6 @@ import { MobileNavigationManager } from './mobileNavigationManager.js';
 import { initializeButtonEventListeners } from './buttonListeners.js';
 import pdfApi from './api.js';
 import notifications from './notifications.js';
-import toolManager from './toolManager.js';
 
 class App {
     constructor() {
@@ -25,7 +24,6 @@ class App {
             window.performanceMonitor = new PerformanceMonitor();
             window.lazyLoader = new LazyLoader();
             window.mobileNavigationManager = new MobileNavigationManager();
-            window.toolManager = new toolManager();
 
             document.addEventListener('click', (e) => {
                 const target = e.target.closest('a');
