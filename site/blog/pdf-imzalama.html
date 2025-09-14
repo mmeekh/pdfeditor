@@ -120,7 +120,7 @@
                     </a>
                     
                     <!-- Araçlar Butonu (Mobil) -->
-                    <button id="mobile-tools-btn" class="md:hidden flex items-center space-x-1 px-2 py-1 text-white hover:text-white transition-colors">
+                    <button id="mobile-tools-btn" class="md:hidden flex items-center space-x-1 px-2 py-1 text-gray-600 hover:text-blue-600 transition-colors">
                         <span class="font-medium text-sm">Araçlar</span>
                         <i class="fas fa-chevron-up text-xs transition-transform" id="tools-arrow"></i>
                     </a>
@@ -128,10 +128,10 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-6">
-                    <a href="/" class="text-white hover:text-white transition">Ana Sayfa</a>
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition">Ana Sayfa</a>
                     <a href="/blog" class="text-white font-medium">Blog</a>
-                    <a href="/about" class="text-white hover:text-white transition">Hakkımızda</a>
-                    <a href="/contact" class="text-white hover:text-white transition">İletişim</a>
+                    <a href="/about" class="text-gray-600 hover:text-blue-600 transition">Hakkımızda</a>
+                    <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
                 </nav>
 
                 <!-- Theme Toggle Buttons -->
@@ -154,25 +154,25 @@
                         <div class="flex space-x-1 justify-start">
                             <a href="/" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
-                                    <i class="fas fa-home text-white text-lg"></i>
+                                    <i class="fas fa-home text-red-600 text-lg"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-xs text-center">Ana Sayfa</span>
                             </a>
                             <a href="/blog" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
-                                    <i class="fas fa-newspaper text-white text-lg"></i>
+                                    <i class="fas fa-newspaper text-red-600 text-lg"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-xs text-center">Blog</span>
                             </a>
                             <a href="/about" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
-                                    <i class="fas fa-users text-white text-lg"></i>
+                                    <i class="fas fa-users text-red-600 text-lg"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-xs text-center">Hakkımızda</span>
                             </a>
                             <a href="/contact" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
-                                    <i class="fas fa-phone-alt text-white text-lg"></i>
+                                    <i class="fas fa-phone-alt text-red-600 text-lg"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium text-xs text-center">İletişim</span>
                             </a>
@@ -334,33 +334,33 @@
         <!-- Article Content -->
         <article class="prose prose-lg max-w-4xl mx-auto">
             <!-- Blog Header Content -->
-            <div class="mb-8">
+            <div class="mb-6 sm:mb-8">
                 <div class="mb-4">
                     <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">PDF İmzalama</span>
                     <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium ml-2">Ücretsiz Araç</span>
                 </div>
-                <h1 class="text-4xl font-bold text-gray-800 mb-4">İmzasız Belge Kalmasın: Adım Adım Online PDF İmzalama</h1>
-                <div class="flex items-center text-white mb-6">
-                    <div class="flex items-center mr-6">
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">İmzasız Belge Kalmasın: Adım Adım Online PDF İmzalama</h1>
+                <div class="flex flex-col sm:flex-row sm:items-center text-gray-600 mb-4 sm:mb-6">
+                    <div class="flex items-center mr-0 sm:mr-6 mb-2 sm:mb-0">
                         <div>
                             <p class="font-medium text-gray-800">Mehmet Demir</p>
                             <p class="text-sm text-gray-500">PDF Uzmanı</p>
                         </div>
                     </div>
                     <div class="flex items-center text-sm text-gray-500">
-                        <i class="fas fa-calendar mr-2"></i>
+                        <i class="fas fa-calendar mr-1 sm:mr-2"></i>
                         <span>8 Aralık 2024</span>
                         <span class="mx-4">•</span>
-                        <i class="fas fa-clock mr-2"></i>
+                        <i class="fas fa-clock mr-1 sm:mr-2"></i>
                         <span>6 dk okuma</span>
                         <span class="mx-4">•</span>
-                        <i class="fas fa-eye mr-2"></i>
+                        <i class="fas fa-eye mr-1 sm:mr-2"></i>
                         <span>1.8K görüntüleme</span>
                     </div>
                 </div>
             </div>
 
-            <img src="/images/pdf-signature.webp" alt="PDF İmzalama" class="w-full rounded-lg mb-8" width="1536" height="1024" loading="lazy">
+            <img src="/images/pdf-signature.webp" alt="PDF İmzalama" class="w-full rounded-lg mb-6 sm:mb-8" width="1536" height="1024" loading="lazy">
             <p class="text-xl text-white leading-relaxed mb-6">
                 PDF dosyalarınızı ücretsiz olarak dijital imza ile imzalayın! PDFişlemleri.com'un 
                 gelişmiş PDF imzalama aracı ile belgelerinizi yazdırmadan, elle çizilen veya yüklenen 
@@ -376,7 +376,7 @@
                 yazdırmaya gerek yok.
             </p>
 
-            <p class="text-gray-700 leading-relaxed mb-8">
+            <p class="text-gray-700 leading-relaxed mb-6 sm:mb-8">
                 Online PDF imzalama araçları, kullanıcı dostu arayüzleri sayesinde herkesin kolayca 
                 kullanabileceği çözümler sunuyor. Bu araçlar sadece imza ekleme işlevi değil, 
                 aynı zamanda belge güvenliği, imza doğrulama ve yasal geçerlilik gibi önemli 
@@ -394,7 +394,7 @@
                 belgenin değiştirilmediğini garanti eder.
             </p>
 
-            <p class="text-gray-700 leading-relaxed mb-8">
+            <p class="text-gray-700 leading-relaxed mb-6 sm:mb-8">
                 Nitelikli elektronik imza, en güvenli ve yasal olarak en güçlü imza türüdür. 
                 Bu imza türü, özel sertifikalar kullanır ve Avrupa Birliği eIDAS düzenlemelerine 
                 uygun olarak geliştirilmiştir. Nitelikli elektronik imza, el yazısı imzaya 
@@ -411,7 +411,7 @@
                 yöntemiyle imza ekleme imkanı sunar, bu da süreci oldukça kolaylaştırır.
             </p>
 
-            <p class="text-gray-700 leading-relaxed mb-8">
+            <p class="text-gray-700 leading-relaxed mb-6 sm:mb-8">
                 İmza ekleme işlemi tamamlandıktan sonra, belge otomatik olarak şifrelenir ve 
                 güvenli bir şekilde saklanır. İmzalayan kişi, imzaladığı belgeyi e-posta ile 
                 gönderebilir veya bulut depolama hizmetlerinde saklayabilir. Ayrıca, çoğu araç 
@@ -438,7 +438,7 @@
                     profesyonel sonuçlar elde edin.
                 </p>
                 <a href="javascript:void(0)" class="inline-block bg-white text-gray-800 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors mobile-tool-item" data-tool="sign">
-                    <i class="fas fa-arrow-right mr-2"></i>PDF İmzala
+                    <i class="fas fa-arrow-right mr-1 sm:mr-2"></i>PDF İmzala
                 </a>
             </div>
         </article>
@@ -475,7 +475,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12 mt-16">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-6 sm:mb-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
                         <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
@@ -486,37 +486,37 @@
                 <div>
                     <h4 class="font-semibold text-lg mb-4">Araçlar</h4>
                     <ul class="space-y-2">
-                        <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Birleştir</a></li>
-                        <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Ayır</a></li>
-                        <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Sıkıştır</a></li>
-                        <li><a href="/" class="text-gray-400 hover:text-white transition">PDF Dönüştür</a></li>
+                        <li><a href="/" class="text-gray-400 hover:text-blue-600 transition">PDF Birleştir</a></li>
+                        <li><a href="/" class="text-gray-400 hover:text-blue-600 transition">PDF Ayır</a></li>
+                        <li><a href="/" class="text-gray-400 hover:text-blue-600 transition">PDF Sıkıştır</a></li>
+                        <li><a href="/" class="text-gray-400 hover:text-blue-600 transition">PDF Dönüştür</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg mb-4">Şirket</h4>
                     <ul class="space-y-2">
-                        <li><a href="/about" class="text-gray-400 hover:text-white transition">Hakkımızda</a></li>
+                        <li><a href="/about" class="text-gray-400 hover:text-blue-600 transition">Hakkımızda</a></li>
                         <li><a href="/blog" class="text-blue-400 font-medium">Blog</a></li>
-                        <li><a href="/contact" class="text-gray-400 hover:text-white transition">İletişim</a></li>
+                        <li><a href="/contact" class="text-gray-400 hover:text-blue-600 transition">İletişim</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg mb-4">Yasal</h4>
                     <ul class="space-y-2">
-                        <li><a href="/terms" class="text-gray-400 hover:text-white transition">Hizmet Şartları</a></li>
-                        <li><a href="/privacy" class="text-gray-400 hover:text-white transition">Gizlilik Politikası</a></li>
-                        <li><a href="/cookies" class="text-gray-400 hover:text-white transition">Çerez Politikası</a></li>
-                        <li><a href="/kvkk" class="text-gray-400 hover:text-white transition">KVKK</a></li>
+                        <li><a href="/terms" class="text-gray-400 hover:text-blue-600 transition">Hizmet Şartları</a></li>
+                        <li><a href="/privacy" class="text-gray-400 hover:text-blue-600 transition">Gizlilik Politikası</a></li>
+                        <li><a href="/cookies" class="text-gray-400 hover:text-blue-600 transition">Çerez Politikası</a></li>
+                        <li><a href="/kvkk" class="text-gray-400 hover:text-blue-600 transition">KVKK</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 mb-4 md:mb-0">© 2024 PDFişlemleri.com. Tüm hakları saklıdır.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                <div class="flex space-x-2 sm:space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
