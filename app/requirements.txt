@@ -16,10 +16,6 @@ python-docx==1.1.2
 
 # OCR Kütüphaneleri
 pytesseract==0.3.10
-# Tesseract OCR dil paketleri için sistem kurulumu gerekli:
-# Windows: https://github.com/UB-Mannheim/tesseract/wiki
-# Ubuntu: sudo apt-get install tesseract-ocr tesseract-ocr-tur
-# macOS: brew install tesseract tesseract-lang
 
 # Excel İşleme Kütüphaneleri
 tabula-py==2.8.2
