@@ -95,9 +95,12 @@ class PDFToTXTConverter:
                         text_content.append(f"--- Sayfa {page_num + 1} ---\n{text}\n")
             
             # Eğer metin çıkarılamadıysa OCR kullan
-            if not has_text or len("".join(text_content).strip()) < 50:
-                logger.info("PDF'den metin çıkarılamadı, OCR kullanılıyor...")
+            extracted_text = "".join(text_content).strip()
+            if not has_text or len(extracted_text) < 20:
+                logger.info(f"PDF'den metin çıkarılamadı (uzunluk: {len(extracted_text)}), OCR kullanılıyor...")
                 text_content = self._extract_text_with_ocr(src_pdf)
+            else:
+                logger.info(f"PDF'den {len(extracted_text)} karakter metin çıkarıldı, OCR gerekmiyor")
             
             full_text = "\n".join(text_content)
             
@@ -122,34 +125,71 @@ class PDFToTXTConverter:
         try:
             # PyMuPDF ile PDF'i aç
             pdf_document = fitz.open(src_pdf)
+            total_pages = len(pdf_document)
+            logger.info(f"OCR başlatılıyor: {total_pages} sayfa işlenecek")
             
-            for page_num in range(len(pdf_document)):
-                page = pdf_document[page_num]
-                
-                # Sayfayı görüntüye dönüştür
-                mat = fitz.Matrix(2.0, 2.0)  # 2x büyütme
-                pix = page.get_pixmap(matrix=mat)
-                img_data = pix.tobytes("png")
-                
-                # PIL Image'a dönüştür
-                image = Image.open(io.BytesIO(img_data))
-                
-                # OCR ile metin çıkar
+            for page_num in range(total_pages):
                 try:
-                    # Türkçe dil desteği ile OCR
-                    text = pytesseract.image_to_string(image, lang='tur+eng')
+                    page = pdf_document[page_num]
+                    logger.info(f"Sayfa {page_num + 1}/{total_pages} işleniyor...")
                     
-                    if text.strip():
-                        text_content.append(f"--- Sayfa {page_num + 1} (OCR) ---\n{text}\n")
-                        logger.info(f"Sayfa {page_num + 1} OCR ile işlendi")
-                    else:
-                        text_content.append(f"--- Sayfa {page_num + 1} (OCR) ---\n[Bu sayfadan metin çıkarılamadı]\n")
+                    # Sayfayı görüntüye dönüştür (daha yüksek çözünürlük)
+                    mat = fitz.Matrix(4.0, 4.0)  # 4x büyütme (daha net)
+                    pix = page.get_pixmap(matrix=mat, alpha=False)
+                    img_data = pix.tobytes("png")
+                    
+                    # PIL Image'a dönüştür
+                    image = Image.open(io.BytesIO(img_data))
+                    
+                    # Görüntü ön işleme (OCR kalitesini artır)
+                    from PIL import ImageEnhance, ImageFilter
+                    
+                    # Kontrast artır
+                    enhancer = ImageEnhance.Contrast(image)
+                    image = enhancer.enhance(2.0)
+                    
+                    # Keskinlik artır
+                    image = image.filter(ImageFilter.SHARPEN)
+                    
+                    # Boyutu büyüt (daha net OCR için)
+                    width, height = image.size
+                    image = image.resize((width * 2, height * 2), Image.Resampling.LANCZOS)
+                    
+                    # OCR ile metin çıkar
+                    try:
+                        # Önce İngilizce ile dene (Türkçe paketi yoksa)
+                        text = pytesseract.image_to_string(image, lang='eng', config='--psm 6')
                         
-                except Exception as ocr_error:
-                    logger.warning(f"Sayfa {page_num + 1} OCR hatası: {ocr_error}")
-                    text_content.append(f"--- Sayfa {page_num + 1} (OCR) ---\n[OCR hatası: {str(ocr_error)}]\n")
+                        # Eğer çok az metin çıktıysa farklı PSM modları dene
+                        if len(text.strip()) < 10:
+                            # PSM 3: Otomatik sayfa segmentasyonu
+                            text = pytesseract.image_to_string(image, lang='eng', config='--psm 3')
+                        
+                        if len(text.strip()) < 10:
+                            # PSM 8: Tek kelime
+                            text = pytesseract.image_to_string(image, lang='eng', config='--psm 8')
+                        
+                        if len(text.strip()) < 10:
+                            # PSM 13: Ham satır
+                            text = pytesseract.image_to_string(image, lang='eng', config='--psm 13')
+                        
+                        if text.strip():
+                            text_content.append(f"--- Sayfa {page_num + 1} (OCR) ---\n{text}\n")
+                            logger.info(f"Sayfa {page_num + 1} OCR ile işlendi ({len(text.strip())} karakter)")
+                        else:
+                            text_content.append(f"--- Sayfa {page_num + 1} (OCR) ---\n[Bu sayfadan metin çıkarılamadı]\n")
+                            logger.warning(f"Sayfa {page_num + 1} OCR'dan metin çıkarılamadı")
+                            
+                    except Exception as ocr_error:
+                        logger.warning(f"Sayfa {page_num + 1} OCR hatası: {ocr_error}")
+                        text_content.append(f"--- Sayfa {page_num + 1} (OCR) ---\n[OCR hatası: {str(ocr_error)}]\n")
+                    
+                except Exception as page_error:
+                    logger.error(f"Sayfa {page_num + 1} işlenirken hata: {page_error}")
+                    text_content.append(f"--- Sayfa {page_num + 1} (OCR) ---\n[Sayfa işleme hatası: {str(page_error)}]\n")
             
             pdf_document.close()
+            logger.info(f"OCR tamamlandı: {len(text_content)} sayfa işlendi")
             
         except Exception as e:
             logger.error(f"OCR extraction failed: {e}")
