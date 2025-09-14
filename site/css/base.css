@@ -654,3 +654,51 @@ textarea:focus {
         font-weight: 600;
     }
 }
+
+/* ===== KAR AMACIMIZ YOK KARTI - GECE MODU DESTEĞİ ===== */
+/* About sayfasındaki büyük kart */
+.theme-dark .bg-gradient-to-r.from-green-50.to-blue-50 {
+    background: linear-gradient(90deg, #064e3b 0%, #1e3a8a 100%) !important;
+}
+
+.theme-dark .bg-green-100 {
+    background-color: #065f46 !important;
+}
+
+.theme-dark .text-green-600 {
+    color: #10b981 !important;
+}
+
+.theme-dark .text-gray-800 {
+    color: #f9fafb !important;
+}
+
+.theme-dark .text-gray-700 {
+    color: #d1d5db !important;
+}
+
+/* Contact sayfasındaki küçük kart */
+.theme-dark .bg-gradient-to-r.from-green-50.to-blue-50 {
+    background: linear-gradient(90deg, #064e3b 0%, #1e3a8a 100%) !important;
+}
+
+/* Comfort modu için de uygun renkler */
+.theme-comfort .bg-gradient-to-r.from-green-50.to-blue-50 {
+    background: linear-gradient(90deg, #dcfce7 0%, #dbeafe 100%) !important;
+}
+
+.theme-comfort .bg-green-100 {
+    background-color: #bbf7d0 !important;
+}
+
+.theme-comfort .text-green-600 {
+    color: #16a34a !important;
+}
+
+.theme-comfort .text-gray-800 {
+    color: #1f2937 !important;
+}
+
+.theme-comfort .text-gray-700 {
+    color: #374151 !important;
+}
