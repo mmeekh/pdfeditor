@@ -83,6 +83,16 @@ class ToolManager {
             });
         });
 
+        // Tool link'leri için click handler
+        const toolLinks = document.querySelectorAll('.tool-link');
+        toolLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const toolName = link.getAttribute('data-tool');
+                this.openTool(toolName);
+            });
+        });
+
         // Process button
         const processButton = document.getElementById('processButton');
         if (processButton) {
