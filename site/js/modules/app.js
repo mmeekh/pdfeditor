@@ -36,6 +36,9 @@ class App {
 
             initializeButtonEventListeners();
 
+            // URL hash'ini kontrol et ve tool'u aç
+            this.checkUrlHash();
+
             try {
                 const health = await pdfApi.checkHealth();
                 const scrollX = window.scrollX;
@@ -67,6 +70,18 @@ class App {
                 window.scrollTo(scrollX, scrollY);
             }, 0);
             notifications.error('Uygulama başlatılırken hata oluştu');
+        }
+    }
+
+    checkUrlHash() {
+        const hash = window.location.hash.substring(1); // # işaretini kaldır
+        if (hash) {
+            // Tool manager'ı bekle ve tool'u aç
+            setTimeout(() => {
+                if (window.toolManager) {
+                    window.toolManager.openTool(hash);
+                }
+            }, 500);
         }
     }
 }

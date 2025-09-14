@@ -99,9 +99,15 @@ class MobileNavigationManager {
     selectTool(toolName) {
         this.closeMenu();
 
-        setTimeout(() => {
-            toolManager.openTool(toolName);
-        }, 150);
+        // Ana sayfaya yönlendir
+        if (window.location.pathname !== '/') {
+            window.location.href = '/#' + toolName;
+        } else {
+            // Ana sayfadaysak direkt tool'u aç
+            setTimeout(() => {
+                toolManager.openTool(toolName);
+            }, 150);
+        }
 
         this.trackEvent('mobile_tool_selected', { tool_name: toolName });
     }
