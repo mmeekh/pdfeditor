@@ -1,5 +1,3 @@
-# Docker Compose v2 syntax - version field is optional
-
 services:
   caddy:
     image: caddy:2.8
@@ -7,6 +5,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+<<<<<<< HEAD
     environment:
       - EMAIL=${EMAIL}
     volumes:
@@ -27,31 +26,21 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile.dev  # Development Dockerfile kullan
+=======
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site:/usr/share/caddy:ro
+    networks:
+      - pdfislemleri_network
+
+  pdfislemleri-api:
+    build: ./app
+>>>>>>> ac16e15 (Your descriptive commit message)
     restart: unless-stopped
     expose:
       - "2000"
-    environment:
-      - PYTHONUNBUFFERED=1
-      - TEMP_DIR=/app/temp
-      - ENVIRONMENT=development
-      - DEBUG=true
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://localhost:2000/health"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
     networks:
       - pdfislemleri_network
-    volumes:
-      - ./app:/app  # Kod değişikliklerini izle
-      - api_temp:/app/temp
-    ports:
-      - "2000:2000"  # API'ye doğrudan erişim için
-
-volumes:
-  caddy_data:
-  caddy_config:
-  api_temp:
 
 networks:
   pdfislemleri_network:
