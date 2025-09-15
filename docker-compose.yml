@@ -5,12 +5,12 @@ services:
     image: caddy:2.8
     restart: unless-stopped
     ports:
-      - "8080:80"
-      - "8443:443"
+      - "80:80"
+      - "443:443"
     environment:
       - EMAIL=${EMAIL}
     volumes:
-      - ./Caddyfile.local:/etc/caddy/Caddyfile:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - ./site:/srv:ro
       - caddy_data:/data
       - caddy_config:/config
@@ -23,7 +23,8 @@ services:
       - pdfislemleri_network
 
   api:
-    build: 
+    container_name: pdfislemlericom-api
+    build:
       context: ./app
       dockerfile: Dockerfile.dev  # Development Dockerfile kullan
     restart: unless-stopped
