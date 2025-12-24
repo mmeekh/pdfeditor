@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim: PDF Araçları Destek ve Yardım | PDFişlemleri.com</title>
-    <meta name="description" content="PDFişlemleri.com ile iletişime geçin. Sorularınız, önerileriniz ve geri bildirimleriniz için biz buradayız.">
-    <meta name="keywords" content="iletişim, contact, pdf işlemleri, destek, yardım">
+    <title>Hakkımızda - PDFişlemleri.com | Ücretsiz PDF Araçları Platformu</title>
+    <meta name="description" content="PDFişlemleri.com hakkında detaylı bilgi. Topluma faydalı olma misyonuyla kurulan ücretsiz PDF araçları platformumuz. PDF birleştirme, ayırma, sıkıştırma, dönüştürme işlemleri için güvenilir çözümler.">
+    <meta name="keywords" content="pdfislemleri hakkında, pdf araçları, ücretsiz pdf işlemleri, pdf birleştirme, pdf ayırma, pdf sıkıştırma, pdf dönüştürme, topluma faydalı, misyon, vizyon, güvenilir pdf platformu">
+    <meta name="author" content="PDFişlemleri.com">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://pdfislemleri.com/contact">
+    <link rel="canonical" href="https://pdfislemleri.com/about">
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -24,50 +25,50 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-XBF2E5K150', {
-        'anonymize_ip': true,
-        'allow_google_signals': false,
-        'allow_ad_personalization_signals': false,
-        'attribution_reporting_enabled': false,
-        'conversion_measurement_enabled': false
-      });
+      gtag('config', 'G-XBF2E5K150');
     </script>
     
     <!-- Hreflang Tags for Turkish Market -->
-    <link rel="alternate" hreflang="tr" href="https://pdfislemleri.com/contact" />
-    <link rel="alternate" hreflang="tr-TR" href="https://pdfislemleri.com/contact" />
-    <link rel="alternate" hreflang="x-default" href="https://pdfislemleri.com/contact" />
+    <link rel="alternate" hreflang="tr" href="https://pdfislemleri.com/about" />
+    <link rel="alternate" hreflang="tr-TR" href="https://pdfislemleri.com/about" />
+    <link rel="alternate" hreflang="x-default" href="https://pdfislemleri.com/about" />
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="İletişim - PDFişlemleri.com">
-    <meta property="og:description" content="PDFişlemleri.com ile iletişime geçin. Sorularınız, önerileriniz ve geri bildirimleriniz için biz buradayız.">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pdfislemleri.com/contact">
-    <meta property="og:image" content="https://pdfislemleri.com/icons/icon-512x512.webp">
+    <meta property="og:url" content="https://pdfislemleri.com/about">
+    <meta property="og:title" content="Hakkımızda - PDFişlemleri.com | Ücretsiz PDF Araçları Platformu">
+    <meta property="og:description" content="Topluma faydalı olma misyonuyla kurulan ücretsiz PDF araçları platformumuz. PDF birleştirme, ayırma, sıkıştırma, dönüştürme işlemleri için güvenilir çözümler.">
+    <meta property="og:image" content="https://pdfislemleri.com/images/about-og.jpeg?v=2">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:site_name" content="PDFişlemleri.com">
+    <meta property="og:locale" content="tr_TR">
     
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="İletişim - PDFişlemleri.com">
-    <meta property="twitter:description" content="PDFişlemleri.com ile iletişime geçin. Sorularınız, önerileriniz ve geri bildirimleriniz için biz buradayız.">
-    <meta property="twitter:image" content="https://pdfislemleri.com/icons/icon-512x512.webp">
+    <meta property="twitter:url" content="https://pdfislemleri.com/about">
+    <meta property="twitter:title" content="Hakkımızda - PDFişlemleri.com | Ücretsiz PDF Araçları Platformu">
+    <meta property="twitter:description" content="Topluma faydalı olma misyonuyla kurulan ücretsiz PDF araçları platformumuz. PDF birleştirme, ayırma, sıkıştırma, dönüştürme işlemleri için güvenilir çözümler.">
+    <meta property="twitter:image" content="https://pdfislemleri.com/images/about-og.jpeg?v=2">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/icons/site.webmanifest">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.webp">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#0ea5e9">
+    <meta name="theme-color" content="#0ea5e9">
     
-    <!-- PWA Manifest -->
-            <link rel="manifest" href="/icons/site.webmanifest">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/theme.css">
@@ -79,24 +80,31 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "name": "İletişim",
-        "description": "PDFişlemleri.com iletişim sayfası",
-        "url": "https://pdfislemleri.com/contact",
-        "publisher": {
-            "@type": "Organization",
-            "name": "PDFişlemleri.com",
-            "url": "https://pdfislemleri.com"
+        "@type": "Organization",
+        "name": "PDFişlemleri.com",
+        "url": "https://pdfislemleri.com",
+        "logo": "https://pdfislemleri.com/icons/logo.webp",
+        "description": "Topluma faydalı olma misyonuyla kurulan ücretsiz PDF araçları platformu. PDF birleştirme, ayırma, sıkıştırma, dönüştürme işlemleri için güvenilir çözümler sunar.",
+        "foundingDate": "2024",
+        "mission": "PDF işlemleri konusunda yaşanan tüm zorlukları ortadan kaldırmak ve kullanıcılara en iyi deneyimi sunmak. PDF araçlarını herkes için erişilebilir kılmak.",
+        "slogan": "İyilik yapmayı seven, topluma faydalı olmayı hedefleyen PDF araçları platformu",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "addressCountry": "TR"
         },
         "contactPoint": {
             "@type": "ContactPoint",
-            "email": "info@pdfislemleri.com",
-            "contactType": "customer service"
-        }
+            "email": "info@pdfislemleri.com"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/emin-kılıç-250b14210/",
+            "https://instagram.com/heremmkh"
+        ]
     }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -109,7 +117,7 @@
                 <!-- Logo ve Araçlar Butonu -->
                 <div class="flex items-center space-x-3">
                     <!-- Logo -->
-                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity" title="Ana Sayfaya Git">
+                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                         <i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
                         <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
                     </a>
@@ -120,21 +128,22 @@
                         <i class="fas fa-chevron-up text-xs transition-transform" id="tools-arrow"></i>
                     </button>
                 </div>
+
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-6">
                     <a href="/" class="text-gray-600 hover:text-blue-600 transition">Ana Sayfa</a>
                     <a href="/blog" class="text-gray-600 hover:text-blue-600 transition">Blog</a>
-                    <a href="/about" class="text-gray-600 hover:text-blue-600 transition">Hakkımızda</a>
-                    <a href="/contact" class="text-blue-600 font-medium">İletişim</a>
+                    <a href="/about" class="text-blue-600 font-medium">Hakkımızda</a>
+                    <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
                 </nav>
 
-                <!-- Tema Butonları -->
+                <!-- Theme Toggle Buttons -->
                 <div class="flex items-center space-x-1">
                     <button id="night-mode-btn" class="text-gray-600 hover:text-blue-600 transition p-2 rounded-lg hover:bg-gray-100" title="Gece Modu" tabindex="0" role="button" aria-label="Gece modunu aç/kapat">
-                        <span class="text-base">🌙</span>
+                        <span class="text-lg">🌙</span>
                     </button>
                     <button id="comfort-mode-btn" class="text-gray-600 hover:text-green-600 transition p-2 rounded-lg hover:bg-gray-100" title="Konfor Modu" tabindex="0" role="button" aria-label="Konfor modunu aç/kapat">
-                        <span class="text-base">👀</span>
+                        <span class="text-lg">👀</span>
                     </button>
                 </div>
             </div>
@@ -305,95 +314,148 @@
                     </div>
                 </div>
             </div>
-    </header>
+        </header>
 
         <!-- Main Content -->
-        <main class="site-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <main class="site-content container mx-auto px-4 py-8">
         <!-- Hero Section -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">PDF Araçları İletişim - PDFişlemleri.com</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                PDF birleştirme, ayırma, sıkıştırma ve dönüştürme araçlarımız hakkında sorularınız için bizimle iletişime geçin.
-            </p>
-        </div>
+        <section class="text-center mb-12 fade-in">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Araçları Hakkında - PDFişlemleri.com</h1>
+            <p class="text-gray-600 max-w-3xl mx-auto text-lg">PDF birleştirme, ayırma, sıkıştırma ve dönüştürme işlemleri için ücretsiz online araçlar sunuyoruz. 2024'ten beri güvenilir PDF çözümleri ile kullanıcılarımıza hizmet veriyoruz.</p>
+        </section>
 
-        <div class="max-w-2xl mx-auto">
-            <!-- Contact Information -->
-            <div class="contact-info-card bg-white rounded-xl shadow-lg p-8 relative overflow-hidden">
-                <!-- Background Image with Overlay -->
-                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10" style="background-image: url('/images/pdfandoc.webp');"></div>
-                <!-- Dark Overlay -->
-                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-                <!-- Content with relative positioning -->
-                <div class="relative z-10">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">PDF Araçları Destek İletişim</h2>
-                
-                <div class="space-y-6">
-                    <div class="flex items-center space-x-4 bg-white bg-opacity-60 rounded-lg p-4 backdrop-blur-sm">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-map-marker-alt text-red-600 text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Adres</h3>
-                            <p class="text-gray-700 font-medium">İstanbul, Türkiye</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-4 bg-white bg-opacity-60 rounded-lg p-4 backdrop-blur-sm">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-envelope text-red-600 text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Email</h3>
-                            <p class="text-gray-700 font-medium">info@pdfislemleri.com</p>
+        <!-- Story Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Hikayemiz</h2>
+                        <div class="space-y-4 text-gray-600">
+                            <p>
+                                <i class="fas fa-rocket text-blue-500 mr-3"></i>
+                                <strong>2024 yılında</strong> topluma faydalı olma arzusuyla yola çıktık. PDF dosyalarıyla yaşanan zorlukları gözlemleyerek, herkesin erişebileceği ücretsiz çözümler sunma kararı aldık.
+                            </p>
+                            <p>
+                                <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                                <strong>Vizyonumuz nasıl şekillendi?</strong> Teknoloji alanında yaşanan eşitsizlikleri fark ettik. PDF birleştirme, ayırma, sıkıştırma ve dönüştürme işlemleri için yüksek maliyetler ödeyen insanları gördük ve "Bu adaletsizlik olmamalı" dedik.
+                            </p>
+                            <p>
+                                <i class="fas fa-heart text-red-500 mr-3"></i>
+                                <strong>Neden ücretsiz?</strong> Çünkü iyilik yapmayı seviyoruz ve teknoloji herkesin hakkı olmalı. PDF işlemleri için kimse yüksek ücretler ödemek zorunda kalmamalı. Topluma faydalı olmak, insanların hayatını kolaylaştırmak bizim en büyük motivasyonumuz.
+                            </p>
+                            <p>
+                                <i class="fas fa-hands-helping text-green-500 mr-3"></i>
+                                <strong>Hizmet anlayışımız:</strong> İnsanlara yardım etmeyi seven bir ekibiz. Bu platformu kurarken sadece kendi ihtiyaçlarımızı değil, toplumun genel ihtiyaçlarını düşündük. Herkesin kolayca PDF işlemlerini yapabilmesi, eğitimden iş hayatına kadar her alanda faydalı olabilmesi için elimizden geleni yapmaya kararlıyız.
+                            </p>
                         </div>
                     </div>
-                    
-                    <div class="flex items-center space-x-4 bg-white bg-opacity-60 rounded-lg p-4 backdrop-blur-sm">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-clock text-red-600 text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Yanıt Süresi</h3>
-                            <p class="text-gray-700 font-medium">PDF işlemleri hakkında 24 saat içinde</p>
-                        </div>
+                    <div class="text-center">
+                        <img src="images/about.webp" alt="PDF İşlemleri Hakkında" class="w-64 h-64 mx-auto object-cover rounded-lg shadow-lg" loading="lazy" width="1536" height="1024">
                     </div>
-                    
-                    <!-- Social Media Section -->
-                    <div class="pt-4 border-t border-gray-300 bg-white bg-opacity-60 rounded-lg p-4 backdrop-blur-sm">
-                        <h3 class="font-semibold text-gray-900 mb-4 text-center">PDF Araçları Güncellemeleri İçin Takip Edin</h3>
-                        <div class="flex justify-center space-x-4">
-                            <a href="https://instagram.com/heremmkh" target="_blank" rel="noopener"
-                               class="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-pink-600 hover:to-purple-700 transition duration-300 transform hover:scale-105">
-                                <i class="fab fa-instagram text-lg"></i>
-                                <span class="text-sm">@heremmkh</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/emin-kılıç-250b14210/" target="_blank" rel="noopener"
-                               class="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 transition duration-300 transform hover:scale-105">
-                                <i class="fab fa-linkedin text-lg"></i>
-                                <span class="text-sm">Emin Kılıç</span>
-                            </a>
-                    </div>
-                </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Non-Profit Notice -->
-            <div class="mt-8 max-w-2xl mx-auto">
-                <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 text-center">
-                    <div class="flex items-center justify-center space-x-2 mb-2">
-                        <i class="fas fa-heart text-green-600"></i>
-                        <h4 class="font-semibold text-gray-800">Kar Amacımız Yok</h4>
+        <!-- Mission & Vision -->
+        <section class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <div class="text-center mb-6">
+                        <div class="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bullseye text-blue-600 dark:text-blue-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Misyonumuz</h3>
                     </div>
-                    <p class="text-gray-700 text-sm">
-                        <strong>PDFişlemleri.com tamamen kar amacı gütmeyen bir platformdur.</strong> Tüm PDF araçlarımız ücretsizdir ve topluma faydalı olmak için çalışıyoruz.
+                    <p class="text-gray-600 text-center">
+                        PDF birleştirme, ayırma, sıkıştırma, dönüştürme ve diğer PDF işlemleri konusunda yaşanan tüm zorlukları ortadan kaldırmak ve kullanıcılarımıza en iyi deneyimi sunmak. PDF araçlarını herkes için erişilebilir kılmak.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <div class="text-center mb-6">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-eye text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Vizyonumuz</h3>
+                    </div>
+                    <p class="text-gray-600 text-center">
+                        PDF birleştirme, ayırma, sıkıştırma, dönüştürme ve diğer PDF işlemleri konusunda Türkiye'nin ve dünyanın en güvenilir, kullanıcı dostu ve yenilikçi online platformu olmak. PDF araçları konusunda kullanıcılarımızın ilk tercihi olmak.
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <!-- Non-Profit Mission -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl shadow-md p-6">
+                <div class="text-center">
+                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-heart text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Kar Amacımız Yok</h3>
+                    <p class="text-gray-700 text-sm max-w-2xl mx-auto">
+                        <strong>PDFişlemleri.com tamamen kar amacı gütmeyen bir platformdur.</strong> Amacımız sadece topluma faydalı olmak ve PDF işlemlerini herkes için erişilebilir kılmaktır. Tüm araçlarımız ücretsizdir ve hiçbir gizli maliyet bulunmaz.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        </div>
+        <!-- Trust Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Neden Bize Güvenmelisiniz</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">PDF Dosyalarınız Güvende</h3>
+                        <p class="text-gray-600">Yüklediğiniz PDF dosyaları hiçbir şekilde sunucularımızda saklanmaz. PDF işlemi tamamlandıktan sonra tüm dosyalar otomatik olarak silinir. Gizliliğiniz bizim için en önemli önceliktir.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-lock text-blue-600 dark:text-blue-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">SSL Şifreleme</h3>
+                        <p class="text-gray-600">Tüm veri transferleriniz 256-bit SSL şifreleme ile korunur. Dosyalarınız internet üzerinden güvenli bir şekilde işlenir ve hiçbir üçüncü taraf erişimi mümkün değildir.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-shield text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">PDF İşlemi Sonrası Anında Silme</h3>
+                        <p class="text-gray-600">PDF birleştirme, ayırma, sıkıştırma veya dönüştürme işleminiz tamamlandığı anda, yüklediğiniz orijinal PDF dosyası ve işlenmiş dosya sunucularımızdan kalıcı olarak silinir. Hiçbir PDF dosyası kalıcı olarak saklanmaz.</p>
+                    </div>
+                </div>
+                
+                <!-- Additional Trust Information -->
+                <div class="mt-12 p-6 bg-blue-50 rounded-lg border border-blue-200">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-info-circle text-blue-600 text-2xl mt-1"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Önemli Güvenlik Bilgisi</h4>
+                            <p class="text-gray-700 mb-3">
+                                PDFişlemleri.com olarak, kullanıcılarımızın gizliliğini korumak için en sıkı güvenlik önlemlerini uyguluyoruz. Yüklediğiniz PDF dosyaları:
+                            </p>
+                            <ul class="text-gray-700 space-y-1 ml-4">
+                                <li>• <strong>PDF birleştirme, ayırma, sıkıştırma işlemleri sonrası kalıcı olarak saklanmaz</strong></li>
+                                <li>• <strong>PDF dönüştürme işlemi tamamlandıktan sonra otomatik olarak silinir</strong></li>
+                                <li>• <strong>Üçüncü taraflarla paylaşılmaz</strong></li>
+                                <li>• <strong>SSL şifreleme ile korunur</strong></li>
+                            </ul>
+                            <p class="text-gray-700 mt-3">
+                                Bu sayede PDF dosyalarınızın güvenliği garanti altına alınır ve gizliliğiniz korunur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 
     </main>
@@ -507,7 +569,7 @@
         </footer>
     </div>
     
-    <!-- Scripts -->
+    <!-- JavaScript -->
     <script src="scroll-manager.js" defer></script>
     <script type="module" src="js/theme-manager.js"></script>
     <script type="module" src="js/main.js"></script>
@@ -518,4 +580,41 @@
 <!-- PDF Araçları Bölümü -->
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">PDF Araçlarımız</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="merge">
+                <i class="fas fa-file-pdf text-red-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Birleştir</h3>
+            </a>
+            <a href="/#compress" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="compress">
+                <i class="fas fa-compress text-blue-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Sıkıştır</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="split">
+                <i class="fas fa-cut text-green-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Böl</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="rotate">
+                <i class="fas fa-redo text-purple-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Çevir</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="protect">
+                <i class="fas fa-lock text-orange-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Koru</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="unlock">
+                <i class="fas fa-unlock text-yellow-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Aç</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="watermark">
+                <i class="fas fa-stamp text-indigo-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Filigran</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="sign">
+                <i class="fas fa-signature text-pink-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF İmzala</h3>
+            </a>
+        </div>
+    </div>
+</section>
 

@@ -756,4 +756,41 @@
 <!-- PDF Araçları Bölümü -->
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">PDF Araçlarımız</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="merge">
+                <i class="fas fa-file-pdf text-red-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Birleştir</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="compress">
+                <i class="fas fa-compress text-blue-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Sıkıştır</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="split">
+                <i class="fas fa-cut text-green-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Böl</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="rotate">
+                <i class="fas fa-redo text-purple-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Çevir</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="protect">
+                <i class="fas fa-lock text-orange-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Koru</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="unlock">
+                <i class="fas fa-unlock text-yellow-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Aç</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="watermark">
+                <i class="fas fa-stamp text-indigo-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF Filigran</h3>
+            </a>
+            <a href="javascript:void(0)" class="tool-card bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow" data-tool="sign">
+                <i class="fas fa-signature text-pink-500 text-2xl mb-2"></i>
+                <h3 class="font-semibold text-gray-800">PDF İmzala</h3>
+            </a>
+        </div>
+    </div>
+</section>
 

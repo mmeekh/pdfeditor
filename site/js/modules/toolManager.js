@@ -288,17 +288,43 @@ class ToolManager {
 
         // Real tool vs simulation
         const tool = this.tools[this.currentTool];
-        if (tool && tool.process) {
-            await tool.process();
-        } else {
-            this.processSimulation();
-        }
+        const toolName = this.currentTool;
 
-        // Analytics
-        this.trackEvent('file_processed', {
-            tool: this.currentTool,
+        // Başlangıç event'i
+        this.trackEvent('tool_process_start', {
+            tool: toolName,
             file_count: files.length
         });
+
+        try {
+            if (tool && tool.process) {
+                await tool.process();
+            } else {
+                this.processSimulation();
+            }
+
+            // Başarılı tamamlama event'i
+            this.trackEvent('tool_process_complete', {
+                tool: toolName,
+                file_count: files.length,
+                status: 'success'
+            });
+
+            // Geriye dönük ölçüm
+            this.trackEvent('file_processed', {
+                tool: toolName,
+                file_count: files.length
+            });
+        } catch (error) {
+            console.error('Tool process error:', error);
+            this.trackEvent('tool_process_error', {
+                tool: toolName,
+                file_count: files.length,
+                status: 'error',
+                error_message: error?.message || 'unknown'
+            });
+            notifications.error('İşlem sırasında bir hata oluştu. Lütfen tekrar deneyin.');
+        }
     }
 
     /**

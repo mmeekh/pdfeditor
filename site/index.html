@@ -73,18 +73,312 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     
-    <!-- Enhanced Structured Data -->
-    <script type="application/ld+json" src="js/structured-data/webapp.json"></script>
+    <!-- Inline Structured Data (WebApp, FAQ, Organization, Services) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "PDFişlemleri.com - Ücretsiz PDF Araçları",
+          "alternateName": "PDF İşlemleri",
+          "description": "PDF dosyalarınızı ücretsiz birleştirin, sıkıştırın, dönüştürün ve imzalayın. Kalite kaybı olmadan PDF işlemleri yapın.",
+          "url": "https://pdfislemleri.com",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web Browser",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY",
+            "description": "Ücretsiz PDF araçları"
+          },
+          "featureList": [
+            "PDF Birleştirme",
+            "PDF Ayırma",
+            "PDF Sıkıştırma",
+            "PDF'den Word'e Dönüştürme",
+            "Word'den PDF'e Dönüştürme",
+            "PDF'den PowerPoint'e Dönüştürme",
+            "PDF Şifreleme",
+            "PDF Şifre Kaldırma",
+            "PDF Döndürme",
+            "PDF Filigran",
+            "PDF'den JPG'ye Dönüştürme",
+            "PDF Sırala",
+            "PDF İmzalama",
+            "PDF OCR",
+            "PDF'den Excel'e Dönüştürme"
+          ],
+          "author": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "url": "https://pdfislemleri.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pdfislemleri.com/icons/logo.webp",
+              "width": 512,
+              "height": 512
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "url": "https://pdfislemleri.com/contact"
+            }
+          },
+          "sameAs": [
+            "https://facebook.com/pdfislemleri",
+            "https://twitter.com/pdfislemleri",
+            "https://instagram.com/pdfislemleri"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1250",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "PDF dosyalarım güvende mi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Evet, tüm dosyalarınız işlem sonrası otomatik olarak silinir. Verileriniz asla saklanmaz veya üçüncü taraflarla paylaşılmaz."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hangi dosya formatları destekleniyor?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PDF, Word (.doc, .docx), PowerPoint (.ppt, .pptx), JPG, PNG ve diğer popüler formatları destekliyoruz. Her araç için desteklenen formatlar farklılık gösterebilir."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Maksimum dosya boyutu nedir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tek seferde maksimum 20 dosya yükleyebilir, toplam boyut 100MB'ı aşamaz. Bu limitler güvenlik ve performans için belirlenmiştir."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ücretli bir hizmet var mı?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hayır, tüm araçlarımız tamamen ücretsizdir. Hiçbir gizli ücret veya abonelik yoktur."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "PDFişlemleri.com",
+          "alternateName": "PDF İşlemleri",
+          "url": "https://pdfislemleri.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pdfislemleri.com/icons/logo.webp",
+            "width": 512,
+            "height": 512
+          },
+          "description": "Ücretsiz PDF araçları sunan online platform",
+          "sameAs": [
+            "https://facebook.com/pdfislemleri",
+            "https://twitter.com/pdfislemleri",
+            "https://instagram.com/pdfislemleri"
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "PDF Birleştirme",
+          "description": "Birden fazla PDF dosyasını tek bir belgede birleştirme hizmeti",
+          "provider": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com"
+          },
+          "serviceType": "PDF Processing",
+          "areaServed": "TR",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "PDF İmzalama",
+          "description": "PDF dosyalarını dijital olarak imzalama hizmeti. Elle çizilen veya yüklenen imzalar ile PDF belgelerinizi güvenli şekilde imzalayın.",
+          "provider": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com"
+          },
+          "serviceType": "PDF Digital Signature",
+          "areaServed": "TR",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+          },
+          "keywords": "pdf imzala, dijital imza, pdf imzalama, elektronik imza, pdf belge imzalama"
+        }
+      ]
+    }
+    </script>
 
-    <!-- FAQ Structured Data -->
-    <script type="application/ld+json" src="js/structured-data/faq.json"></script>
-
-    <!-- Organization Schema -->
-    <script type="application/ld+json" src="js/structured-data/organization.json"></script>
-
-    <script type="application/ld+json" src="js/structured-data/service-merge.json"></script>
-
-    <script type="application/ld+json" src="js/structured-data/service-sign.json"></script>
+    <!-- Inline HowTo + SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "PDFişlemleri.com",
+          "applicationCategory": ["BusinessApplication", "Utility"],
+          "operatingSystem": "Web",
+          "description": "PDF birleştirme, sıkıştırma, dönüştürme ve imzalama için ücretsiz online PDF araçları.",
+          "url": "https://pdfislemleri.com",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+          },
+          "featureList": [
+            "PDF birleştirme",
+            "PDF sıkıştırma",
+            "PDF'den Word'e",
+            "Word'den PDF'e",
+            "PDF imzalama",
+            "PDF şifre kaldırma",
+            "PDF OCR"
+          ],
+          "creator": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "url": "https://pdfislemleri.com"
+          },
+          "inLanguage": "tr-TR",
+          "browserRequirements": "Modern web browser (desktop veya mobil)."
+        },
+        {
+          "@type": "HowTo",
+          "name": "PDF dosyaları nasıl birleştirilir?",
+          "description": "PDF Birleştir aracı ile birden fazla PDF'i tek dosyada toplayın.",
+          "totalTime": "PT2M",
+          "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "TRY",
+            "value": "0"
+          },
+          "supply": [
+            { "@type": "HowToSupply", "name": "PDF dosyaları" }
+          ],
+          "tool": [
+            { "@type": "HowToTool", "name": "PDF Birleştir" }
+          ],
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "PDF'leri seçin",
+              "text": "Ana sayfadaki PDF Birleştir kartına tıklayın ve birleştirmek istediğiniz PDF dosyalarını ekleyin.",
+              "url": "https://pdfislemleri.com/#merge"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Sırayı düzenleyin",
+              "text": "Sayfa ve dosya sırasını sürükle-bırak ile ayarlayın, gerekirse dosya çıkarın.",
+              "url": "https://pdfislemleri.com/#merge"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Birleştir ve indir",
+              "text": "Birleştir butonuna basın, işlem tamamlanınca tek PDF dosyasını indirin.",
+              "url": "https://pdfislemleri.com/#merge"
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "PDF nasıl sıkıştırılır?",
+          "description": "PDF Sıkıştır aracı ile kaliteyi koruyarak dosya boyutunu küçültün.",
+          "totalTime": "PT1M30S",
+          "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "TRY",
+            "value": "0"
+          },
+          "supply": [
+            { "@type": "HowToSupply", "name": "PDF dosyası" }
+          ],
+          "tool": [
+            { "@type": "HowToTool", "name": "PDF Sıkıştır" }
+          ],
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "PDF'yi ekleyin",
+              "text": "Ana sayfadaki PDF Sıkıştır aracını açın ve sıkıştırmak istediğiniz PDF'yi yükleyin.",
+              "url": "https://pdfislemleri.com/#compress"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Sıkıştırmayı başlatın",
+              "text": "İşlemi başlatın; sistem kaliteyi koruyarak boyutu küçültür.",
+              "url": "https://pdfislemleri.com/#compress"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "İndir",
+              "text": "Sıkıştırma bitince yeni PDF dosyasını indirin.",
+              "url": "https://pdfislemleri.com/#compress"
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "Word dosyası PDF'e nasıl çevrilir?",
+          "description": "Word'den PDF'e aracı ile DOC/DOCX dosyalarını saniyeler içinde PDF yapın.",
+          "totalTime": "PT1M",
+          "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "TRY",
+            "value": "0"
+          },
+          "supply": [
+            { "@type": "HowToSupply", "name": "Word dosyası (DOC veya DOCX)" }
+          ],
+          "tool": [
+            { "@type": "HowToTool", "name": "Word'den PDF'e" }
+          ],
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Word dosyasını yükleyin",
+              "text": "Ana sayfadaki Word'den PDF'e kartına tıklayın ve dosyanızı ekleyin.",
+              "url": "https://pdfislemleri.com/#word-to-pdf"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Dönüştürün",
+              "text": "Dönüştürme işlemini başlatın; sayfa düzeni bozulmadan PDF oluşturulur.",
+              "url": "https://pdfislemleri.com/#word-to-pdf"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "PDF'yi indirin",
+              "text": "Dönüşüm tamamlandığında yeni PDF dosyanızı indirin.",
+              "url": "https://pdfislemleri.com/#word-to-pdf"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -335,9 +629,10 @@
                     </div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Birleştir</h3>
                     <p class="text-gray-600 text-sm">Birden fazla PDF dosyasını tek belgede birleştirin. Hızlı, güvenli ve ücretsiz PDF birleştirme aracı.</p>
-                    <div class="mt-3 text-xs text-blue-600">
+                    <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
                         <span class="font-medium">İlgili araçlar:</span>
-                        <a href="/blog/pdf-birlestirme" class="hover:underline ml-1">Rehber</a> • 
+                        <a href="/pdf-birlestir" class="hover:underline">Detaylı sayfa</a> •
+                        <a href="/blog/pdf-birlestirme" class="hover:underline">Rehber</a> • 
                         <a href="javascript:void(0)" class="hover:underline tool-link" data-tool="split">PDF Ayır</a> • 
                         <a href="javascript:void(0)" class="hover:underline tool-link" data-tool="compress">PDF Sıkıştır</a>
                     </div>
@@ -350,11 +645,12 @@
                     </div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Ayır</h3>
                     <p class="text-gray-600 text-sm">PDF sayfalarını ayırın veya belirli sayfaları çıkarın. Ücretsiz PDF ayırma ve bölme aracı.</p>
-                    <div class="mt-3 text-xs text-blue-600">
+                    <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
                         <span class="font-medium">İlgili araçlar:</span>
+                        <a href="/pdf-ayir" class="hover:underline">Detaylı sayfa</a> •
                         <a href="javascript:void(0)" class="hover:underline tool-link ml-1" data-tool="merge">PDF Birleştir</a> • 
                         <a href="javascript:void(0)" class="hover:underline tool-link" data-tool="organize">PDF Sırala</a> • 
-                        <a href="/blog/pdf-birlestirme" class="hover:underline">Rehber</a>
+                        <a href="/blog/pdf-ayirma" class="hover:underline">Rehber</a>
                     </div>
                 </div>
 
@@ -365,6 +661,13 @@
                     </div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Sıkıştır</h3>
                     <p class="text-gray-600 text-sm">Kaliteden ödün vermeden PDF boyutunu küçültün. Ücretsiz PDF sıkıştırma ve boyut küçültme aracı.</p>
+                    <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
+                        <span class="font-medium">İlgili araçlar:</span>
+                        <a href="/pdf-sikistir" class="hover:underline">Detaylı sayfa</a> •
+                        <a href="javascript:void(0)" class="hover:underline tool-link ml-1" data-tool="unlock">PDF Şifre Kaldır</a> • 
+                        <a href="javascript:void(0)" class="hover:underline tool-link" data-tool="merge">PDF Birleştir</a> • 
+                        <a href="/blog/pdf-sikistirma" class="hover:underline">Rehber</a>
+                    </div>
                 </div>
 
                 <!-- PDF to Word Tool -->
@@ -374,6 +677,12 @@
                     </div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den Word'e</h3>
                     <p class="text-gray-600 text-sm">PDF'leri düzenlenebilir Word belgelerine dönüştürün. Ücretsiz PDF Word dönüştürme aracı.</p>
+                    <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
+                        <span class="font-medium">İlgili araçlar:</span>
+                        <a href="/pdf-to-word" class="hover:underline">Detaylı sayfa</a> •
+                        <a href="/word-to-pdf" class="hover:underline">Word'den PDF'e</a> •
+                        <a href="/blog/word-pdf-donusturme" class="hover:underline">Rehber</a>
+                    </div>
                 </div>
 
                 <!-- Word to PDF Tool -->
@@ -383,6 +692,12 @@
                     </div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">Word'den PDF'e</h3>
                     <p class="text-gray-600 text-sm">Word belgelerini PDF'e dönüştürün. Ücretsiz Word PDF dönüştürme aracı.</p>
+                    <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
+                        <span class="font-medium">İlgili araçlar:</span>
+                        <a href="/word-to-pdf" class="hover:underline">Detaylı sayfa</a> •
+                        <a href="/pdf-to-word" class="hover:underline">PDF'den Word'e</a> •
+                        <a href="/blog/word-pdf-donusturme" class="hover:underline">Rehber</a>
+                    </div>
                 </div>
 
                 <!-- PDF to PowerPoint Tool -->
@@ -437,6 +752,12 @@
                     </div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den JPG'ye</h3>
                     <p class="text-gray-600 text-sm">PDF sayfalarını JPG resimlerine dönüştürün. Ücretsiz PDF JPG dönüştürme aracı.</p>
+                    <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
+                        <span class="font-medium">İlgili araçlar:</span>
+                        <a href="/pdf-to-jpg" class="hover:underline">Detaylı sayfa</a> •
+                        <a href="/pdf-birlestir" class="hover:underline">PDF Birleştir</a> •
+                        <a href="/pdf-sikistir" class="hover:underline">PDF Sıkıştır</a>
+                    </div>
                 </div>
 
                 <!-- Organize PDF Tool -->

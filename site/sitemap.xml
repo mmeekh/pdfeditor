@@ -7,32 +7,32 @@
     <priority>1.0</priority>
   </url>
   <url>
-      <loc>https://pdfislemleri.com/merge</loc>
-    <lastmod>2024-12-15</lastmod>
+      <loc>https://pdfislemleri.com/pdf-birlestir</loc>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-      <loc>https://pdfislemleri.com/split</loc>
-    <lastmod>2024-12-15</lastmod>
+      <loc>https://pdfislemleri.com/pdf-ayir</loc>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-      <loc>https://pdfislemleri.com/compress</loc>
-    <lastmod>2024-12-15</lastmod>
+      <loc>https://pdfislemleri.com/pdf-sikistir</loc>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
       <loc>https://pdfislemleri.com/pdf-to-word</loc>
-    <lastmod>2024-12-15</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
       <loc>https://pdfislemleri.com/word-to-pdf</loc>
-    <lastmod>2024-12-15</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -205,8 +205,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pdfislemleri.com/pdf-to-jpg</loc>
-    <lastmod>2024-12-22</lastmod>
+      <loc>https://pdfislemleri.com/pdf-to-jpg</loc>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -218,36 +218,6 @@
   </url>
   <url>
     <loc>https://pdfislemleri.com/sign</loc>
-    <lastmod>2024-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pdfislemleri.com/merge</loc>
-    <lastmod>2024-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pdfislemleri.com/split</loc>
-    <lastmod>2024-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pdfislemleri.com/compress</loc>
-    <lastmod>2024-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pdfislemleri.com/pdf-to-word</loc>
-    <lastmod>2024-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pdfislemleri.com/word-to-pdf</loc>
     <lastmod>2024-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -12,7 +12,13 @@ class CookieManager {
 
     init() {
         const cookieChoice = localStorage.getItem('cookieChoice');
-        if (!cookieChoice) {
+        if (cookieChoice === 'accepted') {
+            this.enableAnalytics();
+            this.logConsentStatus('accepted', 'stored');
+        } else if (cookieChoice === 'rejected') {
+            this.disableAnalytics();
+            this.logConsentStatus('rejected', 'stored');
+        } else {
             this.show();
         }
     }
@@ -40,6 +46,8 @@ class CookieManager {
         this.enableAnalytics();
         this.hide();
 
+        this.logConsentStatus('accepted', 'banner');
+
         if (window.dataLayer) {
             window.dataLayer.push({
                 'event': 'cookie_consent',
@@ -60,6 +68,8 @@ class CookieManager {
 
         this.disableAnalytics();
         this.hide();
+
+        this.logConsentStatus('rejected', 'banner');
 
         if (window.dataLayer) {
             window.dataLayer.push({
@@ -117,7 +127,29 @@ class CookieManager {
             gtag('event', eventName, eventData);
         }
     }
+
+    logConsentStatus(status, source) {
+        const timestamp = new Date().toISOString();
+        const choiceDate = localStorage.getItem('cookieChoiceDate') || timestamp;
+        const eventPayload = {
+            consent_status: status,
+            consent_source: source,
+            consent_timestamp: timestamp,
+            consent_stored_at: choiceDate,
+            page_location: window.location.href
+        };
+
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                event: 'consent_status',
+                ...eventPayload
+            });
+        }
+
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'consent_status', eventPayload);
+        }
+    }
 }
 
 export { CookieManager };
-
