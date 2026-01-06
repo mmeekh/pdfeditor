@@ -110,6 +110,22 @@ Frontend, backend'den dinamik olarak konfigürasyon alır:
 - Domain DNS ayarları
 - Docker & Docker Compose
 
+## 🧪 Testler (Pytest)
+
+Pytest testleri PDF araçlarının upload/process uçlarını doğrular.
+
+```bash
+# Sanal ortam (opsiyonel)
+python -m venv .venv
+source .venv/bin/activate
+
+# Backend bağımlılıkları + pytest
+pip install -r app/requirements.txt
+
+# Testleri çalıştır
+pytest
+```
+
 ### 1. Proje Yapısını Oluştur
 
 ```bash
