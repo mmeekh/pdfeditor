@@ -27,3 +27,6 @@ aiofiles==23.2.1
 pydantic-settings==2.3.4
 requests==2.31.0
 slowapi==0.1.9
+
+# Testing
+pytest==8.3.2
