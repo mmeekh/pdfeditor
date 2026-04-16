@@ -69,20 +69,23 @@ a:hover {
 .theme-dark section,
 .theme-dark .container,
 .theme-dark .bg-gray-50,
-.theme-dark .bg-white,
 .theme-comfort main,
 .theme-comfort section,
 .theme-comfort .container,
-.theme-comfort .bg-gray-50,
-.theme-comfort .bg-white {
+.theme-comfort .bg-gray-50 {
     background-color: var(--bg-primary);
+}
+
+.theme-dark .bg-white,
+.theme-comfort .bg-white {
+    background-color: var(--bg-secondary);
 }
 
 .theme-dark .bg-gray-100,
 .theme-dark .bg-gray-200,
 .theme-comfort .bg-gray-100,
 .theme-comfort .bg-gray-200 {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-tertiary);
 }
 
 .theme-dark .hover\:bg-gray-300:hover,

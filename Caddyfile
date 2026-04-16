@@ -9,6 +9,14 @@ pdfislemleri.com {
         reverse_proxy pdfislemlericom-api:2000
     }
 
+    # SEO: eski İngilizce slug'lardan yeni Türkçe slug'lara 301 yönlendirme
+    redir /organize /pdf-sirala permanent
+    redir /sign /pdf-imzala permanent
+    redir /protect /pdf-sifrele permanent
+    redir /unlock /pdf-sifre-kaldir permanent
+    redir /rotate /pdf-dondur permanent
+    redir /watermark /pdf-filigran permanent
+
     root * /srv
     try_files {path} {path}.html /index.html
     file_server
