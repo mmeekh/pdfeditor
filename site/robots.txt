@@ -1,21 +1,19 @@
 User-agent: *
 Allow: /
 
-# API endpoints - allow indexing
-Allow: /api/
-
-# Static assets - allow indexing
+# Static assets — indexable
 Allow: /css/
 Allow: /js/
 Allow: /images/
 Allow: /icons/
+Allow: /cardbgs/
 
-# Block sensitive areas
+# API endpoints — crawl etme (dinamik JSON)
+Disallow: /api/
+
+# Temp / app — gizli
 Disallow: /temp/
 Disallow: /app/
 
 # Sitemap
 Sitemap: https://pdfislemleri.com/sitemap.xml
-
-# Crawl delay (optional)
-Crawl-delay: 1
