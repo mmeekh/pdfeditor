@@ -112,7 +112,10 @@ async def process_organize(
         if not page_order.pages:
             raise HTTPException(status_code=400, detail="Sayfa sırası boş")
 
-        output_filename = f"organized_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+        # Akıllı isim: ilk PDF'in adı baz alınır
+        first_pdf = sorted([p.name for p in Path(session_dir).glob("*.pdf")])[0] if list(Path(session_dir).glob("*.pdf")) else "organized.pdf"
+        base = os.path.splitext(first_pdf)[0].split("_", 1)[-1]  # "0_orig.pdf" → "orig"
+        output_filename = f"{base}_duzenlendi.pdf"
         output_path = os.path.join(session_dir, output_filename)
 
         organizer = PDFOrganizer(temp_dir=session_dir)

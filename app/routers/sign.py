@@ -238,7 +238,7 @@ async def process_sign(
     zip_name = None
     if len(outputs) > 1:
         import zipfile
-        zip_name = f"signed_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+        zip_name = f"imzali_{len(selected)}_dosya.zip" if len(selected) > 1 else f"imzali.zip"
         zip_path = os.path.join(session_dir, zip_name)
         with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
             for o in outputs:

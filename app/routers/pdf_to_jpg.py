@@ -80,7 +80,10 @@ async def process_pdf_to_jpg(session_id: str, dpi: int = 200):
         
         # Eğer birden fazla PDF varsa veya çok sayfa varsa ZIP oluştur
         if len(pdf_files) > 1 or len(all_images) > 1:
-            zip_name = f"pdf_to_jpg_images_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+            # İlk PDF'in adını baz al
+            first_pdf = sorted(pdf_files)[0]
+            base = os.path.splitext(os.path.basename(str(first_pdf)))[0].split("_", 1)[-1]
+            zip_name = f"{base}_jpg_gorseller.zip" if len(pdf_files) == 1 else f"jpg_gorseller_{len(pdf_files)}_dosya.zip"
             zip_path = os.path.join(session_dir, zip_name)
             
             with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:

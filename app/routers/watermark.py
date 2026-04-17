@@ -79,7 +79,7 @@ async def process_watermark(
     zip_name = None
     if len(outputs) > 1:
         import zipfile
-        zip_name = f"watermarked_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+        zip_name = f"filigranli_{len(files)}_dosya.zip" if len(files) > 1 else f"filigranli.zip"
         zip_path = os.path.join(session_dir, zip_name)
         with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
             for o in outputs:

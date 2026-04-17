@@ -254,7 +254,7 @@ async def download_ocr_result(session_id: str):
     else:
         import zipfile
 
-        zip_name = f"ocr_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+        zip_name = f"ocr_metin_{len(pdf_files)}_dosya.zip" if len(pdf_files) > 1 else f"ocr_metin.zip"
         zip_path = os.path.join(session_dir, zip_name)
         ensure_safe_path(zip_path, settings.TEMP_DIR)
 

@@ -160,7 +160,7 @@ async def process_split(
 
         # Eğer birden fazla PDF varsa, tüm sonuçları tek ZIP'te birleştir
         if len(all_results) > 1:
-            combined_zip_name = f"split_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+            combined_zip_name = f"ayrilmis_sayfalar.zip"
             combined_zip_path = os.path.join(session_dir, combined_zip_name)
             
             with zipfile.ZipFile(combined_zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:

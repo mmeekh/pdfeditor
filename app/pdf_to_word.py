@@ -33,8 +33,12 @@ class PDFToWordConverter:
 
     def _out_name(self, src: str) -> str:
         base = Path(src).stem
+        # Upload index prefix temizleme ("0_dosya" → "dosya")
+        if "_" in base and base.split("_", 1)[0].isdigit():
+            base = base.split("_", 1)[1]
+
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-        return f"{base}_converted_{ts}.docx"
+        return f"{base}.docx"
 
     def convert(self, src_pdf: str, out_path: Optional[str] = None) -> ConvertResult:
         if not os.path.exists(src_pdf):

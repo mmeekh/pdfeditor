@@ -102,7 +102,8 @@ async def process_merge(
                 return 0
             pdf_files = sorted(files, key=_upload_index_key)
 
-        output_filename = f"merged_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+        # Akıllı isim: N dosya → 'birlestirilmis_N_dosya.pdf'
+        output_filename = f"birlestirilmis_{len(files)}_dosya.pdf"
         output_path = os.path.join(session_dir, output_filename)
 
         merger = PDFMerger(temp_dir=session_dir)

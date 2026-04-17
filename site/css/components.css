@@ -1861,3 +1861,20 @@ body {
 }
 .pw-match-ok { color: #059669; }
 .pw-match-err { color: #dc2626; }
+
+/* File-meta (size + page count) */
+.file-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.file-meta .file-size,
+.file-meta .file-pages {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}

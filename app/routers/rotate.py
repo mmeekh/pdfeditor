@@ -115,7 +115,7 @@ async def process_rotate(session_id: str, degrees: int = 90, page_rotations: str
     zip_name = None
     if len(outputs) > 1:
         import zipfile
-        zip_name = f"rotated_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+        zip_name = f"dondurulmus_{len(files)}_dosya.zip" if len(files) > 1 else f"dondurulmus.zip"
         zip_path = os.path.join(session_dir, zip_name)
         with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
             for o in outputs:

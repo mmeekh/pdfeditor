@@ -111,7 +111,7 @@ async def process_pdf_protect(
     zip_name = None
     if len(outputs) > 1:
         import zipfile
-        zip_name = f"protected_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+        zip_name = f"sifreli_{len(files)}_dosya.zip" if len(files) > 1 else f"sifreli.zip"
         zip_path = os.path.join(session_dir, zip_name)
         with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
             for o in outputs:

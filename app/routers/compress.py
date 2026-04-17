@@ -125,7 +125,7 @@ async def process_compress(session_id: str, level: str = "medium", target_kb: in
     zip_name = None
     if len(outputs) > 1:
         import zipfile
-        zip_name = f"compressed_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+        zip_name = f"sikistirilmis_{len(outputs)}_dosya.zip" if len(outputs) > 1 else f"sikistirilmis.zip"
         zip_path = os.path.join(session_dir, zip_name)
         with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
             for o in outputs:

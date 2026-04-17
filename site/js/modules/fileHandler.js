@@ -5,6 +5,7 @@
 
 import notifications from './notifications.js';
 import { enforceNoEncryptedPdfs } from './pdfEncryptionCheck.js';
+import { getPageCount } from './pdfPageCount.js';
 
 class FileHandler {
     constructor() {
@@ -202,16 +203,36 @@ class FileHandler {
             fileItem.className = 'file-item';
             fileItem.setAttribute('draggable', 'true');
             fileItem.dataset.index = String(index);
+            const pageSpanId = `file-pages-${index}`;
             fileItem.innerHTML = `
                 <div class="file-info">
                     <i class="fas fa-file-pdf file-icon"></i>
                     <span class="file-name">${file.name}</span>
-                    <span class="file-size">(${this.formatFileSize(file.size)})</span>
+                    <span class="file-meta">
+                        <span class="file-size">${this.formatFileSize(file.size)}</span>
+                        <span id="${pageSpanId}" class="file-pages"><i class="fas fa-spinner fa-spin text-xs text-gray-400"></i></span>
+                    </span>
                 </div>
                 <button onclick="fileHandler.removeFile(${index})" class="remove-file" title="Dosyayı kaldır">
                     <i class="fas fa-times"></i>
                 </button>
             `;
+
+            // Async sayfa sayısı
+            getPageCount(file).then(({ pageCount, error }) => {
+                const span = document.getElementById(pageSpanId);
+                if (!span) return;
+                if (pageCount) {
+                    span.innerHTML = `<i class="fas fa-file-alt text-gray-400 text-xs mr-1"></i>${pageCount} sayfa`;
+                } else if (error === 'encrypted') {
+                    span.innerHTML = `<i class="fas fa-lock text-orange-500 text-xs mr-1"></i>şifreli`;
+                } else {
+                    span.innerHTML = '';
+                }
+            }).catch(() => {
+                const span = document.getElementById(pageSpanId);
+                if (span) span.innerHTML = '';
+            });
             // Drag & drop reorder: SortableJS varsa skip (sayfa kendi init eder)
             if (!window._sortableEnabled) {
                 fileItem.addEventListener('dragstart', (e) => {

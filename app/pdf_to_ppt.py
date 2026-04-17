@@ -41,8 +41,12 @@ class PDFToPPTConverter:
 
     def _out_name(self, src: str) -> str:
         base = Path(src).stem
+        # Upload index prefix temizleme ("0_dosya" → "dosya")
+        if "_" in base and base.split("_", 1)[0].isdigit():
+            base = base.split("_", 1)[1]
+
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-        return f"{base}_slides_{ts}.pptx"
+        return f"{base}.pptx"
 
     def _render_pages_with_gs(self, src_pdf: str) -> List[str]:
         gs = shutil.which('gs')
@@ -101,7 +105,7 @@ class PDFToPPTConverter:
             raise PDFToPPTError("PDF dosyası listesi boş")
         
         if out_path is None:
-            base_name = f"combined_presentation_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            base_name = "birlesik_sunum"
             out_path = os.path.join(self.temp_dir, f"{base_name}.pptx")
 
         # İlk PDF'in boyutlarını referans al

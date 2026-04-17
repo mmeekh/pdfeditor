@@ -146,6 +146,10 @@ async def process_pdf_to_excel(
         # İlk PDF dosyasını işle
         pdf_file = files[0]
 
+        # Akıllı çıktı adı: orijinal PDF adını kullan
+        base_raw = os.path.splitext(os.path.basename(pdf_file))[0]
+        base_name = base_raw.split("_", 1)[-1] if "_" in base_raw else base_raw
+
         # Akıllı PDF analizi - tablo/paragraf ayrımı
         try:
             # Önce PDF'i analiz et - tablo var mı, paragraf var mı?
@@ -329,7 +333,7 @@ async def process_pdf_to_excel(
         if output_format == "csv":
             # CSV çıktı: tek tablo varsa .csv, birden fazla ise .zip
             if len(non_empty_tables) <= 1:
-                output_filename = f"excel_{timestamp}.csv"
+                output_filename = f"{base_name}.csv"
                 output_path = os.path.join(session_dir, output_filename)
 
                 if non_empty_tables:
@@ -343,7 +347,7 @@ async def process_pdf_to_excel(
             else:
                 import zipfile
 
-                output_filename = f"excel_{timestamp}.zip"
+                output_filename = f"{base_name}_excel.zip"
                 output_path = os.path.join(session_dir, output_filename)
 
                 csv_files = []
@@ -362,7 +366,7 @@ async def process_pdf_to_excel(
                         zipf.write(csv_path, csv_name)
         else:
             # XLSX çıktı (varsayılan)
-            output_filename = f"excel_{timestamp}.xlsx"
+            output_filename = f"{base_name}.xlsx"
             output_path = os.path.join(session_dir, output_filename)
 
             with pd.ExcelWriter(output_path, engine="openpyxl") as writer:

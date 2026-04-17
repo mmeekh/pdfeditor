@@ -5,6 +5,7 @@ python-multipart==0.0.9
 
 # PDF İşleme Kütüphaneleri
 PyPDF2==3.0.1
+pypdf==5.0.1
 Pillow==10.4.0
 reportlab==4.1.0
 pdf2docx==0.5.7

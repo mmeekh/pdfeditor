@@ -66,7 +66,7 @@ class PDFSplitter:
     def _generate_filename(self, base_name: str, index: int) -> str:
         root = Path(base_name).stem
         ts = datetime.now().strftime('%Y%m%d_%H%M%S')
-        return f"{root}_parca_{index:03d}_{ts}.pdf"
+        return f"{root}_sayfa_{index:03d}.pdf"
 
     def split_by_ranges(self, pdf_path: str, ranges_str: str) -> SplitResult:
         if not os.path.exists(pdf_path):

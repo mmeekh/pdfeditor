@@ -35,8 +35,10 @@ class PDFToTXTConverter:
 
     def _out_name(self, src: str, file_type: str) -> str:
         base = Path(src).stem
-        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-        return f"{base}_converted_{file_type}_{ts}.txt"
+        # Upload index prefix'ini temizle ("0_dosya" → "dosya")
+        if "_" in base and base.split("_", 1)[0].isdigit():
+            base = base.split("_", 1)[1]
+        return f"{base}.txt"
 
     def convert_pdf_to_txt(self, src_pdf: str, out_path: Optional[str] = None) -> ConvertResult:
         """PDF'den TXT'ye dönüştür"""

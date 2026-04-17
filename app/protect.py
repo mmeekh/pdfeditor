@@ -49,8 +49,12 @@ class PDFProtector:
 
     def _out_name(self, src: str) -> str:
         base = Path(src).stem
+        # Upload index prefix temizleme ("0_dosya" → "dosya")
+        if "_" in base and base.split("_", 1)[0].isdigit():
+            base = base.split("_", 1)[1]
+
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-        return f"{base}_protected_{ts}.pdf"
+        return f"{base}_sifreli.pdf"
 
     def _calculate_permissions(self, options: ProtectionOptions) -> int:
         """PDF izinlerini hesapla"""
