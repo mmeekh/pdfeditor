@@ -90,10 +90,10 @@
 /* Specific tool card backgrounds */
 .tool-card[data-tool="merge"]::before {
     background-image: url('/cardbgs/merge.webp');
-    width: 45%;
-    height: 63%;
-    top: 9%;
-    right: 0;
+    width: 40%;
+    height: 56%;
+    top: 12%;
+    right: 2%;
     transform: translateX(0);
 }
 
