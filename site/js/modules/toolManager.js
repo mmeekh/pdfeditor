@@ -22,6 +22,7 @@ import pdfToTxtTool from '../tools/pdf-to-txt.js';
 import notifications from './notifications.js';
 import fileHandler from './fileHandler.js';
 import pdfLoader from './loader.js';
+import handoffStorage from './handoffStorage.js';
 
 class ToolManager {
     constructor() {
@@ -55,8 +56,15 @@ class ToolManager {
         // Tool kartları için click handler
         const toolCards = document.querySelectorAll('.tool-card');
         toolCards.forEach(card => {
-            card.addEventListener('click', () => {
+            card.addEventListener('click', (e) => {
+                // İç linklere (Detaylı sayfa, Rehber vb.) tıklanmışsa kart handler'ı devre dışı
+                if (e.target.closest('a')) return;
                 const toolName = card.getAttribute('data-tool');
+                const url = card.getAttribute('data-url');
+                if (url) {
+                    window.location.href = url;
+                    return;
+                }
                 this.openTool(toolName);
             });
 
@@ -65,21 +73,33 @@ class ToolManager {
                 e.preventDefault();
                 card.classList.add('drag-over');
             });
-            
+
             card.addEventListener('dragleave', () => {
                 card.classList.remove('drag-over');
             });
-            
-            card.addEventListener('drop', (e) => {
+
+            card.addEventListener('drop', async (e) => {
                 e.preventDefault();
                 card.classList.remove('drag-over');
-                
+
                 const files = e.dataTransfer.files;
                 const toolName = card.getAttribute('data-tool');
-                
-                if (files.length > 0) {
-                    this.openToolWithFiles(toolName, files);
+                const url = card.getAttribute('data-url');
+
+                if (files.length === 0) return;
+
+                if (url) {
+                    try {
+                        const token = await handoffStorage.put(files);
+                        window.location.href = `${url}?handoff=${token}`;
+                    } catch (err) {
+                        console.warn('Handoff başarısız, düz navigate:', err);
+                        window.location.href = url;
+                    }
+                    return;
                 }
+
+                this.openToolWithFiles(toolName, files);
             });
         });
 
