@@ -774,7 +774,7 @@
         function updateProcessButtonText() {
             const btn = document.getElementById('processButtonText');
             const count = window.fileHandler ? window.fileHandler.selectedFiles.length : 0;
-            if (btn) btn.textContent = count > 0 ? `${count} PDF'yi İmzala` : 'PDF'yi İmzala';
+            if (btn) btn.textContent = count > 0 ? `${count} PDF'yi İmzala` : "PDF'yi İmzala";
         }
 
         document.addEventListener('filesUpdated', (e) => {
