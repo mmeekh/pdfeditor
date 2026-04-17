@@ -56,174 +56,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ===== THEME SYSTEM ===== */
-/* Theme Application */
-.theme-dark body,
-.theme-comfort body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-}
-
-/* Background Colors */
-.theme-dark main,
-.theme-dark section,
-.theme-dark .container,
-.theme-dark .bg-gray-50,
-.theme-comfort main,
-.theme-comfort section,
-.theme-comfort .container,
-.theme-comfort .bg-gray-50 {
-    background-color: var(--bg-primary);
-}
-
-.theme-dark .bg-white,
-.theme-comfort .bg-white {
-    background-color: var(--bg-secondary);
-}
-
-.theme-dark .bg-gray-100,
-.theme-dark .bg-gray-200,
-.theme-comfort .bg-gray-100,
-.theme-comfort .bg-gray-200 {
-    background-color: var(--bg-tertiary);
-}
-
-.theme-dark .hover\:bg-gray-300:hover,
-.theme-dark .hover\:bg-gray-100:hover,
-.theme-comfort .hover\:bg-gray-300:hover,
-.theme-comfort .hover\:bg-gray-100:hover {
-    background-color: var(--bg-tertiary);
-}
-
-/* Text Colors */
-.theme-dark .text-gray-800,
-.theme-dark .text-gray-900,
-.theme-dark .text-gray-700,
-.theme-dark .font-medium,
-.theme-dark .font-semibold,
-.theme-dark .font-bold,
-.theme-comfort .text-gray-800,
-.theme-comfort .text-gray-900,
-.theme-comfort .text-gray-700,
-.theme-comfort .font-medium,
-.theme-comfort .font-semibold,
-.theme-comfort .font-bold {
-    color: var(--text-primary);
-}
-
-.theme-dark .text-gray-600,
-.theme-dark .text-gray-500,
-.theme-comfort .text-gray-600,
-.theme-comfort .text-gray-500 {
-    color: var(--text-secondary);
-}
-
-.theme-dark .text-gray-400,
-.theme-comfort .text-gray-400 {
-    color: var(--text-muted);
-}
-
-/* Borders and Shadows */
-.theme-dark .border-gray-300,
-.theme-dark .border,
-.theme-dark .tool-card,
-.theme-dark .fact-card,
-.theme-dark .feature-card,
-.theme-dark .testimonial-card,
-.theme-dark [class*="card"],
-.theme-comfort .border-gray-300,
-.theme-comfort .border,
-.theme-comfort .tool-card,
-.theme-comfort .fact-card,
-.theme-comfort .feature-card,
-.theme-comfort .testimonial-card,
-.theme-comfort [class*="card"] {
-    border-color: var(--border-color);
-}
-
-.theme-dark .shadow-md,
-.theme-dark .shadow-lg,
-.theme-dark .shadow-xl,
-.theme-comfort .shadow-md,
-.theme-comfort .shadow-lg,
-.theme-comfort .shadow-xl {
-    box-shadow: 0 4px 6px -1px var(--shadow-color);
-}
-
-/* Colored Backgrounds for Themed Modes */
-.theme-dark .bg-red-100 { background-color: #1f2937; }
-.theme-dark .bg-red-50 { background-color: #111827; }
-.theme-dark .bg-green-50 { background-color: #064e3b; }
-.theme-dark .bg-green-100 { background-color: #065f46; }
-.theme-dark .bg-blue-50 { background-color: #1e3a8a; }
-.theme-dark .bg-blue-100 { background-color: #1e40af; }
-.theme-dark .bg-pink-100 { background-color: #4c1d4b; }
-.theme-dark .bg-teal-100 { background-color: #134e4a; }
-.theme-dark .bg-gray-900 { background-color: #000000; }
-
-.theme-comfort .bg-red-100 { background-color: #fed7aa; }
-.theme-comfort .bg-red-50 { background-color: #fef3e2; }
-.theme-comfort .bg-green-100 { background-color: #dcfce7; }
-.theme-comfort .bg-blue-50 { background-color: #dbeafe; }
-.theme-comfort .bg-blue-100 { background-color: #bfdbfe; }
-.theme-comfort .bg-pink-100 { background-color: #fce7f3; }
-.theme-comfort .bg-teal-100 { background-color: #ccfbf1; }
-.theme-comfort .bg-gray-900 { background-color: #451a03; }
-
-/* Text Colors for Themed Modes */
-.theme-dark .text-blue-800 { color: #93c5fd; }
-.theme-dark .text-blue-700 { color: #bfdbfe; }
-.theme-dark .text-blue-400 { color: #60a5fa; }
-
-.theme-comfort .text-blue-800 { color: #1e40af; }
-.theme-comfort .text-blue-700 { color: #1d4ed8; }
-.theme-comfort .text-blue-400 { color: #3b82f6; }
-
-/* Tailwind gradient overrides — light gradients in dark/comfort mode */
-.theme-dark .bg-gradient-to-br,
-.theme-dark .bg-gradient-to-r,
-.theme-dark .bg-gradient-to-b,
-.theme-dark .bg-gradient-to-t {
-    background: #111827 !important;
-    border: 1px solid var(--border-color);
-}
-
-.theme-comfort .bg-gradient-to-br,
-.theme-comfort .bg-gradient-to-r,
-.theme-comfort .bg-gradient-to-b,
-.theme-comfort .bg-gradient-to-t {
-    background: #fdf4e8 !important;
-    border: 1px solid var(--border-color);
-}
-
-/* Tailwind bg opacity variants (bg-blue-50/40 vb.) */
-.theme-dark [class*="bg-blue-50"],
-.theme-dark [class*="bg-indigo-50"],
-.theme-dark [class*="bg-purple-50"],
-.theme-dark [class*="bg-teal-50"],
-.theme-dark [class*="bg-cyan-50"],
-.theme-dark [class*="bg-emerald-50"],
-.theme-dark [class*="bg-orange-50"],
-.theme-dark [class*="bg-rose-50"],
-.theme-dark [class*="bg-amber-50"],
-.theme-dark [class*="bg-slate-50"] {
-    background-color: var(--bg-primary) !important;
-}
-
-.theme-comfort [class*="bg-blue-50"],
-.theme-comfort [class*="bg-indigo-50"],
-.theme-comfort [class*="bg-purple-50"],
-.theme-comfort [class*="bg-teal-50"],
-.theme-comfort [class*="bg-cyan-50"],
-.theme-comfort [class*="bg-emerald-50"],
-.theme-comfort [class*="bg-orange-50"],
-.theme-comfort [class*="bg-rose-50"],
-.theme-comfort [class*="bg-amber-50"],
-.theme-comfort [class*="bg-slate-50"] {
-    background-color: var(--bg-tertiary) !important;
-}
-
-/* Funny Quote Container - Tema Uyumlu */
+/* Funny Quote Container */
 .funny-quote-container {
     background-color: #fef3c7; /* Light mode: yellow-50 */
     border-left: 4px solid #f59e0b; /* Light mode: yellow-500 */
@@ -232,88 +65,6 @@ a:hover {
 
 .funny-quote-text {
     color: #92400e; /* Light mode: yellow-800 */
-}
-
-/* Dark Mode */
-.theme-dark .funny-quote-container {
-    background-color: #451a03; /* Dark mode: yellow-900 */
-    border-left-color: #f59e0b; /* Dark mode: yellow-500 */
-}
-
-.theme-dark .funny-quote-text {
-    color: #fbbf24; /* Dark mode: yellow-400 */
-}
-
-/* Comfort Mode */
-.theme-comfort .funny-quote-container {
-    background-color: #fef3c7; /* Comfort mode: yellow-50 */
-    border-left-color: #f59e0b; /* Comfort mode: yellow-500 */
-}
-
-.theme-comfort .funny-quote-text {
-    color: #92400e; /* Comfort mode: yellow-800 */
-}
-
-/* Colored Borders */
-.theme-dark .border-green-200 { border-color: #10b981; }
-.theme-dark .border-blue-200 { border-color: #3b82f6; }
-.theme-dark .border-gray-800 { border-color: #374151; }
-.theme-dark .border-gray-600 { border-color: #6b7280; }
-.theme-dark .border-red-500 { border-color: #ef4444; }
-.theme-dark .border-blue-500 { border-color: #3b82f6; }
-
-.theme-comfort .border-blue-200 { border-color: #3b82f6; }
-.theme-comfort .border-gray-800 { border-color: #fed7aa; }
-.theme-comfort .border-gray-600 { border-color: #9ca3af; }
-.theme-comfort .border-red-500 { border-color: #dc2626; }
-.theme-comfort .border-blue-500 { border-color: #2563eb; }
-
-/* Colored Text */
-.theme-dark .text-red-600 { color: #fca5a5; }
-.theme-dark .text-green-600 { color: #86efac; }
-.theme-dark .text-green-700 { color: #d1fae5; }
-.theme-dark .text-pink-600 { color: #dda4af; }
-.theme-dark .text-teal-600 { color: #0d9488; }
-.theme-dark .text-white { color: #f9fafb; }
-.theme-dark .hover\:text-white:hover { color: #ffffff; }
-.theme-dark .hover\:text-blue-600:hover { color: #60a5fa; }
-.theme-dark .hover\:text-red-600:hover { color: #f87171; }
-
-.theme-comfort .text-red-600 { color: #991b1b; }
-.theme-comfort .text-green-600 { color: #166534; }
-.theme-comfort .text-pink-600 { color: #be185d; }
-.theme-comfort .text-teal-600 { color: #0f766e; }
-.theme-comfort .text-white { color: #451a03; }
-.theme-comfort .hover\:text-white:hover { color: #92400e; }
-.theme-comfort .hover\:text-blue-600:hover { color: #16a34a; }
-.theme-comfort .hover\:text-red-600:hover { color: #dc2626; }
-
-/* Header and Footer Links - Sadece header için */
-.theme-dark header a {
-    color: var(--text-secondary);
-}
-
-.theme-dark header a:hover {
-    color: var(--text-primary);
-}
-
-/* Footer stilleri components.css'de tanımlı */
-
-/* Gradients */
-.theme-dark .bg-gradient-to-r.from-blue-50.to-purple-50,
-.theme-dark .bg-gradient-to-r.from-red-50.to-blue-50,
-.theme-comfort .bg-gradient-to-r.from-blue-50.to-purple-50,
-.theme-comfort .bg-gradient-to-r.from-red-50.to-blue-50 {
-    background: linear-gradient(90deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-}
-
-/* PDF Bilgilendirme Section Theme Support */
-.theme-dark .bg-gradient-to-r.from-blue-50.to-purple-50 {
-    background: linear-gradient(90deg, #1e3a8a 0%, #581c87 100%);
-}
-
-.theme-comfort .bg-gradient-to-r.from-blue-50.to-purple-50 {
-    background: linear-gradient(90deg, #dbeafe 0%, #f3e8ff 100%);
 }
 
 /* Smooth Transitions */
@@ -344,16 +95,9 @@ body,
 
 /* ===== UTILITY CLASSES ===== */
 
-
-
 /* Progress Bar */
 .progress-bar {
     transition: width 0.3s ease;
-}
-
-.theme-dark .bg-gray-100.progress-bar,
-.theme-comfort .bg-gray-100.progress-bar {
-    background-color: var(--bg-tertiary);
 }
 
 /* Loading Spinner */
@@ -367,16 +111,6 @@ body,
     display: inline-block;
 }
 
-.theme-dark .spinner {
-    border: 3px solid #374151;
-    border-top: 3px solid #60a5fa;
-}
-
-.theme-comfort .spinner {
-    border: 3px solid #fed7aa;
-    border-top: 3px solid #f59e0b;
-}
-
 /* Tool Options */
 .tool-option-group {
     margin-bottom: 1.5rem;
@@ -387,11 +121,6 @@ body,
     font-weight: 600;
     color: #374151;
     margin-bottom: 0.5rem;
-}
-
-.theme-dark .tool-option-label,
-.theme-comfort .tool-option-label {
-    color: var(--text-primary);
 }
 
 /* Grid Layouts */
@@ -481,22 +210,6 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: 2px solid #3b82f6;
-    outline-offset: 2px;
-}
-
-.theme-dark button:focus,
-.theme-dark input:focus,
-.theme-dark select:focus,
-.theme-dark textarea:focus {
-    outline: 2px solid #60a5fa;
-    outline-offset: 2px;
-}
-
-.theme-comfort button:focus,
-.theme-comfort input:focus,
-.theme-comfort select:focus,
-.theme-comfort textarea:focus {
-    outline: 2px solid #f59e0b;
     outline-offset: 2px;
 }
 
@@ -628,10 +341,6 @@ textarea:focus {
         padding-right: 0.75rem;
     }
     
-    /* Mobile Theme Buttons Container */
-    .flex.items-center.space-x-1 {
-        gap: 0.25rem;
-    }
 }
 
 /* ===== PRINT STYLES ===== */
@@ -702,50 +411,3 @@ textarea:focus {
     }
 }
 
-/* ===== KAR AMACIMIZ YOK KARTI - GECE MODU DESTEĞİ ===== */
-/* About sayfasındaki büyük kart */
-.theme-dark .bg-gradient-to-r.from-green-50.to-blue-50 {
-    background: linear-gradient(90deg, #064e3b 0%, #1e3a8a 100%) !important;
-}
-
-.theme-dark .bg-green-100 {
-    background-color: #065f46 !important;
-}
-
-.theme-dark .text-green-600 {
-    color: #10b981 !important;
-}
-
-.theme-dark .text-gray-800 {
-    color: #f9fafb !important;
-}
-
-.theme-dark .text-gray-700 {
-    color: #d1d5db !important;
-}
-
-/* Contact sayfasındaki küçük kart */
-.theme-dark .bg-gradient-to-r.from-green-50.to-blue-50 {
-    background: linear-gradient(90deg, #064e3b 0%, #1e3a8a 100%) !important;
-}
-
-/* Comfort modu için de uygun renkler */
-.theme-comfort .bg-gradient-to-r.from-green-50.to-blue-50 {
-    background: linear-gradient(90deg, #dcfce7 0%, #dbeafe 100%) !important;
-}
-
-.theme-comfort .bg-green-100 {
-    background-color: #bbf7d0 !important;
-}
-
-.theme-comfort .text-green-600 {
-    color: #16a34a !important;
-}
-
-.theme-comfort .text-gray-800 {
-    color: #1f2937 !important;
-}
-
-.theme-comfort .text-gray-700 {
-    color: #374151 !important;
-}
