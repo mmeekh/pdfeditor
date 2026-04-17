@@ -1,0 +1,23 @@
+→ Search Console (7 gün) çekiliyor...
+  ✓ 50 query, 12 sayfa
+→ GA4 (7 gün) çekiliyor...
+  ✓ 11 sayfa, 3 kanal
+
+✓ Rapor: /root/projects/pdfislemleri.com/reports/seo-2026-04-17.json
+
+─── ÖZET ───
+Search Console: 32 tıklama, 466 gösterim
+Top 5 query:
+  • pdf birleştirme                     22tk / 141gz / pos 21.0
+  • pdf birleştir                       5tk / 20gz / pos 19.2
+  • pdf sıkıştırma                      2tk / 11gz / pos 24.8
+  • pdf kucultme                        1tk / 1gz / pos 67
+  • pdf küçültme                        1tk / 6gz / pos 85.2
+GA4: 50 aktif kullanıcı
+Top 5 sayfa:
+  • /blog/pdf-birlestirme               22u / 23pv / eng%78.3
+  • /                                   17u / 64pv / eng%37.0
+  • /blog                               2u / 19pv / eng%100.0
+  • /blog/pdf-sikistirma                2u / 2pv / eng%100.0
+  • /about                              1u / 0pv / eng%100.0
+[2026-04-17T15:38:09+00:00] Rapor üretildi

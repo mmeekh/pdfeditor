@@ -1,8 +1,9 @@
-__pycache__/
 *.pyc
 .env
-node_modules/
-site/dist/
-test_pdfislemleri_complete.js
 YAKINIMDAKIDEPREM_SETUP.txt
+__pycache__/
+node_modules/
+secrets/
+site/dist/
 site/images/all-pages/
+test_pdfislemleri_complete.js
