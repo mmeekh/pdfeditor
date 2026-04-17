@@ -184,14 +184,16 @@ a:hover {
 .theme-dark .bg-gradient-to-r,
 .theme-dark .bg-gradient-to-b,
 .theme-dark .bg-gradient-to-t {
-    background: var(--bg-secondary) !important;
+    background: #111827 !important;
+    border: 1px solid var(--border-color);
 }
 
 .theme-comfort .bg-gradient-to-br,
 .theme-comfort .bg-gradient-to-r,
 .theme-comfort .bg-gradient-to-b,
 .theme-comfort .bg-gradient-to-t {
-    background: var(--bg-secondary) !important;
+    background: #fdf4e8 !important;
+    border: 1px solid var(--border-color);
 }
 
 /* Tailwind bg opacity variants (bg-blue-50/40 vb.) */
