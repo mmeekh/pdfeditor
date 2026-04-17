@@ -44,10 +44,19 @@ class ProtectTool {
 
     getProtectionOptions() {
         const userPassword = document.getElementById('userPassword')?.value?.trim();
+        const userPasswordConfirm = document.getElementById('userPasswordConfirm')?.value?.trim();
         const ownerPassword = document.getElementById('ownerPassword')?.value?.trim();
-        
+
         if (!userPassword) {
             notifications.error('Lütfen kullanıcı şifresi girin');
+            return null;
+        }
+        if (!userPasswordConfirm){
+            notifications.error('Lütfen parolayı onaylayın');
+            return null;
+        }
+        if (userPassword !== userPasswordConfirm){
+            notifications.error('Parolalar eşleşmiyor');
             return null;
         }
 
@@ -79,7 +88,64 @@ class ProtectTool {
         }
 
         resultArea.classList.remove('hidden');
-        notifications.success(`PDF başarıyla şifrelendi! 🔒`);
+        notifications.success(`PDF başarıyla şifrelendi!`);
+    }
+
+    _calcStrength(pw){
+        if (!pw) return { score: 0, label: 'Boş', cls: 'pw-strength-empty' };
+        let score = 0;
+        if (pw.length >= 8) score++;
+        if (/[A-Z]/.test(pw)) score++;
+        if (/[0-9]/.test(pw)) score++;
+        if (/[^A-Za-z0-9]/.test(pw)) score++;
+        let label = 'Zayıf', cls = 'pw-strength-weak';
+        if (score >= 4){ label = 'Güçlü'; cls = 'pw-strength-strong'; }
+        else if (score >= 2){ label = 'Orta'; cls = 'pw-strength-medium'; }
+        return { score, label, cls };
+    }
+
+    _updateStrength(){
+        const pw = document.getElementById('userPassword')?.value || '';
+        const bar = document.getElementById('pwStrengthBar');
+        const labelEl = document.getElementById('pwStrengthLabel');
+        if (!bar || !labelEl) return;
+        const { score, label, cls } = this._calcStrength(pw);
+        bar.className = `pw-strength-bar ${cls}`;
+        bar.style.width = `${Math.min(100, (score / 4) * 100)}%`;
+        labelEl.textContent = label;
+        labelEl.className = `pw-strength-label ${cls}`;
+    }
+
+    _updateMatch(){
+        const pw = document.getElementById('userPassword')?.value || '';
+        const pw2 = document.getElementById('userPasswordConfirm')?.value || '';
+        const warn = document.getElementById('pwMatchWarn');
+        if (!warn) return;
+        if (!pw2){
+            warn.textContent = '';
+            warn.className = 'pw-match-warn';
+            return;
+        }
+        if (pw === pw2){
+            warn.textContent = 'Parolalar eşleşiyor';
+            warn.className = 'pw-match-warn pw-match-ok';
+        } else {
+            warn.textContent = 'Parolalar eşleşmiyor';
+            warn.className = 'pw-match-warn pw-match-err';
+        }
+    }
+
+    mount(){
+        setTimeout(() => {
+            const pw = document.getElementById('userPassword');
+            const pw2 = document.getElementById('userPasswordConfirm');
+            if (pw){
+                pw.addEventListener('input', () => { this._updateStrength(); this._updateMatch(); });
+            }
+            if (pw2){
+                pw2.addEventListener('input', () => this._updateMatch());
+            }
+        }, 100);
     }
 
     getOptions(){
@@ -89,16 +155,33 @@ class ProtectTool {
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Kullanıcı Şifresi <span class="text-red-500">*</span>
                     </label>
-                    <input type="password" id="userPassword" 
+                    <input type="password" id="userPassword"
                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                            placeholder="PDF açmak için gerekli şifre">
+                    <div class="pw-strength-container">
+                        <div class="pw-strength-track">
+                            <div id="pwStrengthBar" class="pw-strength-bar pw-strength-empty" style="width: 0%"></div>
+                        </div>
+                        <span id="pwStrengthLabel" class="pw-strength-label pw-strength-empty">Boş</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">En az 8 karakter, büyük harf, rakam ve özel karakter önerilir.</p>
                 </div>
-                
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Parolayı Onayla <span class="text-red-500">*</span>
+                    </label>
+                    <input type="password" id="userPasswordConfirm"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           placeholder="Parolayı tekrar girin">
+                    <div id="pwMatchWarn" class="pw-match-warn"></div>
+                </div>
+
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Sahip Şifresi (Opsiyonel)
                     </label>
-                    <input type="password" id="ownerPassword" 
+                    <input type="password" id="ownerPassword"
                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                            placeholder="PDF düzenlemek için gerekli şifre">
                 </div>
@@ -144,10 +227,10 @@ class ProtectTool {
         `;
     }
 
-    getFunnyQuote(){ 
-        return 'PDF şifreleme işlemi, belgelerinizi güvenli hale getirir. Profesyonel koruma için PDFişlemleri.com\'u tercih edin.'; 
+    getFunnyQuote(){
+        return 'PDF şifreleme işlemi, belgelerinizi güvenli hale getirir. Profesyonel koruma için PDFişlemleri.com\'u tercih edin.';
     }
-    
+
     getDescription(){
         return "PDF dosyalarınıza güçlü şifre koruması ekleyin; birden fazlaysa ZIP olarak indirin.";
     }

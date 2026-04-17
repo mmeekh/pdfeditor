@@ -20,6 +20,11 @@ class CompressTool {
     this.toolName='PDF Sıkıştır';
   }
 
+  _getMode(){
+    const radio = document.querySelector('input[name="compressMode"]:checked');
+    return radio ? radio.value : 'level';
+  }
+
   async process(){
     const files = fileHandler.getSelectedFiles();
     if (files.length < 1) { notifications.error('En az 1 PDF yükleyin'); return; }
@@ -29,14 +34,29 @@ class CompressTool {
     if (btn) btn.disabled = true;
 
     try{
+      const mode = this._getMode();
+      let level = null;
+      let targetKb = null;
+
+      if (mode === 'target'){
+        const val = parseInt(document.getElementById('compressTargetKb')?.value || '0', 10);
+        if (!val || val < 100){
+          notifications.error('Hedef boyut en az 100 KB olmalı');
+          if (btn) btn.disabled = false;
+          return;
+        }
+        targetKb = val;
+      } else {
+        level = (document.getElementById('compressLevel')?.value) || 'medium';
+      }
+
       pdfLoader.show({ message: `${this.toolName} işleniyor...`, subMessage: `${files.length} dosya yükleniyor` });
 
       const up = await pdfApi.uploadFilesForCompress(files);
       const sessionId = up.session_id;
-      const level = (document.getElementById('compressLevel')?.value)||'medium';
 
       pdfLoader.updateProgress(50,'PDF sıkıştırılıyor...');
-      const result = await pdfApi.processCompress(sessionId, level);
+      const result = await pdfApi.processCompress(sessionId, { level, targetKb });
 
       pdfLoader.updateProgress(100,'Tamamlandı!');
       setTimeout(()=>{ pdfLoader.hide(); this.showResult(result); }, 150);
@@ -86,6 +106,20 @@ class CompressTool {
   getOptions(){
     return `
       <div class="tool-option-group">
+        <label class="tool-option-label">Sıkıştırma Modu</label>
+        <div class="flex flex-col gap-2">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="radio" name="compressMode" value="level" checked>
+            <span>Kalite seviyesi</span>
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="radio" name="compressMode" value="target">
+            <span>Hedef boyut (KB)</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="compressLevelBox" class="tool-option-group">
         <label class="tool-option-label" for="compressLevel">Sıkıştırma Seviyesi</label>
         <select id="compressLevel" class="form-input">
           <option value="low">Düşük (hızlı)</option>
@@ -93,14 +127,35 @@ class CompressTool {
           <option value="high">Yüksek (daha küçük dosya)</option>
         </select>
       </div>
+
+      <div id="compressTargetBox" class="tool-option-group hidden">
+        <label class="tool-option-label" for="compressTargetKb">Hedef Boyut (KB)</label>
+        <input id="compressTargetKb" type="number" class="form-input" value="1000" min="100" step="100">
+        <p class="text-xs text-gray-500 mt-1">Sistem, hedefe en yakın boyutu otomatik bulur.</p>
+      </div>
     `;
   }
 
+  mount(){
+    setTimeout(() => {
+      const radios = document.querySelectorAll('input[name="compressMode"]');
+      const levelBox = document.getElementById('compressLevelBox');
+      const targetBox = document.getElementById('compressTargetBox');
+      radios.forEach(r => r.addEventListener('change', () => {
+        if (this._getMode() === 'target'){
+          levelBox?.classList.add('hidden');
+          targetBox?.classList.remove('hidden');
+        } else {
+          targetBox?.classList.add('hidden');
+          levelBox?.classList.remove('hidden');
+        }
+      }));
+    }, 100);
+  }
+
   getFunnyQuote(){ return 'PDF sıkıştırma işlemi, dosya boyutunu küçültürken kaliteyi korur. Optimize edilmiş belgeler için PDFişlemleri.com\'u tercih edin.'; }
-  getDescription(){ return 'Bir veya birden fazla PDF’i sıkıştırın. Birden fazlaysa ZIP olarak indirin.'; }
+  getDescription(){ return 'Bir veya birden fazla PDF’i sıkıştırın; kalite seviyesi veya hedef boyut seçin. Birden fazlaysa ZIP olarak indirin.'; }
 }
 
 const compressTool = new CompressTool();
 export default compressTool;
-
-

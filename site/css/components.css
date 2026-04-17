@@ -1813,3 +1813,51 @@ body {
 .pdf-preview-rotate-btn:hover {
     background: #2563eb;
 }
+
+/* ===== Protect: password strength & match ===== */
+.pw-strength-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.pw-strength-track {
+    flex: 1;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.pw-strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 9999px;
+    transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.pw-strength-empty { background-color: #e5e7eb; }
+.pw-strength-weak { background-color: #ef4444; }
+.pw-strength-medium { background-color: #f59e0b; }
+.pw-strength-strong { background-color: #10b981; }
+
+.pw-strength-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 48px;
+    text-align: right;
+    background: transparent !important;
+}
+.pw-strength-label.pw-strength-empty { color: #6b7280; }
+.pw-strength-label.pw-strength-weak { color: #ef4444; }
+.pw-strength-label.pw-strength-medium { color: #b45309; }
+.pw-strength-label.pw-strength-strong { color: #059669; }
+
+.pw-match-warn {
+    font-size: 0.75rem;
+    margin-top: 0.375rem;
+    min-height: 1rem;
+}
+.pw-match-ok { color: #059669; }
+.pw-match-err { color: #dc2626; }

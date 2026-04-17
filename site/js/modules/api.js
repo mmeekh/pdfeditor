@@ -222,8 +222,23 @@ class PDFApi {
         return res.json();
     }
 
-    async processCompress(sessionId, level = 'medium') {
-        const res = await fetch(`${this.baseUrl}/tools/compress/process/${sessionId}?level=${encodeURIComponent(level)}`, { method: 'POST' });
+    async processCompress(sessionId, opts = 'medium') {
+        // Backward compatibility: string = level
+        let level = 'medium';
+        let targetKb = null;
+        if (typeof opts === 'string') {
+            level = opts;
+        } else if (opts && typeof opts === 'object') {
+            level = opts.level || null;
+            targetKb = opts.targetKb || opts.target_kb || null;
+        }
+        const params = new URLSearchParams();
+        if (targetKb) {
+            params.set('target_kb', String(targetKb));
+        } else if (level) {
+            params.set('level', level);
+        }
+        const res = await fetch(`${this.baseUrl}/tools/compress/process/${sessionId}?${params.toString()}`, { method: 'POST' });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Sıkıştırma işlem hatası');
@@ -436,6 +451,30 @@ class PDFApi {
         return res.json();
     }
 
+    /**
+     * TODO: Backend şu an sadece metin filigranı destekliyor.
+     * Resim filigran desteği eklendiğinde aşağıdaki endpoint'i
+     * `/tools/watermark/process-image/{sessionId}` veya benzer bir
+     * yapıya göre güncelleyin. Şu an için FormData ile aynı
+     * process endpoint'ine `watermark_image` field'ı ile gönderiyoruz.
+     */
+    async processWatermarkImage(sessionId, opts) {
+        const formData = new FormData();
+        if (opts.image) formData.append('watermark_image', opts.image);
+        if (opts.position) formData.append('position', opts.position);
+        if (opts.size) formData.append('size', opts.size);
+        if (opts.opacity !== undefined) formData.append('opacity', String(opts.opacity));
+        const res = await fetch(`${this.baseUrl}/tools/watermark/process-image/${sessionId}`, {
+            method: 'POST',
+            body: formData,
+        });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || 'Resim filigranı şu an backend tarafında desteklenmiyor.');
+        }
+        return res.json();
+    }
+
     getWatermarkDownloadUrl(sessionId, filename) {
         return `${this.baseUrl}/tools/watermark/download/${sessionId}/${filename}`;
     }
@@ -564,7 +603,7 @@ class PDFApi {
         return response.json();
     }
 
-    async processPdfToExcel(sessionId, pages = 'all', password = null, mergeParagraphs = true, minParagraphLines = 5, detectionMethod = 'auto') {
+    async processPdfToExcel(sessionId, pages = 'all', password = null, mergeParagraphs = true, minParagraphLines = 5, detectionMethod = 'auto', outputFormat = 'xlsx') {
         const params = new URLSearchParams();
         params.set('pages', pages);
         if (password) {
@@ -573,7 +612,8 @@ class PDFApi {
         params.set('merge_paragraphs', mergeParagraphs);
         params.set('min_paragraph_lines', minParagraphLines);
         params.set('detection_method', detectionMethod);
-        
+        params.set('output_format', outputFormat);
+
         const response = await fetch(`${this.baseUrl}/tools/pdf-to-excel/process/${sessionId}?${params.toString()}`, { method: 'POST' });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));

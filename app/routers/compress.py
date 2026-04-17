@@ -51,7 +51,7 @@ async def upload_pdfs_for_compress(files: list[UploadFile] = File(...)):
 
 
 @router.post("/process/{session_id}")
-async def process_compress(session_id: str, level: str = "medium"):
+async def process_compress(session_id: str, level: str = "medium", target_kb: int | None = None):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
@@ -72,16 +72,50 @@ async def process_compress(session_id: str, level: str = "medium"):
     total_in = 0
     total_out = 0
 
+    def _compress_to_target(src_path: str, target_bytes: int):
+        """Hedef boyuta en yakın level'ı bul (level sırası ile dene)."""
+        levels = ["low", "medium", "high", "extreme"]
+        best = None  # (abs_diff, result_tuple, level)
+        for lv in levels:
+            try:
+                out_path, metrics = compressor.compress(src_path, level=lv)
+            except Exception as e:
+                logger.warning(f"Compress level {lv} failed for {src_path}: {e}")
+                continue
+            diff = abs(metrics.output_size_bytes - target_bytes)
+            candidate = (diff, (out_path, metrics), lv)
+            if best is None or diff < best[0]:
+                best = candidate
+            # Hedefin altına düştüysek erken çık (binary-search benzeri kısa devre)
+            if metrics.output_size_bytes <= target_bytes:
+                return best[1], best[2]
+        if best is None:
+            raise RuntimeError("Hiçbir level sıkıştıramadı")
+        return best[1], best[2]
+
     for src in pdf_files:
         try:
-            out_path, metrics = compressor.compress(src, level=level)
-            outputs.append({
-                "input": os.path.basename(src),
-                "output": os.path.basename(out_path),
-                "input_bytes": metrics.input_size_bytes,
-                "output_bytes": metrics.output_size_bytes,
-                "saved_percent": metrics.saved_percent,
-            })
+            if target_kb is not None and target_kb > 0:
+                target_bytes = int(target_kb) * 1024
+                (out_path, metrics), picked_level = _compress_to_target(src, target_bytes)
+                outputs.append({
+                    "input": os.path.basename(src),
+                    "output": os.path.basename(out_path),
+                    "input_bytes": metrics.input_size_bytes,
+                    "output_bytes": metrics.output_size_bytes,
+                    "saved_percent": metrics.saved_percent,
+                    "picked_level": picked_level,
+                    "target_kb": target_kb,
+                })
+            else:
+                out_path, metrics = compressor.compress(src, level=level)
+                outputs.append({
+                    "input": os.path.basename(src),
+                    "output": os.path.basename(out_path),
+                    "input_bytes": metrics.input_size_bytes,
+                    "output_bytes": metrics.output_size_bytes,
+                    "saved_percent": metrics.saved_percent,
+                })
             total_in += metrics.input_size_bytes
             total_out += metrics.output_size_bytes
         except Exception as e:

@@ -93,7 +93,48 @@ class PDFLoader {
             const sub = document.getElementById('loader-submessage');
             if (sub) sub.textContent = subMessage;
         }
-        
+
+        return this;
+    }
+
+    /**
+     * Batch (çoklu dosya) işlemlerinde per-file ilerlemeyi göster.
+     * Örnek: "[2/5] belge.pdf işleniyor"
+     *
+     * Not: Backend dosyaları toplu işlediği için bu bilgi genellikle
+     * sadece upload/pre-process aşamasında frontend tarafında anlamlıdır.
+     *
+     * @param {number} currentFile - 1-indexed sıradaki dosya numarası
+     * @param {number} totalFiles - toplam dosya sayısı
+     * @param {string} [fileName] - işlenen dosyanın adı (opsiyonel)
+     */
+    setBatchProgress(currentFile, totalFiles, fileName) {
+        try {
+            if (!this.currentStatus) return this;
+            if (!totalFiles || totalFiles < 1) return this;
+
+            const cur = Math.max(1, Math.min(totalFiles, Number(currentFile) || 1));
+            const tot = Math.max(1, Number(totalFiles) || 1);
+
+            const sub = document.getElementById('loader-submessage');
+            if (sub) {
+                const truncated = (typeof fileName === 'string' && fileName.length > 40)
+                    ? fileName.slice(0, 37) + '...'
+                    : fileName;
+                const namePart = truncated ? ` ${truncated}` : ' dosya';
+                sub.textContent = `[${cur}/${tot}]${namePart} işleniyor`;
+            }
+
+            // İkincil yüzde olarak genel ilerleme (0-100)
+            const percentEl = document.getElementById('progress-percentage');
+            if (percentEl && this.progressValue === 0) {
+                const pct = Math.round((cur / tot) * 100);
+                percentEl.textContent = pct + '%';
+            }
+        } catch (e) {
+            console.warn('setBatchProgress error:', e);
+        }
+
         return this;
     }
     

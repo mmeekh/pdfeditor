@@ -50,6 +50,7 @@ class PDFToExcelProcessParams(BaseModel):
     merge_paragraphs: bool = True
     min_paragraph_lines: int = 5
     detection_method: str = "auto"
+    output_format: str = "xlsx"
 
 
 @router.post("/upload")
@@ -127,6 +128,9 @@ async def process_pdf_to_excel(
     merge_paragraphs = params.merge_paragraphs
     min_paragraph_lines = params.min_paragraph_lines
     detection_method = params.detection_method
+    output_format = (params.output_format or "xlsx").lower()
+    if output_format not in ("xlsx", "csv"):
+        output_format = "xlsx"
 
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
@@ -318,42 +322,84 @@ async def process_pdf_to_excel(
         if merge_paragraphs:
             tables = _merge_paragraphs_in_tables(tables, min_paragraph_lines)
 
-        # Excel dosyası oluştur
-        output_filename = f"excel_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
-        output_path = os.path.join(session_dir, output_filename)
+        # Çıktı formatına göre dosya oluştur
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        non_empty_tables = [t for t in tables if t is not None and not t.empty]
 
-        with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
-            for i, table in enumerate(tables):
-                if table is not None and not table.empty:
-                    # Tablo adı
-                    sheet_name = f"Tablo_{i+1}" if len(tables) > 1 else "Tablo"
+        if output_format == "csv":
+            # CSV çıktı: tek tablo varsa .csv, birden fazla ise .zip
+            if len(non_empty_tables) <= 1:
+                output_filename = f"excel_{timestamp}.csv"
+                output_path = os.path.join(session_dir, output_filename)
 
-                    # Türkçe karakterleri koru ve temizle
-                    table = table.fillna("")  # NaN değerleri boş string yap
+                if non_empty_tables:
+                    csv_table = non_empty_tables[0].fillna("")
+                else:
+                    csv_table = pd.DataFrame()
 
-                    # Excel'e yaz
-                    table.to_excel(writer, sheet_name=sheet_name, index=False)
+                csv_table.to_csv(
+                    output_path, index=False, encoding="utf-8-sig"
+                )
+            else:
+                import zipfile
 
-                    # Excel formatlamasını uygula
-                    worksheet = writer.sheets[sheet_name]
-                    _format_excel_worksheet(worksheet, table)
+                output_filename = f"excel_{timestamp}.zip"
+                output_path = os.path.join(session_dir, output_filename)
+
+                csv_files = []
+                for i, table in enumerate(non_empty_tables):
+                    csv_name = f"Tablo_{i+1}.csv"
+                    csv_path = os.path.join(session_dir, csv_name)
+                    table.fillna("").to_csv(
+                        csv_path, index=False, encoding="utf-8-sig"
+                    )
+                    csv_files.append((csv_path, csv_name))
+
+                with zipfile.ZipFile(
+                    output_path, "w", zipfile.ZIP_DEFLATED
+                ) as zipf:
+                    for csv_path, csv_name in csv_files:
+                        zipf.write(csv_path, csv_name)
+        else:
+            # XLSX çıktı (varsayılan)
+            output_filename = f"excel_{timestamp}.xlsx"
+            output_path = os.path.join(session_dir, output_filename)
+
+            with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
+                for i, table in enumerate(tables):
+                    if table is not None and not table.empty:
+                        # Tablo adı
+                        sheet_name = (
+                            f"Tablo_{i+1}" if len(tables) > 1 else "Tablo"
+                        )
+
+                        # Türkçe karakterleri koru ve temizle
+                        table = table.fillna("")  # NaN değerleri boş string yap
+
+                        # Excel'e yaz
+                        table.to_excel(writer, sheet_name=sheet_name, index=False)
+
+                        # Excel formatlamasını uygula
+                        worksheet = writer.sheets[sheet_name]
+                        _format_excel_worksheet(worksheet, table)
 
         # Dosya bilgilerini al
         file_size = os.path.getsize(output_path)
         file_size_mb = round(file_size / (1024 * 1024), 2)
 
-        logger.info(f"PDF'den Excel dönüştürme başarılı: {session_id}")
+        logger.info(
+            f"PDF'den {output_format.upper()} dönüştürme başarılı: {session_id}"
+        )
 
         return {
             "success": True,
             "session_id": session_id,
             "output_file": output_filename,
+            "output_format": output_format,
             "file_info": {
                 "file_size_mb": file_size_mb,
                 "table_count": len(tables),
-                "sheet_count": len(
-                    [t for t in tables if t is not None and not t.empty]
-                ),
+                "sheet_count": len(non_empty_tables),
             },
             "download_url": f"/api/tools/pdf-to-excel/download/{session_id}/{output_filename}",
         }
@@ -379,7 +425,8 @@ async def download_excel_file(session_id: str, filename: str, request: Request):
             detail=f"İndirme oturumu bulunamadı veya süresi dolmuş ({settings.SESSION_LIFETIME_MINUTES} dakika). Dosyaları tekrar yükleyip işleyin.",
         )
 
-    if not os.path.exists(file_path) or not filename.endswith(".xlsx"):
+    allowed_exts = (".xlsx", ".csv", ".zip")
+    if not os.path.exists(file_path) or not filename.lower().endswith(allowed_exts):
         logger.warning(f"Dosya bulunamadı: {file_path}")
         raise HTTPException(status_code=404, detail="Dosya bulunamadı veya silinmiş")
 
@@ -398,12 +445,21 @@ async def download_excel_file(session_id: str, filename: str, request: Request):
     except Exception as e:
         logger.error(f"Session time check failed: {e}")
 
+    # Çıktı formatına göre media type belirle
+    lower_name = filename.lower()
+    if lower_name.endswith(".csv"):
+        media_type = "text/csv; charset=utf-8"
+    elif lower_name.endswith(".zip"):
+        media_type = "application/zip"
+    else:
+        media_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+
     if request.method == "HEAD":
         logger.info(f"HEAD request: {filename} (Session: {session_id})")
         return Response(
             status_code=200,
             headers={
-                "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "Content-Type": media_type,
                 "Content-Length": str(os.path.getsize(file_path)),
                 "Content-Disposition": f"attachment; filename={filename}",
                 "Cache-Control": "no-cache, no-store, must-revalidate",
@@ -415,7 +471,7 @@ async def download_excel_file(session_id: str, filename: str, request: Request):
     logger.info(f"Dosya indiriliyor: {filename} (Session: {session_id})")
     return FileResponse(
         path=file_path,
-        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        media_type=media_type,
         filename=filename,
         headers={
             "Content-Disposition": f"attachment; filename={filename}",

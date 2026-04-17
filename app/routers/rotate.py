@@ -6,7 +6,7 @@ import logging
 
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
-from pypdf import PdfReader as PypdfReader, PdfWriter as PypdfWriter
+from PyPDF2 import PdfReader as PypdfReader, PdfWriter as PypdfWriter
 
 from core.config import settings
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path

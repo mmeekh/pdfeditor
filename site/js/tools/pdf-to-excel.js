@@ -63,8 +63,11 @@ class PdfToExcelTool {
             const detectionMethodInput = document.querySelector('input[name="detectionMethod"]:checked');
             const detectionMethod = detectionMethodInput ? detectionMethodInput.value : 'auto';
 
+            const outputFormatInput = document.querySelector('input[name="outputFormat"]:checked');
+            const outputFormat = outputFormatInput ? outputFormatInput.value : 'xlsx';
+
             // Step 3: Dönüştürme işlemini başlat
-            const processResult = await pdfApi.processPdfToExcel(sessionId, pages, password, mergeParagraphs, minParagraphLines, detectionMethod);
+            const processResult = await pdfApi.processPdfToExcel(sessionId, pages, password, mergeParagraphs, minParagraphLines, detectionMethod, outputFormat);
 
             pdfLoader.updateProgress(90, 'Excel dosyası oluşturuluyor...');
             pdfLoader.updateProgress(100, 'Tamamlandı!');
@@ -244,6 +247,20 @@ Kalan süre: ${Math.floor(fileHandler.getSessionTimeRemaining() / 60)} dakika ${
      */
     getOptions() {
         return `
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">Çıktı Formatı</label>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="outputFormat" value="xlsx" checked class="mr-2">
+                        <span>Excel (.xlsx) - Önerilen</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="outputFormat" value="csv" class="mr-2">
+                        <span>CSV (.csv) - Basit metin formatı</span>
+                    </label>
+                </div>
+                <p class="text-sm text-gray-500 mt-1">CSV seçiminde birden fazla tablo varsa ZIP olarak indirilir.</p>
+            </div>
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-2">Dönüştürme Seçenekleri</label>
                 <div class="space-y-2">
