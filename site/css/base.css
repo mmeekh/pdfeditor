@@ -179,6 +179,48 @@ a:hover {
 .theme-comfort .text-blue-700 { color: #1d4ed8; }
 .theme-comfort .text-blue-400 { color: #3b82f6; }
 
+/* Tailwind gradient overrides — light gradients in dark/comfort mode */
+.theme-dark .bg-gradient-to-br,
+.theme-dark .bg-gradient-to-r,
+.theme-dark .bg-gradient-to-b,
+.theme-dark .bg-gradient-to-t {
+    background: var(--bg-secondary) !important;
+}
+
+.theme-comfort .bg-gradient-to-br,
+.theme-comfort .bg-gradient-to-r,
+.theme-comfort .bg-gradient-to-b,
+.theme-comfort .bg-gradient-to-t {
+    background: var(--bg-secondary) !important;
+}
+
+/* Tailwind bg opacity variants (bg-blue-50/40 vb.) */
+.theme-dark [class*="bg-blue-50"],
+.theme-dark [class*="bg-indigo-50"],
+.theme-dark [class*="bg-purple-50"],
+.theme-dark [class*="bg-teal-50"],
+.theme-dark [class*="bg-cyan-50"],
+.theme-dark [class*="bg-emerald-50"],
+.theme-dark [class*="bg-orange-50"],
+.theme-dark [class*="bg-rose-50"],
+.theme-dark [class*="bg-amber-50"],
+.theme-dark [class*="bg-slate-50"] {
+    background-color: var(--bg-primary) !important;
+}
+
+.theme-comfort [class*="bg-blue-50"],
+.theme-comfort [class*="bg-indigo-50"],
+.theme-comfort [class*="bg-purple-50"],
+.theme-comfort [class*="bg-teal-50"],
+.theme-comfort [class*="bg-cyan-50"],
+.theme-comfort [class*="bg-emerald-50"],
+.theme-comfort [class*="bg-orange-50"],
+.theme-comfort [class*="bg-rose-50"],
+.theme-comfort [class*="bg-amber-50"],
+.theme-comfort [class*="bg-slate-50"] {
+    background-color: var(--bg-tertiary) !important;
+}
+
 /* Funny Quote Container - Tema Uyumlu */
 .funny-quote-container {
     background-color: #fef3c7; /* Light mode: yellow-50 */
