@@ -9,6 +9,7 @@ import pdfLoader from './modules/loader.js';
 import fileHandler from './modules/fileHandler.js';
 import toolManager from './modules/toolManager.js';
 import handoffStorage from './modules/handoffStorage.js';
+import { initToolSearch } from './modules/toolSearch.js';
 import mergeTool from './tools/merge.js';
 import organizeTool from './tools/organize.js';
 import pdfToTxtTool from './tools/pdf-to-txt.js';
@@ -64,5 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.app = new App();
     // App init'ten sonra tool sayfası auto-init
     setTimeout(autoInitToolPage, 100);
+    // Header search (desktop + mobile)
+    initToolSearch();
 });
 

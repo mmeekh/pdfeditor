@@ -101,15 +101,30 @@
                         <span class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</span>
                     </a>
                 </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="/" class="text-gray-600 hover:text-red-600 transition">Ana Sayfa</a>
-                    <a href="/blog" class="text-gray-600 hover:text-red-600 transition">Blog</a>
-                    <a href="/about" class="text-gray-600 hover:text-red-600 transition">Hakkımızda</a>
-                    <a href="/contact" class="text-gray-600 hover:text-red-600 transition">İletişim</a>
-                </nav>
+                                <!-- Desktop Search + Navigation -->
+                <div class="hidden md:flex flex-1 items-center justify-end gap-6 ml-6">
+                    <div class="relative flex-1 max-w-md">
+                        <input id="tool-search-desktop" type="text" placeholder="Araç ara (örn. birleştir, sıkıştır, imza)..." autocomplete="off"
+                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm outline-none transition">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                        <div id="tool-search-results-desktop" class="hidden absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg z-50 max-h-96 overflow-y-auto"></div>
+                    </div>
+                    <nav class="flex space-x-8">
+                        <a href="/" class="text-gray-600 hover:text-blue-600 transition">Ana Sayfa</a>
+                        <a href="/blog" class="text-gray-600 hover:text-blue-600 transition">Blog</a>
+                        <a href="/about" class="text-gray-600 hover:text-blue-600 transition">Hakkımızda</a>
+                        <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
+            <div class="md:hidden px-4 pb-3 relative">
+                <input id="tool-search-mobile" type="text" placeholder="Araç ara..." autocomplete="off"
+                       class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm outline-none">
+                <i class="fas fa-search absolute left-8 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                <div id="tool-search-results-mobile" class="hidden absolute top-full left-4 right-4 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg z-50 max-h-96 overflow-y-auto"></div>
+            </div>
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -377,5 +392,6 @@
     <!-- Scripts -->
     <script src="scroll-manager.js" defer></script>
     <script type="module" src="js/theme-manager.js"></script>
+    <script type="module" src="/js/main.js"></script>
 </body>
 </html>
