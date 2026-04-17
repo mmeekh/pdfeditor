@@ -1936,3 +1936,32 @@ body {
     z-index: 5;
     pointer-events: none;
 }
+
+/* PDF page preview checkbox stilleri */
+.pdf-page-preview.page-checked {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.pdf-page-preview.page-unchecked {
+    opacity: 0.55;
+    filter: saturate(0.5);
+}
+
+.pdf-page-preview.page-unchecked .signature-position {
+    display: none;
+}
+
+.pdf-page-preview .page-select-checkbox {
+    user-select: none;
+}
+
+/* fileSelectionList içindeki label hover'ı */
+#fileSelectionList label {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: background 0.15s;
+}
+#fileSelectionList label:hover {
+    background: #eef2ff;
+}

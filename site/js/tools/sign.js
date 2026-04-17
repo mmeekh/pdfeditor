@@ -162,14 +162,14 @@ class SignTool {
         <div class="tool-option-group">
           <label class="tool-option-label">İmza Oluştur</label>
           <div class="signature-container">
-            <canvas id="signatureCanvas" width="400" height="150" class="border border-gray-300 rounded cursor-crosshair"></canvas>
-            <div class="signature-controls mt-2 flex gap-2">
-              <button type="button" id="clearSignature" class="btn-secondary text-sm">
-                <i class="fas fa-eraser mr-1"></i>Temizle
+            <canvas id="signatureCanvas" width="400" height="150" class="border-2 border-gray-200 rounded-lg bg-white cursor-crosshair hover:border-indigo-400 transition"></canvas>
+            <div class="signature-controls mt-3 flex gap-2">
+              <button type="button" id="clearSignature" class="inline-flex items-center px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium transition">
+                <i class="fas fa-eraser mr-2"></i>Temizle
               </button>
               <input type="file" id="signatureUpload" accept="image/*" class="hidden">
-              <button type="button" id="uploadSignature" class="btn-secondary text-sm">
-                <i class="fas fa-upload mr-1"></i>Resim Yükle
+              <button type="button" id="uploadSignature" class="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-medium transition">
+                <i class="fas fa-upload mr-2"></i>Resim Yükle
               </button>
             </div>
           </div>
@@ -187,29 +187,41 @@ class SignTool {
 
         <!-- Dosya Seçimi -->
         <div class="tool-option-group">
-          <label class="tool-option-label">İmzalanacak Dosyalar</label>
-          <div id="fileSelectionList" class="max-h-40 overflow-y-auto border border-gray-200 rounded p-2">
-            <!-- Dosyalar buraya eklenecek -->
+          <div class="flex items-center justify-between mb-2">
+            <label class="tool-option-label mb-0"><i class="fas fa-file-pdf text-indigo-600 mr-1"></i>İmzalanacak Dosyalar</label>
+            <div class="flex gap-1">
+              <button type="button" id="selectAllFiles" class="text-xs px-3 py-1 rounded-md bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-medium transition">
+                Tümü
+              </button>
+              <button type="button" id="deselectAllFiles" class="text-xs px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium transition">
+                Temizle
+              </button>
+            </div>
           </div>
-          <div class="mt-2 flex gap-2">
-            <button type="button" id="selectAllFiles" class="btn-secondary text-sm">
-              <i class="fas fa-check-square mr-1"></i>Tümünü Seç
-            </button>
-            <button type="button" id="deselectAllFiles" class="btn-secondary text-sm">
-              <i class="fas fa-square mr-1"></i>Hiçbirini Seçme
-            </button>
+          <div id="fileSelectionList" class="max-h-40 overflow-y-auto border border-gray-200 rounded-lg p-2 bg-gray-50 space-y-1">
+            <!-- Dosyalar buraya eklenecek -->
           </div>
         </div>
 
         <!-- PDF Önizleme -->
         <div class="tool-option-group">
-          <label class="tool-option-label">PDF Sayfa Önizleme ve İmza Pozisyonu</label>
+          <div class="flex items-center justify-between mb-2">
+            <label class="tool-option-label mb-0"><i class="fas fa-eye text-indigo-600 mr-1"></i>Sayfa Önizleme ve İmza Pozisyonu</label>
+            <div class="flex gap-1">
+              <button type="button" id="selectAllPages" class="text-xs px-3 py-1 rounded-md bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-medium transition">
+                Tüm Sayfalar
+              </button>
+              <button type="button" id="deselectAllPages" class="text-xs px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium transition">
+                Hiçbiri
+              </button>
+            </div>
+          </div>
           <div class="bg-gray-50 p-4 rounded-lg">
-            <p class="text-sm text-gray-600 mb-3">
-              <i class="fas fa-info-circle mr-1"></i>
-              İmzayı istediğiniz yere sürükleyip bırakabilirsiniz. Varsayılan olarak sağ alt köşeye yerleştirilir.
+            <p class="text-xs text-gray-600 mb-3 flex items-start gap-2">
+              <i class="fas fa-info-circle text-indigo-500 mt-0.5"></i>
+              <span>Sağ üstteki <strong>kutucuğu işaretleyerek</strong> o sayfaya imza atın. İmzayı istediğiniz yere sürükleyin; varsayılan sağ alt köşe.</span>
             </p>
-            <div id="pdfPreviewContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
+            <div id="pdfPreviewContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[500px] overflow-y-auto">
               <!-- PDF sayfa önizlemeleri buraya eklenecek -->
             </div>
           </div>
@@ -341,6 +353,48 @@ class SignTool {
     }
     if (deselectAllBtn) {
       deselectAllBtn.addEventListener('click', () => this.deselectAllFiles());
+    }
+
+    // Sayfa bazlı checkbox: "Tüm Sayfalar" / "Hiçbiri"
+    const selectAllPagesBtn = document.getElementById('selectAllPages');
+    const deselectAllPagesBtn = document.getElementById('deselectAllPages');
+    if (selectAllPagesBtn) {
+      selectAllPagesBtn.addEventListener('click', () => {
+        document.querySelectorAll('.page-sign-checkbox').forEach(cb => {
+          cb.checked = true;
+          this.updatePageVisual(cb);
+        });
+      });
+    }
+    if (deselectAllPagesBtn) {
+      deselectAllPagesBtn.addEventListener('click', () => {
+        document.querySelectorAll('.page-sign-checkbox').forEach(cb => {
+          cb.checked = false;
+          this.updatePageVisual(cb);
+        });
+      });
+    }
+
+    // Page checkbox change: görsel feedback (tıklama pdf-preview'u bozmasın)
+    document.addEventListener('change', (e) => {
+      if (e.target.classList?.contains('page-sign-checkbox')) {
+        this.updatePageVisual(e.target);
+      }
+    });
+  }
+
+  /**
+   * Sayfa checkbox durumuna göre görsel güncellemesi
+   */
+  updatePageVisual(checkbox) {
+    const wrapper = checkbox.closest('.pdf-page-preview');
+    if (!wrapper) return;
+    if (checkbox.checked) {
+      wrapper.classList.remove('page-unchecked');
+      wrapper.classList.add('page-checked');
+    } else {
+      wrapper.classList.remove('page-checked');
+      wrapper.classList.add('page-unchecked');
     }
   }
 
@@ -559,18 +613,28 @@ class SignTool {
           const realHeight = pageRect.height;
 
           const wrapper = document.createElement('div');
-          wrapper.className = 'pdf-page-preview relative border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm';
+          wrapper.className = 'pdf-page-preview relative border-2 border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm transition-all';
           wrapper.dataset.fileIndex = String(fileIndex);
           wrapper.dataset.pageNumber = String(pageNum);
           wrapper.dataset.realWidth = String(realWidth);
           wrapper.dataset.realHeight = String(realHeight);
           wrapper.dataset.scale = String(0.5);
-          
-          // Sayfa bilgisi
+
+          // Sayfa bilgisi (sol üst)
           const pageInfo = document.createElement('div');
-          pageInfo.className = 'absolute top-2 left-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded';
-          pageInfo.textContent = `${file.name} - Sayfa ${pageNum}`;
+          pageInfo.className = 'absolute top-2 left-2 bg-gray-900/75 text-white text-xs px-2 py-1 rounded z-10';
+          pageInfo.textContent = files.length > 1 ? `${file.name.slice(0,15)} · s${pageNum}` : `Sayfa ${pageNum}`;
           wrapper.appendChild(pageInfo);
+
+          // Sayfa seçim checkbox'ı (sağ üst)
+          const checkboxWrap = document.createElement('label');
+          checkboxWrap.className = 'page-select-checkbox absolute top-2 right-2 z-20 bg-white rounded-md shadow-md px-2 py-1 flex items-center gap-1 cursor-pointer hover:bg-indigo-50 transition';
+          checkboxWrap.title = 'Bu sayfaya imza atılsın';
+          checkboxWrap.innerHTML = `
+            <input type="checkbox" class="page-sign-checkbox w-4 h-4 accent-indigo-600 cursor-pointer" checked data-file-index="${fileIndex}" data-page-number="${pageNum}">
+            <span class="text-xs font-medium text-gray-700">İmzala</span>
+          `;
+          wrapper.appendChild(checkboxWrap);
 
           // Canvas'ı ekle
           wrapper.appendChild(canvas);
@@ -840,19 +904,31 @@ class SignTool {
 
   collectSignaturePositions(selectedFiles) {
     const positions = {};
-    
+
+    // Sadece işaretli (checked) sayfalar için imza pozisyonu topla
+    const checkedPages = new Set();
+    document.querySelectorAll('.page-sign-checkbox:checked').forEach(cb => {
+      const fi = Number(cb.dataset.fileIndex);
+      const pn = Number(cb.dataset.pageNumber);
+      checkedPages.add(`${fi}_${pn}`);
+    });
+
     selectedFiles.forEach(fileIndex => {
       positions[fileIndex] = {};
-      
-      // Bu dosya için tüm sayfaların pozisyonlarını topla
       const file = fileHandler.getSelectedFiles()[fileIndex];
       if (!file) return;
-      
-      // PDF.js ile sayfa sayısını bul (geçici olarak localStorage'dan)
-      for (let pageNum = 1; pageNum <= 10; pageNum++) { // Maksimum 10 sayfa varsayımı
+
+      // DOM'dan bu dosyanın sayfa sayısını bul
+      const wrappers = document.querySelectorAll(`.pdf-page-preview[data-file-index="${fileIndex}"]`);
+      wrappers.forEach(w => {
+        const pageNum = Number(w.dataset.pageNumber);
+        const key = `${fileIndex}_${pageNum}`;
+        // Bu sayfa checked değilse skip
+        if (!checkedPages.has(key)) return;
+
+        // Kaydedilmiş pozisyon varsa kullan, yoksa varsayılan (sağ alt)
         const positionKey = `signature_pos_${fileIndex}_${pageNum}`;
         const savedPosition = localStorage.getItem(positionKey);
-        
         if (savedPosition) {
           try {
             const pos = JSON.parse(savedPosition);
@@ -866,14 +942,22 @@ class SignTool {
               realWidth: pos.realWidth || 400,
               realHeight: pos.realHeight || 300
             };
-          } catch (e) {
-            // Pozisyon parse hatası
-          }
+          } catch (e) {}
+        } else {
+          // Varsayılan: sağ alt köşe (backend'in default'u)
+          const realWidth = Number(w.dataset.realWidth) || 595;
+          const realHeight = Number(w.dataset.realHeight) || 842;
+          positions[fileIndex][pageNum] = {
+            x: 0, y: 0,
+            pdfX: realWidth - 170, pdfY: realHeight - 100,
+            relativeX: (realWidth - 170) / realWidth,
+            relativeY: (realHeight - 100) / realHeight,
+            realWidth, realHeight
+          };
         }
-      }
+      });
     });
-    
-    // Pozisyonlar toplandı
+
     return positions;
   }
 
