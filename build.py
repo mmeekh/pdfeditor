@@ -28,7 +28,7 @@ with open(CONFIG_PATH, "r", encoding="utf-8") as f:
 
 CARDBGS_BAND = """
     <!-- Brand visual strip (cardbgs decorative band) -->
-    <div class="relative h-20 md:h-28 overflow-hidden bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50" aria-hidden="true">
+    <div class="relative h-16 md:h-24 overflow-hidden bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50" aria-hidden="true">
         <img src="/cardbgs/{cardbg}"
              alt=""
              class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply"

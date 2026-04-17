@@ -1179,15 +1179,29 @@ body {
     font-size: 10.8vw;
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: -45%;
     transform: translateX(-50%);
     z-index: 1;
     white-space: nowrap;
     pointer-events: none;
     user-select: none;
-    transition: color 0.3s ease;
-    color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.06);
     line-height: 0.75;
+}
+
+.footer-big-text-mobile {
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 15vw;
+    position: absolute;
+    left: 50%;
+    bottom: -50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.04);
+    line-height: 0.8;
 }
 
 /* Büyük Footer Yazısı (Mobil) */
