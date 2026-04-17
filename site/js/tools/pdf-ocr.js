@@ -177,13 +177,29 @@ class PDFOCRTool {
                 <div class="mb-3">
                     <label class="block text-sm text-gray-600 mb-1">Dil</label>
                     <select id="ocrLanguage" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="tur+eng">Türkçe + İngilizce</option>
-                        <option value="eng">İngilizce</option>
+                        <option value="tur+eng">Türkçe + İngilizce (önerilen)</option>
                         <option value="tur">Türkçe</option>
+                        <option value="eng">İngilizce</option>
                         <option value="deu">Almanca</option>
                         <option value="fra">Fransızca</option>
                         <option value="spa">İspanyolca</option>
                         <option value="ita">İtalyanca</option>
+                        <option value="por">Portekizce</option>
+                        <option value="rus">Rusça</option>
+                        <option value="nld">Hollandaca</option>
+                        <option value="pol">Lehçe</option>
+                        <option value="swe">İsveççe</option>
+                        <option value="dan">Danimarkaca</option>
+                        <option value="fin">Fince</option>
+                        <option value="nor">Norveççe</option>
+                        <option value="ces">Çekçe</option>
+                        <option value="ell">Yunanca</option>
+                        <option value="ara">Arapça</option>
+                        <option value="heb">İbranice</option>
+                        <option value="chi_sim">Çince (Basitleştirilmiş)</option>
+                        <option value="jpn">Japonca</option>
+                        <option value="kor">Korece</option>
+                        <option value="hin">Hintçe</option>
                     </select>
                 </div>
 
@@ -273,12 +289,28 @@ class PDFOCRTool {
         // Yeni seçenekleri ekle
         const languageNames = {
             'tur+eng': 'Türkçe + İngilizce',
-            'eng': 'İngilizce',
             'tur': 'Türkçe',
+            'eng': 'İngilizce',
             'deu': 'Almanca',
             'fra': 'Fransızca',
             'spa': 'İspanyolca',
-            'ita': 'İtalyanca'
+            'ita': 'İtalyanca',
+            'por': 'Portekizce',
+            'rus': 'Rusça',
+            'nld': 'Hollandaca',
+            'pol': 'Lehçe',
+            'swe': 'İsveççe',
+            'dan': 'Danimarkaca',
+            'fin': 'Fince',
+            'nor': 'Norveççe',
+            'ces': 'Çekçe',
+            'ell': 'Yunanca',
+            'ara': 'Arapça',
+            'heb': 'İbranice',
+            'chi_sim': 'Çince (Basitleştirilmiş)',
+            'jpn': 'Japonca',
+            'kor': 'Korece',
+            'hin': 'Hintçe'
         };
 
         for (const lang of this.supportedLanguages) {

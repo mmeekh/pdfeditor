@@ -393,8 +393,11 @@ class PDFApi {
         return res.json();
     }
 
-    async processRotate(sessionId, degrees) {
-        const res = await fetch(`${this.baseUrl}/tools/rotate/process/${sessionId}?degrees=${encodeURIComponent(degrees)}`, { method: 'POST' });
+    async processRotate(sessionId, degrees, pageRotations = null) {
+        const params = new URLSearchParams();
+        params.set('degrees', String(degrees));
+        if (pageRotations) params.set('page_rotations', pageRotations);
+        const res = await fetch(`${this.baseUrl}/tools/rotate/process/${sessionId}?${params.toString()}`, { method: 'POST' });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF Döndürme işlem hatası');
@@ -451,8 +454,9 @@ class PDFApi {
         return res.json();
     }
 
-    async processPdfToJpg(sessionId) {
-        const res = await fetch(`${this.baseUrl}/tools/pdf-to-jpg/process/${sessionId}`, { method: 'POST' });
+    async processPdfToJpg(sessionId, dpi = 150) {
+        const url = `${this.baseUrl}/tools/pdf-to-jpg/process/${sessionId}?dpi=${encodeURIComponent(dpi)}`;
+        const res = await fetch(url, { method: 'POST' });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF→JPG işlem hatası');

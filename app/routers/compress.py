@@ -7,7 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
+from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path, check_encrypted_files
 from compress import PDFCompressor
 
 
@@ -40,7 +40,8 @@ async def upload_pdfs_for_compress(files: list[UploadFile] = File(...)):
             path = Path(session_dir) / f"{idx}_{file.filename}"
             await save_upload_file(file, path)
             uploaded.append({"original_name": file.filename, "path": str(path), "size": getattr(file, "size", 0)})
-        return {"session_id": session_id, "files": uploaded}
+        return {"encrypted_files": check_encrypted_files([str(p) for p in Path(session_dir).glob("*.pdf")]),
+            "session_id": session_id, "files": uploaded}
     except Exception as e:
         if os.path.exists(session_dir):
             import shutil

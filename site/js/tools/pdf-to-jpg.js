@@ -29,7 +29,10 @@ class PdfToJpgTool {
             const sessionId = up.session_id;
             
             pdfLoader.updateProgress(50, 'Sayfalar dönüştürülüyor...');
-            const result = await pdfApi.processPdfToJpg(sessionId);
+
+            // Opsiyonları oku
+            const dpi = parseInt(document.getElementById('pdfJpgDpi')?.value || '150', 10);
+            const result = await pdfApi.processPdfToJpg(sessionId, dpi);
             
             pdfLoader.updateProgress(100, 'Tamamlandı!');
             setTimeout(()=>{ pdfLoader.hide(); this.showResult(result); },150);
@@ -64,7 +67,25 @@ class PdfToJpgTool {
         notifications.success(successMessage);
     }
 
-    getOptions(){ return ''; }
+    getOptions(){
+        return `
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Çözünürlük (DPI)</label>
+                    <select id="pdfJpgDpi" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm">
+                        <option value="72">Düşük — 72 DPI (ekran, küçük dosya)</option>
+                        <option value="150" selected>Orta — 150 DPI (önerilen)</option>
+                        <option value="300">Yüksek — 300 DPI (baskı kalitesi)</option>
+                        <option value="600">Çok yüksek — 600 DPI (profesyonel)</option>
+                    </select>
+                    <p class="text-xs text-gray-500 mt-1">Yüksek DPI = büyük dosya boyutu + daha uzun işlem</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
+                    <i class="fas fa-info-circle mr-1"></i> Birden fazla sayfa varsa ZIP arşivi olarak indirilir. Her sayfa ayrı JPG dosyasıdır.
+                </div>
+            </div>
+        `;
+    }
     getFunnyQuote(){ return 'PDF\'den JPG\'ye dönüştürme işlemi, belgelerinizi görsel formatına çevirir. Yüksek kaliteli görseller için PDFişlemleri.com\'u tercih edin.'; }
     getDescription(){ return 'PDF sayfalarını JPG resimlerine dönüştürün.'; }
 }

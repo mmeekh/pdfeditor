@@ -70,3 +70,23 @@ def ensure_safe_path(file_path: str, base_dir: str) -> str:
     return safe_path
 
 
+def is_pdf_encrypted(file_path) -> bool:
+    """Check if a PDF file is password-protected."""
+    try:
+        from pypdf import PdfReader
+        reader = PdfReader(str(file_path))
+        return reader.is_encrypted
+    except Exception as e:
+        logger.warning(f"PDF encryption check failed for {file_path}: {e}")
+        return False
+
+
+def check_encrypted_files(file_paths: list) -> list:
+    """Return list of encrypted file basenames. Empty list means all OK."""
+    encrypted = []
+    for p in file_paths:
+        if is_pdf_encrypted(p):
+            encrypted.append(os.path.basename(str(p)))
+    return encrypted
+
+

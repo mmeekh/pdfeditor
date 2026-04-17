@@ -129,6 +129,61 @@ class PdfToTxtTool {
     }
 
     /**
+     * Araç seçeneklerini al
+     */
+    getOptions() {
+        // TODO: Bu seçenekler şu an sadece UI'da görünür — backend'de kullanılmıyor.
+        // Gelecekte process endpoint'ine encoding/preserve_paragraphs/ocr parametreleri eklenebilir.
+        return `
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">Karakter Kodlaması</label>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="pdfToTxtEncoding" value="utf-8" checked class="mr-2">
+                        <span>UTF-8 (önerilen, Türkçe karakter desteği)</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="pdfToTxtEncoding" value="windows-1254" class="mr-2">
+                        <span>Windows-1254 (eski Türkçe Windows uyumluluğu)</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="flex items-center">
+                    <input type="checkbox" name="pdfToTxtPreserveParagraphs" checked class="mr-2">
+                    <span class="text-gray-700">Paragraf yapısını koru</span>
+                </label>
+                <p class="text-sm text-gray-500 mt-1">Orijinal paragraf ve satır sonlarını çıktıda koru.</p>
+            </div>
+
+            <div class="mb-4">
+                <label class="flex items-center">
+                    <input type="checkbox" name="pdfToTxtOcr" class="mr-2">
+                    <span class="text-gray-700">Taranmış PDF için OCR kullan</span>
+                </label>
+                <p class="text-sm text-gray-500 mt-1">
+                    Not: Gelişmiş OCR sonuçları için <a href="/pdf-ocr" class="text-blue-600 hover:underline">PDF OCR aracını</a> kullanın.
+                </p>
+            </div>
+        `;
+    }
+
+    /**
+     * Komik alıntı
+     */
+    getFunnyQuote() {
+        return "PDF veya Word dosyalarınızdaki metni düz TXT formatına dönüştürün. Hızlı ve güvenli sonuçlar için PDFişlemleri.com'u tercih edin.";
+    }
+
+    /**
+     * Araç açıklaması
+     */
+    getDescription() {
+        return "PDF ve Word dosyalarından metin çıkarın. Karakter kodlaması ve paragraf yapısı seçenekleriyle düz metin (TXT) olarak indirin.";
+    }
+
+    /**
      * Tool'u kapat ve temizle
      */
     close() {

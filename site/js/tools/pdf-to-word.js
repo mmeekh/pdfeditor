@@ -65,7 +65,48 @@ class PdfToWordTool {
     }
 
     getOptions(){
-        return '';
+        // TODO: Bu seçenekler şu an sadece UI'da görünür — backend'de kullanılmıyor.
+        // Gelecekte process endpoint'ine layout/ocr/format parametreleri eklenebilir.
+        return `
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">Dönüştürme Modu</label>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="pdfToWordLayout" value="layout-preserve" checked class="mr-2">
+                        <span>Düzen koru (orijinal formatla)</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="pdfToWordLayout" value="text-only" class="mr-2">
+                        <span>Düz metin (sadece yazı)</span>
+                    </label>
+                </div>
+                <p class="text-sm text-gray-500 mt-1">Düzen koru seçeneği tablolar ve sütunları korumaya çalışır.</p>
+            </div>
+
+            <div class="mb-4">
+                <label class="flex items-center">
+                    <input type="checkbox" name="pdfToWordOcr" class="mr-2">
+                    <span class="text-gray-700">Taranmış PDF için OCR kullan</span>
+                </label>
+                <p class="text-sm text-gray-500 mt-1">
+                    Not: Gelişmiş OCR sonuçları için <a href="/pdf-ocr" class="text-blue-600 hover:underline">PDF OCR aracını</a> kullanın.
+                </p>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">Çıktı Formatı</label>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="pdfToWordFormat" value="docx" checked class="mr-2">
+                        <span>DOCX (önerilen, modern format)</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="pdfToWordFormat" value="doc" class="mr-2">
+                        <span>DOC (eski Word formatı)</span>
+                    </label>
+                </div>
+            </div>
+        `;
     }
 
     getFunnyQuote(){ return 'PDF\'den Word\'e dönüştürme işlemi, belgelerinizi düzenlenebilir hale getirir. Profesyonel dönüştürme için PDFişlemleri.com\'u tercih edin.'; }

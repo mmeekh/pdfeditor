@@ -4,6 +4,7 @@
  */
 
 import notifications from './notifications.js';
+import { enforceNoEncryptedPdfs } from './pdfEncryptionCheck.js';
 
 class FileHandler {
     constructor() {
@@ -78,12 +79,18 @@ class FileHandler {
     /**
      * Dosyaları işle ve validate et
      */
-    handleFiles(files, toolType = null) {
+    async handleFiles(files, toolType = null) {
         if (files.length === 0) return;
-        
+
         // toolType null ise mevcut tool'u kullan
         if (!toolType && window.toolManager) {
             toolType = window.toolManager.getCurrentTool();
+        }
+
+        // Şifreli PDF kontrol — unlock DIŞINDAKİ tüm PDF araçlarında
+        if (toolType && toolType !== 'unlock' && toolType !== 'word-to-pdf') {
+            const allOk = await enforceNoEncryptedPdfs(files);
+            if (!allOk) return; // Şifreli bulundu, modal açıldı, durduruluyor
         }
         
         // Yeni dosyalar eklendiğinde eski session'ı temizle

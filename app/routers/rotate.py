@@ -1,10 +1,12 @@
 import os
+import json
 from pathlib import Path
 from datetime import datetime, timedelta
 import logging
 
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
+from pypdf import PdfReader as PypdfReader, PdfWriter as PypdfWriter
 
 from core.config import settings
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
@@ -46,7 +48,7 @@ async def upload_pdfs_for_rotate(files: list[UploadFile] = File(...)):
         raise
 
 @router.post("/process/{session_id}")
-async def process_rotate(session_id: str, degrees: int = 90):
+async def process_rotate(session_id: str, degrees: int = 90, page_rotations: str | None = None):
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
@@ -62,12 +64,52 @@ async def process_rotate(session_id: str, degrees: int = 90):
     if not pdf_files:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
 
+    # Sayfa bazlı rotation map'i parse et (varsa)
+    rotation_map = None
+    if page_rotations:
+        try:
+            parsed = json.loads(page_rotations)
+            if isinstance(parsed, dict):
+                rotation_map = {}
+                for k, v in parsed.items():
+                    # key format: "fileIndex_pageNumber"
+                    try:
+                        fi_str, pn_str = str(k).split('_', 1)
+                        fi = int(fi_str)
+                        pn = int(pn_str)
+                        deg = int(v)
+                        rotation_map.setdefault(fi, {})[pn] = deg
+                    except Exception:
+                        continue
+        except Exception as e:
+            logger.warning(f"page_rotations parse failed: {e}")
+            rotation_map = None
+
     rotator = PDFRotator(temp_dir=session_dir)
     outputs = []
-    for src in pdf_files:
+    for idx, src in enumerate(pdf_files):
         out_name = f"rotated_{Path(src).name}"
         out_path = os.path.join(session_dir, out_name)
-        rotator.rotate(src, out_path, degrees)
+
+        if rotation_map is not None:
+            # Sayfa bazlı rotate: pypdf ile her sayfaya ayrı açı uygula
+            file_rotations = rotation_map.get(idx, {})
+            try:
+                reader = PypdfReader(src)
+                writer = PypdfWriter()
+                for pi, page in enumerate(reader.pages, start=1):
+                    deg = int(file_rotations.get(pi, 0)) % 360
+                    if deg != 0:
+                        page.rotate(deg)
+                    writer.add_page(page)
+                with open(out_path, "wb") as f:
+                    writer.write(f)
+            except Exception as e:
+                logger.error(f"Page-based rotate failed for {src}: {e}")
+                raise HTTPException(status_code=500, detail=f"Sayfa bazlı döndürme hatası: {e}")
+        else:
+            rotator.rotate(src, out_path, degrees)
+
         outputs.append({"input": os.path.basename(src), "output": out_name})
 
     zip_name = None

@@ -7,7 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException, Form
 from fastapi.responses import FileResponse
 
 from core.config import settings
-from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
+from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path, check_encrypted_files
 from unlock import PDFUnlocker, PDFUnlockError, UnlockResult
 
 
@@ -27,7 +27,8 @@ async def upload_pdf_for_unlock(file: UploadFile = File(...)):
     try:
         file_path = Path(session_dir) / file.filename
         await save_upload_file(file, file_path)
-        return {"session_id": session_id, "file": {"original_name": file.filename, "path": str(file_path), "size": getattr(file, "size", 0)}}
+        return {"encrypted_files": check_encrypted_files([str(p) for p in Path(session_dir).glob("*.pdf")]),
+            "session_id": session_id, "file": {"original_name": file.filename, "path": str(file_path), "size": getattr(file, "size", 0)}}
     except Exception as e:
         if os.path.exists(session_dir):
             import shutil
