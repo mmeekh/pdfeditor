@@ -3,7 +3,6 @@
  * PDFişlemleri.com
  */
 
-import { ThemeManager } from '../theme-manager.js';
 import { CookieManager } from './cookieManager.js';
 import { PerformanceMonitor } from './performanceMonitor.js';
 import { LazyLoader } from './lazyLoader.js';
@@ -19,7 +18,6 @@ class App {
 
     async init() {
         try {
-            window.themeManager = new ThemeManager();
             window.cookieManager = new CookieManager();
             window.performanceMonitor = new PerformanceMonitor();
             window.lazyLoader = new LazyLoader();
