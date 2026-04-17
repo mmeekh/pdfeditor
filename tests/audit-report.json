@@ -1,0 +1,557 @@
+{
+  "timestamp": 1776441709.345619,
+  "base_url": "https://pdfislemleri.com/api",
+  "summary": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0
+  },
+  "results": [
+    {
+      "slug": "merge",
+      "tool_name": "PDF Birleştir",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.05s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.08s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160140_740ebaac",
+            "output_file": "merged_20260417_160140.pdf",
+            "file_info": {
+              "file_name": "merged_20260417_160140.pdf",
+              "file_path": "/tmp/pdfislemleri/20260417_160140_740ebaac/merged_20260417_160140.pdf",
+              "page_count": 13,
+              "file_size_mb": 0.01,
+              "title": "",
+              "author": "",
+              "creation_date": "",
+              "is_encrypted": false
+            },
+            "download_url": "/api/tools/merge/download/20260417_160140_740ebaac/merged_20260417_160140.pdf"
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true,
+          "size": 7200
+        }
+      },
+      "total_duration": "0.19s",
+      "passed": true
+    },
+    {
+      "slug": "split",
+      "tool_name": "PDF Ayır",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.05s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160140_d1ba37e7",
+            "outputs": [
+              "000_a_parca_001_20260417_160140.pdf",
+              "000_a_parca_002_20260417_160140.pdf"
+            ],
+            "zip_file": "000_a_ayrilmis_20260417_160140.zip",
+            "download_url": "/api/tools/split/download/20260417_160140_d1ba37e7/000_a_ayrilmis_20260417_160140.zip",
+            "file_count": 1,
+            "total_outputs": 2,
+            "is_zip": false
+          }
+        }
+      },
+      "total_duration": "0.10s",
+      "passed": true
+    },
+    {
+      "slug": "compress",
+      "tool_name": "PDF Sıkıştır",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.04s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.24s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160140_60ba1faf",
+            "results": [
+              {
+                "input": "0_a.pdf",
+                "output": "0_a_compressed_medium_20260417_160141.pdf",
+                "input_bytes": 2772,
+                "output_bytes": 2772,
+                "saved_percent": 0.0
+              }
+            ],
+            "summary": {
+              "total_input_bytes": 2772,
+              "total_output_bytes": 2772,
+              "total_saved_percent": 0.0
+            },
+            "zip_file": null,
+            "download_url": "/api/tools/compress/download/20260417_160140_60ba1faf/0_a_compressed_medium_20260417_160141.pdf"
+          }
+        }
+      },
+      "total_duration": "0.28s",
+      "passed": true
+    },
+    {
+      "slug": "organize",
+      "tool_name": "PDF Sırala",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160141_9f487649",
+            "output_file": "organized_20260417_160141.pdf",
+            "file_info": {
+              "page_count": 3,
+              "file_size_mb": 0.0
+            },
+            "download_url": "/api/tools/organize/download/20260417_160141_9f487649/organized_20260417_160141.pdf"
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.07s",
+          "ok": true,
+          "size": 1985
+        }
+      },
+      "total_duration": "0.18s",
+      "passed": true
+    },
+    {
+      "slug": "rotate",
+      "tool_name": "PDF Döndür",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.05s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160141_90f2bafd",
+            "results": [
+              {
+                "input": "0_a.pdf",
+                "output": "rotated_0_a.pdf"
+              }
+            ],
+            "zip_file": null,
+            "download_url": "/api/tools/rotate/download/20260417_160141_90f2bafd/rotated_0_a.pdf"
+          }
+        }
+      },
+      "total_duration": "0.11s",
+      "passed": true
+    },
+    {
+      "slug": "watermark",
+      "tool_name": "PDF Filigran",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.05s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.07s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160141_69e8bc45",
+            "results": [
+              {
+                "input": "0_a.pdf",
+                "output": "watermarked_0_a.pdf"
+              }
+            ],
+            "zip_file": null,
+            "download_url": "/api/tools/watermark/download/20260417_160141_69e8bc45/watermarked_0_a.pdf"
+          }
+        }
+      },
+      "total_duration": "0.12s",
+      "passed": true
+    },
+    {
+      "slug": "protect",
+      "tool_name": "PDF Şifrele",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.07s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.10s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160141_441c926c",
+            "results": [
+              {
+                "input": "0_a.pdf",
+                "output": "0_a_protected_20260417_160141.pdf",
+                "protected": true
+              }
+            ],
+            "zip_file": null,
+            "download_url": "/api/tools/protect/download/20260417_160141_441c926c/0_a_protected_20260417_160141.pdf"
+          }
+        }
+      },
+      "total_duration": "0.17s",
+      "passed": true
+    },
+    {
+      "slug": "unlock",
+      "tool_name": "PDF Şifre Kaldır",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.07s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.08s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160141_71485aa4",
+            "output_file": "encrypted_unlocked_20260417_160141.pdf",
+            "unlocked": true,
+            "was_encrypted": 1,
+            "download_url": "/api/tools/unlock/download/20260417_160141_71485aa4/encrypted_unlocked_20260417_160141.pdf"
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.08s",
+          "ok": true,
+          "size": 2516
+        }
+      },
+      "total_duration": "0.23s",
+      "passed": true
+    },
+    {
+      "slug": "pdf-to-word",
+      "tool_name": "PDF'den Word'e",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.08s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.11s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160142_50a85ac8",
+            "output_file": "a_converted_20260417_160142.docx",
+            "download_url": "/api/tools/pdf-to-word/download/20260417_160142_50a85ac8/a_converted_20260417_160142.docx",
+            "file_count": 1,
+            "is_zip": false
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.07s",
+          "ok": true,
+          "size": 36998
+        }
+      },
+      "total_duration": "0.25s",
+      "passed": true
+    },
+    {
+      "slug": "word-to-pdf",
+      "tool_name": "Word'den PDF'e",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.87s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160142_d05a6408",
+            "output_file": "a_converted_20260417_160142.pdf",
+            "download_url": "/api/tools/word-to-pdf/download/20260417_160142_d05a6408/a_converted_20260417_160142.pdf",
+            "file_count": 1,
+            "is_zip": false
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true,
+          "size": 21433
+        }
+      },
+      "total_duration": "0.99s",
+      "passed": true
+    },
+    {
+      "slug": "pdf-to-jpg",
+      "tool_name": "PDF'den JPG'ye",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.05s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.28s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160143_c0a9b864",
+            "output_file": "pdf_to_jpg_images_20260417_160143.zip",
+            "download_url": "/api/tools/pdf-to-jpg/download/20260417_160143_c0a9b864/pdf_to_jpg_images_20260417_160143.zip",
+            "file_count": 1,
+            "image_count": 3,
+            "is_zip": true
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.08s",
+          "ok": true,
+          "size": 52497
+        }
+      },
+      "total_duration": "0.41s",
+      "passed": true
+    },
+    {
+      "slug": "pdf-to-ppt",
+      "tool_name": "PDF'den PPT'ye",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.05s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.40s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160143_2ac8dd2d",
+            "output_file": "a_slides_20260417_160143.pptx",
+            "download_url": "/api/tools/pdf-to-ppt/download/20260417_160143_2ac8dd2d/a_slides_20260417_160143.pptx",
+            "file_count": 1,
+            "page_count": 3,
+            "is_zip": false,
+            "mode": "separate"
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.08s",
+          "ok": true,
+          "size": 40859
+        }
+      },
+      "total_duration": "0.53s",
+      "passed": true
+    },
+    {
+      "slug": "pdf-to-excel",
+      "tool_name": "PDF'den Excel'e",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.55s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160144_309b1abc",
+            "output_file": "excel_20260417_160144.xlsx",
+            "file_info": {
+              "file_size_mb": 0.0,
+              "table_count": 1,
+              "sheet_count": 1
+            },
+            "download_url": "/api/tools/pdf-to-excel/download/20260417_160144_309b1abc/excel_20260417_160144.xlsx"
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.08s",
+          "ok": true,
+          "size": 5218
+        }
+      },
+      "total_duration": "0.69s",
+      "passed": true
+    },
+    {
+      "slug": "pdf-to-txt",
+      "tool_name": "PDF'den TXT'ye",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.05s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160144_d99edf95",
+            "output_file": "0_a_converted_pdf_20260417_160145.txt",
+            "download_url": "/api/tools/pdf-to-txt/download/20260417_160144_d99edf95/0_a_converted_pdf_20260417_160145.txt",
+            "file_count": 1,
+            "is_zip": false,
+            "results": "<list len=1>"
+          }
+        },
+        "download": {
+          "status": 200,
+          "duration": "0.04s",
+          "ok": true,
+          "size": 338
+        }
+      },
+      "total_duration": "0.14s",
+      "passed": true
+    },
+    {
+      "slug": "pdf-ocr",
+      "tool_name": "PDF OCR",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.05s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "4.09s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160145_6d0074ab",
+            "results": [
+              {
+                "input_file": "0_a.pdf",
+                "output_file": "0_a_ocr_20260417_160145.txt",
+                "success": true,
+                "total_pages": 3,
+                "successful_pages": 3,
+                "failed_pages": 0,
+                "text_length": 235,
+                "file_size_mb": 0.0
+              }
+            ],
+            "summary": {
+              "total_files": 1,
+              "successful_files": 1,
+              "total_pages": 3,
+              "successful_pages": 3,
+              "failed_pages": 0,
+              "language": "tur+eng",
+              "dpi": 300,
+              "include_coordinates": false
+            },
+            "download_url": "/api/tools/pdf-ocr/download/20260417_160145_6d0074ab"
+          }
+        }
+      },
+      "total_duration": "4.14s",
+      "passed": true
+    },
+    {
+      "slug": "sign",
+      "tool_name": "PDF İmzala",
+      "steps": {
+        "upload": {
+          "status": 200,
+          "duration": "0.06s",
+          "ok": true
+        },
+        "process": {
+          "status": 200,
+          "duration": "0.08s",
+          "ok": true,
+          "response": {
+            "success": true,
+            "session_id": "20260417_160149_5be1e03a",
+            "results": [
+              {
+                "input": "0_a.pdf",
+                "output": "signed_0_a.pdf",
+                "signed": true
+              }
+            ],
+            "summary": {
+              "total_files": 1,
+              "successfully_signed": 1,
+              "failed": 0
+            },
+            "zip_file": null,
+            "download_url": "/api/tools/sign/download/20260417_160149_5be1e03a/signed_0_a.pdf"
+          }
+        }
+      },
+      "total_duration": "0.14s",
+      "passed": true
+    }
+  ]
+}
