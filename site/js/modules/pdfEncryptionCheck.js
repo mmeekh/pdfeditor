@@ -9,21 +9,14 @@ let pdfjsLib = null;
 
 async function loadPdfJs() {
     if (pdfjsLib) return pdfjsLib;
-    if (window.pdfjsLib) {
-        pdfjsLib = window.pdfjsLib;
-        return pdfjsLib;
-    }
-    // Dinamik yükle
-    await new Promise((resolve, reject) => {
-        const s = document.createElement('script');
-        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-        s.onload = resolve;
-        s.onerror = reject;
-        document.head.appendChild(s);
-    });
-    pdfjsLib = window.pdfjsLib;
-    if (pdfjsLib) {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    try {
+        pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.mjs');
+        if (pdfjsLib?.GlobalWorkerOptions) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.mjs';
+        }
+    } catch (e) {
+        console.warn('PDF.js yüklenemedi:', e);
+        return null;
     }
     return pdfjsLib;
 }

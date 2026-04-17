@@ -89,9 +89,18 @@ class FileHandler {
         }
 
         // Şifreli PDF kontrol — unlock DIŞINDAKİ tüm PDF araçlarında
+        // Hata/timeout olursa upload'ı BLOKLAMA, sessiz geç
         if (toolType && toolType !== 'unlock' && toolType !== 'word-to-pdf') {
-            const allOk = await enforceNoEncryptedPdfs(files);
-            if (!allOk) return; // Şifreli bulundu, modal açıldı, durduruluyor
+            try {
+                const allOk = await Promise.race([
+                    enforceNoEncryptedPdfs(files),
+                    new Promise(resolve => setTimeout(() => resolve(true), 3000)) // 3s timeout
+                ]);
+                if (!allOk) return; // Şifreli bulundu, modal açıldı, işlem dur
+            } catch (err) {
+                console.warn('Şifreli PDF kontrolü atlandı:', err);
+                // Devam et — kontrol başarısız olursa da dosya eklensin
+            }
         }
         
         // Yeni dosyalar eklendiğinde eski session'ı temizle
