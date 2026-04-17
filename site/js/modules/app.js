@@ -74,14 +74,25 @@ class App {
     }
 
     checkUrlHash() {
-        const hash = window.location.hash.substring(1); // # işaretini kaldır
-        if (hash) {
-            // Tool manager'ı bekle ve tool'u aç
-            setTimeout(() => {
-                if (window.toolManager) {
-                    window.toolManager.openTool(hash);
-                }
-            }, 500);
+        const hash = window.location.hash.substring(1);
+        if (!hash) return;
+        // Eski /#merge, /#split gibi tool hash'larını ilgili tool sayfasına redirect et
+        const toolUrlMap = {
+            merge: '/pdf-birlestir', split: '/pdf-ayir', compress: '/pdf-sikistir',
+            organize: '/pdf-sirala', sign: '/pdf-imzala', protect: '/pdf-sifrele',
+            unlock: '/pdf-sifre-kaldir', rotate: '/pdf-dondur', watermark: '/pdf-filigran',
+            'pdf-ocr': '/pdf-ocr', 'pdf-to-word': '/pdf-to-word', 'word-to-pdf': '/word-to-pdf',
+            'pdf-to-ppt': '/pdf-to-ppt', 'pdf-to-excel': '/pdf-to-excel',
+            'pdf-to-jpg': '/pdf-to-jpg', 'pdf-to-txt': '/pdf-to-txt'
+        };
+        if (toolUrlMap[hash]) {
+            window.location.replace(toolUrlMap[hash]);
+            return;
+        }
+        // #tools, #features vs. anchor — scroll yap, openTool çağırma
+        const el = document.getElementById(hash);
+        if (el) {
+            setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
         }
     }
 }
