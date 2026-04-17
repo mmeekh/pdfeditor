@@ -609,17 +609,24 @@
         </div>
     </footer>
 
+    <!-- SortableJS (drag-drop reorder) -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.3/Sortable.min.js"></script>
+
     <!-- Tool interface JS -->
     <script type="module" src="/js/main.js"></script>
 
     <!-- Drag overlay + split panel controller -->
     <script>
+    // SortableJS aktif — fileHandler kendi drag handler'larını skip etsin
+    window._sortableEnabled = true;
+
     document.addEventListener('DOMContentLoaded', () => {
         const overlay = document.getElementById('dragOverlay');
         const uploadPhase = document.getElementById('uploadPhase');
         const workPhase = document.getElementById('workPhase');
         const addMoreFiles = document.getElementById('addMoreFiles');
         let dragCounter = 0;
+        let sortableInstance = null;
 
         // --- FULL-PAGE DRAG OVERLAY ---
         function showOverlay() {
@@ -638,7 +645,7 @@
             dragCounter++;
             if (dragCounter === 1) showOverlay();
         });
-        document.addEventListener('dragleave', (e) => {
+        document.addEventListener('dragleave', () => {
             dragCounter--;
             if (dragCounter <= 0) { dragCounter = 0; hideOverlay(); }
         });
@@ -646,24 +653,56 @@
             if (e.dataTransfer && e.dataTransfer.types.includes('Files')) e.preventDefault();
         });
 
-        // Overlay drop → dosyaları yakala, fileHandler'a ilet
         overlay.addEventListener('dragover', (e) => e.preventDefault());
         overlay.addEventListener('drop', (e) => {
             e.preventDefault();
             e.stopPropagation();
             dragCounter = 0;
             hideOverlay();
-            const files = e.dataTransfer.files;
-            if (files.length > 0 && window.fileHandler) {
-                window.fileHandler.handleFiles(files, 'merge');
+            if (e.dataTransfer.files.length > 0 && window.fileHandler) {
+                window.fileHandler.handleFiles(e.dataTransfer.files, 'merge');
             }
         });
+        document.addEventListener('drop', () => { dragCounter = 0; hideOverlay(); });
 
-        // Body drop da yakalansın (overlay dışına düşerse)
-        document.addEventListener('drop', (e) => {
-            dragCounter = 0;
-            hideOverlay();
-        });
+        // --- SORTABLEJS INIT ---
+        function initSortable() {
+            const filesList = document.getElementById('filesList');
+            if (!filesList || typeof Sortable === 'undefined') return;
+
+            if (sortableInstance) sortableInstance.destroy();
+
+            sortableInstance = Sortable.create(filesList, {
+                animation: 250,
+                easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+                ghostClass: 'sortable-ghost',
+                chosenClass: 'sortable-chosen',
+                dragClass: 'sortable-drag',
+                handle: '.file-item',
+                draggable: '.file-item',
+                filter: '.text-sm', // limit info satırını drag'dan hariç tut
+                forceFallback: false,
+                onEnd: (evt) => {
+                    const from = evt.oldIndex;
+                    const to = evt.newIndex;
+                    if (from !== to && window.fileHandler) {
+                        // Array'i güncelle (DOM zaten SortableJS tarafından taşındı)
+                        const files = window.fileHandler.selectedFiles;
+                        const moved = files.splice(from, 1)[0];
+                        files.splice(to, 0, moved);
+                        window.fileHandler.updateProcessButton();
+                        // Re-render yapmıyoruz — SortableJS DOM'u zaten güncelledi
+                        // Sadece data-index'leri güncelle
+                        filesList.querySelectorAll('.file-item').forEach((item, i) => {
+                            item.dataset.index = String(i);
+                            const removeBtn = item.querySelector('.remove-file');
+                            if (removeBtn) removeBtn.setAttribute('onclick', `fileHandler.removeFile(${i})`);
+                        });
+                        document.dispatchEvent(new CustomEvent('filesUpdated', { detail: { files } }));
+                    }
+                }
+            });
+        }
 
         // --- SPLIT PANEL: upload → work phase geçişi ---
         function switchToWorkPhase() {
@@ -681,18 +720,18 @@
             if (btn) btn.textContent = count > 0 ? `${count} Dosyayı Birleştir` : 'Dosyaları Birleştir';
         }
 
-        // filesUpdated event (fileHandler.displaySelectedFiles içinden dispatch ediliyor)
         document.addEventListener('filesUpdated', (e) => {
             const files = e.detail?.files || [];
             if (files.length > 0) {
                 switchToWorkPhase();
+                // SortableJS'i yeniden init et (DOM re-render sonrası)
+                setTimeout(initSortable, 50);
             } else {
                 switchToUploadPhase();
             }
             updateProcessButtonText();
         });
 
-        // "+ Dosya Ekle" butonu
         if (addMoreFiles) {
             addMoreFiles.addEventListener('change', (e) => {
                 if (window.fileHandler && e.target.files.length > 0) {

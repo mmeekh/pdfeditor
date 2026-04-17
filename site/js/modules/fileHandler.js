@@ -205,34 +205,36 @@ class FileHandler {
                     <i class="fas fa-times"></i>
                 </button>
             `;
-            // Drag & drop reorder events
-            fileItem.addEventListener('dragstart', (e) => {
-                this._dragIndex = index;
-                try { e.dataTransfer && e.dataTransfer.setData('text/plain', String(index)); } catch(_) {}
-                fileItem.classList.add('dragging');
-            });
-            fileItem.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                fileItem.classList.add('dragover');
-            });
-            fileItem.addEventListener('dragleave', () => {
-                fileItem.classList.remove('dragover');
-            });
-            fileItem.addEventListener('drop', (e) => {
-                e.preventDefault();
-                fileItem.classList.remove('dragover');
-                const from = (() => {
-                    try { return Number(e.dataTransfer.getData('text/plain')); } catch(_) { return this._dragIndex; }
-                })();
-                const to = Number(fileItem.dataset.index);
-                if (Number.isFinite(from) && Number.isFinite(to)) {
-                    this.reorderFiles(from, to);
-                }
-                this._dragIndex = null;
-            });
-            fileItem.addEventListener('dragend', () => {
-                fileItem.classList.remove('dragging');
-            });
+            // Drag & drop reorder: SortableJS varsa skip (sayfa kendi init eder)
+            if (!window._sortableEnabled) {
+                fileItem.addEventListener('dragstart', (e) => {
+                    this._dragIndex = index;
+                    try { e.dataTransfer && e.dataTransfer.setData('text/plain', String(index)); } catch(_) {}
+                    fileItem.classList.add('dragging');
+                });
+                fileItem.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    fileItem.classList.add('dragover');
+                });
+                fileItem.addEventListener('dragleave', () => {
+                    fileItem.classList.remove('dragover');
+                });
+                fileItem.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    fileItem.classList.remove('dragover');
+                    const from = (() => {
+                        try { return Number(e.dataTransfer.getData('text/plain')); } catch(_) { return this._dragIndex; }
+                    })();
+                    const to = Number(fileItem.dataset.index);
+                    if (Number.isFinite(from) && Number.isFinite(to)) {
+                        this.reorderFiles(from, to);
+                    }
+                    this._dragIndex = null;
+                });
+                fileItem.addEventListener('dragend', () => {
+                    fileItem.classList.remove('dragging');
+                });
+            }
             filesList.appendChild(fileItem);
         });
         
