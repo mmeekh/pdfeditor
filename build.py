@@ -271,11 +271,11 @@ FOOTER = """
     <!-- Footer -->
     <footer class="site-footer mt-16 relative overflow-hidden">
         <div class="footer-big-text hidden lg:block">PDFislemleri</div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
             <div class="text-right text-sm absolute top-4 right-4 z-20">
                 <p>&copy; 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 -mt-40">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="transform -translate-x-[30%]">
                     <h3 class="text-lg font-semibold mb-4">PDFişlemleri.com</h3>
                     <p class="text-sm">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>

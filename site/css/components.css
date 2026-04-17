@@ -90,8 +90,8 @@
 /* Specific tool card backgrounds */
 .tool-card[data-tool="merge"]::before {
     background-image: url('/cardbgs/merge.webp');
-    width: 50%;
-    height: 70%;
+    width: 45%;
+    height: 63%;
     top: 9%;
     right: 0;
     transform: translateX(0);
@@ -198,8 +198,8 @@
 
 .tool-card[data-tool="sign"]::before {
     background-image: url('/cardbgs/signature.webp');
-    width: 50%;
-    height: 70%;
+    width: 45%;
+    height: 63%;
     top: 9%;
     right: 0;
     transform: translateX(0);
@@ -1161,47 +1161,20 @@ body {
 
 /* Footer Base Styles */
 .site-footer {
-    padding: 96px 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 48px 0 32px 0;
     overflow: hidden !important;
 }
 
-/* Mobile Footer Padding */
 @media (max-width: 1023px) {
     .site-footer {
-        padding: 60px 0 80px 0; /* Üst padding azaltıldı, alt padding artırıldı */
+        padding: 40px 0 24px 0;
     }
 }
 
 /* Devasa Footer Yazısı (Desktop) */
-.footer-big-text {
-    font-family: 'Rubik Moonrocks', cursive;
-    font-size: 10.8vw;
-    position: absolute;
-    left: 50%;
-    bottom: -45%;
-    transform: translateX(-50%);
-    z-index: 1;
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-    color: rgba(0, 0, 0, 0.06);
-    line-height: 0.75;
-}
-
+.footer-big-text,
 .footer-big-text-mobile {
-    font-family: 'Rubik Moonrocks', cursive;
-    font-size: 15vw;
-    position: absolute;
-    left: 50%;
-    bottom: -50%;
-    transform: translateX(-50%);
-    z-index: 0;
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-    color: rgba(0, 0, 0, 0.04);
-    line-height: 0.8;
+    display: none !important;
 }
 
 /* Büyük Footer Yazısı (Mobil) */
