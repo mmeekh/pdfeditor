@@ -162,7 +162,6 @@ class MobileNavigationManager {
             });
         }
 
-        console.log(`Mobile Navigation Event: ${eventName}`, typeof eventData === 'object' ? '[Object]' : eventData);
 
         setTimeout(() => {
             window.scrollTo(scrollX, scrollY);

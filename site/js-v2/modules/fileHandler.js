@@ -38,7 +38,6 @@ class FileHandler {
             this.MAX_TOTAL_SIZE = config.max_file_size_mb * 1024 * 1024;
             this.SESSION_LIFETIME_MINUTES = config.session_lifetime_minutes;
             
-            console.log('Config loaded:', config);
         } catch (error) {
             console.warn('Failed to load config, using defaults:', error);
             // Default değerler zaten constructor'da ayarlandı
@@ -105,7 +104,6 @@ class FileHandler {
         
         // Yeni dosyalar eklendiğinde eski session'ı temizle
         if (this.activeSession && window.pdfApi) {
-            console.log('Yeni dosyalar ekleniyor, eski session temizleniyor:', this.activeSession.sessionId);
             window.pdfApi.cleanupSession(this.activeSession.sessionId);
             this.activeSession = null;
             
@@ -480,7 +478,6 @@ class FileHandler {
         
         // Active session'ı temizle (sadece manuel reset'te)
         if (this.activeSession && window.pdfApi) {
-            console.log('Manuel reset, session temizleniyor:', this.activeSession.sessionId);
             window.pdfApi.cleanupSession(this.activeSession.sessionId);
             this.activeSession = null;
         }
@@ -564,7 +561,6 @@ class FileHandler {
         }
         
         if (this.activeSession) {
-            console.log('Session expired:', this.activeSession.sessionId);
             
             // Backend'den temizle
             if (window.pdfApi) {

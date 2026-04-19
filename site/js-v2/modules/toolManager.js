@@ -623,7 +623,6 @@ class ToolManager {
         }
         
         // Sadece basit string log yap, büyük objeleri yazdırma
-        console.log(`Event tracked: ${eventName}`, typeof eventData === 'object' ? '[Object]' : eventData);
         
         // Scroll pozisyonunu geri yükle
         setTimeout(() => {

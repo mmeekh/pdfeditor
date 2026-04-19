@@ -195,7 +195,6 @@ class PDFApi {
         }
         
         const url = `${this.baseUrl}/tools/split/process/${sessionId}?${params.toString()}`;
-        console.log('Split API URL:', url); // Debug için
         
         const response = await fetch(url, { method: 'POST' });
         if (!response.ok) {

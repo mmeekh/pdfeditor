@@ -117,7 +117,6 @@ class CookieManager {
         const scrollX = window.scrollX;
         const scrollY = window.scrollY;
 
-        console.log(`Event tracked: ${eventName}`, typeof eventData === 'object' ? '[Object]' : eventData);
 
         setTimeout(() => {
             window.scrollTo(scrollX, scrollY);

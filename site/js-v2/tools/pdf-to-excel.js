@@ -150,7 +150,6 @@ class PdfToExcelTool {
         // Gerçek session durumunu backend'den kontrol et
         pdfApi.checkSession(activeSession.sessionId)
             .then(sessionStatus => {
-                console.log('Session status:', sessionStatus);
                 
                 // Session aktif, indirmeyi başlat
                 const downloadLink = document.createElement('a');
@@ -190,7 +189,6 @@ class PdfToExcelTool {
      * Demo session için indirme simülasyonu
      */
     handleDemoDownload(activeSession) {
-        console.log('🎭 Demo download başlatılıyor:', activeSession.sessionId);
         
         notifications.info('Demo indirme başlatılıyor...', 1000);
         
