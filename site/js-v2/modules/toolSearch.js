@@ -166,15 +166,18 @@ function attachMobileToggle() {
     const bar = document.getElementById("mobile-search-bar");
     const input = document.getElementById("tool-search-mobile");
     const results = document.getElementById("tool-search-results-mobile");
+    const closeBtn = document.getElementById("mobile-search-close");
     if (!toggleBtn || !bar) return;
 
     const openBar = () => {
         bar.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
         toggleBtn.setAttribute("aria-expanded", "true");
         setTimeout(() => input && input.focus(), 50);
     };
     const closeBar = () => {
         bar.classList.add("hidden");
+        document.body.style.overflow = "";
         toggleBtn.setAttribute("aria-expanded", "false");
         if (input) input.value = "";
         if (results) results.classList.add("hidden");
@@ -187,11 +190,17 @@ function attachMobileToggle() {
         else closeBar();
     });
 
-    document.addEventListener("click", (e) => {
-        if (bar.classList.contains("hidden")) return;
-        if (!bar.contains(e.target) && !toggleBtn.contains(e.target)) {
+    if (closeBtn) {
+        closeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             closeBar();
-        }
+        });
+    }
+
+    // Backdrop click (click outside panel but inside bar) → close
+    bar.addEventListener("click", (e) => {
+        if (e.target === bar) closeBar();
     });
 
     document.addEventListener("keydown", (e) => {
