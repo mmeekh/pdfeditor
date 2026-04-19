@@ -1,5 +1,28 @@
 /* ===== COMPONENT STYLES ===== */
 
+/* ========================================================== */
+/* Mobile Search Modal (Cmd+K pattern)                        */
+/* Tailwind `hidden` CSS'te `.flex`'ten SONRA tanımlı, aynı   */
+/* specificity'de `display:none` win eder. Ayrıca iOS Safari  */
+/* `backdrop-filter` için `-webkit-` prefix gerektirir.       */
+/* ========================================================== */
+#mobile-search-bar {
+    /* iOS Safari için vendor prefix */
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#mobile-search-bar:not(.hidden) {
+    /* `.hidden` olmayınca kesin display:flex — cascade'i aşar */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal açıkken body scroll lock (JS de set ediyor ama CSS fallback) */
+body:has(#mobile-search-bar:not(.hidden)) {
+    overflow: hidden;
+}
+
 /* Breadcrumb Navigation */
 .breadcrumb-nav ol {
     list-style: none;
