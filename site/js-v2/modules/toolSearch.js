@@ -164,25 +164,28 @@ function attachSearch(inputId, resultsId) {
 function attachMobileToggle() {
     const toggleBtn = document.getElementById("mobile-search-toggle");
     const bar = document.getElementById("mobile-search-bar");
-    const input = document.getElementById("tool-search-mobile");
-    const results = document.getElementById("tool-search-results-mobile");
-    const closeBtn = document.getElementById("mobile-search-close");
     if (!toggleBtn || !bar) return;
+
+    const getInput = () => document.getElementById("tool-search-mobile");
+    const getResults = () => document.getElementById("tool-search-results-mobile");
 
     const openBar = () => {
         bar.classList.remove("hidden");
         document.body.style.overflow = "hidden";
         toggleBtn.setAttribute("aria-expanded", "true");
-        setTimeout(() => input && input.focus(), 50);
+        setTimeout(() => { const i = getInput(); if (i) i.focus(); }, 50);
     };
     const closeBar = () => {
         bar.classList.add("hidden");
         document.body.style.overflow = "";
         toggleBtn.setAttribute("aria-expanded", "false");
+        const input = getInput();
         if (input) input.value = "";
+        const results = getResults();
         if (results) results.classList.add("hidden");
     };
 
+    // Toggle button
     toggleBtn.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -190,17 +193,22 @@ function attachMobileToggle() {
         else closeBar();
     });
 
-    if (closeBtn) {
-        closeBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            closeBar();
-        });
-    }
+    // Document-level delegation: close button + backdrop click
+    // More resilient than per-element listeners (works even if DOM changes)
+    document.addEventListener("click", (e) => {
+        if (bar.classList.contains("hidden")) return;
 
-    // Backdrop click (click outside panel but inside bar) → close
-    bar.addEventListener("click", (e) => {
-        if (e.target === bar) closeBar();
+        // Close button tapped (or icon inside it)
+        if (e.target.closest("#mobile-search-close")) {
+            e.preventDefault();
+            closeBar();
+            return;
+        }
+
+        // Backdrop: click on bar itself (outside the panel)
+        if (e.target === bar) {
+            closeBar();
+        }
     });
 
     document.addEventListener("keydown", (e) => {
