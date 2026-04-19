@@ -9,7 +9,7 @@ import pdfLoader from './modules/loader.js';
 import fileHandler from './modules/fileHandler.js';
 import toolManager from './modules/toolManager.js';
 import handoffStorage from './modules/handoffStorage.js';
-import { initToolSearch } from './modules/toolSearch.js';
+import { initToolSearch } from './modules/toolSearch.js?v=72123b5d';
 import mergeTool from './tools/merge.js';
 import organizeTool from './tools/organize.js';
 import pdfToTxtTool from './tools/pdf-to-txt.js';
