@@ -2,23 +2,27 @@
 
 /* ========================================================== */
 /* Mobile Search Modal (Cmd+K pattern)                        */
-/* Tailwind `hidden` CSS'te `.flex`'ten SONRA tanımlı, aynı   */
-/* specificity'de `display:none` win eder. Ayrıca iOS Safari  */
-/* `backdrop-filter` için `-webkit-` prefix gerektirir.       */
 /* ========================================================== */
+
+/* Blur hafif (6px) — performans + az yoğun görsel */
 #mobile-search-bar {
-    /* iOS Safari için vendor prefix */
-    -webkit-backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
 
+/* Açık state — display kesin flex, centering CSS-only */
 #mobile-search-bar:not(.hidden) {
-    /* `.hidden` olmayınca kesin display:flex — cascade'i aşar */
     display: flex !important;
     align-items: center;
     justify-content: center;
 }
 
-/* Modal açıkken body scroll lock (JS de set ediyor ama CSS fallback) */
+/* Kapalı state — display kesin none (cascade güvencesi) */
+#mobile-search-bar.hidden {
+    display: none !important;
+}
+
+/* Scroll lock fallback */
 body:has(#mobile-search-bar:not(.hidden)) {
     overflow: hidden;
 }
