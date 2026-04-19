@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Araçları: Birleştir, Sıkıştır, Dönüştür - Ücretsiz | PDFişlemleri.com</title>
-    <meta name="description" content="PDF dosyalarınızı ücretsiz birleştirin, sıkıştırın, dönüştürün ve imzalayın. Kalite kaybı olmadan PDF işlemleri yapın. Hızlı, güvenli ve kullanımı kolay online PDF araçları.">
+    <!-- Performance: preconnect to CDN origins -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <title>PDF Araçları: Birleştir, Sıkıştır, Çevir | PDFişlemleri</title>
+    <meta name="description" content="16 ücretsiz online PDF aracı: birleştirme, sıkıştırma, dönüştürme, imzalama, şifreleme, OCR. Kayıt gerekmez, dosyalar 15 dk içinde silinir.">
     <meta name="keywords" content="pdf birleştirme, pdf sıkıştırma, pdf dönüştürme, ücretsiz pdf araçları, online pdf birleştirici, pdf boyut küçültme, pdf word çevirme, pdf imzalama, pdf şifre kaldırma, pdf filigran, dijital imza, çevrimiçi pdf işlemleri">
     <meta name="author" content="PDFişlemleri.com">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://pdfislemleri.com">
     
     <!-- Google Tag Manager -->
-    <script src="js/gtm.js"></script>
+    <script src="js-v2/gtm.js"></script>
     <!-- End Google Tag Manager -->
     
     <!-- Google tag (gtag.js) - Mevcut GA4 tracking korunuyor -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBF2E5K150"></script>
-    <script src="js/gtag-config.js"></script>
+    <script src="js-v2/gtag-config.js"></script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wdtce2wemo");
+    </script>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pdfislemleri.com">
-    <meta property="og:title" content="PDFişlemleri.com - Ücretsiz PDF Araçları">
-    <meta property="og:description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın, imzalayın. Hızlı, güvenli ve kullanımı kolay PDF araçları.">
+    <meta property="og:title" content="PDF Araçları: Birleştir, Sıkıştır, Çevir | PDFişlemleri">
+    <meta property="og:description" content="16 ücretsiz online PDF aracı: birleştirme, sıkıştırma, dönüştürme, imzalama, şifreleme, OCR. Kayıt gerekmez, dosyalar 15 dk içinde silinir.">
     <meta property="og:image" content="https://pdfislemleri.com/images/home-og.jpeg?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -39,8 +50,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://pdfislemleri.com">
-    <meta property="twitter:title" content="PDFişlemleri.com - Ücretsiz PDF Araçları">
-    <meta property="twitter:description" content="PDF dosyalarınızı ücretsiz birleştirin, ayırın, sıkıştırın, imzalayın. Hızlı, güvenli ve kullanımı kolay PDF araçları.">
+    <meta property="twitter:title" content="PDF Araçları: Birleştir, Sıkıştır, Çevir | PDFişlemleri">
+    <meta property="twitter:description" content="16 ücretsiz online PDF aracı: birleştirme, sıkıştırma, dönüştürme, imzalama, şifreleme, OCR. Kayıt gerekmez, dosyalar 15 dk içinde silinir.">
     <meta property="twitter:image" content="https://pdfislemleri.com/images/home-og.jpeg?v=2">
     
     <!-- PWA Manifest -->
@@ -60,8 +71,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/css/tw.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
@@ -178,6 +188,7 @@
         },
         {
           "@type": "Organization",
+          "@id": "https://pdfislemleri.com/#organization",
           "name": "PDFişlemleri.com",
           "alternateName": "PDF İşlemleri",
           "url": "https://pdfislemleri.com",
@@ -188,11 +199,47 @@
             "height": 512
           },
           "description": "Ücretsiz PDF araçları sunan online platform",
+          "founder": { "@id": "https://pdfislemleri.com/#author-emin" },
           "sameAs": [
-            "https://facebook.com/pdfislemleri",
-            "https://twitter.com/pdfislemleri",
-            "https://instagram.com/pdfislemleri"
+            "https://www.linkedin.com/in/eminnkilic/",
+            "https://instagram.com/heremmkh"
           ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://pdfislemleri.com/#author-emin",
+          "name": "Emin Kılıç",
+          "givenName": "Emin",
+          "familyName": "Kılıç",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://pdfislemleri.com/images/emin-avatar.webp",
+            "width": 400,
+            "height": 400
+          },
+          "url": "https://pdfislemleri.com/about",
+          "jobTitle": "Kurucu & Geliştirici",
+          "description": "PDFişlemleri.com'un kurucusu ve full-stack geliştirici. PDF işleme, web güvenliği ve performans optimizasyonu alanlarında uzman.",
+          "worksFor": { "@id": "https://pdfislemleri.com/#organization" },
+          "knowsAbout": ["PDF processing", "Full-stack development", "Python", "FastAPI", "Web security", "SEO"],
+          "nationality": { "@type": "Country", "name": "Turkey" },
+          "sameAs": [
+            "https://www.linkedin.com/in/eminnkilic/",
+            "https://instagram.com/heremmkh"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://pdfislemleri.com/#website",
+          "url": "https://pdfislemleri.com",
+          "name": "PDFişlemleri.com",
+          "inLanguage": "tr-TR",
+          "publisher": { "@id": "https://pdfislemleri.com/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://pdfislemleri.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
         },
         {
           "@type": "Service",
@@ -263,7 +310,14 @@
             "url": "https://pdfislemleri.com"
           },
           "inLanguage": "tr-TR",
-          "browserRequirements": "Modern web browser (desktop veya mobil)."
+          "browserRequirements": "Modern web browser (desktop veya mobil).",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1692",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
         },
         {
           "@type": "HowTo",
@@ -395,7 +449,7 @@
                     <!-- Logo -->
                     <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                         <i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
-                        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+                        <span class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</span>
                     </a>
                     
                     <!-- Araçlar Butonu (Mobil) -->
@@ -406,14 +460,11 @@
                 </div>
 
                 <!-- Desktop Search + Navigation -->
+                <button id="mobile-search-toggle" type="button" class="md:hidden flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 transition text-gray-600" aria-label="Araç ara">
+                    <i class="fas fa-search text-sm"></i>
+                </button>
                 <div class="hidden md:flex flex-1 items-center justify-end gap-6 ml-6">
-                    <!-- Search Bar (Desktop) -->
-                    <div class="relative flex-1 max-w-md">
-                        <input id="tool-search-desktop" type="text" placeholder="Araç ara (örn. birleştir, sıkıştır, imza)..." autocomplete="off"
-                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm outline-none transition">
-                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                        <div id="tool-search-results-desktop" class="hidden absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg z-50 max-h-96 overflow-y-auto"></div>
-                    </div>
+                    <!-- Ana sayfada desktop search barı hero altında (aşağıda) -->
                     <nav class="flex space-x-6">
                         <a href="/" class="text-blue-600 font-medium">Ana Sayfa</a>
                         <a href="/blog" class="text-gray-600 hover:text-blue-600 transition">Blog</a>
@@ -425,7 +476,7 @@
             </div>
 
             <!-- Mobile Search Bar (header altında) -->
-            <div class="md:hidden px-4 pb-3 relative">
+            <div id="mobile-search-bar" class="md:hidden hidden px-4 pb-3 relative">
                 <input id="tool-search-mobile" type="text" placeholder="Araç ara..." autocomplete="off"
                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm outline-none">
                 <i class="fas fa-search absolute left-8 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
@@ -437,7 +488,7 @@
                 <div class="px-4 py-4 max-h-[32rem] overflow-y-auto">
                     <!-- Sayfalar Kategorisi -->
                     <div class="mb-5">
-                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sayfalar</h3>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sayfalar</p>
                         <div class="flex space-x-1 justify-start">
                             <a href="/blog" class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors">
                                 <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
@@ -462,7 +513,7 @@
 
                     <!-- Sıkıştır Kategorisi -->
                     <div class="mb-6">
-                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sıkıştır</h3>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sıkıştır</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress" data-url="/pdf-sikistir">
                                 <div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
@@ -475,7 +526,7 @@
 
                     <!-- Dönüştür Kategorisi -->
                     <div class="mb-6">
-                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Dönüştür</h3>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Dönüştür</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-word" data-url="/pdf-to-word">
                                 <div class="pdf-to-word-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
@@ -518,9 +569,9 @@
 
                     <!-- Sırala Kategorisi -->
                     <div class="mb-6">
-                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sırala</h3>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sırala</p>
                         <div class="space-y-2">
-                            <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge">
+                            <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge" data-url="/pdf-birlestir">
                                 <div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-object-group text-white text-sm"></i>
                                 </div>
@@ -549,7 +600,7 @@
 
                     <!-- Güvenlik Kategorisi -->
                     <div class="mb-6">
-                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Güvenlik</h3>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Güvenlik</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="protect" data-url="/pdf-sifrele">
                                 <div class="protect-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
@@ -580,7 +631,7 @@
 
                     <!-- Gelişmiş Kategorisi -->
                     <div class="mb-4">
-                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Gelişmiş</h3>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Gelişmiş</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-ocr" data-url="/pdf-ocr">
                                 <div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
@@ -597,7 +648,7 @@
     <!-- Breadcrumb Navigation -->
     <nav class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4 breadcrumb-nav" aria-label="Breadcrumb">
         <div class="container mx-auto px-4">
-            <ol class="flex items-center space-x-2 text-sm text-gray-600" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <ol class="list-none p-0 m-0 flex flex-wrap items-center gap-1 text-sm text-gray-600" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a href="/" class="hover:text-blue-600 font-medium" itemprop="item">
                         <span itemprop="name">Ana Sayfa</span>
@@ -619,8 +670,18 @@
         <!-- Hero Section -->
         <section class="text-center mb-12 fade-in">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Birleştir, Ayır, Sıkıştır - Ücretsiz Online PDF Araçları</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-8">PDF birleştirme, ayırma, sıkıştırma, dönüştürme işlemlerini ücretsiz yapın! Word'den PDF'e, PDF'den Word'e, PDF şifre kaldırma, PDF imzalama. Hızlı, güvenli ve programsız PDF araçları.</p>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-6">PDF birleştirme, ayırma, sıkıştırma, dönüştürme işlemlerini ücretsiz yapın! Word'den PDF'e, PDF'den Word'e, PDF şifre kaldırma, PDF imzalama. Hızlı, güvenli ve programsız PDF araçları.</p>
 
+            <!-- Hero Search Bar (Ana sayfaya özel, desktop'ta büyük) -->
+            <div class="relative max-w-2xl mx-auto mb-4 hidden md:block">
+                <input id="tool-search-hero" type="text"
+                       placeholder="Araç ara (örn. birleştir, merge, compress, pdf to word)..."
+                       autocomplete="off"
+                       aria-label="PDF aracı ara"
+                       class="w-full pl-14 pr-6 py-4 text-base border-2 border-gray-200 rounded-2xl shadow-sm focus:ring-4 focus:ring-blue-200 focus:border-blue-500 outline-none transition bg-white">
+                <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                <div id="tool-search-results-hero" class="hidden absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl z-50 max-h-96 overflow-y-auto text-left"></div>
+            </div>
 
             <div class="mt-4 text-sm text-gray-500 italic">
                 <i class="fas fa-lightbulb text-yellow-500"></i> İpucu: Tüm PDF işlemlerinizi tek platformda, ücretsiz ve güvenli şekilde gerçekleştirin!
@@ -628,7 +689,8 @@
         </section>
 
         <!-- Tools Grid -->
-        <section class="mb-12">
+        <section class="mb-12" aria-labelledby="tools-grid-heading">
+            <h2 id="tools-grid-heading" class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">16 Ücretsiz PDF Aracı</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                 <!-- Merge PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="merge" data-url="/pdf-birlestir">
@@ -885,7 +947,7 @@
             <div class="text-center">
                 <!-- Fotoğraf üstte -->
                 <div class="mb-8">
-                    <img src="images/nedensevmelisiniz.webp" alt="PDF İşlemleri - Kolay, Hızlı ve Herkes İçin" class="w-72 h-72 mx-auto object-cover rounded-xl shadow-lg" loading="lazy" width="600" height="600">
+                    <img src="images/nedensevmelisiniz.webp" alt="PDF İşlemleri - Kolay, Hızlı ve Herkes İçin" class="w-72 h-72 mx-auto object-cover rounded-xl shadow-lg" loading="lazy" width="600" height="600" decoding="async">
                 </div>
                 
                 <!-- Başlık ve açıklama -->
@@ -903,7 +965,7 @@
         <section class="theme-section rounded-xl p-8 mb-12">
             <div class="flex flex-col lg:flex-row items-center gap-8">
                 <div class="flex-shrink-0">
-                    <img src="/images/catpdf.webp" alt="PDF Sırala" class="w-64 h-64" width="520" height="520" loading="lazy">
+                    <img src="/images/catpdf.webp" alt="PDF Sırala aracı maskotu - sayfa düzenleme kedisi" class="w-64 h-64" width="520" height="520" loading="lazy" decoding="async">
                 </div>
                 <div class="flex-1">
                     <h2 class="text-3xl font-bold mb-6">Bir PDF Dosyasını Ücretsiz Olarak Çevrimiçi Düzenlemek İçin</h2>
@@ -937,7 +999,7 @@
         <section class="theme-section rounded-xl p-8 mb-12">
             <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
                 <div class="flex-shrink-0">
-                    <img src="/images/pdcsec.webp" alt="PDF Güvenlik ve Koruma" class="w-64 h-64" width="520" height="520" loading="lazy">
+                    <img src="/images/pdcsec.webp" alt="PDF Güvenlik ve Koruma" class="w-64 h-64" width="520" height="520" loading="lazy" decoding="async">
                 </div>
                 <div class="flex-1">
                     <h2 class="text-3xl font-bold mb-6">Dosyalarınız Bizimle Güvende!</h2>
@@ -1109,9 +1171,7 @@
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div class="flex items-start space-x-4">
                     <div class="flex-shrink-0">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                            <i class="fas fa-cookie-bite text-white text-xl"></i>
-                        </div>
+                        <img src="/icons/logo.webp" alt="PDFişlemleri.com logosu" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 rounded-full object-contain bg-white border border-gray-200 p-1">
                     </div>
                     <div class="flex-1">
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">🍪 Çerezler Hakkında</h3>
@@ -1138,6 +1198,6 @@
     <script src="scroll-manager.js"></script>
     
     <!-- JavaScript - Modular System Only -->
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js-v2/main.js"></script>
 </body>
 </html>

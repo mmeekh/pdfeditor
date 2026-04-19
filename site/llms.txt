@@ -1,0 +1,69 @@
+# PDFişlemleri.com
+
+> Türkiye'nin ücretsiz PDF araçları platformu. 16 farklı PDF işlemi: birleştirme, ayırma, sıkıştırma, dönüştürme, şifreleme, imzalama, OCR, filigran, sıralama ve daha fazlası. Kayıt gerekmez, reklam yok, dosyalar 15 dakika içinde otomatik silinir. KVKK ve GDPR uyumludur.
+
+## Kurucu
+
+Emin Kılıç — Full-stack geliştirici ve PDFişlemleri.com'un kurucusu. LinkedIn: https://www.linkedin.com/in/eminnkilic/
+
+## PDF Düzenleme Araçları
+
+- [PDF Birleştir](https://pdfislemleri.com/pdf-birlestir): Birden fazla PDF dosyasını tek belgede birleştirin. Sürükle-bırak, sayfa sıralama, sınırsız dosya.
+- [PDF Ayır](https://pdfislemleri.com/pdf-ayir): PDF'yi belirli sayfalara veya parçalara ayırın. Sayfa aralığı ve tek tek sayfa seçimi.
+- [PDF Sıkıştır](https://pdfislemleri.com/pdf-sikistir): PDF dosya boyutunu kalite kaybetmeden küçültün. E-posta ile gönderilebilir hale getirin.
+- [PDF Sırala](https://pdfislemleri.com/pdf-sirala): Sayfaları sürükle-bırak ile yeniden sıralayın. Sayfa silme ve döndürme dahil.
+- [PDF Döndür](https://pdfislemleri.com/pdf-dondur): Tek sayfa veya tüm dokümanı 90/180/270 derece döndürün.
+
+## PDF Güvenlik Araçları
+
+- [PDF İmzala](https://pdfislemleri.com/pdf-imzala): PDF'e elektronik imza ekleyin. Çiz, yaz veya yükle; konum ve sayfa seçimi.
+- [PDF Şifrele](https://pdfislemleri.com/pdf-sifrele): PDF'i parola ile koruyun. Açma ve düzenleme izinleri ayrı ayrı.
+- [PDF Şifre Kaldır](https://pdfislemleri.com/pdf-sifre-kaldir): Parola korumasını kaldırın. Orijinal parola gerekli.
+- [PDF Filigran](https://pdfislemleri.com/pdf-filigran): Metin veya logo filigranı ekleyin. Opaklık, konum, rotasyon ayarları.
+
+## PDF Dönüştürme Araçları
+
+- [PDF'den Word'e](https://pdfislemleri.com/pdf-to-word): PDF'i düzenlenebilir .docx'e dönüştürün. Layout ve format korunur.
+- [Word'den PDF'e](https://pdfislemleri.com/word-to-pdf): .doc/.docx dosyalarını standart PDF'e çevirin.
+- [PDF'den Excel'e](https://pdfislemleri.com/pdf-to-excel): Tablolu PDF'leri .xlsx'e dönüştürün. CSV desteği.
+- [PDF'den PowerPoint'e](https://pdfislemleri.com/pdf-to-ppt): Sunumları düzenlenebilir .pptx formatına çevirin.
+- [PDF'den JPG'ye](https://pdfislemleri.com/pdf-to-jpg): Her sayfayı yüksek çözünürlüklü JPG/PNG olarak kaydedin.
+- [PDF'den TXT'ye](https://pdfislemleri.com/pdf-to-txt): Saf metin çıkarın. UTF-8 Türkçe karakter desteği.
+
+## PDF OCR
+
+- [PDF OCR](https://pdfislemleri.com/pdf-ocr): Taranmış PDF'leri aranabilir metne çevirin. Tesseract ile 22 dil desteği, Türkçe dahil.
+
+## Güvenlik ve Gizlilik
+
+- HTTPS ile güvenli iletim
+- Dosyalar 15 dakika içinde otomatik silinir, yedek tutulmaz
+- Sunucu tarafı işleme sırasında dosyalara üçüncü taraf erişimi yok
+- KVKK (Kişisel Verilerin Korunması Kanunu) uyumlu
+- GDPR uyumlu
+- Kayıt gerekmez, anonim kullanım
+
+## Teknik Özellikler
+
+- Frontend: Vanilla JavaScript, Tailwind CSS
+- Backend: FastAPI (Python), pypdf, Tesseract OCR
+- Maksimum dosya boyutu: 110 MB / istek
+- Desteklenen OCR dilleri: 22 (Türkçe, İngilizce, Almanca, Fransızca, vb.)
+- Reverse proxy: Caddy (HSTS preload, CSP, modern security headers)
+
+## İletişim
+
+- E-posta: info@pdfislemleri.com
+- İletişim formu: https://pdfislemleri.com/contact
+- Hakkımızda: https://pdfislemleri.com/about
+
+## Blog
+
+Rehberler ve detaylı kullanım talimatları: https://pdfislemleri.com/blog
+
+## Yasal
+
+- [Gizlilik Politikası](https://pdfislemleri.com/privacy)
+- [Kullanım Şartları](https://pdfislemleri.com/terms)
+- [KVKK Aydınlatma Metni](https://pdfislemleri.com/kvkk)
+- [Çerez Politikası](https://pdfislemleri.com/cookies)

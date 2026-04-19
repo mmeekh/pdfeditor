@@ -6,4 +6,5 @@ node_modules/
 secrets/
 site/dist/
 site/images/all-pages/
+site/images/.originals-backup/
 test_pdfislemleri_complete.js

@@ -33,8 +33,9 @@ class MobileNavigationManager {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
                 const toolName = item.getAttribute('data-tool');
+                const dataUrl = item.getAttribute('data-url');
                 if (toolName) {
-                    this.selectTool(toolName);
+                    this.selectTool(toolName, dataUrl);
                 }
             });
         });
@@ -96,20 +97,22 @@ class MobileNavigationManager {
         this.trackEvent('mobile_menu_closed');
     }
 
-    selectTool(toolName) {
+    selectTool(toolName, dataUrl) {
         this.closeMenu();
+        this.trackEvent('mobile_tool_selected', { tool_name: toolName });
 
-        // Ana sayfaya yönlendir
+        if (dataUrl) {
+            window.location.href = dataUrl;
+            return;
+        }
+
         if (window.location.pathname !== '/') {
             window.location.href = '/#' + toolName;
         } else {
-            // Ana sayfadaysak direkt tool'u aç
             setTimeout(() => {
                 toolManager.openTool(toolName);
             }, 150);
         }
-
-        this.trackEvent('mobile_tool_selected', { tool_name: toolName });
     }
 
     addBackdrop() {

@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Blog & Rehberler: PDF İşlemleri Hakkında Her Şey | PDFişlemleri.com</title>
-    <meta name="description" content="PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler, pratik ipuçları ve PDF işlemleri hakkında detaylı bilgiler.">
+    <!-- Performance: preconnect to CDN origins -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <title>PDF Blog: Adım Adım Rehberler ve İpuçları | PDFişlemleri</title>
+    <meta name="description" content="PDF işlemleri için adım adım rehberler, pratik ipuçları ve detaylı yazılar. Dönüştürme, sıkıştırma, OCR, imzalama ve güvenlik ipuçları.">
     <meta name="keywords" content="pdf blog, pdf ipuçları, pdf rehber, pdf nasıl yapılır, pdf çözümleri, pdf eğitimi">
     <meta name="author" content="PDFişlemleri.com">
     <meta name="robots" content="index, follow">
@@ -42,8 +44,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pdfislemleri.com/blog">
-    <meta property="og:title" content="Blog - PDFişlemleri.com | PDF İpuçları ve Rehberler">
-    <meta property="og:description" content="PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler ve pratik ipuçları.">
+    <meta property="og:title" content="PDF Blog: Adım Adım Rehberler ve İpuçları | PDFişlemleri">
+    <meta property="og:description" content="PDF işlemleri için adım adım rehberler, pratik ipuçları ve detaylı yazılar. Dönüştürme, sıkıştırma, OCR, imzalama ve güvenlik ipuçları.">
     <meta property="og:image" content="https://pdfislemleri.com/images/blog-og.jpeg?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -54,8 +56,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://pdfislemleri.com/blog">
-    <meta property="twitter:title" content="Blog - PDFişlemleri.com | PDF İpuçları ve Rehberler">
-    <meta property="twitter:description" content="PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler ve pratik ipuçları.">
+    <meta property="twitter:title" content="PDF Blog: Adım Adım Rehberler ve İpuçları | PDFişlemleri">
+    <meta property="twitter:description" content="PDF işlemleri için adım adım rehberler, pratik ipuçları ve detaylı yazılar. Dönüştürme, sıkıştırma, OCR, imzalama ve güvenlik ipuçları.">
     <meta property="twitter:image" content="https://pdfislemleri.com/images/blog-og.jpeg?v=2">
     
     <!-- PWA Manifest -->
@@ -146,7 +148,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/tw.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
@@ -173,6 +175,26 @@
         }
     }
     </script>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wdtce2wemo");
+    </script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://pdfislemleri.com/blog#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog" }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -189,7 +211,7 @@
                     <!-- Logo -->
                     <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                         <i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
-                        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+                        <span class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</span>
                     </a>
                     
                     <!-- Araçlar Butonu (Mobil) -->
@@ -200,7 +222,10 @@
                 </div>
 
                 <!-- Desktop Navigation -->
-                                <div class="hidden md:flex flex-1 items-center justify-end gap-6 ml-6">
+                                <button id="mobile-search-toggle" type="button" class="md:hidden flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 transition text-gray-600" aria-label="Araç ara">
+                    <i class="fas fa-search text-sm"></i>
+                </button>
+                <div class="hidden md:flex flex-1 items-center justify-end gap-6 ml-6">
                     <div class="relative flex-1 max-w-md">
                         <input id="tool-search-desktop" type="text" placeholder="Araç ara (örn. birleştir, sıkıştır, imza)..." autocomplete="off"
                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm outline-none transition">
@@ -255,7 +280,7 @@
                     <div class="mb-6">
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sıkıştır</h3>
                         <div class="space-y-2">
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress" data-url="/pdf-sikistir">
                                 <div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-compress-arrows-alt text-white text-sm"></i>
                                 </div>
@@ -268,37 +293,37 @@
                     <div class="mb-6">
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Dönüştür</h3>
                         <div class="space-y-2">
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-word">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-word" data-url="/pdf-to-word">
                                 <div class="pdf-to-word-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-file-word text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF'den Word'e</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="word-to-pdf">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="word-to-pdf" data-url="/word-to-pdf">
                                 <div class="word-to-pdf-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-file-alt text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">Word'den PDF'e</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-ppt">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-ppt" data-url="/pdf-to-ppt">
                                 <div class="pdf-to-ppt-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-file-powerpoint text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF'den PPT'ye</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-jpg">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-jpg" data-url="/pdf-to-jpg">
                                 <div class="pdf-to-jpg-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-file-image text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF'den JPG'ye</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-excel">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-excel" data-url="/pdf-to-excel">
                                 <div class="pdf-to-excel-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-file-excel text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF'den Excel'e</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-txt">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-txt" data-url="/pdf-to-txt">
                                 <div class="pdf-to-txt-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-file-alt text-white text-sm"></i>
                                 </div>
@@ -311,25 +336,25 @@
                     <div class="mb-6">
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sırala</h3>
                         <div class="space-y-2">
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge" data-url="/pdf-birlestir">
                                 <div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-object-group text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF Birleştir</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="split">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="split" data-url="/pdf-ayir">
                                 <div class="split-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-cut text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF Ayır</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="organize">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="organize" data-url="/pdf-sirala">
                                 <div class="organize-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-sort text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF Sırala</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="rotate">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="rotate" data-url="/pdf-dondur">
                                 <div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-sync-alt text-white text-sm"></i>
                                 </div>
@@ -342,25 +367,25 @@
                     <div class="mb-6">
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Güvenlik</h3>
                         <div class="space-y-2">
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="protect">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="protect" data-url="/pdf-sifrele">
                                 <div class="protect-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-lock text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF Şifrele</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="unlock">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="unlock" data-url="/pdf-sifre-kaldir">
                                 <div class="unlock-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-unlock text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF Şifre Kaldır</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="watermark">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="watermark" data-url="/pdf-filigran">
                                 <div class="watermark-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-stamp text-white text-sm"></i>
                                 </div>
                                 <span class="text-gray-800 font-medium">PDF Filigranla</span>
                             </a>
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="sign">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="sign" data-url="/pdf-imzala">
                                 <div class="sign-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-signature text-white text-sm"></i>
                                 </div>
@@ -373,7 +398,7 @@
                     <div class="mb-4">
                         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Gelişmiş</h3>
                         <div class="space-y-2">
-                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-ocr">
+                            <a href="javascript:void(0)" class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-ocr" data-url="/pdf-ocr">
                                 <div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-eye text-white text-sm"></i>
                                 </div>
@@ -384,7 +409,7 @@
                 </div>
             </div>
         
-            <div class="md:hidden px-4 pb-3 relative">
+            <div id="mobile-search-bar" class="md:hidden hidden px-4 pb-3 relative">
                 <input id="tool-search-mobile" type="text" placeholder="Araç ara..." autocomplete="off"
                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm outline-none">
                 <i class="fas fa-search absolute left-8 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
@@ -420,7 +445,7 @@
                 <!-- Featured Post 1 -->
                 <a href="/blog/word-pdf-donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <div class="relative">
-                        <img src="/images/word-to-pdf.webp" alt="Word'den PDF'e Dönüştürme" class="w-full h-48 object-cover" width="512" height="279" loading="lazy">
+                        <img src="/images/word-to-pdf.webp" alt="Word'den PDF'e Dönüştürme" class="w-full h-48 object-cover" width="512" height="279" loading="lazy" decoding="async">
                         <div class="absolute top-4 left-4">
                             <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">ÖNE ÇIKAN</span>
                         </div>
@@ -454,7 +479,7 @@
                 <!-- Featured Post 2 -->
                 <a href="/blog/telefondan-pdf-duzenleme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <div class="relative">
-                        <img src="/images/mobile-pdf-edit.webp" alt="Telefondan PDF Sırala" class="w-full h-48 object-cover" width="512" height="279" loading="lazy">
+                        <img src="/images/mobile-pdf-edit.webp" alt="Telefondan PDF Sırala" class="w-full h-48 object-cover" width="512" height="279" loading="lazy" decoding="async">
                         <div class="absolute top-4 left-4">
                             <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">YENİ</span>
                         </div>
@@ -495,7 +520,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Post 1 -->
                 <a href="/blog/pdf-boyut-kucultme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="/images/pdf-compress.webp" alt="PDF Boyut Küçültme" class="w-full h-40 object-cover" width="512" height="279" loading="lazy">
+                    <img src="/images/pdf-compress.webp" alt="PDF Boyut Küçültme" class="w-full h-40 object-cover" width="512" height="279" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="fas fa-calendar mr-2"></i>
@@ -513,7 +538,7 @@
 
                 <!-- Post 2 -->
                 <a href="/blog/pdf-imzalama" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="/images/pdf-signature.webp" alt="PDF İmzalama" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy">
+                    <img src="/images/pdf-signature.webp" alt="PDF imzalama rehberi - elektronik imza ekleme adımları" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="fas fa-calendar mr-2"></i>
@@ -531,7 +556,7 @@
 
                 <!-- Post 3 -->
                 <a href="/blog/pdf-guvenlik" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="/images/pdf-security.webp" alt="PDF Güvenlik" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy">
+                    <img src="/images/pdf-security.webp" alt="PDF güvenlik rehberi - parola koruma ve şifreleme" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="fas fa-calendar mr-2"></i>
@@ -549,7 +574,7 @@
 
                 <!-- Post 4 -->
                 <a href="/blog/pdf-birlestirme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="/images/pdf-merge.webp" alt="PDF Birleştirme" class="w-full h-40 object-cover" width="512" height="279" loading="lazy">
+                    <img src="/images/pdf-merge.webp" alt="PDF Birleştirme" class="w-full h-40 object-cover" width="512" height="279" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="fas fa-calendar mr-2"></i>
@@ -567,7 +592,7 @@
 
                 <!-- Post 5 -->
                 <a href="/blog/pdf-ocr" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="/images/pdf-ocr.webp" alt="PDF OCR" class="w-full h-40 object-cover" width="512" height="279" loading="lazy">
+                    <img src="/images/pdf-ocr.webp" alt="PDF OCR kullanım rehberi - taranmış belgeyi metne çevirme" class="w-full h-40 object-cover" width="512" height="279" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="fas fa-calendar mr-2"></i>
@@ -585,7 +610,7 @@
 
                 <!-- Post 6 -->
                 <a href="/blog/pdf-formlari" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="/images/pdf-forms.webp" alt="PDF Formları" class="w-full h-40 object-cover" width="512" height="279" loading="lazy">
+                    <img src="/images/pdf-forms.webp" alt="PDF form rehberi - form alanları ile doldurulabilir PDF" class="w-full h-40 object-cover" width="512" height="279" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="fas fa-calendar mr-2"></i>
@@ -603,7 +628,7 @@
 
                 <!-- Post 7 -->
                 <a href="/blog/pdf-filigran" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="/images/pdfiligran.webp" alt="PDF Filigran" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy">
+                    <img src="/images/pdfiligran.webp" alt="PDF filigran ekleme rehberi - watermark adımları" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="fas fa-calendar mr-2"></i>
@@ -621,7 +646,7 @@
 
                 <!-- Post 8 -->
                 <a href="/blog/pdf-sifre-kaldirma" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="/images/pdfpassremove.webp" alt="PDF Şifre Kaldırma" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy">
+                    <img src="/images/pdfpassremove.webp" alt="PDF Şifre Kaldırma" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="fas fa-calendar mr-2"></i>
@@ -687,6 +712,6 @@
     </div>
 
     <script src="/scroll-manager.js" defer></script>
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="js-v2/main.js"></script>
 </body>
 </html>
