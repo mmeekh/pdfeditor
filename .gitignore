@@ -8,3 +8,12 @@ site/dist/
 site/images/all-pages/
 site/images/.originals-backup/
 test_pdfislemleri_complete.js
+
+# Asset source files (converted to WebP in site/images/)
+*.png
+*.jpg
+*.jpeg
+!site/images/*.jpg
+!site/images/*.jpeg
+!site/icons/*
+!site/cardbgs/**
