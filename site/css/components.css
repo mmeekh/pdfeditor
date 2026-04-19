@@ -4,10 +4,10 @@
 /* Mobile Search Modal (Cmd+K pattern)                        */
 /* ========================================================== */
 
-/* Blur hafif (6px) — performans + az yoğun görsel */
+/* Blur minimal (3px) — arka plan fark edilir, önü engellenmez */
 #mobile-search-bar {
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
 }
 
 /* Açık state — display kesin flex, centering CSS-only */
