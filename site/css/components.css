@@ -1,12 +1,12 @@
 /* ===== COMPONENT STYLES ===== */
 
 /* ========================================================== */
-/* Footer 3D Rotating PDF Document                            */
-/* CSS-only, 360° Y-axis rotation, soldan sağa                */
+/* Footer 3D Rotating PDF Logo                                */
+/* Marka logosu (logo.webp) 360° Y-ekseni rotation            */
 /* ========================================================== */
 .pdf-3d-scene {
-    perspective: 1000px;
-    width: 110px;
+    perspective: 1200px;
+    width: 140px;
     height: 140px;
     margin: 0 auto;
 }
@@ -16,50 +16,21 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    animation: pdf-3d-spin 6s linear infinite;
+    animation: pdf-3d-spin 8s linear infinite;
 }
 
 .pdf-3d-face {
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    background: #ffffff;
-    border: 2px solid #ef4444; /* logo kırmızısı */
-    border-radius: 8px;
-    box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.25),
-                0 4px 10px -2px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-    overflow: hidden;
-}
-
-/* Köşe kıvrımı — klasik PDF sayfa görsel ipucu */
-.pdf-3d-face::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 24px;
-    height: 24px;
-    background: linear-gradient(135deg, transparent 50%, #fee2e2 50%, #fca5a5 50%);
-    border-bottom-left-radius: 4px;
-}
-
-.pdf-3d-face i {
-    color: #ef4444;
-    font-size: 2.75rem;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
-}
-
-.pdf-3d-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    color: #7f1d1d;
+    object-fit: contain;
+    /* 3D derinlik için çok-katmanlı drop shadow */
+    filter: drop-shadow(0 8px 16px rgba(239, 68, 68, 0.35))
+            drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+    transition: filter 0.3s ease;
 }
 
 .pdf-3d-back {
@@ -71,7 +42,12 @@
     to   { transform: rotateY(360deg); }
 }
 
-/* Accessibility: animasyon kapat tercihe göre */
+/* Hover'da animasyon yavaşlar (inceleme fırsatı) */
+.pdf-3d-scene:hover .pdf-3d-card {
+    animation-duration: 20s;
+}
+
+/* Accessibility: motion tercihi */
 @media (prefers-reduced-motion: reduce) {
     .pdf-3d-card {
         animation: none;
