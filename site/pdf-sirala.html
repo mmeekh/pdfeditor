@@ -49,7 +49,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/theme.css?v=3a79e0bc">
     <link rel="stylesheet" href="css/base.css?v=82fbe4e0">
-    <link rel="stylesheet" href="css/components.css?v=a697316d">
+    <link rel="stylesheet" href="css/components.css?v=3ce8b6e2">
     <link rel="stylesheet" href="css/gradients.css?v=3ce0f6e9">
 
     <!-- Structured Data -->
@@ -886,8 +886,24 @@
                 <div class="text-center sm:text-right flex items-center justify-center sm:justify-end">
                     <div class="pdf-3d-scene" aria-hidden="true">
                         <div class="pdf-3d-card">
-                            <img class="pdf-3d-face pdf-3d-front" src="/icons/logo.webp" alt="" width="140" height="140" loading="lazy" decoding="async">
-                            <img class="pdf-3d-face pdf-3d-back" src="/icons/logo.webp" alt="" width="140" height="140" loading="lazy" decoding="async">
+                            <!-- Front face -->
+                            <div class="pdf-3d-face pdf-3d-front">
+                                <div class="pdf-3d-corner"></div>
+                                <svg class="pdf-3d-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M32 10c-3 8-4 16-2 24-3 2-5 4-6 7 2 3 6 2 10-1 4-3 7-8 9-14 3 1 6 3 10 3-2-3-6-5-10-6 2-8 0-14-11-13z" fill="#ef4444"/>
+                                </svg>
+                                <div class="pdf-3d-label">PDF</div>
+                            </div>
+                            <!-- Back face -->
+                            <div class="pdf-3d-face pdf-3d-back">
+                                <div class="pdf-3d-corner"></div>
+                                <svg class="pdf-3d-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M32 10c-3 8-4 16-2 24-3 2-5 4-6 7 2 3 6 2 10-1 4-3 7-8 9-14 3 1 6 3 10 3-2-3-6-5-10-6 2-8 0-14-11-13z" fill="#ef4444"/>
+                                </svg>
+                                <div class="pdf-3d-label">PDF</div>
+                            </div>
+                            <!-- Thickness layers for 3D depth -->
+                            <div class="pdf-3d-edge"></div>
                         </div>
                     </div>
                 </div>
