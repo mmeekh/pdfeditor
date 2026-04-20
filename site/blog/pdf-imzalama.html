@@ -112,6 +112,49 @@
       ]
     }
     </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://pdfislemleri.com/blog/pdf-imzalama#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "PDF'e nasıl imza atılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDF İmzala aracına belgeyi yükleyin. İmzanızı üç şekilde oluşturabilirsiniz: fare veya parmakla çizin, daha önce taranmış imza görselini yükleyin, ya da ad-soyad yazıp otomatik yazı tipi imzası oluşturun. Sonra imzayı istediğiniz sayfa ve konuma sürükleyin, boyutunu ayarlayın ve PDF'i indirin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi imza tipleri destekleniyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Üç çeşit elektronik imza destekliyoruz: (1) El çizimi — fare veya dokunmatik ekranla çizilen imza, (2) Yüklenen imza — önceden taranmış JPG/PNG imza görseli, (3) Yazı tipi imzası — ad-soyad yazıp estetik bir fontla oluşturulmuş imza. Birden fazla imzayı farklı sayfalara ekleyebilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Elektronik imzanın yasal geçerliliği var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bizim aracımız basit elektronik imza (simple e-signature) oluşturur. Türkiye'de sözleşmeler, onay formları, resmi olmayan işlemler için geçerlidir. Notere tasdik gerektiren belgeler ve bazı resmi işlemler için güvenli elektronik imza (nitelikli e-imza) gereklidir — bu farklı bir sertifikayla yapılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Birden fazla kişi aynı PDF'i imzalayabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Her kişi kendi imzasını ayrı ayrı ekleyebilir: İlk kişi imzalar → indirir → dosyayı ikinci kişiye gönderir → ikinci kişi imzalar. Alternatif olarak tek oturumda farklı imzalar ekleyebilirsiniz (örneğin iki taraflı sözleşme)."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -500,7 +543,38 @@
         </a>
     </div>
 </div>
-</main>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto" aria-labelledby="faq-heading">
+        <div class="flex items-center gap-3 mb-6">
+            <i class="fas fa-question-circle text-red-500 text-2xl"></i>
+            <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold text-gray-800">Sık Sorulan Sorular</h2>
+        </div>
+        <div class="space-y-5">
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF'e nasıl imza atılır?</h3>
+                <p class="text-gray-700 leading-relaxed">PDF İmzala aracına belgeyi yükleyin. İmzanızı üç şekilde oluşturabilirsiniz: fare veya parmakla çizin, daha önce taranmış imza görselini yükleyin, ya da ad-soyad yazıp otomatik yazı tipi imzası oluşturun. Sonra imzayı istediğiniz sayfa ve konuma sürükleyin, boyutunu ayarlayın ve PDF'i indirin.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Hangi imza tipleri destekleniyor?</h3>
+                <p class="text-gray-700 leading-relaxed">Üç çeşit elektronik imza destekliyoruz: (1) El çizimi — fare veya dokunmatik ekranla çizilen imza, (2) Yüklenen imza — önceden taranmış JPG/PNG imza görseli, (3) Yazı tipi imzası — ad-soyad yazıp estetik bir fontla oluşturulmuş imza. Birden fazla imzayı farklı sayfalara ekleyebilirsiniz.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Elektronik imzanın yasal geçerliliği var mı?</h3>
+                <p class="text-gray-700 leading-relaxed">Bizim aracımız basit elektronik imza (simple e-signature) oluşturur. Türkiye'de sözleşmeler, onay formları, resmi olmayan işlemler için geçerlidir. Notere tasdik gerektiren belgeler ve bazı resmi işlemler için güvenli elektronik imza (nitelikli e-imza) gereklidir — bu farklı bir sertifikayla yapılır.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Birden fazla kişi aynı PDF'i imzalayabilir mi?</h3>
+                <p class="text-gray-700 leading-relaxed">Evet. Her kişi kendi imzasını ayrı ayrı ekleyebilir: İlk kişi imzalar → indirir → dosyayı ikinci kişiye gönderir → ikinci kişi imzalar. Alternatif olarak tek oturumda farklı imzalar ekleyebilirsiniz (örneğin iki taraflı sözleşme).</p>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+            <a href="/pdf-imzala" class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline">
+                <i class="fas fa-rocket"></i> Aracı Şimdi Dene
+            </a>
+        </div>
+    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer mt-16 relative overflow-hidden">

@@ -117,6 +117,49 @@
       ]
     }
     </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://pdfislemleri.com/blog/pdf-boyut-kucultme#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "PDF boyutu nasıl küçültülür?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDFişlemleri.com üzerindeki PDF Sıkıştır aracına dosyanızı yükleyip sıkıştırma seviyesini seçin (düşük, orta, yüksek). Araç görüntü çözünürlüklerini optimize eder, gereksiz metadata'ları siler ve font'ları optimize eder. %50 ile %90 arasında boyut düşüşü sağlar, sonuç dosyası aynı kalitede görünür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kalite kaybı olur mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Orta seviye sıkıştırmada gözle görülür bir kalite kaybı olmaz. Metin tamamen keskin kalır, görüntüler ise belirli bir DPI'ya optimize edilir. Profesyonel baskı için orijinal dosyayı saklayın; e-posta, WhatsApp veya web paylaşımı için sıkıştırılmış hali yeterlidir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne kadar küçültme sağlanır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Görüntü ağırlıklı PDF'lerde (taranmış belgeler, fotoğraflı raporlar) %70-90 küçültme mümkündür. Ağırlıklı olarak metin içeren PDF'lerde %20-40 arası küçültme elde edilir. 10 MB bir belgeyi 2 MB'a kadar düşürmek yaygındır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mobilden kullanılır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, tüm modern tarayıcılar desteklenir. iPhone, Android, iPad veya bilgisayardan fark etmeksizin kullanabilirsiniz. Uygulama indirmeniz gerekmez — tarayıcıdan doğrudan çalışır. Dosyalar 100 MB'a kadar desteklenir."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -505,7 +548,38 @@
         </a>
     </div>
 </div>
-</main>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto" aria-labelledby="faq-heading">
+        <div class="flex items-center gap-3 mb-6">
+            <i class="fas fa-question-circle text-red-500 text-2xl"></i>
+            <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold text-gray-800">Sık Sorulan Sorular</h2>
+        </div>
+        <div class="space-y-5">
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF boyutu nasıl küçültülür?</h3>
+                <p class="text-gray-700 leading-relaxed">PDFişlemleri.com üzerindeki PDF Sıkıştır aracına dosyanızı yükleyip sıkıştırma seviyesini seçin (düşük, orta, yüksek). Araç görüntü çözünürlüklerini optimize eder, gereksiz metadata'ları siler ve font'ları optimize eder. %50 ile %90 arasında boyut düşüşü sağlar, sonuç dosyası aynı kalitede görünür.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Kalite kaybı olur mu?</h3>
+                <p class="text-gray-700 leading-relaxed">Orta seviye sıkıştırmada gözle görülür bir kalite kaybı olmaz. Metin tamamen keskin kalır, görüntüler ise belirli bir DPI'ya optimize edilir. Profesyonel baskı için orijinal dosyayı saklayın; e-posta, WhatsApp veya web paylaşımı için sıkıştırılmış hali yeterlidir.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Ne kadar küçültme sağlanır?</h3>
+                <p class="text-gray-700 leading-relaxed">Görüntü ağırlıklı PDF'lerde (taranmış belgeler, fotoğraflı raporlar) %70-90 küçültme mümkündür. Ağırlıklı olarak metin içeren PDF'lerde %20-40 arası küçültme elde edilir. 10 MB bir belgeyi 2 MB'a kadar düşürmek yaygındır.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Mobilden kullanılır mı?</h3>
+                <p class="text-gray-700 leading-relaxed">Evet, tüm modern tarayıcılar desteklenir. iPhone, Android, iPad veya bilgisayardan fark etmeksizin kullanabilirsiniz. Uygulama indirmeniz gerekmez — tarayıcıdan doğrudan çalışır. Dosyalar 100 MB'a kadar desteklenir.</p>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+            <a href="/pdf-sikistir" class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline">
+                <i class="fas fa-rocket"></i> Aracı Şimdi Dene
+            </a>
+        </div>
+    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer mt-16 relative overflow-hidden">

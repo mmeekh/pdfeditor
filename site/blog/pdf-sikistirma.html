@@ -117,6 +117,49 @@
       ]
     }
     </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://pdfislemleri.com/blog/pdf-sikistirma#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "PDF sıkıştırma nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDF sıkıştırma, dosya içindeki görüntülerin kalitesini optimize ederek, gereksiz veriyi silerek ve font'ları akıllıca yönetip dosya boyutunu küçülten işlemdir. Tipik olarak %50-90 boyut düşüşü sağlanır, belge aynı görüntüyle açılır ama e-posta veya web için çok daha uygun hale gelir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi sıkıştırma seviyesi en iyisi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Orta seviye genellikle en iyi dengeyi sunar: boyut %60-70 düşer, görüntü kalitesi gözle fark edilmez. Yüksek sıkıştırma, sunum veya arşivleme için; düşük sıkıştırma, baskı için önerilir. Araç her seviye için önizleme sunar, en uygununu seçebilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mobilden sıkıştırma yapılabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, tüm modern mobil tarayıcılar (Safari, Chrome, Firefox) desteklenir. Uygulama indirmeniz gerekmez. Dosyanızı seçin, bir butonla yükleyin, sıkıştırılmış versiyonu indirin. 100 MB'a kadar dosyayla çalışır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dosya boyutu sınırı var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tek yüklemede maksimum 100 MB desteklenir. Daha büyük dosyalar için önce PDF Ayır aracıyla bölüp sonra sıkıştırabilirsiniz. Çok sayıda küçük dosyayı sırayla işlerseniz günlük limit yoktur."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -505,7 +548,38 @@
         </a>
     </div>
 </div>
-</main>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto" aria-labelledby="faq-heading">
+        <div class="flex items-center gap-3 mb-6">
+            <i class="fas fa-question-circle text-red-500 text-2xl"></i>
+            <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold text-gray-800">Sık Sorulan Sorular</h2>
+        </div>
+        <div class="space-y-5">
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF sıkıştırma nedir?</h3>
+                <p class="text-gray-700 leading-relaxed">PDF sıkıştırma, dosya içindeki görüntülerin kalitesini optimize ederek, gereksiz veriyi silerek ve font'ları akıllıca yönetip dosya boyutunu küçülten işlemdir. Tipik olarak %50-90 boyut düşüşü sağlanır, belge aynı görüntüyle açılır ama e-posta veya web için çok daha uygun hale gelir.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Hangi sıkıştırma seviyesi en iyisi?</h3>
+                <p class="text-gray-700 leading-relaxed">Orta seviye genellikle en iyi dengeyi sunar: boyut %60-70 düşer, görüntü kalitesi gözle fark edilmez. Yüksek sıkıştırma, sunum veya arşivleme için; düşük sıkıştırma, baskı için önerilir. Araç her seviye için önizleme sunar, en uygununu seçebilirsiniz.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Mobilden sıkıştırma yapılabilir mi?</h3>
+                <p class="text-gray-700 leading-relaxed">Evet, tüm modern mobil tarayıcılar (Safari, Chrome, Firefox) desteklenir. Uygulama indirmeniz gerekmez. Dosyanızı seçin, bir butonla yükleyin, sıkıştırılmış versiyonu indirin. 100 MB'a kadar dosyayla çalışır.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Dosya boyutu sınırı var mı?</h3>
+                <p class="text-gray-700 leading-relaxed">Tek yüklemede maksimum 100 MB desteklenir. Daha büyük dosyalar için önce PDF Ayır aracıyla bölüp sonra sıkıştırabilirsiniz. Çok sayıda küçük dosyayı sırayla işlerseniz günlük limit yoktur.</p>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+            <a href="/pdf-sikistir" class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline">
+                <i class="fas fa-rocket"></i> Aracı Şimdi Dene
+            </a>
+        </div>
+    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer mt-16 relative overflow-hidden">

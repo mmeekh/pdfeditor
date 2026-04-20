@@ -112,6 +112,49 @@
       ]
     }
     </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://pdfislemleri.com/blog/pdf-ocr#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "PDF OCR nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OCR (Optical Character Recognition), görüntü halindeki metni (taranmış sayfa veya fotoğraf) bilgisayarın anlayabildiği düzenlenebilir metne çevirme teknolojisidir. Taranmış bir belgeyi OCR'lediğinizde, içindeki yazılar aranabilir, kopyalanabilir ve düzenlenebilir hâle gelir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi dilleri destekliyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tesseract tabanlı OCR motorumuz 22 dili destekler: Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca, Rusça, Arapça, Çince, Japonca ve daha fazlası. Türkçe'ye özellikle optimize edilmiştir — ç, ğ, ı, ö, ş, ü karakterleri doğru tanınır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Taranmış PDF'i nasıl metne çeviririm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDF OCR aracına taranmış belgenizi yükleyin. Dil seçimi yapın (varsayılan Türkçe). İşlem saniyeler içinde tamamlanır. Çıktı olarak iki seçeneğiniz var: (1) aranabilir PDF — orijinal görünüm korunur ama metin katmanı eklenir, (2) düz metin TXT — sadece çıkarılan yazı."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "OCR doğruluk oranı nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Taranmış belgenin kalitesine bağlıdır. Net, 300 DPI bir tarama için %95-99 doğruluk tipik. Bulanık veya yana yatık fotoğraflarda %80-90'a düşer. En iyi sonuç için: düz, iyi aydınlatılmış, 300 DPI tarama kullanın. El yazısı şu an desteklenmiyor — sadece matbaa metni."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -485,7 +528,38 @@
         </a>
     </div>
 </div>
-</main>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto" aria-labelledby="faq-heading">
+        <div class="flex items-center gap-3 mb-6">
+            <i class="fas fa-question-circle text-red-500 text-2xl"></i>
+            <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold text-gray-800">Sık Sorulan Sorular</h2>
+        </div>
+        <div class="space-y-5">
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF OCR nedir?</h3>
+                <p class="text-gray-700 leading-relaxed">OCR (Optical Character Recognition), görüntü halindeki metni (taranmış sayfa veya fotoğraf) bilgisayarın anlayabildiği düzenlenebilir metne çevirme teknolojisidir. Taranmış bir belgeyi OCR'lediğinizde, içindeki yazılar aranabilir, kopyalanabilir ve düzenlenebilir hâle gelir.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Hangi dilleri destekliyor?</h3>
+                <p class="text-gray-700 leading-relaxed">Tesseract tabanlı OCR motorumuz 22 dili destekler: Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca, Rusça, Arapça, Çince, Japonca ve daha fazlası. Türkçe'ye özellikle optimize edilmiştir — ç, ğ, ı, ö, ş, ü karakterleri doğru tanınır.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Taranmış PDF'i nasıl metne çeviririm?</h3>
+                <p class="text-gray-700 leading-relaxed">PDF OCR aracına taranmış belgenizi yükleyin. Dil seçimi yapın (varsayılan Türkçe). İşlem saniyeler içinde tamamlanır. Çıktı olarak iki seçeneğiniz var: (1) aranabilir PDF — orijinal görünüm korunur ama metin katmanı eklenir, (2) düz metin TXT — sadece çıkarılan yazı.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">OCR doğruluk oranı nedir?</h3>
+                <p class="text-gray-700 leading-relaxed">Taranmış belgenin kalitesine bağlıdır. Net, 300 DPI bir tarama için %95-99 doğruluk tipik. Bulanık veya yana yatık fotoğraflarda %80-90'a düşer. En iyi sonuç için: düz, iyi aydınlatılmış, 300 DPI tarama kullanın. El yazısı şu an desteklenmiyor — sadece matbaa metni.</p>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+            <a href="/pdf-ocr" class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline">
+                <i class="fas fa-rocket"></i> Aracı Şimdi Dene
+            </a>
+        </div>
+    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer mt-16 relative overflow-hidden">

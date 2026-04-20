@@ -126,6 +126,49 @@
       ]
     }
     </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://pdfislemleri.com/blog/word-pdf-donusturme#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Word'den PDF'e nasıl dönüştürülür?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Word to PDF aracına .doc veya .docx dosyanızı yükleyin. Araç belgenizi işler ve orijinal biçimlendirmeyi koruyarak PDF oluşturur. Sayfa kenar boşlukları, fontlar, başlık düzeni, tablo ve görseller olduğu gibi aktarılır. Saniyeler içinde PDF hazırdır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Font ve sayfa düzeni korunur mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Kullandığınız font bizim sunucuda yoksa bile, Word belgesine gömülü font bilgileri PDF'e aktarılır. Sayfa düzeni, paragraf aralıkları, başlık hiyerarşisi, madde imleri — hepsi korunur. Orijinal belgeyle %99 uyumlu bir PDF elde edersiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tablolar ve görseller düzgün gelir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Excel'den kopyalanan tablolar, yerleştirilen görseller (JPG, PNG), grafikler ve şekiller PDF'e taşınır. Karmaşık tablolarda (birleştirilmiş hücreler, çoklu satır başlıkları) bile format korunur. Görseller orijinal çözünürlüğünde kalır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DOCX ve DOC arasında fark var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İşlem aynıdır, her iki formatı da destekliyoruz. .docx (2007 sonrası) genellikle daha kompakt ve modern; .doc (97-2003) eski sistemlerden gelir. Sonuç PDF dosyası her iki kaynak formatta da aynıdır. Formatı dönüştürmeden direkt yükleyebilirsiniz."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -512,7 +555,38 @@
         </a>
     </div>
 </div>
-</main>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto" aria-labelledby="faq-heading">
+        <div class="flex items-center gap-3 mb-6">
+            <i class="fas fa-question-circle text-red-500 text-2xl"></i>
+            <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold text-gray-800">Sık Sorulan Sorular</h2>
+        </div>
+        <div class="space-y-5">
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Word'den PDF'e nasıl dönüştürülür?</h3>
+                <p class="text-gray-700 leading-relaxed">Word to PDF aracına .doc veya .docx dosyanızı yükleyin. Araç belgenizi işler ve orijinal biçimlendirmeyi koruyarak PDF oluşturur. Sayfa kenar boşlukları, fontlar, başlık düzeni, tablo ve görseller olduğu gibi aktarılır. Saniyeler içinde PDF hazırdır.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Font ve sayfa düzeni korunur mu?</h3>
+                <p class="text-gray-700 leading-relaxed">Evet. Kullandığınız font bizim sunucuda yoksa bile, Word belgesine gömülü font bilgileri PDF'e aktarılır. Sayfa düzeni, paragraf aralıkları, başlık hiyerarşisi, madde imleri — hepsi korunur. Orijinal belgeyle %99 uyumlu bir PDF elde edersiniz.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Tablolar ve görseller düzgün gelir mi?</h3>
+                <p class="text-gray-700 leading-relaxed">Evet. Excel'den kopyalanan tablolar, yerleştirilen görseller (JPG, PNG), grafikler ve şekiller PDF'e taşınır. Karmaşık tablolarda (birleştirilmiş hücreler, çoklu satır başlıkları) bile format korunur. Görseller orijinal çözünürlüğünde kalır.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">DOCX ve DOC arasında fark var mı?</h3>
+                <p class="text-gray-700 leading-relaxed">İşlem aynıdır, her iki formatı da destekliyoruz. .docx (2007 sonrası) genellikle daha kompakt ve modern; .doc (97-2003) eski sistemlerden gelir. Sonuç PDF dosyası her iki kaynak formatta da aynıdır. Formatı dönüştürmeden direkt yükleyebilirsiniz.</p>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+            <a href="/word-to-pdf" class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline">
+                <i class="fas fa-rocket"></i> Aracı Şimdi Dene
+            </a>
+        </div>
+    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer mt-16 relative overflow-hidden">
