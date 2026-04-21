@@ -425,19 +425,81 @@
         <!-- Main Content -->
         <main class="site-content container mx-auto px-4 py-8">
         <!-- Hero Section -->
-        <section class="text-center mb-12 fade-in">
+        <section class="text-center mb-10 fade-in">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Blog & Rehberler</h1>
             <p class="text-gray-600 max-w-3xl mx-auto text-lg mb-8">PDF dosyalarıyla ilgili tüm sorunlarınıza çözüm bulun! Adım adım rehberler, pratik ipuçları ve uzman tavsiyeleri.</p>
-            
-
         </section>
+
+        <!-- Category Filter -->
+        <nav id="category-filter" class="mb-10" aria-label="Blog kategorileri">
+            <div class="flex flex-wrap gap-2 sm:gap-3 justify-center">
+                <button data-cat="all" class="cat-btn active inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-red-600">
+                    <i class="fas fa-layer-group text-xs"></i> Tümü <span class="cat-count bg-white/30 px-2 py-0.5 rounded-full text-xs ml-1"></span>
+                </button>
+                <button data-cat="donusturme" class="cat-btn inline-flex items-center gap-2 bg-white text-gray-700 border-2 border-gray-200 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-blue-50 hover:border-blue-300">
+                    <i class="fas fa-exchange-alt text-xs"></i> Dönüştürme <span class="cat-count bg-gray-100 px-2 py-0.5 rounded-full text-xs ml-1"></span>
+                </button>
+                <button data-cat="duzenleme" class="cat-btn inline-flex items-center gap-2 bg-white text-gray-700 border-2 border-gray-200 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-purple-50 hover:border-purple-300">
+                    <i class="fas fa-sliders-h text-xs"></i> Düzenleme <span class="cat-count bg-gray-100 px-2 py-0.5 rounded-full text-xs ml-1"></span>
+                </button>
+                <button data-cat="guvenlik" class="cat-btn inline-flex items-center gap-2 bg-white text-gray-700 border-2 border-gray-200 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-green-50 hover:border-green-300">
+                    <i class="fas fa-shield-alt text-xs"></i> Güvenlik & İmza <span class="cat-count bg-gray-100 px-2 py-0.5 rounded-full text-xs ml-1"></span>
+                </button>
+                <button data-cat="rehber" class="cat-btn inline-flex items-center gap-2 bg-white text-gray-700 border-2 border-gray-200 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-amber-50 hover:border-amber-300">
+                    <i class="fas fa-book text-xs"></i> Rehberler & İpuçları <span class="cat-count bg-gray-100 px-2 py-0.5 rounded-full text-xs ml-1"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Category Filter JS -->
+        <script>
+        (function() {
+            const buttons = document.querySelectorAll('.cat-btn');
+            const cards = document.querySelectorAll('[data-blog-category]');
+            const counts = {};
+            cards.forEach(c => {
+                const cat = c.dataset.blogCategory;
+                counts[cat] = (counts[cat] || 0) + 1;
+            });
+            const total = cards.length;
+            buttons.forEach(btn => {
+                const cat = btn.dataset.cat;
+                const countEl = btn.querySelector('.cat-count');
+                if (countEl) countEl.textContent = cat === 'all' ? total : (counts[cat] || 0);
+            });
+            function applyFilter(cat) {
+                buttons.forEach(b => {
+                    const active = b.dataset.cat === cat;
+                    b.classList.toggle('active', active);
+                    if (active) {
+                        b.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+                        b.classList.add('bg-red-500', 'text-white', 'border-red-500');
+                    } else {
+                        b.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+                        b.classList.remove('bg-red-500', 'text-white', 'border-red-500');
+                    }
+                });
+                cards.forEach(c => {
+                    const show = cat === 'all' || c.dataset.blogCategory === cat;
+                    c.style.display = show ? '' : 'none';
+                });
+            }
+            buttons.forEach(b => b.addEventListener('click', (e) => {
+                e.preventDefault();
+                applyFilter(b.dataset.cat);
+                history.replaceState(null, '', b.dataset.cat === 'all' ? location.pathname : '?kategori=' + b.dataset.cat);
+            }));
+            const urlCat = new URLSearchParams(location.search).get('kategori');
+            if (urlCat && ['donusturme','duzenleme','guvenlik','rehber'].includes(urlCat)) applyFilter(urlCat);
+        })();
+        </script>
 
         <!-- Featured Posts -->
         <section class="mb-16">
             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Öne Çıkan Yazılar</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Featured Post 1 -->
-                <a href="/blog/word-pdf-donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/word-pdf-donusturme" data-blog-category="donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <div class="relative">
                         <img src="/images/word-to-pdf.webp?v=b16ad1d5" alt="Word'den PDF'e Dönüştürme" class="w-full h-48 object-cover" width="512" height="279" loading="lazy" decoding="async">
                         <div class="absolute top-4 left-4">
@@ -471,7 +533,7 @@
                 </a>
 
                 <!-- Featured Post 2 -->
-                <a href="/blog/telefondan-pdf-duzenleme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/telefondan-pdf-duzenleme" data-blog-category="rehber" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <div class="relative">
                         <img src="/images/mobile-pdf-edit.webp?v=7d7e2eb1" alt="Telefondan PDF Sırala" class="w-full h-48 object-cover" width="512" height="279" loading="lazy" decoding="async">
                         <div class="absolute top-4 left-4">
@@ -512,8 +574,178 @@
         <section class="mb-16">
             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Son Yazılar</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- YENİ: PDF Sayfa Döndürme -->
+                <a href="/blog/pdf-sayfa-dondurme" data-blog-category="duzenleme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-sayfa-dondurme.webp" alt="PDF Sayfalarını Döndürme" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">PDF Sayfalarını Döndürme: Yatay PDF'leri Dikey Yapın</h3>
+                        <p class="text-gray-600 text-sm">90/180/270 derece döndürme, tek sayfa veya tümü. Taranmış belgeler ve hatalı yönlü PDF'ler için rehber.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: PDF Sayfa Sıralama -->
+                <a href="/blog/pdf-sayfa-sirala" data-blog-category="duzenleme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-sayfa-sirala.webp" alt="PDF Sayfalarını Sıralama" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">PDF Sayfalarını Sıralama: Sürükle-Bırak ile Düzenle</h3>
+                        <p class="text-gray-600 text-sm">Sayfaları yeniden düzenle, silme ve ekleme. Sunum slideları ve belge birleştirme için pratik rehber.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: PDF → PowerPoint -->
+                <a href="/blog/pdf-powerpoint-donusturme" data-blog-category="donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-powerpoint-donusturme.webp" alt="PDF'den PowerPoint'e Dönüştürme" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">PDF'den PowerPoint'e Dönüştürme: Sunuma Hazır Slide'lar</h3>
+                        <p class="text-gray-600 text-sm">PDF'leri düzenlenebilir .pptx sunumlarına çevirin. Tablolar, görseller ve layout korunur.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: PDF → TXT -->
+                <a href="/blog/pdf-txt-donusturme" data-blog-category="donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-txt-donusturme.webp" alt="PDF'den TXT'ye Dönüştürme" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">PDF'den TXT'ye Dönüştürme: Düz Metin Çıkarma</h3>
+                        <p class="text-gray-600 text-sm">UTF-8 Türkçe desteği, otomasyon ve veri işleme için. Taranmış PDF için OCR ile kombine kullanım.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: PDF CV Hazırlama -->
+                <a href="/blog/pdf-cv-hazirlama" data-blog-category="rehber" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-cv-hazirlama.webp" alt="İş Başvurusu İçin PDF CV Hazırlama" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">İş Başvurusu İçin PDF CV Hazırlama: Format ve Boyut</h3>
+                        <p class="text-gray-600 text-sm">ATS uyumlu CV, ideal boyut, font embedding. Kariyer.net ve LinkedIn için optimize adımlar.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: PDF vs Word -->
+                <a href="/blog/pdf-vs-word" data-blog-category="rehber" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-vs-word.webp" alt="PDF vs Word Karşılaştırma" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">PDF vs Word: Hangi Formatı Ne Zaman Kullanmalıyım?</h3>
+                        <p class="text-gray-600 text-sm">Format kilidi, düzenlenebilirlik, boyut, güvenlik karşılaştırması. Karar ağacı ile doğru seçim.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: PDF E-posta Gönderim -->
+                <a href="/blog/pdf-email-gonderim" data-blog-category="rehber" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-email-gonderim.webp" alt="PDF Dosyasını E-posta İle Göndermek" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">PDF Dosyasını E-posta ile Göndermek: Boyut & Güvenlik</h3>
+                        <p class="text-gray-600 text-sm">Gmail/Outlook limitleri, sıkıştırma, şifreli gönderim, WeTransfer alternatifleri.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: Ücretsiz PDF Düzenleyici -->
+                <a href="/blog/ucretsiz-pdf-duzenleyici" data-blog-category="rehber" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/ucretsiz-pdf-duzenleyici.webp" alt="Ücretsiz Online PDF Düzenleyici" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>7 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">Ücretsiz Online PDF Düzenleyici: Tam Rehber 2026</h3>
+                        <p class="text-gray-600 text-sm">Adobe Acrobat alternatifleri. 16 ücretsiz araç özetli, KVKK uyumlu, kayıtsız kullanım.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: PDF KVKK Güvenlik -->
+                <a href="/blog/pdf-kvkk-guvenlik" data-blog-category="guvenlik" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-kvkk-guvenlik.webp" alt="PDF ve KVKK Güvenlik" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>7 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">PDF ve KVKK: Hassas Belgelerde Güvenlik Rehberi</h3>
+                        <p class="text-gray-600 text-sm">Kişisel veri içeren PDF'ler için AES şifreleme, anonimleştirme, VERBIS ve ihlal önlemleri.</p>
+                    </div>
+                </a>
+
+                <!-- YENİ: PDF Arşivleme -->
+                <a href="/blog/pdf-arsivleme-pdfa" data-blog-category="rehber" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="/images/blog/pdf-arsivleme-pdfa.webp" alt="PDF Arşivleme ve PDF/A Standardı" class="w-full h-40 object-cover" width="1024" height="1024" loading="lazy" decoding="async">
+                        <div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-2">
+                            <i class="fas fa-calendar mr-1"></i><span>21 Nisan 2026</span>
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock mr-1"></i><span>7 dk okuma</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">PDF Arşivleme: PDF/A Standardı ve Uzun Vadeli Saklama</h3>
+                        <p class="text-gray-600 text-sm">ISO 19005 standardı, PDF/A-1/2/3 seviyeleri, kurumsal arşiv zorunlulukları, font embedding.</p>
+                    </div>
+                </a>
+
                 <!-- YENİ: PDF to Excel -->
-                <a href="/blog/pdf-excel-donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-excel-donusturme" data-blog-category="donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <div class="relative">
                         <img src="/images/pdf-to-excel-blog-hero.webp?v=47c58b05" alt="PDF'den Excel'e Dönüştürme" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                         <div class="absolute top-3 left-3">
@@ -532,7 +764,7 @@
                 </a>
 
                 <!-- YENİ: PDF to JPG -->
-                <a href="/blog/pdf-jpg-donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-jpg-donusturme" data-blog-category="donusturme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <div class="relative">
                         <img src="/images/pdf-to-jpg-blog-hero.webp?v=6398f922" alt="PDF'den JPG'ye Dönüştürme" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                         <div class="absolute top-3 left-3">
@@ -551,7 +783,7 @@
                 </a>
 
                 <!-- Post 1 -->
-                <a href="/blog/pdf-boyut-kucultme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-boyut-kucultme" data-blog-category="duzenleme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdf-compress.webp?v=faed28d1" alt="PDF Boyut Küçültme" class="w-full h-40 object-cover" width="512" height="279" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
@@ -569,7 +801,7 @@
                 </a>
 
                 <!-- Post 2 -->
-                <a href="/blog/pdf-imzalama" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-imzalama" data-blog-category="guvenlik" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdf-signature.webp?v=f872036c" alt="PDF imzalama rehberi - elektronik imza ekleme adımları" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
@@ -587,7 +819,7 @@
                 </a>
 
                 <!-- Post 3 -->
-                <a href="/blog/pdf-guvenlik" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-guvenlik" data-blog-category="guvenlik" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdf-security.webp?v=76fabd0a" alt="PDF güvenlik rehberi - parola koruma ve şifreleme" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
@@ -605,7 +837,7 @@
                 </a>
 
                 <!-- Post 4 -->
-                <a href="/blog/pdf-birlestirme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-birlestirme" data-blog-category="duzenleme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdf-merge.webp?v=b38974a5" alt="PDF Birleştirme" class="w-full h-40 object-cover" width="512" height="279" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
@@ -623,7 +855,7 @@
                 </a>
 
                 <!-- Post 5 -->
-                <a href="/blog/pdf-ocr" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-ocr" data-blog-category="rehber" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdf-ocr.webp?v=cd450f30" alt="PDF OCR kullanım rehberi - taranmış belgeyi metne çevirme" class="w-full h-40 object-cover" width="512" height="279" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
@@ -641,7 +873,7 @@
                 </a>
 
                 <!-- Post 6 -->
-                <a href="/blog/pdf-formlari" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-formlari" data-blog-category="rehber" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdf-forms.webp?v=4613c110" alt="PDF form rehberi - form alanları ile doldurulabilir PDF" class="w-full h-40 object-cover" width="512" height="279" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
@@ -659,7 +891,7 @@
                 </a>
 
                 <!-- Post 7 -->
-                <a href="/blog/pdf-filigran" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-filigran" data-blog-category="guvenlik" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdfiligran.webp?v=56cfb7af" alt="PDF filigran ekleme rehberi - watermark adımları" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
@@ -677,7 +909,7 @@
                 </a>
 
                 <!-- Post 8 -->
-                <a href="/blog/pdf-sifre-kaldirma" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-sifre-kaldirma" data-blog-category="guvenlik" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdfpassremove.webp?v=fe18225e" alt="PDF Şifre Kaldırma" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">

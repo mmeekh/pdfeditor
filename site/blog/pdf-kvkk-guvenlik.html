@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF ve KVKK: Hassas Belgelerde Güvenlik Rehberi | Blog</title>
+    <meta name="description" content="PDF ve KVKK uyumluluğu rehberi: 6698 sayılı kanun, hassas veri şifreleme, anonimleştirme, VERBIS kaydı, AES-256, ihlal cezaları ve PDFişlemleri.com güvenlik politikası.">
+    <meta name="keywords" content="pdf kvkk, pdf kişisel veri koruma, pdf güvenlik yasal, kvkk pdf şifreleme, pdf verbis, pdf redaksiyon, 6698 sayılı kanun pdf, pdf hassas veri">
+    <meta name="author" content="Emin Kılıç">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pdfislemleri.com/blog/pdf-kvkk-guvenlik">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBF2E5K150"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XBF2E5K150', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        'attribution_reporting_enabled': false,
+        'conversion_measurement_enabled': false
+      });
+    </script>
+
+    <!-- Hreflang Tags for Turkish Market -->
+    <link rel="alternate" hreflang="tr" href="https://pdfislemleri.com/blog/pdf-kvkk-guvenlik" />
+    <link rel="alternate" hreflang="tr-TR" href="https://pdfislemleri.com/blog/pdf-kvkk-guvenlik" />
+    <link rel="alternate" hreflang="x-default" href="https://pdfislemleri.com/blog/pdf-kvkk-guvenlik" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pdfislemleri.com/blog/pdf-kvkk-guvenlik">
+    <meta property="og:title" content="PDF ve KVKK: Hassas Belgelerde Güvenlik Rehberi | Blog">
+    <meta property="og:description" content="PDF ve KVKK uyumluluğu rehberi: 6698 sayılı kanun, hassas veri şifreleme, anonimleştirme, VERBIS kaydı, AES-256, ihlal cezaları ve PDFişlemleri.com güvenlik politikası.">
+    <meta property="og:image" content="https://pdfislemleri.com/images/blog/pdf-kvkk-guvenlik.webp?v=a1b2c3d4">
+    <meta property="og:site_name" content="PDFişlemleri.com">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pdfislemleri.com/blog/pdf-kvkk-guvenlik">
+    <meta property="twitter:title" content="PDF ve KVKK: Hassas Belgelerde Güvenlik Rehberi | Blog">
+    <meta property="twitter:description" content="PDF ve KVKK uyumluluğu rehberi: 6698 sayılı kanun, hassas veri şifreleme, anonimleştirme, VERBIS kaydı, AES-256, ihlal cezaları ve PDFişlemleri.com güvenlik politikası.">
+    <meta property="twitter:image" content="https://pdfislemleri.com/images/blog/pdf-kvkk-guvenlik.webp?v=a1b2c3d4">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/icons/site.webmanifest">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.webp">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#0ea5e9">
+    <meta name="theme-color" content="#0ea5e9">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind (local build) + Font Awesome -->
+    <link rel="stylesheet" href="../css/tw.css?v=60aa0e56">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css?v=ee8cafe1">
+    <link rel="stylesheet" href="../css/gradients.css">
+
+    <!-- Structured Data: BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "PDF ve KVKK: Hassas Belgeler İçin Tam Güvenlik ve Uyumluluk Rehberi",
+        "description": "6698 sayılı KVKK kapsamında PDF'te hassas veri koruma, anonimleştirme, şifreleme, VERBIS yükümlülükleri ve ihlal cezalarına dair uygulamaya dönük rehber.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://pdfislemleri.com/images/blog/pdf-kvkk-guvenlik.webp?v=a1b2c3d4",
+            "width": 1024,
+            "height": 1024,
+            "creditText": "PDFişlemleri.com",
+            "copyrightHolder": {
+                "@type": "Organization",
+                "name": "PDFişlemleri.com",
+                "url": "https://pdfislemleri.com"
+            },
+            "copyrightNotice": "© 2026 PDFişlemleri.com",
+            "license": "https://pdfislemleri.com/terms",
+            "acquireLicensePage": "https://pdfislemleri.com/contact"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Emin Kılıç",
+            "url": "https://pdfislemleri.com/about",
+            "sameAs": [
+                "https://www.linkedin.com/in/eminnkilic/",
+                "https://instagram.com/heremmkh"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfislemleri.com/icons/logo.webp"
+            }
+        },
+        "datePublished": "2026-04-21T00:00:00+03:00",
+        "dateModified": "2026-04-21T00:00:00+03:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pdfislemleri.com/blog/pdf-kvkk-guvenlik"
+        },
+        "keywords": "pdf kvkk, pdf kişisel veri koruma, pdf güvenlik yasal, kvkk pdf şifreleme, verbis pdf, 6698 sayılı kanun",
+        "articleSection": "PDF Güvenlik",
+        "wordCount": 1500,
+        "inLanguage": "tr-TR"
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://pdfislemleri.com/blog/pdf-kvkk-guvenlik#breadcrumb",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog" },
+            { "@type": "ListItem", "position": 3, "name": "PDF ve KVKK", "item": "https://pdfislemleri.com/blog/pdf-kvkk-guvenlik" }
+        ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://pdfislemleri.com/blog/pdf-kvkk-guvenlik#faq",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "KVKK'ya göre PDF dosyaları nasıl korunmalı?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) PDF dosyaları için özellikle teknik ve idari tedbirlerin birlikte alınmasını zorunlu kılar. Teknik tedbirler arasında AES-128 veya AES-256 ile şifreleme, erişim kontrolü, log tutma, yedekleme ve güvenli silme yer alır. İdari tedbirler ise personel farkındalık eğitimi, veri envanteri tutulması, aydınlatma metni hazırlanması ve gerekliyse VERBIS kaydı yapılmasıdır. Hassas veri içeren PDF (sağlık raporu, TCKN, mali bilgi) mutlaka şifrelenmeli, gerektiğinde redaksiyon (karartma) uygulanmalı ve veri minimizasyonu ilkesine göre yalnızca gerekli bilgiler paylaşılmalıdır. Saklama süreleri kanuni dayanağa göre belirlenmelidir."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hangi PDF verileri 'kişisel veri' sayılır?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "KVKK kapsamında kişisel veri, 'belirli ya da belirlenebilir gerçek kişiye ilişkin her türlü bilgi' olarak tanımlanır. PDF dosyalarında sıkça karşılaşılan kişisel veri örnekleri: ad-soyad, TC kimlik numarası, adres, telefon, e-posta, doğum tarihi, IBAN, maaş bilgisi, işe giriş tarihi, fotoğraf, imza, özlük dosyası bilgileri ve çalışma saatleri. Bunların yanında 'özel nitelikli kişisel veri' kategorisi vardır ve çok daha katı korunur: sağlık verileri, din, ırk, etnik köken, siyasi görüş, cinsel hayat, ceza mahkumiyeti, biyometrik ve genetik veriler. Sağlık raporu veya adli sicil içeren PDF'ler bu kategoride değerlendirilir ve açık rıza ya da özel kanun hükmü olmadan işlenemez."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Bulut servisleri KVKK uyumlu mu?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bulut servislerinin KVKK uyumluluğu, veri merkezi konumuna, sözleşme hükümlerine ve teknik önlemlere bağlıdır. Türkiye veya AB sınırları içindeki veri merkezlerinde işleyen, standart sözleşme maddelerini (SCC) imzalayan ve veri işleme sözleşmesi (DPIA) sunan servisler genellikle uyumludur. ABD merkezli bulut servislerine yapılan kontrolsüz aktarımlar KVKK 9. madde gereği açık rıza ya da KVKK Kurulu izni gerektirir. Kullandığınız servisin aydınlatma metnini ve gizlilik politikasını okuyun, veri nereye gidiyor doğrulayın. PDFişlemleri.com sunucuları Türkiye ve AB sınırları içindedir, dosyalarınız 15 dakika içinde otomatik silinir ve hiçbir yurt dışı aktarım yapılmaz."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Çalışan CV'leri ne kadar saklanmalı?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Çalışan CV'leri ve özlük dosyalarının saklama süresi, veri kategorisine ve yasal dayanağa göre değişir. KVKK Kurulu rehberine göre, işe alınmayan adayların CV'leri başvurudan sonra en fazla 6 ay-1 yıl saklanmalıdır; açık rıza varsa bu süre uzatılabilir. İşe alınan personelin özlük dosyaları, iş akdi sona erdiğinden itibaren 4857 sayılı İş Kanunu ve SGK mevzuatı gereği 10 yıl boyunca tutulmalıdır. Maaş bordroları ve bordro hesaplama belgeleri için süre yine 10 yıl, vergi dayanaklı belgeler için 5 yıldır. Saklama süresi bittiğinde veriler güvenli şekilde silinmeli (dijital dosyalar için geri dönüşümsüz silme, kağıt için imha) ve imha tutanağı düzenlenmelidir."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "KVKK ihlali durumunda ne olur?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "KVKK 18. madde kapsamında ihlal durumunda idari para cezaları uygulanır. 2026 yılı için güncel cezalar: aydınlatma yükümlülüğüne uymayanlara yaklaşık 100.000 TL'den başlayan, VERBIS kaydı yapmayanlara 250.000 TL'den başlayan, veri güvenliği tedbirlerini almayanlara 500.000 TL ve üzeri, Kurul kararlarına uymayanlara 1.500.000 TL'yi bulan cezalar söz konusudur. Ceza miktarları her yıl yeniden değerleme oranına göre artırılır. Veri ihlali (data breach) durumunda 72 saat içinde KVKK Kurulu'na bildirim yapmak zorunludur; ayrıca etkilenen ilgili kişilere de bildirim yapılmalıdır. İdari cezaların yanı sıra mağdurların tazminat davası açma hakkı saklıdır."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                        <i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+                        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition">Ana Sayfa</a>
+                    <a href="/blog" class="text-gray-600 font-medium">Blog</a>
+                    <a href="/about" class="text-gray-600 hover:text-blue-600 transition">Hakkımızda</a>
+                    <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4" aria-label="Breadcrumb">
+            <div class="container mx-auto px-4">
+                <ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
+                    <li><a href="/" class="hover:text-blue-600">Ana Sayfa</a></li>
+                    <li><i class="fas fa-chevron-right text-xs text-gray-400" aria-hidden="true"></i></li>
+                    <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
+                    <li><i class="fas fa-chevron-right text-xs text-gray-400" aria-hidden="true"></i></li>
+                    <li class="text-gray-800 font-medium" aria-current="page">PDF ve KVKK</li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+
+            <!-- Article Content -->
+            <article class="max-w-4xl mx-auto">
+                <div class="prose prose-lg max-w-none">
+                    <!-- Blog Header -->
+                    <div class="mb-6 sm:mb-8">
+                        <div class="mb-4">
+                            <a href="/pdf-sifrele" class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline">PDF Güvenlik</a>
+                            <a href="/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2">Ücretsiz Araç</a>
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">PDF ve KVKK: Hassas Belgeler İçin Tam Güvenlik ve Uyumluluk Rehberi</h1>
+                        <div class="flex flex-col sm:flex-row sm:items-center text-gray-600 mb-4 sm:mb-6">
+                            <div class="flex items-center mr-0 sm:mr-6 mb-2 sm:mb-0">
+                                <div>
+                                    <div class="font-medium">Emin Kılıç</div>
+                                    <div class="text-sm">Kurucu &amp; Geliştirici</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 sm:space-x-4 text-sm">
+                                <span><i class="fas fa-calendar mr-1 sm:mr-2"></i>21 Nisan 2026</span>
+                                <span><i class="fas fa-clock mr-1 sm:mr-2"></i>7 dk okuma</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="/images/blog/pdf-kvkk-guvenlik.webp?v=a1b2c3d4" alt="PDF ve KVKK: hassas belgelerde güvenlik, şifreleme ve uyumluluk rehberi" class="w-full max-w-3xl mx-auto h-auto rounded-xl mb-6 sm:mb-8 shadow-md" width="1024" height="1024" loading="lazy">
+
+                    <p class="text-lg sm:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6">
+                        PDF kvkk uyumluluğu, iş dünyasının 2026 yılında en çok konuştuğu konulardan biri. Bordro, özlük dosyası, sağlık raporu veya müşteri sözleşmesi gibi PDF belgeleri hemen her gün paylaşılıyor ve çoğu ciddi miktarda kişisel veri içeriyor. 6698 sayılı Kişisel Verilerin Korunması Kanunu, bu belgelerin hem teknik hem idari önlemlerle korunmasını zorunlu kılar; aksi halde idari para cezaları 1,5 milyon TL'yi bulabilir. Bu rehberde KVKK'nın temel ilkelerini, PDF'te hassas verilerin nasıl tespit edileceğini, anonimleştirme ve şifreleme tekniklerini, VERBIS yükümlülüğünü ve PDFişlemleri.com'un güvenlik altyapısını adım adım anlatıyoruz. Her madde, Türkiye'de faaliyet gösteren işletmelerin operasyonel gerçekliğine uyarlanmış pratik bir başvuru kaynağıdır.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">KVKK Kapsamında "Veri Sorumlusu" ve "Veri İşleyen" Ayrımı</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        KVKK uyum sürecinde en çok karıştırılan iki kavram "veri sorumlusu" ve "veri işleyen"dir. <strong>Veri sorumlusu</strong>, kişisel verilerin işlenme amacını ve araçlarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu kişi ya da kurumdur; tipik olarak işvereni kastetmektedir. <strong>Veri işleyen</strong> ise veri sorumlusu adına kişisel verileri işleyen üçüncü taraftır: bordro yazılımı sağlayıcıları, bulut depolama hizmetleri, muhasebe bürosu veya dönüştürme aracı gibi. Veri işleyen ile yapılacak sözleşme (DPA - Data Processing Agreement) KVKK madde 12 kapsamında zorunludur; sözleşmede hangi verilerin ne amaçla işleneceği, güvenlik tedbirleri ve alt yüklenici durumu açıkça yazılır. PDFişlemleri.com, kurumsal kullanımda veri işleyen sıfatıyla hareket eder ve talep üzerine standart DPA sunar.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">KVKK Temelleri: 6698 Sayılı Kanun Ne Getirir?</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        6698 sayılı Kişisel Verilerin Korunması Kanunu 2016 yılında yürürlüğe girdi ve bugün iş dünyasının her köşesinde etkisini hissettiriyor. Kanun, kişisel veriyi "belirli ya da belirlenebilir gerçek kişiye ilişkin her türlü bilgi" olarak tanımlar; bir PDF'te yer alan isim, adres, TC kimlik numarası veya fotoğraf otomatik olarak bu kapsama girer. Veri sorumlusu sıfatıyla işletmeler şu altı ilkeye uymak zorundadır: hukuka uygunluk, doğruluk, belirli amaçla işleme, amaca bağlı kalma, sınırlı saklama ve bütünlük. Her PDF süreci bu ilkeler süzgecinden geçirilmelidir.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">PDF'te Hassas Veri Örnekleri: TCKN, Sağlık, Mali</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        PDF belgelerinde en çok karşılaşılan hassas veri kategorileri şunlardır:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+                        <li><strong>Kimlik verileri:</strong> TC kimlik numarası, pasaport no, nüfus cüzdanı fotokopisi, doğum tarihi. Standart kişisel veri kategorisinde yer alır, şifrelenerek paylaşılmalıdır.</li>
+                        <li><strong>İletişim verileri:</strong> Adres, telefon, e-posta. Genellikle müşteri formlarında, iş başvurularında ve sözleşmelerde bulunur.</li>
+                        <li><strong>Mali veriler:</strong> IBAN, banka hesap dökümü, maaş bordrosu, kredi skoru. Hem KVKK hem Bankacılık Kanunu kapsamında korunur.</li>
+                        <li><strong>Sağlık verileri:</strong> Tahlil sonucu, reçete, epikriz, ameliyat raporu. Özel nitelikli kişisel veri sayılır, açık rıza veya özel kanun hükmü olmadan işlenemez.</li>
+                        <li><strong>Özlük verileri:</strong> Bordro, iş sözleşmesi, performans değerlendirme, izin dilekçesi. 10 yıl saklama yükümlülüğü vardır.</li>
+                        <li><strong>Biyometrik veriler:</strong> Parmak izi, yüz tanıma verisi, ses örneği. Özel nitelikli sayılır, son derece sıkı korunmalıdır.</li>
+                    </ul>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">KVKK Uyumluluk Checklist'i</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        Bir PDF belge iş akışı KVKK uyumlu sayılabilmesi için aşağıdaki kontrol listesinden geçmelidir:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+                        <li>Aydınlatma metni hazır ve ilgili kişiye iletilmiş mi?</li>
+                        <li>Açık rıza gerektiren durumlarda rıza yazılı ya da elektronik imzalı alınmış mı?</li>
+                        <li>PDF dosyası AES-128 veya AES-256 ile şifrelenmiş mi?</li>
+                        <li>Hassas alanlar (TCKN, IBAN) redaksiyon/maskeleme uygulanmış mı?</li>
+                        <li>Dosya paylaşımı HTTPS/TLS üzerinden mi yapılıyor?</li>
+                        <li>Veri işleyen (bulut servis) ile sözleşme imzalandı mı?</li>
+                        <li>Saklama süresi belirlendi ve sonunda imha planı var mı?</li>
+                        <li>Erişim kayıtları (log) tutuluyor mu?</li>
+                        <li>Personel farkındalık eğitimi tamamlandı mı?</li>
+                        <li>VERBIS kaydı gerekliyse yapıldı mı?</li>
+                    </ul>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Anonimleştirme: Redaksiyon ve Filigran</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        Anonimleştirme, kişisel veriyi hiçbir şekilde bir kişiyle ilişkilendirilemez hâle getirme işlemidir. PDF belgelerinde iki yaygın yöntem vardır: <strong>redaksiyon</strong> (karartma/silme) ve <strong>metin değiştirme</strong>. Redaksiyon yapılırken yaygın bir hata, metnin üstüne siyah dikdörtgen koymaktır; bu yöntem görseli kapatır ama altta yatan metin katmanı hâlâ kopyalanabilir. Doğru redaksiyon, metin katmanının tamamen silinmesi ve üstüne opak bir alan yerleştirilmesiyle yapılır. Kurumsal kullanım için profesyonel redaksiyon araçları tercih edilmelidir.
+                    </p>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        <a href="/pdf-filigran" class="text-blue-600 hover:underline">Filigran ekleme</a> anonimleştirme değildir ancak belgenin kaynağını izlenebilir kılar. "Gizli - Sadece İK" gibi filigranlar, belge yetkisiz paylaşıldığında sızıntının hangi kopyadan geldiğini tespit etmeye yarar. Dinamik filigran (her alıcıya kendi adıyla) iç denetim süreçlerinde güçlü bir caydırıcıdır.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Şifreleme: AES-128 ve AES-256 Farkı</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        PDF şifreleme standardı iki ana algoritma sunar: <strong>AES-128</strong> ve <strong>AES-256</strong>. AES-128 yaygın, hızlı ve büyük çoğunluk için yeterlidir; kırılması pratik olarak imkansızdır. AES-256 ise askeri dereceli şifreleme olarak bilinir ve özel nitelikli kişisel veri (sağlık, biyometrik) içeren PDF'lerde tercih edilmelidir. Şifreleme sırasında zayıf parola seçimi (ör. "1234", "sifre123") şifrelemenin gücünü baltalayan en büyük hatadır. KVKK rehberi, en az 12 karakter, büyük/küçük harf, sayı ve özel karakter içeren parolalar önerir. <a href="/pdf-sifrele" class="text-blue-600 hover:underline">PDF şifreleme aracımız</a> AES-256 varsayılanı ile çalışır.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">VERBIS Kaydı Kimler İçin Zorunlu?</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        VERBIS (Veri Sorumluları Sicili) KVKK Kurulu'nun işlettiği merkezi kayıt sistemidir. Yıllık çalışan sayısı 50'den fazla veya yıllık bilanço toplamı 100 milyon TL'yi aşan veri sorumluları ile özel nitelikli kişisel veri işleyen tüm kurumlar kayıt yaptırmak zorundadır. Küçük işletmeler için zorunluluk bulunmasa da gönüllü kayıt tavsiye edilir. VERBIS kaydı, hangi veri kategorilerinin hangi amaçla işlendiğini, saklama sürelerini ve aktarım alıcılarını şeffaf biçimde deklare eder. Kayıt yapmayan yükümlü kuruma 250.000 TL'den başlayan idari para cezası uygulanır.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">İhlal Cezaları: 2026 Güncel Rakamlar</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        2026 yılı yeniden değerleme oranı sonrası KVKK idari para cezaları ciddi rakamlara ulaştı. Aydınlatma yükümlülüğünü ihlal etmek yaklaşık 100.000 TL'den başlar, veri güvenliği tedbirlerini almamak 500.000 TL ve üzerine çıkar, Kurul kararlarına uymamak 1.500.000 TL'ye kadar çıkabilir. Veri ihlali (data breach) durumunda 72 saat içinde KVKK Kurulu'na bildirim yapılması zorunludur; geç bildirim ayrı bir ceza konusudur. Cezaların yanında ilgili kişiler maddi-manevi tazminat davası açma hakkına sahiptir ve reputasyonel hasar çoğu zaman idari cezadan daha büyük kayıp yaratır.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">PDFişlemleri.com Güvenlik Politikası</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        Platformumuz KVKK ilkelerini altyapısının her katmanına yerleştirmiştir. Üç temel garanti şöyle sıralanır:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+                        <li><strong>HTTPS/TLS 1.3 aktarım şifrelemesi:</strong> Dosya yüklenirken ve indirilirken uçtan uca şifrelidir. Aradaki hiçbir aktör (ağ sağlayıcı, proxy, CDN) içeriği okuyamaz.</li>
+                        <li><strong>15 dakika otomatik silme:</strong> İşlem bittikten sonra kaynak PDF ve çıktı dosyası 15 dakika içinde geri dönüşümsüz silinir. Log'lar da minimum tutulur.</li>
+                        <li><strong>Aydınlatma metni ve KVKK sayfası:</strong> Site altbilgisindeki <a href="/kvkk" class="text-blue-600 hover:underline">KVKK sayfası</a> hangi verinin ne amaçla işlendiğini, kimlere aktarıldığını, saklama sürelerini ve kullanıcı haklarını açıkça belirtir.</li>
+                    </ul>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Veri İhlali Durumunda 72 Saatlik Bildirim Süreci</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Her işletme veri ihlaline maruz kalabilir; önemli olan, ihlal fark edildikten sonraki ilk 72 saat içinde yapılanlardır. KVKK rehberine göre veri sorumlusu öncelikle ihlalin kapsamını ve etkilenen kişi sayısını belirler, ardından bir olay yönetim ekibi devreye sokar. 72 saat içinde KVKK Kurulu'na resmi bildirim yapılır; bildirimde ihlalin niteliği, etkilenen veri kategorileri, olası sonuçlar ve alınan tedbirler yer alır. Aynı süre içinde etkilenen ilgili kişilere de açık bir dille duyuru yapılması şarttır. Geç bildirim ayrı bir ceza konusudur, hazır bir "ihlal müdahale planı" her kurumda dokümante edilmelidir.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Personel Farkındalık Eğitimi ve İç Denetim</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        KVKK ihlallerinin büyük çoğunluğu teknik açıklardan değil, insan hatasından kaynaklanır: yanlış alıcıya gönderilen PDF, şifresiz paylaşılan özlük dosyası, USB belleğe alınıp ofis dışına çıkarılan arşiv. Bu riskleri azaltmak için her kurumun yılda en az iki kez personel farkındalık eğitimi düzenlemesi, yeni başlayanlara oryantasyon programında KVKK modülü vermesi gerekir. Eğitim içeriği: kişisel veri kavramı, örneklerle tanıma, güvenli paylaşım teknikleri, ihlal durumunda ne yapılacağı ve iç bildirim kanalları. İç denetim ekibi düzenli aralıklarla e-posta örneklemesi, erişim log'u incelemesi ve rastgele dosya kontrolü yaparak uyumluluğu ölçmelidir.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Aydınlatma Metni ve Açık Rıza: Farklar ve Örnekler</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        <strong>Aydınlatma metni</strong> KVKK madde 10 kapsamında veri sorumlusunun ilgili kişiye yaptığı tek taraflı bilgilendirmedir; hangi verinin, hangi amaçla, kimlere aktarılacağını, saklama süresini ve ilgili kişinin haklarını açıklar. Aydınlatma metni her veri işleme faaliyetinden önce sunulmalı, anlaşılır ve net bir dilde yazılmalıdır. <strong>Açık rıza</strong> ise madde 5 ve 6 kapsamında özel nitelikli kişisel veri ya da belirli istisnai durumlar için alınan onaydır; özgür iradeyle, bilgilendirilmiş olarak ve belirli bir amaca yönelik verilmesi gerekir. PDF ile gelen her forma "KVKK'yı kabul ediyorum" kutucuğu koymak yeterli değildir; bu çoğu zaman "battaniye rıza" olarak değerlendirilir ve geçersiz sayılır. İyi örnek: aday CV'si alınırken iş başvurusunun amacı ve saklama süresi ayrı ayrı belirtilmeli, adayın açık onayı yazılı veya elektronik imzayla alınmalıdır.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">E-Posta ile PDF Paylaşımı: Güvenli Yöntemler</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Günlük iş akışında PDF paylaşımının en yaygın aracı e-postadır; ancak düz e-posta ekleri KVKK açısından risklidir. Önerilen yöntem şöyledir: hassas PDF'i <a href="/pdf-sifrele" class="text-blue-600 hover:underline">AES-256 ile şifreleyin</a>, parolayı asla aynı e-postada iletmeyin, ikinci bir kanaldan (telefon, SMS, kurumsal mesajlaşma) iletin. Mümkünse e-posta yerine kurumsal dosya paylaşım platformu kullanın; bu platformlar alıcı doğrulama, indirme sayaç limiti, otomatik süre sonu ve erişim log'u özellikleri sunar. BCC kullanımına dikkat edilmeli, "herkese yanıtla" kazaları için kurumsal e-posta istemcilerinde "gönderim iptal" süresi 30 saniyeye ayarlanmalıdır.
+                    </p>
+
+                    <!-- Tool CTA Banner -->
+                    <div class="bg-gradient-to-r from-red-600 to-rose-600 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-shield-alt text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl md:text-2xl font-bold mb-1">PDF Şifreleme — KVKK Uyumlu Koruma</h3>
+                                    <p class="text-sm md:text-base text-rose-100">AES-256 ile hassas belgelerinizi anında şifreleyin. Ücretsiz.</p>
+                                </div>
+                            </div>
+                            <a href="/pdf-sifrele" class="inline-flex items-center bg-white text-red-700 hover:bg-red-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap">
+                                <i class="fas fa-lock mr-2"></i> Aracı Aç
+                            </a>
+                        </div>
+                    </div>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Sonuç</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        PDF kvkk uyumluluğu yalnızca yasal bir zorunluluk değil, marka güvenilirliğinin temel taşıdır. 6698 sayılı kanunun altı ilkesine uyan, AES-256 şifreleme uygulayan, redaksiyon ve anonimleştirme teknikleri ile veri minimizasyonunu sağlayan, gerekliyse VERBIS kaydı yapan kurumlar hem cezalardan hem reputasyonel kayıplardan korunur. PDFişlemleri.com bu ihtiyaçların tamamına cevap veren bir platform olarak 15 dakika otomatik silme, HTTPS/TLS 1.3 aktarım ve AES-256 şifreleme garantisi sunar. Hassas belgeleriniz için hemen <a href="/pdf-sifrele" class="text-blue-600 hover:underline">PDF şifreleme aracımızı</a> kullanın ve KVKK uyumlu iş akışınızı kurun.
+                    </p>
+                </div>
+            </article>
+
+            <!-- FAQ Section -->
+            <section class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto" aria-labelledby="faq-heading">
+                <div class="flex items-center gap-3 mb-6">
+                    <i class="fas fa-question-circle text-red-500 text-2xl"></i>
+                    <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold text-gray-800">Sık Sorulan Sorular</h2>
+                </div>
+                <div class="space-y-5">
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">KVKK'ya göre PDF dosyaları nasıl korunmalı?</h3>
+                        <p class="text-gray-700 leading-relaxed">6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) PDF dosyaları için özellikle teknik ve idari tedbirlerin birlikte alınmasını zorunlu kılar. Teknik tedbirler arasında AES-128 veya AES-256 ile şifreleme, erişim kontrolü, log tutma, yedekleme ve güvenli silme yer alır. İdari tedbirler ise personel farkındalık eğitimi, veri envanteri tutulması, aydınlatma metni hazırlanması ve gerekliyse VERBIS kaydı yapılmasıdır. Hassas veri içeren PDF (sağlık raporu, TCKN, mali bilgi) mutlaka şifrelenmeli, gerektiğinde redaksiyon (karartma) uygulanmalı ve veri minimizasyonu ilkesine göre yalnızca gerekli bilgiler paylaşılmalıdır. Saklama süreleri kanuni dayanağa göre belirlenmelidir.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Hangi PDF verileri "kişisel veri" sayılır?</h3>
+                        <p class="text-gray-700 leading-relaxed">KVKK kapsamında kişisel veri, "belirli ya da belirlenebilir gerçek kişiye ilişkin her türlü bilgi" olarak tanımlanır. PDF dosyalarında sıkça karşılaşılan kişisel veri örnekleri: ad-soyad, TC kimlik numarası, adres, telefon, e-posta, doğum tarihi, IBAN, maaş bilgisi, işe giriş tarihi, fotoğraf, imza, özlük dosyası bilgileri ve çalışma saatleri. Bunların yanında "özel nitelikli kişisel veri" kategorisi vardır ve çok daha katı korunur: sağlık verileri, din, ırk, etnik köken, siyasi görüş, cinsel hayat, ceza mahkumiyeti, biyometrik ve genetik veriler. Sağlık raporu veya adli sicil içeren PDF'ler bu kategoride değerlendirilir ve açık rıza ya da özel kanun hükmü olmadan işlenemez.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Bulut servisleri KVKK uyumlu mu?</h3>
+                        <p class="text-gray-700 leading-relaxed">Bulut servislerinin KVKK uyumluluğu, veri merkezi konumuna, sözleşme hükümlerine ve teknik önlemlere bağlıdır. Türkiye veya AB sınırları içindeki veri merkezlerinde işleyen, standart sözleşme maddelerini (SCC) imzalayan ve veri işleme sözleşmesi (DPIA) sunan servisler genellikle uyumludur. ABD merkezli bulut servislerine yapılan kontrolsüz aktarımlar KVKK 9. madde gereği açık rıza ya da KVKK Kurulu izni gerektirir. Kullandığınız servisin aydınlatma metnini ve gizlilik politikasını okuyun, veri nereye gidiyor doğrulayın. PDFişlemleri.com sunucuları Türkiye ve AB sınırları içindedir, dosyalarınız 15 dakika içinde otomatik silinir ve hiçbir yurt dışı aktarım yapılmaz.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Çalışan CV'leri ne kadar saklanmalı?</h3>
+                        <p class="text-gray-700 leading-relaxed">Çalışan CV'leri ve özlük dosyalarının saklama süresi, veri kategorisine ve yasal dayanağa göre değişir. KVKK Kurulu rehberine göre, işe alınmayan adayların CV'leri başvurudan sonra en fazla 6 ay-1 yıl saklanmalıdır; açık rıza varsa bu süre uzatılabilir. İşe alınan personelin özlük dosyaları, iş akdi sona erdiğinden itibaren 4857 sayılı İş Kanunu ve SGK mevzuatı gereği 10 yıl boyunca tutulmalıdır. Maaş bordroları ve bordro hesaplama belgeleri için süre yine 10 yıl, vergi dayanaklı belgeler için 5 yıldır. Saklama süresi bittiğinde veriler güvenli şekilde silinmeli (dijital dosyalar için geri dönüşümsüz silme, kağıt için imha) ve imha tutanağı düzenlenmelidir.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">KVKK ihlali durumunda ne olur?</h3>
+                        <p class="text-gray-700 leading-relaxed">KVKK 18. madde kapsamında ihlal durumunda idari para cezaları uygulanır. 2026 yılı için güncel cezalar: aydınlatma yükümlülüğüne uymayanlara yaklaşık 100.000 TL'den başlayan, VERBIS kaydı yapmayanlara 250.000 TL'den başlayan, veri güvenliği tedbirlerini almayanlara 500.000 TL ve üzeri, Kurul kararlarına uymayanlara 1.500.000 TL'yi bulan cezalar söz konusudur. Ceza miktarları her yıl yeniden değerleme oranına göre artırılır. Veri ihlali (data breach) durumunda 72 saat içinde KVKK Kurulu'na bildirim yapmak zorunludur; ayrıca etkilenen ilgili kişilere de bildirim yapılmalıdır. İdari cezaların yanı sıra mağdurların tazminat davası açma hakkı saklıdır.</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+                    <a href="/pdf-sifrele" class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline">
+                        <i class="fas fa-lock"></i> PDF Şifreleme Aracı
+                    </a>
+                </div>
+            </section>
+
+            <!-- Related Posts -->
+            <section class="max-w-4xl mx-auto mt-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 sm:mb-8">İlgili Yazılar</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="/blog/pdf-guvenlik" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src="/images/pdf-security-hero.webp?v=a1b2c3d4" alt="PDF güvenlik ve şifreleme rehberi" class="w-full h-32 object-cover rounded-t-lg" width="1024" height="1024" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-800 mb-2">PDF Güvenlik: Şifreleme, İzinler ve Güvenli Paylaşım</h3>
+                            <p class="text-gray-600 text-sm">PDF'leri profesyonel seviyede nasıl koruyacağınızı öğrenin.</p>
+                        </div>
+                    </a>
+                    <a href="/blog/pdf-sifre-kaldirma" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src="/images/pdf-unlock-hero.webp?v=a1b2c3d4" alt="PDF şifre kaldırma rehberi" class="w-full h-32 object-cover rounded-t-lg" width="1024" height="1024" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-800 mb-2">PDF Şifre Kaldırma: Yetkili Kullanıcı İçin Güvenli Yöntem</h3>
+                            <p class="text-gray-600 text-sm">Parolasını bildiğiniz PDF'lerden şifreyi yasal yollarla kaldırın.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer mt-16 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
+                        <div class="flex space-x-4 justify-center sm:justify-start">
+                            <a href="https://www.linkedin.com/in/eminnkilic/" target="_blank" rel="noopener" aria-label="LinkedIn" class="transition hover:text-blue-600">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://instagram.com/heremmkh" target="_blank" rel="noopener" aria-label="Instagram" class="transition hover:text-pink-600">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
+                        <div class="grid grid-cols-1 gap-y-2 text-sm">
+                            <a href="/about" class="transition hover:text-blue-600">Hakkımızda</a>
+                            <a href="/blog" class="transition hover:text-blue-600">Blog</a>
+                            <a href="/contact" class="transition hover:text-blue-600">İletişim</a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
+                        <div class="grid grid-cols-1 gap-y-2 text-sm">
+                            <a href="/terms" class="transition hover:text-blue-600">Hizmet Şartları</a>
+                            <a href="/privacy" class="transition hover:text-blue-600">Gizlilik Politikası</a>
+                            <a href="/cookies" class="transition hover:text-blue-600">Çerez Politikası</a>
+                            <a href="/kvkk" class="transition hover:text-blue-600">KVKK</a>
+                        </div>
+                    </div>
+                    <div class="text-center sm:text-right">
+                        <h4 class="text-md font-semibold mb-3">Logo</h4>
+                        <div class="flex justify-center sm:justify-end">
+                            <img src="/icons/logo.webp" alt="PDFişlemleri.com logo" width="120" height="120" loading="lazy" class="rounded-lg">
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="mt-8 pt-6 border-t border-gray-200 text-center text-sm italic text-red-600 px-4">
+                    "Dosyanız bizim için sadece bir veri akışı değil — gizliliğinizdir. Yüklediğiniz hiçbir PDF, XLSX veya belge sunucularımızda 15 dakikadan fazla kalmaz; KVKK ve GDPR uyumlu altyapımız içeriğinize kimsenin ulaşmamasını garanti eder."
+                </blockquote>
+                <div class="mt-6 pt-4 border-t border-gray-200 text-center text-xs text-gray-500">
+                    <p>&copy; 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../scroll-manager.js" defer></script>
+    <script type="module" src="../js-v2/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Dosyasını E-posta ile Göndermek: Boyut &amp; Güvenlik | Blog</title>
+    <meta name="description" content="PDF e-posta gönderim rehberi: Gmail 25MB, Outlook 20MB limitleri, sıkıştırma çözümleri, şifreli PDF gönderim ve TLS güvenliği. Büyük dosyalar için ipuçları.">
+    <meta name="keywords" content="pdf email gönderim, pdf mail gönderme, pdf e-posta ekleme, gmail pdf gönderme, outlook pdf, büyük pdf gönderme, şifreli pdf, wetransfer alternatif">
+    <meta name="author" content="Emin Kılıç">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pdfislemleri.com/blog/pdf-email-gonderim">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBF2E5K150"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XBF2E5K150', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        'attribution_reporting_enabled': false,
+        'conversion_measurement_enabled': false
+      });
+    </script>
+
+    <!-- Hreflang Tags for Turkish Market -->
+    <link rel="alternate" hreflang="tr" href="https://pdfislemleri.com/blog/pdf-email-gonderim" />
+    <link rel="alternate" hreflang="tr-TR" href="https://pdfislemleri.com/blog/pdf-email-gonderim" />
+    <link rel="alternate" hreflang="x-default" href="https://pdfislemleri.com/blog/pdf-email-gonderim" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pdfislemleri.com/blog/pdf-email-gonderim">
+    <meta property="og:title" content="PDF Dosyasını E-posta ile Göndermek: Boyut &amp; Güvenlik | Blog">
+    <meta property="og:description" content="PDF e-posta gönderim rehberi: Gmail 25MB, Outlook 20MB limitleri, sıkıştırma çözümleri, şifreli PDF gönderim ve TLS güvenliği. Büyük dosyalar için ipuçları.">
+    <meta property="og:image" content="https://pdfislemleri.com/images/blog/pdf-email-gonderim.webp?v=a1b2c3d4">
+    <meta property="og:site_name" content="PDFişlemleri.com">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pdfislemleri.com/blog/pdf-email-gonderim">
+    <meta property="twitter:title" content="PDF Dosyasını E-posta ile Göndermek: Boyut &amp; Güvenlik | Blog">
+    <meta property="twitter:description" content="PDF e-posta gönderim rehberi: Gmail 25MB, Outlook 20MB limitleri, sıkıştırma çözümleri, şifreli PDF gönderim ve TLS güvenliği. Büyük dosyalar için ipuçları.">
+    <meta property="twitter:image" content="https://pdfislemleri.com/images/blog/pdf-email-gonderim.webp?v=a1b2c3d4">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/icons/site.webmanifest">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.webp">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#0ea5e9">
+    <meta name="theme-color" content="#0ea5e9">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind (local build) + Font Awesome -->
+    <link rel="stylesheet" href="../css/tw.css?v=60aa0e56">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css?v=ee8cafe1">
+    <link rel="stylesheet" href="../css/gradients.css">
+
+    <!-- Structured Data: BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "PDF Dosyasını E-posta ile Göndermek: Boyut Limitleri, Sıkıştırma ve Güvenlik",
+        "description": "Gmail, Outlook ve Yahoo'da PDF ek limitleri, büyük dosyalar için sıkıştırma ve WeTransfer alternatifleri, şifreli PDF gönderim ve TLS güvenlik ipuçları.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://pdfislemleri.com/images/blog/pdf-email-gonderim.webp?v=a1b2c3d4",
+            "width": 1024,
+            "height": 1024,
+            "creditText": "PDFişlemleri.com",
+            "copyrightHolder": {
+                "@type": "Organization",
+                "name": "PDFişlemleri.com",
+                "url": "https://pdfislemleri.com"
+            },
+            "copyrightNotice": "© 2026 PDFişlemleri.com",
+            "license": "https://pdfislemleri.com/terms",
+            "acquireLicensePage": "https://pdfislemleri.com/contact"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Emin Kılıç",
+            "url": "https://pdfislemleri.com/about",
+            "sameAs": [
+                "https://www.linkedin.com/in/eminnkilic/",
+                "https://instagram.com/heremmkh"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfislemleri.com/icons/logo.webp"
+            }
+        },
+        "datePublished": "2026-04-21T00:00:00+03:00",
+        "dateModified": "2026-04-21T00:00:00+03:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pdfislemleri.com/blog/pdf-email-gonderim"
+        },
+        "keywords": "pdf email gönderim, pdf mail gönderme, pdf e-posta ekleme, gmail pdf, outlook pdf, şifreli pdf gönderim",
+        "articleSection": "Paylaşım Rehberi",
+        "wordCount": 1500,
+        "inLanguage": "tr-TR"
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://pdfislemleri.com/blog/pdf-email-gonderim#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "PDF E-posta Gönderim", "item": "https://pdfislemleri.com/blog/pdf-email-gonderim" }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://pdfislemleri.com/blog/pdf-email-gonderim#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "E-posta ile en büyük kaç MB PDF gönderebilirim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "E-posta sağlayıcısına göre limitler farklıdır. Gmail tek e-postada toplam 25 MB ek kabul eder (üzerindekiler otomatik Google Drive bağlantısına dönüşür). Outlook.com ve Microsoft 365 standart limit 20 MB, kurumsal Exchange hesaplarında yöneticinin yaptığı ayara bağlı olarak 35-150 MB arasında değişir. Yahoo Mail 25 MB, Proton Mail 25 MB sunar. Ancak güvenli sınır 10 MB'dir; çünkü alıcının e-posta servisi farklı limit uygulayabilir ve 10 MB üzeri ekler bazen geciken ya da reddedilen teslim yaşar. 10 MB üzeri PDF'leri mutlaka önceden sıkıştırın ya da bulut bağlantısı olarak gönderin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gmail'e büyük PDF nasıl eklenir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gmail'de 25 MB üzeri PDF eklediğinizde sistem otomatik olarak dosyayı Google Drive'a yükler ve e-postaya paylaşılabilir bağlantı ekler. Manuel yöntemde 'Yeni' butonuna tıklayın, alt kısımdaki 'Google Drive ekle' simgesini kullanın, dosyayı Drive'a yükleyin ve 'Bağlantı olarak ekle' seçeneğini seçin. 15 GB'a kadar ücretsiz alan sunulur. Dosya boyutunu küçültmek en temiz çözümdür: PDFişlemleri.com PDF sıkıştırma aracı 100 MB'lık bir belgeyi görsel kalite kaybetmeden 15-30 MB'a indirir, böylece standart e-posta eki olarak gönderebilirsiniz. Her iki yöntem de güvenilir ve ücretsizdir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PDF'imi şifrelemeli miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Duruma bağlı. Hassas kişisel veri (bordro, vergi beyannamesi, sözleşme, sağlık raporu, banka ekstresi) içeren PDF'leri e-posta ile gönderirken şifreleme şiddetle önerilir. AES-256 şifreleme PDF'i e-posta sunucularında ya da ara noktalarda yakalansa bile okunamaz hâle getirir. Şifreyi asla aynı e-posta ile paylaşmayın; telefonla veya ayrı bir kanaldan (SMS, WhatsApp) gönderin. Öte yandan pazarlama broşürü, genel rapor, CV gibi standart belgelerde şifreleme gereksizdir ve alıcıyı zorlar. CV'nizi asla şifrelemeyin; ATS sistemleri açamaz ve başvurunuz elenir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E-posta PDF'leri zip'lemeli miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tek bir PDF için ZIP yapmak genelde gereksizdir çünkü PDF zaten sıkıştırılmış bir formattır; ZIP'lemek dosya boyutunu sadece %2-5 küçültür. Ayrıca ZIP ekleri kurumsal e-posta filtreleri tarafından potansiyel zararlı dosya olarak işaretlenebilir ve spam'e düşebilir. Birden fazla PDF'i (örneğin aylık fatura paketi, proje belge seti) tek ekte göndermek isterseniz ZIP mantıklıdır; tek dosya, tek indirme. Bu durumda ZIP'i parola korumaya alın ve parolayı ayrı kanaldan iletin. Büyük dosyalar için ZIP yerine PDF sıkıştırma veya WeTransfer tercih edin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tarayıcıdan mı Outlook'tan mı göndermek daha güvenli?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Her iki yöntem de TLS şifrelemeyle çalıştığı sürece güvenlik seviyesi eşdeğerdir. Tarayıcıdan (outlook.com veya gmail.com) gönderim, sunucunun son güncel TLS sürümünü kullanır; yerel istemci riski yoktur. Outlook masaüstü uygulamasının avantajı, kurumsal DLP (Data Loss Prevention) politikalarının otomatik uygulanması ve hassas içerik uyarılarıdır. Hangi yöntemi seçerseniz seçin: güçlü parola, iki faktörlü kimlik doğrulama (2FA), güncel işletim sistemi ve güvenli ağ (halka açık WiFi'de VPN) kullanın. S/MIME veya PGP ile uçtan uca şifreleme en yüksek güvenliktir; ancak alıcının da destekli olması gerekir."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                        <i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+                        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition">Ana Sayfa</a>
+                    <a href="/blog" class="text-gray-600 font-medium">Blog</a>
+                    <a href="/about" class="text-gray-600 hover:text-blue-600 transition">Hakkımızda</a>
+                    <a href="/contact" class="text-gray-600 hover:text-blue-600 transition">İletişim</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4" aria-label="Breadcrumb">
+            <div class="container mx-auto px-4">
+                <ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
+                    <li><a href="/" class="hover:text-blue-600">Ana Sayfa</a></li>
+                    <li><i class="fas fa-chevron-right text-xs text-gray-400" aria-hidden="true"></i></li>
+                    <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
+                    <li><i class="fas fa-chevron-right text-xs text-gray-400" aria-hidden="true"></i></li>
+                    <li class="text-gray-800 font-medium" aria-current="page">PDF E-posta Gönderim</li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+
+            <!-- Article Content -->
+            <article class="max-w-4xl mx-auto">
+                <div class="prose prose-lg max-w-none">
+                    <!-- Blog Header -->
+                    <div class="mb-6 sm:mb-8">
+                        <div class="mb-4">
+                            <a href="/" class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline">Paylaşım Rehberi</a>
+                            <a href="/pdf-sikistir" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2">PDF Sıkıştır</a>
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">PDF Dosyasını E-posta ile Göndermek: Boyut Limitleri, Sıkıştırma ve Güvenlik</h1>
+                        <div class="flex flex-col sm:flex-row sm:items-center text-gray-600 mb-4 sm:mb-6">
+                            <div class="flex items-center mr-0 sm:mr-6 mb-2 sm:mb-0">
+                                <div>
+                                    <div class="font-medium">Emin Kılıç</div>
+                                    <div class="text-sm">Kurucu &amp; Geliştirici</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 sm:space-x-4 text-sm">
+                                <span><i class="fas fa-calendar mr-1 sm:mr-2"></i>21 Nisan 2026</span>
+                                <span><i class="fas fa-clock mr-1 sm:mr-2"></i>6 dk okuma</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="/images/blog/pdf-email-gonderim.webp?v=a1b2c3d4" alt="PDF dosyasını e-posta ile güvenli gönderme: boyut limitleri ve sıkıştırma rehberi" class="w-full max-w-3xl mx-auto h-auto rounded-xl mb-6 sm:mb-8 shadow-md" width="1024" height="1024" loading="lazy">
+
+                    <p class="text-lg sm:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6">
+                        PDF'i e-posta ile göndermek sandığınız kadar basit değil. Gmail'de takılıp "dosya çok büyük" hatası almak, Outlook'ta sıkıştırılmamış 40 MB rapor göndererek alıcının gelen kutusunu tıkamak, hassas bordroyu şifresiz atarak gizliliği riske etmek — herkesin başına gelen klasik problemler. Bu rehberde Gmail, Outlook ve Yahoo'nun PDF ek limitlerini, büyük dosyalar için sıkıştırma ve bulut paylaşım çözümlerini, şifreli PDF gönderim yöntemlerini ve TLS, S/MIME gibi e-posta güvenlik standartlarını ele alıyoruz. Büyük PDF'leri güvenli biçimde küçültmek için <a href="/pdf-sikistir" class="text-blue-600 hover:underline">PDF sıkıştırma aracımızı</a> kullanabilirsiniz.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">E-posta Sağlayıcılarına Göre PDF Ek Boyut Limitleri</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        Her e-posta servisinin ek dosya için farklı sınırı vardır. Bu sınır aşıldığında e-posta gönderilemez ya da otomatik olarak bulut bağlantısına dönüştürülür. 2026 itibarıyla güncel limitler:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+                        <li><strong>Gmail:</strong> Tek e-postada toplam 25 MB ek. 25 MB aşıldığında dosya otomatik Google Drive'a yüklenir ve bağlantı olarak eklenir. Alıcının Gmail dışında bir servisi varsa da bağlantı çalışır.</li>
+                        <li><strong>Outlook.com / Hotmail:</strong> 20 MB standart ek limiti. Microsoft 365 iş hesaplarında yönetici ayarına göre 35-150 MB arasında değişir; çoğunda 35 MB'dir.</li>
+                        <li><strong>Yahoo Mail:</strong> 25 MB ek limiti. 25 MB üzeri için Yahoo'nun kendi bulut hizmeti (Dropbox entegrasyonu) devreye girer.</li>
+                        <li><strong>Proton Mail:</strong> 25 MB (Plus plan) veya 100 MB (Unlimited plan). Uçtan uca şifreleme varsayılandır.</li>
+                        <li><strong>iCloud Mail:</strong> 20 MB. Mail Drop ile 5 GB'a kadar çıkılır; alıcının Apple ID'si olması gerekmez, sadece bağlantı tıklanır.</li>
+                        <li><strong>Kurumsal Exchange/G Suite:</strong> Yönetici tarafından belirlenir; tipik olarak 25-50 MB aralığındadır.</li>
+                    </ul>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        <strong>Pratik kural:</strong> Alıcının hangi servisi kullandığından emin değilseniz PDF'i 10 MB'ın altında tutun. Bu boyut her sağlayıcıda sorunsuz gönderilir ve alıcının gelen kutusunu şişirmez.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Çözüm 1: PDF'i Sıkıştırarak Boyutu Küçültün</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Büyük PDF'in e-posta ile gönderilmesinin en temiz yolu sıkıştırmadır. PDFişlemleri.com <a href="/pdf-sikistir" class="text-blue-600 hover:underline">PDF sıkıştırma aracı</a> görsel kalite kaybetmeden dosya boyutunu %40-70 oranında indirir. 50 MB'lık bir sözleşme rahatlıkla 8-15 MB'a iner ve Gmail/Outlook üzerinden doğrudan ek olarak gönderilebilir. Sıkıştırma çalışma şekli: görseller JPEG optimizasyonu ile yeniden kaydedilir, gereksiz metaveriler silinir, yazı tipleri alt kümeleme ile küçültülür. Metin ve tablolar üzerinde hiçbir kayıp olmaz; sadece yüksek DPI fotoğraflar ve dekoratif grafikler verimli biçimde sıkıştırılır.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Çözüm 2: Bulut Paylaşım Servisleri (WeTransfer, Google Drive)</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        Sıkıştırma yeterli değilse ya da 100 MB üzeri bir PDF paketi göndereceksiniz, bulut paylaşım servisleri devreye girer. Başlıca alternatifler:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+                        <li><strong>WeTransfer:</strong> Kayıt gerektirmeden 2 GB'a kadar dosya gönderimi. Pro sürümde 200 GB. Link 7 gün sonra otomatik silinir.</li>
+                        <li><strong>Google Drive:</strong> 15 GB ücretsiz alan. Paylaşım ayarları granüler (görüntüle, yorumla, düzenle) ve belirli e-posta adreslerine kısıtlanabilir.</li>
+                        <li><strong>Dropbox Transfer:</strong> Parola korumalı, son kullanma tarihli bağlantılar oluşturur. 100 GB tek transfer limiti.</li>
+                        <li><strong>Microsoft OneDrive:</strong> Outlook ile entegre. 5 GB ücretsiz, Microsoft 365 abonelerinde 1 TB.</li>
+                        <li><strong>Swisstransfer:</strong> İsviçre sunucularında 50 GB ücretsiz, ek şifreleme olanağı.</li>
+                    </ul>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Bulut bağlantılarını gönderirken "belirli kişilere kısıtlı erişim" seçeneğini aktif edin; "bağlantıya sahip olan herkes" seçeneği paylaşım linkini savunmasız bırakır ve içerik Google/Bing indekslerine düşebilir.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Şifreli PDF Gönderim: Ne Zaman, Nasıl?</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        Hassas bilgi içeren PDF'leri (bordro, sağlık raporu, finansal tablo, gizli sözleşme) şifresiz göndermek büyük güvenlik hatasıdır. AES-256 şifreleme eklediğinizde PDF dosyası parola bilinmedikçe açılmaz. Uygulanması şöyle:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+                        <li><strong>PDF şifreleme aracı kullanın:</strong> PDF'inizi yükleyin, güçlü bir parola belirleyin (en az 12 karakter, büyük-küçük harf, sayı, sembol karışımı) ve şifreli sürümü indirin.</li>
+                        <li><strong>Parolayı ayrı kanaldan gönderin:</strong> E-posta ile aynı mesajda asla paylaşmayın. SMS, WhatsApp veya telefonla bildirin.</li>
+                        <li><strong>Yazdırma/kopyalama kısıtı ekleyin:</strong> Sadece görüntüleme izni verip alıcının kopyalamasını engelleyebilirsiniz.</li>
+                        <li><strong>Geçici parola kullanın:</strong> Her dosya için farklı bir parola üretin; tek parolanın sızdırılması tüm arşivinizi riske atmaz.</li>
+                    </ul>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">E-posta Güvenliği: TLS ve S/MIME</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Gmail, Outlook, Yahoo gibi büyük sağlayıcılar e-postaları <strong>TLS 1.2/1.3</strong> ile şifreli olarak ileti sunucuları arasında taşır. TLS "taşıma sırasında güvenlik" sağlar; yani hatta dinleyen biri içeriği göremez. Ancak alıcının servisi TLS desteklemiyorsa mesaj açık olarak gönderilir. Uçtan uca şifreleme için <strong>S/MIME</strong> (şirket e-posta sertifikaları) veya <strong>PGP/GPG</strong> kullanılır; bunlar mesaj içeriğini sadece alıcının özel anahtarıyla açılabilecek şekilde şifreler. Kurumsal ortamlarda S/MIME kurulumu İT yöneticisi tarafından merkezi yapılır; bireysel kullanıcılar için PDF'i ayrıca AES-256 ile şifrelemek pratik ve yeterli bir çözümdür.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Spam Filtrelerinden Geçmek İçin İpuçları</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        Bazı PDF ekli e-postalar spam kutusuna düşer. Filtreleri atlamak için:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+                        <li><strong>Dosya adını açıklayıcı yapın:</strong> "document1.pdf" yerine "2026_Nisan_Faturasi_AcmeLtd.pdf" kullanın; filtreler genel isimli ekleri şüpheli bulur.</li>
+                        <li><strong>Konu satırını bilgilendirici yazın:</strong> "Merhaba", "File", "Bilgi" gibi belirsiz konular spam skoru arttırır.</li>
+                        <li><strong>Boş e-posta gövdesi göndermeyin:</strong> PDF ekine ek olarak en az 2-3 cümle açıklayıcı metin yazın.</li>
+                        <li><strong>Birden çok ek göndermekten kaçının:</strong> 10+ ek genelde toplu pazarlama işareti olarak yorumlanır.</li>
+                        <li><strong>HTML ağırlıklı içerik kullanmayın:</strong> Renkli arka planlar, büyük görseller ve çok sayıda bağlantı spam skoru yükseltir.</li>
+                        <li><strong>DKIM ve SPF yapılandırın:</strong> Kendi alan adınızdan gönderim yapıyorsanız DKIM, SPF ve DMARC kayıtlarını domain DNS'inde doğru ayarlayın.</li>
+                    </ul>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Mobil Cihazdan PDF Gönderimi: iOS ve Android</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Günümüzde kurumsal iletişimin %60'ından fazlası mobil cihazlar üzerinden yapılıyor. iOS'ta Gmail ve Outlook uygulamaları 25 MB'a kadar ek gönderimini destekler; ötesinde otomatik bulut bağlantısı önerilir. iCloud Mail üzerinde "Mail Drop" devreye girer ve 5 GB'a kadar link oluşturur. Android tarafında Gmail aynı 25 MB limit içinde çalışır; Samsung Mail ve Outlook Android benzer davranır. Mobilde PDF yükleme zamanının mobil veri tüketimini arttırdığını unutmayın; yoğun PDF gönderimi gerekiyorsa önce Wi-Fi'ye bağlanın. Ayrıca mobilde PDF sıkıştırma için tarayıcı tabanlı araçları tercih edin; uygulamalar cihaz izinleri isteyebilir ve gereksizdir. PDFişlemleri.com mobil tarayıcılarda da sorunsuz çalışır.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Alıcıya Göre Strateji: B2B vs B2C</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Gönderdiğiniz alıcının profili yaklaşımınızı şekillendirmelidir. Kurumsal (B2B) alıcılar için güvenlik ve profesyonellik öne çıkar: PDF'i şifreleyin, dosya adını standardize edin (ör. Sirket_Teklif_2026Q2.pdf), konu satırında referans numarası kullanın ve e-postanın gövdesinde kısa bağlam verin. Bireysel (B2C) alıcılar için ise kullanım kolaylığı önceliklidir: küçük dosya boyutu, şifresiz PDF, doğrudan tıklanabilir bağlantılar. Pazarlama broşürlerini tüketiciye gönderirken 2 MB altında tutun; şifreli PDF göndermek yanlış anlaşılır ve tıklama oranını düşürür. Kurumsal alıcıda ise tam tersine, şifresiz gönderim dikkatsizlik işareti sayılabilir.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Alıcının Gelen Kutusuna Saygı: Etik İpuçları</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Büyük ekler alıcının posta kutusunu şişirir, mobil indirme sırasında veri harcatır ve e-posta istemcisini yavaşlatır. Profesyonel alışkanlık olarak 10 MB üzeri her dosya için bulut bağlantısı tercih edin. Ayrıca PDF'i e-postaya eklemeden önce "Bu belgeyi açarken alıcıya parola sormam gerekir mi?" ve "Hangi bilgileri alıcının görmesi sakıncalıdır?" sorularını sorun; gizli metin kısmını karartma (redaction) aracıyla kapatın ve metadata'da bulunan yazar adı, şirket adı gibi bilgilerin paylaşılmak istediğinizden emin olun.
+                    </p>
+
+                    <!-- Tool CTA Banner -->
+                    <div class="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-compress-arrows-alt text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl md:text-2xl font-bold mb-1">Büyük PDF'i E-postaya Sığdırın</h3>
+                                    <p class="text-sm md:text-base text-cyan-100">%40-70 sıkıştırma. Kayıt yok, ücretsiz, 15 dk auto-delete.</p>
+                                </div>
+                            </div>
+                            <a href="/pdf-sikistir" class="inline-flex items-center bg-white text-cyan-700 hover:bg-cyan-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap">
+                                <i class="fas fa-rocket mr-2"></i> Aracı Aç
+                            </a>
+                        </div>
+                    </div>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Toplu PDF Gönderimi: Bülten ve Mailing Listeleri</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Aynı PDF'i birden çok alıcıya göndermek (e-bülten, yasal bildirim, toplu fatura) özel dikkat gerektirir. 50'den fazla alıcıya tek e-postayla eklemek spam politikalarını tetikler; Gmail günlük 500, Outlook 300 gönderim kotasına sahiptir. Toplu gönderim için <strong>Mailchimp, SendinBlue, Brevo</strong> veya <strong>Amazon SES</strong> gibi e-posta pazarlama platformlarını tercih edin; bu hizmetler DKIM/SPF yapılandırmasını otomatik yönetir, spam filtrelerinden geçme oranını yükseltir ve açılma-tıklama analitiği sunar. PDF'i e-posta ekine koymak yerine bulut bağlantısı olarak paylaşmak alıcının indirme kararını kendisine bırakır ve toplam bant genişliği tüketimini azaltır. Ayrıca KVKK gereği toplu pazarlama listeleri için onay (opt-in) kaydı tutmak zorunludur.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Sık Yapılan Hatalar ve Çözümleri</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4">
+                        PDF e-posta gönderiminde tekrarlayan tipik hatalar ve çözümleri:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+                        <li><strong>Yanlış alıcı eki:</strong> Toplu gönderimde yanlışlıkla yanlış kişiye gizli belge eklenmesi. <em>Çözüm:</em> Gönder butonuna basmadan önce alıcı listesini iki kez doğrulayın; Outlook "Geri Al" özelliğini aktif edin.</li>
+                        <li><strong>Eski sürüm gönderimi:</strong> "CV_final.pdf" adlı dosya aslında eski sürüm. <em>Çözüm:</em> Dosya adına versiyon numarası ve tarih ekleyin: "CV_AdSoyad_2026_04.pdf".</li>
+                        <li><strong>Şifreyi aynı e-postada yazma:</strong> Güvenliği sıfırlayan klasik hata. <em>Çözüm:</em> Parola SMS veya ayrı e-postayla gönderilir.</li>
+                        <li><strong>Bozuk PDF gönderimi:</strong> Yükleme sırasında hata olmuş, dosya açılmıyor. <em>Çözüm:</em> Göndermeden önce dosyayı tarayıcıda açarak kendiniz test edin.</li>
+                        <li><strong>Metadata sızması:</strong> PDF içindeki "yazar" ve "yorum" bilgilerinde gizli içerik. <em>Çözüm:</em> Göndermeden önce metadata'yı temizleyin.</li>
+                        <li><strong>Alıcı için yanlış zaman dilimi:</strong> Acil belgeyi alıcının gece saatinde göndermek. <em>Çözüm:</em> Outlook "Zamanlanmış Gönder" özelliğiyle iş saatlerine planlayın.</li>
+                    </ul>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Yasal ve Düzenleyici Uyum: KVKK, GDPR ve Hukuki Saklama</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        Türkiye'de 6698 sayılı KVKK, Avrupa'da GDPR ve ABD'de CCPA, kişisel veri içeren PDF belgelerinin e-posta ile nasıl gönderileceğini düzenler. Kişisel veri (T.C. kimlik numarası, telefon, adres, sağlık bilgisi, banka hesabı) içeren PDF'leri şifresiz göndermek "teknik tedbirlerin yetersizliği" olarak yorumlanabilir ve idari para cezası riskini doğurur. Kurumsal ortamlarda gönderilen her PDF için "veri işleme kaydı" tutmak, alıcının yetkili olduğunu doğrulamak ve gerektiğinde erişim kayıtlarını 10 yıla kadar saklamak yükümlülüktür. E-posta sunucularında saklanan PDF'ler için KVKK uyumlu veri envanteri oluşturulmalı ve periyodik temizleme politikası uygulanmalıdır. Hassas belgeler için kurumsal "secure messaging" platformlarını (Microsoft Purview, Proofpoint Encryption, TrendMicro Email Security) değerlendirin.
+                    </p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Sonuç</h2>
+                    <p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+                        PDF'i e-posta ile göndermek üç kuralın doğru uygulanmasına dayanır: boyutu 10 MB altında tutun, hassas içerikleri AES-256 ile şifreleyin ve büyük dosyalar için bulut bağlantısı kullanın. Gmail'de 25 MB, Outlook'ta 20 MB sınırına kadar direkt ek gönderebilir, üzerini Drive ya da WeTransfer ile paylaşabilirsiniz. TLS varsayılan olarak e-postayı taşıma sırasında korur; uçtan uca şifreleme için S/MIME veya PDF'in kendi parolasını tercih edin. Büyük PDF'inizi şimdi <a href="/pdf-sikistir" class="text-blue-600 hover:underline">PDF sıkıştırma aracımızla</a> küçültüp tek e-posta ekinde gönderebilirsiniz.
+                    </p>
+                </div>
+            </article>
+
+            <!-- FAQ Section -->
+            <section class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto" aria-labelledby="faq-heading">
+                <div class="flex items-center gap-3 mb-6">
+                    <i class="fas fa-question-circle text-red-500 text-2xl"></i>
+                    <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold text-gray-800">Sık Sorulan Sorular</h2>
+                </div>
+                <div class="space-y-5">
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">E-posta ile en büyük kaç MB PDF gönderebilirim?</h3>
+                        <p class="text-gray-700 leading-relaxed">E-posta sağlayıcısına göre limitler farklıdır. Gmail tek e-postada toplam 25 MB ek kabul eder (üzerindekiler otomatik Google Drive bağlantısına dönüşür). Outlook.com ve Microsoft 365 standart limit 20 MB, kurumsal Exchange hesaplarında yöneticinin yaptığı ayara bağlı olarak 35-150 MB arasında değişir. Yahoo Mail 25 MB, Proton Mail 25 MB sunar. Ancak güvenli sınır 10 MB'dir; çünkü alıcının e-posta servisi farklı limit uygulayabilir ve 10 MB üzeri ekler bazen geciken ya da reddedilen teslim yaşar. 10 MB üzeri PDF'leri mutlaka önceden sıkıştırın ya da bulut bağlantısı olarak gönderin.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Gmail'e büyük PDF nasıl eklenir?</h3>
+                        <p class="text-gray-700 leading-relaxed">Gmail'de 25 MB üzeri PDF eklediğinizde sistem otomatik olarak dosyayı Google Drive'a yükler ve e-postaya paylaşılabilir bağlantı ekler. Manuel yöntemde "Yeni" butonuna tıklayın, alt kısımdaki "Google Drive ekle" simgesini kullanın, dosyayı Drive'a yükleyin ve "Bağlantı olarak ekle" seçeneğini seçin. 15 GB'a kadar ücretsiz alan sunulur. Dosya boyutunu küçültmek en temiz çözümdür: <a href="/pdf-sikistir" class="text-blue-600 hover:underline">PDFişlemleri.com PDF sıkıştırma aracı</a> 100 MB'lık bir belgeyi görsel kalite kaybetmeden 15-30 MB'a indirir, böylece standart e-posta eki olarak gönderebilirsiniz. Her iki yöntem de güvenilir ve ücretsizdir.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF'imi şifrelemeli miyim?</h3>
+                        <p class="text-gray-700 leading-relaxed">Duruma bağlı. Hassas kişisel veri (bordro, vergi beyannamesi, sözleşme, sağlık raporu, banka ekstresi) içeren PDF'leri e-posta ile gönderirken şifreleme şiddetle önerilir. AES-256 şifreleme PDF'i e-posta sunucularında ya da ara noktalarda yakalansa bile okunamaz hâle getirir. Şifreyi asla aynı e-posta ile paylaşmayın; telefonla veya ayrı bir kanaldan (SMS, WhatsApp) gönderin. Öte yandan pazarlama broşürü, genel rapor, CV gibi standart belgelerde şifreleme gereksizdir ve alıcıyı zorlar. CV'nizi asla şifrelemeyin; ATS sistemleri açamaz ve başvurunuz elenir.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">E-posta PDF'leri zip'lemeli miyim?</h3>
+                        <p class="text-gray-700 leading-relaxed">Tek bir PDF için ZIP yapmak genelde gereksizdir çünkü PDF zaten sıkıştırılmış bir formattır; ZIP'lemek dosya boyutunu sadece %2-5 küçültür. Ayrıca ZIP ekleri kurumsal e-posta filtreleri tarafından potansiyel zararlı dosya olarak işaretlenebilir ve spam'e düşebilir. Birden fazla PDF'i (örneğin aylık fatura paketi, proje belge seti) tek ekte göndermek isterseniz ZIP mantıklıdır; tek dosya, tek indirme. Bu durumda ZIP'i parola korumaya alın ve parolayı ayrı kanaldan iletin. Büyük dosyalar için ZIP yerine PDF sıkıştırma veya WeTransfer tercih edin.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Tarayıcıdan mı Outlook'tan mı göndermek daha güvenli?</h3>
+                        <p class="text-gray-700 leading-relaxed">Her iki yöntem de TLS şifrelemeyle çalıştığı sürece güvenlik seviyesi eşdeğerdir. Tarayıcıdan (outlook.com veya gmail.com) gönderim, sunucunun son güncel TLS sürümünü kullanır; yerel istemci riski yoktur. Outlook masaüstü uygulamasının avantajı, kurumsal DLP (Data Loss Prevention) politikalarının otomatik uygulanması ve hassas içerik uyarılarıdır. Hangi yöntemi seçerseniz seçin: güçlü parola, iki faktörlü kimlik doğrulama (2FA), güncel işletim sistemi ve güvenli ağ (halka açık WiFi'de VPN) kullanın. S/MIME veya PGP ile uçtan uca şifreleme en yüksek güvenliktir; ancak alıcının da destekli olması gerekir.</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+                    <a href="/pdf-sikistir" class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline">
+                        <i class="fas fa-rocket"></i> Aracı Şimdi Dene
+                    </a>
+                </div>
+            </section>
+
+            <!-- Related Posts -->
+            <section class="max-w-4xl mx-auto mt-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 sm:mb-8">İlgili Yazılar</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="/blog/pdf-boyut-kucultme" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src="/images/pdf-compress-hero.webp?v=47c58b05" alt="PDF boyut küçültme rehberi" class="w-full h-32 object-cover rounded-t-lg" width="1536" height="1024" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-800 mb-2">PDF Boyut Küçültme: Büyük Dosyaları Kaliteden Ödün Vermeden Sıkıştırın</h3>
+                            <p class="text-gray-600 text-sm">E-posta eki için ideal PDF boyutu ve hızlı sıkıştırma yöntemleri.</p>
+                        </div>
+                    </a>
+                    <a href="/blog/pdf-guvenlik" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src="/images/pdf-security-hero.webp?v=47c58b05" alt="PDF güvenlik ve şifreleme rehberi" class="w-full h-32 object-cover rounded-t-lg" width="1536" height="1024" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-800 mb-2">PDF Güvenlik: Şifreleme, İzin Kısıtlama ve Dijital İmza</h3>
+                            <p class="text-gray-600 text-sm">Hassas belgeleri parola, izin ve dijital imza ile koruyun.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer mt-16 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
+                        <div class="flex space-x-4 justify-center sm:justify-start">
+                            <a href="https://www.linkedin.com/in/eminnkilic/" target="_blank" rel="noopener" aria-label="LinkedIn" class="transition hover:text-blue-600">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://instagram.com/heremmkh" target="_blank" rel="noopener" aria-label="Instagram" class="transition hover:text-pink-600">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
+                        <div class="grid grid-cols-1 gap-y-2 text-sm">
+                            <a href="/about" class="transition hover:text-blue-600">Hakkımızda</a>
+                            <a href="/blog" class="transition hover:text-blue-600">Blog</a>
+                            <a href="/contact" class="transition hover:text-blue-600">İletişim</a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
+                        <div class="grid grid-cols-1 gap-y-2 text-sm">
+                            <a href="/terms" class="transition hover:text-blue-600">Hizmet Şartları</a>
+                            <a href="/privacy" class="transition hover:text-blue-600">Gizlilik Politikası</a>
+                            <a href="/cookies" class="transition hover:text-blue-600">Çerez Politikası</a>
+                            <a href="/kvkk" class="transition hover:text-blue-600">KVKK</a>
+                        </div>
+                    </div>
+                    <div class="text-center sm:text-right">
+                        <h4 class="text-md font-semibold mb-3">Logo</h4>
+                        <div class="flex justify-center sm:justify-end">
+                            <img src="/icons/logo.webp" alt="PDFişlemleri.com logo" width="120" height="120" loading="lazy" class="rounded-lg">
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="mt-8 pt-6 border-t border-gray-200 text-center text-sm italic text-red-600 px-4">
+                    "Dosyanız bizim için sadece bir veri akışı değil — gizliliğinizdir. Yüklediğiniz hiçbir PDF, XLSX veya belge sunucularımızda 15 dakikadan fazla kalmaz; KVKK ve GDPR uyumlu altyapımız içeriğinize kimsenin ulaşmamasını garanti eder."
+                </blockquote>
+                <div class="mt-6 pt-4 border-t border-gray-200 text-center text-xs text-gray-500">
+                    <p>&copy; 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../scroll-manager.js" defer></script>
+    <script type="module" src="../js-v2/main.js"></script>
+</body>
+</html>
