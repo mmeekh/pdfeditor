@@ -451,9 +451,9 @@
             </div>
         </nav>
 
-        <!-- Category Filter JS -->
+        <!-- Category Filter JS (DOMContentLoaded — card'lar yüklendikten sonra çalışır) -->
         <script>
-        (function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.cat-btn');
             const cards = document.querySelectorAll('[data-blog-category]');
             const counts = {};
@@ -491,7 +491,7 @@
             }));
             const urlCat = new URLSearchParams(location.search).get('kategori');
             if (urlCat && ['donusturme','duzenleme','guvenlik','rehber'].includes(urlCat)) applyFilter(urlCat);
-        })();
+        });
         </script>
 
         <!-- Featured Posts -->
