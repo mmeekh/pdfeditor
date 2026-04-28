@@ -247,18 +247,27 @@ class SignTool {
     this.signatureCanvas = document.getElementById('signatureCanvas');
     if (!this.signatureCanvas) return;
 
+    this._fitCanvasToContainer();
+
+    this._canvasResizeHandler = () => this._fitCanvasToContainer();
+    window.addEventListener('resize', this._canvasResizeHandler);
+
+    // İlk şeffaflığı ayarla
+    this.updateSignatureOpacity();
+  }
+
+  _fitCanvasToContainer() {
+    if (!this.signatureCanvas) return;
+    const w = this.signatureCanvas.offsetWidth || 400;
+    this.signatureCanvas.width = w;
     this.signatureCtx = this.signatureCanvas.getContext('2d');
     this.signatureCtx.strokeStyle = '#000000';
     this.signatureCtx.lineWidth = 2;
     this.signatureCtx.lineCap = 'round';
     this.signatureCtx.lineJoin = 'round';
-
-    // Canvas temizle
     this.signatureCtx.fillStyle = '#ffffff';
     this.signatureCtx.fillRect(0, 0, this.signatureCanvas.width, this.signatureCanvas.height);
-    
-    // İlk şeffaflığı ayarla
-    this.updateSignatureOpacity();
+    this.signatureData = null;
   }
 
   initializeEventListeners() {
@@ -287,7 +296,7 @@ class SignTool {
           clientY: touch.clientY
         });
         this.signatureCanvas.dispatchEvent(mouseEvent);
-      });
+      }, { passive: false });
 
       this.signatureCanvas.addEventListener('touchmove', (e) => {
         e.preventDefault();
@@ -297,13 +306,13 @@ class SignTool {
           clientY: touch.clientY
         });
         this.signatureCanvas.dispatchEvent(mouseEvent);
-      });
+      }, { passive: false });
 
       this.signatureCanvas.addEventListener('touchend', (e) => {
         e.preventDefault();
         const mouseEvent = new MouseEvent('mouseup', {});
         this.signatureCanvas.dispatchEvent(mouseEvent);
-      });
+      }, { passive: false });
     }
 
     // Temizle butonu
@@ -413,11 +422,13 @@ class SignTool {
 
   startDrawing(e) {
     if (this.signatureType !== 'drawn') return;
-    
+
     this.isDrawing = true;
     const rect = this.signatureCanvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const scaleX = this.signatureCanvas.width / rect.width;
+    const scaleY = this.signatureCanvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     
     // Opacity'yi ayarla
     const opacitySlider = document.getElementById('signatureOpacity');
@@ -431,10 +442,12 @@ class SignTool {
 
   draw(e) {
     if (!this.isDrawing || this.signatureType !== 'drawn') return;
-    
+
     const rect = this.signatureCanvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const scaleX = this.signatureCanvas.width / rect.width;
+    const scaleY = this.signatureCanvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     
     // Opacity'yi uygula
     const opacitySlider = document.getElementById('signatureOpacity');

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF'e QR Kod Ekleme Rehberi: Yöntemler ve İpuçları | Blog</title>
+<meta content="PDF belgelerine QR kod nasıl eklenir? URL, iletişim bilgisi veya belge linki içeren QR kodları oluşturma, yerleştirme ve tarama rehberi." name="description"/>
+<meta content="pdf qr kod ekleme, qr kod pdf, pdf qr code, belgeye qr kod koy" name="keywords"/>
+<meta content="Emin Kılıç" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://pdfislemleri.com/blog/pdf-qr-kod" rel="canonical"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XBF2E5K150"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XBF2E5K150', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        'attribution_reporting_enabled': false,
+        'conversion_measurement_enabled': false
+      });
+    </script>
+<!-- Hreflang Tags for Turkish Market -->
+<link href="https://pdfislemleri.com/blog/pdf-qr-kod" hreflang="tr" rel="alternate"/>
+<link href="https://pdfislemleri.com/blog/pdf-qr-kod" hreflang="tr-TR" rel="alternate"/>
+<link href="https://pdfislemleri.com/blog/pdf-qr-kod" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph / Facebook -->
+<meta content="article" property="og:type"/>
+<meta content="https://pdfislemleri.com/blog/pdf-qr-kod" property="og:url"/>
+<meta content="PDF'e QR Kod Ekleme Rehberi: Yöntemler ve İpuçları | Blog" property="og:title"/>
+<meta content="PDF belgelerine QR kod nasıl eklenir? URL, iletişim bilgisi veya belge linki içeren QR kodları oluşturma, yerleştirme ve tarama rehberi." property="og:description"/>
+<meta content="https://pdfislemleri.com/images/blog/pdf-qr-kod.webp" property="og:image"/>
+<meta content="PDFişlemleri.com" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://pdfislemleri.com/blog/pdf-qr-kod" property="twitter:url"/>
+<meta content="PDF'e QR Kod Ekleme Rehberi: Yöntemler ve İpuçları | Blog" property="twitter:title"/>
+<meta content="PDF belgelerine QR kod nasıl eklenir? URL, iletişim bilgisi veya belge linki içeren QR kodları oluşturma, yerleştirme ve tarama rehberi." property="twitter:description"/>
+<meta content="https://pdfislemleri.com/images/blog/pdf-qr-kod.webp" property="twitter:image"/>
+<!-- PWA Manifest -->
+<link href="/icons/site.webmanifest" rel="manifest"/>
+<!-- Favicon -->
+<link href="/icons/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/icons/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180"/>
+<link color="#0ea5e9" href="/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#0ea5e9" name="theme-color"/>
+<!-- Preconnect for performance -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Tailwind (local build) + Font Awesome -->
+<link href="../css/tw.css?v=3153838b" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/components.css?v=ee8cafe1" rel="stylesheet"/>
+<link href="../css/gradients.css" rel="stylesheet"/>
+<!-- Structured Data: BlogPosting -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "PDF'e QR Kod Ekleme Rehberi: Yöntemler ve İpuçları",
+        "description": "PDF belgelerine QR kod nasıl eklenir? URL, iletişim bilgisi veya belge linki içeren QR kodları oluşturma, yerleştirme ve tarama rehberi.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://pdfislemleri.com/images/blog/pdf-qr-kod.webp",
+            "width": 1024,
+            "height": 1024,
+            "creditText": "PDFişlemleri.com",
+            "copyrightHolder": {
+                "@type": "Organization",
+                "name": "PDFişlemleri.com",
+                "url": "https://pdfislemleri.com"
+            },
+            "copyrightNotice": "© 2026 PDFişlemleri.com",
+            "license": "https://pdfislemleri.com/terms",
+            "acquireLicensePage": "https://pdfislemleri.com/contact"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Emin Kılıç",
+            "url": "https://pdfislemleri.com/about",
+            "sameAs": [
+                "https://www.linkedin.com/in/eminnkilic/",
+                "https://instagram.com/heremmkh"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfislemleri.com/icons/logo.webp"
+            }
+        },
+        "datePublished": "2026-04-28T00:00:00+03:00",
+        "dateModified": "2026-04-28T00:00:00+03:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pdfislemleri.com/blog/pdf-qr-kod"
+        },
+        "keywords": "pdf qr kod ekleme, qr kod pdf, pdf qr code, belgeye qr kod koy",
+        "articleSection": "PDF Rehber",
+        "wordCount": "1500",
+        "inLanguage": "tr-TR"
+    }
+    </script>
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://pdfislemleri.com/blog/pdf-qr-kod#breadcrumb",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog" },
+            { "@type": "ListItem", "position": 3, "name": "PDF'e QR Kod Ekleme Rehberi", "item": "https://pdfislemleri.com/blog/pdf-qr-kod" }
+        ]
+    }
+    </script>
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://pdfislemleri.com/blog/pdf-qr-kod#faq",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "PDF'e QR kod nasıl eklenir?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PDF'e QR kod eklemenin en pratik yolu üç adımdan oluşur: önce qr-code-generator.com veya goqr.me gibi ücretsiz bir araçla QR kodunuzu oluşturun ve PNG olarak indirin. Ardından PDF düzenleyicide veya Word belgesinde görseli istediğiniz konuma yerleştirin. Son adımda belgeyi PDF olarak dışa aktarın. Alternatif olarak Microsoft Word'de QR kodu resim olarak ekleyip PDF'e çevirebilirsiniz. Tüm modern akıllı telefon kameralar PDF'teki QR kodu okuyabilir; ek uygulama gerekmez. QR kodun en az 2x2 cm boyutunda olması tarama başarısını artırır."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "QR kodu PDF'de nereye koymalıyım?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "QR kodun konumu belgenin amacına göre değişir. Sertifika ve diploma belgelerinde sağ alt köşe veya alt orta bölge tercih edilir; böylece içerik okunurluğu korunur. Restoran menüsünde kapak sayfasının sağ üst köşesi göze çarpar. İletişim bilgisi veya vCard içeren QR kodlar için business card'ı andıran bir kutu içinde son sayfaya yerleştirmek profesyonel görünür. Genel kural: QR kod beyaz ya da açık renkli bir arkaplan üzerinde durmalı, çevresinde en az 4 mm boşluk (quiet zone) olmalı ve eğilmemeli veya kırpılmamalıdır."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Dinamik QR kod PDF'de çalışır mı?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Evet, dinamik QR kodlar PDF belgelerde mükemmel çalışır. Dinamik QR kodu bir kısa URL içerir; bu URL hedef adrese yönlendirir. Belgenin basılı veya dijital olmasından bağımsız olarak QR kod sabit kalır ama hedef URL istediğiniz zaman güncellenir. Bu özellik özellikle menüler, kataloglar ve yıllık raporlar için değerlidir: belgeyi yeniden basmadan bağlantıyı güncelleyebilirsiniz. Dinamik QR kodlar genellikle aylık tıklanma istatistikleri de sunar; kaç kişinin belgeyi taradığını takip etmek için bu veri kullanılabilir."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "QR kodlu PDF nasıl taranır?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "QR kodlu bir PDF'i taramak için ek uygulama gerekmez. iPhone'da kamera uygulamasını açıp QR koda doğrultun; ekranda beliren bağlantıya dokunun. Android'de Google Lens veya varsayılan kamera uygulaması aynı işlevi görür. PDF bir bilgisayar ekranında açıksa telefon kamerası ekrandan da QR kodu okuyabilir. QR kodun boyutu en az 2x2 cm olmalı ve yeterli kontrast sağlanmalıdır; koyu arka plan üzerine siyah QR kod veya çok küçük basılmış QR kod tarama başarısını düşürür."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "PDF sertifikaya QR kod eklenir mi?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Evet, sertifika ve diploma belgelerine QR kod eklemek hem doğrulama kolaylığı hem de profesyonel görünüm sağlar. QR kod bir doğrulama sayfasına veya kurumun resmi sertifika sorgulama sistemine bağlanabilir; işveren veya kurum, belgeyi tararak gerçekliğini anında teyit edebilir. Bunun için önce doğrulama URL'nizi oluşturun, ardından bu URL'yi içeren QR kodu üretin. Sertifika şablonunu Word veya tasarım programında hazırlayın, QR kodu ekleyin ve PDF olarak kaydedin. PDFişlemleri.com filigran aracıyla her sertifikaya tekil QR kodu damgası da ekleyebilirsiniz."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="site-wrapper">
+<!-- Header -->
+<header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<!-- Logo -->
+<div class="flex items-center space-x-3">
+<a class="flex items-center space-x-2 hover:opacity-80 transition-opacity" href="/">
+<i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+<h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+</a>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex space-x-6">
+<a class="text-gray-600 hover:text-blue-600 transition" href="/">Ana Sayfa</a>
+<a class="text-gray-600 font-medium" href="/blog">Blog</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/about">Hakkımızda</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/contact">İletişim</a>
+</nav>
+</div>
+</header>
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4">
+<div class="container mx-auto px-4">
+<ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
+<li><a class="hover:text-blue-600" href="/">Ana Sayfa</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li><a class="hover:text-blue-600" href="/blog">Blog</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li aria-current="page" class="text-gray-800 font-medium">PDF'e QR Kod Ekleme</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8">
+<!-- Article Content -->
+<article class="max-w-4xl mx-auto">
+<div class="prose prose-lg max-w-none">
+<!-- Blog Header -->
+<div class="mb-6 sm:mb-8">
+<div class="mb-4">
+<a class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline" href="/">PDF Rehber</a>
+<a class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2" href="/">Ücretsiz Araç</a>
+</div>
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">PDF'e QR Kod Ekleme Rehberi: Yöntemler ve İpuçları</h1>
+<div class="flex flex-col sm:flex-row sm:items-center text-gray-600 mb-4 sm:mb-6">
+<div class="flex items-center mr-0 sm:mr-6 mb-2 sm:mb-0">
+<div>
+<div class="font-medium">Emin Kılıç</div>
+<div class="text-sm">Kurucu &amp; Geliştirici</div>
+</div>
+</div>
+<div class="flex items-center space-x-2 sm:space-x-4 text-sm">
+<span><i class="fas fa-calendar mr-1 sm:mr-2"></i>28 Nisan 2026</span>
+<span><i class="fas fa-clock mr-1 sm:mr-2"></i>6 dk okuma</span>
+</div>
+</div>
+</div>
+<img alt="PDF'e QR kod ekleme: yöntemler, kullanım senaryoları ve ipuçları" class="w-full max-w-3xl mx-auto h-auto rounded-xl mb-6 sm:mb-8 shadow-md" height="1024" loading="lazy" src="/images/blog/pdf-qr-kod.webp" width="1024"/>
+<p class="text-lg sm:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6">
+Bir sertifikaya bakıp saniyeler içinde gerçek mi sahte mi olduğunu anlamak, basılı bir menüyü okurken güncel fiyatlara anında ulaşmak veya kurumsal rapordan tek taramayla ilgili web sayfasına yönlenmek; tüm bunları PDF'e eklenmiş bir QR kod mümkün kılar. QR kod, küçük kare görüntüsünün arkasında URL, metin, iletişim bilgisi veya belge linki taşıyan güçlü bir araçtır. Bu rehberde QR kodun ne olduğunu kısaca özetliyor, PDF belgelerine eklemenin üç farklı yöntemini adım adım anlatıyor ve sertifikadan menüye uzanan kullanım senaryolarını inceliyoruz.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">QR Kod Nedir?</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+QR kod (Quick Response Code), 1994 yılında Japonya'da geliştirilen iki boyutlu bir barkod türüdür. Standart barkodların aksine hem yatay hem dikey veri içerir; bu sayede URL, metin, e-posta adresi, telefon numarası, Wi-Fi şifresi veya vCard bilgisini tek bir küçük kareye sığdırabilir. Modern akıllı telefon kameraları ek uygulama olmaksızın QR kodu okur. PDF'te kullanılan bir QR kod, basılı belgelerle dijital dünyayı birbirine bağlar: okuyucu, kağıdı eline alır, kamerasını doğrultur ve bağlantılı içeriğe anında ulaşır.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">PDF'e QR Kod Eklemenin Kullanım Senaryoları</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Hangi durumlarda PDF'e QR kod eklemeniz anlamlıdır? İşte en yaygın ve değer yaratan senaryolar:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li><strong>Belge doğrulama:</strong> Sözleşme veya resmi yazıda QR kod, kurumun doğrulama sayfasına yönlendirir. Alıcı belgenin gerçek olup olmadığını saniyeler içinde teyit eder.</li>
+<li><strong>Dijital kartvizit ve iletişim bilgisi:</strong> PDF tanıtım broşüründeki QR kod vCard verisi içerirse, tarayan kişi iletişim bilgilerini tek tıkla rehberine kaydeder.</li>
+<li><strong>Restoran ve kafe menüsü:</strong> Basılı menüdeki QR kod, dijital ve güncellenebilir menüye yönlendirir. Fiyat veya içerik değiştiğinde menüyü yeniden basmak gerekmez.</li>
+<li><strong>Sertifika ve diploma:</strong> QR kod, sertifika bilgilerinin kurumun sistemi üzerinde sorgulanmasını sağlar. Sahte belgelerle mücadelede etkili bir katman oluşturur.</li>
+<li><strong>Sunum ve rapor:</strong> Kurumsal PDF'lerdeki QR kodlar, kaynaklara, araştırma verilerine veya ilgili videolara bağlantı verir.</li>
+<li><strong>Etkinlik daveti ve bilet:</strong> PDF davetiyedeki QR kod, etkinlik giriş sisteminin bilet doğrulama sayfasına yönlendirir.</li>
+</ul>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Ücretsiz QR Kod Üretme Araçları</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+QR kodu oluşturmak için ek yazılım satın almanıza gerek yoktur. Aşağıdaki ücretsiz araçlar PNG, SVG veya PDF formatında yüksek çözünürlüklü QR kod üretir:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>qr-code-generator.com:</strong> URL, vCard, metin, Wi-Fi ve e-posta destekler; renk ve logo özelleştirme sunar.</li>
+<li><strong>goqr.me:</strong> API desteği olan basit ve hızlı üretici; SVG çıkış seçeneği baskı kalitesi için idealdir.</li>
+<li><strong>QRCode Monkey:</strong> Logo eklenebilen, renk özelleştirilebilen ve yüksek çözünürlüklü çıkış veren popüler araç.</li>
+<li><strong>Google Chrome:</strong> Chrome tarayıcısında URL çubuğunun sağındaki paylaşım simgesinden o sayfanın QR kodunu anında üretebilirsiniz.</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+QR kodu oluştururken PNG yerine SVG formatını tercih edin; SVG vektörel olduğundan her boyuta boyut kaybı olmadan ölçeklenir. Bu özellikle baskı kalitesi önemli olduğunda kritiktir.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Yöntem 1: PDF Editörüyle Doğrudan Ekleme</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Adobe Acrobat Pro veya benzeri bir PDF editörü kullanıyorsanız QR kodu doğrudan mevcut bir PDF'e ekleyebilirsiniz.
+</p>
+<ol class="list-decimal pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li>QR kod üretici araçla kodunuzu PNG veya SVG olarak indirin.</li>
+<li>Adobe Acrobat Pro'da belgeyi açın, "Araçlar" menüsünden "PDF Düzenle"yi seçin.</li>
+<li>"Görüntü Ekle" seçeneğiyle QR kodunuzu sayfanın istediğiniz yerine ekleyin.</li>
+<li>Boyutu ve konumu ayarlayın; en az 2x2 cm boyut tarama başarısı için gereklidir.</li>
+<li>Değişiklikleri kaydedin.</li>
+</ol>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Adobe Acrobat olmadan da ücretsiz PDF editörleri (Sejda, PDF24, LibreOffice Draw) aynı işlemi yapabilir.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Yöntem 2: Word'de Ekleyip PDF'e Çevirme</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Belgeyi Word veya Google Docs'ta hazırlıyorsanız en temiz sonuç, QR kodu doğrudan kaynak dosyaya eklemektir.
+</p>
+<ol class="list-decimal pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li>QR kodunuzu PNG olarak indirin.</li>
+<li>Word belgesinde "Ekle - Resim - Bu Cihazdan" menüsüyle QR kodu yerleştirin.</li>
+<li>"Metinle Kaydır" seçeneğini "Önünde" veya "Arkasında" yaparak konumlandırın.</li>
+<li>Boyutu istediğiniz gibi ayarlayın.</li>
+<li>Belgeyi "Farklı Kaydet - PDF" seçeneğiyle dışa aktarın ya da <a class="text-blue-600 hover:underline" href="/word-to-pdf">Word'den PDF'e çevirme aracımızı</a> kullanın.</li>
+</ol>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Bu yöntem, QR kodun belge tasarımına organik biçimde entegre edilmesini sağlar ve sonuç olarak en kaliteli PDF çıktısını verir.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Yöntem 3: Online Araçlarla</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Masaüstü yazılım kurmak istemiyorsanız veya hızlı bir ekleme yapmanız gerekiyorsa online PDF araçları pratik bir seçenektir.
+</p>
+<ol class="list-decimal pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li>QR kodunuzu üretip PNG olarak indirin.</li>
+<li>Sejda PDF Editor, ILovePDF veya PDF24 gibi online araçlardan birinde "Resim Ekle" işlevini bulun.</li>
+<li>PDF'i yükleyin, QR kod görselini ekleyin, konumu ve boyutu belirleyin.</li>
+<li>İşlenmiş PDF'i indirin.</li>
+</ol>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Online araçları seçerken gizlilik politikalarını inceleyin; hassas belgeleri üçüncü parti sunuculara yüklemeden önce dosya saklama sürelerini kontrol edin.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">QR Kodun Rengi, Boyutu ve Konumu</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+QR kodun görsel tasarımı, tarama başarısını doğrudan etkiler. Dikkat edilmesi gereken temel kurallar:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>Boyut:</strong> Dijital belgeler için 100x100 piksel yeterli; baskı için en az 2x2 cm (yaklaşık 240x240 piksel, 300 DPI).</li>
+<li><strong>Kontrast:</strong> Koyu modüller, açık arka plan üzerinde durmalıdır. Koyu zemin üzerine koyu QR kod okunamaz.</li>
+<li><strong>Quiet zone:</strong> QR kodun etrafında en az 4 modül genişliğinde beyaz alan bırakın; bu "sessiz bölge" olmadan tarayıcılar kodu algılayamaz.</li>
+<li><strong>Renk:</strong> Tek renk siyah en güvenlidir; renkli QR kodlarda kontrast oranının 4.5:1'in üzerinde olması önerilir.</li>
+<li><strong>Konum:</strong> QR kodu kıvrılan, kesilen veya kırışan alanlara yerleştirmeyin; fiziksel basımda köşelerden uzak tutun.</li>
+</ul>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Dinamik mi, Statik mi?</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+QR kodlar iki türdür ve her birinin farklı kullanım alanı vardır:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li><strong>Statik QR kod:</strong> İçerdiği veri doğrudan kodun yapısına işlenmiştir; değiştirilemez. Ücretsiz üretilir, sunucu gerekmez. Belge basıldıktan sonra hedef URL değişmeyecekse idealdir. Örnek: kişisel iletişim bilgisi, sabit bir sayfa adresi.</li>
+<li><strong>Dinamik QR kod:</strong> Kısa bir URL içerir; bu URL bir sunucuda yönetilir ve hedef adres istenildiğinde güncellenir. Tıklanma istatistikleri takip edilebilir. Menü, katalog ve dönemsel içerikler için idealdir. Ücretsiz sınırlı planlar veya ücretli SaaS hizmetleri aracılığıyla kullanılır.</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Karar kuralı basittir: belge basıldıktan sonra bağlantının değişme ihtimali varsa dinamik; değişmeyecekse statik QR kod kullanın.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Filigran Olarak QR Kod: Belge Güvenliği</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+QR kodu yalnızca bağlantı vermek için değil, belge güvenliği amacıyla da kullanabilirsiniz. Her kopya için tekil bir QR kod oluşturup belgeye filigran gibi eklemek, kopyaların kaynağını izlemeyi mümkün kılar. Sertifika, diploma veya gizli rapor dağıtımında her alıcıya özgü QR kod içeren bir filigran, yetkisiz kopyalamayı caydırır ve sızıntı kaynağını tespit ettirir.
+</p>
+<p class="text-gray-700 mb-3 sm:mb-4">
+PDFişlemleri.com <a class="text-blue-600 hover:underline" href="/pdf-filigran">PDF filigran aracı</a> ile belgeye metin veya görsel filigran ekleyebilirsiniz. QR kodunuzu PNG olarak hazırlayıp filigran olarak yerleştirmek, güvenlik katmanını tek adımda tamamlar.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Sertifika ve Diploma Uygulamaları</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Eğitim kurumları ve profesyonel sertifikasyon kuruluşları için QR kod entegrasyonu giderek standart hale geliyor. Bir sertifikaya QR kod eklemek için önerilen akış şöyledir:
+</p>
+<ol class="list-decimal pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li>Her katılımcı için benzersiz bir doğrulama URL'si oluşturun (örnek: sertifika.ornek.com/verify/12345).</li>
+<li>Bu URL'yi içeren QR kodu üretin ve SVG olarak kaydedin.</li>
+<li>Sertifika şablonuna QR kodu ekleyin; sağ alt köşe veya alt merkez uygun konumlardır.</li>
+<li>Her sertifikayı ayrı PDF olarak kaydedin ve alıcıya iletin.</li>
+<li>Doğrulama sayfasında sertifika sahibinin adı, tarihi ve kurumun mührü görüntülenir.</li>
+</ol>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Bu yöntem, özellikle online kurslar, kurumsal eğitim programları ve mesleki yeterlilik belgeleri için hem güvenilirlik hem de katılımcı deneyimi açısından ciddi değer katar.
+</p>
+
+<!-- Tool CTA Banner -->
+<div class="bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-stamp text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl md:text-2xl font-bold mb-1">PDF'e Filigran veya Damga Ekle</h3>
+<p class="text-sm md:text-base text-teal-100">QR kodunu filigran olarak ekle. Kayıt yok, ücretsiz, 15 dk auto-delete.</p>
+</div>
+</div>
+<a class="inline-flex items-center bg-white text-teal-700 hover:bg-teal-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap" href="/pdf-filigran">
+<i class="fas fa-rocket mr-2"></i> Aracı Aç
+</a>
+</div>
+</div>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Sonuç</h2>
+<p class="text-gray-700 mb-3 sm:mb-4 sm:mb-6">
+PDF'e QR kod eklemek, belgenizi dijital dünyaya bağlayan basit ama güçlü bir adımdır. Sertifika doğrulama, menü güncelleme, iletişim bilgisi paylaşımı veya belge güvenliği için üç farklı yöntemden ihtiyacınıza uygun olanı seçebilirsiniz. Statik QR kod sabit içerikler için ücretsiz ve kolaydır; dinamik QR kod güncellenebilir içerikler için esneklik sunar. Belgenizi baskıya vermeden önce QR kodun boyutunu, kontrastını ve quiet zone'unu kontrol etmeyi unutmayın. PDF'e filigran olarak QR kod eklemek için <a class="text-blue-600 hover:underline" href="/pdf-filigran">PDFişlemleri.com filigran aracını</a> kullanabilirsiniz.
+</p>
+</div>
+</article>
+<!-- FAQ Section -->
+<section aria-labelledby="faq-heading" class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto">
+<div class="flex items-center gap-3 mb-6">
+<i class="fas fa-question-circle text-red-500 text-2xl"></i>
+<h2 class="text-2xl sm:text-3xl font-bold text-gray-800" id="faq-heading">Sık Sorulan Sorular</h2>
+</div>
+<div class="space-y-5">
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF'e QR kod nasıl eklenir?</h3>
+<p class="text-gray-700 leading-relaxed">PDF'e QR kod eklemenin en pratik yolu üç adımdan oluşur: önce qr-code-generator.com veya goqr.me gibi ücretsiz bir araçla QR kodunuzu oluşturun ve PNG olarak indirin. Ardından PDF düzenleyicide veya Word belgesinde görseli istediğiniz konuma yerleştirin. Son adımda belgeyi PDF olarak dışa aktarın. Alternatif olarak Microsoft Word'de QR kodu resim olarak ekleyip PDF'e çevirebilirsiniz. Tüm modern akıllı telefon kameralar PDF'teki QR kodu okuyabilir; ek uygulama gerekmez. QR kodun en az 2x2 cm boyutunda olması tarama başarısını artırır.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">QR kodu PDF'de nereye koymalıyım?</h3>
+<p class="text-gray-700 leading-relaxed">QR kodun konumu belgenin amacına göre değişir. Sertifika ve diploma belgelerinde sağ alt köşe veya alt orta bölge tercih edilir; böylece içerik okunurluğu korunur. Restoran menüsünde kapak sayfasının sağ üst köşesi göze çarpar. İletişim bilgisi veya vCard içeren QR kodlar için business card'ı andıran bir kutu içinde son sayfaya yerleştirmek profesyonel görünür. Genel kural: QR kod beyaz ya da açık renkli bir arkaplan üzerinde durmalı, çevresinde en az 4 mm boşluk (quiet zone) olmalı ve eğilmemeli veya kırpılmamalıdır.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Dinamik QR kod PDF'de çalışır mı?</h3>
+<p class="text-gray-700 leading-relaxed">Evet, dinamik QR kodlar PDF belgelerde mükemmel çalışır. Dinamik QR kodu bir kısa URL içerir; bu URL hedef adrese yönlendirir. Belgenin basılı veya dijital olmasından bağımsız olarak QR kod sabit kalır ama hedef URL istediğiniz zaman güncellenir. Bu özellik özellikle menüler, kataloglar ve yıllık raporlar için değerlidir: belgeyi yeniden basmadan bağlantıyı güncelleyebilirsiniz. Dinamik QR kodlar genellikle aylık tıklanma istatistikleri de sunar; kaç kişinin belgeyi taradığını takip etmek için bu veri kullanılabilir.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">QR kodlu PDF nasıl taranır?</h3>
+<p class="text-gray-700 leading-relaxed">QR kodlu bir PDF'i taramak için ek uygulama gerekmez. iPhone'da kamera uygulamasını açıp QR koda doğrultun; ekranda beliren bağlantıya dokunun. Android'de Google Lens veya varsayılan kamera uygulaması aynı işlevi görür. PDF bir bilgisayar ekranında açıksa telefon kamerası ekrandan da QR kodu okuyabilir. QR kodun boyutu en az 2x2 cm olmalı ve yeterli kontrast sağlanmalıdır; koyu arka plan üzerine siyah QR kod veya çok küçük basılmış QR kod tarama başarısını düşürür.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF sertifikaya QR kod eklenir mi?</h3>
+<p class="text-gray-700 leading-relaxed">Evet, sertifika ve diploma belgelerine QR kod eklemek hem doğrulama kolaylığı hem de profesyonel görünüm sağlar. QR kod bir doğrulama sayfasına veya kurumun resmi sertifika sorgulama sistemine bağlanabilir; işveren veya kurum, belgeyi tararak gerçekliğini anında teyit edebilir. Bunun için önce doğrulama URL'nizi oluşturun, ardından bu URL'yi içeren QR kodu üretin. Sertifika şablonunu Word veya tasarım programında hazırlayın, QR kodu ekleyin ve PDF olarak kaydedin. PDFişlemleri.com filigran aracıyla her sertifikaya tekil QR kodu damgası da ekleyebilirsiniz.</p>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-200 text-center">
+<a class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline" href="/pdf-filigran">
+<i class="fas fa-rocket"></i> Filigran Aracını Dene
+</a>
+</div>
+</section>
+<!-- Related Posts -->
+<section class="max-w-4xl mx-auto mt-16">
+<h2 class="text-2xl font-bold text-gray-800 mb-6 sm:mb-8">İlgili Yazılar</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-imzalama">
+<div class="p-4">
+<h3 class="font-bold text-gray-800 mb-2">PDF İmzalama: Elektronik İmzayı Belgeye Ekleme</h3>
+<p class="text-gray-600 text-sm">PDF belgelere elektronik imza nasıl eklenir? Hukuki geçerlilik ve adım adım rehber.</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-filigran">
+<div class="p-4">
+<h3 class="font-bold text-gray-800 mb-2">PDF'e Filigran Ekleme: Güvenlik ve Markalaşma</h3>
+<p class="text-gray-600 text-sm">PDF belgelerinizi filigranla koruyun, markalayın veya gizlilik damgası ekleyin.</p>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="site-footer mt-16 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center sm:text-left">
+<h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
+<p class="text-sm text-gray-500 leading-relaxed mb-4">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
+<div class="flex space-x-4 justify-center sm:justify-start">
+<a aria-label="LinkedIn" class="transition hover:text-blue-600" href="https://www.linkedin.com/in/eminnkilic/" rel="noopener" target="_blank">
+<i class="fab fa-linkedin text-xl"></i>
+</a>
+<a aria-label="Instagram" class="transition hover:text-pink-600" href="https://instagram.com/heremmkh" rel="noopener" target="_blank">
+<i class="fab fa-instagram text-xl"></i>
+</a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/about">Hakkımızda</a>
+<a class="transition hover:text-blue-600" href="/blog">Blog</a>
+<a class="transition hover:text-blue-600" href="/contact">İletişim</a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/terms">Hizmet Şartları</a>
+<a class="transition hover:text-blue-600" href="/privacy">Gizlilik Politikası</a>
+<a class="transition hover:text-blue-600" href="/cookies">Çerez Politikası</a>
+<a class="transition hover:text-blue-600" href="/kvkk">KVKK</a>
+</div>
+</div>
+<div class="text-center sm:text-right">
+<h4 class="text-md font-semibold mb-3">Logo</h4>
+<div class="flex justify-center sm:justify-end">
+<img alt="PDFişlemleri.com logo" class="rounded-lg" height="120" loading="lazy" src="/icons/logo.webp" width="120"/>
+</div>
+</div>
+</div>
+<blockquote class="mt-8 pt-6 border-t border-gray-200 text-center text-sm italic text-red-600 px-4">
+"Dosyanız bizim için sadece bir veri akışı değil, gizliliğinizdir. Yüklediğiniz hiçbir PDF, XLSX veya belge sunucularımızda 15 dakikadan fazla kalmaz; KVKK ve GDPR uyumlu altyapımız içeriğinize kimsenin ulaşmamasını garanti eder."
+</blockquote>
+<div class="mt-6 pt-4 border-t border-gray-200 text-center text-xs text-gray-500">
+<p>© 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- JavaScript -->
+<script defer="" src="../scroll-manager.js"></script>
+<script src="../js-v2/main.js" type="module"></script>
+</body>
+</html>

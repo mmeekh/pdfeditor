@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toplu PDF İşlemleri: Çok Sayıda Dosyayı Hızlı İşleme | Blog</title>
+<meta content="50 PDF dosyasını ayrı ayrı işlemek yerine toplu yöntemlerle dakikalar içinde bitirin. Toplu birleştirme, sıkıştırma, dönüştürme ve adlandırma rehberi." name="description"/>
+<meta content="toplu pdf işlemi, çoklu pdf birleştirme, batch pdf, toplu pdf sıkıştırma" name="keywords"/>
+<meta content="Emin Kılıç" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://pdfislemleri.com/blog/toplu-pdf-islemleri" rel="canonical"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XBF2E5K150"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XBF2E5K150', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        'attribution_reporting_enabled': false,
+        'conversion_measurement_enabled': false
+      });
+    </script>
+<!-- Hreflang Tags for Turkish Market -->
+<link href="https://pdfislemleri.com/blog/toplu-pdf-islemleri" hreflang="tr" rel="alternate"/>
+<link href="https://pdfislemleri.com/blog/toplu-pdf-islemleri" hreflang="tr-TR" rel="alternate"/>
+<link href="https://pdfislemleri.com/blog/toplu-pdf-islemleri" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph / Facebook -->
+<meta content="article" property="og:type"/>
+<meta content="https://pdfislemleri.com/blog/toplu-pdf-islemleri" property="og:url"/>
+<meta content="Toplu PDF İşlemleri: Çok Sayıda Dosyayı Hızlı İşleme | Blog" property="og:title"/>
+<meta content="50 PDF dosyasını ayrı ayrı işlemek yerine toplu yöntemlerle dakikalar içinde bitirin. Toplu birleştirme, sıkıştırma, dönüştürme ve adlandırma rehberi." property="og:description"/>
+<meta content="https://pdfislemleri.com/images/blog/toplu-pdf-islemleri.webp" property="og:image"/>
+<meta content="PDFişlemleri.com" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://pdfislemleri.com/blog/toplu-pdf-islemleri" property="twitter:url"/>
+<meta content="Toplu PDF İşlemleri: Çok Sayıda Dosyayı Hızlı İşleme | Blog" property="twitter:title"/>
+<meta content="50 PDF dosyasını ayrı ayrı işlemek yerine toplu yöntemlerle dakikalar içinde bitirin. Toplu birleştirme, sıkıştırma, dönüştürme ve adlandırma rehberi." property="twitter:description"/>
+<meta content="https://pdfislemleri.com/images/blog/toplu-pdf-islemleri.webp" property="twitter:image"/>
+<!-- PWA Manifest -->
+<link href="/icons/site.webmanifest" rel="manifest"/>
+<!-- Favicon -->
+<link href="/icons/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/icons/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180"/>
+<link color="#0ea5e9" href="/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#0ea5e9" name="theme-color"/>
+<!-- Preconnect for performance -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Tailwind (local build) + Font Awesome -->
+<link href="../css/tw.css?v=3153838b" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/components.css?v=ee8cafe1" rel="stylesheet"/>
+<link href="../css/gradients.css" rel="stylesheet"/>
+<!-- Structured Data: BlogPosting -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Toplu PDF İşlemleri: Çok Sayıda Dosyayı Hızlı İşleme",
+        "description": "50 PDF dosyasını ayrı ayrı işlemek yerine toplu yöntemlerle dakikalar içinde bitirin. Toplu birleştirme, sıkıştırma, dönüştürme ve adlandırma rehberi.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://pdfislemleri.com/images/blog/toplu-pdf-islemleri.webp",
+            "width": 1024,
+            "height": 1024,
+            "creditText": "PDFişlemleri.com",
+            "copyrightHolder": {
+                "@type": "Organization",
+                "name": "PDFişlemleri.com",
+                "url": "https://pdfislemleri.com"
+            },
+            "copyrightNotice": "© 2026 PDFişlemleri.com",
+            "license": "https://pdfislemleri.com/terms",
+            "acquireLicensePage": "https://pdfislemleri.com/contact"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Emin Kılıç",
+            "url": "https://pdfislemleri.com/about",
+            "sameAs": [
+                "https://www.linkedin.com/in/eminnkilic/",
+                "https://instagram.com/heremmkh"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFişlemleri.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfislemleri.com/icons/logo.webp"
+            }
+        },
+        "datePublished": "2026-04-28T00:00:00+03:00",
+        "dateModified": "2026-04-28T00:00:00+03:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pdfislemleri.com/blog/toplu-pdf-islemleri"
+        },
+        "keywords": "toplu pdf işlemi, çoklu pdf birleştirme, batch pdf, toplu pdf sıkıştırma",
+        "articleSection": "Verimlilik",
+        "wordCount": "1500",
+        "inLanguage": "tr-TR"
+    }
+    </script>
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://pdfislemleri.com/blog/toplu-pdf-islemleri#breadcrumb",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog" },
+            { "@type": "ListItem", "position": 3, "name": "Toplu PDF İşlemleri: Çok Sayıda Dosyayı Hızlı İşleme", "item": "https://pdfislemleri.com/blog/toplu-pdf-islemleri" }
+        ]
+    }
+    </script>
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://pdfislemleri.com/blog/toplu-pdf-islemleri#faq",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Birden fazla PDF'i aynı anda sıkıştırabilir miyim?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Evet, PDFişlemleri.com PDF Sıkıştır aracı birden fazla dosyayı aynı anda sıkıştırmayı destekler. Dosya seçim ekranında birden fazla PDF seçin veya klasörü sürükle-bırak ile yükleyin. Her dosya sırayla işlenir ve indirme hazır olduğunda bildirim alırsınız. Bu yöntem, 50 faturayı veya 100 sözleşmeyi tek tek açıp sıkıştırmak yerine tüm işlemi birkaç dakikada tamamlamanızı sağlar. Üst üste farklı formatlarda dosyalar yükleyebilir, sadece PDF olanlar seçilerek işlenir."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "100 PDF dosyasını tek seferde birleştirebilir miyim?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PDFişlemleri.com PDF Birleştir aracı çok sayıda dosyayı tek işlemde birleştirmeye olanak tanır. Yüzlerce PDF'i sürükle-bırak yöntemiyle yüklediğinizde sistem dosyaları yükleme sırasına göre dizer ve birleştirilmiş tek bir PDF çıktısı oluşturur. Sayfa sırasını işlem öncesinde sürükleyerek değiştirebilirsiniz. Tek seferde işlenebilecek toplam dosya boyutu limitine dikkat edin; büyük arşivleri bölmeli şekilde (50'şer dosya gibi) birleştirip ardından bu ara dosyaları tekrar birleştirmek en pratik yaklaşımdır."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Toplu dönüştürme nedir?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Toplu dönüştürme, birden fazla PDF dosyasını aynı anda başka bir formata (Word, Excel, JPG gibi) çevirme işlemidir. Tek tek her dosyayı açıp dönüştürmek yerine tüm dosyalar seçilir, format belirlenir ve sistem her birini otomatik olarak işler. Örneğin muhasebe ekibi, ay sonu gelen 30 fatura PDF'ini tek seferde Excel formatına çevirebilir. Bu işlem dosya başına düşen ortalama süreyi saniyelerle ölçülür hale getirir ve insan kaynaklı atlamalar veya format hatalarını ortadan kaldırır."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "PDF toplu işlem için program gerekiyor mu?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hayır, PDFişlemleri.com'un tüm araçları tarayıcı üzerinden çalışır ve kurulum gerektirmez. Windows, Mac, Linux veya Chromebook fark etmeksizin internet bağlantısı olan her cihazda toplu PDF işlemi yapabilirsiniz. Masaüstü programlar büyük dosya setlerinde hız avantajı sunabilir, ancak lisans maliyeti ve kurulum karmaşıklığı dezavantajdır. Günlük veya haftalık toplu işlem ihtiyaçları için ücretsiz online araçlar her senaryo için yeterlidir."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Toplu PDF işlemi için dosya boyutu sınırı var mı?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PDFişlemleri.com araçları dosya başına maksimum 100 MB destekler. Toplu işlemlerde toplam yükleme boyutu araç bazlı farklılık gösterebilir. 100 MB üzerindeki tek dosyalar için önce PDF'i sayfalar bazında bölerek her parçayı ayrı işlemek pratik bir çözümdür. Çok sayıda küçük dosya (fatura, pusula gibi) için bu sınır pratikte sorun oluşturmaz; 1-5 MB'lık yüzlerce dosyayı kolaylıkla yükleyebilirsiniz. Dosyalar işlem sonrasında 15 dakika içinde otomatik olarak sunucudan silinir."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="site-wrapper">
+<!-- Header -->
+<header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<!-- Logo -->
+<div class="flex items-center space-x-3">
+<a class="flex items-center space-x-2 hover:opacity-80 transition-opacity" href="/">
+<i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+<h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+</a>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex space-x-6">
+<a class="text-gray-600 hover:text-blue-600 transition" href="/">Ana Sayfa</a>
+<a class="text-gray-600 font-medium" href="/blog">Blog</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/about">Hakkımızda</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/contact">İletişim</a>
+</nav>
+</div>
+</header>
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4">
+<div class="container mx-auto px-4">
+<ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
+<li><a class="hover:text-blue-600" href="/">Ana Sayfa</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li><a class="hover:text-blue-600" href="/blog">Blog</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li aria-current="page" class="text-gray-800 font-medium">Toplu PDF İşlemleri</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8">
+<!-- Article Content -->
+<article class="max-w-4xl mx-auto">
+<div class="prose prose-lg max-w-none">
+<!-- Blog Header -->
+<div class="mb-6 sm:mb-8">
+<div class="mb-4">
+<a class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline" href="/">Verimlilik</a>
+<a class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2" href="/">Ücretsiz Araç</a>
+</div>
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">Toplu PDF İşlemleri: Çok Sayıda Dosyayı Hızlı İşleme</h1>
+<div class="flex flex-col sm:flex-row sm:items-center text-gray-600 mb-4 sm:mb-6">
+<div class="flex items-center mr-0 sm:mr-6 mb-2 sm:mb-0">
+<div>
+<div class="font-medium">Emin Kılıç</div>
+<div class="text-sm">Kurucu &amp; Geliştirici</div>
+</div>
+</div>
+<div class="flex items-center space-x-2 sm:space-x-4 text-sm">
+<span><i class="fas fa-calendar mr-1 sm:mr-2"></i>28 Nisan 2026</span>
+<span><i class="fas fa-clock mr-1 sm:mr-2"></i>6 dk okuma</span>
+</div>
+</div>
+</div>
+<img alt="Toplu PDF işlemleri: çok sayıda dosyayı hızlı birleştirme, sıkıştırma ve dönüştürme rehberi" class="w-full max-w-3xl mx-auto h-auto rounded-xl mb-6 sm:mb-8 shadow-md" height="1024" loading="lazy" src="/images/blog/toplu-pdf-islemleri.webp" width="1024"/>
+<p class="text-lg sm:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6">
+Ay sonunda 50 fatura PDF'ini tek tek açıp sıkıştırmak ya da 100 sözleşmeyi birer birer birleştirmek saatleri tüketir. Toplu PDF işlemleri bu tekrarlayan görevleri dakikalara, hatta saniyelere indirmenin en verimli yoludur. Bu rehberde toplu birleştirme, toplu sıkıştırma, toplu dönüştürme ve dosya adlandırma stratejilerini adım adım ele alıyoruz. PDFişlemleri.com'un çoklu dosya desteğiyle aynı anda onlarca PDF'i işleyebilir, klasör yapınızı düzenleyebilir ve tekrarlayan görevleri sistematik bir iş akışına dönüştürebilirsiniz.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Neden Toplu PDF İşlemi Gerekir?</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Gerçek iş senaryolarında PDF dosyaları asla tekil gelmez. Muhasebe departmanı 50 faturayı aynı anda arşivler; hukuk ekibi 100 sözleşmeyi e-imzaya gönderir; insan kaynakları 200 özgeçmişi tek klasörde tutar. Her dosyayı ayrı ayrı işlemek hem zaman kaybı hem de hata riskidir. Toplu işlem iş akışlarında üç temel sorunu çözer:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>Zaman verimliliği:</strong> Dosya başına 2-3 dakika süren işlem, toplu yöntemle 10 dosyada da 100 dosyada da yalnızca birkaç dakika alır.</li>
+<li><strong>Tutarlılık:</strong> Aynı sıkıştırma seviyesi veya dönüştürme ayarı tüm dosyalara otomatik uygulanır; elle yapılan işlemlerdeki ayar farklılıkları ortadan kalkar.</li>
+<li><strong>Takip kolaylığı:</strong> Toplu işlem sonrası tüm dosyalar aynı klasörde, aynı adlandırma kuralına göre, aynı anda hazır olur.</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Örnek senaryo: Bir e-ticaret şirketinin muhasebecisi her ayın 1'inde tedarikçilerden gelen 45-60 PDF faturayı arşivlemek ve muhasebe yazılımına göndermek için ortalama 3 saat harcıyor. Toplu sıkıştırma ve toplu birleştirme iş akışı kurulduğunda bu süre 15-20 dakikaya düşüyor.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">PDFişlemleri.com'da Toplu Dosya Desteği</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+PDFişlemleri.com'un araçları çoklu dosya yüklemeyi destekler. Tek bir araç penceresinde birden fazla PDF seçebilir veya klasörden sürükle-bırak ile dosyaları yükleyebilirsiniz. Platform her dosyayı kuyruk sisteminde sırayla işler ve tamamlanan dosyaları anında indirilebilir hale getirir.
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>PDF Birleştir:</strong> Sınırsız sayıda PDF dosyasını tek belgede birleştirin. Sayfa sırasını sürükleyerek düzenleyin.</li>
+<li><strong>PDF Sıkıştır:</strong> Birden fazla dosyayı aynı anda sıkıştırın, kalite seviyesini tek seferinde tüm dosyalara uygulayın.</li>
+<li><strong>PDF'den Word/Excel'e:</strong> Seçilen tüm PDF'leri aynı çıktı formatına dönüştürün, her biri ayrı dosya olarak indirilir.</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Tüm bu işlemler kayıt gerektirmeksizin tarayıcı üzerinden çalışır. Yüklenen dosyalar işlem sonrasında 15 dakika içinde sunuculardan otomatik silinir; gizlilik ilkeleri KVKK ve GDPR standartlarına uygundur.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Toplu PDF Birleştirme: Adım Adım İş Akışı</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Birden fazla PDF'i tek bir belgede toplamak için en verimli iş akışı şu adımlardan oluşur:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>1. Dosyaları hazırlayın:</strong> Birleştirilecek PDF'leri aynı klasörde toplayın. Dosyaları alfabetik veya tarih sırasına göre adlandırmak (ör. 001_fatura.pdf, 002_fatura.pdf) sıralama işini kolaylaştırır.</li>
+<li><strong>2. Araçta yükleyin:</strong> <a class="text-blue-600 hover:underline" href="/pdf-birlestir">PDF Birleştir aracını</a> açın ve tüm PDF'leri seçin veya sürükleyin. Araç yükleme sırasına göre otomatik listeler.</li>
+<li><strong>3. Sıralamayı kontrol edin:</strong> Sayfa önizlemesi üzerinden sırayı doğrulayın. Yanlış dosya varsa listeden kaldırın.</li>
+<li><strong>4. Birleştirin ve indirin:</strong> "Birleştir" butonuna tıklayın, tamamlanınca tek PDF olarak indirin.</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Pratik ipucu: Aylık raporları birleştirirken her ayın PDF'ini ayrı bir birleştirme işlemiyle hazırlayın; yıl sonu arşivi için bu 12 dosyayı son bir birleştirmeyle tek belgede toplayın.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Toplu PDF Sıkıştırma: Arşiv Boyutunu Küçültün</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Fatura, sözleşme ve form gibi belgeler zaman içinde onlarca MB'lık arşivlere dönüşür. Toplu sıkıştırma bu arşivlerin boyutunu önemli ölçüde azaltır. Bir muhasebe arşivinde 50 fatura PDF'i ortalama 2 MB ise toplam 100 MB eder; toplu sıkıştırma sonrası bu yük 30-40 MB'a inebilir.
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>Metin belgeler (fatura, sözleşme):</strong> Yüksek sıkıştırma seviyesi seçin, kalite kaybı minimum olur.</li>
+<li><strong>Görsel içerikli belgeler (broşür, katalog):</strong> Orta sıkıştırma seviyesi, görsel bütünlüğü korur.</li>
+<li><strong>Arşivlik belgeler:</strong> Düşük sıkıştırma veya sıkıştırmadan "Baskı Kalitesi" moduyla kayıpsız işleyin.</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Tüm dosyalara aynı modu uygulamak yerine belge türlerine göre gruplandırarak sıkıştırma yapmak hem zaman kazandırır hem de her grup için uygun kaliteyi garanti eder.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Toplu PDF Dönüştürme: Word ve Excel</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Toplu dönüştürme iş akışları, farklı departmanların ihtiyaçlarına göre şekillenir:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>Muhasebe:</strong> Tedarikçilerden gelen 30 fatura PDF'ini aynı anda Excel'e çevirerek tablo verilerini pivot analiz için hazır hale getirir.</li>
+<li><strong>Hukuk:</strong> 50 sözleşme PDF'ini Word'e çevirerek standart madde değişikliklerini toplu gözden geçirir.</li>
+<li><strong>İnsan Kaynakları:</strong> 100 özgeçmiş PDF'ini Word'e dönüştürerek anahtar kelime araması yapar ve eleme sürecini hızlandırır.</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Dönüştürme işleminde kaynak PDF'lerin dijital (metin tabanlı) olduğundan emin olun. Taranmış belgeler önce <a class="text-blue-600 hover:underline" href="/pdf-ocr">OCR işleminden</a> geçirilmelidir; aksi takdirde dönüştürme sonucu boş veya hatalı belgeler üretir.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Dosya Adlandırma Stratejileri</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Toplu işlemlerde dosya adları sonradan aramayı ve sıralamayı doğrudan etkiler. Tutarsız adlandırma arşivde kaos yaratır. Aşağıdaki kurallar her kurumsal ortama uyar:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>Tarih önde, ISO formatı:</strong> YYYY-MM-DD ile başlayın (ör. 2026-04-28_fatura_tedarikci.pdf). Bu format alfabetik sıralama ile kronolojik sıralamayı eşleştirir.</li>
+<li><strong>Belge türü etiketi:</strong> FATURA, SOZLESME, RAPOR gibi büyük harfli etiket ekleyin.</li>
+<li><strong>Sıra numarası:</strong> Aynı tarihte birden fazla belge varsa 001, 002 gibi üç haneli sıra numarası kullanın.</li>
+<li><strong>Türkçe karakter kullanmayın:</strong> ğ, ş, ı, ü, ö, ç içeren dosya adları bazı sistemlerde hatalı görüntülenir; İngilizce karakterlere çevirin.</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Örnek: 2026-04-28_FATURA_SUPPLIER_001.pdf, 2026-04-28_FATURA_SUPPLIER_002.pdf
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Klasör Organizasyonu ve Arşiv Yapısı</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Toplu işlem sonrası dosyaların nereye gideceğini önceden belirlemek arama ve erişim süresini ciddi biçimde kısaltır. Önerilen klasör yapısı:
+</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-1">
+<li><strong>/ARSIV/2026/04_Nisan/FATURALAR/</strong> - Ay bazlı fatura arşivi</li>
+<li><strong>/ARSIV/2026/04_Nisan/SOZLESMELER/</strong> - Ay bazlı sözleşmeler</li>
+<li><strong>/CALISMA/BEKLEMEDE/</strong> - İşlem görmemiş ham PDF'ler</li>
+<li><strong>/CALISMA/ISLENDI/</strong> - Toplu işlem sonrası hazır dosyalar</li>
+</ul>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Bu yapı hem manuel arama hem de bulut depolama (Google Drive, OneDrive, Dropbox) senkronizasyonu için optimize edilmiştir. Klasör adında Türkçe karakter kullanmamak ortak erişimde sorun çıkmasını önler.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Tekrarlayan Görevler İçin En İyi Pratikler</h2>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li><strong>Takvim hatırlatıcısı:</strong> Ay sonu veya haftalık toplu işlem için takvime 15 dakikalık blok ekleyin. Birikmeden işlemek her seferinde daha hızlıdır.</li>
+<li><strong>Şablonlu iş akışı:</strong> Hangi araç, hangi ayar, hangi klasör soruların cevabını bir kez belirleyin ve her toplu işlemde aynı adımları izleyin.</li>
+<li><strong>Ön birleştirme kontrolü:</strong> Büyük bir birleştirme işlemi öncesinde tüm dosyaların açılıp açılamadığını kontrol edin; bozuk dosya tek birleştirilmiş belgeyi hatalı yapar.</li>
+<li><strong>Yedekleme:</strong> Toplu işlem öncesinde ham PDF'lerin yedeğini alın. Toplu silme veya üzerine yazma geri alınamaz.</li>
+</ul>
+
+<!-- Tool CTA Banner -->
+<div class="bg-gradient-to-r from-purple-600 to-violet-700 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-layer-group text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl md:text-2xl font-bold mb-1">PDF'leri Toplu Birleştir, Şimdi Dene</h3>
+<p class="text-sm md:text-base text-purple-100">Onlarca PDF'i saniyeler içinde tek belgede topla. Kayıt yok, ücretsiz.</p>
+</div>
+</div>
+<a class="inline-flex items-center bg-white text-purple-700 hover:bg-purple-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap" href="/pdf-birlestir">
+<i class="fas fa-rocket mr-2"></i> Aracı Aç
+</a>
+</div>
+</div>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Sonuç</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">
+Toplu PDF işlemleri, tekrarlayan belge yönetimi görevlerinde gerçek anlamda vakit ve enerji kazandırır. 50 faturayı tek tek açmak yerine toplu sıkıştırma; 100 sözleşmeyi ayrı ayrı dönüştürmek yerine toplu Word dönüşümü; dağınık bir arşivi toparlamak için toplu birleştirme, bunların her biri profesyonel bir iş akışının temel taşlarıdır. Doğru adlandırma ve klasör yapısıyla tamamlanan sistematik toplu işlem rutini, ortalama 3 saatlik ayda bir arşivleme görevini 20 dakikaya indirgetir. <a class="text-blue-600 hover:underline" href="/pdf-birlestir">PDF Birleştir aracımızı</a> ücretsiz deneyin ve belge yönetimini hızlandırmaya hemen başlayın.
+</p>
+</div>
+</article>
+<!-- FAQ Section -->
+<section aria-labelledby="faq-heading" class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto">
+<div class="flex items-center gap-3 mb-6">
+<i class="fas fa-question-circle text-red-500 text-2xl"></i>
+<h2 class="text-2xl sm:text-3xl font-bold text-gray-800" id="faq-heading">Sık Sorulan Sorular</h2>
+</div>
+<div class="space-y-5">
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Birden fazla PDF'i aynı anda sıkıştırabilir miyim?</h3>
+<p class="text-gray-700 leading-relaxed">Evet, PDFişlemleri.com PDF Sıkıştır aracı birden fazla dosyayı aynı anda sıkıştırmayı destekler. Dosya seçim ekranında birden fazla PDF seçin veya klasörü sürükle-bırak ile yükleyin. Her dosya sırayla işlenir ve indirme hazır olduğunda bildirim alırsınız. Bu yöntem, 50 faturayı veya 100 sözleşmeyi tek tek açıp sıkıştırmak yerine tüm işlemi birkaç dakikada tamamlamanızı sağlar. Üst üste farklı formatlarda dosyalar yükleyebilir, sadece PDF olanlar seçilerek işlenir.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">100 PDF dosyasını tek seferde birleştirebilir miyim?</h3>
+<p class="text-gray-700 leading-relaxed">PDFişlemleri.com PDF Birleştir aracı çok sayıda dosyayı tek işlemde birleştirmeye olanak tanır. Yüzlerce PDF'i sürükle-bırak yöntemiyle yüklediğinizde sistem dosyaları yükleme sırasına göre dizer ve birleştirilmiş tek bir PDF çıktısı oluşturur. Sayfa sırasını işlem öncesinde sürükleyerek değiştirebilirsiniz. Tek seferde işlenebilecek toplam dosya boyutu limitine dikkat edin; büyük arşivleri bölmeli şekilde (50'şer dosya gibi) birleştirip ardından bu ara dosyaları tekrar birleştirmek en pratik yaklaşımdır.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Toplu dönüştürme nedir?</h3>
+<p class="text-gray-700 leading-relaxed">Toplu dönüştürme, birden fazla PDF dosyasını aynı anda başka bir formata (Word, Excel, JPG gibi) çevirme işlemidir. Tek tek her dosyayı açıp dönüştürmek yerine tüm dosyalar seçilir, format belirlenir ve sistem her birini otomatik olarak işler. Örneğin muhasebe ekibi, ay sonu gelen 30 fatura PDF'ini tek seferde Excel formatına çevirebilir. Bu işlem dosya başına düşen ortalama süreyi saniyelerle ölçülür hale getirir ve insan kaynaklı atlamalar veya format hatalarını ortadan kaldırır.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF toplu işlem için program gerekiyor mu?</h3>
+<p class="text-gray-700 leading-relaxed">Hayır, PDFişlemleri.com'un tüm araçları tarayıcı üzerinden çalışır ve kurulum gerektirmez. Windows, Mac, Linux veya Chromebook fark etmeksizin internet bağlantısı olan her cihazda toplu PDF işlemi yapabilirsiniz. Masaüstü programlar büyük dosya setlerinde hız avantajı sunabilir, ancak lisans maliyeti ve kurulum karmaşıklığı dezavantajdır. Günlük veya haftalık toplu işlem ihtiyaçları için ücretsiz online araçlar her senaryo için yeterlidir.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Toplu PDF işlemi için dosya boyutu sınırı var mı?</h3>
+<p class="text-gray-700 leading-relaxed">PDFişlemleri.com araçları dosya başına maksimum 100 MB destekler. Toplu işlemlerde toplam yükleme boyutu araç bazlı farklılık gösterebilir. 100 MB üzerindeki tek dosyalar için önce PDF'i sayfalar bazında bölerek her parçayı ayrı işlemek pratik bir çözümdür. Çok sayıda küçük dosya (fatura, pusula gibi) için bu sınır pratikte sorun oluşturmaz; 1-5 MB'lık yüzlerce dosyayı kolaylıkla yükleyebilirsiniz. Dosyalar işlem sonrasında 15 dakika içinde otomatik olarak sunucudan silinir.</p>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-200 text-center">
+<a class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition no-underline" href="/pdf-birlestir">
+<i class="fas fa-rocket"></i> Aracı Şimdi Dene
+</a>
+</div>
+</section>
+<!-- Related Posts -->
+<section class="max-w-4xl mx-auto mt-16">
+<h2 class="text-2xl font-bold text-gray-800 mb-6 sm:mb-8">İlgili Yazılar</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-birlestirme">
+<div class="p-4">
+<h3 class="font-bold text-gray-800 mb-2">PDF Birleştirme Rehberi</h3>
+<p class="text-gray-600 text-sm">Birden fazla PDF dosyasını tek belgede birleştirmenin en kolay yolu.</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/ucretsiz-pdf-duzenleyici">
+<div class="p-4">
+<h3 class="font-bold text-gray-800 mb-2">Ücretsiz PDF Düzenleyici</h3>
+<p class="text-gray-600 text-sm">Program yüklemeden PDF düzenlemenin en pratik yöntemleri.</p>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="site-footer mt-16 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center sm:text-left">
+<h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
+<p class="text-sm text-gray-500 leading-relaxed mb-4">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
+<div class="flex space-x-4 justify-center sm:justify-start">
+<a aria-label="LinkedIn" class="transition hover:text-blue-600" href="https://www.linkedin.com/in/eminnkilic/" rel="noopener" target="_blank">
+<i class="fab fa-linkedin text-xl"></i>
+</a>
+<a aria-label="Instagram" class="transition hover:text-pink-600" href="https://instagram.com/heremmkh" rel="noopener" target="_blank">
+<i class="fab fa-instagram text-xl"></i>
+</a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/about">Hakkımızda</a>
+<a class="transition hover:text-blue-600" href="/blog">Blog</a>
+<a class="transition hover:text-blue-600" href="/contact">İletişim</a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/terms">Hizmet Şartları</a>
+<a class="transition hover:text-blue-600" href="/privacy">Gizlilik Politikası</a>
+<a class="transition hover:text-blue-600" href="/cookies">Çerez Politikası</a>
+<a class="transition hover:text-blue-600" href="/kvkk">KVKK</a>
+</div>
+</div>
+<div class="text-center sm:text-right">
+<h4 class="text-md font-semibold mb-3">Logo</h4>
+<div class="flex justify-center sm:justify-end">
+<img alt="PDFişlemleri.com logo" class="rounded-lg" height="120" loading="lazy" src="/icons/logo.webp" width="120"/>
+</div>
+</div>
+</div>
+<blockquote class="mt-8 pt-6 border-t border-gray-200 text-center text-sm italic text-red-600 px-4">
+"Dosyanız bizim için sadece bir veri akışı değil, gizliliğinizdir. Yüklediğiniz hiçbir PDF, XLSX veya belge sunucularımızda 15 dakikadan fazla kalmaz; KVKK ve GDPR uyumlu altyapımız içeriğinize kimsenin ulaşmamasını garanti eder."
+</blockquote>
+<div class="mt-6 pt-4 border-t border-gray-200 text-center text-xs text-gray-500">
+<p>© 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- JavaScript -->
+<script defer="" src="../scroll-manager.js"></script>
+<script src="../js-v2/main.js" type="module"></script>
+</body>
+</html>
