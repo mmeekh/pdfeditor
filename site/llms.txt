@@ -51,6 +51,17 @@ Emin Kılıç — Full-stack geliştirici ve PDFişlemleri.com'un kurucusu. Link
 - Desteklenen OCR dilleri: 22 (Türkçe, İngilizce, Almanca, Fransızca, vb.)
 - Reverse proxy: Caddy (HSTS preload, CSP, modern security headers)
 
+
+- [PDF Nedir?](https://pdfislemleri.com/blog/pdf-nedir): Portable Document Format'ın tarihçesi, nasıl çalıştığı, türleri ve kullanım alanları.
+- [PDF Açılmıyor Çözümü](https://pdfislemleri.com/blog/pdf-acilmiyor-cozum): 8 yaygın neden ve adım adım çözümler.
+- [Elektronik İmza Nedir?](https://pdfislemleri.com/blog/elektronik-imza-nedir): E-imza türleri, yasal dayanak ve PDF'e imza ekleme.
+- [PDF Metin Düzenleme](https://pdfislemleri.com/blog/pdf-metin-duzenleme): Dijital ve taranmış PDF'leri düzenleme rehberi.
+- [PDF Baskı Ayarları](https://pdfislemleri.com/blog/pdf-baski-ayarlari): DPI, renk profili ve kaliteli baskı için ayarlar.
+- [Toplu PDF İşlemleri](https://pdfislemleri.com/blog/toplu-pdf-islemleri): Batch birleştirme, sıkıştırma ve dönüştürme.
+- [PDF Tarama Rehberi](https://pdfislemleri.com/blog/pdf-tarama-rehberi): Kağıt belgelerinizi dijitalleştirme ve OCR.
+- [PDF Boyutu Neden Büyük?](https://pdfislemleri.com/blog/pdf-boyutu-neden-buyuk): 7 sebep ve küçültme çözümleri.
+- [İş Akışında PDF](https://pdfislemleri.com/blog/is-akisinda-pdf): Finans, hukuk ve İK departmanları için PDF workflow.
+- [PDF'e QR Kod Ekleme](https://pdfislemleri.com/blog/pdf-qr-kod): Sertifika, menü ve belge doğrulama için QR kod.
 ## İletişim
 
 - E-posta: info@pdfislemleri.com
