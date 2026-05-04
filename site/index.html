@@ -85,198 +85,226 @@
     
     <!-- Inline Structured Data (WebApp, FAQ, Organization, Services) -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "WebApplication",
+      "name": "PDFişlemleri.com - Ücretsiz PDF Araçları",
+      "alternateName": "PDF İşlemleri",
+      "description": "PDF dosyalarınızı ücretsiz birleştirin, sıkıştırın, dönüştürün ve imzalayın. Kalite kaybı olmadan PDF işlemleri yapın.",
+      "url": "https://pdfislemleri.com",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web Browser",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY",
+        "description": "Ücretsiz PDF araçları"
+      },
+      "featureList": [
+        "PDF Birleştirme",
+        "PDF Ayırma",
+        "PDF Sıkıştırma",
+        "PDF'den Word'e Dönüştürme",
+        "Word'den PDF'e Dönüştürme",
+        "PDF'den PowerPoint'e Dönüştürme",
+        "PDF Şifreleme",
+        "PDF Şifre Kaldırma",
+        "PDF Döndürme",
+        "PDF Filigran",
+        "PDF'den JPG'ye Dönüştürme",
+        "PDF Sırala",
+        "PDF İmzalama",
+        "PDF OCR",
+        "PDF'den Excel'e Dönüştürme"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "PDFişlemleri.com",
+        "url": "https://pdfislemleri.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pdfislemleri.com/icons/logo.webp",
+          "width": 512,
+          "height": 512,
+          "creditText": "PDFişlemleri.com",
+          "copyrightNotice": "© 2026 PDFişlemleri.com",
+          "license": "https://pdfislemleri.com/terms",
+          "acquireLicensePage": "https://pdfislemleri.com/contact"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "url": "https://pdfislemleri.com/contact"
+        }
+      },
+      "sameAs": [
+        "https://facebook.com/pdfislemleri",
+        "https://twitter.com/pdfislemleri",
+        "https://instagram.com/pdfislemleri"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": "WebApplication",
-          "name": "PDFişlemleri.com - Ücretsiz PDF Araçları",
-          "alternateName": "PDF İşlemleri",
-          "description": "PDF dosyalarınızı ücretsiz birleştirin, sıkıştırın, dönüştürün ve imzalayın. Kalite kaybı olmadan PDF işlemleri yapın.",
-          "url": "https://pdfislemleri.com",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Web Browser",
-          "browserRequirements": "Requires JavaScript. Requires HTML5.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "TRY",
-            "description": "Ücretsiz PDF araçları"
-          },
-          "featureList": [
-            "PDF Birleştirme",
-            "PDF Ayırma",
-            "PDF Sıkıştırma",
-            "PDF'den Word'e Dönüştürme",
-            "Word'den PDF'e Dönüştürme",
-            "PDF'den PowerPoint'e Dönüştürme",
-            "PDF Şifreleme",
-            "PDF Şifre Kaldırma",
-            "PDF Döndürme",
-            "PDF Filigran",
-            "PDF'den JPG'ye Dönüştürme",
-            "PDF Sırala",
-            "PDF İmzalama",
-            "PDF OCR",
-            "PDF'den Excel'e Dönüştürme"
-          ],
-          "author": {
-            "@type": "Organization",
-            "name": "PDFişlemleri.com",
-            "url": "https://pdfislemleri.com",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://pdfislemleri.com/icons/logo.webp",
-              "width": 512,
-              "height": 512
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "url": "https://pdfislemleri.com/contact"
-            }
-          },
-          "sameAs": [
-            "https://facebook.com/pdfislemleri",
-            "https://twitter.com/pdfislemleri",
-            "https://instagram.com/pdfislemleri"
-          ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "1250",
-            "bestRating": "5",
-            "worstRating": "1"
+          "@type": "Question",
+          "name": "PDF dosyalarım güvende mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, tüm dosyalarınız işlem sonrası otomatik olarak silinir. Verileriniz asla saklanmaz veya üçüncü taraflarla paylaşılmaz."
           }
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "PDF dosyalarım güvende mi?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Evet, tüm dosyalarınız işlem sonrası otomatik olarak silinir. Verileriniz asla saklanmaz veya üçüncü taraflarla paylaşılmaz."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Hangi dosya formatları destekleniyor?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "PDF, Word (.doc, .docx), PowerPoint (.ppt, .pptx), JPG, PNG ve diğer popüler formatları destekliyoruz. Her araç için desteklenen formatlar farklılık gösterebilir."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Maksimum dosya boyutu nedir?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Tek seferde maksimum 20 dosya yükleyebilir, toplam boyut 100MB'ı aşamaz. Bu limitler güvenlik ve performans için belirlenmiştir."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Ücretli bir hizmet var mı?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Hayır, tüm araçlarımız tamamen ücretsizdir. Hiçbir gizli ücret veya abonelik yoktur."
-              }
-            }
-          ]
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://pdfislemleri.com/#organization",
-          "name": "PDFişlemleri.com",
-          "alternateName": "PDF İşlemleri",
-          "url": "https://pdfislemleri.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://pdfislemleri.com/icons/logo.webp",
-            "width": 512,
-            "height": 512
-          },
-          "description": "Ücretsiz PDF araçları sunan online platform",
-          "founder": { "@id": "https://pdfislemleri.com/#author-emin" },
-          "sameAs": [
-            "https://www.linkedin.com/in/eminnkilic/",
-            "https://instagram.com/heremmkh"
-          ]
-        },
-        {
-          "@type": "Person",
-          "@id": "https://pdfislemleri.com/#author-emin",
-          "name": "Emin Kılıç",
-          "givenName": "Emin",
-          "familyName": "Kılıç",
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://pdfislemleri.com/images/emin-avatar.webp?v=4655ea4b",
-            "width": 400,
-            "height": 400
-          },
-          "url": "https://pdfislemleri.com/about",
-          "jobTitle": "Kurucu & Geliştirici",
-          "description": "PDFişlemleri.com'un kurucusu ve full-stack geliştirici. PDF işleme, web güvenliği ve performans optimizasyonu alanlarında uzman.",
-          "worksFor": { "@id": "https://pdfislemleri.com/#organization" },
-          "knowsAbout": ["PDF processing", "Full-stack development", "Python", "FastAPI", "Web security", "SEO"],
-          "nationality": { "@type": "Country", "name": "Turkey" },
-          "sameAs": [
-            "https://www.linkedin.com/in/eminnkilic/",
-            "https://instagram.com/heremmkh"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://pdfislemleri.com/#website",
-          "url": "https://pdfislemleri.com",
-          "name": "PDFişlemleri.com",
-          "inLanguage": "tr-TR",
-          "publisher": { "@id": "https://pdfislemleri.com/#organization" },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://pdfislemleri.com/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
+          "@type": "Question",
+          "name": "Hangi dosya formatları destekleniyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDF, Word (.doc, .docx), PowerPoint (.ppt, .pptx), JPG, PNG ve diğer popüler formatları destekliyoruz. Her araç için desteklenen formatlar farklılık gösterebilir."
           }
         },
         {
-          "@type": "Service",
-          "name": "PDF Birleştirme",
-          "description": "Birden fazla PDF dosyasını tek bir belgede birleştirme hizmeti",
-          "provider": {
-            "@type": "Organization",
-            "name": "PDFişlemleri.com"
-          },
-          "serviceType": "PDF Processing",
-          "areaServed": "TR",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "TRY"
+          "@type": "Question",
+          "name": "Maksimum dosya boyutu nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tek seferde maksimum 20 dosya yükleyebilir, toplam boyut 100MB'ı aşamaz. Bu limitler güvenlik ve performans için belirlenmiştir."
           }
         },
         {
-          "@type": "Service",
-          "name": "PDF İmzalama",
-          "description": "PDF dosyalarını dijital olarak imzalama hizmeti. Elle çizilen veya yüklenen imzalar ile PDF belgelerinizi güvenli şekilde imzalayın.",
-          "provider": {
-            "@type": "Organization",
-            "name": "PDFişlemleri.com"
-          },
-          "serviceType": "PDF Digital Signature",
-          "areaServed": "TR",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "TRY"
-          },
-          "keywords": "pdf imzala, dijital imza, pdf imzalama, elektronik imza, pdf belge imzalama"
+          "@type": "Question",
+          "name": "Ücretli bir hizmet var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır, tüm araçlarımız tamamen ücretsizdir. Hiçbir gizli ücret veya abonelik yoktur."
+          }
         }
       ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://pdfislemleri.com/#organization",
+      "name": "PDFişlemleri.com",
+      "alternateName": "PDF İşlemleri",
+      "url": "https://pdfislemleri.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pdfislemleri.com/icons/logo.webp",
+        "width": 512,
+        "height": 512,
+        "creditText": "PDFişlemleri.com",
+        "copyrightNotice": "© 2026 PDFişlemleri.com",
+        "license": "https://pdfislemleri.com/terms",
+        "acquireLicensePage": "https://pdfislemleri.com/contact"
+      },
+      "description": "Ücretsiz PDF araçları sunan online platform",
+      "founder": {
+        "@id": "https://pdfislemleri.com/#author-emin"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/eminnkilic/",
+        "https://instagram.com/heremmkh"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://pdfislemleri.com/#author-emin",
+      "name": "Emin Kılıç",
+      "givenName": "Emin",
+      "familyName": "Kılıç",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://pdfislemleri.com/images/emin-avatar.webp?v=4655ea4b",
+        "width": 400,
+        "height": 400,
+        "creditText": "PDFişlemleri.com",
+        "copyrightNotice": "© 2026 PDFişlemleri.com",
+        "license": "https://pdfislemleri.com/terms",
+        "acquireLicensePage": "https://pdfislemleri.com/contact"
+      },
+      "url": "https://pdfislemleri.com/about",
+      "jobTitle": "Kurucu & Geliştirici",
+      "description": "PDFişlemleri.com'un kurucusu ve full-stack geliştirici. PDF işleme, web güvenliği ve performans optimizasyonu alanlarında uzman.",
+      "worksFor": {
+        "@id": "https://pdfislemleri.com/#organization"
+      },
+      "knowsAbout": [
+        "PDF processing",
+        "Full-stack development",
+        "Python",
+        "FastAPI",
+        "Web security",
+        "SEO"
+      ],
+      "nationality": {
+        "@type": "Country",
+        "name": "Turkey"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/eminnkilic/",
+        "https://instagram.com/heremmkh"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pdfislemleri.com/#website",
+      "url": "https://pdfislemleri.com",
+      "name": "PDFişlemleri.com",
+      "inLanguage": "tr-TR",
+      "publisher": {
+        "@id": "https://pdfislemleri.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://pdfislemleri.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "PDF Birleştirme",
+      "description": "Birden fazla PDF dosyasını tek bir belgede birleştirme hizmeti",
+      "provider": {
+        "@type": "Organization",
+        "name": "PDFişlemleri.com"
+      },
+      "serviceType": "PDF Processing",
+      "areaServed": "TR",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "PDF İmzalama",
+      "description": "PDF dosyalarını dijital olarak imzalama hizmeti. Elle çizilen veya yüklenen imzalar ile PDF belgelerinizi güvenli şekilde imzalayın.",
+      "provider": {
+        "@type": "Organization",
+        "name": "PDFişlemleri.com"
+      },
+      "serviceType": "PDF Digital Signature",
+      "areaServed": "TR",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY"
+      },
+      "keywords": "pdf imzala, dijital imza, pdf imzalama, elektronik imza, pdf belge imzalama"
     }
-    </script>
+  ]
+}
+</script>
 
     <!-- Inline HowTo + SoftwareApplication Schema -->
     <script type="application/ld+json">
