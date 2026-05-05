@@ -4,6 +4,12 @@ AI-powered PDF platform: merge, compress, OCR, and digitize documents through a 
 
 Live at **[pdfislemleri.com](https://pdfislemleri.com)**.
 
+<p align="center">
+  <a href="https://pdfislemleri.com">
+    <img src="docs/screenshot.webp" alt="PDFislemleri.com — 16 free PDF tools in one platform" width="900">
+  </a>
+</p>
+
 ## Features
 
 - **Merge** multiple PDFs into a single document with drag-and-drop reordering
