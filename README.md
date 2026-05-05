@@ -1,6 +1,6 @@
 # PDFislemleri.com
 
-AI-powered PDF platform: merge, compress, OCR, and digitize documents through a single FastAPI service.
+Automated PDF platform: merge, compress, OCR, and digitize documents through a single FastAPI service. Sixteen free tools, one API, no sign-up.
 
 Live at **[pdfislemleri.com](https://pdfislemleri.com)**.
 
@@ -112,3 +112,15 @@ pytest.ini                Test configuration
 cd app
 pytest
 ```
+
+## Why I built this
+
+Working in finance and reporting roles — accounts payable at BL Harbert, government finance at the Ministry of Treasury, BI at Acun Media — I watched the same scene play out in every single office: someone hunched over a printer, scanning, merging, splitting, and re-saving PDFs by hand. Hours every week, gone.
+
+PDFislemleri is the public version of the kind of internal tooling that solves that. Sixteen tools, one API, no sign-up, no upload limit nag, no premium tier. Drop a file in, get a result back. The same automation-first instinct I apply to my finance work — written manually-once, then never again — turned into a free public service.
+
+It runs on commodity infrastructure (FastAPI + Caddy + Docker), processes everything in a sandboxed temp directory, and never stores user files past the request lifecycle.
+
+---
+
+Built by [Muhammet Emin Kilic](https://linkedin.com/in/emin-kilic-250b14210) — Finance-Tech Hybrid, Istanbul.
