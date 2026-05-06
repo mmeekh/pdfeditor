@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Ana sayfalar -->
   <url>
@@ -7,6 +8,13 @@
     <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/home-og.jpeg</image:loc>
+      <image:title>PDF Araçları: Birleştir, Sıkıştır, Çevir</image:title>
+      <image:caption>16 ücretsiz online PDF aracı: birleştirme, sıkıştırma, dönüştürme, imzalama, şifreleme, OCR. Kayıt gerekmez, dosyalar 15 dk içinde silinir.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
 
   <!-- PDF araç sayfaları -->
@@ -15,60 +23,130 @@
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-birlestir-hero.webp</image:loc>
+      <image:title>PDF Birleştir: 2, 3 veya Daha Fazla PDF Tek Dosyada</image:title>
+      <image:caption>Birden fazla PDF dosyasını saniyeler içinde tek belgede birleştirin. Sürükle-bırak, sayfa sıralama, kayıtsız ve ücretsiz. Dosyalar sunucuda saklanmaz.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-ayir</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-ayir-hero.webp</image:loc>
+      <image:title>PDF Ayır: Sayfaları Saniyeler İçinde Böl</image:title>
+      <image:caption>PDF sayfalarını saniyeler içinde ücretsiz ayırın. Sayfa aralığı seçin veya tek tek sayfa çıkarın. Kayıt yok, mobil uyumlu, dosyalar güvenli.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-sikistir</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-sikistir-hero.webp</image:loc>
+      <image:title>PDF Sıkıştır: Boyutu Küçült, Kaliteyi Koru</image:title>
+      <image:caption>PDF boyutunu ücretsiz küçültün, sıkıştırın. E-posta, WhatsApp veya web için PDF boyut küçültme aracı. %70'e varan sıkıştırma, kalite kaybı yok.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-sirala</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-sirala-hero.webp</image:loc>
+      <image:title>PDF Sırala - Ücretsiz Sayfa Düzenleme</image:title>
+      <image:caption>PDF sayfalarını sürükle-bırak ile yeniden sıralayın, ekleyin veya silin. Ücretsiz, kayıtsız ve güvenli PDF düzenleme aracı. Mobil uyumlu.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-dondur</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-merge.webp</image:loc>
+      <image:title>PDF Döndür - Ücretsiz Online Sayfa Çevirme</image:title>
+      <image:caption>PDF sayfalarını 90°, 180° veya 270° kalıcı döndürün. Tek tıkla tüm sayfaları veya seçili sayfaları çevirin. Ücretsiz, kayıtsız, güvenli.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-imzala</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-signature.webp</image:loc>
+      <image:title>PDF İmzala - Ücretsiz Online Elektronik İmza</image:title>
+      <image:caption>PDF'e elektronik imza ekleyin: çizin, resim yükleyin veya ad-soyad yazı tipi ile oluşturun. Konum, sayfa seçimi, ücretsiz ve güvenli.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-sifrele</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdcsec.webp</image:loc>
+      <image:title>PDF Şifrele - Ücretsiz Parola Koruma</image:title>
+      <image:caption>PDF dosyalarınıza açılış parolası ekleyin. AES-128/256 şifreleme, ücretsiz ve hızlı. Dosya sunucuda saklanmaz, mobil ve masaüstü uyumlu.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-sifre-kaldir</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/unlock_no_bg.webp</image:loc>
+      <image:title>PDF Şifre Kaldır - Ücretsiz Kilit Açma</image:title>
+      <image:caption>PDF şifresini bildiğiniz parolayla saniyeler içinde kaldırın. AES-128/256 destekli, ücretsiz kilit açma aracı. Dosyalar sunucuda saklanmaz.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-filigran</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdfiligran.webp</image:loc>
+      <image:title>PDF Filigran Ekle - Ücretsiz Watermark Aracı</image:title>
+      <image:caption>PDF sayfalarına metin veya logo filigranı (watermark) ekleyin. Şeffaflık, konum, döndürme ayarları. Ücretsiz, toplu sayfa desteği, kayıt yok.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-ocr</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-ocr.webp</image:loc>
+      <image:title>PDF OCR: Taranmış PDF'yi Metne Çevir</image:title>
+      <image:caption>Taranmış ve görsel PDF'lerdeki metni OCR ile ayıklayın. Türkçe karakter desteği, yüksek doğruluk, ücretsiz. Arşivinizi aranabilir yapın.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
 
   <!-- Dönüştürücü sayfalar -->
@@ -77,6 +155,13 @@
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-to-word-hero.webp</image:loc>
+      <image:title>PDF'den Word'e - Ücretsiz DOCX Dönüştürücü</image:title>
+      <image:caption>PDF dosyalarınızı düzenlenebilir Word (DOCX) formatına çevirin. Tablo, görsel ve Türkçe karakter desteği. Ücretsiz, kayıtsız, güvenli.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/word-to-pdf</loc>
@@ -89,24 +174,52 @@
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdfandoc.webp</image:loc>
+      <image:title>PDF'den PPT'ye - Ücretsiz Sunum Dönüştürücü</image:title>
+      <image:caption>PDF dosyalarınızı düzenlenebilir PowerPoint (.pptx) sunumlarına çevirin. Görsel düzen korunur, ücretsiz ve güvenli, kayıt gerekmez.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-to-excel</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdfandoc.webp</image:loc>
+      <image:title>PDF'den Excel'e - Ücretsiz XLSX Dönüştürücü</image:title>
+      <image:caption>PDF içindeki tabloları kayıpsız Excel (.xlsx) formatına çevirin. Hücre yapısı korunur, formüller düzenlenir. Ücretsiz, hızlı, güvenli.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-to-jpg</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-to-jpg-hero.webp</image:loc>
+      <image:title>PDF'den JPG'ye Çevir - Ücretsiz Resim</image:title>
+      <image:caption>PDF sayfalarını yüksek çözünürlüklü JPG görsellere çevirin. Tek sayfa veya tümünü ZIP olarak indirin. Kayıtsız, ücretsiz, dosyalar güvenli.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/pdf-to-txt</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdfandoc.webp</image:loc>
+      <image:title>PDF'den TXT'ye Çevir - Ücretsiz Metin Çıkarma</image:title>
+      <image:caption>PDF dosyalarınızı düz metin (.txt) formatına çevirin. Metin katmanını çıkarır, UTF-8 Türkçe karakter uyumlu. Ücretsiz, hızlı, kayıtsız.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
 
   <!-- Kurumsal sayfalar -->
@@ -115,12 +228,26 @@
     <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/about-og.jpeg</image:loc>
+      <image:title>Hakkımızda - PDFişlemleri.com Ücretsiz PDF Platformu</image:title>
+      <image:caption>Emin Kılıç tarafından kurulan ücretsiz PDF araçları platformu. Misyonumuz, vizyonumuz ve 16 aracımız hakkında detaylı bilgi. KVKK uyumlu.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog-og.jpeg</image:loc>
+      <image:title>PDF Blog: Adım Adım Rehberler ve İpuçları</image:title>
+      <image:caption>PDF işlemleri için adım adım rehberler, pratik ipuçları ve detaylı yazılar. Dönüştürme, sıkıştırma, OCR, imzalama ve güvenlik ipuçları.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/contact</loc>
@@ -161,84 +288,182 @@
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-merge.webp</image:loc>
+      <image:title>PDF Birleştirme: Ücretsiz Online PDF Birleştirici ile Dosyalarınızı Tek PDF'te Toplayın</image:title>
+      <image:caption>PDF Birleştirme - Birden Fazla PDF Dosyasını Tek Belgede Birleştirin</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-ayirma</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/split.webp</image:loc>
+      <image:title>PDF Ayırma: PDF Sayfalarını Ayırın ve Bölün [Ücretsiz]</image:title>
+      <image:caption>PDF Ayırma - PDF Sayfalarını Ayırın ve Bölün</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-sikistirma</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-compress.webp</image:loc>
+      <image:title>PDF Sıkıştırma: Dosya Boyutunu %70'e Kadar Azaltma Teknikleri</image:title>
+      <image:caption>PDF Boyut Küçültme</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-boyut-kucultme</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-compress.webp</image:loc>
+      <image:title>PDF Sıkıştırma: Kalite Kaybı Olmadan PDF Boyut Küçültme Rehberi</image:title>
+      <image:caption>PDF Boyut Küçültme</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/word-pdf-donusturme</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/word-to-pdf.webp</image:loc>
+      <image:title>Programsız Word'den PDF'e Dönüştürme: 3 Basit Adımda Zamandan Kazanın!</image:title>
+      <image:caption>Word'den PDF'e Dönüştürme Rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-excel-donusturme</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-to-excel-blog-hero.webp</image:loc>
+      <image:title>PDF'den Excel'e Dönüştürme: Tabloları XLSX Formatında Düzenlenebilir Hale Getirin</image:title>
+      <image:caption>PDF'den Excel'e dönüştürme: finans tablolarını XLSX formatına çevirme</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-jpg-donusturme</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-to-jpg-blog-hero.webp</image:loc>
+      <image:title>PDF'den JPG'ye Dönüştürme: PDF Sayfalarını Yüksek Kaliteli Görsellere Çevirin</image:title>
+      <image:caption>PDF'den JPG'ye dönüştürme: PDF sayfalarını yüksek kaliteli görsellere çevirme</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-imzalama</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-signature.webp</image:loc>
+      <image:title>İmzasız Belge Kalmasın: Adım Adım Online PDF İmzalama</image:title>
+      <image:caption>PDF İmzalama</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-guvenlik</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-security.webp</image:loc>
+      <image:title>PDF Güvenlik: Belgelerinizi Nasıl Koruyabilirsiniz?</image:title>
+      <image:caption>PDF Güvenlik - Dijital Belge Koruması ve Şifreleme Rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-sifre-kaldirma</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdfpassremove.webp</image:loc>
+      <image:title>PDF Şifre Kaldırma: Ücretsiz Online PDF Şifre Çözücü</image:title>
+      <image:caption>PDF Şifre Kaldırma</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-filigran</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdfiligran.webp</image:loc>
+      <image:title>PDF Filigran Ekleme: Ücretsiz Online PDF Filigran Aracı</image:title>
+      <image:caption>PDF Filigran Ekleme</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-ocr</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-ocr.webp</image:loc>
+      <image:title>OCR Teknolojisi: Taranmış PDF'leri Düzenlenebilir Metne Çevirin</image:title>
+      <image:caption>PDF OCR</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-formlari</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-forms.webp</image:loc>
+      <image:title>PDF Formları: Dijital Belge Doldurma Sanatı</image:title>
+      <image:caption>PDF Formları - Dijital Belge Doldurma ve Düzenleme Rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/telefondan-pdf-duzenleme</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/mobile-pdf-edit.webp</image:loc>
+      <image:title>Telefondan PDF Sırala: Hareket Halindeyken Belgelerinizi Kontrol Altına Alın!</image:title>
+      <image:caption>Telefondan PDF Sırala</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
 
   <url>
@@ -246,84 +471,287 @@
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-sayfa-dondurme.webp</image:loc>
+      <image:title>PDF Sayfalarını Döndürme: Yatay PDF'leri Dikey Yapın</image:title>
+      <image:caption>PDF sayfa döndürme: yatay PDF'leri dikey hâle getirme rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-sayfa-sirala</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-sayfa-sirala.webp</image:loc>
+      <image:title>PDF Sayfalarını Sıralama: Sürükle-Bırak ile Düzenle</image:title>
+      <image:caption>PDF sayfa sıralama: sürükle-bırak ile sayfaları düzenleme</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-powerpoint-donusturme</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-powerpoint-donusturme.webp</image:loc>
+      <image:title>PDF'den PowerPoint'e Dönüştürme: Sunuma Hazır Slaytlar</image:title>
+      <image:caption>PDF'den PowerPoint'e dönüştürme: sunuma hazır düzenlenebilir slaytlar</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-txt-donusturme</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-txt-donusturme.webp</image:loc>
+      <image:title>PDF'den TXT'ye Dönüştürme: Düz Metin Çıkarma Rehberi</image:title>
+      <image:caption>PDF'den TXT'ye dönüştürme: düz metin çıkarma ve UTF-8 Türkçe desteği</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-cv-hazirlama</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-cv-hazirlama.webp</image:loc>
+      <image:title>İş Başvurusu İçin PDF CV Hazırlama: Format, Boyut ve ATS Uyumluluğu</image:title>
+      <image:caption>İş başvurusu için PDF CV hazırlama: format, boyut ve ATS uyumu rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-vs-word</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-vs-word.webp</image:loc>
+      <image:title>PDF vs Word: Hangi Formatı Ne Zaman Kullanmalıyım? Eksiksiz Karşılaştırma</image:title>
+      <image:caption>PDF vs Word karşılaştırması: düzenleme, güvenlik, dosya boyutu ve platform desteği</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-email-gonderim</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-email-gonderim.webp</image:loc>
+      <image:title>PDF Dosyasını E-posta ile Göndermek: Boyut Limitleri, Sıkıştırma ve Güvenlik</image:title>
+      <image:caption>PDF dosyasını e-posta ile güvenli gönderme: boyut limitleri ve sıkıştırma rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/ucretsiz-pdf-duzenleyici</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/ucretsiz-pdf-duzenleyici.webp</image:loc>
+      <image:title>Ücretsiz Online PDF Düzenleyici: 2026 İçin Kapsamlı Rehber ve 16 Araç</image:title>
+      <image:caption>Ücretsiz online PDF düzenleyici: tarayıcıda çalışan, kurulum gerektirmeyen araçlar</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-kvkk-guvenlik</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-kvkk-guvenlik.webp</image:loc>
+      <image:title>PDF ve KVKK: Hassas Belgeler İçin Tam Güvenlik ve Uyumluluk Rehberi</image:title>
+      <image:caption>PDF ve KVKK: hassas belgelerde güvenlik, şifreleme ve uyumluluk rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog/pdf-arsivleme-pdfa</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-arsivleme-pdfa.webp</image:loc>
+      <image:title>PDF Arşivleme Rehberi: PDF/A Standardı ile 20+ Yıllık Okunabilirlik</image:title>
+      <image:caption>PDF arşivleme ve PDF/A standardı: uzun vadeli belge saklama rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
   </url>
 
 
-  <url><loc>https://pdfislemleri.com/blog/pdf-nedir</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/pdf-acilmiyor-cozum</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/elektronik-imza-nedir</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/pdf-metin-duzenleme</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/pdf-nedir</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-nedir.webp</image:loc>
+      <image:title>PDF Nedir? Portable Document Format Hakkında Kapsamlı Rehber</image:title>
+      <image:caption>PDF nedir? Portable Document Format tarihçesi ve kullanım alanları</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/pdf-acilmiyor-cozum</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-acilmiyor-cozum.webp</image:loc>
+      <image:title>PDF Açılmıyor: 8 Yaygın Neden ve Adım Adım Çözümler</image:title>
+      <image:caption>PDF açılmıyor sorunu: 8 neden ve adım adım çözümler</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/elektronik-imza-nedir</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/elektronik-imza-nedir.webp</image:loc>
+      <image:title>Elektronik İmza Nedir? E-İmza ile Dijital İmza Arasındaki Fark</image:title>
+      <image:caption>Elektronik imza nedir? E-imza ile dijital imza farkı ve PDF'e imza ekleme rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/pdf-metin-duzenleme</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-metin-duzenleme.webp</image:loc>
+      <image:title>PDF Metin Düzenleme: Dijital ve Taranmış PDF İçin Adım Adım Rehber</image:title>
+      <image:caption>PDF metin düzenleme: dijital ve taranmış PDF'lerde içerik değiştirme rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
   <url><loc>https://pdfislemleri.com/blog/pdf-baski-ayarlari</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/toplu-pdf-islemleri</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/pdf-tarama-rehberi</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/pdf-boyutu-neden-buyuk</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/is-akisinda-pdf</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/pdf-qr-kod</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/toplu-pdf-islemleri</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/toplu-pdf-islemleri.webp</image:loc>
+      <image:title>Toplu PDF İşlemleri: Çok Sayıda Dosyayı Hızlı İşleme</image:title>
+      <image:caption>Toplu PDF işlemleri: çok sayıda dosyayı hızlı birleştirme, sıkıştırma ve dönüştürme rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/pdf-tarama-rehberi</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-tarama-rehberi.webp</image:loc>
+      <image:title>PDF Tarama: Kağıt Belgeleri Dijitalleştirme Rehberi</image:title>
+      <image:caption>PDF tarama rehberi: kağıt belgeleri dijitalleştirme, tarayıcı ayarları ve OCR ile aranabilir PDF oluşturma</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/pdf-boyutu-neden-buyuk</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-boyutu-neden-buyuk.webp</image:loc>
+      <image:title>PDF Neden Bu Kadar Büyük? 7 Temel Sebep ve Çözümler</image:title>
+      <image:caption>PDF dosya boyutu neden büyük olur: 7 temel sebep ve sıkıştırma çözümleri</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/is-akisinda-pdf</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/is-akisinda-pdf.webp</image:loc>
+      <image:title>İş Akışında PDF: Finans, Hukuk ve İK Departmanları İçin Kapsamlı Rehber</image:title>
+      <image:caption>İş akışında PDF: finans, hukuk ve İK departmanları için PDF yönetim rehberi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/pdf-qr-kod</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/pdf-qr-kod.webp</image:loc>
+      <image:title>PDF'e QR Kod Ekleme Rehberi: Yöntemler ve İpuçları</image:title>
+      <image:caption>PDF'e QR kod ekleme: yöntemler, kullanım senaryoları ve ipuçları</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
 
   <!-- Yeni Türkiye-odaklı SEO blogları - Mayıs 2026 -->
-  <url><loc>https://pdfislemleri.com/blog/e-imza-yasal-gecerlilik</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/kvkk-uyumlu-pdf-imzalama</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/mersis-e-imzali-belge-pdf</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/tapu-belgesi-pdf-e-imza</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/e-beyanname-pdf-sikistirma</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/turkce-karakter-ocr</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/islak-imza-e-imza-fark</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/sigorta-policesi-pdf-birlestirme</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pdfislemleri.com/blog/vergi-levhasi-pdf-kucultme</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/e-imza-yasal-gecerlilik</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/e-imza-yasal-gecerlilik.webp</image:loc>
+      <image:title>E-İmza Nedir? Türkiye'de Yasal Geçerliliği ve 5070 Sayılı Kanun Rehberi</image:title>
+      <image:caption>E-İmza ve 5070 sayılı kanun yasal geçerlilik görseli — dijital imza mührü ve USB token</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/kvkk-uyumlu-pdf-imzalama</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/kvkk-uyumlu-pdf-imzalama.webp</image:loc>
+      <image:title>KVKK Uyumlu PDF İmzalama: Kişisel Veri Güvenliği İçin Tam Rehber</image:title>
+      <image:caption>KVKK uyumlu PDF imzalama — kişisel veri güvenliği kalkanı ve PDF belgesi</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/mersis-e-imzali-belge-pdf</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/mersis-e-imzali-belge-pdf.webp</image:loc>
+      <image:title>MERSİS E-İmzalı Belge PDF: İndirme ve Doğrulama Rehberi</image:title>
+      <image:caption>MERSİS e-imzalı belge PDF — ticaret sicili gazetesi ve dijital mühür</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/e-arsiv-fatura-pdf-birlestirme.webp</image:loc>
+      <image:title>E-Arşiv Fatura Toplu PDF Birleştirme: GİB Portal ve Online Yöntemler</image:title>
+      <image:caption>E-arşiv faturalarının tek PDF'te birleştirilmesi — fatura akışı ve takvim</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/tapu-belgesi-pdf-e-imza</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/tapu-belgesi-pdf-e-imza.webp</image:loc>
+      <image:title>Tapu Belgesi PDF E-İmzalama: WebTapu Üzerinden Adım Adım</image:title>
+      <image:caption>Tapu belgesi PDF e-imza — ev simgesi ve dijital imzalı belge</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/e-beyanname-pdf-sikistirma</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/e-beyanname-pdf-sikistirma.webp</image:loc>
+      <image:title>E-Beyanname PDF Sıkıştırma: GİB Boyut Sınırını Aşmadan Gönderim</image:title>
+      <image:caption>E-Beyanname PDF sıkıştırma — büyük PDF'in küçültülmesi ve vergi simgeleri</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/turkce-karakter-ocr</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/turkce-karakter-ocr.webp</image:loc>
+      <image:title>Türkçe Karakter OCR: Türkçeye Özel Harfleri Doğru Tanıtmak</image:title>
+      <image:caption>Türkçe OCR — Ğ Ş İ Ç harflerinin taranmış belgeden dijital metne dönüşümü</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/islak-imza-e-imza-fark</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/islak-imza-e-imza-fark.webp</image:loc>
+      <image:title>Islak İmza vs E-İmza: Hangi Belgede Hangisi Geçerli?</image:title>
+      <image:caption>Islak imza vs e-imza karşılaştırması — dolma kalem ile dijital imza ekranı</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/sigorta-policesi-pdf-birlestirme</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/sigorta-policesi-pdf-birlestirme.webp</image:loc>
+      <image:title>Sigorta Poliçesi PDF Birleştirme: Zeyilname ve Ek Belgeleri Toplama</image:title>
+      <image:caption>Sigorta poliçeleri PDF birleştirme — şemsiye altında poliçe belgeleri</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
+  <url><loc>https://pdfislemleri.com/blog/vergi-levhasi-pdf-kucultme</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/blog/vergi-levhasi-pdf-kucultme.webp</image:loc>
+      <image:title>Vergi Levhası PDF Küçültme: E-Posta ile Hızlı Gönderim Rehberi</image:title>
+      <image:caption>Vergi levhası PDF küçültme — GİB belgesinin sıkıştırılması ve e-posta zarfı</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
 
 </urlset>
