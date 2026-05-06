@@ -4,11 +4,22 @@ Automated PDF platform: merge, compress, OCR, and digitize documents through a s
 
 Live at **[pdfislemleri.com](https://pdfislemleri.com)**.
 
-<p align="center">
-  <a href="https://pdfislemleri.com">
-    <img src="docs/screenshot.webp" alt="PDFislemleri.com — 16 free PDF tools in one platform" width="900">
-  </a>
-</p>
+<table align="center">
+  <tr>
+    <td align="center" width="70%">
+      <a href="https://pdfislemleri.com">
+        <img src="docs/screenshot.webp" alt="PDFislemleri.com — desktop view, 16 free PDF tools">
+      </a>
+      <br><sub><b>Desktop</b> — landing with 16 PDF tools</sub>
+    </td>
+    <td align="center" width="30%">
+      <a href="https://pdfislemleri.com">
+        <img src="docs/screenshot-mobile.webp" alt="PDFislemleri.com — mobile view">
+      </a>
+      <br><sub><b>Mobile</b> — touch-friendly tool grid</sub>
+    </td>
+  </tr>
+</table>
 
 ## Features
 
