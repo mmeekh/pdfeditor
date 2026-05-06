@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Türkçe Karakter OCR: Ğ, Ş, İ, Ç Harflerini Doğru Tanıtan PDF Araçları | PDFişlemleri Blog</title>
+<meta content="Taranmış PDF'lerde Türkçeye özgü Ğ, Ş, İ, Ç gibi karakterlerin OCR ile doğru tanınması. Tesseract, Google Vision ve Türkçe modeli optimize ipuçları." name="description"/>
+<meta content="türkçe karakter ocr, türkçe ocr pdf, ğ ş ç harf tanıma, taranmış belge türkçe ocr, tesseract türkçe model" name="keywords"/>
+<meta content="Emin Kılıç" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://pdfislemleri.com/blog/turkce-karakter-ocr" rel="canonical"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
+<!-- End Google Tag Manager -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XBF2E5K150"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XBF2E5K150', {
+  'anonymize_ip': true,
+  'allow_google_signals': false,
+  'allow_ad_personalization_signals': false
+});
+</script>
+<link href="https://pdfislemleri.com/blog/turkce-karakter-ocr" hreflang="tr" rel="alternate"/>
+<link href="https://pdfislemleri.com/blog/turkce-karakter-ocr" hreflang="tr-TR" rel="alternate"/>
+<link href="https://pdfislemleri.com/blog/turkce-karakter-ocr" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="https://pdfislemleri.com/blog/turkce-karakter-ocr" property="og:url"/>
+<meta content="Türkçe Karakter OCR: Ğ, Ş, İ, Ç Harflerini Doğru Tanıtan PDF Araçları | PDFişlemleri Blog" property="og:title"/>
+<meta content="Taranmış PDF'lerde Türkçeye özgü Ğ, Ş, İ, Ç gibi karakterlerin OCR ile doğru tanınması. Tesseract, Google Vision ve Türkçe modeli optimize ipuçları." property="og:description"/>
+<meta content="https://pdfislemleri.com/images/blog/turkce-karakter-ocr.webp?v=4baa2196" property="og:image"/>
+<meta content="PDFişlemleri.com" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://pdfislemleri.com/blog/turkce-karakter-ocr" property="twitter:url"/>
+<meta content="Türkçe Karakter OCR: Ğ, Ş, İ, Ç Harflerini Doğru Tanıtan PDF Araçları | PDFişlemleri Blog" property="twitter:title"/>
+<meta content="Taranmış PDF'lerde Türkçeye özgü Ğ, Ş, İ, Ç gibi karakterlerin OCR ile doğru tanınması. Tesseract, Google Vision ve Türkçe modeli optimize ipuçları." property="twitter:description"/>
+<meta content="https://pdfislemleri.com/images/blog/turkce-karakter-ocr.webp?v=4baa2196" property="twitter:image"/>
+<link href="/icons/site.webmanifest" rel="manifest"/>
+<link href="/icons/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/icons/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180"/>
+<link color="#0ea5e9" href="/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#0ea5e9" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="../css/tw.css?v=3153838b" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/components.css?v=ee8cafe1" rel="stylesheet"/>
+<link href="../css/gradients.css" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "Türkçe Karakter OCR: Türkçeye Özel Harfleri Doğru Tanıtmak",
+"description": "Taranmış PDF'lerde Türkçeye özgü Ğ, Ş, İ, Ç gibi karakterlerin OCR ile doğru tanınması. Tesseract, Google Vision ve Türkçe modeli optimize ipuçları.",
+"image": {
+  "@type": "ImageObject",
+  "url": "https://pdfislemleri.com/images/blog/turkce-karakter-ocr.webp",
+  "width": 1248,
+  "height": 1248,
+  "caption": "Türkçe OCR — Ğ Ş İ Ç harflerinin taranmış belgeden dijital metne dönüşümü",
+  "creditText": "PDFişlemleri.com",
+  "creator": {"@type": "Person", "name": "Emin Kılıç", "url": "https://pdfislemleri.com/about"},
+  "copyrightHolder": {"@type": "Organization", "name": "PDFişlemleri.com", "url": "https://pdfislemleri.com"},
+  "copyrightNotice": "© 2026 PDFişlemleri.com",
+  "license": "https://pdfislemleri.com/terms",
+  "acquireLicensePage": "https://pdfislemleri.com/contact"
+},
+"author": {
+  "@type": "Person",
+  "name": "Emin Kılıç",
+  "url": "https://pdfislemleri.com/about",
+  "sameAs": ["https://www.linkedin.com/in/eminnkilic/"]
+},
+"publisher": {
+  "@type": "Organization",
+  "name": "PDFişlemleri.com",
+  "logo": {"@type": "ImageObject", "url": "https://pdfislemleri.com/icons/logo.webp"}
+},
+"datePublished": "2026-05-05T00:00:00+03:00",
+"dateModified": "2026-05-05T00:00:00+03:00",
+"mainEntityOfPage": {"@type": "WebPage", "@id": "https://pdfislemleri.com/blog/turkce-karakter-ocr"},
+"keywords": "türkçe karakter ocr, türkçe ocr pdf, ğ ş ç harf tanıma, taranmış belge türkçe ocr, tesseract türkçe model",
+"articleSection": "PDF Rehber",
+"inLanguage": "tr-TR"
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"@id": "https://pdfislemleri.com/blog/turkce-karakter-ocr#breadcrumb",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/"},
+{"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog"},
+{"@type": "ListItem", "position": 3, "name": "Türkçe Karakter OCR", "item": "https://pdfislemleri.com/blog/turkce-karakter-ocr"}
+]
+}
+</script>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"@id":"https://pdfislemleri.com/blog/turkce-karakter-ocr#faq",
+"mainEntity":[{"@type":"Question","name":"Türkçe OCR doğruluğu ne kadardır?","acceptedAnswer":{"@type":"Answer","text":"İyi taranmış (300+ DPI, düzgün konumlu) bir belgede modern OCR motorları %95-98 doğruluk sağlar. Düşük kaliteli taramalarda (200 DPI altı, eğri belge) doğruluk %85'e düşebilir. Türkçe karakterlerin (Ğ, Ş, Ç) tanınması doğru dil modeli seçildiğinde diğer karakterlerle benzer doğrulukta olur."}},{"@type":"Question","name":"Tesseract Türkçe için ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet, Tesseract OCR açık kaynaktır ve Türkçe dil modeli (tur.traineddata) ücretsizdir. Ancak komut satırı bilgisi gerektirir. Web tabanlı bir çözüm istiyorsanız PDF OCR aracımız Tesseract 5 motorunu kullanır ve hiç kurulum gerektirmez."}},{"@type":"Question","name":"OCR sonrası PDF boyutu artar mı?","acceptedAnswer":{"@type":"Answer","text":"Genelde aranabilir metin katmanı eklendiği için PDF boyutu %5-10 artar. Ancak orijinal tarama görseli sıkıştırılırsa toplam boyut azalabilir. PDFişlemleri.com OCR aracı, çıktıyı otomatik olarak optimize eder."}},{"@type":"Question","name":"El yazısı Türkçe metinleri OCR tanır mı?","acceptedAnswer":{"@type":"Answer","text":"Geleneksel OCR motorları el yazısını sınırlı tanır. Ancak Google Vision API ve Microsoft Read API gibi modern AI tabanlı motorlar el yazısı tanımada %75-85 doğruluk sağlar. Türkçe el yazısı için Google Vision daha başarılıdır."}},{"@type":"Question","name":"OCR sonrası kişisel veriler güvende mi?","acceptedAnswer":{"@type":"Answer","text":"PDFişlemleri.com OCR işlemini tamamen sunucumuzda gerçekleştirir ve dosyalar 15 dakika içinde otomatik silinir. KVKK uyumluyuz. Hassas belgelerinizi (sağlık raporu, kimlik) işlemeden önce PDF Şifrele ile koruyabilirsiniz."}}]
+}
+</script>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="site-wrapper">
+<header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<div class="flex items-center space-x-3">
+<a class="flex items-center space-x-2 hover:opacity-80 transition-opacity" href="/">
+<i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+<h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+</a>
+</div>
+<nav class="hidden md:flex space-x-6">
+<a class="text-gray-600 hover:text-blue-600 transition" href="/">Ana Sayfa</a>
+<a class="text-gray-600 font-medium" href="/blog">Blog</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/about">Hakkımızda</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/contact">İletişim</a>
+</nav>
+</div>
+</header>
+<nav aria-label="Breadcrumb" class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4">
+<div class="container mx-auto px-4">
+<ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
+<li><a class="hover:text-blue-600" href="/">Ana Sayfa</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li><a class="hover:text-blue-600" href="/blog">Blog</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li aria-current="page" class="text-gray-800 font-medium">Türkçe Karakter OCR</li>
+</ul>
+</div>
+</nav>
+<main class="container mx-auto px-4 py-8">
+<article class="max-w-4xl mx-auto">
+<div class="prose prose-lg max-w-none">
+<div class="mb-6 sm:mb-8">
+<div class="mb-4">
+<a class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline" href="/blog">Rehber</a>
+<a class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2" href="/pdf-ocr">Ücretsiz Araç</a>
+</div>
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">Türkçe Karakter OCR: Türkçeye Özel Harfleri Doğru Tanıtmak</h1>
+<div class="flex flex-col sm:flex-row sm:items-center text-gray-600 mb-4 sm:mb-6">
+<div class="flex items-center mr-0 sm:mr-6 mb-2 sm:mb-0">
+<div>
+<div class="font-medium">Emin Kılıç</div>
+<div class="text-sm">Kurucu &amp; Geliştirici</div>
+</div>
+</div>
+<div class="flex items-center space-x-2 sm:space-x-4 text-sm">
+<span><i class="fas fa-calendar mr-1 sm:mr-2"></i>5 Mayıs 2026</span>
+<span><i class="fas fa-clock mr-1 sm:mr-2"></i>7 dk okuma</span>
+</div>
+</div>
+</div>
+<img alt="Türkçe OCR — Ğ Ş İ Ç harflerinin taranmış belgeden dijital metne dönüşümü" class="w-full max-w-3xl mx-auto h-auto rounded-xl mb-6 sm:mb-8 shadow-md" height="1248" loading="lazy" src="/images/blog/turkce-karakter-ocr.webp?v=4baa2196" width="1248"/>
+<p class="text-lg sm:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6">
+Türkçeye özgü Ğ, Ş, İ, Ç, Ö, Ü harfleri OCR (Optik Karakter Tanıma) sistemleri için en zorlu karakterlerden bazılarıdır. Yetersiz dil modeli veya İngilizce ağırlıklı eğitilmiş motorlar, 'Şirket' kelimesini 'Sirket', 'Doğan'ı 'Dogan' olarak tanır. Bu rehberde taranmış Türkçe PDF'leri doğru OCR'lamanın yöntemlerini, hangi araçların Türkçe modeli desteklediğini ve tanıma doğruluğunu artırma ipuçlarını detaylı anlatıyoruz.
+</p>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Türkçe OCR Neden Zordur?</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">Türkçe karakterler birkaç teknik nedenle OCR motorlarını zorlar:</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li><strong>Diacritic karakterler:</strong> Ş, Ğ, Ç, Ü gibi harflerin üzerinde noktalama işaretleri var; düşük çözünürlüklü taramada noktalar kaybolur.</li>
+<li><strong>İ ve I karmaşası:</strong> Türkçede noktasız büyük I ve noktalı İ ayrı harflerdir; çoğu OCR motoru bunları karıştırır.</li>
+<li><strong>Sınırlı dil modeli:</strong> İngilizce, Almanca, Fransızca için zengin dil modelleri var; Türkçe için daha az eğitim verisi.</li>
+<li><strong>Bitişik yazı:</strong> El yazısı taramalarında 'şğ' gibi bitişik karakterler tek harf olarak algılanabilir.</li>
+<li><strong>Bağlamsal tanıma:</strong> 'Doğan' mı 'Dogan' mı kararı bağlama bağlıdır; yetersiz dil modeli yanlış seçer.</li>
+</ul>
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Hangi OCR Araçları Türkçeyi En İyi Tanır?</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">Türkçe OCR doğruluğu açısından önde gelen araçlar:</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li><strong>PDFişlemleri.com PDF OCR:</strong> Tesseract 5 + Türkçe dil modeliyle %95+ doğruluk. Ğ, Ş, Ç doğru tanınır. <a href="/pdf-ocr" class="text-blue-600 hover:underline">Hemen deneyin</a>.</li>
+<li><strong>Google Vision API:</strong> Yapay zeka tabanlı; %96-98 doğruluk. Ücretli kullanım sonrası ilk 1000 sayfa ücretsiz.</li>
+<li><strong>Adobe Acrobat Pro DC OCR:</strong> Kurumsal düzeyde; doğruluk yüksek. Lisans 12.000 TL/yıl.</li>
+<li><strong>ABBYY FineReader:</strong> En doğru profesyonel OCR. Türkçe dahil 192 dil destekler. Tek seferlik 4.500 TL.</li>
+<li><strong>Tesseract 5 (açık kaynak):</strong> Ücretsiz; 'tur' dil modeliyle Türkçe destekler. Komut satırı bilgisi gerektirir.</li>
+</ul>
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Türkçe OCR Doğruluğunu Artırma İpuçları</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">Tarama ve OCR sürecinde dikkat edilmesi gerekenler:</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li><strong>Yüksek çözünürlükte tarayın:</strong> En az 300 DPI; 600 DPI hassas belgeler için ideal</li>
+<li><strong>Doğru aydınlatma:</strong> Düz ve eşit aydınlatma; gölge ve parlama harf tanımayı bozar</li>
+<li><strong>Belgeyi düzgün konumlandırın:</strong> 1-2 derecelik eğri bile tanımayı zorlaştırır</li>
+<li><strong>Siyah-beyaz tarama:</strong> Renkli tarama gereksiz veri ekler; OCR için B&W veya gri tonlama yeterli</li>
+<li><strong>Türkçe dil modelini seçin:</strong> Araçta dil seçeneği varsa 'Türkçe' veya 'tur' işaretleyin</li>
+<li><strong>Karşıtlık (kontrast) artırın:</strong> Soluk metin için tarama öncesi kontrast iyileştirmesi yapın</li>
+</ul>
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">PDF OCR İşlemini Adım Adım Gerçekleştirme</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">Taranmış bir Türkçe belgeyi OCR ile aranabilir PDF'e dönüştürmek için:</p>
+<ol class="list-decimal pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li><a href="/pdf-ocr" class="text-blue-600 hover:underline">PDF OCR</a> aracımızı açın.</li>
+<li>Taranmış PDF'i sürükle-bırak ile yükleyin.</li>
+<li>Dil seçeneklerinden 'Türkçe' veya 'Türkçe + İngilizce' seçin (Türkçe-İngilizce karışık belgeler için).</li>
+<li>İşlemi başlatın; sayfa başına 5-15 saniye sürer.</li>
+<li>Tamamlandığında 'aranabilir PDF' indirip belgenin metin katmanını kontrol edin.</li>
+<li>Adobe Acrobat'ta CTRL+F ile arama yaparak Türkçe karakterlerin doğru tanındığını test edin.</li>
+<li>Hatalı tanınan karakterler varsa orijinal taramayı yeniden yapın veya kontrast ayarlayın.</li>
+</ol>
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">OCR Sonrası Metin Düzeltme</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">%95 doğruluklu bir OCR bile bir sayfada 5-10 hata içerebilir. Düzeltme stratejileri:</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li><strong>Microsoft Word'e aktarın:</strong> <a href="/pdf-to-word" class="text-blue-600 hover:underline">PDF'den Word'e</a> dönüştürüp Türkçe yazım kontrolünü çalıştırın</li>
+<li><strong>Find-Replace kullanın:</strong> Sık tekrar eden hataları (Sirket → Şirket) toplu değiştirin</li>
+<li><strong>İmla denetleyici:</strong> Türkçe imla yazılımları (TDK, Zemberek) hatalı kelimeleri tespit eder</li>
+<li><strong>Önemli kelimeleri kontrol edin:</strong> İsim, soyad, adres, banka hesap numarası gibi kritik bilgileri manuel onaylayın</li>
+<li><strong>Düşük güvenli alanları gözden geçirin:</strong> OCR çıktısında düşük güven puanlı kelimeler kırmızı işaretlenir</li>
+</ul>
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Türkçe OCR Hangi Belgelerde En Çok Kullanılır?</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">Türkçe OCR'a en çok ihtiyaç duyulan belge türleri:</p>
+<ul class="list-disc pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
+<li>Eski tarihli el yazısı tapu, kadastro belgeleri</li>
+<li>Taranmış SMMM defterleri ve muhasebe kayıtları</li>
+<li>Mahkeme kararları ve avukatlık dosyaları</li>
+<li>Hastane raporları ve tıbbi belgeler</li>
+<li>Eski kitap, gazete ve dergi taramaları (kütüphane dijitalleştirme)</li>
+<li>Vergi dairesinden alınmış eski tarihli evrakların taraması</li>
+<li>İnsan kaynaklarındaki taranmış özlük dosyaları</li>
+</ul>
+<div class="bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-file-pdf text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl md:text-2xl font-bold mb-1">Türkçe PDF OCR</h3>
+<p class="text-sm md:text-base text-blue-100">Kayıt yok, 15 dk auto-delete, KVKK uyumlu.</p>
+</div>
+</div>
+<a class="inline-flex items-center bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap" href="/pdf-ocr">
+<i class="fas fa-rocket mr-2"></i> Aracı Aç
+</a>
+</div>
+</div>
+
+<h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Sonuç</h2>
+<p class="text-gray-700 mb-3 sm:mb-4">Bu rehberde türkçe karakter ocr konusunu detaylıca inceledik. PDFişlemleri.com ücretsiz, kayıtsız ve KVKK uyumlu altyapısıyla bu süreçleri saniyeler içinde halletmenizi sağlar. <a href="/pdf-ocr" class="text-blue-600 hover:underline font-semibold">Türkçe PDF OCR</a> aracını şimdi deneyebilirsiniz.</p>
+</div></article>
+<section aria-labelledby="faq-heading" class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto">
+<div class="flex items-center gap-3 mb-6">
+<i class="fas fa-question-circle text-red-500 text-2xl"></i>
+<h2 class="text-2xl sm:text-3xl font-bold text-gray-800" id="faq-heading">Sık Sorulan Sorular</h2>
+</div>
+<div class="space-y-5">
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Türkçe OCR doğruluğu ne kadardır?</h3>
+<p class="text-gray-700 leading-relaxed">İyi taranmış (300+ DPI, düzgün konumlu) bir belgede modern OCR motorları %95-98 doğruluk sağlar. Düşük kaliteli taramalarda (200 DPI altı, eğri belge) doğruluk %85'e düşebilir. Türkçe karakterlerin (Ğ, Ş, Ç) tanınması doğru dil modeli seçildiğinde diğer karakterlerle benzer doğrulukta olur.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Tesseract Türkçe için ücretsiz mi?</h3>
+<p class="text-gray-700 leading-relaxed">Evet, Tesseract OCR açık kaynaktır ve Türkçe dil modeli (tur.traineddata) ücretsizdir. Ancak komut satırı bilgisi gerektirir. Web tabanlı bir çözüm istiyorsanız <a href="/pdf-ocr" class="text-blue-600 hover:underline">PDF OCR aracımız</a> Tesseract 5 motorunu kullanır ve hiç kurulum gerektirmez.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">OCR sonrası PDF boyutu artar mı?</h3>
+<p class="text-gray-700 leading-relaxed">Genelde aranabilir metin katmanı eklendiği için PDF boyutu %5-10 artar. Ancak orijinal tarama görseli sıkıştırılırsa toplam boyut azalabilir. PDFişlemleri.com OCR aracı, çıktıyı otomatik olarak optimize eder.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">El yazısı Türkçe metinleri OCR tanır mı?</h3>
+<p class="text-gray-700 leading-relaxed">Geleneksel OCR motorları el yazısını sınırlı tanır. Ancak Google Vision API ve Microsoft Read API gibi modern AI tabanlı motorlar el yazısı tanımada %75-85 doğruluk sağlar. Türkçe el yazısı için Google Vision daha başarılıdır.</p>
+</div>
+<div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
+<h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">OCR sonrası kişisel veriler güvende mi?</h3>
+<p class="text-gray-700 leading-relaxed">PDFişlemleri.com OCR işlemini tamamen sunucumuzda gerçekleştirir ve dosyalar 15 dakika içinde otomatik silinir. KVKK uyumluyuz. Hassas belgelerinizi (sağlık raporu, kimlik) işlemeden önce <a href="/pdf-sifrele" class="text-blue-600 hover:underline">PDF Şifrele</a> ile koruyabilirsiniz.</p>
+</div>
+</div></section>
+<section class="max-w-4xl mx-auto mt-16">
+<h2 class="text-2xl font-bold text-gray-800 mb-6 sm:mb-8">İlgili Yazılar</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-ocr">
+<div class="p-4">
+<h3 class="font-bold text-gray-800 mb-2">OCR Teknolojisi: Taranmış PDF'leri Düzenlenebilir Metne Çevirme</h3>
+</div></a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-tarama-rehberi">
+<div class="p-4">
+<h3 class="font-bold text-gray-800 mb-2">PDF Tarama: Kağıt Belgelerinizi Dijitalleştirme Rehberi</h3>
+</div></a>
+</div></section>
+</main>
+<footer class="site-footer mt-16 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center sm:text-left">
+<h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
+<p class="text-sm text-gray-500 leading-relaxed mb-4">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
+<div class="flex space-x-4 justify-center sm:justify-start">
+<a aria-label="LinkedIn" class="transition hover:text-blue-600" href="https://www.linkedin.com/in/eminnkilic/" rel="noopener" target="_blank"><i class="fab fa-linkedin text-xl"></i></a>
+<a aria-label="Instagram" class="transition hover:text-pink-600" href="https://instagram.com/heremmkh" rel="noopener" target="_blank"><i class="fab fa-instagram text-xl"></i></a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/about">Hakkımızda</a>
+<a class="transition hover:text-blue-600" href="/blog">Blog</a>
+<a class="transition hover:text-blue-600" href="/contact">İletişim</a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/terms">Hizmet Şartları</a>
+<a class="transition hover:text-blue-600" href="/privacy">Gizlilik Politikası</a>
+<a class="transition hover:text-blue-600" href="/cookies">Çerez Politikası</a>
+<a class="transition hover:text-blue-600" href="/kvkk">KVKK</a>
+</div>
+</div>
+<div class="text-center sm:text-right">
+<img alt="PDFişlemleri.com logo" class="rounded-lg" height="120" loading="lazy" src="/icons/logo.webp" width="120"/>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-500">
+<p>© 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+<script src="../scroll-manager.js" defer></script>
+<script type="module" src="../js-v2/main.js"></script>
+</body>
+</html>

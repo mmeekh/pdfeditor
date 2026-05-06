@@ -487,10 +487,8 @@
                         b.classList.remove('bg-red-500', 'text-white', 'border-red-500');
                     }
                 });
-                cards.forEach(c => {
-                    const show = cat === 'all' || c.dataset.blogCategory === cat;
-                    c.style.display = show ? '' : 'none';
-                });
+                // NOTE: Card visibility is now managed by pagination.js (renderPage with activeCategory).
+                // We only handle button styling and URL state here.
             }
             buttons.forEach(b => b.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -593,7 +591,67 @@
         <!-- Latest Posts -->
         <section class="mb-16">
             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Son Yazılar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- YENİ (Mayıs 2026): E-İmza Yasal Geçerlilik -->
+                <a href="/blog/e-imza-yasal-gecerlilik" data-blog-category="guvenlik" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/e-imza-yasal-gecerlilik.webp?v=bb2d0ff1" alt="E-İmza ve 5070 sayılı kanun yasal geçerlilik görseli — dijital imza mührü ve USB token" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">E-İmza Nedir? Türkiye'de Yasal Geçerliliği ve 5070 Sayılı Kanun</h3><p class="text-gray-600 text-sm">5070 sayılı kanun kapsamında e-imza türleri, NES sertifikası ve hangi belgelerde geçerli olduğu.</p></div>
+                </a>
+
+                <!-- YENİ: KVKK Uyumlu PDF İmzalama -->
+                <a href="/blog/kvkk-uyumlu-pdf-imzalama" data-blog-category="guvenlik" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/kvkk-uyumlu-pdf-imzalama.webp?v=1455f0be" alt="KVKK uyumlu PDF imzalama — kişisel veri güvenliği kalkanı ve PDF belgesi" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">KVKK Uyumlu PDF İmzalama: Kişisel Veri Güvenliği Rehberi</h3><p class="text-gray-600 text-sm">KVKK kapsamında PDF imzalama, açık rıza, VERBIS kayıt ve veri sorumlusu yükümlülükleri.</p></div>
+                </a>
+
+                <!-- YENİ: MERSİS E-İmzalı Belge -->
+                <a href="/blog/mersis-e-imzali-belge-pdf" data-blog-category="guvenlik" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/mersis-e-imzali-belge-pdf.webp?v=4055a16e" alt="MERSİS e-imzalı belge PDF — ticaret sicili gazetesi ve dijital mühür" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">MERSİS E-İmzalı Belge PDF: İndirme ve Doğrulama</h3><p class="text-gray-600 text-sm">Ticaret sicili gazetesi, faaliyet belgesi ve sicil kayıt suretinin e-imzalı PDF olarak indirilmesi.</p></div>
+                </a>
+
+                <!-- YENİ: E-Arşiv Fatura PDF Birleştirme -->
+                <a href="/blog/e-arsiv-fatura-pdf-birlestirme" data-blog-category="duzenleme" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/e-arsiv-fatura-pdf-birlestirme.webp?v=00e0971b" alt="E-arşiv faturalarının tek PDF'te birleştirilmesi — fatura akışı ve takvim" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">E-Arşiv Fatura Toplu PDF Birleştirme: GİB Portal Rehberi</h3><p class="text-gray-600 text-sm">Aylık dönem faturalarını tek PDF'te birleştirme, mali müşavir arşiv ve denetim hazırlığı.</p></div>
+                </a>
+
+                <!-- YENİ: Tapu Belgesi PDF E-İmza -->
+                <a href="/blog/tapu-belgesi-pdf-e-imza" data-blog-category="guvenlik" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/tapu-belgesi-pdf-e-imza.webp?v=6bec15f9" alt="Tapu belgesi PDF e-imza — ev simgesi ve dijital imzalı belge" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">Tapu Belgesi PDF E-İmza: WebTapu ve E-Devlet Üzerinden</h3><p class="text-gray-600 text-sm">Tapu senedi PDF indirme, WebTapu üzerinden işlem ve hangi tapu işlemlerinde e-imza geçerli.</p></div>
+                </a>
+
+                <!-- YENİ: E-Beyanname PDF Sıkıştırma -->
+                <a href="/blog/e-beyanname-pdf-sikistirma" data-blog-category="duzenleme" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/e-beyanname-pdf-sikistirma.webp?v=b4765ba3" alt="E-Beyanname PDF sıkıştırma — büyük PDF'in küçültülmesi ve vergi simgeleri" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">E-Beyanname PDF Sıkıştırma: GİB Boyut Sınırını Aşmadan</h3><p class="text-gray-600 text-sm">KDV, gelir, kurumlar vergisi beyannamesi eklerini 4 MB sınırı altına sıkıştırma yöntemleri.</p></div>
+                </a>
+
+                <!-- YENİ: Türkçe Karakter OCR -->
+                <a href="/blog/turkce-karakter-ocr" data-blog-category="rehber" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/turkce-karakter-ocr.webp?v=4baa2196" alt="Türkçe OCR — Ğ Ş İ Ç harflerinin taranmış belgeden dijital metne dönüşümü" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">Türkçe Karakter OCR: Ğ, Ş, İ, Ç Doğru Tanıyan Araçlar</h3><p class="text-gray-600 text-sm">Türkçeye özgü harflerin OCR ile doğru tanınması, Tesseract dil modeli ve doğruluk artırma.</p></div>
+                </a>
+
+                <!-- YENİ: Islak İmza vs E-İmza -->
+                <a href="/blog/islak-imza-e-imza-fark" data-blog-category="guvenlik" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/islak-imza-e-imza-fark.webp?v=7f75a962" alt="Islak imza vs e-imza karşılaştırması — dolma kalem ile dijital imza ekranı" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">Islak İmza vs E-İmza: Hangi Belgede Hangisi Geçerli?</h3><p class="text-gray-600 text-sm">Tapu, evlilik, sözleşmeler, vasiyet ve mahkeme belgelerinde imza türü zorunlulukları.</p></div>
+                </a>
+
+                <!-- YENİ: Sigorta Poliçesi PDF Birleştirme -->
+                <a href="/blog/sigorta-policesi-pdf-birlestirme" data-blog-category="duzenleme" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/sigorta-policesi-pdf-birlestirme.webp?v=4adf05a4" alt="Sigorta poliçeleri PDF birleştirme — şemsiye altında poliçe belgeleri" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">Sigorta Poliçesi PDF Birleştirme: Zeyilname ve Hasar</h3><p class="text-gray-600 text-sm">Kasko, sağlık, DASK gibi sigorta belgelerini tek PDF'te birleştirme ve KVKK uyumlu paylaşım.</p></div>
+                </a>
+
+                <!-- YENİ: Vergi Levhası PDF Küçültme -->
+                <a href="/blog/vergi-levhasi-pdf-kucultme" data-blog-category="duzenleme" data-blog-date="2026-05-05" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative"><img src="/images/blog/vergi-levhasi-pdf-kucultme.webp?v=f39d4ed6" alt="Vergi levhası PDF küçültme — GİB belgesinin sıkıştırılması ve e-posta zarfı" class="w-full h-40 object-cover" width="1248" height="1248" loading="lazy" decoding="async"><div class="absolute top-3 left-3"><span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">YENİ</span></div></div>
+                    <div class="p-5"><div class="flex items-center text-xs text-gray-500 mb-2"><i class="fas fa-calendar mr-1"></i><span>5 Mayıs 2026</span><span class="mx-2">•</span><i class="fas fa-clock mr-1"></i><span>7 dk</span></div><h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">Vergi Levhası PDF Küçültme ve E-Posta ile Gönderme</h3><p class="text-gray-600 text-sm">GİB e-vergi levhası boyut küçültme, mali mühür koruması ve banka, ihale paylaşım rehberi.</p></div>
+                </a>
+
                 <!-- YENİ: PDF Sayfa Döndürme -->
                 <a href="/blog/pdf-sayfa-dondurme" data-blog-category="duzenleme" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <div class="relative">
@@ -989,7 +1047,7 @@
                 </a>
 
                 <!-- Post 8 -->
-                <a href="/blog/pdf-sifre-kaldirma" data-blog-category="guvenlik" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <a href="/blog/pdf-sifre-kaldirma" data-blog-category="guvenlik" data-blog-date="2024-11-22" class="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <img src="/images/pdfpassremove.webp?v=fe18225e" alt="PDF Şifre Kaldırma" class="w-full h-40 object-cover" width="1536" height="1024" loading="lazy" decoding="async">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-2">
@@ -1006,7 +1064,143 @@
                     </div>
                 </a>
             </div>
+
+            <!-- Pagination -->
+            <nav id="blog-pagination" class="mt-12 flex justify-center items-center gap-2 flex-wrap" aria-label="Blog sayfaları">
+                <button id="page-prev" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:border-blue-300 disabled:opacity-40 disabled:cursor-not-allowed transition" aria-label="Önceki sayfa">
+                    <i class="fas fa-chevron-left text-xs"></i>
+                    <span class="hidden sm:inline">Önceki</span>
+                </button>
+                <div id="page-numbers" class="flex items-center gap-2"></div>
+                <button id="page-next" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:border-blue-300 disabled:opacity-40 disabled:cursor-not-allowed transition" aria-label="Sonraki sayfa">
+                    <span class="hidden sm:inline">Sonraki</span>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+            </nav>
+            <p id="blog-page-info" class="text-center text-sm text-gray-500 mt-4"></p>
         </section>
+
+        <!-- Pagination JS -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const POSTS_PER_PAGE = 9;
+            const grid = document.getElementById('blog-grid');
+            const allCards = Array.from(grid.querySelectorAll('a[data-blog-category]'));
+            const pageNumbers = document.getElementById('page-numbers');
+            const prevBtn = document.getElementById('page-prev');
+            const nextBtn = document.getElementById('page-next');
+            const pageInfo = document.getElementById('blog-page-info');
+            const catButtons = document.querySelectorAll('.cat-btn');
+
+            // Sort cards by date desc (newest first) — keeps newer content on page 1
+            allCards.sort((a, b) => {
+                const da = a.dataset.blogDate || '2024-01-01';
+                const db = b.dataset.blogDate || '2024-01-01';
+                return db.localeCompare(da);
+            });
+            allCards.forEach(c => grid.appendChild(c));
+
+            let currentPage = 1;
+            let activeCategory = 'all';
+
+            function getFilteredCards() {
+                if (activeCategory === 'all') return allCards;
+                return allCards.filter(c => c.dataset.blogCategory === activeCategory);
+            }
+
+            function renderPage(page) {
+                const filtered = getFilteredCards();
+                const totalPages = Math.max(1, Math.ceil(filtered.length / POSTS_PER_PAGE));
+                if (page < 1) page = 1;
+                if (page > totalPages) page = totalPages;
+                currentPage = page;
+
+                const start = (page - 1) * POSTS_PER_PAGE;
+                const end = start + POSTS_PER_PAGE;
+                const visible = new Set(filtered.slice(start, end));
+
+                allCards.forEach(c => {
+                    c.style.display = visible.has(c) ? '' : 'none';
+                });
+
+                renderControls(totalPages);
+                pageInfo.textContent = filtered.length === 0
+                    ? 'Bu kategoride yazı bulunamadı.'
+                    : `Sayfa ${page} / ${totalPages} — Toplam ${filtered.length} yazı`;
+
+                // Smooth scroll to top of grid on page change (skip on initial load)
+                if (page !== 1 || activeCategory !== 'all') {
+                    const top = grid.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({top: top, behavior: 'smooth'});
+                }
+            }
+
+            function renderControls(totalPages) {
+                pageNumbers.innerHTML = '';
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+                if (totalPages <= 1) {
+                    document.getElementById('blog-pagination').style.display = 'none';
+                    return;
+                }
+                document.getElementById('blog-pagination').style.display = '';
+
+                const pages = [];
+                if (totalPages <= 7) {
+                    for (let i = 1; i <= totalPages; i++) pages.push(i);
+                } else {
+                    pages.push(1);
+                    if (currentPage > 3) pages.push('...');
+                    const startP = Math.max(2, currentPage - 1);
+                    const endP = Math.min(totalPages - 1, currentPage + 1);
+                    for (let i = startP; i <= endP; i++) pages.push(i);
+                    if (currentPage < totalPages - 2) pages.push('...');
+                    pages.push(totalPages);
+                }
+
+                pages.forEach(p => {
+                    if (p === '...') {
+                        const span = document.createElement('span');
+                        span.textContent = '…';
+                        span.className = 'px-2 text-gray-400';
+                        pageNumbers.appendChild(span);
+                        return;
+                    }
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.textContent = p;
+                    btn.setAttribute('aria-label', `Sayfa ${p}`);
+                    if (p === currentPage) btn.setAttribute('aria-current', 'page');
+                    btn.className = p === currentPage
+                        ? 'w-10 h-10 rounded-lg bg-red-500 text-white font-semibold border-2 border-red-500 transition'
+                        : 'w-10 h-10 rounded-lg bg-white text-gray-700 border-2 border-gray-200 hover:bg-blue-50 hover:border-blue-300 transition';
+                    btn.addEventListener('click', () => renderPage(p));
+                    pageNumbers.appendChild(btn);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => renderPage(currentPage - 1));
+            nextBtn.addEventListener('click', () => renderPage(currentPage + 1));
+
+            // Hook into existing category filter — re-render pagination on category change
+            catButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeCategory = btn.dataset.cat;
+                    renderPage(1);
+                });
+            });
+
+            // URL parametre desteği — kategori ve sayfa
+            const params = new URLSearchParams(location.search);
+            const urlCat = params.get('kategori');
+            const urlPage = parseInt(params.get('sayfa'));
+            if (urlCat && ['donusturme','duzenleme','guvenlik','rehber'].includes(urlCat)) {
+                activeCategory = urlCat;
+            }
+            renderPage(urlPage && urlPage > 1 ? urlPage : 1);
+        });
+        </script>
 
 
     </main>
