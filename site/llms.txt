@@ -72,6 +72,20 @@ Emin Kılıç — Full-stack geliştirici ve PDFişlemleri.com'un kurucusu. Link
 
 Rehberler ve detaylı kullanım talimatları: https://pdfislemleri.com/blog
 
+### Hukuk, Vergi ve Devlet İşlemleri Rehberleri (Türkiye Özel İçerik)
+
+- [E-İmza Yasal Geçerlilik](https://pdfislemleri.com/blog/e-imza-yasal-gecerlilik): 5070 Sayılı Kanun kapsamında e-imzanın ıslak imzayla eşdeğerliği, NES türleri, BTK onaylı ESHS listesi.
+- [Islak İmza - E-İmza Farkı](https://pdfislemleri.com/blog/islak-imza-e-imza-fark): Tapu, vasiyet, mahkeme dilekçesi gibi belge türlerinde hangi imzanın zorunlu olduğu karşılaştırma tablosu.
+- [KVKK Uyumlu PDF İmzalama](https://pdfislemleri.com/blog/kvkk-uyumlu-pdf-imzalama): 6698 sayılı KVKK kapsamında açık rıza yönetimi, VERBIS kaydı ve 2024 idari para cezaları (47.303 TL–9.463.213 TL).
+- [E-Arşiv Fatura PDF Birleştirme](https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme): GİB portalından toplu e-arşiv faturası indirme, ay bazında PDF birleştirme, 10 yıllık saklama yükümlülüğü.
+- [E-Beyanname PDF Sıkıştırma](https://pdfislemleri.com/blog/e-beyanname-pdf-sikistirma): GİB e-Beyanname sisteminin 4 MB ek dosya sınırı, gecikme cezası riski ve çözüm yöntemi.
+- [MERSİS E-İmzalı Belge PDF](https://pdfislemleri.com/blog/mersis-e-imzali-belge-pdf): Gümrük ve Ticaret Bakanlığı MERSİS platformundan faaliyet belgesi ve ticaret sicili gazetesi indirme; 15–30 günlük geçerlilik süreleri.
+- [Tapu Belgesi PDF E-İmza](https://pdfislemleri.com/blog/tapu-belgesi-pdf-e-imza): WebTapu ve e-Devlet üzerinden e-imzalı tapu senedi indirme; belgelerin 30 günlük geçerlilik süresi.
+- [Sigorta Poliçesi PDF Birleştirme](https://pdfislemleri.com/blog/sigorta-policesi-pdf-birlestirme): Poliçe, zeyilname, hasar tutanağı birleştirme; Sigortacılık Kanunu md.35 gereği 5 yıllık saklama.
+- [Vergi Levhası PDF Küçültme](https://pdfislemleri.com/blog/vergi-levhasi-pdf-kucultme): GİB elektronik vergi levhası (2024 zorunlu), banka portallarının 5 MB sınırı ve %70 küçültme yöntemi.
+- [Türkçe Karakter OCR](https://pdfislemleri.com/blog/turkce-karakter-ocr): Taranmış PDF'lerde Ğ, Ş, İ, Ç, Ü harflerini doğru tanıyan OCR araçları ve dil modelleri.
+- [PDF/A Arşivleme](https://pdfislemleri.com/blog/pdf-arsivleme-pdfa): ISO 19005 standardı, PDF/A-1/2/3 farkları, UYAP ve YÖK Tez Merkezi gibi kamu kurumlarının PDF/A zorunluluğu.
+
 ## Yasal
 
 - [Gizlilik Politikası](https://pdfislemleri.com/privacy)
