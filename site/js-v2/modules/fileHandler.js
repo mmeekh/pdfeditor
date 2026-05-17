@@ -7,6 +7,16 @@ import notifications from './notifications.js';
 import { enforceNoEncryptedPdfs } from './pdfEncryptionCheck.js';
 import { getPageCount } from './pdfPageCount.js';
 
+function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 class FileHandler {
     constructor() {
         this.selectedFiles = [];
@@ -214,7 +224,7 @@ class FileHandler {
             fileItem.innerHTML = `
                 <div class="file-info">
                     <i class="fas fa-file-pdf file-icon"></i>
-                    <span class="file-name">${file.name}</span>
+                    <span class="file-name">${escapeHtml(file.name)}</span>
                     <span class="file-meta">
                         <span class="file-size">${this.formatFileSize(file.size)}</span>
                         <span id="${pageSpanId}" class="file-pages"><i class="fas fa-spinner fa-spin text-xs text-gray-400"></i></span>

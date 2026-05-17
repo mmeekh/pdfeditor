@@ -1,28 +1,107 @@
-{
-    email you@example.com
-}
-
 pdfislemleri.com {
-    encode zstd gzip
+    root * /srv/pdfislemleri.com/site
+    encode gzip zstd
 
-    handle_path /api/* {
-        reverse_proxy pdfislemlericom-api:2000
+    # ============ SECURITY HEADERS (tüm yanıtlara) ============
+    header {
+        # HSTS — 1 yıl, subdomain dahil, preload hazır
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+        # Tarayıcıya MIME sniff yapmasını yasakla
+        X-Content-Type-Options "nosniff"
+
+        # Clickjacking koruması
+        X-Frame-Options "DENY"
+
+        # Eski tarayıcılar için XSS filter
+        X-XSS-Protection "1; mode=block"
+
+        # Referrer politikası
+        Referrer-Policy "strict-origin-when-cross-origin"
+
+        # Tarayıcı özelliklerini kısıtla
+        Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), bluetooth=(), autoplay=()"
+
+        # Cross-Origin politikaları
+        Cross-Origin-Opener-Policy "same-origin"
+        Cross-Origin-Resource-Policy "same-origin"
+
+        # Content Security Policy — script, style, image kaynakları
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://fonts.googleapis.com https://static.cloudflareinsights.com https://www.clarity.ms https://*.clarity.ms; script-src-elem 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://fonts.googleapis.com https://static.cloudflareinsights.com https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com https://stats.g.doubleclick.net https://cloudflareinsights.com https://*.clarity.ms https://c.bing.com; worker-src 'self' blob: https://cdnjs.cloudflare.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none';"
+
+        # Server bilgisini gizle
+        -Server
+        -X-Powered-By
     }
 
-    # SEO: eski İngilizce slug'lardan yeni Türkçe slug'lara 301 yönlendirme
-    redir /organize /pdf-sirala permanent
-    redir /sign /pdf-imzala permanent
-    redir /protect /pdf-sifrele permanent
-    redir /unlock /pdf-sifre-kaldir permanent
-    redir /rotate /pdf-dondur permanent
-    redir /watermark /pdf-filigran permanent
+    # Eski tool URL'lerini yeni landing sayfalarına yönlendir
+    @oldMerge path /merge
+    redir @oldMerge /pdf-birlestir 301
 
-    root * /srv
-    try_files {path} {path}.html /index.html
-    file_server
+    @oldSplit path /split
+    redir @oldSplit /pdf-ayir 301
 
-    @static {
-        path_regexp static ^/(?:css|js|icons|images|cardbgs)/.*
+    @oldCompress path /compress
+    redir @oldCompress /pdf-sikistir 301
+
+    @oldOrganize path /organize
+    redir @oldOrganize /pdf-sirala 301
+
+    @oldSign path /sign
+    redir @oldSign /pdf-imzala 301
+
+    @oldProtect path /protect
+    redir @oldProtect /pdf-sifrele 301
+
+    @oldUnlock path /unlock
+    redir @oldUnlock /pdf-sifre-kaldir 301
+
+    @oldRotate path /rotate
+    redir @oldRotate /pdf-dondur 301
+
+    @oldWatermark path /watermark
+    redir @oldWatermark /pdf-filigran 301
+
+    # Gizli/sensitive path'leri engelle (try_files'den ÖNCE)
+    @sensitive path /.env* /.git* /.ssh* /secrets* /docker-compose* /Dockerfile /pytest.ini
+    handle @sensitive {
+        respond 404
     }
-    header @static Cache-Control "public, max-age=31536000, immutable"
+
+    # Fingerprinted/stabil varlıklar için uzun cache (resim, font, css)
+    @assets path_regexp \.(css|webp|jpg|jpeg|png|svg|ico|woff2?|ttf)$
+    header @assets Cache-Control "public, max-age=31536000, immutable"
+
+    # JS için revalidation — immutable değil, ETag ile kontrol
+    @js path_regexp \.js$
+    header @js Cache-Control "public, max-age=3600, must-revalidate"
+
+    # HTML için kısa cache
+    @html path_regexp \.html?$
+    header @html Cache-Control "public, max-age=300, must-revalidate"
+
+    handle /api/* {
+        # API için daha sıkı cache (sadece browser-side)
+        header Cache-Control "no-store, no-cache, must-revalidate, private"
+        # Request body size limit (backend de ayrı kontrol ediyor ama Caddy ilk savunma)
+        request_body {
+            max_size 110MB
+        }
+        reverse_proxy pdfislemleri-api:8000
+    }
+
+    handle {
+        try_files {path} {path}.html /index.html
+        file_server
+    }
+
+    # Access log (güvenlik incelemesi için)
+    log {
+        output file /var/log/caddy/pdfislemleri.com.log {
+            roll_size 100MB
+            roll_keep 5
+        }
+        format json
+        level INFO
+    }
 }
