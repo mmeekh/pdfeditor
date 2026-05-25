@@ -7,9 +7,8 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <title>PDF Araçları: Birleştir, Sıkıştır, Çevir | PDFişlemleri</title>
     <meta name="description" content="16 ücretsiz online PDF aracı: birleştirme, sıkıştırma, dönüştürme, imzalama, şifreleme, OCR. Kayıt gerekmez, dosyalar 15 dk içinde silinir.">
-    <meta name="keywords" content="pdf birleştirme, pdf sıkıştırma, pdf dönüştürme, ücretsiz pdf araçları, online pdf birleştirici, pdf boyut küçültme, pdf word çevirme, pdf imzalama, pdf şifre kaldırma, pdf filigran, dijital imza, çevrimiçi pdf işlemleri">
-    <meta name="author" content="PDFişlemleri.com">
-    <meta name="robots" content="index, follow">
+<meta name="author" content="PDFişlemleri.com">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://pdfislemleri.com">
     
     <!-- Google Tag Manager -->
@@ -69,7 +68,11 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
+    <!-- LCP preload — site logo & hero illustration (above-the-fold) -->
+    <link rel="preload" as="image" fetchpriority="high" href="/icons/logo.webp">
+    <link rel="preload" as="image" fetchpriority="high" href="/images/nedensevmelisiniz.webp">
+
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/tw.css?v=3153838b">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -81,9 +84,7 @@
     <link rel="stylesheet" href="css/gradients.css?v=3ce0f6e9">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
-    
-    <!-- Inline Structured Data (WebApp, FAQ, Organization, Services) -->
+<!-- Inline Structured Data (WebApp, FAQ, Organization, Services) -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1137,7 +1138,7 @@
                     </div>
                 </div>
                 <div class="text-center sm:text-right flex items-center justify-center sm:justify-end">
-                    <img src="/icons/logo.webp" alt="PDFişlemleri.com logosu" width="120" height="120" loading="lazy" decoding="async" class="w-24 h-24 sm:w-28 sm:h-28 object-contain">
+                    <img src="/icons/logo.webp" alt="PDFişlemleri.com logosu" width="120" height="120" loading="eager" fetchpriority="high" decoding="async" class="w-24 h-24 sm:w-28 sm:h-28 object-contain">
                 </div>
                 </div>
             </div>

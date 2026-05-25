@@ -125,12 +125,18 @@ def cleanup_old_files() -> None:
 
 
 def ensure_safe_path(file_path: str, base_dir: str) -> str:
-    """Guard against path traversal by ensuring file_path resides under base_dir."""
-    safe_path = os.path.normpath(file_path)
-    if not safe_path.startswith(os.path.normpath(base_dir)):
-        logger.error(f"Path traversal attempt: {file_path}")
+    """Guard against path traversal by ensuring file_path resides under base_dir.
+
+    Uses os.path.realpath to resolve symlinks so a symlinked file outside base_dir
+    cannot bypass the check. The trailing os.sep prevents a /tmp/abc bypass when
+    base_dir is /tmp/ab.
+    """
+    real_path = os.path.realpath(file_path)
+    real_base = os.path.realpath(base_dir)
+    if not real_path.startswith(real_base + os.sep) and real_path != real_base:
+        logger.error(f"Path traversal attempt: {file_path} (resolved: {real_path}) base={real_base}")
         raise HTTPException(status_code=403, detail="Geçersiz dosya yolu")
-    return safe_path
+    return real_path
 
 
 def is_pdf_encrypted(file_path) -> bool:

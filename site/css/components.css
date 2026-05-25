@@ -1207,7 +1207,7 @@ body {
 
 /* Büyük Footer Yazısı (Mobil) */
 .footer-big-text-mobile {
-    font-family: 'Rubik Moonrocks', cursive;
+    font-family: 'Impact', 'Arial Black', cursive, sans-serif;
     font-size: 15vw;
     position: absolute;
     left: 50%;

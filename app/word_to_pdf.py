@@ -62,7 +62,8 @@ class WordToPDFConverter:
                 "--outdir", out_dir,
                 src_doc,
             ]
-            subprocess.run(cmd, check=True)
+            # 180 saniye (3 dk) timeout: hung soffice worker'ı bloklamasın.
+            subprocess.run(cmd, check=True, timeout=180)
             # computed target path (LibreOffice may choose base.pdf)
             base_pdf = os.path.join(out_dir, f"{Path(src_doc).stem}.pdf")
             if base_pdf != out_path and os.path.exists(base_pdf):
@@ -70,6 +71,10 @@ class WordToPDFConverter:
                     os.replace(base_pdf, out_path)
                 except Exception:
                     out_path = base_pdf
+        except subprocess.TimeoutExpired as e:
+            logger.error(f"LibreOffice timeout (>180s) for {src_doc}: {e}")
+            # Router 504/422 ile dönüştürebilsin diye spesifik mesajla fırlat.
+            raise WordToPDFError("Dönüştürme zaman aşımına uğradı (180sn)")
         except Exception as e:
             logger.error(f"Word→PDF dönüşüm hatası: {e}")
             raise WordToPDFError("Dönüştürme sırasında hata oluştu")

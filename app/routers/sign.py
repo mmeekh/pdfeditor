@@ -16,10 +16,8 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/tools/sign", tags=["sign"])
 
-# Rate limiting için basit in-memory store
-request_counts = {}
-RATE_LIMIT_WINDOW = 60  # 60 saniye
-RATE_LIMIT_MAX_REQUESTS = 10  # Dakikada maksimum 10 istek
+# NOTE: In-memory rate limiter kaldırıldı (memory leak: key-per-minute birikiyordu).
+# SlowAPI middleware main.py'da global default_limits=["60/minute"] uyguluyor.
 
 def validate_input_sanitization(text: str, field_name: str) -> str:
     """Input sanitization ve validation"""
@@ -37,22 +35,6 @@ def validate_input_sanitization(text: str, field_name: str) -> str:
         raise HTTPException(status_code=400, detail=f"{field_name} çok uzun (maksimum 100 karakter)")
     
     return text.strip()
-
-def check_rate_limit(client_ip: str) -> bool:
-    """Basit rate limiting kontrolü"""
-    now = datetime.now()
-    minute_key = now.strftime("%Y%m%d%H%M")
-    key = f"{client_ip}:{minute_key}"
-    
-    if key not in request_counts:
-        request_counts[key] = 0
-    
-    request_counts[key] += 1
-    
-    if request_counts[key] > RATE_LIMIT_MAX_REQUESTS:
-        return False
-    
-    return True
 
 def validate_signature_data(signature_data: str) -> str:
     """İmza verisi validation"""
@@ -97,12 +79,9 @@ def validate_signature_positions(positions_str: str) -> dict:
 
 @router.post("/upload")
 async def upload_pdfs_for_sign(request: Request, files: list[UploadFile] = File(...)):
-    # Rate limiting kontrolü
-    client_ip = request.client.host
-    if not check_rate_limit(client_ip):
-        logger.warning(f"Rate limit exceeded for IP: {client_ip}")
-        raise HTTPException(status_code=429, detail="Çok fazla istek gönderildi. Lütfen bir dakika bekleyin.")
-    
+    # Rate limit SlowAPI tarafından (main.py) global olarak uygulanıyor.
+    client_ip = request.client.host if request.client else "unknown"
+
     # Güvenlik loglama
     logger.info(f"Sign upload request from IP: {client_ip}, Files: {len(files)}")
     
@@ -148,12 +127,9 @@ async def process_sign(
     selected_files: str = Form(...),  # JSON string of selected file indices
     signature_positions: str = Form("{}")  # JSON string of signature positions
 ):
-    # Rate limiting kontrolü
-    client_ip = request.client.host
-    if not check_rate_limit(client_ip):
-        logger.warning(f"Rate limit exceeded for IP: {client_ip}")
-        raise HTTPException(status_code=429, detail="Çok fazla istek gönderildi. Lütfen bir dakika bekleyin.")
-    
+    # Rate limit SlowAPI tarafından (main.py) global olarak uygulanıyor.
+    client_ip = request.client.host if request.client else "unknown"
+
     # Güvenlik loglama
     logger.info(f"Sign process request from IP: {client_ip}, Session: {session_id}")
     
@@ -238,7 +214,7 @@ async def process_sign(
     zip_name = None
     if len(outputs) > 1:
         import zipfile
-        zip_name = f"imzali_{len(selected)}_dosya.zip" if len(selected) > 1 else f"imzali.zip"
+        zip_name = f"imzali_{len(selected_indices)}_dosya.zip" if len(selected_indices) > 1 else f"imzali.zip"
         zip_path = os.path.join(session_dir, zip_name)
         with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
             for o in outputs:

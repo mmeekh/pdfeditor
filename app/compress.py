@@ -75,8 +75,13 @@ class PDFCompressor:
             src_pdf
         ]
         try:
-            subprocess.run(cmd, check=True)
+            # 180 saniye (3 dk) timeout: hung gs süreçleri worker'ı bloklamasın.
+            subprocess.run(cmd, check=True, timeout=180)
             return os.path.exists(out_path)
+        except subprocess.TimeoutExpired as e:
+            logger.error(f"Ghostscript timeout (>180s) for {src_pdf}: {e}")
+            # Üst katman (router) HTTP 504 ile dönüştürebilsin diye yeniden fırlat.
+            raise
         except subprocess.CalledProcessError as e:
             logger.error(f"Ghostscript failed: {e}")
             return False

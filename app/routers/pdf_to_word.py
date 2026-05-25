@@ -49,7 +49,7 @@ async def upload_pdf_for_convert(files: list[UploadFile] = File(...)):
     total_size = 0
     try:
         uploaded_files = []
-        for file in files:
+        for idx, file in enumerate(files):
             if getattr(file, "size", None) is not None:
                 total_size += file.size
                 if total_size > settings.MAX_FILE_SIZE:
@@ -58,7 +58,7 @@ async def upload_pdf_for_convert(files: list[UploadFile] = File(...)):
                         detail=f"Toplam boyut {settings.MAX_FILE_SIZE/(1024*1024)}MB sınırını aşıyor",
                     )
 
-            file_path = Path(session_dir) / file.filename
+            file_path = Path(session_dir) / f"{idx}_{file.filename}"
             await save_upload_file(file, file_path)
             uploaded_files.append(
                 {

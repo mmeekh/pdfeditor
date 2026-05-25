@@ -38,8 +38,8 @@ app = FastAPI(
     description="PDF işlemleri için REST API",
     version="1.0.0",
     lifespan=lifespan,
-    # Global file size limit
-    max_request_size=100 * 1024 * 1024,  # 100MB
+    # Note: Global request body size limit is enforced via Content-Length
+    # check in core.middleware (max_request_size kwarg is not supported by FastAPI).
 )
 
 app.state.limiter = limiter

@@ -39,10 +39,10 @@ USER app
 
 # Health check
 HEALTHCHECK --interval=60s --timeout=30s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:2000/health')" || exit 1
+    CMD python -c "import requests; requests.get('http://localhost:8000/health')" || exit 1
 
 # Expose port
-EXPOSE 2000
+EXPOSE 8000
 
 # Run with Gunicorn
 CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:8000", "--workers", "1", "--worker-class", "uvicorn.workers.UvicornWorker", "--timeout", "120"]

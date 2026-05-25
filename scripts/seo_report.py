@@ -227,5 +227,70 @@ def main():
             for p in ga["pages"][:5]:
                 print(f"  • {p['page']:<35} {p['users']}u / {p['views']}pv / eng%{p['engagement_rate']}")
 
+    # ── Regression alarm (cron mail tetikler) ──────────────────────────
+    # En yakın geçmiş raporu bul (kendi raporumuz hariç), total_impressions'ı
+    # karşılaştır. %50 veya daha fazla düşüş varsa stderr'e WARN bas; cron MAILTO
+    # bunu yakalayıp e-posta atar.
+    try:
+        check_regression(report, REPORTS_DIR, today)
+    except Exception as e:
+        # Regression kontrolünün kendisi raporu bozmamalı.
+        print(f"[regression] check failed: {e}", file=sys.stderr)
+
+
+def _total_impressions(rep: dict) -> int | None:
+    sc = rep.get("search_console") or {}
+    qs = sc.get("top_queries")
+    if not isinstance(qs, list) or not qs:
+        return None
+    try:
+        return sum(int(q.get("impressions", 0)) for q in qs)
+    except (TypeError, ValueError):
+        return None
+
+
+def check_regression(current: dict, reports_dir: Path, today: str, threshold_pct: float = 50.0) -> None:
+    """Compare current total_impressions to the latest previous report. Emit
+    WARN on stderr if drop >= threshold_pct percent."""
+    current_imps = _total_impressions(current)
+    if current_imps is None:
+        print("[regression] current report has no impressions data, skipping", file=sys.stderr)
+        return
+
+    # En yakın önceki rapor (kendi today raporu hariç)
+    prev_files = sorted(
+        (p for p in reports_dir.glob("seo-*.json") if p.stem != f"seo-{today}"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    if not prev_files:
+        print("[regression] no prior report found, baseline established", file=sys.stderr)
+        return
+
+    prev_path = prev_files[0]
+    try:
+        prev_rep = json.loads(prev_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"[regression] could not parse {prev_path.name}: {e}", file=sys.stderr)
+        return
+
+    prev_imps = _total_impressions(prev_rep)
+    if not prev_imps:
+        print(f"[regression] {prev_path.name} has no impressions, skipping", file=sys.stderr)
+        return
+
+    drop_pct = (prev_imps - current_imps) / prev_imps * 100.0
+    print(
+        f"[regression] impressions: prev={prev_imps} ({prev_path.stem}) "
+        f"-> curr={current_imps}  delta={-drop_pct:+.1f}%"
+    )
+    if drop_pct >= threshold_pct:
+        print(
+            f"WARN: SEO impressions düşüşü {drop_pct:.1f}% "
+            f"(önceki {prev_imps} -> şimdiki {current_imps}, eşik {threshold_pct}%)",
+            file=sys.stderr,
+        )
+
+
 if __name__ == "__main__":
     main()

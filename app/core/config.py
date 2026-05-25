@@ -17,11 +17,15 @@ class Settings(BaseSettings):
     MAX_FILES: int = 20
 
     # Cleanup and session
-    FILE_CLEANUP_HOURS: int = 24
+    # KVKK data-minimization: kısa retention. Site genelinde "15 dakika" sözü
+    # veriliyor; bu hard ceiling de 24h -> 1h'ye çekildi.
+    FILE_CLEANUP_HOURS: int = 1
     SESSION_LIFETIME_MINUTES: int = 5
     
     # Security
-    SECRET_KEY: str = Field(default="your-super-secret-key-change-this-in-production")
+    # SECRET_KEY must be provided via environment (no default). Pydantic will raise
+    # a ValidationError at startup if the SECRET_KEY env var / .env entry is missing.
+    SECRET_KEY: str
     DEBUG: bool = False
 
     # CORS

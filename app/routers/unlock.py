@@ -25,7 +25,8 @@ async def upload_pdf_for_unlock(file: UploadFile = File(...)):
     os.makedirs(session_dir, exist_ok=True)
 
     try:
-        file_path = Path(session_dir) / file.filename
+        # idx prefix ile filename collision'ı önle (diğer router'larla tutarlı)
+        file_path = Path(session_dir) / f"0_{file.filename}"
         await save_upload_file(file, file_path)
         return {"encrypted_files": check_encrypted_files([str(p) for p in Path(session_dir).glob("*.pdf")]),
             "session_id": session_id, "file": {"original_name": file.filename, "path": str(file_path), "size": getattr(file, "size", 0)}}
