@@ -5,6 +5,7 @@ services:
     build: ./app
     container_name: pdfislemleri-api
     restart: unless-stopped
+    env_file: .env
     networks:
       - web
     expose:
