@@ -449,7 +449,10 @@ body:has(#mobile-search-bar:not(.hidden)) {
 
 .tool-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.22),
+        inset 0 0 32px color-mix(in srgb, var(--tool-color, #3b82f6) 18%, transparent),
+        0 0 14px color-mix(in srgb, var(--tool-color, #3b82f6) 25%, transparent);
     border-color: var(--tool-color, #3b82f6);
 }
 
