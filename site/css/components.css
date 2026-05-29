@@ -450,8 +450,26 @@ body:has(#mobile-search-bar:not(.hidden)) {
 .tool-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    border-color: #3b82f6;
+    border-color: var(--tool-color, #3b82f6);
 }
+
+/* Per-tool hover border renkleri — ilgili tool icon container'ının ana rengini eşler */
+.tool-card[data-tool="merge"]       { --tool-color: #7c3aed; } /* purple */
+.tool-card[data-tool="split"]       { --tool-color: #9333ea; } /* purple */
+.tool-card[data-tool="organize"]    { --tool-color: #a855f7; } /* purple */
+.tool-card[data-tool="rotate"]      { --tool-color: #a855f7; } /* purple */
+.tool-card[data-tool="compress"]    { --tool-color: #059669; } /* green */
+.tool-card[data-tool="pdf-to-excel"]{ --tool-color: #059669; } /* green */
+.tool-card[data-tool="pdf-to-word"] { --tool-color: #ea580c; } /* orange */
+.tool-card[data-tool="word-to-pdf"] { --tool-color: #f97316; } /* orange */
+.tool-card[data-tool="pdf-to-ppt"]  { --tool-color: #f97316; } /* orange */
+.tool-card[data-tool="pdf-to-jpg"]  { --tool-color: #f97316; } /* orange */
+.tool-card[data-tool="pdf-to-txt"]  { --tool-color: #f97316; } /* orange */
+.tool-card[data-tool="unlock"]      { --tool-color: #1d4ed8; } /* blue */
+.tool-card[data-tool="protect"]     { --tool-color: #3b82f6; } /* blue */
+.tool-card[data-tool="watermark"]   { --tool-color: #3b82f6; } /* blue */
+.tool-card[data-tool="sign"]        { --tool-color: #f59e0b; } /* amber */
+.tool-card[data-tool="pdf-ocr"]     { --tool-color: #dc2626; } /* red */
 
 .tool-card:active {
     transform: translateY(-2px);
