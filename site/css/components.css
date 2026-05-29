@@ -471,7 +471,7 @@ body:has(#mobile-search-bar:not(.hidden)) {
 .tool-card[data-tool="unlock"]      { --tool-color: #1d4ed8; } /* blue */
 .tool-card[data-tool="protect"]     { --tool-color: #3b82f6; } /* blue */
 .tool-card[data-tool="watermark"]   { --tool-color: #3b82f6; } /* blue */
-.tool-card[data-tool="sign"]        { --tool-color: #f59e0b; } /* amber */
+.tool-card[data-tool="sign"]        { --tool-color: #1d4ed8; } /* blue (gradients.css'teki mavi sign ikonuyla eşleşir) */
 .tool-card[data-tool="pdf-ocr"]     { --tool-color: #dc2626; } /* red */
 
 .tool-card:active {
