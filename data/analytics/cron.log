@@ -181,3 +181,29 @@ Top 5 sayfa:
   • /blog/pdf-birlestirme               2u / 4pv / eng%25.0
   • /pdf-sikistir                       2u / 2pv / eng%0.0
 [2026-05-25T09:00:05+00:00] Rapor üretildi
+
+=== [2026-05-28T21:03:06+00:00] start pdfislemleri ===
+→ Search Console (7 gün, pdfislemleri.com) çekiliyor...
+  ✓ 50 query, 25 sayfa
+→ GA4 (7 gün) çekiliyor...
+  ✓ 11 sayfa, 3 kanal
+
+✓ Rapor: /root/projects/pdfislemleri.com/data/analytics/seo-2026-05-28.json
+
+─── ÖZET ───
+Search Console: 6 tıklama, 228 gösterim
+Top 5 query:
+  • pdf sıkıştırma                      3tk / 18gz / pos 30.7
+  • büyük pdf küçültme                  1tk / 1gz / pos 40
+  • pdf ayirici                         1tk / 1gz / pos 30
+  • pdf birleştirme                     1tk / 123gz / pos 10.8
+  • 5070 sayılı elektronik imza kanunu  0tk / 1gz / pos 31
+GA4: 19 aktif kullanıcı
+Top 5 sayfa:
+  • /                                   5u / 7pv / eng%33.3
+  • /blog/pdf-sikistirma                3u / 3pv / eng%0.0
+  • /blog/islak-imza-e-imza-fark        2u / 2pv / eng%0.0
+  • /pdf-sikistir                       2u / 2pv / eng%0.0
+  • /blog/e-imza-yasal-gecerlilik       1u / 1pv / eng%100.0
+[regression] impressions: prev=317 (seo-2026-05-25) -> curr=228  delta=-28.1%
+=== [2026-05-28T21:03:09+00:00] done pdfislemleri ===

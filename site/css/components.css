@@ -1,5 +1,18 @@
 /* ===== COMPONENT STYLES ===== */
 
+/* Direct Answer Block (SEO snippet target) */
+.answer-block {
+    background: #f8f9fa;
+    border-left: 4px solid #2563eb;
+    padding: 16px;
+    margin: 16px 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.answer-block strong {
+    color: #1e3a8a;
+}
 
 /* ========================================================== */
 /* Mobile Search Modal (Cmd+K pattern)                        */
