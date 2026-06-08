@@ -29,7 +29,7 @@ class PdfToWordTool {
             const sessionId = up.session_id;
 
             pdfLoader.updateProgress(50, 'Word dönüştürme başlatılıyor...');
-            const result = await pdfApi.processPdfToWord(sessionId);
+            const result = await pdfApi.processPdfToWord(sessionId, this._readOptions());
 
             pdfLoader.updateProgress(100, 'Tamamlandı!');
             setTimeout(()=>{ pdfLoader.hide(); this.showResult(result); }, 150);
@@ -64,9 +64,14 @@ class PdfToWordTool {
         notifications.success(successMessage);
     }
 
+    _readOptions() {
+        return {
+            layout: document.querySelector('input[name="pdfToWordLayout"]:checked')?.value || 'layout-preserve',
+            output_format: document.querySelector('input[name="pdfToWordFormat"]:checked')?.value || 'docx',
+        };
+    }
+
     getOptions(){
-        // TODO: Bu seçenekler şu an sadece UI'da görünür — backend'de kullanılmıyor.
-        // Gelecekte process endpoint'ine layout/ocr/format parametreleri eklenebilir.
         return `
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-2">Dönüştürme Modu</label>

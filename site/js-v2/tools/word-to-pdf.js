@@ -38,7 +38,7 @@ class WordToPdfTool {
             const sessionId = up.session_id;
 
             pdfLoader.updateProgress(50, 'PDF dönüştürme başlatılıyor...');
-            const result = await pdfApi.processWordToPdf(sessionId);
+            const result = await pdfApi.processWordToPdf(sessionId, this._readOptions());
 
             pdfLoader.updateProgress(100, 'Tamamlandı!');
             setTimeout(()=>{ pdfLoader.hide(); this.showResult(result); }, 150);
@@ -73,9 +73,15 @@ class WordToPdfTool {
         notifications.success(successMessage);
     }
 
+    _readOptions() {
+        return {
+            quality: document.querySelector('input[name="wordToPdfQuality"]:checked')?.value || 'ebook',
+            page_size: document.querySelector('select[name="wordToPdfPageSize"]')?.value || 'A4',
+            pdf_a: document.querySelector('input[name="wordToPdfPdfA"]')?.checked ?? false,
+        };
+    }
+
     getOptions(){
-        // TODO: Bu seçenekler şu an sadece UI'da görünür — backend'de kullanılmıyor.
-        // Gelecekte process endpoint'ine quality/page_size/pdf_a parametreleri eklenebilir.
         return `
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-2">PDF Kalitesi</label>

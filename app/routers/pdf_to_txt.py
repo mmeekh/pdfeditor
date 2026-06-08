@@ -4,7 +4,9 @@ from datetime import datetime, timedelta
 import logging
 import zipfile
 
-from fastapi import APIRouter, Depends, File, UploadFile, HTTPException
+from typing import Optional
+
+from fastapi import APIRouter, Body, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
@@ -17,8 +19,10 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/tools/pdf-to-txt", tags=["pdf-to-txt"])
 
 
-class PDFToTXTProcessParams(BaseModel):
-    session_id: str
+class PDFToTXTOptions(BaseModel):
+    encoding: str = "utf-8"
+    preserve_paragraphs: bool = True
+    use_ocr: bool = False
 
 
 @router.post("/upload")
@@ -88,9 +92,12 @@ async def upload_files_for_convert(files: list[UploadFile] = File(...)):
 
 
 @router.post("/process/{session_id}")
-async def process_pdf_to_txt(params: PDFToTXTProcessParams = Depends()):
+async def process_pdf_to_txt(
+    session_id: str,
+    options: Optional[PDFToTXTOptions] = Body(None),
+):
     """PDF ve Word dosyalarını TXT'ye dönüştür"""
-    session_id = params.session_id
+    opts = options or PDFToTXTOptions()
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
         raise HTTPException(
@@ -111,7 +118,12 @@ async def process_pdf_to_txt(params: PDFToTXTProcessParams = Depends()):
     try:
         # Her dosyayı TXT'ye dönüştür
         for file_path in all_files:
-            result = converter.convert(str(file_path))
+            result = converter.convert(
+                str(file_path),
+                encoding=opts.encoding,
+                preserve_paragraphs=opts.preserve_paragraphs,
+                use_ocr=opts.use_ocr,
+            )
             converted_files.append(
                 {
                     "original_file": file_path.name,

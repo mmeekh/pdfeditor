@@ -4,8 +4,11 @@ from datetime import datetime, timedelta
 import logging
 import zipfile
 
-from fastapi import APIRouter, File, UploadFile, HTTPException
+from typing import Optional
+
+from fastapi import APIRouter, Body, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
+from pydantic import BaseModel
 
 from core.config import settings
 from core.utils import validate_word_file, save_upload_file, ensure_safe_path
@@ -16,6 +19,12 @@ logger = logging.getLogger(__name__)
 
 
 router = APIRouter(prefix="/api/tools/word-to-pdf", tags=["word-to-pdf"])
+
+
+class WordToPDFOptions(BaseModel):
+    page_size: str = "A4"     # "A4" | "Letter" | "A5"
+    pdf_a: bool = False
+    quality: str = "ebook"   # "screen" | "ebook" | "print"
 
 
 @router.post("/upload")
@@ -64,7 +73,11 @@ async def upload_word_for_convert(files: list[UploadFile] = File(...)):
 
 
 @router.post("/process/{session_id}")
-async def process_word_to_pdf(session_id: str):
+async def process_word_to_pdf(
+    session_id: str,
+    options: Optional[WordToPDFOptions] = Body(None),
+):
+    opts = options or WordToPDFOptions()
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
@@ -79,7 +92,12 @@ async def process_word_to_pdf(session_id: str):
     try:
         # Her Word dosyasını PDF'e dönüştür
         for doc_file in docs:
-            result = converter.convert(doc_file)
+            result = converter.convert(
+                doc_file,
+                page_size=opts.page_size,
+                pdf_a=opts.pdf_a,
+                quality=opts.quality,
+            )
             converted_files.append({
                 "original_doc": os.path.basename(doc_file),
                 "pdf_file": os.path.basename(result.output_path),

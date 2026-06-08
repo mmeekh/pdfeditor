@@ -64,7 +64,7 @@ class PdfToTxtTool {
 
             // Step 2: Dönüştürme işlemini başlat
             pdfLoader.updateProgress(50, 'TXT dönüştürme başlatılıyor...');
-            const result = await pdfApi.processPdfToTxt(sessionId);
+            const result = await pdfApi.processPdfToTxt(sessionId, this._readOptions());
 
             // Step 3: Tamamlandı
             pdfLoader.updateProgress(100, 'Tamamlandı!');
@@ -128,12 +128,18 @@ class PdfToTxtTool {
         if (processButton) processButton.disabled = false;
     }
 
+    _readOptions() {
+        return {
+            encoding: document.querySelector('input[name="pdfToTxtEncoding"]:checked')?.value || 'utf-8',
+            preserve_paragraphs: document.querySelector('input[name="pdfToTxtPreserveParagraphs"]')?.checked ?? true,
+            use_ocr: document.querySelector('input[name="pdfToTxtOcr"]')?.checked ?? false,
+        };
+    }
+
     /**
      * Araç seçeneklerini al
      */
     getOptions() {
-        // TODO: Bu seçenekler şu an sadece UI'da görünür — backend'de kullanılmıyor.
-        // Gelecekte process endpoint'ine encoding/preserve_paragraphs/ocr parametreleri eklenebilir.
         return `
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-2">Karakter Kodlaması</label>

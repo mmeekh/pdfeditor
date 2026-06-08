@@ -5,7 +5,9 @@ import logging
 import zipfile
 import tempfile
 
-from fastapi import APIRouter, Depends, File, UploadFile, HTTPException
+from typing import Optional
+
+from fastapi import APIRouter, Body, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
@@ -20,13 +22,9 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/tools/pdf-to-word", tags=["pdf-to-word"])
 
 
-class PDFToWordProcessParams(BaseModel):
-    session_id: str
-
-
-class PDFToWordDownloadParams(BaseModel):
-    session_id: str
-    filename: str
+class PDFToWordOptions(BaseModel):
+    layout: str = "layout-preserve"   # "layout-preserve" | "text-only"
+    output_format: str = "docx"        # "docx" | "doc"
 
 
 @router.post("/upload")
@@ -85,8 +83,11 @@ async def upload_pdf_for_convert(files: list[UploadFile] = File(...)):
 
 
 @router.post("/process/{session_id}")
-async def process_pdf_to_word(params: PDFToWordProcessParams = Depends()):
-    session_id = params.session_id
+async def process_pdf_to_word(
+    session_id: str,
+    options: Optional[PDFToWordOptions] = Body(None),
+):
+    opts = options or PDFToWordOptions()
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     if not os.path.exists(session_dir):
         raise HTTPException(
@@ -103,7 +104,11 @@ async def process_pdf_to_word(params: PDFToWordProcessParams = Depends()):
     try:
         # Her PDF'i Word'e dönüştür
         for pdf_file in pdf_files:
-            result = converter.convert(str(pdf_file))
+            result = converter.convert(
+                str(pdf_file),
+                layout=opts.layout,
+                output_format=opts.output_format,
+            )
             converted_files.append(
                 {
                     "original_pdf": pdf_file.name,
@@ -184,9 +189,9 @@ async def download_converted(params: PDFToWordDownloadParams = Depends()):
 
     if filename.endswith(".zip"):
         media = "application/zip"
+    elif filename.endswith(".doc"):
+        media = "application/msword"
     else:
-        media = (
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        )
+        media = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 
     return FileResponse(path=file_path, media_type=media, filename=filename)

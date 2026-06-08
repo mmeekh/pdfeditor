@@ -263,8 +263,12 @@ class PDFApi {
         return response.json();
     }
 
-    async processPdfToWord(sessionId) {
-        const res = await fetch(`${this.baseUrl}/tools/pdf-to-word/process/${sessionId}`, { method: 'POST' });
+    async processPdfToWord(sessionId, options = {}) {
+        const res = await fetch(`${this.baseUrl}/tools/pdf-to-word/process/${sessionId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(options),
+        });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF→Word işlem hatası');
@@ -289,8 +293,12 @@ class PDFApi {
         return response.json();
     }
 
-    async processWordToPdf(sessionId) {
-        const res = await fetch(`${this.baseUrl}/tools/word-to-pdf/process/${sessionId}`, { method: 'POST' });
+    async processWordToPdf(sessionId, options = {}) {
+        const res = await fetch(`${this.baseUrl}/tools/word-to-pdf/process/${sessionId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(options),
+        });
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
             throw new Error(err.detail || 'Word→PDF işlem hatası');
@@ -639,8 +647,12 @@ class PDFApi {
         return response.json();
     }
 
-    async processPdfToTxt(sessionId) {
-        const response = await fetch(`${this.baseUrl}/tools/pdf-to-txt/process/${sessionId}`, { method: 'POST' });
+    async processPdfToTxt(sessionId, options = {}) {
+        const response = await fetch(`${this.baseUrl}/tools/pdf-to-txt/process/${sessionId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(options),
+        });
         if (!response.ok) {
             const err = await response.json().catch(() => ({}));
             throw new Error(err.detail || 'PDF/Word→TXT işlem hatası');
