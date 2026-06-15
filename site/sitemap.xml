@@ -758,4 +758,17 @@
   <url><loc>https://pdfislemleri.com/uyap-pdf-paketle</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pdfislemleri.com/pdf-a-donustur-rehberi</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
+  <url>
+    <loc>https://pdfislemleri.com/pdf-duzenle</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  
+    <image:image>
+      <image:loc>https://pdfislemleri.com/images/pdf-duzenle-hero.webp</image:loc>
+      <image:title>PDF Sıkıştır - Ücretsiz Online PDF Boyut Küçültme 2026</image:title>
+      <image:caption>PDF boyutunu ücretsiz küçültün, %70'e varan sıkıştırma. E-posta, WhatsApp ve web için ideal. Kalite kaybı yok, kayıtsız, KVKK uyumlu, 15 dk auto-delete.</image:caption>
+      <image:license>https://pdfislemleri.com/terms</image:license>
+    </image:image>
+  </url>
 </urlset>
