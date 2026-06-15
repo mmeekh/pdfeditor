@@ -144,6 +144,22 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "PDF nasıl belirli bir MB'ın altına küçültülür?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Önce hedef boyutu (örneğin 5 MB) belirleyin, ardından Dengeli profille sıkıştırın. Sonuç hâlâ büyükse Yüksek sıkıştırma profiline geçin; işlem sonrası dosya boyutu ekranda görünür. Çok sayfalı dosyalar için önce PDF Ayır ile bölüp her parçayı ayrı sıkıştırarak istediğiniz MB sınırının altına indirebilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PDF sıkıştırınca kalite bozulur mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dengeli profilde metin ve vektör öğeler bozulmadan korunur; yalnızca görseller fark edilmeyecek düzeyde optimize edilir. Yüksek sıkıştırmada görsellerde hafif yumuşama olabilir ama belge okunaklı kalır. Baskı kalitesi gerektiren işler için orijinal dosyanızı saklamanız önerilir."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "PDF sikistirinca kalite kaybi olur mu?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -755,11 +771,89 @@ height="0" width="0" class="gtm-noscript"></iframe></noscript>
 </div>
 </div>
 </section>
+<!-- Target size (MB) -->
+<section class="mb-12" id="belirli-boyuta-kucultme">
+<div class="bg-white rounded-2xl shadow p-6 md:p-8">
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">PDF'i Belirli Bir Boyuta (MB) Küçültme</h2>
+<p class="text-gray-700 mb-4">Çoğu portal ve e-posta servisi belirli bir boyut sınırı dayatır: KEP 5 MB, GİB 5 MB, banka portalları 2-5 MB. Dosyanızı "belirli bir MB'ın altına" indirmek için doğru sıkıştırma profilini seçmeniz yeterlidir. Aşağıdaki yaklaşım, hedef boyuta en hızlı şekilde ulaşmanızı sağlar.</p>
+<div class="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
+<ul class="space-y-3">
+<li class="flex items-start"><i class="fas fa-bullseye text-green-500 mr-2 mt-1"></i><span><strong>Hedefi belirleyin.</strong> Göndereceğiniz platformun MB limitini öğrenin (örn. 5 MB). Dosya mb azaltma işleminde önce bu sayıyı bilmek gerekir.</span></li>
+<li class="flex items-start"><i class="fas fa-sliders-h text-green-500 mr-2 mt-1"></i><span><strong>Profille başlayın.</strong> Dengeli profil çoğu belgeyi rahatça hedef boyutun altına indirir. Yetmezse <strong>Yüksek sıkıştırma</strong> profiline geçin.</span></li>
+</ul>
+<ul class="space-y-3">
+<li class="flex items-start"><i class="fas fa-eye text-green-500 mr-2 mt-1"></i><span><strong>Sonucu kontrol edin.</strong> İşlem sonrası dosya boyutu ekranda görünür; hedefin altındaysa indirin. Belge sıkıştırma tek seferde çoğu durumu çözer.</span></li>
+<li class="flex items-start"><i class="fas fa-cut text-green-500 mr-2 mt-1"></i><span><strong>Hâlâ büyükse bölün.</strong> Çok sayfalı dosyaları önce <a class="text-green-600 hover:underline" href="/pdf-ayir">PDF Ayır</a> ile bölüp ayrı ayrı sıkıştırarak her parçayı limitin altına getirebilirsiniz.</span></li>
+</ul>
+</div>
+<p class="text-gray-600 text-sm mt-4">Not: Manuel olarak tam bir hedef değer (örneğin "2,0 MB") girişi şu an desteklenmez; profiller pratikte 5 MB, 2 MB gibi yaygın limitlerin altına inmek için yeterli esnekliği sağlar. Görsel ağırlıklı dosyalarda dosya küçültme oranı daha yüksek, metin ağırlıklı belgelerde daha sınırlıdır.</p>
+</div>
+</section>
+<!-- Comparison table -->
+<section class="mb-12" id="karsilastirma">
+<div class="bg-white rounded-2xl shadow p-6 md:p-8">
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">PDFişlemleri.com, iLovePDF ve Smallpdf Karşılaştırması</h2>
+<p class="text-gray-600 mb-6">PDF sıkıştırma araçları arasında kayıt, dil, dosya limiti ve gizlilik açısından öne çıkan farklar:</p>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left border-collapse">
+<thead>
+<tr class="border-b-2 border-gray-200 text-gray-900">
+<th class="py-3 pr-4 font-semibold">Özellik</th>
+<th class="py-3 px-4 font-semibold text-green-700">PDFişlemleri.com</th>
+<th class="py-3 px-4 font-semibold">iLovePDF</th>
+<th class="py-3 px-4 font-semibold">Smallpdf</th>
+</tr>
+</thead>
+<tbody class="text-gray-700">
+<tr class="border-b border-gray-100">
+<td class="py-3 pr-4 font-medium text-gray-900">Kayıt gerekmez</td>
+<td class="py-3 px-4 text-green-700"><i class="fas fa-check mr-1"></i> Evet, hesap istenmez</td>
+<td class="py-3 px-4">Ücretsiz kullanım var, sık işlemde hesap/limit</td>
+<td class="py-3 px-4">Günlük ücretsiz işlem sınırlı, sonrası üyelik</td>
+</tr>
+<tr class="border-b border-gray-100 bg-gray-50/60">
+<td class="py-3 pr-4 font-medium text-gray-900">Türkçe arayüz</td>
+<td class="py-3 px-4 text-green-700"><i class="fas fa-check mr-1"></i> Tamamen Türkçe</td>
+<td class="py-3 px-4">Türkçe dil seçeneği mevcut</td>
+<td class="py-3 px-4">Türkçe dil seçeneği mevcut</td>
+</tr>
+<tr class="border-b border-gray-100">
+<td class="py-3 pr-4 font-medium text-gray-900">Dosya limiti (ücretsiz)</td>
+<td class="py-3 px-4 text-green-700">100 MB, tek seferde 20 dosya</td>
+<td class="py-3 px-4">Ücretsiz planda boyut/işlem sınırları</td>
+<td class="py-3 px-4">Ücretsiz planda günlük işlem sınırı</td>
+</tr>
+<tr class="border-b border-gray-100 bg-gray-50/60">
+<td class="py-3 pr-4 font-medium text-gray-900">Sunucu &amp; gizlilik</td>
+<td class="py-3 px-4 text-green-700">TR sunucu, 15 dk içinde otomatik silme, KVKK</td>
+<td class="py-3 px-4">Yurt dışı sunucu, belirli süre sonra silme</td>
+<td class="py-3 px-4">Yurt dışı sunucu, belirli süre sonra silme</td>
+</tr>
+<tr>
+<td class="py-3 pr-4 font-medium text-gray-900">Ücret</td>
+<td class="py-3 px-4 text-green-700">Tümüyle ücretsiz, reklam yok</td>
+<td class="py-3 px-4">Temel ücretsiz, gelişmiş özellikler ücretli</td>
+<td class="py-3 px-4">Temel ücretsiz, gelişmiş özellikler ücretli</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-xs text-gray-500 mt-4">Karşılaştırma genel kullanım koşullarına dayanır; rakip servislerin plan ve limitleri zaman içinde değişebilir. En güncel bilgi için ilgili servisin kendi sayfasını kontrol edin.</p>
+</div>
+</section>
 <!-- FAQ -->
 <section class="mb-12">
 <div class="bg-white rounded-2xl shadow p-6 md:p-8">
 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Sik sorulan sorular</h2>
 <div class="space-y-5 text-gray-700">
+<div>
+<h3 class="font-semibold text-gray-900 mb-1">PDF nasıl belirli bir MB'ın altına küçültülür?</h3>
+<p>Önce hedef boyutu (örneğin 5 MB) belirleyin, ardından Dengeli profille sıkıştırın. Sonuç hâlâ büyükse Yüksek sıkıştırma profiline geçin; işlem sonrası dosya boyutu ekranda görünür. Çok sayfalı dosyalar için önce <a class="text-green-600 hover:underline" href="/pdf-ayir">PDF Ayır</a> ile bölüp her parçayı ayrı sıkıştırarak istediğiniz MB sınırının altına indirebilirsiniz.</p>
+</div>
+<div>
+<h3 class="font-semibold text-gray-900 mb-1">PDF sıkıştırınca kalite bozulur mu?</h3>
+<p>Dengeli profilde metin ve vektör öğeler bozulmadan korunur; yalnızca görseller fark edilmeyecek düzeyde optimize edilir. Yüksek sıkıştırmada görsellerde hafif yumuşama olabilir ama belge okunaklı kalır. Baskı kalitesi gerektiren işler için orijinal dosyanızı saklamanız önerilir.</p>
+</div>
 <div>
 <h3 class="font-semibold text-gray-900 mb-1">PDF sıkıştırınca kalite kaybi olur mu?</h3>
 <p>Dengeli profilde metin ve vektor ogeler tamamen korunur, görüntüler akilli algoritmalarla optimize edilir. Yuksek sıkıştırma profilinde daha agresif görsel optimizasyonu uygulanir; baski kalitesi profilinde ise minimum dusus hedeflenir.</p>
