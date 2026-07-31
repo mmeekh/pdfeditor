@@ -10,7 +10,11 @@ html {
 }
 
 body {
-    background-color: #f9fafb;
+    /* 2026-07-31 renk revizyonu: illüstrasyon setiyle uyumlu lavanta-tonlu zemin,
+       üstte yumuşak degrade (düz gri "AI-default" görünümünün yerine) */
+    background-color: #f7f7fc;
+    background-image: linear-gradient(180deg, #eeedfa 0%, #f7f7fc 420px);
+    background-repeat: no-repeat;
     color: #333;
     display: flex;
     flex-direction: column;

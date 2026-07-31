@@ -2095,3 +2095,13 @@ body {
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     outline: 2px solid var(--brand-red); outline-offset: 2px; border-radius: 4px;
 }
+
+/* ── 2026-07-31 renk revizyonu: yapışkan blur header + şeffaf breadcrumb ── */
+header.bg-white.shadow-sm {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(255, 255, 255, .88);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ecebf5;
+    box-shadow: none;
+}
+.breadcrumb-nav { background: transparent; padding-left: 0; padding-right: 0; margin-bottom: 0; }
