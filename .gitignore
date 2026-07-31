@@ -17,3 +17,7 @@ test_pdfislemleri_complete.js
 !site/images/*.jpeg
 !site/icons/*
 !site/cardbgs/**
+reports/
+seo-crawls/
+storage/
+seo-drift-baselines/
