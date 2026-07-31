@@ -2070,3 +2070,28 @@ body {
     .tool-3d-icon, .hero-cta-main, .hero-cta-side { transition: none; }
     .tool-card:hover .tool-3d-icon, .hero-cta-main:hover, .hero-cta-side:hover { transform: none; }
 }
+
+/* ── Kedi görsellerinin yerini alan illüstrasyon panelleri (2026-07-31) ── */
+.tool-illus {
+    aspect-ratio: 16 / 10;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(ellipse at 50% 38%, #ffffff 0%, #f3f5f9 68%, #eceff5 100%);
+    border: 1px solid #e8ebf1; border-radius: 1rem;
+    max-width: 24rem; margin: 0 auto;
+}
+.tool-illus svg { width: 42%; height: auto; aspect-ratio: 1; filter: drop-shadow(0 10px 18px rgba(28,35,51,.14)); }
+
+/* ── Araç üstü güven şeridi (z.ai raporu FASE 1.1) ── */
+.tool-trust-strip {
+    display: flex; flex-wrap: wrap; gap: .35rem 1.1rem;
+    justify-content: center; align-items: center;
+    font-size: .84rem; color: #4b5563; margin: 0 0 1rem;
+}
+.tool-trust-strip i { color: #16a34a; }
+.tool-trust-strip strong { color: #166534; font-weight: 600; }
+
+/* ── Marka tonları (tema standardizasyonu): birincil aksiyon kırmızı, bilgi mavi ── */
+:root { --brand-red: #dc2626; --brand-red-dark: #b91c1c; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--brand-red); outline-offset: 2px; border-radius: 4px;
+}
