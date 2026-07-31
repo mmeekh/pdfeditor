@@ -2030,3 +2030,43 @@ body {
 #fileSelectionList label:hover {
     background: #eef2ff;
 }
+
+/* ══════════════════════════════════════════════════════════
+   2026-07-31 Tasarım Yenilemesi — 3D ikon seti + aksiyon-ilk hero
+   ══════════════════════════════════════════════════════════ */
+
+/* 3D SVG ikonlar */
+.tool-3d-holder { display: flex; align-items: center; justify-content: center; }
+.tool-3d-icon { width: 100%; height: 100%; display: block; transition: transform .18s ease; }
+.tool-card:hover .tool-3d-icon { transform: translateY(-2px) scale(1.05); }
+
+/* Kart arkaplan görselleri (cardbgs) kaldırıldı: 16 webp (~1.5MB) yükünü ve
+   görsel gürültüyü önler; yeni temiz kart görünümünün parçası. */
+.tool-card::before { content: none; }
+
+/* Aksiyon-ilk hero butonları */
+.hero-cta-main {
+    background: #dc2626;
+    box-shadow: 0 6px 16px -6px rgba(220, 38, 38, .45);
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.hero-cta-main:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -10px rgba(220, 38, 38, .5);
+}
+.hero-cta-side {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    color: #1f2937;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.hero-cta-side:hover {
+    border-color: #d1d5db;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px -12px rgba(31, 41, 55, .3);
+}
+@media (prefers-reduced-motion: reduce) {
+    .tool-3d-icon, .hero-cta-main, .hero-cta-side { transition: none; }
+    .tool-card:hover .tool-3d-icon, .hero-cta-main:hover, .hero-cta-side:hover { transform: none; }
+}

@@ -72,12 +72,13 @@
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/tw.css?v=3153838b">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/theme.css?v=3a79e0bc">
     <link rel="stylesheet" href="css/base.css?v=82fbe4e0">
-    <link rel="stylesheet" href="css/components.css?v=1ec8530f">
+    <link rel="stylesheet" href="css/components.css?v=a55191ba">
     <link rel="stylesheet" href="css/gradients.css?v=3ce0f6e9">
 <!-- Inline Structured Data (WebApp, FAQ, Organization, Services) -->
     <script type="application/ld+json">
@@ -441,9 +442,7 @@
                         <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sıkıştır</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress" data-url="/pdf-sikistir">
-                                <div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-compress-arrows-alt text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-compress"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF Sıkıştır</span>
                             </button>
                         </div>
@@ -454,39 +453,27 @@
                         <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Dönüştür</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-word" data-url="/pdf-to-word">
-                                <div class="pdf-to-word-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-file-word text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-word"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF'den Word'e</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="word-to-pdf" data-url="/word-to-pdf">
-                                <div class="word-to-pdf-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-file-alt text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-word-to-pdf"></use></svg></div>
                                 <span class="text-gray-800 font-medium">Word'den PDF'e</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-ppt" data-url="/pdf-to-ppt">
-                                <div class="pdf-to-ppt-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-file-powerpoint text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-ppt"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF'den PPT'ye</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-jpg" data-url="/pdf-to-jpg">
-                                <div class="pdf-to-jpg-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-file-image text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-jpg"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF'den JPG'ye</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-excel" data-url="/pdf-to-excel">
-                                <div class="pdf-to-excel-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-file-excel text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-excel"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF'den Excel'e</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-txt" data-url="/pdf-to-txt">
-                                <div class="pdf-to-txt-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-file-alt text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-txt"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF/Word'den TXT'ye</span>
                             </button>
                         </div>
@@ -497,27 +484,19 @@
                         <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sırala</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge" data-url="/pdf-birlestir">
-                                <div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-object-group text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-merge"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF Birleştir</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="split" data-url="/pdf-ayir">
-                                <div class="split-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-cut text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-split"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF Ayır</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="organize" data-url="/pdf-sirala">
-                                <div class="organize-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-sort text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-organize"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF Sırala</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="rotate" data-url="/pdf-dondur">
-                                <div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-sync-alt text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-rotate"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF Döndür</span>
                             </button>
                         </div>
@@ -528,27 +507,19 @@
                         <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Güvenlik</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="protect" data-url="/pdf-sifrele">
-                                <div class="protect-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-lock text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-protect"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF Şifrele</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="unlock" data-url="/pdf-sifre-kaldir">
-                                <div class="unlock-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-unlock text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-unlock"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF Şifre Kaldır</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="watermark" data-url="/pdf-filigran">
-                                <div class="watermark-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-stamp text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-watermark"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF Filigranla</span>
                             </button>
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="sign" data-url="/pdf-imzala">
-                                <div class="sign-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-signature text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-sign"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF İmzala</span>
                             </button>
                         </div>
@@ -559,9 +530,7 @@
                         <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Gelişmiş</p>
                         <div class="space-y-2">
                             <button class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-ocr" data-url="/pdf-ocr">
-                                <div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-eye text-white text-sm"></i>
-                                </div>
+                                <div class="tool-3d-holder w-8 h-8 rounded-lg flex items-center justify-center"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-ocr"></use></svg></div>
                                 <span class="text-gray-800 font-medium">PDF OCR</span>
                             </button>
                         </div>
@@ -593,8 +562,25 @@
         <main class="site-content container mx-auto px-4 py-8">
 
         <!-- Hero Section -->
-        <section class="text-center mb-12 fade-in">
+        <section class="text-center mb-12"><!-- fade-in kaldırıldı: LCP elemanı (answer-block) animasyon bitene dek boyanmıyordu -->
             <h1 class="text-4xl font-bold text-gray-800 mb-4">PDF Birleştir, Ayır, Sıkıştır - Ücretsiz Online PDF Araçları</h1>
+            <!-- Aksiyon-ilk hızlı erişim (2026-07-31 yenileme): en çok kullanılan 3 araç -->
+            <div class="flex flex-wrap justify-center items-center gap-3 mb-5 mt-6" id="hero-quick-actions">
+                <a href="/pdf-birlestir" class="hero-cta-main inline-flex items-center gap-2.5 text-white text-lg font-semibold px-8 py-4 rounded-2xl">
+                    <svg class="w-8 h-8" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-merge"></use></svg>
+                    PDF Birleştir
+                </a>
+                <a href="/pdf-sikistir" class="hero-cta-side inline-flex items-center gap-2.5 text-lg font-semibold px-6 py-4 rounded-2xl">
+                    <svg class="w-8 h-8" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-compress"></use></svg>
+                    PDF Sıkıştır
+                </a>
+                <a href="/pdf-to-word" class="hero-cta-side inline-flex items-center gap-2.5 text-lg font-semibold px-6 py-4 rounded-2xl">
+                    <svg class="w-8 h-8" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-word"></use></svg>
+                    PDF → Word
+                </a>
+            </div>
+            <p class="text-sm text-gray-500 mb-6">KVKK uyumlu · Dosyalar 15 dakikada otomatik silinir · Kayıt gerekmez</p>
+
             <div class="answer-block">
               <strong>PDFişlemleri.com nedir?</strong> PDFişlemleri.com, 16 ücretsiz online PDF aracı sunan Türkçe odaklı bir araç sitesidir. Birleştirme, sıkıştırma, dönüştürme, imzalama, şifreleme ve OCR işlemlerini tarayıcınızda gerçekleştirir. Kayıt gerekmez, e-posta istemez; dosyalar 15 dakika içinde otomatik silinir.
             </div>
@@ -622,9 +608,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                 <!-- Merge PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="merge" data-url="/pdf-birlestir">
-                    <div class="merge-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-object-group text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-merge"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Birleştir</h3>
                     <p class="text-gray-600 text-sm">Birden fazla PDF dosyasını tek belgede birleştirin. Hızlı, güvenli ve ücretsiz PDF birleştirme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -638,9 +622,7 @@
 
                 <!-- Split PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="split" data-url="/pdf-ayir">
-                    <div class="split-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-cut text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-split"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Ayır</h3>
                     <p class="text-gray-600 text-sm">PDF sayfalarını ayırın veya belirli sayfaları çıkarın. Ücretsiz PDF ayırma ve bölme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -654,9 +636,7 @@
 
                 <!-- Compress PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="compress" data-url="/pdf-sikistir">
-                    <div class="compress-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-compress-arrows-alt text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-compress"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Sıkıştır</h3>
                     <p class="text-gray-600 text-sm">PDF boyutunu <strong>%70'e kadar küçültün</strong>. Kaliteden ödün vermeyen ücretsiz PDF sıkıştırma aracı — e-posta ve cloud için ideal.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -671,9 +651,7 @@
 
                 <!-- PDF to Word Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-to-word" data-url="/pdf-to-word">
-                    <div class="pdf-to-word-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-file-word text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-word"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den Word'e</h3>
                     <p class="text-gray-600 text-sm">PDF'leri düzenlenebilir Word belgelerine dönüştürün. Ücretsiz PDF Word dönüştürme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -686,9 +664,7 @@
 
                 <!-- Word to PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="word-to-pdf" data-url="/word-to-pdf">
-                    <div class="word-to-pdf-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-file-alt text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-word-to-pdf"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">Word'den PDF'e</h3>
                     <p class="text-gray-600 text-sm">Word belgelerini PDF'e dönüştürün. Ücretsiz Word PDF dönüştürme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -701,9 +677,7 @@
 
                 <!-- PDF to PowerPoint Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-to-ppt" data-url="/pdf-to-ppt">
-                    <div class="pdf-to-ppt-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-file-powerpoint text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-ppt"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den PPT'ye</h3>
                     <p class="text-gray-600 text-sm">PDF'leri PowerPoint sunumlarına dönüştürün. Ücretsiz PDF PPT dönüştürme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -716,9 +690,7 @@
 
                 <!-- Unlock PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="unlock" data-url="/pdf-sifre-kaldir">
-                    <div class="unlock-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-unlock text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-unlock"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Şifre Kaldır</h3>
                     <p class="text-gray-600 text-sm">PDF'lerden şifre korumasını kaldırın. Ücretsiz PDF şifre kaldırma aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -731,9 +703,7 @@
 
                 <!-- Protect PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="protect" data-url="/pdf-sifrele">
-                    <div class="protect-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-lock text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-protect"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Şifrele</h3>
                     <p class="text-gray-600 text-sm">PDF'lerinize şifre koruması ekleyin. Ücretsiz PDF şifreleme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -746,9 +716,7 @@
 
                 <!-- Rotate PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="rotate" data-url="/pdf-dondur">
-                    <div class="rotate-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-sync-alt text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-rotate"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Döndür</h3>
                     <p class="text-gray-600 text-sm">PDF sayfalarını kalıcı olarak döndürün. Ücretsiz PDF döndürme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -761,9 +729,7 @@
 
                 <!-- Watermark PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="watermark" data-url="/pdf-filigran">
-                    <div class="watermark-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-stamp text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-watermark"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Filigranla</h3>
                     <p class="text-gray-600 text-sm">PDF'lere metin veya resim filigranı ekleyin. Ücretsiz PDF filigran aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -776,9 +742,7 @@
 
                 <!-- PDF to JPG Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-to-jpg" data-url="/pdf-to-jpg">
-                    <div class="pdf-to-jpg-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-file-image text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-jpg"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den JPG'ye</h3>
                     <p class="text-gray-600 text-sm">PDF sayfalarını JPG resimlerine dönüştürün. Ücretsiz PDF JPG dönüştürme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -791,9 +755,7 @@
 
                 <!-- Organize PDF Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="organize" data-url="/pdf-sirala">
-                    <div class="organize-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-sort text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-organize"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF Sırala</h3>
                     <p class="text-gray-600 text-sm">PDF sayfalarını yeniden sıralayın, ekleyin veya silin. Ücretsiz PDF düzenleme aracı.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -806,9 +768,7 @@
 
                 <!-- PDF Sign Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="sign" data-url="/pdf-imzala">
-                    <div class="sign-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-signature text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-sign"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF İmzala</h3>
                     <p class="text-gray-600 text-sm">PDF dosyalarınızı dijital olarak imzalayın. Elle çizim veya yüklenen imza ile profesyonel sonuçlar.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -821,9 +781,7 @@
 
                 <!-- PDF OCR Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-ocr" data-url="/pdf-ocr">
-                    <div class="pdf-ocr-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-eye text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-ocr"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF OCR</h3>
                     <p class="text-gray-600 text-sm">PDF'den metin çıkarın ve düzenlenebilir hale getirin. OCR teknolojisi ile taranmış belgelerinizi arama yapılabilir hale getirin.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -836,9 +794,7 @@
 
                 <!-- PDF to Excel Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-to-excel" data-url="/pdf-to-excel">
-                    <div class="pdf-to-excel-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-file-excel text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-excel"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF'den Excel'e</h3>
                     <p class="text-gray-600 text-sm">PDF'deki tabloları Excel formatına dönüştürün. Verilerinizi düzenlenebilir hale getirin ve analiz yapın.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -852,9 +808,7 @@
 
                 <!-- PDF/Word to TXT Tool -->
                 <div class="tool-card bg-white rounded-xl shadow-md p-6 cursor-pointer relative" data-tool="pdf-to-txt" data-url="/pdf-to-txt">
-                    <div class="pdf-to-txt-icon-container w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-file-alt text-white text-2xl"></i>
-                    </div>
+                    <div class="tool-3d-holder w-12 h-12 rounded-lg flex items-center justify-center mb-4"><svg class="tool-3d-icon" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-pdf-to-txt"></use></svg></div>
                     <h3 class="font-semibold text-lg text-gray-800 mb-2">PDF/Word'den TXT'ye</h3>
                     <p class="text-gray-600 text-sm">PDF ve Word dosyalarınızı TXT formatına dönüştürün. Metin içeriğini kolayca kopyalayın ve düzenleyin.</p>
                     <div class="mt-3 text-xs text-blue-600 flex flex-wrap gap-1">
@@ -876,7 +830,7 @@
             <div class="text-center">
                 <!-- Fotoğraf üstte -->
                 <div class="mb-8">
-                    <img src="images/nedensevmelisiniz.webp" alt="PDF İşlemleri - Kolay, Hızlı ve Herkes İçin" class="w-72 h-72 mx-auto object-cover rounded-xl shadow-lg" loading="lazy" width="600" height="600" decoding="async">
+                    <img src="/images/nedensevmelisiniz.webp" alt="PDF İşlemleri - Kolay, Hızlı ve Herkes İçin" class="w-72 h-72 mx-auto object-cover rounded-xl shadow-lg" loading="eager" fetchpriority="high" width="600" height="600" decoding="async">
                 </div>
                 
                 <!-- Başlık ve açıklama -->
@@ -1103,30 +1057,14 @@
       </div>
     </div>
 
-    <!-- Cookie Notification -->
-    <div id="cookie-notification" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg transform translate-y-full transition-transform duration-500 ease-in-out z-50">
-        <div class="container mx-auto px-4 py-6">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0">
-                        <img src="/icons/logo.webp" alt="PDFişlemleri.com logosu" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 rounded-full object-contain bg-white border border-gray-200 p-1">
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">🍪 Çerezler Hakkında</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed max-w-2xl">
-                            Bu web sitesi deneyiminizi geliştirmek için çerezler kullanır. Sitemizi kullanmaya devam ederek, 
-                            <a href="/cookies" class="text-blue-600 hover:text-blue-800 underline">çerez politikamızı</a> kabul etmiş olursunuz. 
-                            Çerezler, size kişiselleştirilmiş içerik sunmamıza ve site performansını analiz etmemize yardımcı olur.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-                    <button id="acceptCookiesButton" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-md">
-                        <i class="fas fa-check mr-2"></i>Tümünü Kabul Et
-                    </button>
-                    <button id="rejectCookiesButton" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-medium transition-all duration-200 border border-gray-300">
-                        <i class="fas fa-times mr-2"></i>Reddet
-                    </button>
+    <!-- Cookie Notification — kompakt: LCP elemanı olmayacak kadar küçük tutulmalı (11.4s LCP'nin kökü eski dev banner'dı) -->
+    <div id="cookie-notification" class="fixed bottom-0 left-0 right-0 bg-white/95 border-t border-gray-200 shadow-lg transform translate-y-full transition-transform duration-500 ease-in-out z-50" style="backdrop-filter:blur(6px)">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <p class="text-gray-700 text-sm m-0">🍪 Deneyiminizi iyileştirmek için çerez kullanıyoruz — <a href="/cookies" class="text-blue-600 hover:text-blue-800 underline">çerez politikası</a></p>
+                <div class="flex gap-2 flex-shrink-0">
+                    <button id="acceptCookiesButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">Kabul Et</button>
+                    <button id="rejectCookiesButton" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 transition">Reddet</button>
                 </div>
             </div>
         </div>
