@@ -238,7 +238,7 @@
   </url>
   <url>
     <loc>https://pdfislemleri.com/blog</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   
@@ -753,6 +753,18 @@
       <image:license>https://pdfislemleri.com/terms</image:license>
     </image:image>
   </url>
+
+  <!-- Yeni blog yazıları - Temmuz 2026 -->
+  <url><loc>https://pdfislemleri.com/blog/pdf-sayfa-silme</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/whatsapp-pdf-gonderme</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/dilekce-pdf-hazirlama</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/taranmis-pdf-word-cevirme</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/pdf-metadata-temizleme</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/pdf-sayfa-numarasi-ekleme</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/kep-pdf-gonderme</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/ogrenci-ders-notlari-pdf</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pdfislemleri.com/blog/e-imzali-pdf-dogrulama</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Yeni informational sayfalar -->
   <url><loc>https://pdfislemleri.com/uyap-pdf-paketle</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>

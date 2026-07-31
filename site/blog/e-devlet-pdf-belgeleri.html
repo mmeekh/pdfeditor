@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+    <script src="../js-v2/gtag-config.js?v=3f1a2026"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>e-Devlet PDF Belgeleri: İndirme, Doğrulama, Birleştirme</title>
+<meta name="description" content="e-Devlet PDF indirme adımları, barkodlu belge doğrulama mantığı ve başvurular için e-Devlet belge birleştirme ipuçları: dürüst ve pratik rehber."/>
+<meta content="PDFişlemleri.com" name="author"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri" rel="canonical"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
+<!-- End Google Tag Manager -->
+<script src="../js-v2/gtag-config.js?v=3f1a2026"></script> <!-- GA4 config GTM'de; çift sayım düzeltmesi 2026-07-31 -->
+<!-- Open Graph / Facebook -->
+<meta content="article" property="og:type"/>
+<meta content="https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri" property="og:url"/>
+<meta property="og:title" content="e-Devlet PDF Belgeleri: İndirme, Doğrulama, Birleştirme"/>
+<meta property="og:description" content="e-Devlet PDF indirme adımları, barkodlu belge doğrulama mantığı ve başvurular için e-Devlet belge birleştirme ipuçları: dürüst ve pratik rehber."/>
+<meta content="https://pdfislemleri.com/images/home-og.jpeg" property="og:image"/>
+<meta content="PDFişlemleri.com" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri" property="twitter:url"/>
+<meta property="twitter:title" content="e-Devlet PDF Belgeleri: İndirme, Doğrulama, Birleştirme"/>
+<meta property="twitter:description" content="e-Devlet PDF indirme adımları, barkodlu belge doğrulama mantığı ve başvurular için e-Devlet belge birleştirme ipuçları: dürüst ve pratik rehber."/>
+<meta content="https://pdfislemleri.com/images/home-og.jpeg" property="twitter:image"/>
+<!-- PWA Manifest -->
+<link href="/icons/site.webmanifest" rel="manifest"/>
+<!-- Favicon -->
+<link href="/icons/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/icons/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180"/>
+<link color="#0ea5e9" href="/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#0ea5e9" name="theme-color"/>
+<!-- Article Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "e-Devlet PDF Belgeleri: İndirme, Doğrulama, Birleştirme",
+  "description": "e-Devlet PDF indirme adımları, barkodlu belge doğrulama mantığı ve başvurular için e-Devlet belge birleştirme ipuçları: dürüst ve pratik rehber.",
+  "image": "https://pdfislemleri.com/images/home-og.jpeg",
+  "url": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+  "datePublished": "2026-07-31T00:00:00+03:00",
+  "dateModified": "2026-07-31T00:00:00+03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Emin Kılıç",
+    "url": "https://pdfislemleri.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/eminnkilic/",
+      "https://instagram.com/heremmkh"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PDFişlemleri.com",
+    "url": "https://pdfislemleri.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pdfislemleri.com/icons/logo.webp",
+      "width": 512,
+      "height": 512,
+      "creditText": "PDFişlemleri.com",
+      "copyrightNotice": "© 2026 PDFişlemleri.com",
+      "license": "https://pdfislemleri.com/terms",
+      "acquireLicensePage": "https://pdfislemleri.com/contact"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri"
+  },
+  "articleSection": "PDF İşlemleri",
+  "keywords": [
+    "e-devlet pdf indirme",
+    "barkodlu belge doğrulama",
+    "e-devlet belge birleştirme",
+    "karekodlu belge"
+  ],
+  "wordCount": 980,
+  "inLanguage": "tr-TR",
+  "timeRequired": "PT7M",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "PDFişlemleri.com Blog",
+    "url": "https://pdfislemleri.com/blog"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "e-Devlet Belgeleri",
+      "description": "e-Devlet Kapısı üzerinden alınan barkodlu ve karekodlu PDF belgeler"
+    },
+    {
+      "@type": "Thing",
+      "name": "Belge Doğrulama",
+      "description": "Barkod veya karekod numarası ile resmi belgelerin kaynağından doğrulanması"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "WebApplication",
+      "name": "PDF Birleştirme Aracı",
+      "url": "https://pdfislemleri.com/pdf-birlestir",
+      "applicationCategory": "BusinessApplication"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "PDF Sıkıştırma Aracı",
+      "url": "https://pdfislemleri.com/pdf-sikistir",
+      "applicationCategory": "BusinessApplication"
+    }
+  ]
+}
+</script>
+<!-- Preconnect for performance -->
+<!-- Tailwind (local build) + Font Awesome -->
+<link href="../css/tw.css?v=3153838b" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/components.css?v=70021153" rel="stylesheet"/>
+<link href="../css/gradients.css" rel="stylesheet"/>
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "e-Devlet PDF Belgeleri", "item": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri" }
+      ]
+    }
+    </script>
+<!-- FAQPage Schema (auto-extracted from visible FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "e-Devlet belgelerini birleştirince barkod geçerliliğini kaybeder mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Barkod numarası birleşik dosyada okunabilir kaldığında kaynak kayıt resmî sorgu hizmetinden görüntülenebilir. Ancak birleşik PDF yeni bir türev dosyadır; özgün belgenin yerini almaz ve elektronik imza veya mühür doğrulamasını geçersiz kılabilir. Kurum özgün belge istiyorsa e-Devlet'ten indirilen tekil PDF'yi gönderin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Barkodlu bir belgenin gerçek olup olmadığını nasıl kontrol ederim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "e-Devlet Kapısı'ndaki belge doğrulama hizmetine belgenin üzerindeki barkod numarasını girerek belgeyi kaynağından görüntüleyebilirsiniz. Karekodlu belgelerde karekodu telefon kamerasıyla okutmak da aynı doğrulama sayfasına yönlendirir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "e-Devlet'ten indirdiğim PDF'in geçerlilik süresi var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Belge türüne göre değişir. Çoğu barkodlu belgenin üzerinde sorgulanabilirlik veya geçerlilik bilgisi yazar. Kesin süre için belgenin üzerindeki açıklamayı ve belgeyi isteyen kurumun güncel şartlarını kontrol edin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Birleştirdiğim başvuru dosyası çok büyük oldu, ne yapmalıyım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İmzasız bir sunum kopyasını sıkıştırabilir, ardından barkodun ve metnin okunabildiğini kontrol edebilirsiniz. Elektronik imza veya mühür içeren PDF'yi sıkıştırmayın; özgün dosyayı kullanın. Ayrıca yükleme sisteminin güncel boyut ve belge biçimi şartlarını kendi sayfasından doğrulayın."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="site-wrapper">
+<!-- Header -->
+<header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<!-- Logo ve Araçlar Butonu -->
+<div class="flex items-center space-x-3">
+<!-- Logo -->
+<a class="flex items-center space-x-2 hover:opacity-80 transition-opacity" href="/">
+<i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+<h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+</a>
+<!-- Araçlar Butonu (Mobil) -->
+<button class="md:hidden flex items-center space-x-1 px-2 py-1 text-gray-600 hover:text-blue-600 transition-colors" id="mobile-tools-btn">
+<span class="font-medium text-sm">Araçlar</span>
+<i class="fas fa-chevron-up text-xs transition-transform" id="tools-arrow"></i>
+</button>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex space-x-6">
+<a class="text-gray-600 hover:text-blue-600 transition" href="/">Ana Sayfa</a>
+<a class="text-white font-medium" href="/blog">Blog</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/about">Hakkımızda</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/contact">İletişim</a>
+</nav>
+</div>
+<!-- Mobil Araçlar Menüsü -->
+<div class="md:hidden bg-white border-t border-gray-200 shadow-lg transform -translate-y-full transition-transform duration-300 ease-in-out" id="mobile-tools-menu">
+<div class="px-4 py-4 max-h-[32rem] overflow-y-auto">
+<!-- Sayfalar Kategorisi -->
+<div class="mb-5">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sayfalar</p>
+<div class="flex space-x-1 justify-start">
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-home text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Ana Sayfa</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/blog">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-newspaper text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Blog</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/about">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-users text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Hakkımızda</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/contact">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-phone-alt text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">İletişim</span>
+</a>
+</div>
+</div>
+<!-- Sıkıştır Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sıkıştır</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress" href="javascript:void(0)">
+<div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-compress-arrows-alt text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF Sıkıştır</span>
+</a>
+</div>
+</div>
+<!-- Birleştir Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Birleştir</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-layer-group text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF Birleştir</span>
+</a>
+</div>
+</div>
+<!-- Dönüştür Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Dönüştür</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-word" href="javascript:void(0)">
+<div class="organize-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-word text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF'den Word'e</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-jpg" href="javascript:void(0)">
+<div class="pdf-to-jpg-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-image text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">JPG'ye</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-ppt" href="javascript:void(0)">
+<div class="pdf-to-ppt-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-powerpoint text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">PPT'ye</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-excel" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-excel text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Excel'e</span>
+</a>
+</div>
+</div>
+<!-- Güvenlik Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Güvenlik</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="protect" href="javascript:void(0)">
+<div class="protect-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-lock text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Koruma</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="unlock" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-unlock text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Kilidi Aç</span>
+</a>
+</div>
+</div>
+<!-- Düzenle Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Düzenle</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="split" href="javascript:void(0)">
+<div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-cut text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Böl</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="rotate" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-redo text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Döndür</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="watermark" href="javascript:void(0)">
+<div class="watermark-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-stamp text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Filigran</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="organize" href="javascript:void(0)">
+<div class="organize-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-sort text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Düzenle</span>
+</a>
+</div>
+</div>
+<!-- İmza Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">İmza</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="sign" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-signature text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">İmzala</span>
+</a>
+</div>
+</div>
+<!-- OCR Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">OCR</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-ocr" href="javascript:void(0)">
+<div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-eye text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">OCR</span>
+</a>
+</div>
+</div>
+<!-- Word'den PDF Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Word'den PDF</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="word-to-pdf" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-pdf text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Word'den PDF</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4">
+<div class="container mx-auto px-4">
+<ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
+<li><a class="hover:text-blue-600" href="/">Ana Sayfa</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li><a class="hover:text-blue-600" href="/blog">Blog</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li aria-current="page" class="text-gray-800 font-medium">e-Devlet PDF Belgeleri</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8">
+<!-- Article Content -->
+<article class="prose prose-lg max-w-4xl mx-auto">
+<!-- Blog Header Content -->
+<div class="mb-6 sm:mb-8">
+<div class="text-center mb-6">
+<div class="mb-4">
+<a class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline" href="/blog">e-Devlet Belgeleri</a>
+<a class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2" href="/">Ücretsiz Araç</a>
+</div>
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-800">e-Devlet PDF Belgeleri: İndirme, Doğrulama ve Tek Dosyada Sunma</h1>
+<!-- Araç köprüsü (FAZ C 2026-07-31): blog trafiğini araca akıt -->
+<div class="not-prose my-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-gray-50 to-white p-5 flex flex-wrap items-center gap-4 shadow-sm">
+  <svg style="width:52px;height:52px;flex-shrink:0" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-merge"></use></svg>
+  <svg style="width:52px;height:52px;flex-shrink:0" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-compress"></use></svg>
+  <div class="flex-1 min-w-[200px]">
+    <p class="m-0 font-semibold text-gray-800">Okumaya gerek kalmadan hallet:</p>
+    <p class="m-0 text-sm text-gray-600">Ücretsiz, kayıtsız; işlem için hesap gerekmez.</p>
+  </div>
+  <a href="/pdf-birlestir" class="inline-flex items-center text-white font-semibold px-6 py-3 rounded-xl transition hover:opacity-90" style="background:#7c3aed">PDF Birleştir →</a>
+  <a href="/pdf-sikistir" class="inline-flex items-center text-white font-semibold px-6 py-3 rounded-xl transition hover:opacity-90" style="background:#059669">PDF Sıkıştır →</a>
+</div>
+
+<div class="flex items-center justify-center text-gray-500 text-sm">
+<i class="fas fa-calendar mr-1 sm:mr-2"></i>
+<span>31 Temmuz 2026</span>
+<span class="mx-4">•</span>
+<i class="fas fa-user mr-1 sm:mr-2"></i>
+<span>Emin Kılıç</span>
+<span class="mx-4">•</span>
+<i class="fas fa-clock mr-1 sm:mr-2"></i>
+<span>7 dk okuma</span>
+</div>
+</div>
+</div>
+<p class="text-lg text-gray-800 leading-relaxed mb-6">
+Öğrenci belgesi, adli sicil kaydı, yerleşim yeri belgesi, SGK hizmet dökümü... Pek çok resmî belge <strong>e-Devlet PDF indirme</strong> yoluyla alınabiliyor. Bu rehberin odağındaki barkodlu belgelerde, kaynak kayda ulaşmak için kullanılan bir barkod numarası ve bazı belge türlerinde karekod bulunur.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Bu rehberde üç pratik soruyu yanıtlıyoruz: Belgeler nereden ve nasıl indirilir? <strong>Barkodlu belge doğrulama</strong> aslında nasıl çalışır? Birden çok belgeyi tek başvuru dosyasında toplarken nelere dikkat edilmelidir? Sonda da sık sorulan soruları dürüstçe cevaplıyoruz — pazarlama cilası olmadan.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">e-Devlet'ten PDF Belge Nasıl İndirilir?</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+İşlem, turkiye.gov.tr adresine ya da e-Devlet mobil uygulamasına giriş yapmakla başlar. Arama kutusuna almak istediğiniz belgenin adını yazın (örneğin "adli sicil kaydı" veya "öğrenci belgesi"), ilgili hizmeti açın ve belge oluşturma adımlarını izleyin. Belge hazırlandığında "Dosyayı İndir" benzeri bir bağlantıyla PDF olarak cihazınıza kaydedilir.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Küçük ama hayat kurtaran bir alışkanlık: dosyayı indirir indirmez anlamlı bir adla kaydedin. "belge(3).pdf" yerine "adli-sicil-2026-07.pdf" gibi bir isim, birkaç belge biriktiğinde hangisinin hangisi olduğunu aramanızı engeller. Telefondan indirdiyseniz dosya genellikle "İndirilenler" klasöründedir.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Hangi belgelerin bu şekilde alınabildiğini merak ediyorsanız liste hayli geniştir: öğrenci ve mezuniyet belgeleri, adli sicil kaydı, yerleşim yeri (ikametgâh) belgesi, SGK hizmet dökümü ve işe giriş bildirgeleri, askerlik durum belgesi, nüfus kayıt örneği ve daha pek çoğu. Hizmetlerin kapsamı zaman içinde genişlediği için aradığınız belgeyi önce e-Devlet arama kutusunda denemenizi öneririz.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Barkodlu Belge Doğrulama Nasıl Çalışır?</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+Barkodlu bir belgenin kaynak kaydı, üzerindeki barkod numarasıyla <a class="text-blue-700 hover:text-blue-900 underline" href="https://www.turkiye.gov.tr/belge-dogrulama" rel="noopener" target="_blank">e-Devlet Kapısı Belge Doğrulama</a> hizmetinden sorgulanabilir. Karekodlu belgelerde e-Devlet mobil uygulaması karekodu okutarak aynı doğrulama akışına erişmeyi kolaylaştırır. Bu sorgu, sistemdeki kaynak kaydı görüntüler; elinizdeki PDF'nin değiştirilmediğini veya elektronik imzasının geçerli olduğunu tek başına kanıtlamaz.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Bir çıktı, tarama ya da yeniden kaydedilmiş kopyada barkod numarası ve hizmetin istediği ek bilgiler okunabiliyorsa kaynak kayda ulaşmak mümkün olabilir. Ancak bu yalnızca sorgunun yapılabildiğini gösterir; türev dosyanın özgün PDF olduğu, içeriğinin değişmediği veya imza/mühür katmanının korunduğu anlamına gelmez. Belgeyi değerlendirirken hem resmî sorgu sonucunu hem de kurumun özgün dosya şartını dikkate alın.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Barkod numarası webdeki sorgu alanına yazılır; karekod ise desteklenen belgelerde mobil uygulamayla hızlı erişim sağlar. Taşınan bilgi ve istenen ek doğrulama alanları belge türüne göre değişebileceği için ikisini tamamen aynı kabul etmeyin. Doğrulama sayfası barkod numarasının yanında kimlik veya belgeye özgü ek bir bilgi de isteyebilir.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Birden Çok Belgeyi Başvuru İçin Tek PDF'te Toplama</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+Burs, iş, yüksek lisans veya kiralama başvurularında karşı taraf çoğu zaman "belgelerinizi tek PDF olarak yükleyin" der. e-Devlet her belgeyi ayrı dosya olarak verdiği için <strong>e-Devlet belge birleştirme</strong> ihtiyacı tam bu noktada doğar. İzleyebileceğiniz yol şu:
+            </p>
+<ol class="list-decimal pl-6 mb-6 text-gray-700">
+<li><strong>Belgeleri tek tek indirin:</strong> Her belgeyi e-Devlet'ten ayrı ayrı alın ve anlamlı adlarla kaydedin.</li>
+<li><strong>Sırayı belirleyin:</strong> Başvuru ilanında bir belge sırası verildiyse aynen ona uyun; verilmediyse en önemli belgeyi başa koyun.</li>
+<li><strong>Birleştirin:</strong> Dosyaları <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-birlestir">PDF birleştirme aracımıza</a> yükleyin, sürükleyerek sıralayın ve tek dosya olarak indirin.</li>
+<li><strong>Kontrol edin:</strong> Birleşik dosyada tüm sayfaların yerinde olduğunu ve her belgenin barkod numarasının net okunduğunu gözden geçirin.</li>
+</ol>
+<p class="text-gray-700 leading-relaxed mb-6">
+PDF birleştirme aracını kullanmak için hesap açmanız veya e-posta vermeniz gerekmez. Kimlik numarası içeren belgelerle çalışırken indirdiğiniz özgün dosyaları kendi cihazınızda güvenli ve düzenli biçimde saklamanızı öneririz.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Sık karşılaşılan bir senaryo da karma dosyalardır: e-Devlet belgelerinin yanına taranmış bir diploma, fotoğraf veya elle doldurulmuş bir form eklemeniz gerekebilir. Taranmış sayfaları da PDF'e çevirdikten sonra aynı birleştirme akışına dahil edebilirsiniz; taramalar metin olarak aranabilir olsun istiyorsanız birleştirmeden önce OCR uygulamak iyi bir ara adımdır.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Birleştirilmiş Dosya Bir "Sunum Kopyası"dır</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+Birleştirme işlemi teknik olarak yeni bir PDF dosyası üretir. Barkod numarası açıkça okunuyorsa birleşik dosyadan kaynak kayıt sorgusuna ulaşmak mümkün olabilir; ancak bu, birleşik dosyanın özgün belge olduğu anlamına gelmez. Birleşik PDF, orijinal tekil dosyaların yerine geçen bir "asıl" değil, başvuruyu kolaylaştıran bir <strong>sunum kopyasıdır</strong>.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Ayrıca bazı e-Devlet belgeleri elektronik imza veya mühür katmanı içerir. Birleştirme, sıkıştırma veya yeniden kaydetme sonucunda oluşan türev dosyada bu kriptografik doğrulama geçersiz olabilir. Kurum özgün belge istiyorsa e-Devlet'ten indirdiğiniz tekil PDF'yi değiştirmeden gönderin; barkod sorgusunu ek kontrol olarak kullanın. Bu nedenle özgün dosyaları silmeyin. e-imzanın hukuki tarafını merak ediyorsanız <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/e-imza-yasal-gecerlilik">e-imza yasal geçerlilik yazımıza</a> göz atabilirsiniz.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Boyut Küçültme ve Yükleme Sınırları</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+e-Devlet'ten inen PDF'ler genellikle küçük boyutludur; dosyayı büyüten şey çoğunlukla araya eklenen taranmış belgeler olur (diploma taraması, fotoğraflı sayfalar gibi). Başvuru sistemlerinin dosya boyutu sınırları ise sistemden sisteme değişir ve zamanla güncellenir — kesin rakamı yükleme yapacağınız sistemin kendi sayfasından kontrol edin.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Birleşik dosyanız sınırı aşıyorsa ve yalnızca imzasız bir sunum kopyası hazırlıyorsanız <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-sikistir">PDF sıkıştırma aracıyla</a> boyutu küçültebilirsiniz. Sonuçta barkod numaralarını, metinleri ve sayfa düzenini kontrol edin. Elektronik imza veya mühür içeren özgün PDF'yi sıkıştırmayın; kurumun kabul ettiği biçim ve boyut için kendi güncel talimatını izleyin.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Sıkça Sorulan Sorular</h2>
+<div class="space-y-4 mb-6 sm:mb-8">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">e-Devlet belgelerini birleştirince barkod geçerliliğini kaybeder mi?</h3>
+<p class="text-gray-700">Barkod numarası birleşik dosyada okunabilir kaldığında kaynak kayıt resmî sorgu hizmetinden görüntülenebilir. Ancak birleşik PDF yeni bir türev dosyadır; özgün belgenin yerini almaz ve elektronik imza veya mühür doğrulamasını geçersiz kılabilir. Kurum özgün belge istiyorsa e-Devlet'ten indirilen tekil PDF'yi gönderin.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">Barkodlu bir belgenin gerçek olup olmadığını nasıl kontrol ederim?</h3>
+<p class="text-gray-700">e-Devlet Kapısı'ndaki belge doğrulama hizmetine belgenin üzerindeki barkod numarasını girerek belgeyi kaynağından görüntüleyebilirsiniz. Karekodlu belgelerde karekodu telefon kamerasıyla okutmak da aynı doğrulama sayfasına yönlendirir.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">e-Devlet'ten indirdiğim PDF'in geçerlilik süresi var mı?</h3>
+<p class="text-gray-700">Belge türüne göre değişir. Çoğu barkodlu belgenin üzerinde sorgulanabilirlik veya geçerlilik bilgisi yazar. Kesin süre için belgenin üzerindeki açıklamayı ve belgeyi isteyen kurumun güncel şartlarını kontrol edin.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">Birleştirdiğim başvuru dosyası çok büyük oldu, ne yapmalıyım?</h3>
+<p class="text-gray-700">İmzasız bir sunum kopyasını sıkıştırabilir, ardından barkodun ve metnin okunabildiğini kontrol edebilirsiniz. Elektronik imza veya mühür içeren PDF'yi sıkıştırmayın; özgün dosyayı kullanın. Ayrıca yükleme sisteminin güncel boyut ve belge biçimi şartlarını kendi sayfasından doğrulayın.</p>
+</div>
+</div>
+<div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
+<h3 class="text-lg font-semibold text-blue-800 mb-2">💡 Pratik İpucu</h3>
+<p class="text-blue-700">
+Başvurudan önce birleşik PDF'i telefonda da açıp barkodların ve metinlerin okunabildiğini kontrol edin. Bu yalnızca okunabilirlik kontrolüdür; kurumun özgün dosya, elektronik imza ve belge biçimi şartlarını ayrıca karşılamanız gerekir. Özgün tekil belgeleri ayrı bir klasörde saklamayı unutmayın.
+                </p>
+</div>
+<div class="author-bio-block bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-6 my-8" id="author-bio-block">
+<div class="flex flex-col sm:flex-row items-start gap-4">
+<div class="flex-shrink-0">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold">EK</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<h3 class="text-lg font-bold text-gray-800">Emin Kılıç</h3>
+<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">PDFişlemleri.com Kurucusu</span>
+</div>
+<p class="text-sm text-gray-700 leading-relaxed mb-3">Full-stack geliştirici. PDFişlemleri.com'u 2024'te KOBİ'lerin ve serbest çalışanların ücretsiz, KVKK uyumlu PDF araçlarına erişebilmesi için kurdu. FastAPI, Python ve Tesseract tabanlı altyapıyı tek başına geliştirdi. PDF dosya formatı, e-imza standartları (5070 Sayılı Kanun) ve KVKK uyumu konularında uygulamalı deneyim sahibi.</p>
+<div class="flex flex-wrap gap-3 text-sm">
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="https://www.linkedin.com/in/eminnkilic/" rel="author noopener" target="_blank"><i class="fab fa-linkedin mr-1.5"></i>LinkedIn</a>
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="/about"><i class="fas fa-user mr-1.5"></i>Hakkımızda</a>
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="/contact"><i class="fas fa-envelope mr-1.5"></i>İletişim</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Related Articles -->
+<section class="mt-16">
+<h2 class="text-2xl font-bold text-gray-800 mb-6">İlgili Yazılar</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-birlestirme">
+<img alt="PDF Birleştirme Rehberi" class="w-full h-32 object-cover rounded-t-lg" height="1040" loading="lazy" src="/images/pdf-merge.webp?v=b38974a5" width="1908"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">PDF Birleştirme Rehberi</h3>
+<p class="text-gray-600 text-sm">Dosyalarınızı adım adım tek PDF'te toplayın</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-sikistirma">
+<img alt="PDF Sıkıştırma" class="w-full h-32 object-cover rounded-t-lg" height="1024" loading="lazy" src="/images/pdf-compress.webp?v=faed28d1" width="1536"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">PDF Sıkıştırma</h3>
+<p class="text-gray-600 text-sm">Başvuru dosyanızın boyutunu küçültün</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/e-imza-yasal-gecerlilik">
+<img alt="E-İmza Yasal Geçerlilik" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/e-imza-yasal-gecerlilik.webp" width="1248"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">E-İmzanın Yasal Geçerliliği</h3>
+<p class="text-gray-600 text-sm">Elektronik imzalı belgeler ne zaman geçerli?</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/islak-imza-e-imza-fark">
+<img alt="Islak İmza ile E-İmza Farkı" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/islak-imza-e-imza-fark.webp" width="1248"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">Islak İmza ile E-İmza Farkı</h3>
+<p class="text-gray-600 text-sm">Hangi belgede hangi imza gerekir?</p>
+</div>
+</a>
+</div>
+</section>
+<!-- Tool CTA Banner (SEO: blog → tool linking) -->
+<div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-object-group text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl md:text-2xl font-bold mb-1">Başvuru Dosyanı Hemen Hazırla</h3>
+<p class="text-sm md:text-base text-blue-100">e-Devlet belgelerinizi tek tıkla tek PDF'te toplayın. Kayıt yok, ücretsiz.</p>
+</div>
+</div>
+<a class="inline-flex items-center bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap" href="/pdf-birlestir">
+<i class="fas fa-rocket mr-2"></i> Aracı Aç
+        </a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="site-footer mt-16 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center sm:text-left">
+<h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
+<p class="text-sm text-gray-500 leading-relaxed">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/about">Hakkımızda</a>
+<a class="transition hover:text-blue-600" href="/blog">Blog</a>
+<a class="transition hover:text-blue-600" href="/contact">İletişim</a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/terms">Hizmet Şartları</a>
+<a class="transition hover:text-blue-600" href="/privacy">Gizlilik Politikası</a>
+<a class="transition hover:text-blue-600" href="/cookies">Çerez Politikası</a>
+<a class="transition hover:text-blue-600" href="/kvkk">KVKK</a>
+</div>
+</div>
+<div class="text-center sm:text-right">
+<h4 class="text-md font-semibold mb-3">Sosyal Medya</h4>
+<div class="flex space-x-4 justify-center sm:justify-end mb-3">
+<a aria-label="LinkedIn" class="transition hover:text-blue-600" href="https://www.linkedin.com/in/emin-k%C4%B1l%C4%B1%C3%A7-250b14210/" rel="noopener" target="_blank">
+<i class="fab fa-linkedin text-xl"></i>
+</a>
+<a aria-label="Instagram" class="transition hover:text-pink-600" href="https://instagram.com/heremmkh" rel="noopener" target="_blank">
+<i class="fab fa-instagram text-xl"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-500">
+<p>© 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- JavaScript -->
+<!-- Scroll Management -->
+<script>
+        // Page refresh'te scroll position'ı sıfırla
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // Sayfa yüklendiğinde en üste çık
+        window.addEventListener('beforeunload', () => {
+            window.scrollTo(0, 0);
+        });
+
+        // Page load'da kontrol et
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+        });
+
+        // DOM ready'de kontrol et
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 0);
+        });
+    </script>
+<script src="../js-v2/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+    <script src="../js-v2/gtag-config.js?v=3f1a2026"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF Metadata Nedir? Gizli Bilgileri Görüntüleme ve Temizleme</title>
+<meta name="description" content="PDF metadata nedir? Yazar adı, program ve tarih gibi pdf gizli bilgilerini görüntüleme ve pdf yazar bilgisi silme yöntemlerini adım adım anlatıyoruz."/>
+<meta content="PDFişlemleri.com" name="author"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://pdfislemleri.com/blog/pdf-metadata-temizleme" rel="canonical"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
+<!-- End Google Tag Manager -->
+<script src="../js-v2/gtag-config.js?v=3f1a2026"></script> <!-- GA4 config GTM'de; çift sayım düzeltmesi 2026-07-31 -->
+<!-- Open Graph / Facebook -->
+<meta content="article" property="og:type"/>
+<meta content="https://pdfislemleri.com/blog/pdf-metadata-temizleme" property="og:url"/>
+<meta property="og:title" content="PDF Metadata Nedir? Gizli Bilgileri Görüntüleme ve Temizleme"/>
+<meta property="og:description" content="PDF metadata nedir? Yazar adı, program ve tarih gibi pdf gizli bilgilerini görüntüleme ve pdf yazar bilgisi silme yöntemlerini adım adım anlatıyoruz."/>
+<meta content="https://pdfislemleri.com/images/home-og.jpeg" property="og:image"/>
+<meta content="PDFişlemleri.com" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://pdfislemleri.com/blog/pdf-metadata-temizleme" property="twitter:url"/>
+<meta property="twitter:title" content="PDF Metadata Nedir? Gizli Bilgileri Görüntüleme ve Temizleme"/>
+<meta property="twitter:description" content="PDF metadata nedir? Yazar adı, program ve tarih gibi pdf gizli bilgilerini görüntüleme ve pdf yazar bilgisi silme yöntemlerini adım adım anlatıyoruz."/>
+<meta content="https://pdfislemleri.com/images/home-og.jpeg" property="twitter:image"/>
+<!-- PWA Manifest -->
+<link href="/icons/site.webmanifest" rel="manifest"/>
+<!-- Favicon -->
+<link href="/icons/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/icons/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180"/>
+<link color="#0ea5e9" href="/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#0ea5e9" name="theme-color"/>
+<!-- Article Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PDF Metadata Nedir? Gizli Bilgileri Görüntüleme ve Temizleme",
+  "description": "PDF dosyalarının içindeki görünmez bilgiler: yazar adı, kullanılan program ve tarihler. Bu bilgileri görüntüleme ve temizleme yöntemlerini adım adım anlatıyoruz.",
+  "image": "https://pdfislemleri.com/images/home-og.jpeg",
+  "url": "https://pdfislemleri.com/blog/pdf-metadata-temizleme",
+  "datePublished": "2026-07-31T00:00:00+03:00",
+  "dateModified": "2026-07-31T00:00:00+03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Emin Kılıç",
+    "url": "https://pdfislemleri.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/eminnkilic/",
+      "https://instagram.com/heremmkh"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PDFişlemleri.com",
+    "url": "https://pdfislemleri.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pdfislemleri.com/icons/logo.webp",
+      "width": 512,
+      "height": 512,
+      "creditText": "PDFişlemleri.com",
+      "copyrightNotice": "© 2026 PDFişlemleri.com",
+      "license": "https://pdfislemleri.com/terms",
+      "acquireLicensePage": "https://pdfislemleri.com/contact"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pdfislemleri.com/blog/pdf-metadata-temizleme"
+  },
+  "articleSection": "PDF Güvenliği",
+  "keywords": [
+    "pdf metadata",
+    "pdf yazar bilgisi silme",
+    "pdf gizli bilgiler",
+    "pdf metadata temizleme"
+  ],
+  "wordCount": 1076,
+  "inLanguage": "tr-TR",
+  "timeRequired": "PT6M",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "PDFişlemleri.com Blog",
+    "url": "https://pdfislemleri.com/blog"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "PDF Metadata",
+      "description": "PDF dosyalarının içinde saklanan yazar, program ve tarih gibi görünmez tanımlayıcı bilgiler"
+    },
+    {
+      "@type": "Thing",
+      "name": "Belge Gizliliği",
+      "description": "Paylaşılan belgelerdeki kişisel ve kurumsal bilgilerin korunması"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "WebApplication",
+      "name": "Genel PDF Araç Merkezi",
+      "url": "https://pdfislemleri.com/pdf-duzenle",
+      "description": "Birleştirme, dönüştürme ve diğer genel PDF işlemlerini listeleyen araç merkezi; özel metadata kaldırma aracı değildir",
+      "applicationCategory": "BusinessApplication"
+    }
+  ]
+}
+</script>
+<!-- Preconnect for performance -->
+<!-- Tailwind (local build) + Font Awesome -->
+<link href="../css/tw.css?v=3153838b" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/components.css?v=70021153" rel="stylesheet"/>
+<link href="../css/gradients.css" rel="stylesheet"/>
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://pdfislemleri.com/blog/pdf-metadata-temizleme#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "PDF Metadata Temizleme", "item": "https://pdfislemleri.com/blog/pdf-metadata-temizleme" }
+      ]
+    }
+    </script>
+<!-- FAQPage Schema (auto-extracted from visible FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://pdfislemleri.com/blog/pdf-metadata-temizleme#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "PDF metadata görüntülemek için özel bir program gerekir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Adobe Reader'da Dosya > Özellikler menüsü, macOS'ta ise Önizleme uygulamasının denetleyici penceresi temel metadata alanlarını ücretsiz gösterir. Ek bir yazılım kurmanıza gerek yoktur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PDF yazar bilgisi silme işlemi belgenin içeriğini değiştirir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yönteme bağlıdır. Özel bir PDF düzenleyicide yalnızca metadata alanlarını kaldırmak sayfa içeriğini koruyabilir; yazdır-PDF veya format dönüştürme ise form, bağlantı, yer imi, ek, düzen ve imzaları etkileyebilir. Orijinali saklayın, çıktının hem içeriğini hem özelliklerini doğrulayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yazdır-PDF yöntemi tüm gizli bilgileri temizler mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Bazı eski alanlar taşınmayabilir, fakat yeni metadata eklenebilir ve tüm gizli bilgilerin kaldırıldığı garanti edilemez. Yöntem form alanlarını düzleştirebilir; bağlantıları, yer imlerini ve ekleri kaldırabilir; düzeni değiştirebilir ve elektronik imzaları geçersiz kılabilir. Orijinali koruyup çıktıyı doğrulayın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PDFişlemleri.com'da özel bir metadata temizleme aracı var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. PDF Düzenle sayfası birleştirme, dönüştürme ve diğer işlemleri listeleyen genel araç merkezidir; özel metadata görüntüleme veya kaldırma aracı değildir. Metadata için uygun bir masaüstü düzenleyici kullanın ve paylaşmadan önce sonuç dosyasının özelliklerini kontrol edin."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="site-wrapper">
+<!-- Header -->
+<header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<!-- Logo ve Araçlar Butonu -->
+<div class="flex items-center space-x-3">
+<!-- Logo -->
+<a class="flex items-center space-x-2 hover:opacity-80 transition-opacity" href="/">
+<i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+<h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+</a>
+<!-- Araçlar Butonu (Mobil) -->
+<button class="md:hidden flex items-center space-x-1 px-2 py-1 text-gray-600 hover:text-blue-600 transition-colors" id="mobile-tools-btn">
+<span class="font-medium text-sm">Araçlar</span>
+<i class="fas fa-chevron-up text-xs transition-transform" id="tools-arrow"></i>
+</button>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex space-x-6">
+<a class="text-gray-600 hover:text-blue-600 transition" href="/">Ana Sayfa</a>
+<a class="text-white font-medium" href="/blog">Blog</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/about">Hakkımızda</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/contact">İletişim</a>
+</nav>
+</div>
+<!-- Mobil Araçlar Menüsü -->
+<div class="md:hidden bg-white border-t border-gray-200 shadow-lg transform -translate-y-full transition-transform duration-300 ease-in-out" id="mobile-tools-menu">
+<div class="px-4 py-4 max-h-[32rem] overflow-y-auto">
+<!-- Sayfalar Kategorisi -->
+<div class="mb-5">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sayfalar</p>
+<div class="flex space-x-1 justify-start">
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-home text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Ana Sayfa</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/blog">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-newspaper text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Blog</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/about">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-users text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Hakkımızda</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/contact">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-phone-alt text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">İletişim</span>
+</a>
+</div>
+</div>
+<!-- Sıkıştır Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sıkıştır</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress" href="javascript:void(0)">
+<div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-compress-arrows-alt text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF Sıkıştır</span>
+</a>
+</div>
+</div>
+<!-- Birleştir Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Birleştir</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-layer-group text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF Birleştir</span>
+</a>
+</div>
+</div>
+<!-- Dönüştür Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Dönüştür</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-word" href="javascript:void(0)">
+<div class="organize-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-word text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF'den Word'e</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-jpg" href="javascript:void(0)">
+<div class="pdf-to-jpg-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-image text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">JPG'ye</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-ppt" href="javascript:void(0)">
+<div class="pdf-to-ppt-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-powerpoint text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">PPT'ye</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-excel" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-excel text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Excel'e</span>
+</a>
+</div>
+</div>
+<!-- Güvenlik Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Güvenlik</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="protect" href="javascript:void(0)">
+<div class="protect-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-lock text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Koruma</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="unlock" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-unlock text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Kilidi Aç</span>
+</a>
+</div>
+</div>
+<!-- Düzenle Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Düzenle</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="split" href="javascript:void(0)">
+<div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-cut text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Böl</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="rotate" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-redo text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Döndür</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="watermark" href="javascript:void(0)">
+<div class="watermark-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-stamp text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Filigran</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="organize" href="javascript:void(0)">
+<div class="organize-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-sort text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Düzenle</span>
+</a>
+</div>
+</div>
+<!-- İmza Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">İmza</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="sign" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-signature text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">İmzala</span>
+</a>
+</div>
+</div>
+<!-- OCR Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">OCR</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-ocr" href="javascript:void(0)">
+<div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-eye text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">OCR</span>
+</a>
+</div>
+</div>
+<!-- Word'den PDF Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Word'den PDF</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="word-to-pdf" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-pdf text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Word'den PDF</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4">
+<div class="container mx-auto px-4">
+<ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
+<li><a class="hover:text-blue-600" href="/">Ana Sayfa</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li><a class="hover:text-blue-600" href="/blog">Blog</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li aria-current="page" class="text-gray-800 font-medium">PDF Metadata Temizleme</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8">
+<!-- Article Content -->
+<article class="prose prose-lg max-w-4xl mx-auto">
+<!-- Blog Header Content -->
+<div class="mb-6 sm:mb-8">
+<div class="text-center mb-6">
+<div class="mb-4">
+<a class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline" href="/pdf-duzenle">PDF Araç Merkezi</a>
+<a class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2" href="/">Ücretsiz Araç</a>
+</div>
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-800">PDF Metadata: Dosyanızın İçindeki Gizli Bilgileri Görün ve Temizleyin</h1>
+<!-- Araç köprüsü (FAZ C 2026-07-31): blog trafiğini araca akıt -->
+<div class="not-prose my-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-gray-50 to-white p-5 flex flex-wrap items-center gap-4 shadow-sm">
+  <svg style="width:52px;height:52px;flex-shrink:0" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-merge"></use></svg>
+  <div class="flex-1 min-w-[200px]">
+    <p class="m-0 font-semibold text-gray-800">Genel PDF araçlarını inceleyin:</p>
+    <p class="m-0 text-sm text-gray-600">Bu bağlantı özel metadata temizleyiciye değil, mevcut işlemleri listeleyen araç merkezine gider.</p>
+  </div>
+  <a href="/pdf-duzenle" class="inline-flex items-center text-white font-semibold px-6 py-3 rounded-xl transition hover:opacity-90" style="background:#334155">Araç Merkezini Aç →</a>
+</div>
+
+<div class="flex items-center justify-center text-gray-500 text-sm">
+<i class="fas fa-calendar mr-1 sm:mr-2"></i>
+<span>31 Temmuz 2026</span>
+<span class="mx-4">•</span>
+<i class="fas fa-user mr-1 sm:mr-2"></i>
+<span>Emin Kılıç</span>
+<span class="mx-4">•</span>
+<i class="fas fa-clock mr-1 sm:mr-2"></i>
+<span>6 dk okuma</span>
+</div>
+</div>
+</div>
+<p class="text-lg text-gray-800 leading-relaxed mb-6">
+Bir PDF dosyasını e-posta ile gönderdiğinizde karşı taraf yalnızca sayfalardaki içeriği görmez. Dosyanın içinde <strong>PDF metadata</strong> adı verilen görünmez bir bilgi katmanı da yolculuk eder: belgeyi kimin oluşturduğu, hangi programla hazırlandığı, ne zaman yazıldığı ve en son ne zaman değiştirildiği gibi ayrıntılar. Çoğu zaman zararsız görünen bu alanlar, CV gönderiminden ihale dosyasına kadar pek çok senaryoda istemeden bilgi sızdırabilir.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Bu yazıda PDF metadata kavramını sade bir dille anlatıyor, bu <strong>gizli bilgileri</strong> nasıl görüntüleyeceğinizi gösteriyor ve <strong>PDF yazar bilgisi silme</strong> için pratik yöntemleri adım adım paylaşıyoruz. Amacımız, paylaştığınız her belgenin yalnızca paylaşmak istediğiniz kadarını anlatması.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">PDF Metadata Nedir?</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+Metadata, en kısa tanımıyla "veri hakkında veri"dir. PDF özelinde bu, dosyanın kendisini tanımlayan ve sayfa görünümünde yer almayan bilgiler anlamına gelir. Belgeyi açtığınızda görmezsiniz; ama özellikler penceresine bakan herkes birkaç tıkla ulaşabilir.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-4">Tipik bir PDF dosyasında şu görünmez alanlar bulunur:</p>
+<ul class="list-disc pl-6 mb-6 text-gray-700">
+<li><strong>Yazar (Author):</strong> Genellikle belgeyi oluşturan bilgisayardaki kullanıcı adı veya lisans sahibinin adı otomatik yazılır.</li>
+<li><strong>Oluşturucu program (Creator/Producer):</strong> Belgenin hangi yazılımla ve hangi sürümle üretildiği; örneğin bir kelime işlemci ya da tarayıcı yazılımı.</li>
+<li><strong>Tarih bilgileri:</strong> Oluşturma ve son değiştirme tarihleri, bazen saat ve saat dilimiyle birlikte.</li>
+<li><strong>Başlık, konu ve anahtar kelimeler:</strong> Kaynak dosyadan devralınan ve çoğu zaman unutulmuş taslak adları içerebilen alanlar.</li>
+</ul>
+<p class="text-gray-700 leading-relaxed mb-6">
+Bunlara ek olarak bazı PDF'lerde XMP adı verilen genişletilmiş bir metadata paketi, yorum ve açıklama katmanları ya da doldurulmuş form alanları gibi ilk bakışta fark edilmeyen başka veriler de bulunabilir.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Bu Görünmez Bilgiler Neden Önemli?</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+Metadata çoğu senaryoda faydalıdır: arşivleme kolaylaşır, belgeler aranabilir olur. Sorun, dosya kurum dışına çıktığında başlar. Birkaç örnek düşünelim:
+            </p>
+<p class="text-gray-700 leading-relaxed mb-4">
+<strong>CV ve iş başvurusu:</strong> CV'nizi bir arkadaşınız veya bir danışman düzenlediyse, yazar alanında sizin değil onun adı görünebilir. İşe alım uzmanının bunu fark etmesi hoş bir izlenim bırakmaz. Aynı durum <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/pdf-cv-hazirlama">PDF CV hazırlama</a> sürecinde şablon dosyalar için de geçerlidir.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-4">
+<strong>İhale ve teklif dosyaları:</strong> Teklif belgesinin son değiştirme tarihi, dosyanın son dakikada mı hazırlandığını ya da eski bir teklifin üzerine mi yazıldığını ele verebilir. Rakip firmadan gelen bir şablonun izleri de metadata'da kalabilir.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+<strong>Hukuki yazışmalar ve KVKK bağlamı:</strong> Metadata'daki ad-soyad ve kullanıcı adı gibi alanlar, kişisel veri niteliği taşıyabilir. Kişisel veri içeren belgeleri üçüncü taraflarla paylaşan kurumların, görünür içerik kadar bu görünmez alanları da gözden geçirmesi iyi bir veri hijyeni uygulamasıdır. Kurumunuzun KVKK yükümlülükleri özelinde tereddüt varsa, veri sorumlunuza veya hukuk danışmanınıza başvurun. Bu konuyu <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/pdf-kvkk-guvenlik">PDF ve KVKK güvenliği</a> yazımızda daha geniş ele aldık.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">PDF Metadata Nasıl Görüntülenir?</h2>
+<h3 class="text-xl font-semibold text-gray-800 mb-3">Adobe Reader ile</h3>
+<p class="text-gray-700 leading-relaxed mb-4">
+Belgeyi Adobe Reader'da açın ve <strong>Dosya &gt; Özellikler</strong> (File &gt; Properties) menüsüne girin. "Açıklama" sekmesinde yazar, başlık, oluşturucu program ve tarih alanlarını tek bakışta görürsünüz. Menü adları sürüme göre küçük farklılıklar gösterebilir.
+            </p>
+<h3 class="text-xl font-semibold text-gray-800 mb-3">macOS Önizleme ile</h3>
+<p class="text-gray-700 leading-relaxed mb-4">
+Mac kullanıyorsanız PDF'i Önizleme (Preview) ile açıp <strong>Araçlar &gt; Denetleyiciyi Göster</strong> yolunu izleyin. Açılan bilgi penceresi dosyanın temel metadata alanlarını listeler.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Windows'ta dosyaya sağ tıklayıp Özellikler &gt; Ayrıntılar sekmesine bakmak da hızlı bir ön kontrol sağlar; ancak PDF okuyucunun özellikler penceresi genellikle daha eksiksiz bilgi verir. Göndermeden önce 30 saniyelik bu kontrolü alışkanlık haline getirmenizi öneririz.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">PDF Yazar Bilgisi Silme ve Metadata Temizleme Yöntemleri</h2>
+<h3 class="text-xl font-semibold text-gray-800 mb-3">1. Kaynak dosyada temizlik yapın</h3>
+<p class="text-gray-700 leading-relaxed mb-4">
+En sağlıklı yol, temizliğe PDF'e dönüştürmeden önce başlamaktır. Word gibi kelime işlemcilerde belge özelliklerinden yazar ve şirket alanlarını boşaltabilir, birçok programda bulunan "belgeyi denetle / kişisel bilgileri kaldır" türü özellikleri kullanabilirsiniz. Kaynak temizse, üretilen PDF de büyük ölçüde temiz doğar.
+            </p>
+<h3 class="text-xl font-semibold text-gray-800 mb-3">2. "Farklı kaydet" veya yazdır-PDF yaklaşımı</h3>
+<p class="text-gray-700 leading-relaxed mb-4">
+Elinizde yalnızca PDF varsa, dosyayı bir PDF yazıcısı üzerinden yeniden "yazdırmak" (örneğin sistemdeki PDF olarak yazdır seçeneği) yeni bir dosya oluşturabilir; fakat tüm eski metadata alanlarını kaldırdığı garanti edilemez. Yeni dosyaya sisteminizin kullanıcı adı veya kullanılan yazılım gibi yeni bilgiler de yazılabilir. Üstelik bu yöntem form alanlarını düzleştirebilir; bağlantıları, yer imlerini ve ekleri kaldırabilir; sayfa düzenini değiştirebilir ve elektronik imzaları geçersiz kılabilir. Orijinali saklayın, çıktının içeriğini ve özelliklerini paylaşmadan önce kontrol edin.
+            </p>
+<h3 class="text-xl font-semibold text-gray-800 mb-3">3. Dönüştürme araçlarından geçirin</h3>
+<p class="text-gray-700 leading-relaxed mb-6">
+Bir PDF'i başka bir formata çevirip yeniden PDF'e dönüştürmek — örneğin <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-to-word">PDF'den Word'e</a> çevirip düzenledikten sonra <a class="text-blue-700 hover:text-blue-900 underline" href="/word-to-pdf">Word'den PDF'e</a> geri almak — yeni bir dosya üretir; ancak eski metadata'nın tamamını kaldırdığı garanti edilemez ve dönüştürücü yeni bilgiler ekleyebilir. Dönüşüm form alanlarını düzleştirebilir; bağlantıları, yer imlerini ve ekleri kaldırabilir; sayfa düzenini değiştirebilir ve elektronik imzaları geçersiz kılabilir. <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-sikistir">PDF sıkıştırma</a> ise dosya boyutunu azaltmaya yöneliktir, metadata temizleme yöntemi değildir. Orijinali koruyun; paylaşmadan önce son dosyanın içeriğini, işlevlerini, imza durumunu ve özelliklerini doğrulayın.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Online Araç Kullanırken Gizlilik ve Doğrulama</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+Metadata temizliği bir gizlilik işlemidir; bu nedenle hassas bir belgeyi herhangi bir online servise yüklemeden önce kurum politikanızı ve servisin güncel gizlilik açıklamasını değerlendirin. PDFişlemleri.com'da özel metadata görüntüleme veya kaldırma aracı bulunmaz; <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-duzenle">PDF Düzenle</a> sayfası yalnızca mevcut genel araçları listeler. Bir dönüştürme ya da sıkıştırma işleminin metadata'yı temizlediğini varsaymayın. Uygun bir masaüstü düzenleyicide gerekli alanları kaldırın, orijinali saklayın ve paylaşacağınız kopyanın özelliklerini ayrıca doğrulayın.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Sıkça Sorulan Sorular</h2>
+<div class="space-y-4 mb-6 sm:mb-8">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">PDF metadata görüntülemek için özel bir program gerekir mi?</h3>
+<p class="text-gray-700">Hayır. Adobe Reader'da Dosya &gt; Özellikler menüsü, macOS'ta ise Önizleme uygulamasının denetleyici penceresi temel metadata alanlarını ücretsiz gösterir. Ek bir yazılım kurmanıza gerek yoktur.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">PDF yazar bilgisi silme işlemi belgenin içeriğini değiştirir mi?</h3>
+<p class="text-gray-700">Yönteme bağlıdır. Özel bir PDF düzenleyicide yalnızca metadata alanlarını kaldırmak sayfa içeriğini koruyabilir; yazdır-PDF veya format dönüştürme ise form, bağlantı, yer imi, ek, düzen ve imzaları etkileyebilir. Orijinali saklayın, çıktının hem içeriğini hem özelliklerini doğrulayın.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">Yazdır-PDF yöntemi tüm gizli bilgileri temizler mi?</h3>
+<p class="text-gray-700">Hayır. Bazı eski alanlar taşınmayabilir, fakat yeni metadata eklenebilir ve tüm gizli bilgilerin kaldırıldığı garanti edilemez. Yöntem form alanlarını düzleştirebilir; bağlantıları, yer imlerini ve ekleri kaldırabilir; düzeni değiştirebilir ve elektronik imzaları geçersiz kılabilir. Orijinali koruyup çıktıyı doğrulayın.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">PDFişlemleri.com'da özel bir metadata temizleme aracı var mı?</h3>
+<p class="text-gray-700">Hayır. PDF Düzenle sayfası birleştirme, dönüştürme ve diğer işlemleri listeleyen genel araç merkezidir; özel metadata görüntüleme veya kaldırma aracı değildir. Metadata için uygun bir masaüstü düzenleyici kullanın ve paylaşmadan önce sonuç dosyasının özelliklerini kontrol edin.</p>
+</div>
+</div>
+<div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
+<h3 class="text-lg font-semibold text-blue-800 mb-2">💡 Pratik İpucu</h3>
+<p class="text-blue-700">
+Önemli bir belgeyi göndermeden önce iki dosyayı yan yana açın: orijinal ve temizlenmiş kopya. Her ikisinin de özellikler penceresine bakarak yazar, program ve tarih alanlarını karşılaştırın. Bu 1 dakikalık kontrol, "temizledim sanıyordum" sürprizlerinin önüne geçer. Hassas belgelerde metadata temizliğini <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-sifrele">PDF şifreleme</a> ile birleştirmek de iyi bir alışkanlıktır.
+                </p>
+</div>
+<div class="author-bio-block bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-6 my-8" id="author-bio-block">
+<div class="flex flex-col sm:flex-row items-start gap-4">
+<div class="flex-shrink-0">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold">EK</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<h3 class="text-lg font-bold text-gray-800">Emin Kılıç</h3>
+<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">PDFişlemleri.com Kurucusu</span>
+</div>
+<p class="text-sm text-gray-700 leading-relaxed mb-3">Full-stack geliştirici. PDFişlemleri.com'u 2024'te KOBİ'lerin ve serbest çalışanların ücretsiz, KVKK uyumlu PDF araçlarına erişebilmesi için kurdu. FastAPI, Python ve Tesseract tabanlı altyapıyı tek başına geliştirdi. PDF dosya formatı, e-imza standartları (5070 Sayılı Kanun) ve KVKK uyumu konularında uygulamalı deneyim sahibi.</p>
+<div class="flex flex-wrap gap-3 text-sm">
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="https://www.linkedin.com/in/eminnkilic/" rel="author noopener" target="_blank"><i class="fab fa-linkedin mr-1.5"></i>LinkedIn</a>
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="/about"><i class="fas fa-user mr-1.5"></i>Hakkımızda</a>
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="/contact"><i class="fas fa-envelope mr-1.5"></i>İletişim</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Related Articles -->
+<section class="mt-16">
+<h2 class="text-2xl font-bold text-gray-800 mb-6">İlgili Yazılar</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-kvkk-guvenlik">
+<img alt="PDF ve KVKK Güvenliği" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/pdf-kvkk-guvenlik.webp?v=35808e4e" width="1248"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">PDF ve KVKK Güvenliği</h3>
+<p class="text-gray-600 text-sm">Kişisel veri içeren belgeleri güvenle paylaşın</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-sifre-kaldirma">
+<img alt="PDF Şifre Kaldırma" class="w-full h-32 object-cover rounded-t-lg" height="279" loading="lazy" src="/images/pdfpassremove.webp?v=fe18225e" width="512"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">PDF Şifre Kaldırma</h3>
+<p class="text-gray-600 text-sm">Parola korumalı PDF'lerle çalışma rehberi</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-cv-hazirlama">
+<img alt="PDF CV Hazırlama" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/pdf-cv-hazirlama.webp?v=43b39213" width="1248"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">PDF CV Hazırlama</h3>
+<p class="text-gray-600 text-sm">Başvurudan önce CV dosyanızı doğru hazırlayın</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-sikistirma">
+<img alt="PDF Sıkıştırma" class="w-full h-32 object-cover rounded-t-lg" height="1024" loading="lazy" src="/images/pdf-compress.webp?v=faed28d1" width="1536"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">PDF Sıkıştırma</h3>
+<p class="text-gray-600 text-sm">Dosya boyutunu paylaşım için küçültün</p>
+</div>
+</a>
+</div>
+</section>
+<!-- Tool CTA Banner (SEO: blog → tool linking) -->
+<div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-user-shield text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl md:text-2xl font-bold mb-1">Genel PDF Araçlarını İnceleyin</h3>
+<p class="text-sm md:text-base text-blue-100">Bu merkezde özel metadata silme aracı yoktur; birleştirme, dönüştürme ve diğer genel işlemleri seçebilirsiniz.</p>
+</div>
+</div>
+<a class="inline-flex items-center bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap" href="/pdf-duzenle">
+<i class="fas fa-rocket mr-2"></i> Araç Merkezini Aç
+        </a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="site-footer mt-16 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center sm:text-left">
+<h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
+<p class="text-sm text-gray-500 leading-relaxed">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/about">Hakkımızda</a>
+<a class="transition hover:text-blue-600" href="/blog">Blog</a>
+<a class="transition hover:text-blue-600" href="/contact">İletişim</a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/terms">Hizmet Şartları</a>
+<a class="transition hover:text-blue-600" href="/privacy">Gizlilik Politikası</a>
+<a class="transition hover:text-blue-600" href="/cookies">Çerez Politikası</a>
+<a class="transition hover:text-blue-600" href="/kvkk">KVKK</a>
+</div>
+</div>
+<div class="text-center sm:text-right">
+<h4 class="text-md font-semibold mb-3">Sosyal Medya</h4>
+<div class="flex space-x-4 justify-center sm:justify-end mb-3">
+<a aria-label="LinkedIn" class="transition hover:text-blue-600" href="https://www.linkedin.com/in/emin-k%C4%B1l%C4%B1%C3%A7-250b14210/" rel="noopener" target="_blank">
+<i class="fab fa-linkedin text-xl"></i>
+</a>
+<a aria-label="Instagram" class="transition hover:text-pink-600" href="https://instagram.com/heremmkh" rel="noopener" target="_blank">
+<i class="fab fa-instagram text-xl"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-500">
+<p>© 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- JavaScript -->
+<!-- Scroll Management -->
+<script>
+        // Page refresh'te scroll position'ı sıfırla
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // Sayfa yüklendiğinde en üste çık
+        window.addEventListener('beforeunload', () => {
+            window.scrollTo(0, 0);
+        });
+
+        // Page load'da kontrol et
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+        });
+
+        // DOM ready'de kontrol et
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 0);
+        });
+    </script>
+<script src="../js-v2/main.js" type="module"></script>
+</body>
+</html>
