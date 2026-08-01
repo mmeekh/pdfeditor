@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://pdfislemleri.com">
     
     <!-- Google Tag Manager -->
-    <script src="js-v2/gtag-config.js?v=3f1a2026"></script>
+    <script src="js-v2/gtag-config.js?v=3f2a0801"></script>
     <script src="js-v2/gtm.js"></script>
     <!-- End Google Tag Manager -->
     <!-- Microsoft Clarity -->
@@ -74,7 +74,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/theme.css?v=3a79e0bc">
     <link rel="stylesheet" href="css/base.css?v=121c9fd1">
-    <link rel="stylesheet" href="css/components.css?v=8c31e17e">
+    <link rel="stylesheet" href="css/components.css?v=b5b62808">
     <link rel="stylesheet" href="css/gradients.css?v=3ce0f6e9">
 <!-- Inline Structured Data (WebApp, FAQ, Organization, Services) -->
     <script type="application/ld+json">
@@ -580,6 +580,17 @@
                 </a>
             </div>
             <p class="text-sm text-gray-500 mb-6">KVKK uyumlu · Dosyalar 15 dakikada otomatik silinir · Kayıt gerekmez</p>
+
+            <!-- Evrensel bırakma alanı (2026-08-01): dosya → araç seçici -->
+            <div id="homeDropzone" tabindex="0" role="button" aria-label="PDF dosyanı bırak veya seç, aracını sonra seç"
+                 class="home-dropzone max-w-2xl mx-auto mb-6 rounded-2xl border-2 border-dashed border-gray-300 bg-white/70 px-6 py-5 cursor-pointer transition">
+                <div class="flex items-center justify-center gap-3 flex-wrap text-gray-700">
+                    <svg style="width:40px;height:40px" aria-hidden="true"><use href="/icons/tools-3d.svg#i3d-merge"></use></svg>
+                    <span class="font-semibold">PDF'ini buraya bırak <span class="text-gray-400 font-normal">ya da tıkla</span></span>
+                    <span class="text-sm text-gray-500">— aracını sonra seçersin</span>
+                </div>
+                <input type="file" id="homeDropInput" accept=".pdf,application/pdf" multiple class="hidden">
+            </div>
 
             <div class="answer-block">
               <strong>PDFişlemleri.com nedir?</strong> PDFişlemleri.com, 17 ücretsiz online PDF aracı sunan Türkçe odaklı bir araç sitesidir. Birleştirme, sıkıştırma, dönüştürme, imzalama, şifreleme ve OCR işlemlerini tarayıcınızda gerçekleştirir. Kayıt gerekmez, e-posta istemez; dosyalar 15 dakika içinde otomatik silinir.
@@ -1087,6 +1098,38 @@
     <script src="scroll-manager.js"></script>
     
     <!-- JavaScript - Modular System Only -->
+    
+    <!-- Sayfa geneli sürükleme overlay'i -->
+    <div id="homeDropOverlay" class="hidden fixed inset-0 z-50 pointer-events-none">
+        <div class="absolute inset-0 bg-gray-900/60" style="backdrop-filter:blur(4px)"></div>
+        <div class="relative flex items-center justify-center h-full px-4">
+            <div class="bg-white/10 border-2 border-dashed border-white/70 rounded-3xl px-10 py-8 text-center">
+                <p class="text-white text-2xl md:text-3xl font-bold">Bırak gitsin 👇</p>
+                <p class="text-white/80 mt-2">Dosyan hazır olunca aracını seçeceksin</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Araç seçici modal -->
+    <div id="toolChooser" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Araç seç">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative">
+            <button type="button" data-chooser-close class="absolute top-3 right-3 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 text-lg leading-none" aria-label="Kapat">×</button>
+            <p class="font-bold text-xl text-gray-900 mb-1">Ne yapalım?</p>
+            <p class="text-sm text-gray-500 mb-4"><span id="toolChooserCount">Dosya hazır</span> — aracı seç, dosyan otomatik taşınsın.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                <a href="/pdf-birlestir" data-chooser-url="/pdf-birlestir" class="chooser-item"><svg aria-hidden="true"><use href="/icons/tools-3d.svg#i3d-merge"></use></svg><span>Birleştir</span></a>
+                <a href="/pdf-sikistir" data-chooser-url="/pdf-sikistir" class="chooser-item"><svg aria-hidden="true"><use href="/icons/tools-3d.svg#i3d-compress"></use></svg><span>Sıkıştır</span></a>
+                <a href="/pdf-sayfa-sil" data-chooser-url="/pdf-sayfa-sil" class="chooser-item"><svg aria-hidden="true"><use href="/icons/tools-3d.svg#i3d-page-delete"></use></svg><span>Sayfa Sil</span></a>
+                <a href="/pdf-imzala" data-chooser-url="/pdf-imzala" class="chooser-item"><svg aria-hidden="true"><use href="/icons/tools-3d.svg#i3d-sign"></use></svg><span>İmzala</span></a>
+                <a href="/pdf-to-word" data-chooser-url="/pdf-to-word" class="chooser-item"><svg aria-hidden="true"><use href="/icons/tools-3d.svg#i3d-pdf-to-word"></use></svg><span>PDF → Word</span></a>
+                <a href="/pdf-sirala" data-chooser-url="/pdf-sirala" class="chooser-item"><svg aria-hidden="true"><use href="/icons/tools-3d.svg#i3d-organize"></use></svg><span>Sırala</span></a>
+            </div>
+            <p class="text-xs text-gray-400 mt-4 text-center">Dosyan cihazından çıkmadan bekliyor; araç sayfasında yüklenecek. 15 dk içinde işlem yapılmazsa otomatik temizlenir.</p>
+        </div>
+    </div>
+
+    <script type="module" src="js-v2/home-dropzone.js?v=1a080126"></script>
+
     <script type="module" src="js-v2/main.js?v=2cc1ac73"></script>
             <!-- Mobile Search Modal (Cmd+K pattern) -->
             <div id="mobile-search-bar" class="md:hidden hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-200" role="dialog" aria-modal="true" aria-label="Araç arama">

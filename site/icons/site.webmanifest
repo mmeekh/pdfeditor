@@ -9,7 +9,11 @@
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "tr-TR",
-  "categories": ["productivity", "utilities", "business"],
+  "categories": [
+    "productivity",
+    "utilities",
+    "business"
+  ],
   "screenshots": [
     {
       "src": "/images/mobile-pdf-edit.webp",
@@ -44,21 +48,52 @@
       "short_name": "Birleştir",
       "description": "PDF dosyalarını birleştir",
       "url": "/?tool=merge",
-      "icons": [{ "src": "/icons/icon-192x192.webp", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.webp",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "PDF Sıkıştır",
       "short_name": "Sıkıştır",
       "description": "PDF boyutunu küçült",
       "url": "/?tool=compress",
-      "icons": [{ "src": "/icons/icon-192x192.webp", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.webp",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "PDF'den Word'e",
       "short_name": "PDF→Word",
       "description": "PDF'yi Word'e dönüştür",
       "url": "/?tool=pdf-to-word",
-      "icons": [{ "src": "/icons/icon-192x192.webp", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.webp",
+          "sizes": "192x192"
+        }
+      ]
     }
-  ]
+  ],
+  "share_target": {
+    "action": "/paylas",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "application/pdf",
+            ".pdf"
+          ]
+        }
+      ]
+    }
+  }
 }

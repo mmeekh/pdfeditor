@@ -35,3 +35,11 @@ gtag('consent', 'default', consentDefaults);
 // 2026-07-31: gtag('config') KALDIRILDI — GA4 yapılandırması artık yalnız GTM'de
 // (container'a GA4 etiketi eklendi; buradaki config çift page_view sayımına yol açıyordu).
 // Bu dosya yalnızca consent default + gtag() tanımı sağlar ve GTM'den ÖNCE yüklenmelidir.
+
+
+// PWA: service worker kaydı (paylaş-hedefi + kurulabilirlik; cache yapmaz)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}

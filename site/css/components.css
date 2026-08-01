@@ -2108,3 +2108,12 @@ header.bg-white.shadow-sm {
 
 /* ── Lighthouse target-size düzeltmesi: kart alt linkleri dokunulabilir boyutta ── */
 .tool-card .mt-3 a { display: inline-block; padding: .3rem .15rem; }
+
+/* ── Evrensel bırakma alanı + araç seçici (2026-08-01) ── */
+.home-dropzone:hover, .home-dropzone:focus-visible { border-color: #dc2626; background: #fff; box-shadow: 0 8px 24px -12px rgba(220,38,38,.25); }
+.chooser-item { display: flex; flex-direction: column; align-items: center; gap: .4rem; padding: .8rem .5rem; border: 1px solid #e5e7eb; border-radius: .8rem; font-size: .85rem; font-weight: 600; color: #1f2937; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.chooser-item:hover, .chooser-item:focus-visible { transform: translateY(-2px); border-color: #d1d5db; box-shadow: 0 10px 18px -12px rgba(28,35,51,.35); }
+.chooser-item svg { width: 44px; height: 44px; }
+
+/* ── Lighthouse link-in-text-block: metin içi linkler her zaman altı çizili ── */
+.space-y-5 a, .answer-block a { text-decoration: underline; }
