@@ -1,396 +1,661 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
     <script src="../js-v2/gtag-config.js?v=3f1a2026"></script>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi</title>
-    <meta content="KEP PDF gönderme adımları, KEP dosya boyutu kontrolü ve kayıtlı elektronik posta eki için PDF formatı, sıkıştırma, e-imza ve güvenlik rehberi." name="description"/>
-    <meta content="Emin Kılıç" name="author"/>
-    <meta content="index, follow, max-image-preview:large" name="robots"/>
-    <link href="https://pdfislemleri.com/blog/kep-pdf-gonderme" rel="canonical"/>
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi</title>
+<meta name="description" content="KEP ile PDF gönderme rehberi: kep dosya boyutu sınırını kontrol etme, kayıtlı elektronik posta eki için sıkıştırma, tek PDF düzeni ve e-imza ipuçları."/>
+<meta content="PDFişlemleri.com" name="author"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://pdfislemleri.com/blog/kep-pdf-gonderme" rel="canonical"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W3NM2JLP');</script>
-    <!-- End Google Tag Manager -->
-
-    <link href="https://pdfislemleri.com/blog/kep-pdf-gonderme" hreflang="tr" rel="alternate"/>
-    <link href="https://pdfislemleri.com/blog/kep-pdf-gonderme" hreflang="tr-TR" rel="alternate"/>
-    <link href="https://pdfislemleri.com/blog/kep-pdf-gonderme" hreflang="x-default" rel="alternate"/>
-    <meta content="article" property="og:type"/>
-    <meta content="https://pdfislemleri.com/blog/kep-pdf-gonderme" property="og:url"/>
-    <meta content="KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi" property="og:title"/>
-    <meta content="KEP PDF gönderme adımları, KEP dosya boyutu kontrolü ve kayıtlı elektronik posta eki için PDF formatı, sıkıştırma, e-imza ve güvenlik rehberi." property="og:description"/>
-    <meta content="https://pdfislemleri.com/images/pdf-signature.webp?v=f872036c" property="og:image"/>
-    <meta content="PDFişlemleri.com" property="og:site_name"/>
-    <meta content="tr_TR" property="og:locale"/>
-    <meta content="summary_large_image" property="twitter:card"/>
-    <meta content="https://pdfislemleri.com/blog/kep-pdf-gonderme" property="twitter:url"/>
-    <meta content="KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi" property="twitter:title"/>
-    <meta content="KEP PDF gönderme adımları, KEP dosya boyutu kontrolü ve kayıtlı elektronik posta eki için PDF formatı, sıkıştırma, e-imza ve güvenlik rehberi." property="twitter:description"/>
-    <meta content="https://pdfislemleri.com/images/pdf-signature.webp?v=f872036c" property="twitter:image"/>
-
-    <link href="/icons/site.webmanifest" rel="manifest"/>
-    <link href="/icons/favicon.ico" rel="icon" type="image/x-icon"/>
-    <link href="/icons/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180"/>
-    <link color="#0ea5e9" href="/icons/safari-pinned-tab.svg" rel="mask-icon"/>
-    <meta content="#0ea5e9" name="theme-color"/>
-    <link href="../css/tw.css?v=3153838b" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-    <link href="../css/theme.css" rel="stylesheet"/>
-    <link href="../css/base.css" rel="stylesheet"/>
-    <link href="../css/components.css?v=70021153" rel="stylesheet"/>
-    <link href="../css/gradients.css" rel="stylesheet"/>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi",
-      "description": "KEP PDF gönderme adımları, KEP dosya boyutu kontrolü ve kayıtlı elektronik posta eki için PDF formatı, sıkıştırma, e-imza ve güvenlik rehberi.",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://pdfislemleri.com/images/pdf-signature.webp",
-        "width": 1536,
-        "height": 1024,
-        "caption": "KEP ile gönderilecek PDF için format, boyut ve imza hazırlığı",
-        "creditText": "PDFişlemleri.com",
-        "creator": {"@type": "Person", "name": "Emin Kılıç", "url": "https://pdfislemleri.com/about"},
-        "copyrightHolder": {"@type": "Organization", "name": "PDFişlemleri.com", "url": "https://pdfislemleri.com"},
-        "copyrightNotice": "© 2026 PDFişlemleri.com",
-        "license": "https://pdfislemleri.com/terms",
-        "acquireLicensePage": "https://pdfislemleri.com/contact"
-      },
-      "author": {
-        "@type": "Person",
-        "@id": "https://pdfislemleri.com/#author-emin",
-        "name": "Emin Kılıç",
-        "url": "https://pdfislemleri.com/about",
-        "sameAs": ["https://www.linkedin.com/in/eminnkilic/"]
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PDFişlemleri.com",
-        "url": "https://pdfislemleri.com",
-        "logo": {"@type": "ImageObject", "url": "https://pdfislemleri.com/icons/logo.webp"}
-      },
-      "datePublished": "2026-07-31T00:00:00+03:00",
-      "dateModified": "2026-07-31T00:00:00+03:00",
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pdfislemleri.com/blog/kep-pdf-gonderme"},
-      "keywords": "kep pdf gönderme, kep dosya boyutu, kayıtlı elektronik posta ek, kep pdf formatı, kep e-imza",
-      "articleSection": "PDF Rehber",
-      "wordCount": 989,
-      "inLanguage": "tr-TR",
-      "timeRequired": "PT7M",
-      "isPartOf": {"@type": "Blog", "name": "PDFişlemleri.com Blog", "url": "https://pdfislemleri.com/blog"},
-      "mentions": [
-        {"@type": "WebApplication", "name": "PDF Sıkıştırma Aracı", "url": "https://pdfislemleri.com/pdf-sikistir", "applicationCategory": "BusinessApplication"},
-        {"@type": "WebApplication", "name": "PDF Görsel İmza Aracı", "url": "https://pdfislemleri.com/pdf-imzala", "applicationCategory": "BusinessApplication"}
-      ]
+<!-- End Google Tag Manager -->
+<script src="../js-v2/gtag-config.js?v=3f1a2026"></script> <!-- GA4 config GTM'de; çift sayım düzeltmesi 2026-07-31 -->
+<!-- Open Graph / Facebook -->
+<meta content="article" property="og:type"/>
+<meta content="https://pdfislemleri.com/blog/kep-pdf-gonderme" property="og:url"/>
+<meta property="og:title" content="KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi"/>
+<meta property="og:description" content="KEP ile PDF gönderme rehberi: kep dosya boyutu sınırını kontrol etme, kayıtlı elektronik posta eki için sıkıştırma, tek PDF düzeni ve e-imza ipuçları."/>
+<meta content="https://pdfislemleri.com/images/home-og.jpeg" property="og:image"/>
+<meta content="PDFişlemleri.com" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://pdfislemleri.com/blog/kep-pdf-gonderme" property="twitter:url"/>
+<meta property="twitter:title" content="KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi"/>
+<meta property="twitter:description" content="KEP ile PDF gönderme rehberi: kep dosya boyutu sınırını kontrol etme, kayıtlı elektronik posta eki için sıkıştırma, tek PDF düzeni ve e-imza ipuçları."/>
+<meta content="https://pdfislemleri.com/images/home-og.jpeg" property="twitter:image"/>
+<!-- PWA Manifest -->
+<link href="/icons/site.webmanifest" rel="manifest"/>
+<!-- Favicon -->
+<link href="/icons/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/icons/apple-touch-icon.webp" rel="apple-touch-icon" sizes="180x180"/>
+<link color="#0ea5e9" href="/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#0ea5e9" name="theme-color"/>
+<!-- Article Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi",
+  "description": "KEP ile PDF gönderme rehberi: kep dosya boyutu sınırını kontrol etme, kayıtlı elektronik posta eki için sıkıştırma, tek PDF düzeni ve e-imza ipuçları.",
+  "image": "https://pdfislemleri.com/images/home-og.jpeg",
+  "url": "https://pdfislemleri.com/blog/kep-pdf-gonderme",
+  "datePublished": "2026-07-31T00:00:00+03:00",
+  "dateModified": "2026-07-31T00:00:00+03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Emin Kılıç",
+    "url": "https://pdfislemleri.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/eminnkilic/",
+      "https://instagram.com/heremmkh"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PDFişlemleri.com",
+    "url": "https://pdfislemleri.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pdfislemleri.com/icons/logo.webp",
+      "width": 512,
+      "height": 512,
+      "creditText": "PDFişlemleri.com",
+      "copyrightNotice": "© 2026 PDFişlemleri.com",
+      "license": "https://pdfislemleri.com/terms",
+      "acquireLicensePage": "https://pdfislemleri.com/contact"
     }
-    </script>
-
-    <script type="application/ld+json">
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pdfislemleri.com/blog/kep-pdf-gonderme"
+  },
+  "articleSection": "PDF İşlemleri",
+  "keywords": [
+    "kep pdf gönderme",
+    "kep dosya boyutu",
+    "kayıtlı elektronik posta ek",
+    "kep pdf eki sıkıştırma"
+  ],
+  "wordCount": 965,
+  "inLanguage": "tr-TR",
+  "timeRequired": "PT7M",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "PDFişlemleri.com Blog",
+    "url": "https://pdfislemleri.com/blog"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Kayıtlı Elektronik Posta",
+      "description": "Resmî elektronik yazışmalarda gönderim ve teslim sürecini kayıt altına alan e-posta sistemi"
+    },
+    {
+      "@type": "Thing",
+      "name": "PDF Eki Hazırlama",
+      "description": "PDF dosyalarını boyut, format ve imza açısından gönderime hazırlama işlemleri"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "WebApplication",
+      "name": "PDF Sıkıştırma Aracı",
+      "url": "https://pdfislemleri.com/pdf-sikistir",
+      "applicationCategory": "BusinessApplication"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "PDF İmzalama Aracı",
+      "url": "https://pdfislemleri.com/pdf-imzala",
+      "applicationCategory": "BusinessApplication"
+    }
+  ]
+}
+</script>
+<!-- Preconnect for performance -->
+<!-- Tailwind (local build) + Font Awesome -->
+<link href="../css/tw.css?v=3153838b" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="../css/components.css?v=8c31e17e" rel="stylesheet"/>
+<link href="../css/gradients.css" rel="stylesheet"/>
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "@id": "https://pdfislemleri.com/blog/kep-pdf-gonderme#breadcrumb",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog"},
-        {"@type": "ListItem", "position": 3, "name": "KEP ile PDF Gönderme", "item": "https://pdfislemleri.com/blog/kep-pdf-gonderme"}
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://pdfislemleri.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pdfislemleri.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": "KEP ile PDF Gönderme", "item": "https://pdfislemleri.com/blog/kep-pdf-gonderme" }
       ]
     }
     </script>
-
-    <script type="application/ld+json">
+<!-- FAQPage Schema (auto-extracted from visible FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://pdfislemleri.com/blog/kep-pdf-gonderme#faq",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "@id": "https://pdfislemleri.com/blog/kep-pdf-gonderme#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "KEP ile PDF göndermek için e-imza gerekir mi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "BTK'nın KEP sıkça sorulan sorularına göre KEP sisteminde gönderim yapabilmek için elektronik imza gerekir; hesabı yalnızca alıcı olarak kullananların elektronik imza sahibi olması gerekmez. Kullanacağınız doğrulama ve imzalama yöntemini KEP hizmet sağlayıcınızın güncel yönlendirmesinden kontrol edin."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "KEP dosya boyutu sınırı nedir?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tüm hesaplar için değişmez tek bir sınır varsaymayın. Ek boyutu, toplam ileti boyutu ve paket koşulları KEP hizmet sağlayıcısına göre değişebilir. Göndermeden önce kendi KEPHS'nizin güncel yardım sayfasını veya gönderim ekranındaki uyarıyı kontrol edin."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "PDF'e eklenen görsel imza, KEP için gereken e-imza sayılır mı?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hayır. PDF üzerine çizilen veya görsel olarak yerleştirilen imza bir grafik öğesidir; nitelikli elektronik sertifikayla üretilen elektronik imza değildir. Görsel imza aracını yalnızca belgenin görünümünü hazırlamak için kullanın ve KEP gönderimindeki e-imza adımını hizmet sağlayıcınızın sistemi üzerinden tamamlayın."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "PDF'i sıkıştırmak elektronik imzayı etkiler mi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kriptografik olarak imzalanmış bir PDF'i sonradan sıkıştırmak dosya içeriğini değiştirebilir ve imza doğrulamasını bozabilir. Bu nedenle boyut küçültme ve diğer düzenlemeleri önce yapın, son dosyayı kontrol edin ve elektronik imzalama işlemini en son tamamlayın."
-          }
-        }
-      ]
+      "@type": "Question",
+      "name": "KEP ile gönderilecek PDF için dosya boyutu sınırı nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tüm KEP hesapları için geçerli tek bir sınır yoktur; ek ve ileti boyutu sınırları hizmet sağlayıcınıza ve kullandığınız pakete göre değişebilir. Göndermeden önce sağlayıcınızın yardım sayfasındaki veya gönderim ekranındaki güncel sınırı kontrol edin, dosyanız büyükse sıkıştırın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "KEP ekinde neden PDF formatı tercih ediliyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDF, sayfa düzenini ve yazı tiplerini her cihazda aynı şekilde koruduğu için resmî yazışmalarda en çok tercih edilen ek formatıdır. Birden fazla belgeyi tek PDF'te birleştirmek, karşı tarafın ekleri eksiksiz ve doğru sırada incelemesini kolaylaştırır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E-imzalı bir PDF'i sıkıştırabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Önerilmez. Elektronik imzalı bir PDF'te sonradan yapılan sıkıştırma veya düzenleme dosya içeriğini değiştirdiği için imza doğrulamasını bozabilir. Doğru sıra; belgeyi önce düzenleyip sıkıştırmak, son hâlini kontrol etmek ve elektronik imzayı en son atmaktır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PDF üzerine eklenen görsel imza, KEP için yeterli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. PDF üzerine görsel olarak yerleştirilen imza yalnızca bir grafiktir; elektronik sertifikaya dayalı e-imzanın yerine geçmez. Görsel imzayı belgenin görünümü için kullanabilirsiniz, ancak resmî süreçlerdeki elektronik imza adımını ilgili sistem üzerinden tamamlamanız gerekir."
+      }
     }
+  ]
+}
     </script>
 </head>
 <body>
-    <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
-    <div class="site-wrapper">
-        <header class="bg-white shadow-sm">
-            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <a class="flex items-center space-x-2 hover:opacity-80 transition-opacity" href="/">
-                        <i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
-                        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
-                    </a>
-                </div>
-                <nav class="hidden md:flex space-x-6">
-                    <a class="text-gray-600 hover:text-blue-600 transition" href="/">Ana Sayfa</a>
-                    <a class="text-gray-600 font-medium" href="/blog">Blog</a>
-                    <a class="text-gray-600 hover:text-blue-600 transition" href="/about">Hakkımızda</a>
-                    <a class="text-gray-600 hover:text-blue-600 transition" href="/contact">İletişim</a>
-                </nav>
-            </div>
-        </header>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W3NM2JLP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="site-wrapper">
+<!-- Header -->
+<header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<!-- Logo ve Araçlar Butonu -->
+<div class="flex items-center space-x-3">
+<!-- Logo -->
+<a class="flex items-center space-x-2 hover:opacity-80 transition-opacity" href="/">
+<i class="fas fa-file-pdf text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
+<h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-800">PDFişlemleri.com</h2>
+</a>
+<!-- Araçlar Butonu (Mobil) -->
+<button class="md:hidden flex items-center space-x-1 px-2 py-1 text-gray-600 hover:text-blue-600 transition-colors" id="mobile-tools-btn">
+<span class="font-medium text-sm">Araçlar</span>
+<i class="fas fa-chevron-up text-xs transition-transform" id="tools-arrow"></i>
+</button>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex space-x-6">
+<a class="text-gray-600 hover:text-blue-600 transition" href="/">Ana Sayfa</a>
+<a class="text-white font-medium" href="/blog">Blog</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/about">Hakkımızda</a>
+<a class="text-gray-600 hover:text-blue-600 transition" href="/contact">İletişim</a>
+</nav>
+</div>
+<!-- Mobil Araçlar Menüsü -->
+<div class="md:hidden bg-white border-t border-gray-200 shadow-lg transform -translate-y-full transition-transform duration-300 ease-in-out" id="mobile-tools-menu">
+<div class="px-4 py-4 max-h-[32rem] overflow-y-auto">
+<!-- Sayfalar Kategorisi -->
+<div class="mb-5">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sayfalar</p>
+<div class="flex space-x-1 justify-start">
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-home text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Ana Sayfa</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/blog">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-newspaper text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Blog</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/about">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-users text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">Hakkımızda</span>
+</a>
+<a class="mobile-nav-item flex flex-col items-center p-2 rounded-lg hover:bg-gray-50 transition-colors" href="/contact">
+<div class="w-9 h-9 rounded-lg flex items-center justify-center bg-red-100 mb-1">
+<i class="fas fa-phone-alt text-red-600 text-lg"></i>
+</div>
+<span class="text-gray-800 font-medium text-xs text-center">İletişim</span>
+</a>
+</div>
+</div>
+<!-- Sıkıştır Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Sıkıştır</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="compress" href="javascript:void(0)">
+<div class="compress-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-compress-arrows-alt text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF Sıkıştır</span>
+</a>
+</div>
+</div>
+<!-- Birleştir Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Birleştir</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="merge" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-layer-group text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF Birleştir</span>
+</a>
+</div>
+</div>
+<!-- Dönüştür Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Dönüştür</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-word" href="javascript:void(0)">
+<div class="organize-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-word text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium">PDF'den Word'e</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-jpg" href="javascript:void(0)">
+<div class="pdf-to-jpg-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-image text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">JPG'ye</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-ppt" href="javascript:void(0)">
+<div class="pdf-to-ppt-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-powerpoint text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">PPT'ye</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-to-excel" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-excel text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Excel'e</span>
+</a>
+</div>
+</div>
+<!-- Güvenlik Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Güvenlik</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="protect" href="javascript:void(0)">
+<div class="protect-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-lock text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Koruma</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="unlock" href="javascript:void(0)">
+<div class="merge-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-unlock text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Kilidi Aç</span>
+</a>
+</div>
+</div>
+<!-- Düzenle Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Düzenle</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="split" href="javascript:void(0)">
+<div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-cut text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Böl</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="rotate" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-redo text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Döndür</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="watermark" href="javascript:void(0)">
+<div class="watermark-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-stamp text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Filigran</span>
+</a>
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="organize" href="javascript:void(0)">
+<div class="organize-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-sort text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Düzenle</span>
+</a>
+</div>
+</div>
+<!-- İmza Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">İmza</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="sign" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-signature text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">İmzala</span>
+</a>
+</div>
+</div>
+<!-- OCR Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">OCR</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="pdf-ocr" href="javascript:void(0)">
+<div class="pdf-ocr-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-eye text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">OCR</span>
+</a>
+</div>
+</div>
+<!-- Word'den PDF Kategorisi -->
+<div class="mb-6">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Word'den PDF</p>
+<div class="grid grid-cols-2 gap-2">
+<a class="mobile-tool-item w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" data-tool="word-to-pdf" href="javascript:void(0)">
+<div class="rotate-icon-container w-8 h-8 rounded-lg flex items-center justify-center">
+<i class="fas fa-file-pdf text-white text-sm"></i>
+</div>
+<span class="text-gray-800 font-medium text-sm">Word'den PDF</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4">
+<div class="container mx-auto px-4">
+<ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
+<li><a class="hover:text-blue-600" href="/">Ana Sayfa</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li><a class="hover:text-blue-600" href="/blog">Blog</a></li>
+<li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
+<li aria-current="page" class="text-gray-800 font-medium">KEP ile PDF Gönderme</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8">
+<!-- Article Content -->
+<article class="prose prose-lg max-w-4xl mx-auto">
+<!-- Blog Header Content -->
+<div class="mb-6 sm:mb-8">
+<div class="text-center mb-6">
+<div class="mb-4">
+<a class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline" href="/blog">Resmî Yazışma</a>
+<a class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2" href="/">Ücretsiz Araç</a>
+</div>
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-800">KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi</h1>
+<!-- Araç köprüsü (FAZ C 2026-07-31): blog trafiğini araca akıt -->
+<div class="not-prose my-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-gray-50 to-white p-5 flex flex-wrap items-center gap-4 shadow-sm">
+  <svg style="width:52px;height:52px;flex-shrink:0" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-compress"></use></svg>
+  <div class="flex-1 min-w-[200px]">
+    <p class="m-0 font-semibold text-gray-800">KEP ekinizi göndermeden önce hazırlayın:</p>
+    <p class="m-0 text-sm text-gray-600">Ücretsiz, kayıtsız — dosyanız 15 dakikada otomatik silinir.</p>
+  </div>
+  <a href="/pdf-sikistir" class="inline-flex items-center text-white font-semibold px-6 py-3 rounded-xl transition hover:opacity-90" style="background:#059669">PDF Sıkıştır →</a>
+  <a href="/pdf-imzala" class="inline-flex items-center text-white font-semibold px-6 py-3 rounded-xl transition hover:opacity-90" style="background:#be123c">PDF İmzala →</a>
+</div>
 
-        <nav aria-label="Breadcrumb" class="bg-gray-50 py-3 px-4 rounded-lg mb-6 mt-4">
-            <div class="container mx-auto px-4">
-                <ul class="flex items-center space-x-3 text-sm text-gray-600 list-none">
-                    <li><a class="hover:text-blue-600" href="/">Ana Sayfa</a></li>
-                    <li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
-                    <li><a class="hover:text-blue-600" href="/blog">Blog</a></li>
-                    <li><i aria-hidden="true" class="fas fa-chevron-right text-xs text-gray-400"></i></li>
-                    <li aria-current="page" class="text-gray-800 font-medium">KEP ile PDF Gönderme</li>
-                </ul>
-            </div>
-        </nav>
+<div class="flex items-center justify-center text-gray-500 text-sm">
+<i class="fas fa-calendar mr-1 sm:mr-2"></i>
+<span>31 Temmuz 2026</span>
+<span class="mx-4">•</span>
+<i class="fas fa-user mr-1 sm:mr-2"></i>
+<span>Emin Kılıç</span>
+<span class="mx-4">•</span>
+<i class="fas fa-clock mr-1 sm:mr-2"></i>
+<span>7 dk okuma</span>
+</div>
+</div>
+</div>
+<p class="text-lg text-gray-800 leading-relaxed mb-6">
+<strong>KEP ile PDF gönderme</strong>, sıradan bir e-postaya dosya eklemekten biraz daha fazla özen ister. Kayıtlı Elektronik Posta (KEP), resmî yazışmalarda iletinin gönderim ve teslim sürecini kayıt altına alan bir sistemdir; bu yüzden eklediğiniz PDF'in doğru dosya olması, boyut sınırına uyması ve imza bütünlüğünün korunması gerçekten önemlidir. İhtarname, sözleşme, başvuru veya kurum yazışması gönderiyorsanız, küçük bir hazırlık listesi sizi son dakika sürprizlerinden kurtarır.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+                Bu rehberde bir <strong>kayıtlı elektronik posta eki</strong> olarak PDF hazırlamanın üç kritik noktasına odaklanıyoruz: dosya boyutu yönetimi, tek birleşik PDF düzeni ve e-imzalı belgelerde içerik bütünlüğü. Amacımız, KEP arayüzüne geldiğinizde ekinizin zaten hazır olması.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">KEP Nedir, Ekler Neden Çoğunlukla PDF?</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+                KEP, yetkilendirilmiş hizmet sağlayıcılar (KEPHS) üzerinden sunulan ve iletinin kimden çıktığı, alıcıya ulaşıp ulaşmadığı ve ne zaman ulaştığı gibi aşamaları kayıt altına alan bir elektronik posta hizmetidir. Standart e-postadan farkı tam da budur: gönderim süreci, resmî yazışmalarda kullanılabilecek deliller üretir. Hesap açma koşulları ve gönderim akışı sağlayıcıya göre değişebildiği için güncel bilgiyi her zaman kendi KEPHS'nizden almanızı öneririz.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+                Eklerde PDF'in tercih edilmesinin nedeni basit: sayfa düzeni ve yazı tipleri her cihazda aynı görünür, belge kolayca yazdırılabilir ve içerik sonradan fark edilmeden değişmez. Word dosyası açıldığı bilgisayara göre kayabilirken, PDF karşı tarafta sizin gördüğünüz haliyle açılır. Resmî bir yazışmada bu tutarlılık, "hangi sürümü gönderdim?" tartışmasını baştan kapatır.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">KEP Dosya Boyutu: Kesin Rakam Değil, Güncel Sınır</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+                İnternette tek bir <strong>KEP dosya boyutu</strong> rakamı aramak yanıltıcı olabilir. Ek başına sınır, toplam ileti boyutu ve paket koşulları hizmet sağlayıcısına göre farklılık gösterir; üstelik bu sınırlar zaman içinde güncellenebilir. Bu yüzden eski bir foruma ya da blog yazısına değil, kendi sağlayıcınızın yardım sayfasına veya ileti oluşturma ekranındaki uyarıya güvenin. Alıcı kurumun kendi belge kabul koşulları varsa onları da öğrenin.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-4">
+                Boyut sorununun en sık kaynağı taranmış belgelerdir: gereksiz yüksek çözünürlükte, renkli taranan sayfalar dosyayı hızla şişirir. Göndermeden önce <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-sikistir">PDF sıkıştırma aracımızla</a> boyutu küçültebilirsiniz. Sıkıştırdıktan sonra dosyayı mutlaka açın; küçük puntolu metinlerin, kaşelerin ve taranmış imzaların hâlâ net okunduğundan emin olun.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+                Sıkıştırmaya rağmen dosya hâlâ büyükse gereksiz veya boş sayfaları çıkarın, aynı belgenin yinelenen kopyalarını temizleyin ve yeni tarama yapacaksanız daha makul bir çözünürlük ile gri tonlama tercih edin. Çok kapsamlı ek setlerinde, alıcıyla görüşerek belgeleri birden fazla iletiye bölmek de bir seçenektir.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Tek Birleşik PDF Göndermenin Düzen Avantajı</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+                On ayrı ek yerine kapak yazısıyla başlayan, sıralı tek bir PDF göndermek karşı tarafın işini ciddi biçimde kolaylaştırır: hiçbir ek gözden kaçmaz, belgeler sizin belirlediğiniz sırayla incelenir ve "ekin 12. sayfası" gibi net atıflar yapılabilir. Belgelerinizi <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-birlestir">PDF birleştirme aracıyla</a> tek dosyada toplayabilirsiniz. Alıcı kurum ekleri ayrı dosyalar hâlinde istiyorsa elbette bu talebe uyun; bu durumda dosya adlarına sıra numarası eklemek düzeni korur.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-4">
+                Gönderim öncesi hazırlığı şu sırayla yapmanızı öneririz:
+            </p>
+<ol class="list-decimal pl-6 mb-6 text-gray-700">
+<li><strong>Son sürümleri toplayın:</strong> Gönderilecek belgeleri tek klasörde toplayın, taslakları ayırın.</li>
+<li><strong>Tek PDF'te birleştirin:</strong> Kapak yazısı başta olacak şekilde, istenen sırayla birleştirin.</li>
+<li><strong>Boyutu kontrol edin:</strong> Dosya büyükse sıkıştırın; çıktıyı açıp okunurluğu doğrulayın.</li>
+<li><strong>Dosyayı adlandırın:</strong> Konu ve tarih içeren sade bir ad verin; özel karakterlerden kaçının.</li>
+<li><strong>İmzayı en sona bırakın:</strong> E-imza gerekiyorsa tüm düzenlemeler bittikten sonra imzalayın.</li>
+<li><strong>Alıcı adresini doğrulayın:</strong> KEP adresini doğrudan alıcı kurumdan teyit edin.</li>
+</ol>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">E-İmzalı PDF'te İçeriğe Dokunmayın</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+                Elektronik imza, belgenin imzalandığı andaki içeriğine bağlıdır. İmzalı bir PDF'i sonradan sıkıştırmak, birleştirmek veya yeniden kaydetmek dosyanın içeriğini değiştirdiği için imza doğrulamasının başarısız olmasına yol açabilir. Bu da karşı tarafta belgenin geçerliliği konusunda gereksiz soru işaretleri doğurur. Altın kural: önce içerik ve boyut işlemlerini bitirin, son dosyayı kontrol edin, elektronik imzayı en son atın.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+                Bir ayrımın da altını çizelim: <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-imzala">PDF imzalama aracımız</a> belgeye görsel imza ekler; bu, elektronik sertifikaya dayalı e-imzanın yerine geçmez. Görsel imza belgenin görünümünü tamamlar, e-imza ise kimlik doğrulaması sağlar. Elektronik imzanın hukuki kapsamını <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/e-imza-yasal-gecerlilik">e-imza yasal geçerlilik rehberimizde</a>, iki imza türü arasındaki farkları ise <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/islak-imza-e-imza-fark">ıslak imza ve e-imza karşılaştırmamızda</a> ayrıntılı anlattık.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Göndermeden Önce Son Kontroller ve Kayıt Saklama</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+                Gönder düğmesine basmadan önce alıcı KEP adresini, konu satırını ve ekin gerçekten son sürüm olduğunu birlikte kontrol edin. Yüklediğiniz PDF'i arayüzden indirip yeniden açmak, yanlış taslağı veya bozuk yüklemeyi yakalamanın en pratik yoludur. Hassas veriler içeren belgelerde, alıcının ihtiyaç duymadığı sayfaları ekten çıkarmayı da unutmayın.
+            </p>
+<p class="text-gray-700 leading-relaxed mb-6">
+                Gönderimden sonra iletinin çıktısını değil, sistemin ürettiği delil kayıtlarını esas alın: bunları gönderdiğiniz PDF'in son sürümüyle birlikte düzenli adlarla arşivleyin. Aynı belge üzerinde daha sonra değişiklik yapmanız gerekirse yeni sürümü farklı bir adla kaydedin; böylece hangi KEP kaydının hangi içerikle ilişkili olduğu hiçbir zaman karışmaz. Delil kayıtlarının ne kadar süre erişilebilir kaldığı sağlayıcıya göre değişebilir; arşiv süresini KEPHS'nizden öğrenin.
+            </p>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Sıkça Sorulan Sorular</h2>
+<div class="space-y-4 mb-6 sm:mb-8">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">KEP ile gönderilecek PDF için dosya boyutu sınırı nedir?</h3>
+<p class="text-gray-700">Tüm KEP hesapları için geçerli tek bir sınır yoktur; ek ve ileti boyutu sınırları hizmet sağlayıcınıza ve kullandığınız pakete göre değişebilir. Göndermeden önce sağlayıcınızın yardım sayfasındaki veya gönderim ekranındaki güncel sınırı kontrol edin, dosyanız büyükse sıkıştırın.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">KEP ekinde neden PDF formatı tercih ediliyor?</h3>
+<p class="text-gray-700">PDF, sayfa düzenini ve yazı tiplerini her cihazda aynı şekilde koruduğu için resmî yazışmalarda en çok tercih edilen ek formatıdır. Birden fazla belgeyi tek PDF'te birleştirmek, karşı tarafın ekleri eksiksiz ve doğru sırada incelemesini kolaylaştırır.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">E-imzalı bir PDF'i sıkıştırabilir miyim?</h3>
+<p class="text-gray-700">Önerilmez. Elektronik imzalı bir PDF'te sonradan yapılan sıkıştırma veya düzenleme dosya içeriğini değiştirdiği için imza doğrulamasını bozabilir. Doğru sıra; belgeyi önce düzenleyip sıkıştırmak, son hâlini kontrol etmek ve elektronik imzayı en son atmaktır.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-gray-800 mb-2">PDF üzerine eklenen görsel imza, KEP için yeterli mi?</h3>
+<p class="text-gray-700">Hayır. PDF üzerine görsel olarak yerleştirilen imza yalnızca bir grafiktir; elektronik sertifikaya dayalı e-imzanın yerine geçmez. Görsel imzayı belgenin görünümü için kullanabilirsiniz, ancak resmî süreçlerdeki elektronik imza adımını ilgili sistem üzerinden tamamlamanız gerekir.</p>
+</div>
+</div>
+<div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
+<h3 class="text-lg font-semibold text-blue-800 mb-2">💡 Pratik Kontrol Sırası</h3>
+<p class="text-blue-700">
+                    Belgeleri tamamlayın → tek PDF'te birleştirin → gerekiyorsa
+                    <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-sikistir">sıkıştırın</a>
+                    → çıktıyı açıp okunurluğu kontrol edin → e-imzayı en son atın →
+                    alıcı KEP adresini doğrulayıp gönderin ve delil kayıtlarını saklayın.
+                </p>
+</div>
+<div class="author-bio-block bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-6 my-8" id="author-bio-block">
+<div class="flex flex-col sm:flex-row items-start gap-4">
+<div class="flex-shrink-0">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold">EK</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<h3 class="text-lg font-bold text-gray-800">Emin Kılıç</h3>
+<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">PDFişlemleri.com Kurucusu</span>
+</div>
+<p class="text-sm text-gray-700 leading-relaxed mb-3">Full-stack geliştirici. PDFişlemleri.com'u 2024'te KOBİ'lerin ve serbest çalışanların ücretsiz, KVKK uyumlu PDF araçlarına erişebilmesi için kurdu. FastAPI, Python ve Tesseract tabanlı altyapıyı tek başına geliştirdi. PDF dosya formatı, e-imza standartları (5070 Sayılı Kanun) ve KVKK uyumu konularında uygulamalı deneyim sahibi.</p>
+<div class="flex flex-wrap gap-3 text-sm">
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="https://www.linkedin.com/in/eminnkilic/" rel="author noopener" target="_blank"><i class="fab fa-linkedin mr-1.5"></i>LinkedIn</a>
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="/about"><i class="fas fa-user mr-1.5"></i>Hakkımızda</a>
+<a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="/contact"><i class="fas fa-envelope mr-1.5"></i>İletişim</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Related Articles -->
+<section class="mt-16">
+<h2 class="text-2xl font-bold text-gray-800 mb-6">İlgili Yazılar</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-sikistirma">
+<img alt="PDF Sıkıştırma" class="w-full h-32 object-cover rounded-t-lg" height="1024" loading="lazy" src="/images/pdf-compress.webp?v=faed28d1" width="1536"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">PDF Sıkıştırma</h3>
+<p class="text-gray-600 text-sm">KEP ekini okunurluğu koruyarak küçültün</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-birlestirme">
+<img alt="PDF Birleştirme" class="w-full h-32 object-cover rounded-t-lg" height="1040" loading="lazy" src="/images/pdf-merge.webp?v=b38974a5" width="1908"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">PDF Birleştirme</h3>
+<p class="text-gray-600 text-sm">Ekleri tek düzenli dosyada toplayın</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/e-imza-yasal-gecerlilik">
+<img alt="E-İmza Yasal Geçerlilik" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/e-imza-yasal-gecerlilik.webp" width="1248"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">E-İmzanın Yasal Geçerliliği</h3>
+<p class="text-gray-600 text-sm">Elektronik imzanın kapsamı ve sınırları</p>
+</div>
+</a>
+<a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/islak-imza-e-imza-fark">
+<img alt="Islak İmza ile E-İmza Farkı" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/islak-imza-e-imza-fark.webp" width="1248"/>
+<div class="p-6">
+<h3 class="font-semibold text-gray-800 mb-2">Islak İmza ile E-İmza Farkı</h3>
+<p class="text-gray-600 text-sm">Görsel, ıslak ve elektronik imzayı ayırın</p>
+</div>
+</a>
+</div>
+</section>
+<!-- Tool CTA Banner (SEO: blog → tool linking) -->
+<div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+<i class="fas fa-compress-arrows-alt text-2xl"></i>
+</div>
+<div>
+<h3 class="text-xl md:text-2xl font-bold mb-1">KEP Ekinizi Hazırlayın</h3>
+<p class="text-sm md:text-base text-blue-100">PDF'inizi tek tıkla küçültün. Kayıt yok, ücretsiz.</p>
+</div>
+</div>
+<a class="inline-flex items-center bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap" href="/pdf-sikistir">
+<i class="fas fa-rocket mr-2"></i> Aracı Aç
+        </a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="site-footer mt-16 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center sm:text-left">
+<h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
+<p class="text-sm text-gray-500 leading-relaxed">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/about">Hakkımızda</a>
+<a class="transition hover:text-blue-600" href="/blog">Blog</a>
+<a class="transition hover:text-blue-600" href="/contact">İletişim</a>
+</div>
+</div>
+<div class="text-center">
+<h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
+<div class="grid grid-cols-1 gap-y-2 text-sm">
+<a class="transition hover:text-blue-600" href="/terms">Hizmet Şartları</a>
+<a class="transition hover:text-blue-600" href="/privacy">Gizlilik Politikası</a>
+<a class="transition hover:text-blue-600" href="/cookies">Çerez Politikası</a>
+<a class="transition hover:text-blue-600" href="/kvkk">KVKK</a>
+</div>
+</div>
+<div class="text-center sm:text-right">
+<h4 class="text-md font-semibold mb-3">Sosyal Medya</h4>
+<div class="flex space-x-4 justify-center sm:justify-end mb-3">
+<a aria-label="LinkedIn" class="transition hover:text-blue-600" href="https://www.linkedin.com/in/emin-k%C4%B1l%C4%B1%C3%A7-250b14210/" rel="noopener" target="_blank">
+<i class="fab fa-linkedin text-xl"></i>
+</a>
+<a aria-label="Instagram" class="transition hover:text-pink-600" href="https://instagram.com/heremmkh" rel="noopener" target="_blank">
+<i class="fab fa-instagram text-xl"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-500">
+<p>© 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- JavaScript -->
+<!-- Scroll Management -->
+<script>
+        // Page refresh'te scroll position'ı sıfırla
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
 
-        <main class="container mx-auto px-4 py-8">
-            <article class="max-w-4xl mx-auto">
-                <div class="prose prose-lg max-w-none">
-                    <div class="mb-6 sm:mb-8">
-                        <div class="mb-4">
-                            <a class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline" href="/blog">İş &amp; Resmî Belgeler</a>
-                            <a class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2" href="/pdf-sikistir">Ücretsiz Araç</a>
-                        </div>
-                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">KEP ile PDF Gönderme: Boyut, Format ve İmza Rehberi</h1>
-                        <!-- Araç köprüsü: KEP ekini boyut ve görünüm açısından hazırla -->
-                        <div class="not-prose my-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-gray-50 to-white p-5 flex flex-wrap items-center gap-4 shadow-sm">
-                            <svg style="width:52px;height:52px;flex-shrink:0" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-compress"></use></svg>
-                            <svg style="width:52px;height:52px;flex-shrink:0" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-sign"></use></svg>
-                            <div class="flex-1 min-w-[200px]">
-                                <p class="m-0 font-semibold text-gray-800">KEP ekini göndermeden önce hazırla</p>
-                                <p class="m-0 text-sm text-gray-600">Boyutu küçült, gerekiyorsa görünür imza ekle; KEP e-imzasını sağlayıcında tamamla.</p>
-                            </div>
-                            <a href="/pdf-sikistir" class="inline-flex items-center text-white font-semibold px-6 py-3 rounded-xl transition hover:opacity-90" style="background:#059669">PDF Sıkıştır →</a>
-                            <a href="/pdf-imzala" class="inline-flex items-center text-white font-semibold px-6 py-3 rounded-xl transition hover:opacity-90" style="background:#be123c">Görsel İmza Ekle →</a>
-                        </div>
+        // Sayfa yüklendiğinde en üste çık
+        window.addEventListener('beforeunload', () => {
+            window.scrollTo(0, 0);
+        });
 
-                        <p class="text-sm text-gray-600 mb-4"><strong>Not:</strong> PDF İmzala aracı belgeye görsel imza ekler; nitelikli elektronik imza üretmez ve KEP gönderimindeki elektronik imza adımının yerine geçmez.</p>
-                        <div class="flex flex-col sm:flex-row sm:items-center text-gray-600 mb-4 sm:mb-6">
-                            <div class="flex items-center mr-0 sm:mr-6 mb-2 sm:mb-0">
-                                <div>
-                                    <div class="font-medium">Emin Kılıç</div>
-                                    <div class="text-sm">Kurucu &amp; Geliştirici</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-2 sm:space-x-4 text-sm">
-                                <span><i class="fas fa-calendar mr-1 sm:mr-2"></i>31 Temmuz 2026</span>
-                                <span><i class="fas fa-clock mr-1 sm:mr-2"></i>7 dk okuma</span>
-                            </div>
-                        </div>
-                    </div>
+        // Page load'da kontrol et
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+        });
 
-                    <img alt="KEP ile gönderilecek PDF için boyut, format ve imza hazırlığı" class="w-full max-w-3xl mx-auto h-auto rounded-xl mb-6 sm:mb-8 shadow-md" height="1024" loading="lazy" src="/images/pdf-signature.webp?v=f872036c" width="1536"/>
-
-                    <p class="text-lg sm:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6">
-                        <strong>KEP PDF gönderme</strong> süreci, dosyayı normal bir e-postaya eklemekten biraz daha fazla hazırlık ister. Alıcı adresinin doğruluğu, PDF'in okunabilirliği, KEP dosya boyutu, elektronik imza adımı ve gönderimden sonra oluşan deliller birlikte düşünülmelidir. Özellikle sözleşme, ihtar, başvuru veya kurumsal yazışma gönderiyorsanız, son dakikada boyut uyarısıyla karşılaşmamak ve yanlış dosyayı iletmemek için kısa bir kontrol listesi büyük fark yaratır.
-                    </p>
-                    <p class="text-gray-700 mb-4 sm:mb-6">
-                        Bu rehber, bir <strong>kayıtlı elektronik posta eki</strong> olarak PDF hazırlamanın pratik tarafına odaklanır. KEP'in delil üretme işlevini, sağlayıcı seçimini ve gönderimde elektronik imza gerekliliğini BTK'nın güncel açıklamaları çerçevesinde ele alır; ancak belirli bir sağlayıcının değişebilen paket veya teknik sınırları adına kesin rakam vermez.
-                    </p>
-
-                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">KEP ile PDF Gönderme Ne Sağlar?</h2>
-                    <p class="text-gray-700 mb-3 sm:mb-4">
-                        BTK, KEP'i teknik olarak güvenli ve hukuken geçerli elektronik posta olarak tanımlar. Sistem; iletinin görünen göndericiden çıkıp çıkmadığı, alıcıya ulaşıp ulaşmadığı ve ne zaman ulaştığı gibi aşamalar hakkında delil hizmetleri sunar. Bu nedenle önemli olan yalnızca PDF'in karşı tarafa gitmesi değil, gönderim sürecinin KEP kayıtlarıyla izlenebilmesidir. Ayrıntılı çerçeveyi <a class="text-blue-700 hover:text-blue-900 underline" href="https://www.btk.gov.tr/kep-e-iliskin-sikca-sorulan-sorular" rel="noopener" target="_blank">BTK'nın KEP sıkça sorulan sorularında</a> inceleyebilirsiniz.
-                    </p>
-                    <p class="text-gray-700 mb-3 sm:mb-4">
-                        KEP, Gmail veya kurum e-postasının yalnızca daha resmî görünen bir sürümü değildir. BTK'nın açıklamasına göre sistem kendi içinde kapalıdır; KEP üzerinden standart e-posta adreslerine ileti gönderilmez, standart e-postadan da KEP hesabına ileti iletilmez. Dolayısıyla önce alıcının doğru KEP adresini teyit etmeniz gerekir. Kurumsal unvanın benzemesi, adresin doğru olduğu anlamına gelmez.
-                    </p>
-                    <p class="text-gray-700 mb-4 sm:mb-6">
-                        KEP hesabı, BTK tarafından yayımlanan listede yer alan hizmet sağlayıcılardan temin edilir. Sağlayıcıların faaliyet durumu zamanla değişebileceği için seçim yaparken eski bir blog listesini değil <a class="text-blue-700 hover:text-blue-900 underline" href="https://www.btk.gov.tr/kayitli-elektronik-posta-hizmet-saglayicilar" rel="noopener" target="_blank">BTK'nın güncel KEPHS listesini</a> esas alın.
-                    </p>
-
-                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">KEP ile PDF Gönderme Adımları</h2>
-                    <ol class="list-decimal pl-6 mb-4 sm:mb-6 text-gray-700 space-y-2">
-                        <li><strong>Alıcı adresini doğrulayın:</strong> KEP adresini doğrudan alıcı kurumdan veya güvenilir rehber kaydından alın. Karakterleri ve alan adını kopyaladıktan sonra yeniden kontrol edin.</li>
-                        <li><strong>Son PDF'i belirleyin:</strong> Taslakları ayrı klasöre taşıyın; gönderilecek dosyaya konu ve tarih içeren sade bir ad verin. Dosya adında gereksiz özel karakterlerden kaçının.</li>
-                        <li><strong>İçeriği gözden geçirin:</strong> Sayfa sırası, ekler, boş sayfalar, kişisel bilgiler ve okunurluk doğru mu kontrol edin. Birden çok belge varsa karşı tarafın istediği sıraya uyun.</li>
-                        <li><strong>Boyutu gönderimden önce düzenleyin:</strong> PDF büyükse <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-sikistir">PDF sıkıştırma aracını</a> kullanın. Sıkıştırılmış kopyayı açıp küçük yazıların ve taranmış imzaların hâlâ okunabildiğini doğrulayın.</li>
-                        <li><strong>KEPHS arayüzünde iletiyi hazırlayın:</strong> Konu satırını açıklayıcı yazın, kısa bir üst yazı ekleyin ve doğru PDF'i yükleyin. Sistem ek adını gösterdiğinde dosyayı bir kez daha karşılaştırın.</li>
-                        <li><strong>Sağlayıcının imzalama akışını tamamlayın:</strong> BTK'ya göre KEP'ten gönderim için elektronik imza gerekir. Kullanılacak imza veya kimlik doğrulama adımları için kendi KEPHS'nizin güncel talimatlarını izleyin.</li>
-                        <li><strong>Gönderim sonucunu saklayın:</strong> İletiyle birlikte üretilen KEP delillerini indirin veya sağlayıcının arşivinde erişilebilir olduklarını kontrol edin. Yalnızca “gönderildi” ekranının görüntüsüne güvenmeyin.</li>
-                    </ol>
-
-                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">KEP Dosya Boyutu ve PDF Formatı Nasıl Kontrol Edilir?</h2>
-                    <p class="text-gray-700 mb-3 sm:mb-4">
-                        İnternette tek bir <strong>KEP dosya boyutu</strong> rakamı aramak yanıltıcı olabilir. Ek başına sınır, toplam ileti boyutu, hesap paketi ve sağlayıcının teknik politikası farklılaşabilir; bunlar zaman içinde de güncellenebilir. En güvenilir bilgi, kendi sağlayıcınızın yardım sayfasında veya ileti oluşturma ekranında gördüğünüz güncel sınırdır. Alıcı kurum ayrıca kendi belge kabul koşullarını belirleyebilir.
-                    </p>
-                    <p class="text-gray-700 mb-3 sm:mb-4">
-                        PDF formatı, sayfa düzenini koruduğu ve farklı cihazlarda kolay açıldığı için iş yazışmalarında kullanışlıdır. Yine de “PDF” uzantısı tek başına kalite garantisi değildir. Taranmış sayfalar gereksiz yüksek çözünürlükte olabilir, metinler görüntü olarak kalabilir veya kullanılan yazı tipleri başka cihazda sorun çıkarabilir. Göndermeden önce dosyayı hem bilgisayarda hem telefonda açın; sayfaların eksiksiz, metnin okunur ve bağlantıların çalışır olduğunu kontrol edin.
-                    </p>
-                    <p class="text-gray-700 mb-3 sm:mb-4">
-                        Birden fazla belge gönderecekseniz alıcının ekleri ayrı dosyalar hâlinde mi, yoksa tek PDF içinde mi istediğini öğrenin. Tek dosya talep ediliyorsa kapak yazısını başa, destekleyici belgeleri açıklanan sıraya koyun ve birleştirmeden sonra toplam sayfa sayısını denetleyin. Ayrı ek isteniyorsa dosya adlarında sıra numarası kullanmak, alıcının belgeleri doğru sırada incelemesini kolaylaştırır. Her iki durumda da boş tarama sayfalarını ve aynı belgenin yinelenen kopyalarını çıkarmak gereksiz boyutu azaltır.
-                    </p>
-                    <p class="text-gray-700 mb-4 sm:mb-6">
-                        Boyutu azaltmanız gerekiyorsa bunu elektronik imzalama işleminden <strong>önce</strong> yapın. Sıkıştırma, birleştirme veya yeniden kaydetme PDF'in baytlarını değiştirir; kriptografik olarak imzalanmış bir dosyada sonradan yapılan değişiklik imza doğrulamasını bozabilir. Doğru sıra şudur: içeriği tamamla, gerekiyorsa sıkıştır, son çıktıyı kontrol et, ardından sağlayıcının elektronik imza akışını kullan.
-                    </p>
-
-                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Elektronik İmza, Görsel İmza ve KEP Arasındaki Fark</h2>
-                    <p class="text-gray-700 mb-3 sm:mb-4">
-                        Bu üç kavram sıkça birbirine karışır. KEP, iletinin gönderim ve teslimat süreci için kayıt ve delil üreten sistemdir. Elektronik imza, elektronik veriye bağlanan ve kimlik doğrulama amacı taşıyan teknik bir işlemdir. Nitelikli elektronik imza ise nitelikli elektronik sertifikaya dayanan özel bir elektronik imza türüdür. Hangi imza yönteminin kullanılacağı işlem türüne ve KEPHS akışına göre değerlendirilmelidir.
-                    </p>
-                    <p class="text-gray-700 mb-3 sm:mb-4">
-                        PDF üzerine fareyle çizilen, taranmış ıslak imza görseli olarak eklenen veya bir görsel dosyasından yerleştirilen imza ise yalnızca belgenin görünür içeriğidir. <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-imzala">PDF İmzala aracımız</a> bu görsel yerleşimi yapar; elektronik sertifika oluşturmaz ve nitelikli elektronik imza yerine geçmez. KEP'te gönderim yaparken gerekli elektronik imza adımı ayrıca, hizmet sağlayıcının sunduğu yöntemle tamamlanmalıdır.
-                    </p>
-                    <p class="text-gray-700 mb-4 sm:mb-6">
-                        Bir belgeyi hem görsel olarak paraflanmış göstermek hem de KEP ile göndermek istiyorsanız önce görünür imzayı ve diğer düzenlemeleri tamamlayın. Son PDF'i kontrol ettikten sonra KEPHS arayüzündeki imzalama ve gönderme adımlarına geçin. Elektronik imzanın hukuki kapsamı için <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/e-imza-yasal-gecerlilik">e-imza yasal geçerlilik rehberini</a>, kavramsal ayrım için de <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/islak-imza-e-imza-fark">ıslak imza ve e-imza karşılaştırmasını</a> okuyabilirsiniz.
-                    </p>
-
-                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mt-6 sm:mt-8 mb-3 sm:mb-4">Göndermeden Önce Son Kontrol ve Kayıtları Saklama</h2>
-                    <p class="text-gray-700 mb-3 sm:mb-4">
-                        Gönder düğmesine basmadan önce alıcı KEP adresini, konu satırını, dosya adını ve ekin son sürüm olduğunu birlikte kontrol edin. PDF'i indirip yeniden açmak, yanlış taslağı veya bozuk yüklemeyi yakalamanın en kolay yoludur. Kişisel ya da ticari açıdan hassas bir belge gönderiyorsanız, alıcının gerçekten ihtiyaç duymadığı sayfaları ve verileri ekten çıkarın.
-                    </p>
-                    <p class="text-gray-700 mb-4 sm:mb-6">
-                        Gönderimden sonra son PDF'i, ileti metnini ve KEP delillerini aynı dosya klasöründe düzenli adlarla saklayın. Delil kayıtlarının ne kadar süre erişilebilir kalacağı ve ek arşiv hizmetlerinin kapsamı sağlayıcıya göre değişebilir; kurumunuzun saklama politikasını ve KEPHS sözleşmesini kontrol edin. KEP dışındaki genel e-posta ekleri için hazırlık önerilerine de <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/pdf-email-gonderim">PDF e-posta gönderim rehberinden</a> ulaşabilirsiniz.
-                    </p>
-                    <p class="text-gray-700 mb-4 sm:mb-6">
-                        Arşiv klasöründe dosyanın gönderim öncesi son sürümünü korumak da önemlidir. Daha sonra aynı PDF üzerinde düzeltme yapmanız gerekirse yeni sürümü farklı adla kaydedin; böylece KEP delilinin hangi içerikle ilişkili olduğunu karıştırmazsınız. Kurumsal ekiplerde dosya adı, gönderim tarihi, alıcı KEP adresi ve ilgili kayıt numarasını ortak bir takip çizelgesinde tutmak, aylar sonra yapılacak kontrolleri kolaylaştırır.
-                    </p>
-
-                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
-                        <h3 class="text-lg font-semibold text-blue-800 mb-2">Pratik kontrol sırası</h3>
-                        <p class="text-blue-700">PDF'i tamamla → gerekiyorsa sıkıştır → açıp okunurluğu kontrol et → doğru KEP adresini doğrula → KEPHS'nin elektronik imza adımını tamamla → gönderim ve teslimat delillerini sakla.</p>
-                    </div>
-                </div>
-            </article>
-
-            <section aria-labelledby="faq-heading" class="bg-gray-50 rounded-2xl p-6 sm:p-10 my-10 max-w-4xl mx-auto">
-                <div class="flex items-center gap-3 mb-6">
-                    <i class="fas fa-question-circle text-red-500 text-2xl"></i>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800" id="faq-heading">Sıkça Sorulan Sorular</h2>
-                </div>
-                <div class="space-y-5">
-                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
-                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">KEP ile PDF göndermek için e-imza gerekir mi?</h3>
-                        <p class="text-gray-700 leading-relaxed">BTK'nın KEP sıkça sorulan sorularına göre KEP sisteminde gönderim yapabilmek için elektronik imza gerekir; hesabı yalnızca alıcı olarak kullananların elektronik imza sahibi olması gerekmez. Kullanacağınız doğrulama ve imzalama yöntemini KEP hizmet sağlayıcınızın güncel yönlendirmesinden kontrol edin.</p>
-                    </div>
-                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
-                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">KEP dosya boyutu sınırı nedir?</h3>
-                        <p class="text-gray-700 leading-relaxed">Tüm hesaplar için değişmez tek bir sınır varsaymayın. Ek boyutu, toplam ileti boyutu ve paket koşulları KEP hizmet sağlayıcısına göre değişebilir. Göndermeden önce kendi KEPHS'nizin güncel yardım sayfasını veya gönderim ekranındaki uyarıyı kontrol edin.</p>
-                    </div>
-                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
-                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF'e eklenen görsel imza, KEP için gereken e-imza sayılır mı?</h3>
-                        <p class="text-gray-700 leading-relaxed">Hayır. PDF üzerine çizilen veya görsel olarak yerleştirilen imza bir grafik öğesidir; nitelikli elektronik sertifikayla üretilen elektronik imza değildir. Görsel imza aracını yalnızca belgenin görünümünü hazırlamak için kullanın ve KEP gönderimindeki e-imza adımını hizmet sağlayıcınızın sistemi üzerinden tamamlayın.</p>
-                    </div>
-                    <div class="border-b border-gray-200 pb-5 last:border-b-0 last:pb-0">
-                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">PDF'i sıkıştırmak elektronik imzayı etkiler mi?</h3>
-                        <p class="text-gray-700 leading-relaxed">Kriptografik olarak imzalanmış bir PDF'i sonradan sıkıştırmak dosya içeriğini değiştirebilir ve imza doğrulamasını bozabilir. Bu nedenle boyut küçültme ve diğer düzenlemeleri önce yapın, son dosyayı kontrol edin ve elektronik imzalama işlemini en son tamamlayın.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="max-w-4xl mx-auto mt-16">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6 sm:mb-8">İlgili Yazılar</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-email-gonderim">
-                        <img alt="PDF e-posta gönderim rehberi" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/pdf-email-gonderim.webp" width="1248"/>
-                        <div class="p-4"><h3 class="font-bold text-gray-800 mb-2">PDF E-Posta Gönderim Rehberi</h3><p class="text-gray-600 text-sm">Ek boyutu ve teslimat sorunlarını önceden çözün.</p></div>
-                    </a>
-                    <a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/pdf-sikistirma">
-                        <img alt="PDF sıkıştırma rehberi" class="w-full h-32 object-cover rounded-t-lg" height="1024" loading="lazy" src="/images/pdf-compress.webp?v=faed28d1" width="1536"/>
-                        <div class="p-4"><h3 class="font-bold text-gray-800 mb-2">PDF Sıkıştırma</h3><p class="text-gray-600 text-sm">KEP ekini okunurluğu koruyarak küçültün.</p></div>
-                    </a>
-                    <a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/e-imza-yasal-gecerlilik">
-                        <img alt="E-imza yasal geçerlilik rehberi" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/e-imza-yasal-gecerlilik.webp" width="1248"/>
-                        <div class="p-4"><h3 class="font-bold text-gray-800 mb-2">E-İmzanın Yasal Geçerliliği</h3><p class="text-gray-600 text-sm">Elektronik imzanın kapsamını ve sınırlarını öğrenin.</p></div>
-                    </a>
-                    <a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/islak-imza-e-imza-fark">
-                        <img alt="Islak imza ile e-imza farkı" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/islak-imza-e-imza-fark.webp" width="1248"/>
-                        <div class="p-4"><h3 class="font-bold text-gray-800 mb-2">Islak İmza ile E-İmza Farkı</h3><p class="text-gray-600 text-sm">Görsel, ıslak ve elektronik imzayı ayırın.</p></div>
-                    </a>
-                </div>
-            </section>
-
-            <div class="max-w-4xl mx-auto bg-gradient-to-r from-emerald-600 to-rose-700 rounded-2xl p-6 md:p-8 my-8 text-white shadow-lg">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div>
-                        <h3 class="text-xl md:text-2xl font-bold mb-1">KEP Ekinizi Hazırlayın</h3>
-                        <p class="text-sm md:text-base text-white/90">Önce boyutu küçültün; görünür imza gerekiyorsa son PDF'e ekleyin.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <a class="inline-flex items-center bg-white text-emerald-700 hover:bg-emerald-50 px-5 py-3 rounded-xl font-bold transition shadow-md whitespace-nowrap" href="/pdf-sikistir">PDF Sıkıştır</a>
-                        <a class="inline-flex items-center bg-white text-rose-700 hover:bg-rose-50 px-5 py-3 rounded-xl font-bold transition shadow-md whitespace-nowrap" href="/pdf-imzala">Görsel İmza Ekle</a>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="site-footer mt-16 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center sm:text-left">
-                        <h3 class="text-lg font-semibold mb-3">PDFişlemleri.com</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed mb-4">PDF dosyalarınızı ücretsiz olarak işleyin. Birleştirin, ayırın, dönüştürün ve daha fazlasını yapın.</p>
-                        <div class="flex space-x-4 justify-center sm:justify-start">
-                            <a aria-label="LinkedIn" class="transition hover:text-blue-600" href="https://www.linkedin.com/in/eminnkilic/" rel="noopener" target="_blank"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a aria-label="Instagram" class="transition hover:text-pink-600" href="https://instagram.com/heremmkh" rel="noopener" target="_blank"><i class="fab fa-instagram text-xl"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Biz</h4>
-                        <div class="grid grid-cols-1 gap-y-2 text-sm">
-                            <a class="transition hover:text-blue-600" href="/about">Hakkımızda</a>
-                            <a class="transition hover:text-blue-600" href="/blog">Blog</a>
-                            <a class="transition hover:text-blue-600" href="/contact">İletişim</a>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <h4 class="text-md font-semibold mb-3 border-b border-gray-300 pb-2 inline-block">Yasal</h4>
-                        <div class="grid grid-cols-1 gap-y-2 text-sm">
-                            <a class="transition hover:text-blue-600" href="/terms">Hizmet Şartları</a>
-                            <a class="transition hover:text-blue-600" href="/privacy">Gizlilik Politikası</a>
-                            <a class="transition hover:text-blue-600" href="/cookies">Çerez Politikası</a>
-                            <a class="transition hover:text-blue-600" href="/kvkk">KVKK</a>
-                        </div>
-                    </div>
-                    <div class="text-center sm:text-right">
-                        <img alt="PDFişlemleri.com logo" class="rounded-lg inline-block" height="120" loading="lazy" src="/icons/logo.webp" width="120"/>
-                    </div>
-                </div>
-                <div class="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-500">
-                    <p>© 2026 PDFişlemleri.com. Tüm hakları saklıdır.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <script src="../scroll-manager.js" defer></script>
-    <script type="module" src="../js-v2/main.js"></script>
+        // DOM ready'de kontrol et
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 0);
+        });
+    </script>
+<script src="../js-v2/main.js" type="module"></script>
 </body>
 </html>

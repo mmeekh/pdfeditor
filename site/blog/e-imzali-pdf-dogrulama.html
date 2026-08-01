@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>e-İmzalı PDF Nasıl Doğrulanır? İmza Geçerlilik Kontrolü</title>
-<meta name="description" content="E-imzalı PDF doğrulama adımları: PDF imza kontrolü, sertifika, zaman damgası ve elektronik imza geçerlilik durumunu doğru yorumlama rehberi."/>
+<meta name="description" content="E-imzalı PDF doğrulama rehberi: Adobe Reader ile pdf imza kontrolü, yeşil tik ve sarı ünlem anlamı, zaman damgası ve elektronik imza geçerlilik kontrolü."/>
 <meta content="PDFişlemleri.com" name="author"/>
 <meta content="index, follow, max-image-preview:large" name="robots"/>
 <link href="https://pdfislemleri.com/blog/e-imzali-pdf-dogrulama" rel="canonical"/>
@@ -22,7 +22,7 @@
 <meta content="article" property="og:type"/>
 <meta content="https://pdfislemleri.com/blog/e-imzali-pdf-dogrulama" property="og:url"/>
 <meta property="og:title" content="e-İmzalı PDF Nasıl Doğrulanır? İmza Geçerlilik Kontrolü"/>
-<meta property="og:description" content="E-imzalı PDF doğrulama adımları: PDF imza kontrolü, sertifika, zaman damgası ve elektronik imza geçerlilik durumunu doğru yorumlama rehberi."/>
+<meta property="og:description" content="E-imzalı PDF doğrulama rehberi: Adobe Reader ile pdf imza kontrolü, yeşil tik ve sarı ünlem anlamı, zaman damgası ve elektronik imza geçerlilik kontrolü."/>
 <meta content="https://pdfislemleri.com/images/home-og.jpeg" property="og:image"/>
 <meta content="PDFişlemleri.com" property="og:site_name"/>
 <meta content="tr_TR" property="og:locale"/>
@@ -30,7 +30,7 @@
 <meta content="summary_large_image" property="twitter:card"/>
 <meta content="https://pdfislemleri.com/blog/e-imzali-pdf-dogrulama" property="twitter:url"/>
 <meta property="twitter:title" content="e-İmzalı PDF Nasıl Doğrulanır? İmza Geçerlilik Kontrolü"/>
-<meta property="twitter:description" content="E-imzalı PDF doğrulama adımları: PDF imza kontrolü, sertifika, zaman damgası ve elektronik imza geçerlilik durumunu doğru yorumlama rehberi."/>
+<meta property="twitter:description" content="E-imzalı PDF doğrulama rehberi: Adobe Reader ile pdf imza kontrolü, yeşil tik ve sarı ünlem anlamı, zaman damgası ve elektronik imza geçerlilik kontrolü."/>
 <meta content="https://pdfislemleri.com/images/home-og.jpeg" property="twitter:image"/>
 <!-- PWA Manifest -->
 <link href="/icons/site.webmanifest" rel="manifest"/>
@@ -45,7 +45,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "e-İmzalı PDF Nasıl Doğrulanır? İmza Geçerlilik Kontrolü",
-  "description": "E-imzalı PDF doğrulama adımları: PDF imza kontrolü, sertifika, zaman damgası ve elektronik imza geçerlilik durumunu doğru yorumlama rehberi.",
+  "description": "E-imzalı PDF doğrulama rehberi: Adobe Reader ile pdf imza kontrolü, yeşil tik ve sarı ünlem anlamı, zaman damgası ve elektronik imza geçerlilik kontrolü.",
   "image": "https://pdfislemleri.com/images/home-og.jpeg",
   "url": "https://pdfislemleri.com/blog/e-imzali-pdf-dogrulama",
   "datePublished": "2026-07-31T00:00:00+03:00",
@@ -83,10 +83,10 @@
     "e-imzalı pdf doğrulama",
     "pdf imza kontrolü",
     "elektronik imza geçerlilik",
-    "e-imza sertifika kontrolü",
-    "pdf zaman damgası"
+    "adobe reader imza paneli",
+    "zaman damgası"
   ],
-  "wordCount": 1057,
+  "wordCount": 1050,
   "inLanguage": "tr-TR",
   "timeRequired": "PT7M",
   "isPartOf": {
@@ -98,17 +98,12 @@
     {
       "@type": "Thing",
       "name": "Elektronik İmza Doğrulama",
-      "description": "PDF içindeki kriptografik imzanın, imzalayan sertifikasının ve belge bütünlüğünün kontrolü"
-    },
-    {
-      "@type": "Thing",
-      "name": "Nitelikli Elektronik Sertifika",
-      "description": "Güvenli elektronik imza oluşturmak için kullanılan nitelikli elektronik sertifika"
+      "description": "PDF içindeki elektronik imzanın, sertifikanın ve belge bütünlüğünün kontrol edilmesi"
     },
     {
       "@type": "Thing",
       "name": "Zaman Damgası",
-      "description": "Elektronik verinin belirli bir zamanda var olduğunu doğrulayan elektronik kayıt"
+      "description": "Elektronik verinin belirli bir anda var olduğunu kanıtlayan elektronik kayıt"
     }
   ],
   "mentions": [
@@ -128,7 +123,7 @@
 <!-- Custom CSS -->
 <link href="../css/theme.css" rel="stylesheet"/>
 <link href="../css/base.css" rel="stylesheet"/>
-<link href="../css/components.css?v=70021153" rel="stylesheet"/>
+<link href="../css/components.css?v=8c31e17e" rel="stylesheet"/>
 <link href="../css/gradients.css" rel="stylesheet"/>
 <!-- Breadcrumb Schema -->
 <script type="application/ld+json">
@@ -143,7 +138,7 @@
   ]
 }
 </script>
-<!-- FAQPage Schema (visible FAQ ile birebir aynı) -->
+<!-- FAQPage Schema (görünür SSS ile birebir aynı) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -152,34 +147,34 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Bir PDF'te görünen imza, e-imza olduğu anlamına gelir mi?",
+      "name": "PDF'te imza görseli varsa belge e-imzalı mıdır?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hayır. İmza resmi, taranmış ıslak imza veya ekranda çizilmiş imza yalnızca görsel olabilir. Kriptografik e-imzada PDF okuyucusunun imza panelinde sertifika, imzalayan bilgisi ve doğrulama durumu bulunur. Görselin kendisi sertifika doğrulaması sağlamaz."
+        "text": "Hayır. Taranmış ıslak imza, imza fotoğrafı veya ekranda çizilmiş imza yalnızca görseldir. Gerçek elektronik imzada PDF okuyucunun imza panelinde imzalayan bilgisi, sertifika ve doğrulama durumu görünür. İmza paneli boşsa belgede doğrulanabilir bir e-imza yok demektir."
       }
     },
     {
       "@type": "Question",
-      "name": "Sertifikanın süresi dolmuşsa imza otomatik olarak geçersiz midir?",
+      "name": "Adobe Reader'da sarı ünlem işareti imzanın sahte olduğunu mu gösterir?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tek başına bugünkü son kullanma tarihine bakarak karar verilmez. İmzanın atıldığı zaman, güvenilir zaman damgası, sertifikanın o tarihteki iptal durumu, güven zinciri ve doğrulama verileri birlikte değerlendirilir. PDF okuyucusundaki ayrıntılı durumu inceleyin; kritik belgelerde ilgili kurumdan veya sertifika hizmet sağlayıcısından teyit alın."
+        "text": "Hayır, tek başına sahtelik anlamına gelmez. Sarı ünlem çoğu zaman geçerliliğin bilinmediğini gösterir: bilgisayarınız imzalayanın sertifika zincirine güvenmiyor olabilir ya da iptal veya zaman damgası bilgisi doğrulanamamış olabilir. Ayrıntılı imza durumunu açıp nedeni okuyun; önemli belgelerde göndericiden veya ilgili kurumdan teyit isteyin."
       }
     },
     {
       "@type": "Question",
-      "name": "İmzalı PDF'yi sıkıştırmak veya düzenlemek imzayı bozar mı?",
+      "name": "İmzalı PDF'i sıkıştırmak veya düzenlemek imzayı bozar mı?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "PDF üzerinde imzadan sonra yapılan değişiklikler doğrulama sonucunda değişiklik olarak görünebilir ve imzayı geçersiz kılabilir. Sertifikalı PDF'lerde imzalayanın izin verdiği sınırlı değişiklikler ayrı değerlendirilebilir. En güvenlisi doğrulanacak orijinal dosyayı düzenlemeden, sıkıştırmadan ve yeniden kaydetmeden saklamaktır."
+        "text": "İmzadan sonra dosyada yapılan değişiklikler doğrulama sırasında tespit edilir ve imzayı geçersiz hale getirebilir. Sıkıştırma, birleştirme, sayfa silme ve hatta bazı araçlarla yeniden kaydetme de değişiklik sayılabilir. Bu yüzden imzalı orijinal dosyayı olduğu gibi saklayın; işlem yapmanız gerekiyorsa kopya üzerinde çalışın."
       }
     },
     {
       "@type": "Question",
-      "name": "PDFişlemleri.com'daki PDF İmzala aracı NES oluşturur mu?",
+      "name": "PDFişlemleri.com'un PDF İmzala aracı nitelikli e-imza yerine geçer mi?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hayır. Aracımız PDF'e çizerek, yazarak veya görsel yükleyerek görünür bir imza yerleştirir. Nitelikli Elektronik Sertifika üretmez ve güvenli elektronik imza yerine geçmez. İşleminiz NES gerektiriyorsa yetkili bir Elektronik Sertifika Hizmet Sağlayıcısından aldığınız çözümü kullanın."
+        "text": "Hayır. Aracımız belgeye çizerek, yazarak veya görsel yükleyerek görünür bir imza ekler; sertifika tabanlı imza oluşturmaz ve nitelikli elektronik imzanın yerine geçmez. İşleminiz nitelikli e-imza gerektiriyorsa yetkili bir elektronik sertifika hizmet sağlayıcısından edindiğiniz e-imza çözümünü kullanmalısınız."
       }
     }
   ]
@@ -410,17 +405,19 @@
 <div class="text-center mb-6">
 <div class="mb-4">
 <a class="inline-block bg-rose-600 hover:bg-rose-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline" href="/pdf-imzala">PDF İmzalama</a>
+<a class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium transition no-underline ml-2" href="/blog">E-İmza Rehberi</a>
 </div>
 <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-800">e-İmzalı PDF Nasıl Doğrulanır? İmza Geçerlilik Kontrolü</h1>
 <!-- Araç köprüsü (FAZ C 2026-07-31): blog trafiğini araca akıt -->
 <div class="not-prose my-6 rounded-2xl border border-gray-200 bg-gradient-to-r from-gray-50 to-white p-5 flex flex-wrap items-center gap-4 shadow-sm">
   <svg style="width:52px;height:52px;flex-shrink:0" aria-hidden="true" focusable="false"><use href="/icons/tools-3d.svg#i3d-sign"></use></svg>
   <div class="flex-1 min-w-[200px]">
-    <p class="m-0 font-semibold text-gray-800">PDF'ine görünür imzanı yerleştir:</p>
-    <p class="m-0 text-sm text-gray-600">Ücretsiz ve kayıtsız. Bu araç görsel imza ekler; NES oluşturmaz.</p>
+    <p class="m-0 font-semibold text-gray-800">PDF'ine görünür imzanı hemen ekle:</p>
+    <p class="m-0 text-sm text-gray-600">Ücretsiz ve kayıtsız. Bu araç görsel imza ekler; nitelikli e-imza yerine geçmez.</p>
   </div>
   <a href="/pdf-imzala" class="inline-flex items-center text-white font-semibold px-6 py-3 rounded-xl transition hover:opacity-90" style="background:#be123c">PDF İmzala →</a>
 </div>
+
 <div class="flex items-center justify-center text-gray-500 text-sm">
 <i class="fas fa-calendar mr-1 sm:mr-2"></i>
 <span>31 Temmuz 2026</span>
@@ -433,90 +430,94 @@
 </div>
 </div>
 </div>
-<img alt="PDF üzerinde elektronik imza ve sertifika doğrulama ayrıntıları" class="w-full max-w-3xl mx-auto h-auto rounded-lg mb-6 sm:mb-8 shadow-md" height="1024" loading="lazy" src="/images/pdf-signature.webp?v=f872036c" width="1536"/>
+<img alt="PDF üzerinde elektronik imza doğrulama ve sertifika kontrolü" class="w-full max-w-3xl mx-auto h-auto rounded-lg mb-6 sm:mb-8 shadow-md" height="1024" loading="lazy" src="/images/pdf-signature.webp?v=f872036c" width="1536"/>
 <p class="text-lg text-gray-800 leading-relaxed mb-6">
-Bir PDF'in üzerinde imza resmi görmek, belgenin elektronik olarak doğrulandığı anlamına gelmez. Gerçek bir <strong>e-imzalı PDF doğrulama</strong> işlemi; imzanın belgeyle kriptografik bağını, imzalayanın sertifikasını, sertifika güven zincirini ve belgenin imzadan sonra değişip değişmediğini birlikte inceler. Bu rehberde PDF imza kontrolünü adım adım yapmayı ve ekrandaki sonucu doğru yorumlamayı anlatıyoruz.
+Bir PDF'in sayfasında imza görseli bulunması, o belgenin elektronik imzayla güvence altına alındığı anlamına gelmez. Gerçek bir <strong>e-imzalı PDF doğrulama</strong> işlemi; imzanın belgeye kriptografik olarak bağlı olup olmadığını, imzalayanın sertifikasını ve belgenin imzadan sonra değiştirilip değiştirilmediğini birlikte inceler. Bu rehberde <strong>PDF imza kontrolünü</strong> adım adım nasıl yapacağınızı ve ekranda gördüğünüz sonucu nasıl yorumlayacağınızı anlatıyoruz.
 </p>
 <p class="text-gray-700 leading-relaxed mb-6">
-Arayüz adları, simgeler ve renkler kullandığınız PDF okuyucusunun sürümüne göre değişebilir. Bu nedenle yalnızca yeşil tik, sarı uyarı veya benzer bir simgeye bakmayın; her zaman imzanın <strong>ayrıntılı doğrulama durumunu</strong> açın. Kritik bir resmî işlemde bu rehberi genel bilgi olarak kullanın ve belgeyi isteyen kurumun doğrulama yöntemini ayrıca kontrol edin.
+Baştan belirtelim: simgeler, menü adları ve renkler kullandığınız programın sürümüne göre değişebilir. Bu yüzden yalnızca yeşil tik ya da sarı ünlem görmekle yetinmeyin; her zaman imzanın ayrıntılı doğrulama durumunu açıp okuyun. Resmî bir işlem söz konusuysa belgeyi isteyen kurumun kendi doğrulama yöntemini de kontrol etmenizi öneririz.
 </p>
 
-<h2 class="text-2xl font-bold text-gray-800 mb-4">E-İmzalı PDF Doğrulama Neyi Kontrol Eder?</h2>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">E-İmzalı PDF Doğrulama Aslında Neyi Kontrol Eder?</h2>
 <p class="text-gray-700 leading-relaxed mb-4">
-Dijital imza, imzalandığı anda belgenin belirli baytları üzerinden üretilen kriptografik bir değerle PDF'e bağlanır. Doğrulama yazılımı bu bağı yeniden hesaplar. Sonuç eşleşiyorsa imzalanan içerik korunmuştur; eşleşmiyorsa dosyada imzadan sonra değişiklik yapılmış olabilir veya imza verisi sağlıklı okunamıyordur.
+Elektronik imza, imzalama anında belgenin içeriği üzerinden hesaplanan kriptografik bir değerle PDF'e bağlanır. Doğrulama yazılımı bu hesabı yeniden yapar ve sonucu imzadaki değerle karşılaştırır. İki değer eşleşiyorsa imzalanan içerik korunmuş demektir; eşleşmiyorsa dosyada imzadan sonra bir değişiklik yapılmış olabilir.
 </p>
 <p class="text-gray-700 leading-relaxed mb-6">
-Bütünlük kontrolü tek başına yeterli değildir. İmzalayan sertifikasının kime ait olduğu, sertifikayı veren kuruluşun güvenilir kabul edilip edilmediği, sertifikanın kullanım amacı ve iptal durumu da incelenir. BTK, imzaya güvenen üçüncü kişilerin sertifikanın nitelikli olup olmadığını, geçerlilik ve iptal durumunu ve kullanım kısıtlarını kontrol etmesi gerektiğini belirtir. Bu kontroller için güvenli bir elektronik imza doğrulama aracı da kullanılabilir.
+Bütünlük kontrolü tek başına yeterli değildir. Doğrulama sırasında imza sertifikasının kime ait olduğu, sertifikayı veren kuruluşun güvenilir kabul edilip edilmediği, sertifikanın imza anında geçerli olup olmadığı ve iptal edilip edilmediği de incelenir. Türkiye'de nitelikli elektronik sertifikalar, yetkilendirilmiş elektronik sertifika hizmet sağlayıcıları tarafından verilir; şüphe duyduğunuz bir sertifikada sağlayıcının adını ve güncel yetki durumunu kontrol etmekte fayda vardır.
 </p>
 
-<h2 class="text-2xl font-bold text-gray-800 mb-4">Adobe Acrobat Reader ile PDF İmza Kontrolü</h2>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Adobe Reader İmza Paneli ile Adım Adım Kontrol</h2>
 <p class="text-gray-700 leading-relaxed mb-4">
-Adobe'nin güncel yardım akışında imzalı dosya açıldıktan sonra sağ paneldeki <strong>İmzalar</strong> bölümü kullanılır. Menü konumu sürüme ve işletim sistemine göre farklı görünebilir; bulamazsanız araç aramasında “imza” veya “sertifika” yazın.
+En yaygın kontrol yöntemi, ücretsiz Adobe Reader ile dosyayı açıp imza panelini incelemektir. Menü konumları sürüme göre değişebilir; paneli bulamazsanız uygulama içi aramaya "imza" yazabilirsiniz. Temel akış şöyledir:
 </p>
 <ol class="list-decimal pl-6 mb-6 text-gray-700">
-<li><strong>Orijinal PDF'i açın:</strong> E-postadan önizlemek yerine dosyayı indirip güncel bir masaüstü PDF okuyucusunda açın.</li>
-<li><strong>İmzalar panelini açın:</strong> İmzayı seçin; panelde birden fazla imza varsa her birini ayrı inceleyin.</li>
-<li><strong>Doğrulamayı çalıştırın:</strong> İmzalar panelindeki seçeneklerden “İmzaları Doğrula” veya sürümünüzdeki karşılığını seçin.</li>
-<li><strong>İmza özelliklerini görüntüleyin:</strong> Doğrulama durumu, belge bütünlüğü ve değişiklik bilgilerini okuyun.</li>
-<li><strong>Sertifikayı açın:</strong> İmzalayan sertifikasında ad, sertifikayı veren kuruluş, geçerlilik dönemi, güven zinciri ve varsa kullanım kısıtlarını kontrol edin.</li>
-<li><strong>Zaman bilgisini inceleyin:</strong> Saatin yalnızca imzalayan bilgisayarından mı geldiğini, yoksa doğrulanabilen bir zaman damgası mı bulunduğunu ayırt edin.</li>
+<li><strong>Orijinal dosyayı açın:</strong> E-posta önizlemesi veya tarayıcı yerine, dosyayı indirip masaüstü PDF okuyucuda açın. Önizlemeler imza bilgisini çoğu zaman göstermez.</li>
+<li><strong>İmza panelini görüntüleyin:</strong> İmzalı belgelerde genellikle üstte bir bilgi çubuğu çıkar; "İmza Paneli" seçeneğine tıklayarak belgedeki tüm imzaları listeleyin.</li>
+<li><strong>Her imzayı ayrı inceleyin:</strong> Birden fazla imza varsa her birinin durumunu tek tek açın; biri geçerliyken diğeri sorunlu olabilir.</li>
+<li><strong>İmza özelliklerini okuyun:</strong> Doğrulama durumu, imza tarihi ve "imzadan sonra değişiklik yapılıp yapılmadığı" bilgisini kontrol edin.</li>
+<li><strong>Sertifika ayrıntısına girin:</strong> İmzalayanın adı, sertifikayı veren kuruluş, geçerlilik dönemi ve güven zincirini görüntüleyin.</li>
 </ol>
 <p class="text-gray-700 leading-relaxed mb-6">
-Adobe'nin resmî <a class="text-blue-700 hover:text-blue-900 underline" href="https://helpx.adobe.com/acrobat/desktop/e-sign-documents/manage-digital-signatures/validate-digital-sign.html" rel="noopener noreferrer" target="_blank">dijital imza doğrulama rehberi</a>, sonuç penceresindeki ayrıntıların ve imzalayan sertifikasının ayrıca açılmasını önerir. Tek bir renkli simge yerine bu metinsel duruma dayanmanız daha güvenlidir.
+Panelde hiç imza görünmüyorsa, sayfadaki imza yalnızca bir görseldir ve doğrulanabilir bir elektronik imza içermez. Bu ayrımın nedenini yazının ilerleyen bölümünde ayrıntılı açıklıyoruz.
 </p>
 
-<h2 class="text-2xl font-bold text-gray-800 mb-4">Doğrulama Sonucundaki Dört Temel Bilgi</h2>
-<ul class="list-disc pl-6 mb-6 text-gray-700">
-<li><strong>Belge bütünlüğü:</strong> PDF'in imzalanmış içeriği sonradan değişmiş mi? Sayfa eklemek, metni düzenlemek, sıkıştırmak veya dosyayı başka bir araçla yeniden kaydetmek değişiklik olarak algılanabilir.</li>
-<li><strong>Sertifika ve güven zinciri:</strong> Sertifika tanınan bir köke bağlanıyor mu? “İmzalayan bilinmiyor” uyarısı her zaman içeriğin değiştirildiğini göstermez; doğrulama ortamının sertifika zincirine güvenmediğini de gösterebilir.</li>
-<li><strong>Geçerlilik ve iptal durumu:</strong> Sertifika imza tarihinde geçerli miydi ve iptal edilmiş miydi? Yazılım bu bilgiyi sertifika iptal listesi veya çevrimiçi sertifika durum hizmeti üzerinden kontrol edebilir. Ağ erişimi yoksa sonuç tamamlanamayabilir.</li>
-<li><strong>Kullanım ve değişiklik izinleri:</strong> Sertifika hangi amaçla kullanılabilir? Belge sertifikalıysa imzalayan form doldurma veya açıklama ekleme gibi bazı işlemlere izin vermiş olabilir. Ayrıntılı durum, yapılan değişikliğin izin verilen kapsamda olup olmadığını belirtir.</li>
-</ul>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Yeşil Tik, Sarı Ünlem, Kırmızı Çarpı: Sonuçları Doğru Okuyun</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+<strong>Yeşil tik</strong>, imzanın geçerli kabul edildiğini gösterir: belge imzalandıktan sonra değiştirilmemiştir ve imzalayanın sertifikası, bilgisayarınızın güvendiği bir sertifika zincirine bağlanabilmiştir. Yine de önemli belgelerde imza özelliklerini açıp imzalayan adını ve sertifika bilgisini gözle kontrol etmenizi öneririz.
+</p>
+<p class="text-gray-700 leading-relaxed mb-4">
+<strong>Sarı ünlem</strong> çoğu zaman "geçerlilik bilinmiyor" anlamına gelir. Bu, imzanın sahte olduğunu göstermez; genellikle bilgisayarınızın imzalayanın sertifika zincirine güvenmediği ya da iptal veya zaman damgası bilgisinin o an doğrulanamadığı durumlarda ortaya çıkar. Örneğin internet bağlantısı yokken iptal kontrolü tamamlanamayabilir. Böyle bir durumda ayrıntılı durum metnindeki nedeni okuyun ve gerekiyorsa belgeyi gönderen kurumdan teyit isteyin.
+</p>
 <p class="text-gray-700 leading-relaxed mb-6">
-“Geçerli”, “bilinmiyor” ve “geçersiz” sonuçlarını birbirine karıştırmayın. Bilinmiyor sonucu çoğu zaman eksik güven zinciri, erişilemeyen iptal bilgisi veya doğrulanamayan zaman damgası gibi ek inceleme isteyen bir durumu anlatır. Geçersiz sonucu ise bütünlük veya sertifika kontrolünde somut bir sorun bulunduğuna işaret edebilir. Her iki durumda da ayrıntılı hata metnini kaydedip belgeyi gönderen kurumla paylaşın.
+<strong>Kırmızı çarpı</strong> veya "imza geçersiz" sonucu ise somut bir soruna işaret eder: belge imzadan sonra değiştirilmiş ya da sertifikayla ilgili ciddi bir problem tespit edilmiş olabilir. Böyle bir belgeye güvenmeden önce hata metnini kaydedin ve göndericiyle iletişime geçin.
 </p>
 
-<h2 class="text-2xl font-bold text-gray-800 mb-4">Zaman Damgası ve İmzadan Sonraki Değişiklikler</h2>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Zaman Damgası: İmzanın Tarihini Kim Kanıtlıyor?</h2>
 <p class="text-gray-700 leading-relaxed mb-4">
-Zaman damgası, elektronik verinin belirli bir zamanda var olduğuna ilişkin sertifika hizmet sağlayıcısı tarafından doğrulanan kayıttır. İmzalayanın bilgisayar saatinden gelen tarih ile güvenilen bir zaman damgası sunucusundan gelen tarih aynı kanıt gücüne sahip değildir. Adobe de durum ayrıntılarında yerel bilgisayar saatini, doğrulanmış zaman damgasını ve doğrulanamayan zaman damgasını ayrı mesajlarla gösterir.
-</p>
-<p class="text-gray-700 leading-relaxed mb-4">
-Sertifikanın bugün süresinin dolmuş görünmesi, geçmişte atılmış bir imza hakkında tek başına kesin hüküm vermez. Güvenilir zaman damgası, sertifikanın imza anındaki durumu ve uzun dönem doğrulama verileri birlikte değerlendirilmelidir. <a class="text-blue-700 hover:text-blue-900 underline" href="https://www.btk.gov.tr/e-imza-ile-ilgili-sikca-sorulan-sorular" rel="noopener noreferrer" target="_blank">BTK'nın e-imza SSS sayfası</a> zaman damgasını ve sertifika durum kontrolünü daha ayrıntılı açıklar.
+Zaman damgası, bir elektronik verinin belirli bir anda var olduğunu kanıtlayan, güvenilir bir hizmet sağlayıcı tarafından üretilen kayıttır. Bu ayrım önemlidir; çünkü imza tarihi yalnızca imzalayanın bilgisayar saatinden geliyorsa bu bilgi kolayca yanıltıcı olabilir. Güvenilir bir zaman damgası ise imzanın gerçekten o tarihte atıldığına dair bağımsız bir kanıt sunar.
 </p>
 <p class="text-gray-700 leading-relaxed mb-6">
-Doğrulamadan önce dosyayı sıkıştırmayın, birleştirmeyin, sayfalarını ayırmayın veya yeniden kaydetmeyin. Bu işlemler PDF'in bayt yapısını değiştirebilir. İmzalı orijinali ayrı saklayın; işlem yapılmış bir kopya gerekiyorsa onu farklı adla oluşturun. Sertifikalı PDF'lerde izin verilen sınırlı değişiklikler bulunabilse de kararı ayrıntılı doğrulama durumu vermelidir.
+Zaman damgası özellikle şu senaryoda kritik hale gelir: sertifikanın süresi bugün dolmuş olsa bile, imza sertifikanın geçerli olduğu bir tarihte atıldıysa ve bu tarih güvenilir şekilde kanıtlanabiliyorsa, imzanın o anki geçerliliği değerlendirilebilir. Bu nedenle "sertifika süresi dolmuş" uyarısı tek başına kesin bir hüküm değildir; doğrulama yazılımının ayrıntılı açıklamasına bakmak ve kritik belgelerde ilgili kurumdan teyit almak gerekir.
 </p>
 
-<h2 class="text-2xl font-bold text-gray-800 mb-4">Görsel İmza ile Nitelikli Elektronik İmza Aynı Değildir</h2>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Belge Değişirse İmzaya Ne Olur?</h2>
 <p class="text-gray-700 leading-relaxed mb-4">
-PDF'e eklenen imza fotoğrafı, taranmış ıslak imza, ad-soyad yazısı veya ekranda çizilen imza belgenin üzerinde görünür; ancak tek başına sertifika, güven zinciri, iptal kontrolü ya da kriptografik bütünlük kanıtı üretmez. Nitelikli Elektronik Sertifikaya dayalı güvenli elektronik imza ise ayrı bir teknik ve hukuki yapıdır. Daha geniş açıklama için <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/e-imza-yasal-gecerlilik">e-imzanın yasal geçerliliği</a> ve <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/islak-imza-e-imza-fark">ıslak imza ile e-imza farkı</a> rehberlerimizi okuyabilirsiniz.
+Elektronik imzanın en güçlü yanı, belgeyle arasındaki bağın matematiksel olmasıdır. İmzadan sonra içerikte yapılan bir değişiklik — bir kelimenin düzeltilmesi, sayfa eklenmesi veya silinmesi — doğrulama sırasında tespit edilir ve imza geçersiz ya da şüpheli olarak işaretlenir. Bu, bir hata değil; imzanın sizi koruma biçimidir.
 </p>
 <p class="text-gray-700 leading-relaxed mb-6">
-Bizim <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-imzala">PDF İmzala aracımız</a>, belgeye görünür bir imza yerleştirir. Araç NES üretmez, sertifika tabanlı imza atmaz ve nitelikli elektronik imzanın yerine geçmez. Görsel onay yeterliyse pratik bir çözümdür; kurum veya sözleşme NES istiyorsa BTK'nın yayımladığı yetkili Elektronik Sertifika Hizmet Sağlayıcılarından edinilen çözümü kullanın.
+Dikkat edilmesi gereken nokta şu: sıkıştırma, birleştirme, sayfa ayırma gibi işlemler ve hatta bazı programlarla dosyayı yeniden kaydetmek de PDF'in iç yapısını değiştirebilir. Bu yüzden imzalı bir belgeyi doğrulamadan önce üzerinde hiçbir işlem yapmayın; orijinal dosyayı olduğu gibi arşivleyin, işlem gerekiyorsa ayrı bir kopya üzerinde çalışın. İmzalı belgelerinizi e-postayla paylaşırken de dosyayı sıkıştırmak yerine olduğu gibi göndermeyi tercih edin.
+</p>
+
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Görsel İmza ile Nitelikli e-İmza Aynı Şey Değil</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
+Bu noktada dürüst bir ayrım yapalım. PDF'e eklenen imza fotoğrafı, taranmış ıslak imza veya ekranda çizilen imza belgenin üzerinde görünür; ancak sertifika, güven zinciri ve bütünlük kanıtı üretmez. Nitelikli elektronik sertifikaya dayalı güvenli elektronik imza ise ayrı bir teknik ve hukuki yapıdır. İki kavramın hukuki boyutunu <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/e-imza-yasal-gecerlilik">e-imzanın yasal geçerliliği</a> yazımızda, pratik farklarını ise <a class="text-blue-700 hover:text-blue-900 underline" href="/blog/islak-imza-e-imza-fark">ıslak imza ile e-imza farkı</a> rehberimizde ayrıntılı ele aldık.
+</p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Bizim <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-imzala">PDF İmzala aracımız</a> da belgeye görünür bir imza yerleştirir: çizerek, yazarak veya imza görseli yükleyerek. Açıkça söyleyelim; bu araç nitelikli elektronik imza oluşturmaz ve onun yerine geçmez. Dilekçe taslağı, ekip içi onay veya biçimsel imza gereken günlük işler için pratik bir çözümdür. Karşı taraf nitelikli e-imza istiyorsa, yetkili bir sağlayıcıdan edindiğiniz e-imza çözümünü kullanmanız gerekir.
 </p>
 
 <h2 class="text-2xl font-bold text-gray-800 mb-4">Sıkça Sorulan Sorular</h2>
 <div class="space-y-4 mb-6 sm:mb-8">
 <div class="bg-gray-50 p-4 rounded-lg">
-<h3 class="font-semibold text-gray-800 mb-2">Bir PDF'te görünen imza, e-imza olduğu anlamına gelir mi?</h3>
-<p class="text-gray-700">Hayır. İmza resmi, taranmış ıslak imza veya ekranda çizilmiş imza yalnızca görsel olabilir. Kriptografik e-imzada PDF okuyucusunun imza panelinde sertifika, imzalayan bilgisi ve doğrulama durumu bulunur. Görselin kendisi sertifika doğrulaması sağlamaz.</p>
+<h3 class="font-semibold text-gray-800 mb-2">PDF'te imza görseli varsa belge e-imzalı mıdır?</h3>
+<p class="text-gray-700">Hayır. Taranmış ıslak imza, imza fotoğrafı veya ekranda çizilmiş imza yalnızca görseldir. Gerçek elektronik imzada PDF okuyucunun imza panelinde imzalayan bilgisi, sertifika ve doğrulama durumu görünür. İmza paneli boşsa belgede doğrulanabilir bir e-imza yok demektir.</p>
 </div>
 <div class="bg-gray-50 p-4 rounded-lg">
-<h3 class="font-semibold text-gray-800 mb-2">Sertifikanın süresi dolmuşsa imza otomatik olarak geçersiz midir?</h3>
-<p class="text-gray-700">Tek başına bugünkü son kullanma tarihine bakarak karar verilmez. İmzanın atıldığı zaman, güvenilir zaman damgası, sertifikanın o tarihteki iptal durumu, güven zinciri ve doğrulama verileri birlikte değerlendirilir. PDF okuyucusundaki ayrıntılı durumu inceleyin; kritik belgelerde ilgili kurumdan veya sertifika hizmet sağlayıcısından teyit alın.</p>
+<h3 class="font-semibold text-gray-800 mb-2">Adobe Reader'da sarı ünlem işareti imzanın sahte olduğunu mu gösterir?</h3>
+<p class="text-gray-700">Hayır, tek başına sahtelik anlamına gelmez. Sarı ünlem çoğu zaman geçerliliğin bilinmediğini gösterir: bilgisayarınız imzalayanın sertifika zincirine güvenmiyor olabilir ya da iptal veya zaman damgası bilgisi doğrulanamamış olabilir. Ayrıntılı imza durumunu açıp nedeni okuyun; önemli belgelerde göndericiden veya ilgili kurumdan teyit isteyin.</p>
 </div>
 <div class="bg-gray-50 p-4 rounded-lg">
-<h3 class="font-semibold text-gray-800 mb-2">İmzalı PDF'yi sıkıştırmak veya düzenlemek imzayı bozar mı?</h3>
-<p class="text-gray-700">PDF üzerinde imzadan sonra yapılan değişiklikler doğrulama sonucunda değişiklik olarak görünebilir ve imzayı geçersiz kılabilir. Sertifikalı PDF'lerde imzalayanın izin verdiği sınırlı değişiklikler ayrı değerlendirilebilir. En güvenlisi doğrulanacak orijinal dosyayı düzenlemeden, sıkıştırmadan ve yeniden kaydetmeden saklamaktır.</p>
+<h3 class="font-semibold text-gray-800 mb-2">İmzalı PDF'i sıkıştırmak veya düzenlemek imzayı bozar mı?</h3>
+<p class="text-gray-700">İmzadan sonra dosyada yapılan değişiklikler doğrulama sırasında tespit edilir ve imzayı geçersiz hale getirebilir. Sıkıştırma, birleştirme, sayfa silme ve hatta bazı araçlarla yeniden kaydetme de değişiklik sayılabilir. Bu yüzden imzalı orijinal dosyayı olduğu gibi saklayın; işlem yapmanız gerekiyorsa kopya üzerinde çalışın.</p>
 </div>
 <div class="bg-gray-50 p-4 rounded-lg">
-<h3 class="font-semibold text-gray-800 mb-2">PDFişlemleri.com'daki PDF İmzala aracı NES oluşturur mu?</h3>
-<p class="text-gray-700">Hayır. Aracımız PDF'e çizerek, yazarak veya görsel yükleyerek görünür bir imza yerleştirir. Nitelikli Elektronik Sertifika üretmez ve güvenli elektronik imza yerine geçmez. İşleminiz NES gerektiriyorsa yetkili bir Elektronik Sertifika Hizmet Sağlayıcısından aldığınız çözümü kullanın.</p>
+<h3 class="font-semibold text-gray-800 mb-2">PDFişlemleri.com'un PDF İmzala aracı nitelikli e-imza yerine geçer mi?</h3>
+<p class="text-gray-700">Hayır. Aracımız belgeye çizerek, yazarak veya görsel yükleyerek görünür bir imza ekler; sertifika tabanlı imza oluşturmaz ve nitelikli elektronik imzanın yerine geçmez. İşleminiz nitelikli e-imza gerektiriyorsa yetkili bir elektronik sertifika hizmet sağlayıcısından edindiğiniz e-imza çözümünü kullanmalısınız.</p>
 </div>
 </div>
 <div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
-<h3 class="text-lg font-semibold text-blue-800 mb-2">Kontrol özeti</h3>
-<p class="text-blue-700">Simgeden önce ayrıntılı duruma bakın: belge bütünlüğü, sertifika güven zinciri, iptal bilgisi, kullanım kısıtları ve zaman damgası birlikte olumlu olmalıdır. Şüphede kaldığınız resmî belgeler için gönderici kurumdan doğrulama kanalı isteyin.</p>
+<h3 class="text-lg font-semibold text-blue-800 mb-2">💡 Kontrolün kısa özeti</h3>
+<p class="text-blue-700">Simgeye değil, ayrıntıya bakın: belge bütünlüğü, sertifika ve güven zinciri, imza anındaki geçerlilik ve zaman damgası birlikte olumlu olmalı. Şüphede kaldığınız resmî belgelerde belgeyi gönderen kurumdan doğrulama kanalı isteyin ve orijinal dosyayı değiştirmeden saklayın.</p>
 </div>
 <div class="author-bio-block bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-6 my-8" id="author-bio-block">
 <div class="flex flex-col sm:flex-row items-start gap-4">
@@ -528,7 +529,7 @@ Bizim <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-imzala">
 <h3 class="text-lg font-bold text-gray-800">Emin Kılıç</h3>
 <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">PDFişlemleri.com Kurucusu</span>
 </div>
-<p class="text-sm text-gray-700 leading-relaxed mb-3">Full-stack geliştirici. PDFişlemleri.com'u 2024'te KOBİ'lerin ve serbest çalışanların ücretsiz, KVKK uyumlu PDF araçlarına erişebilmesi için kurdu. FastAPI, Python ve Tesseract tabanlı altyapıyı tek başına geliştirdi. PDF dosya formatı, e-imza standartları ve KVKK uyumu konularında uygulamalı deneyim sahibi.</p>
+<p class="text-sm text-gray-700 leading-relaxed mb-3">Full-stack geliştirici. PDFişlemleri.com'u 2024'te KOBİ'lerin ve serbest çalışanların ücretsiz, KVKK uyumlu PDF araçlarına erişebilmesi için kurdu. FastAPI, Python ve Tesseract tabanlı altyapıyı tek başına geliştirdi. PDF dosya formatı, e-imza standartları (5070 Sayılı Kanun) ve KVKK uyumu konularında uygulamalı deneyim sahibi.</p>
 <div class="flex flex-wrap gap-3 text-sm">
 <a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="https://www.linkedin.com/in/eminnkilic/" rel="author noopener" target="_blank"><i class="fab fa-linkedin mr-1.5"></i>LinkedIn</a>
 <a class="inline-flex items-center text-blue-700 hover:text-blue-900 font-medium" href="/about"><i class="fas fa-user mr-1.5"></i>Hakkımızda</a>
@@ -546,7 +547,7 @@ Bizim <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-imzala">
 <img alt="E-İmzanın yasal geçerliliği" class="w-full h-32 object-cover rounded-t-lg" height="1248" loading="lazy" src="/images/blog/e-imza-yasal-gecerlilik.webp?v=bb2d0ff1" width="1248"/>
 <div class="p-6">
 <h3 class="font-semibold text-gray-800 mb-2">E-İmzanın Yasal Geçerliliği</h3>
-<p class="text-gray-600 text-sm">5070 sayılı Kanun kapsamında güvenli e-imzayı tanıyın</p>
+<p class="text-gray-600 text-sm">Güvenli elektronik imzanın hukuki çerçevesini tanıyın</p>
 </div>
 </a>
 <a class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow" href="/blog/islak-imza-e-imza-fark">
@@ -581,12 +582,12 @@ Bizim <a class="text-blue-700 hover:text-blue-900 underline" href="/pdf-imzala">
 </div>
 <div>
 <h3 class="text-xl md:text-2xl font-bold mb-1">PDF'ine Görünür İmza Ekle</h3>
-<p class="text-sm md:text-base text-rose-100">Çiz, yaz veya imza görseli yükle. Araç NES oluşturmaz; görsel imza ekler.</p>
+<p class="text-sm md:text-base text-rose-100">Çiz, yaz veya imza görselini yükle. Ücretsiz, kayıt gerekmez.</p>
 </div>
 </div>
 <a class="inline-flex items-center bg-white text-rose-700 hover:bg-rose-50 px-6 py-3 rounded-xl font-bold transition shadow-md hover:shadow-lg whitespace-nowrap" href="/pdf-imzala">
 <i class="fas fa-signature mr-2"></i> PDF İmzala
-</a>
+        </a>
 </div>
 </div>
 </main>
