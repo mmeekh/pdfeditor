@@ -2117,3 +2117,12 @@ header.bg-white.shadow-sm {
 
 /* ── Lighthouse link-in-text-block: metin içi linkler her zaman altı çizili ── */
 .space-y-5 a, .answer-block a { text-decoration: underline; }
+
+/* ── İşlem-sonrası zincirleme çipleri (2026-08-03) ── */
+.chain-chips { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed #e5e7eb; text-align: center; }
+.chain-chips__label { font-size: .9rem; font-weight: 600; color: #374151; margin: 0 0 .6rem; }
+.chain-chips__row { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+.chain-chip { display: inline-flex; align-items: center; gap: .45rem; padding: .5rem .9rem; background: #fff; border: 1px solid #e5e7eb; border-radius: .75rem; font-size: .9rem; font-weight: 600; color: #1f2937; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.chain-chip:hover:not(:disabled) { transform: translateY(-2px); border-color: #d1d5db; box-shadow: 0 8px 16px -10px rgba(28,35,51,.35); }
+.chain-chip svg { width: 26px; height: 26px; }
+.chain-chip--busy { opacity: .6; cursor: wait; }

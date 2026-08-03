@@ -6,6 +6,7 @@
 import notifications from './notifications.js';
 import { enforceNoEncryptedPdfs } from './pdfEncryptionCheck.js';
 import { getPageCount } from './pdfPageCount.js';
+import handoffStorage from './handoffStorage.js';
 
 function escapeHtml(str) {
     if (str == null) return '';
@@ -404,6 +405,9 @@ class FileHandler {
                 
                 // Session timer'ı başlat
                 this.startSessionTimer();
+
+                // İşlem-sonrası zincirleme çipleri (2026-08-03)
+                try { this.renderChainChips(); } catch (e) { /* zincir çipleri kritik değil */ }
             }
             
             setTimeout(() => {
@@ -411,6 +415,63 @@ class FileHandler {
             }, 1000);
             
         }, 1500);
+    }
+
+    /**
+     * İşlem-sonrası zincirleme: çıktıyı bir sonraki araca tek tıkla taşı.
+     * Yalnızca PDF çıktısı veren araçlarda gösterilir; çip tıklanınca çıktı
+     * fetch edilip handoff deposuna konur ve hedef araca ?handoff ile gidilir.
+     */
+    renderChainChips() {
+        if (document.getElementById('chainChips')) return;
+        const toolEl = document.querySelector('[data-auto-tool]');
+        const tool = toolEl ? toolEl.getAttribute('data-auto-tool') : null;
+        const CHAINS = {
+            'merge':       [['/pdf-sikistir','Sıkıştır','i3d-compress'], ['/pdf-imzala','İmzala','i3d-sign'], ['/pdf-sifrele','Şifrele','i3d-protect']],
+            'compress':    [['/pdf-birlestir','Birleştir','i3d-merge'], ['/pdf-imzala','İmzala','i3d-sign'], ['/pdf-sifrele','Şifrele','i3d-protect']],
+            'rotate':      [['/pdf-sikistir','Sıkıştır','i3d-compress'], ['/pdf-imzala','İmzala','i3d-sign'], ['/pdf-birlestir','Birleştir','i3d-merge']],
+            'watermark':   [['/pdf-imzala','İmzala','i3d-sign'], ['/pdf-sikistir','Sıkıştır','i3d-compress'], ['/pdf-sifrele','Şifrele','i3d-protect']],
+            'sign':        [['/pdf-sikistir','Sıkıştır','i3d-compress'], ['/pdf-sifrele','Şifrele','i3d-protect'], ['/pdf-birlestir','Birleştir','i3d-merge']],
+            'unlock':      [['/pdf-sikistir','Sıkıştır','i3d-compress'], ['/pdf-birlestir','Birleştir','i3d-merge'], ['/pdf-imzala','İmzala','i3d-sign']],
+            'organize':    [['/pdf-sikistir','Sıkıştır','i3d-compress'], ['/pdf-imzala','İmzala','i3d-sign'], ['/pdf-birlestir','Birleştir','i3d-merge']],
+            'word-to-pdf': [['/pdf-sikistir','Sıkıştır','i3d-compress'], ['/pdf-imzala','İmzala','i3d-sign'], ['/pdf-birlestir','Birleştir','i3d-merge']],
+        };
+        const chain = CHAINS[tool];
+        if (!chain || !this.activeSession) return;
+        const host = document.getElementById('downloadBtn');
+        if (!host || !host.parentElement) return;
+
+        const wrap = document.createElement('div');
+        wrap.id = 'chainChips';
+        wrap.className = 'chain-chips';
+        wrap.innerHTML = '<p class="chain-chips__label">Sırada ne var? Çıktını tek tıkla taşı:</p>' +
+            '<div class="chain-chips__row">' +
+            chain.map(([url, label, icon]) =>
+                `<button type="button" class="chain-chip" data-chain-url="${url}">` +
+                `<svg aria-hidden="true"><use href="/icons/tools-3d.svg?v=20260803#${icon}"></use></svg>` +
+                `<span>${label}</span></button>`).join('') +
+            '</div>';
+        host.parentElement.insertAdjacentElement('afterend', wrap);
+
+        wrap.addEventListener('click', async (e) => {
+            const btn = e.target.closest('.chain-chip');
+            if (!btn) return;
+            const url = btn.getAttribute('data-chain-url');
+            btn.disabled = true;
+            btn.classList.add('chain-chip--busy');
+            try {
+                const resp = await fetch(this.activeSession.downloadUrl);
+                if (!resp.ok) throw new Error('indirilemedi');
+                const blob = await resp.blob();
+                const file = new File([blob], this.activeSession.fileName || 'islenmis.pdf', { type: 'application/pdf' });
+                const token = await handoffStorage.put([file]);
+                window.location.href = `${url}?handoff=${token}`;
+            } catch (err) {
+                btn.disabled = false;
+                btn.classList.remove('chain-chip--busy');
+                notifications.error('Dosya taşınamadı — süresi dolmuş olabilir. Yeniden işleyin.', 4000);
+            }
+        });
     }
 
     /**
