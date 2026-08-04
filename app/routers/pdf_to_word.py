@@ -7,11 +7,12 @@ import tempfile
 
 from typing import Optional
 
-from fastapi import APIRouter, Body, File, UploadFile, HTTPException
+from fastapi import APIRouter, Body, Depends, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
 from pdf_to_word import PDFToWordConverter, PDFToWordError
 
@@ -94,7 +95,7 @@ async def process_pdf_to_word(
             status_code=404, detail="Oturum bulunamadı veya süresi dolmuş"
         )
 
-    pdf_files = list(Path(session_dir).glob("*.pdf"))
+    pdf_files = list(uploaded_pdfs(session_dir))
     if not pdf_files:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
 
@@ -156,9 +157,9 @@ async def process_pdf_to_word(
 
 
 @router.get("/download/{session_id}/{filename}")
-async def download_converted(params: PDFToWordDownloadParams = Depends()):
-    session_id = params.session_id
-    filename = params.filename
+async def download_converted(session_id: str, filename: str):
+    # 2026-08-04: hiç var olmayan PDFToWordDownloadParams/Depends kalıbı (9064d8f)
+    # diğer router'larla aynı düz path-param imzasına çevrildi.
     session_dir = os.path.join(settings.TEMP_DIR, session_id)
     file_path = os.path.join(session_dir, filename)
 

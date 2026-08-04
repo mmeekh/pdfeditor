@@ -21,6 +21,7 @@ import tabula
 import fitz  # PyMuPDF
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import (
     validate_pdf_file,
     save_upload_file,
@@ -139,7 +140,7 @@ async def process_pdf_to_excel(
         )
 
     try:
-        files = [str(f) for f in Path(session_dir).glob("*.pdf")]
+        files = [str(f) for f in uploaded_pdfs(session_dir)]
         if len(files) < 1:
             raise HTTPException(status_code=400, detail="PDF dosyası bulunamadı")
 

@@ -85,6 +85,26 @@ class CompressTool {
     const banner = resultArea.querySelector('.bg-green-50');
     if (banner) banner.insertAdjacentHTML('afterend', metricsHtml);
 
+    // 2026-08-03: dürüst sonuç mesajları — %0'ı kutlama.
+    const firstRes = (result.results || [])[0] || {};
+    let noteHtml = '';
+    if (s.total_saved_percent < 1) {
+      noteHtml = `
+        <div class="rounded-lg p-3 mb-3 text-sm" style="background:#fdf3dd;color:#92400e">
+          Bu PDF zaten optimize görünüyor — daha fazla küçültme, görüntü kalitesinden ödün vermeden mümkün değil.
+          Daha küçük dosya şartsa <strong>"Yüksek"</strong> seviyeyi deneyin ya da hedef boyut girin.
+        </div>`;
+    } else if (firstRes.used_level && firstRes.requested_level &&
+               firstRes.used_level !== firstRes.requested_level && firstRes.used_level !== 'none') {
+      const adlar = { low: 'Düşük', medium: 'Orta', high: 'Yüksek' };
+      noteHtml = `
+        <div class="rounded-lg p-3 mb-3 text-sm" style="background:#eaf0fc;color:#1e40af">
+          Seçtiğiniz seviye bu dosyada işe yaramadı; en iyi sonuç için otomatik olarak
+          <strong>${adlar[firstRes.used_level] || firstRes.used_level}</strong> seviye uygulandı.
+        </div>`;
+    }
+    if (noteHtml && banner) banner.insertAdjacentHTML('afterend', noteHtml);
+
     // Auto download
     if (result.download_url){
       const url = window.location.origin + result.download_url;

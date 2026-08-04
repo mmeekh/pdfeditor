@@ -103,7 +103,8 @@ class PDFCompressor:
         with open(out_path, 'wb') as f:
             writer.write(f)
 
-    def compress(self, src_pdf: str, level: str = "medium") -> tuple[str, CompressMetrics]:
+    def compress(self, src_pdf: str, level: str = "medium",
+                 target_kb: Optional[int] = None) -> tuple[str, CompressMetrics]:
         if not os.path.exists(src_pdf):
             raise FileNotFoundError("Kaynak PDF bulunamadı")
 
@@ -116,18 +117,59 @@ class PDFCompressor:
         if not success:
             self._compress_with_pypdf(src_pdf, out_path)
 
-        # Eğer büyümüşse orijinali kullan
         output_size = os.path.getsize(out_path) if os.path.exists(out_path) else 0
+        used_level = level
+
+        # 2026-08-03: OTOMATİK KADEME YÜKSELTME.
+        # /ebook zaten-optimize PDF'lerde ~%0 kazandırıp kullanıcıya "0% daha
+        # küçük" gösteriyordu. İstenen seviye <%3 kazandırdıysa (veya target_kb
+        # tutturulamadıysa) bir üst kademeyi dene; anlamlı fark varsa onu kullan.
+        LADDER = ['low', 'medium', 'high']
+        def _saved_pct(sz: int) -> float:
+            return (input_size - sz) * 100.0 / input_size if input_size else 0.0
+
+        needs_more = (
+            (output_size and _saved_pct(output_size) < 3.0) or
+            (target_kb and output_size > target_kb * 1024)
+        )
+        if success and needs_more and level != 'high':
+            for next_level in LADDER[LADDER.index(level) + 1:]:
+                alt_path = out_path + f'.{next_level}.tmp'
+                try:
+                    if not self._compress_with_gs(src_pdf, next_level, alt_path):
+                        break
+                    alt_size = os.path.getsize(alt_path)
+                    # Bir üst kademe en az %10 kazandırıyorsa ve mevcut sonuçtan
+                    # küçükse onu benimse; değilse çöpe at.
+                    if alt_size < output_size and _saved_pct(alt_size) >= 10.0:
+                        os.replace(alt_path, out_path)
+                        output_size = alt_size
+                        used_level = next_level
+                    else:
+                        os.remove(alt_path)
+                        break
+                    if not (target_kb and output_size > target_kb * 1024):
+                        break
+                except Exception as e:
+                    logger.debug(f"kademe yükseltme atlandı ({next_level}): {e}")
+                    try:
+                        os.path.exists(alt_path) and os.remove(alt_path)
+                    except Exception:
+                        pass
+                    break
+
+        # Eğer hâlâ büyümüşse orijinali kullan
         if output_size and output_size >= input_size:
-            # Orijinali kopyala, boyut değişmesin
             try:
                 import shutil as _sh
                 _sh.copy2(src_pdf, out_path)
                 output_size = os.path.getsize(out_path)
+                used_level = 'none'
             except Exception:
                 pass
 
         metrics = CompressMetrics(input_size_bytes=input_size, output_size_bytes=output_size)
+        metrics.used_level = used_level  # type: ignore[attr-defined]
         return out_path, metrics
 
 

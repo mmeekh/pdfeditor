@@ -9,6 +9,7 @@ from fastapi.responses import FileResponse
 from PyPDF2 import PdfReader as PypdfReader, PdfWriter as PypdfWriter
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
 from rotate import PDFRotator
 
@@ -53,7 +54,7 @@ async def process_rotate(session_id: str, degrees: int = 90, page_rotations: str
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
 
-    files = [str(p) for p in Path(session_dir).glob("*.pdf")]
+    files = [str(p) for p in uploaded_pdfs(session_dir)]
     def _upload_index_key(p: str) -> int:
         name = Path(p).name
         parts = name.split('_', 1)

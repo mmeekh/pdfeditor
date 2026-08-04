@@ -9,6 +9,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
 from split import PDFSplitter, PDFSplitError
 
@@ -81,7 +82,7 @@ async def process_split(
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
 
-    pdf_files = list(Path(session_dir).glob("*.pdf"))
+    pdf_files = list(uploaded_pdfs(session_dir))
     if not pdf_files:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
     

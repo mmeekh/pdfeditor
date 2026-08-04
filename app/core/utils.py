@@ -109,6 +109,20 @@ async def save_upload_file(upload_file: UploadFile, destination: Path) -> None:
     finally:
         upload_file.file.close()
 
+    # 2026-08-04: oturum manifestine kaydet — uploaded_pdfs() girdi/çıktıyı
+    # dosya adı sezgisiyle değil bu kayıtla ayırır (split '000_' olayı).
+    try:
+        import json as _json
+        manifest = destination.parent / "uploads.json"
+        names = []
+        if manifest.exists():
+            names = _json.loads(manifest.read_text(encoding="utf-8"))
+        if destination.name not in names:
+            names.append(destination.name)
+        manifest.write_text(_json.dumps(names), encoding="utf-8")
+    except Exception:
+        pass  # manifest yazılamazsa eski önek kuralı devreye girer
+
 
 def cleanup_old_files() -> None:
     """Remove files older than FILE_CLEANUP_HOURS from TEMP_DIR."""

@@ -7,6 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException, Form
 from fastapi.responses import FileResponse
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path, check_encrypted_files
 from unlock import PDFUnlocker, PDFUnlockError, UnlockResult
 
@@ -28,7 +29,7 @@ async def upload_pdf_for_unlock(file: UploadFile = File(...)):
         # idx prefix ile filename collision'ı önle (diğer router'larla tutarlı)
         file_path = Path(session_dir) / f"0_{file.filename}"
         await save_upload_file(file, file_path)
-        return {"encrypted_files": check_encrypted_files([str(p) for p in Path(session_dir).glob("*.pdf")]),
+        return {"encrypted_files": check_encrypted_files([str(p) for p in uploaded_pdfs(session_dir)]),
             "session_id": session_id, "file": {"original_name": file.filename, "path": str(file_path), "size": getattr(file, "size", 0)}}
     except Exception as e:
         if os.path.exists(session_dir):
@@ -47,7 +48,7 @@ async def process_pdf_unlock(
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
 
-    pdfs = list(Path(session_dir).glob("*.pdf"))
+    pdfs = list(uploaded_pdfs(session_dir))
     if not pdfs:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
     input_pdf = str(pdfs[0])

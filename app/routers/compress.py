@@ -7,6 +7,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path, check_encrypted_files
 from compress import PDFCompressor
 
@@ -40,7 +41,7 @@ async def upload_pdfs_for_compress(files: list[UploadFile] = File(...)):
             path = Path(session_dir) / f"{idx}_{file.filename}"
             await save_upload_file(file, path)
             uploaded.append({"original_name": file.filename, "path": str(path), "size": getattr(file, "size", 0)})
-        return {"encrypted_files": check_encrypted_files([str(p) for p in Path(session_dir).glob("*.pdf")]),
+        return {"encrypted_files": check_encrypted_files([str(p) for p in uploaded_pdfs(session_dir)]),
             "session_id": session_id, "files": uploaded}
     except Exception as e:
         if os.path.exists(session_dir):
@@ -56,7 +57,7 @@ async def process_compress(session_id: str, level: str = "medium", target_kb: in
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
 
-    files = [str(p) for p in Path(session_dir).glob("*.pdf")]
+    files = [str(p) for p in uploaded_pdfs(session_dir)]
     def _upload_index_key(p: str) -> int:
         name = Path(p).name
         parts = name.split('_', 1)
@@ -115,6 +116,10 @@ async def process_compress(session_id: str, level: str = "medium", target_kb: in
                     "input_bytes": metrics.input_size_bytes,
                     "output_bytes": metrics.output_size_bytes,
                     "saved_percent": metrics.saved_percent,
+                    # 2026-08-03: motor <%3 kazançta otomatik kademe yükseltir;
+                    # kullanıcıya dürüst bilgi için gerçekte kullanılan seviye.
+                    "used_level": getattr(metrics, "used_level", level),
+                    "requested_level": level,
                 })
             total_in += metrics.input_size_bytes
             total_out += metrics.output_size_bytes

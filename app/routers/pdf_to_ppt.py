@@ -8,6 +8,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
 from pdf_to_ppt import PDFToPPTConverter, PDFToPPTError
 
@@ -36,13 +37,14 @@ async def upload_pdf_for_ppt(files: list[UploadFile] = File(...)):
     total_size = 0
     try:
         uploaded_files = []
-        for file in files:
+        for idx, file in enumerate(files):
             if getattr(file, "size", None) is not None:
                 total_size += file.size
                 if total_size > settings.MAX_FILE_SIZE:
                     raise HTTPException(status_code=400, detail=f"Toplam boyut {settings.MAX_FILE_SIZE/(1024*1024)}MB sınırını aşıyor")
-            
-            file_path = Path(session_dir) / file.filename
+
+            # 2026-08-04: diğer araçlarla aynı "<idx>_<ad>" kalıbı (uploaded_pdfs filtresi buna dayanır)
+            file_path = Path(session_dir) / f"{idx}_{file.filename}"
             await save_upload_file(file, file_path)
             uploaded_files.append({
                 "original_name": file.filename,
@@ -69,7 +71,7 @@ async def process_pdf_to_ppt(session_id: str, mode: str = "separate"):
     if not os.path.exists(session_dir):
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
 
-    pdfs = list(Path(session_dir).glob("*.pdf"))
+    pdfs = list(uploaded_pdfs(session_dir))
     if not pdfs:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
 

@@ -11,6 +11,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, validate_word_file, save_upload_file, ensure_safe_path
 from pdf_to_txt import PDFToTXTConverter, PDFToTXTError
 
@@ -105,7 +106,7 @@ async def process_pdf_to_txt(
         )
 
     # PDF ve Word dosyalarını bul
-    pdf_files = list(Path(session_dir).glob("*.pdf"))
+    pdf_files = list(uploaded_pdfs(session_dir))
     word_files = list(Path(session_dir).glob("*.doc*"))
     all_files = pdf_files + word_files
     

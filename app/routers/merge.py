@@ -9,6 +9,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException, BackgroundTasks,
 from fastapi.responses import FileResponse, Response
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, cleanup_old_files, ensure_safe_path
 from merge import PDFMerger, PDFMergeError
 
@@ -87,7 +88,7 @@ async def process_merge(
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
 
     try:
-        files = [str(f) for f in Path(session_dir).glob("*.pdf")]
+        files = [str(f) for f in uploaded_pdfs(session_dir)]
         if len(files) < 2:
             raise HTTPException(status_code=400, detail="Yetersiz PDF dosyası")
         # Determine processing order

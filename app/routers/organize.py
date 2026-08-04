@@ -10,6 +10,7 @@ from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, cleanup_old_files, ensure_safe_path
 from organize import PDFOrganizer, PDFOrganizeError
 
@@ -96,7 +97,7 @@ async def process_organize(
         raise HTTPException(status_code=404, detail="Oturum bulunamadı veya süresi dolmuş")
 
     try:
-        files = [str(f) for f in Path(session_dir).glob("*.pdf")]
+        files = [str(f) for f in uploaded_pdfs(session_dir)]
         if not files:
             raise HTTPException(status_code=400, detail="PDF dosyası bulunamadı")
 
@@ -113,7 +114,7 @@ async def process_organize(
             raise HTTPException(status_code=400, detail="Sayfa sırası boş")
 
         # Akıllı isim: ilk PDF'in adı baz alınır
-        first_pdf = sorted([p.name for p in Path(session_dir).glob("*.pdf")])[0] if list(Path(session_dir).glob("*.pdf")) else "organized.pdf"
+        first_pdf = sorted([p.name for p in uploaded_pdfs(session_dir)])[0] if list(uploaded_pdfs(session_dir)) else "organized.pdf"
         base = os.path.splitext(first_pdf)[0].split("_", 1)[-1]  # "0_orig.pdf" → "orig"
         output_filename = f"{base}_duzenlendi.pdf"
         output_path = os.path.join(session_dir, output_filename)

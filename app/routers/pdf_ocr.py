@@ -8,6 +8,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from core.config import settings
+from core.session_files import uploaded_pdfs
 from core.utils import validate_pdf_file, save_upload_file, ensure_safe_path
 from pdf_ocr import PDFOCR, PDFOCRError
 
@@ -104,7 +105,7 @@ async def process_pdf_ocr(params: PDFOCRProcessParams = Depends(pdf_ocr_params))
             status_code=404, detail="Oturum bulunamadı veya süresi dolmuş"
         )
 
-    files = [str(p) for p in Path(session_dir).glob("*.pdf")]
+    files = [str(p) for p in uploaded_pdfs(session_dir)]
     if not files:
         raise HTTPException(status_code=400, detail="PDF bulunamadı")
 
