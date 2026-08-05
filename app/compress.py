@@ -87,6 +87,30 @@ class PDFCompressor:
             logger.error(f"Ghostscript failed: {e}")
             return False
 
+    def _rasterize(self, src_pdf: str, out_path: str, dpi: int, quality: int) -> bool:
+        """Sayfaları JPEG'e çevirip yeni PDF kurar.
+
+        2026-08-05: gs preset'lerinin İŞLEMEDİĞİ dosya sınıfı için (ör. Canva/
+        iLovePDF çıkışı, yazıları eğriye çevrilmiş saf-vektör PDF'ler — gs bunları
+        BÜYÜTÜYOR). Bedeli: metin seçilebilirliği gider; bu yüzden yalnızca preset
+        kazanç sağlayamadığında devreye girer ve yanıtta 'raster' olarak işaretlenir.
+        """
+        try:
+            import fitz  # PyMuPDF
+            src = fitz.open(src_pdf)
+            out = fitz.open()
+            for page in src:
+                pix = page.get_pixmap(dpi=dpi, colorspace=fitz.csRGB)
+                jpg = pix.tobytes('jpeg', jpg_quality=quality)
+                np = out.new_page(width=page.rect.width, height=page.rect.height)
+                np.insert_image(np.rect, stream=jpg)
+            out.save(out_path, garbage=4, deflate=True)
+            out.close(); src.close()
+            return os.path.exists(out_path)
+        except Exception as e:
+            logger.warning(f"rasterize başarısız ({src_pdf}): {e}")
+            return False
+
     def _compress_with_pypdf(self, src_pdf: str, out_path: str) -> None:
         reader = PdfReader(src_pdf)
         writer = PdfWriter()
@@ -162,6 +186,32 @@ class PDFCompressor:
                         pass
                     break
 
+        # 2026-08-05 SON ÇARE — RASTERİZASYON:
+        # gs hiçbir kademede kazanç sağlayamadıysa (saf-vektör/eğrili PDF'ler)
+        # sayfaları görüntüye çevir. 'low' asla rasterize etmez (kalite sözü).
+        method = 'gs' if success else 'pypdf'
+        RASTER = {'medium': (150, 78), 'high': (130, 70), 'extreme': (110, 60)}
+        still_stuck = (
+            _saved_pct(output_size) < 3.0 or
+            (target_kb and output_size > target_kb * 1024)
+        )
+        if still_stuck and level in RASTER:
+            dpi, q = RASTER[level]
+            r_path = out_path + '.raster.tmp'
+            if self._rasterize(src_pdf, r_path, dpi, q):
+                r_size = os.path.getsize(r_path)
+                # rasterin bedeli var; en az %15 kazandırıyorsa değer
+                if r_size < min(output_size or input_size, input_size) * 0.85:
+                    os.replace(r_path, out_path)
+                    output_size = r_size
+                    used_level = level
+                    method = 'raster'
+                else:
+                    try:
+                        os.remove(r_path)
+                    except Exception:
+                        pass
+
         # Eğer hâlâ büyümüşse orijinali kullan
         if output_size and output_size >= input_size:
             try:
@@ -169,11 +219,13 @@ class PDFCompressor:
                 _sh.copy2(src_pdf, out_path)
                 output_size = os.path.getsize(out_path)
                 used_level = 'none'
+                method = 'none'
             except Exception:
                 pass
 
         metrics = CompressMetrics(input_size_bytes=input_size, output_size_bytes=output_size)
         metrics.used_level = used_level  # type: ignore[attr-defined]
+        metrics.method = method  # type: ignore[attr-defined]
         return out_path, metrics
 
 

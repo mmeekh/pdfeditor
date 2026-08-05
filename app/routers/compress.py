@@ -107,6 +107,7 @@ async def process_compress(session_id: str, level: str = "medium", target_kb: in
                     "saved_percent": metrics.saved_percent,
                     "picked_level": picked_level,
                     "target_kb": target_kb,
+                    "method": getattr(metrics, "method", "gs"),
                 })
             else:
                 out_path, metrics = compressor.compress(src, level=level)
@@ -120,6 +121,7 @@ async def process_compress(session_id: str, level: str = "medium", target_kb: in
                     # kullanıcıya dürüst bilgi için gerçekte kullanılan seviye.
                     "used_level": getattr(metrics, "used_level", level),
                     "requested_level": level,
+                    "method": getattr(metrics, "method", "gs"),
                 })
             total_in += metrics.input_size_bytes
             total_out += metrics.output_size_bytes

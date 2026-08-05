@@ -88,7 +88,14 @@ class CompressTool {
     // 2026-08-03: dürüst sonuç mesajları — %0'ı kutlama.
     const firstRes = (result.results || [])[0] || {};
     let noteHtml = '';
-    if (s.total_saved_percent < 1) {
+    if (firstRes.method === 'raster' && s.total_saved_percent >= 1) {
+      noteHtml = `
+        <div class="rounded-lg p-3 mb-3 text-sm" style="background:#eaf0fc;color:#1e40af">
+          Bu PDF vektör/tarama ağırlıklı olduğu için standart sıkıştırma işe yaramadı;
+          sayfalar <strong>yüksek çözünürlüklü görüntüye çevrilerek</strong> küçültüldü.
+          Görünüm korunur, ancak çıktıda metin seçimi/araması devre dışı kalır.
+        </div>`;
+    } else if (s.total_saved_percent < 1) {
       noteHtml = `
         <div class="rounded-lg p-3 mb-3 text-sm" style="background:#fdf3dd;color:#92400e">
           Bu PDF zaten optimize görünüyor — daha fazla küçültme, görüntü kalitesinden ödün vermeden mümkün değil.
