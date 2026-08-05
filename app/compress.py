@@ -54,6 +54,7 @@ class PDFCompressor:
     def _gs_setting(self, level: str) -> str:
         # high => en küçük dosya, low => daha iyi kalite
         mapping = {
+            'extreme': '/screen',   # en agresif (target_kb merdiveninin son basamağı)
             'high': '/screen',      # agresif
             'medium': '/ebook',     # dengeli
             'low': '/printer',      # daha az sıkıştırma
@@ -124,7 +125,7 @@ class PDFCompressor:
         # /ebook zaten-optimize PDF'lerde ~%0 kazandırıp kullanıcıya "0% daha
         # küçük" gösteriyordu. İstenen seviye <%3 kazandırdıysa (veya target_kb
         # tutturulamadıysa) bir üst kademeyi dene; anlamlı fark varsa onu kullan.
-        LADDER = ['low', 'medium', 'high']
+        LADDER = ['low', 'medium', 'high', 'extreme']
         def _saved_pct(sz: int) -> float:
             return (input_size - sz) * 100.0 / input_size if input_size else 0.0
 
@@ -132,8 +133,11 @@ class PDFCompressor:
             (output_size and _saved_pct(output_size) < 3.0) or
             (target_kb and output_size > target_kb * 1024)
         )
-        if success and needs_more and level != 'high':
-            for next_level in LADDER[LADDER.index(level) + 1:]:
+        # 2026-08-05: bilinmeyen seviye merdiveni ValueError ile patlatıyordu
+        # ('extreme' is not in list) ve o dosya sessizce atlanıyordu.
+        ladder_pos = LADDER.index(level) if level in LADDER else len(LADDER) - 1
+        if success and needs_more and ladder_pos < len(LADDER) - 1:
+            for next_level in LADDER[ladder_pos + 1:]:
                 alt_path = out_path + f'.{next_level}.tmp'
                 try:
                     if not self._compress_with_gs(src_pdf, next_level, alt_path):
