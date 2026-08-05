@@ -22,6 +22,8 @@ logger = logging.getLogger(__name__)
 @dataclass
 class ConvertResult:
     output_path: str
+    method: str = "layout"  # "layout" | "text" | "ocr"
+    no_text_layer: bool = False
 
 
 class PDFToWordError(Exception):
@@ -39,12 +41,52 @@ class PDFToWordConverter:
             base = base.split("_", 1)[1]
         return f"{base}.{ext}"
 
+    def _count_words(self, src_pdf: str) -> int:
+        """Hızlı metin-katmanı kontrolü (fitz, ~ms). 0 = taranmış/vektör PDF."""
+        try:
+            import fitz
+            d = fitz.open(src_pdf)
+            n = sum(len(page.get_text("words")) for page in d)
+            d.close()
+            return n
+        except Exception:
+            return -1  # bilinmiyor → normal akış
+
+    def _convert_ocr(self, src_pdf: str, docx_path: str, lang: str = "tur+eng", dpi: int = 220) -> None:
+        """Metin katmanı olmayan PDF'ler için: sayfayı render et → tesseract → docx.
+
+        2026-08-05: pdf2docx bu dosyalarda 57 sn sürüp 0 karakter metinli,
+        görüntü yığını bir docx üretiyordu (kullanıcının CV'siyle yakalandı).
+        Bu yol ~10 sn'de GERÇEK düzenlenebilir metin verir.
+        """
+        import fitz
+        import pytesseract
+        from PIL import Image
+        import io as _io
+        from docx import Document
+
+        doc = Document()
+        pdf = fitz.open(src_pdf)
+        for pno, page in enumerate(pdf):
+            pix = page.get_pixmap(dpi=dpi, colorspace=fitz.csRGB)
+            img = Image.open(_io.BytesIO(pix.tobytes("png")))
+            text = pytesseract.image_to_string(img, lang=lang)
+            for blok in text.split("\n\n"):
+                blok = blok.strip()
+                if blok:
+                    doc.add_paragraph(blok.replace("\n", " "))
+            if pno < len(pdf) - 1:
+                doc.add_page_break()
+        pdf.close()
+        doc.save(docx_path)
+
     def convert(
         self,
         src_pdf: str,
         out_path: Optional[str] = None,
         layout: str = "layout-preserve",
         output_format: str = "docx",
+        use_ocr: bool = True,
     ) -> ConvertResult:
         if not os.path.exists(src_pdf):
             raise PDFToWordError("Kaynak PDF bulunamadı")
@@ -54,7 +96,20 @@ class PDFToWordConverter:
             self.temp_dir, self._out_name(src_pdf, "docx")
         )
 
-        if layout == "text-only":
+        method = "text" if layout == "text-only" else "layout"
+        no_text = False
+        words = self._count_words(src_pdf)
+        if words == 0:
+            no_text = True
+            if use_ocr:
+                # Ağır pdf2docx'i ATLA: metinsiz PDF'te OCR hem hızlı hem işlevsel
+                self._convert_ocr(src_pdf, docx_path)
+                method = "ocr"
+            elif layout == "text-only":
+                self._convert_text_only(src_pdf, docx_path)
+            else:
+                self._convert_layout_preserve(src_pdf, docx_path)
+        elif layout == "text-only":
             self._convert_text_only(src_pdf, docx_path)
         else:
             self._convert_layout_preserve(src_pdf, docx_path)
@@ -70,9 +125,9 @@ class PDFToWordConverter:
                     os.remove(docx_path)
                 except OSError:
                     pass
-            return ConvertResult(output_path=doc_path)
+            return ConvertResult(output_path=doc_path, method=method, no_text_layer=no_text)
 
-        return ConvertResult(output_path=docx_path)
+        return ConvertResult(output_path=docx_path, method=method, no_text_layer=no_text)
 
     def _convert_layout_preserve(self, src_pdf: str, out_path: str) -> None:
         try:

@@ -26,6 +26,7 @@ router = APIRouter(prefix="/api/tools/pdf-to-word", tags=["pdf-to-word"])
 class PDFToWordOptions(BaseModel):
     layout: str = "layout-preserve"   # "layout-preserve" | "text-only"
     output_format: str = "docx"        # "docx" | "doc"
+    use_ocr: bool = True               # metin katmanı yoksa OCR ile çıkar (2026-08-05)
 
 
 @router.post("/upload")
@@ -109,12 +110,15 @@ async def process_pdf_to_word(
                 str(pdf_file),
                 layout=opts.layout,
                 output_format=opts.output_format,
+                use_ocr=opts.use_ocr,
             )
             converted_files.append(
                 {
                     "original_pdf": pdf_file.name,
                     "word_file": os.path.basename(result.output_path),
                     "output_path": result.output_path,
+                    "method": result.method,
+                    "no_text_layer": result.no_text_layer,
                 }
             )
 
@@ -147,6 +151,8 @@ async def process_pdf_to_word(
                 "download_url": f"/api/tools/pdf-to-word/download/{session_id}/{output_name}",
                 "file_count": 1,
                 "is_zip": False,
+                "method": converted_files[0].get("method", "layout"),
+                "no_text_layer": converted_files[0].get("no_text_layer", False),
             }
 
     except PDFToWordError as e:

@@ -132,7 +132,7 @@ class PdfToTxtTool {
         return {
             encoding: document.querySelector('input[name="pdfToTxtEncoding"]:checked')?.value || 'utf-8',
             preserve_paragraphs: document.querySelector('input[name="pdfToTxtPreserveParagraphs"]')?.checked ?? true,
-            use_ocr: document.querySelector('input[name="pdfToTxtOcr"]')?.checked ?? false,
+            use_ocr: document.querySelector('input[name="pdfToTxtOcr"]')?.checked ?? true,
         };
     }
 
@@ -165,7 +165,7 @@ class PdfToTxtTool {
 
             <div class="mb-4">
                 <label class="flex items-center">
-                    <input type="checkbox" name="pdfToTxtOcr" class="mr-2">
+                    <input type="checkbox" name="pdfToTxtOcr" class="mr-2" checked>
                     <span class="text-gray-700">Taranmış PDF için OCR kullan</span>
                 </label>
                 <p class="text-sm text-gray-500 mt-1">

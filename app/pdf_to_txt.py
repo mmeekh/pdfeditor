@@ -44,7 +44,7 @@ class PDFToTXTConverter:
         out_path: Optional[str] = None,
         encoding: str = "utf-8",
         preserve_paragraphs: bool = True,
-        use_ocr: bool = False,
+        use_ocr: bool = True,
     ) -> ConvertResult:
         if not os.path.exists(src_pdf):
             raise PDFToTXTError("Kaynak PDF bulunamadı")
@@ -89,7 +89,7 @@ class PDFToTXTConverter:
         out_path: Optional[str] = None,
         encoding: str = "utf-8",
         preserve_paragraphs: bool = True,
-        use_ocr: bool = False,  # noqa: ARG002 (not applicable for Word)
+        use_ocr: bool = True,  # noqa: ARG002 (not applicable for Word)
     ) -> ConvertResult:
         if not os.path.exists(src_word):
             raise PDFToTXTError("Kaynak Word dosyası bulunamadı")
@@ -122,7 +122,7 @@ class PDFToTXTConverter:
         out_path: Optional[str] = None,
         encoding: str = "utf-8",
         preserve_paragraphs: bool = True,
-        use_ocr: bool = False,
+        use_ocr: bool = True,
     ) -> ConvertResult:
         file_ext = Path(src_file).suffix.lower()
         if file_ext == ".pdf":

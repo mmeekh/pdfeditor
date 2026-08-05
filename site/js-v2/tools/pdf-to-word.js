@@ -47,6 +47,23 @@ class PdfToWordTool {
         const url = pdfApi.getPdfToWordDownloadUrl(result.session_id, result.output_file);
         fileHandler.triggerFileDownload(url);
 
+        // 2026-08-05: dürüst bilgilendirme
+        const banner = resultArea.querySelector('.bg-green-50');
+        if (banner && !document.getElementById('p2wNote')) {
+            let note = '';
+            if (result.method === 'ocr') {
+                note = `<div id="p2wNote" class="rounded-lg p-3 mb-3 text-sm" style="background:#eaf0fc;color:#1e40af">
+                    Bu PDF'te seçilebilir metin katmanı yoktu (taranmış/vektör belge) — yazılar
+                    <strong>OCR ile tanınarak</strong> düzenlenebilir Word metnine çevrildi.
+                    Nadir karakter hataları olabilir; önemli belgelerde kontrol edin.</div>`;
+            } else if (result.no_text_layer) {
+                note = `<div id="p2wNote" class="rounded-lg p-3 mb-3 text-sm" style="background:#fdf3dd;color:#92400e">
+                    Bu PDF'te seçilebilir metin yok; OCR kapalı olduğu için çıktı görüntü ağırlıklı olabilir.
+                    Düzenlenebilir metin için <strong>"Taranmış PDF için OCR kullan"</strong> seçeneğini işaretleyin.</div>`;
+            }
+            if (note) banner.insertAdjacentHTML('afterend', note);
+        }
+
         const downloadBtn = resultArea.querySelector('button');
         if (downloadBtn){
             const buttonText = result.is_zip ? 
@@ -68,6 +85,8 @@ class PdfToWordTool {
         return {
             layout: document.querySelector('input[name="pdfToWordLayout"]:checked')?.value || 'layout-preserve',
             output_format: document.querySelector('input[name="pdfToWordFormat"]:checked')?.value || 'docx',
+            // 2026-08-05: kutucuk artık gerçekten backend'e bağlı (önceden ölü seçenekti)
+            use_ocr: document.querySelector('input[name="pdfToWordOcr"]')?.checked ?? true,
         };
     }
 
@@ -90,7 +109,7 @@ class PdfToWordTool {
 
             <div class="mb-4">
                 <label class="flex items-center">
-                    <input type="checkbox" name="pdfToWordOcr" class="mr-2">
+                    <input type="checkbox" name="pdfToWordOcr" class="mr-2" checked>
                     <span class="text-gray-700">Taranmış PDF için OCR kullan</span>
                 </label>
                 <p class="text-sm text-gray-500 mt-1">

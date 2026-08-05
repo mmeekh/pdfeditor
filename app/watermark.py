@@ -1,5 +1,6 @@
 import io
 import logging
+import os
 from typing import Optional
 from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
@@ -68,5 +69,20 @@ class PDFWatermarker:
 
         with open(output_pdf, "wb") as f:
             writer.write(f)
+
+        # 2026-08-05: PyPDF2 yazımı vektör-yoğun PDF'lerde dosyayı 5x şişirebiliyor
+        # (952KB CV → 5.3MB görüldü). fitz ile yeniden sıkıştır; küçülürse onu kullan.
+        try:
+            import fitz as _fitz
+            _tmp = output_pdf + '.deflate.tmp'
+            _d = _fitz.open(output_pdf)
+            _d.save(_tmp, garbage=4, deflate=True, clean=True)
+            _d.close()
+            if os.path.getsize(_tmp) < os.path.getsize(output_pdf):
+                os.replace(_tmp, output_pdf)
+            else:
+                os.remove(_tmp)
+        except Exception as e:
+            logger.warning("deflate pası atlandı: %s", e)
         logger.info("Watermark applied: %s", output_pdf)
         return output_pdf

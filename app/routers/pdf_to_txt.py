@@ -23,7 +23,7 @@ router = APIRouter(prefix="/api/tools/pdf-to-txt", tags=["pdf-to-txt"])
 class PDFToTXTOptions(BaseModel):
     encoding: str = "utf-8"
     preserve_paragraphs: bool = True
-    use_ocr: bool = False
+    use_ocr: bool = True   # 2026-08-05: metinsiz sayfada otomatik OCR (metinli PDF etkilenmez)
 
 
 @router.post("/upload")
