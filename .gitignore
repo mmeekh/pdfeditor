@@ -21,3 +21,5 @@ reports/
 seo-crawls/
 storage/
 seo-drift-baselines/
+data/analytics/*.log
+data/analytics/cron.log

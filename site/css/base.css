@@ -9,6 +9,14 @@ html {
     scroll-behavior: smooth;
 }
 
+html {
+    /* 2026-08-05: koyu-tema tarayıcılarda navbar üstünde koyu bant çıkıyordu —
+       kök arka planı boş kalınca Chrome canvas'ı koyu boyuyor. Sayfa açık temadır. */
+    background-color: #f7f7fc;
+    color-scheme: light;
+    scroll-padding-top: 5.5rem; /* sticky header, çapa hedeflerini örtmesin */
+}
+
 body {
     /* 2026-07-31 renk revizyonu: illüstrasyon setiyle uyumlu lavanta-tonlu zemin,
        üstte yumuşak degrade (düz gri "AI-default" görünümünün yerine) */
