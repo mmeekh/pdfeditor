@@ -1,6 +1,6 @@
 # PDFislemleri.com
 
-Automated PDF platform: merge, compress, OCR, and digitize documents through a single FastAPI service. Sixteen free tools, one API, no sign-up.
+Automated PDF platform: merge, compress, OCR, and digitize documents through a single FastAPI service. Seventeen free tools, one API, no sign-up — with cross-tool file handoff, an installable PWA (Android share target), and OCR fallbacks for scanned/vector PDFs.
 
 Live at **[pdfislemleri.com](https://pdfislemleri.com)**.
 
