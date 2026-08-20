@@ -1,0 +1,1702 @@
+{
+  "generated_at": "2026-08-10",
+  "site_key": "pdfislemleri",
+  "domain": "pdfislemleri.com",
+  "sc_property": "sc-domain:pdfislemleri.com",
+  "search_console": {
+    "date_range": "2026-08-01 → 2026-08-08",
+    "days": 7,
+    "top_queries": [
+      {
+        "query": "word pdf çevirme",
+        "clicks": 2,
+        "impressions": 7,
+        "ctr": 28.57,
+        "position": 30.3
+      },
+      {
+        "query": "pdf döndürme",
+        "clicks": 1,
+        "impressions": 187,
+        "ctr": 0.53,
+        "position": 10.7
+      },
+      {
+        "query": "pdf kucultme",
+        "clicks": 1,
+        "impressions": 3,
+        "ctr": 33.33,
+        "position": 20.3
+      },
+      {
+        "query": "pdf sıkıştır",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": 50.0,
+        "position": 77.5
+      },
+      {
+        "query": "pdf sıralama",
+        "clicks": 1,
+        "impressions": 17,
+        "ctr": 5.88,
+        "position": 9.1
+      },
+      {
+        "query": "pdf şifre kaldırma",
+        "clicks": 1,
+        "impressions": 16,
+        "ctr": 6.25,
+        "position": 15.1
+      },
+      {
+        "query": "word den pdf çevirme",
+        "clicks": 1,
+        "impressions": 3,
+        "ctr": 33.33,
+        "position": 42
+      },
+      {
+        "query": "acilmiyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "query": "açılmayan pdf dosyası nasıl açılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "query": "açılmayan pdf nasıl düzeltilir",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 17
+      },
+      {
+        "query": "barkodlu belge ne demek",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 67
+      },
+      {
+        "query": "barkodlu belge nedir",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 59
+      },
+      {
+        "query": "belge boyutu küçültme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 40
+      },
+      {
+        "query": "belge i̇mzalama",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 66
+      },
+      {
+        "query": "bilgisayar pdf açmıyor",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "query": "bilgisayarda pdf açılmıyor",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 9.2
+      },
+      {
+        "query": "bilgisayarım pdf açmıyor",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8.2
+      },
+      {
+        "query": "birleştirme pdf",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "query": "birçok pdf dosyasını birleştirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "query": "chrome da pdf açılmıyor",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 15
+      },
+      {
+        "query": "comprimiri pdf",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "query": "cv pdf mi olmalı word mü",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 11.2
+      },
+      {
+        "query": "dijital kullanım senaryoları için farklı pdf okuyucu seçeneklerini ve temel özelliklerini karşılaştırın.",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "query": "dikey pdf yatay yapma",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 9.7
+      },
+      {
+        "query": "dosya kilidi",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "query": "dosya küçültme nasıl yapılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 35
+      },
+      {
+        "query": "dosya mb azaltma",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "query": "dosya sıkıştırma",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 33
+      },
+      {
+        "query": "dosyayı küçültme",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 5.6
+      },
+      {
+        "query": "e arşiv fatura pdf indirme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7.5
+      },
+      {
+        "query": "e arşiv faturayı pdf olarak indirme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "e arşiv pdf indirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "e arşiv portal pdf indirme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "query": "e arşiv portaldan pdf fatura indirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "query": "e devlet belge indirme",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 10.5
+      },
+      {
+        "query": "e devlet pdf",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 15
+      },
+      {
+        "query": "e devlet pdf açılmıyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "query": "e devlet pdf nasıl indirilir",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "query": "e devlet pdf yükleme sorunu",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "query": "e devlet tapu pdf",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "e devlet tapu pdf alma",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10.7
+      },
+      {
+        "query": "e devlet tapu pdf indirme",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.2
+      },
+      {
+        "query": "e devlete belge yükleme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 18
+      },
+      {
+        "query": "e devlete dosya yükleme nasıl yapılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 21
+      },
+      {
+        "query": "e devlete pdf yükleme",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 7.7
+      },
+      {
+        "query": "e devlette pdf dosyası neden açılmıyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "query": "e devletten belge indirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "query": "e devletten pdf gönderme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "e devletten pdf indirme",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.6
+      },
+      {
+        "query": "e devletten tapu pdf indirme",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 10.4
+      }
+    ],
+    "top_pages": [
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "clicks": 11,
+        "impressions": 1438,
+        "ctr": 0.76,
+        "position": 7.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme",
+        "clicks": 4,
+        "impressions": 150,
+        "ctr": 2.67,
+        "position": 6.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sayfa-sirala",
+        "clicks": 3,
+        "impressions": 110,
+        "ctr": 2.73,
+        "position": 10.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/word-pdf-donusturme",
+        "clicks": 3,
+        "impressions": 69,
+        "ctr": 4.35,
+        "position": 19.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sifre-kaldirma",
+        "clicks": 2,
+        "impressions": 99,
+        "ctr": 2.02,
+        "position": 14.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sikistirma",
+        "clicks": 2,
+        "impressions": 68,
+        "ctr": 2.94,
+        "position": 23.4
+      },
+      {
+        "page": "https://pdfislemleri.com/blog",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 100,
+        "position": 5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "clicks": 1,
+        "impressions": 146,
+        "ctr": 0.68,
+        "position": 8.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-boyutu-neden-buyuk",
+        "clicks": 1,
+        "impressions": 81,
+        "ctr": 1.23,
+        "position": 6.3
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-imzalama",
+        "clicks": 1,
+        "impressions": 37,
+        "ctr": 2.7,
+        "position": 36.7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sayfa-dondurme",
+        "clicks": 1,
+        "impressions": 600,
+        "ctr": 0.17,
+        "position": 9.2
+      },
+      {
+        "page": "https://pdfislemleri.com/",
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 11.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-imza-yasal-gecerlilik",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/islak-imza-e-imza-fark",
+        "clicks": 0,
+        "impressions": 22,
+        "ctr": 0,
+        "position": 8.3
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/kvkk-uyumlu-pdf-imzalama",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 17.7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/mersis-e-imzali-belge-pdf",
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 7.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-arsivleme-pdfa",
+        "clicks": 0,
+        "impressions": 187,
+        "ctr": 0,
+        "position": 9.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "clicks": 0,
+        "impressions": 36,
+        "ctr": 0,
+        "position": 25.3
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-cv-hazirlama",
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-email-gonderim",
+        "clicks": 0,
+        "impressions": 92,
+        "ctr": 0,
+        "position": 8.7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-filigran",
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 20.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-guvenlik",
+        "clicks": 0,
+        "impressions": 71,
+        "ctr": 0,
+        "position": 8.6
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-jpg-donusturme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-nedir",
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 8.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-ocr",
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "position": 10.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-powerpoint-donusturme",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 7.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-txt-donusturme",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-vs-word",
+        "clicks": 0,
+        "impressions": 42,
+        "ctr": 0,
+        "position": 9.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/sigorta-policesi-pdf-birlestirme",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 5.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/tapu-belgesi-pdf-e-imza",
+        "clicks": 0,
+        "impressions": 249,
+        "ctr": 0,
+        "position": 8.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/telefondan-pdf-duzenleme",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 12.6
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/toplu-pdf-islemleri",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/ucretsiz-pdf-duzenleyici",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/vergi-levhasi-pdf-kucultme",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 3.7
+      },
+      {
+        "page": "https://pdfislemleri.com/contact",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6.5
+      },
+      {
+        "page": "https://pdfislemleri.com/pdf-a-donustur-rehberi",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10.7
+      },
+      {
+        "page": "https://pdfislemleri.com/pdf-ayir",
+        "clicks": 0,
+        "impressions": 27,
+        "ctr": 0,
+        "position": 18.6
+      },
+      {
+        "page": "https://pdfislemleri.com/pdf-birlestir",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 14.5
+      },
+      {
+        "page": "https://pdfislemleri.com/pdf-dondur",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 9.2
+      },
+      {
+        "page": "https://pdfislemleri.com/pdf-imzala",
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 57.5
+      },
+      {
+        "page": "https://pdfislemleri.com/pdf-sayfa-sil",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 67
+      },
+      {
+        "page": "https://pdfislemleri.com/pdf-sikistir",
+        "clicks": 0,
+        "impressions": 74,
+        "ctr": 0,
+        "position": 12.0
+      },
+      {
+        "page": "https://pdfislemleri.com/pdf-to-excel",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6.5
+      },
+      {
+        "page": "https://pdfislemleri.com/uyap-pdf-paketle",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 6.1
+      }
+    ],
+    "page_query_pairs": [
+      {
+        "page": "https://pdfislemleri.com/blog/word-pdf-donusturme",
+        "query": "word pdf çevirme",
+        "clicks": 2,
+        "impressions": 7,
+        "ctr": 28.57,
+        "position": 30.3
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sayfa-dondurme",
+        "query": "pdf döndürme",
+        "clicks": 1,
+        "impressions": 187,
+        "ctr": 0.53,
+        "position": 10.7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sayfa-sirala",
+        "query": "pdf sıralama",
+        "clicks": 1,
+        "impressions": 17,
+        "ctr": 5.88,
+        "position": 9.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sifre-kaldirma",
+        "query": "pdf şifre kaldırma",
+        "clicks": 1,
+        "impressions": 16,
+        "ctr": 6.25,
+        "position": 15.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sikistirma",
+        "query": "pdf kucultme",
+        "clicks": 1,
+        "impressions": 3,
+        "ctr": 33.33,
+        "position": 20.3
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-sikistirma",
+        "query": "pdf sıkıştır",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": 50.0,
+        "position": 77.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/word-pdf-donusturme",
+        "query": "word den pdf çevirme",
+        "clicks": 1,
+        "impressions": 3,
+        "ctr": 33.33,
+        "position": 42
+      },
+      {
+        "page": "https://pdfislemleri.com/",
+        "query": "comprimiri pdf",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "page": "https://pdfislemleri.com/",
+        "query": "pdf compirmir",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 45
+      },
+      {
+        "page": "https://pdfislemleri.com/",
+        "query": "pdf işlemleri",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "page": "https://pdfislemleri.com/",
+        "query": "pdfayır",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme",
+        "query": "e arşiv fatura pdf indirme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme",
+        "query": "e arşiv faturayı pdf olarak indirme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme",
+        "query": "e arşiv pdf indirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme",
+        "query": "e arşiv portal pdf indirme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme",
+        "query": "e arşiv portaldan pdf fatura indirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme",
+        "query": "e fatura pdf indirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-arsiv-fatura-pdf-birlestirme",
+        "query": "faturayı pdf olarak indirme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "barkodlu belge ne demek",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 67
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "barkodlu belge nedir",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 59
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devlet belge indirme",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 10.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devlet pdf",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 15
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devlet pdf nasıl indirilir",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devlet pdf yükleme sorunu",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devlete belge yükleme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 18
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devlete dosya yükleme nasıl yapılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 21
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devlete pdf yükleme",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 7.7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devletten belge indirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devletten pdf gönderme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/e-devlet-pdf-belgeleri",
+        "query": "e devletten pdf indirme",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.6
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/islak-imza-e-imza-fark",
+        "query": "pdfislemleri.tkgm.gov.tr",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/kvkk-uyumlu-pdf-imzalama",
+        "query": "pdf i̇mzalama",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "acilmiyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "açılmayan pdf dosyası nasıl açılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "açılmayan pdf nasıl düzeltilir",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 17
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "bilgisayar pdf açmıyor",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "bilgisayarda pdf açılmıyor",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 9.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "bilgisayarım pdf açmıyor",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "chrome da pdf açılmıyor",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 15
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "e devlet pdf açılmıyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "e devlette pdf dosyası neden açılmıyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pc de pdf açılmıyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pc pdf açmıyor",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10.7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf acilmiyor",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 6.7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf açamıyorum",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 10.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf açamıyorum ne yapmalıyım",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 9.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf açilmiyor",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf açmıyor",
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 10.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf açılmıyor",
+        "clicks": 0,
+        "impressions": 20,
+        "ctr": 0,
+        "position": 9.4
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf açılmıyor bilgisayarda",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf açılmıyor neden",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 6.4
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosya açılmıyor",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosya neden açılmıyor",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 6.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyaları açılmıyor",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 9.3
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyaları nasıl açılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyaları neden açılmıyor",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 7.7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyası açılmıyor",
+        "clicks": 0,
+        "impressions": 74,
+        "ctr": 0,
+        "position": 10.4
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyası açılmıyor ne yapmalıyım",
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 8.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyası ekranınızda gösterilemiyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyası nasıl açılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 32
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyası neden açılmaz",
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyası neden açılmıyor",
+        "clicks": 0,
+        "impressions": 19,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyasını açamıyorum",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 11.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf dosyasını açma",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 38
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf güncelleme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf güncelleme nasıl yapılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf güncelleme yapılmazsa ne olur",
+        "clicks": 0,
+        "impressions": 43,
+        "ctr": 0,
+        "position": 9.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf kitap uygulaması neden açılmıyor",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf neden açılmaz",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 7.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf neden açılmıyor",
+        "clicks": 0,
+        "impressions": 67,
+        "ctr": 0,
+        "position": 6.6
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf niye açılmıyor",
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 6.1
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf okuyucu nasıl çalışır ve etkili bir şekilde kullanmanın en iyi yolları nelerdir?",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf sorun giderme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf sürümü güncel değil ne demek",
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 4.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf sürümü nedir",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "pdf sürümü çok eski ne demek",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "telefonda pdf neden açılmıyor",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 9.8
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "telefonum pdf açmıyor",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 18
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-acilmiyor-cozum",
+        "query": "windows 10 pdf sorunu",
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-arsivleme-pdfa",
+        "query": "pdf a formatı nedir",
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 9.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-arsivleme-pdfa",
+        "query": "pdf a nedir",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-arsivleme-pdfa",
+        "query": "pdf'den pdf/a'ya",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 33
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-arsivleme-pdfa",
+        "query": "pdf/a nedir",
+        "clicks": 0,
+        "impressions": 115,
+        "ctr": 0,
+        "position": 10.5
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "query": "birleştirme pdf",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "query": "birçok pdf dosyasını birleştirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "query": "pdf birleştirme",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 86
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "query": "pdf birleştirme nasıl yapılır",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 39
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "query": "pdf dosya birleştirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 44
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "query": "pdf dosyalarını birleştirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 57
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "query": "pdf dönüştürme birleştirme",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 61
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-birlestirme",
+        "query": "pdf leri birleştirme",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 57
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-boyutu-neden-buyuk",
+        "query": "pdf dosyasının yüksek çözünürlüklü çıktısını nasıl elde edebilirim?",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-email-gonderim",
+        "query": "e-posta yoluyla göndermeyi planladığım bir pdf dosyasını nasıl şifreyle koruyabilirim?",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-email-gonderim",
+        "query": "pdf dosyalarını e-posta yoluyla paylaşırken en iyi şekilde nasıl şifreyle koruyabilirim?",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 8.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-email-gonderim",
+        "query": "pdf dosyasına nasıl sayfalar ekleyebilir ve e-posta yoluyla paylaşabilirim?",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-email-gonderim",
+        "query": "pdf dosyasını e-posta yoluyla güvenli bir şekilde göndermek için nasıl parola koruması ekleyebilirim?",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-email-gonderim",
+        "query": "pdf dosyasını şifreyle koruyarak e-posta yoluyla nasıl gönderebilirim?",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.2
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-email-gonderim",
+        "query": "pdf mail nasıl gönderilir",
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 9.6
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-filigran",
+        "query": "pdf filigran ekleme",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "page": "https://pdfislemleri.com/blog/pdf-guvenlik",
+        "query": "kurumsal düzeyde koruma sağlayan profesyonel bir kullanıcı olarak pdf dosyalarını nasıl güvenli bir şekilde sıkıştırabilirim?",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5
+      }
+    ]
+  },
+  "ga4": {
+    "date_range": "2026-08-03 → 2026-08-10",
+    "days": 7,
+    "pages": [
+      {
+        "page": "/blog/pdf-acilmiyor-cozum",
+        "users": 10,
+        "views": 11,
+        "avg_duration_s": 14.4,
+        "bounce_rate": 40.0,
+        "engagement_rate": 60.0
+      },
+      {
+        "page": "/",
+        "users": 7,
+        "views": 16,
+        "avg_duration_s": 197.7,
+        "bounce_rate": 10.0,
+        "engagement_rate": 90.0
+      },
+      {
+        "page": "/blog/e-arsiv-fatura-pdf-birlestirme",
+        "users": 5,
+        "views": 5,
+        "avg_duration_s": 7.9,
+        "bounce_rate": 40.0,
+        "engagement_rate": 60.0
+      },
+      {
+        "page": "/blog/pdf-sikistirma",
+        "users": 4,
+        "views": 5,
+        "avg_duration_s": 17.9,
+        "bounce_rate": 25.0,
+        "engagement_rate": 75.0
+      },
+      {
+        "page": "/pdf-sikistir",
+        "users": 4,
+        "views": 10,
+        "avg_duration_s": 219.5,
+        "bounce_rate": 16.7,
+        "engagement_rate": 83.3
+      },
+      {
+        "page": "/blog/pdf-sayfa-sirala",
+        "users": 3,
+        "views": 3,
+        "avg_duration_s": 11.6,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/pdf-birlestir",
+        "users": 3,
+        "views": 6,
+        "avg_duration_s": 53.2,
+        "bounce_rate": 20.0,
+        "engagement_rate": 80.0
+      },
+      {
+        "page": "/pdf-dondur",
+        "users": 3,
+        "views": 3,
+        "avg_duration_s": 58.5,
+        "bounce_rate": 33.3,
+        "engagement_rate": 66.7
+      },
+      {
+        "page": "/pdf-sirala",
+        "users": 3,
+        "views": 4,
+        "avg_duration_s": 72.3,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/blog/pdf-imzalama",
+        "users": 2,
+        "views": 2,
+        "avg_duration_s": 0.0,
+        "bounce_rate": 100.0,
+        "engagement_rate": 0.0
+      },
+      {
+        "page": "/blog/pdf-sayfa-dondurme",
+        "users": 2,
+        "views": 1,
+        "avg_duration_s": 0.3,
+        "bounce_rate": 50.0,
+        "engagement_rate": 50.0
+      },
+      {
+        "page": "/blog/pdf-sifre-kaldirma",
+        "users": 2,
+        "views": 2,
+        "avg_duration_s": 35.0,
+        "bounce_rate": 50.0,
+        "engagement_rate": 50.0
+      },
+      {
+        "page": "/blog/word-pdf-donusturme",
+        "users": 2,
+        "views": 2,
+        "avg_duration_s": 3.4,
+        "bounce_rate": 50.0,
+        "engagement_rate": 50.0
+      },
+      {
+        "page": "/pdf-ayir",
+        "users": 2,
+        "views": 4,
+        "avg_duration_s": 72.5,
+        "bounce_rate": 50.0,
+        "engagement_rate": 50.0
+      },
+      {
+        "page": "/word-to-pdf",
+        "users": 2,
+        "views": 3,
+        "avg_duration_s": 61.6,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/blog",
+        "users": 1,
+        "views": 1,
+        "avg_duration_s": 0.0,
+        "bounce_rate": 100.0,
+        "engagement_rate": 0.0
+      },
+      {
+        "page": "/blog/pdf-baski-ayarlari",
+        "users": 1,
+        "views": 2,
+        "avg_duration_s": 18.8,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/blog/pdf-birlestirme",
+        "users": 1,
+        "views": 1,
+        "avg_duration_s": 3.9,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/blog/pdf-boyutu-neden-buyuk",
+        "users": 1,
+        "views": 1,
+        "avg_duration_s": 808.1,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/blog/pdf-guvenlik",
+        "users": 1,
+        "views": 1,
+        "avg_duration_s": 0.0,
+        "bounce_rate": 100.0,
+        "engagement_rate": 0.0
+      },
+      {
+        "page": "/blog/tapu-belgesi-pdf-e-imza",
+        "users": 1,
+        "views": 1,
+        "avg_duration_s": 1.2,
+        "bounce_rate": 100.0,
+        "engagement_rate": 0.0
+      },
+      {
+        "page": "/contact",
+        "users": 1,
+        "views": 1,
+        "avg_duration_s": 7.7,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/pdf-duzenle",
+        "users": 1,
+        "views": 1,
+        "avg_duration_s": 32.9,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/pdf-sifre-kaldir",
+        "users": 1,
+        "views": 1,
+        "avg_duration_s": 7.7,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      },
+      {
+        "page": "/pdf-to-word",
+        "users": 1,
+        "views": 3,
+        "avg_duration_s": 172.8,
+        "bounce_rate": 0.0,
+        "engagement_rate": 100.0
+      }
+    ],
+    "channels": [
+      {
+        "channel": "Organic Search",
+        "users": 32,
+        "sessions": 33
+      },
+      {
+        "channel": "Direct",
+        "users": 10,
+        "sessions": 14
+      },
+      {
+        "channel": "Unassigned",
+        "users": 2,
+        "sessions": 2
+      },
+      {
+        "channel": "AI Assistant",
+        "users": 1,
+        "sessions": 2
+      }
+    ]
+  }
+}
